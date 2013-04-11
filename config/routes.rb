@@ -1,4 +1,7 @@
 ImiMaps::Application.routes.draw do
+  resources :companies
+
+
   resources :users
 
 
