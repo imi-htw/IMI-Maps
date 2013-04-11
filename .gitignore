@@ -13,3 +13,14 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore VIM specific files
+*.swp
+*.swo
+
+# Ignore Mac OS specific files
+.DS_STORE
+
+# Ignore RVM specific files
+.ruby-version
+.ruby-gemset
