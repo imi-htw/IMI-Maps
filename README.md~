@@ -37,7 +37,7 @@
 durch `rails generate uploader Picture` neuen picture uploader erstellt
 - in app/models/user.rb `mount_uploader :picture, PictureUploader` hinzgefügt
 - neues Feld im Formular erstellt
-```html 
+``` 
 <div class="field">
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
