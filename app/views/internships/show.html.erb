@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Orientation:</b>
+  <%= @internship.orientation %>
+</p>
+
+<p>
+  <b>Programming language:</b>
+  <%= @internship.programming_language %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%= @internship.salary %>
+</p>
+
+<p>
+  <b>Working hours:</b>
+  <%= @internship.working_hours %>
+</p>
+
+<p>
+  <b>Living costs:</b>
+  <%= @internship.living_costs %>
+</p>
+
+
+<%= link_to 'Edit', edit_internship_path(@internship) %> |
+<%= link_to 'Back', internships_path %>

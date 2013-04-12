@@ -1,0 +1,37 @@
+<%= form_for(@internship) do |f| %>
+  <% if @internship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
+
+      <ul>
+      <% @internship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orientation %><br />
+    <%= f.text_field :orientation %>
+  </div>
+  <div class="field">
+    <%= f.label :programming_language %><br />
+    <%= f.text_field :programming_language %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br />
+    <%= f.text_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :working_hours %><br />
+    <%= f.text_field :working_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :living_costs %><br />
+    <%= f.text_field :living_costs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
