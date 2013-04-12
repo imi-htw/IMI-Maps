@@ -30,15 +30,14 @@
 @BGrasnick
 - bootstrap gem hinzugefügt zu Gemfile: `gem 'bootstrap-sass', '2.1'`
 - datei custom.css.scss erstellt im Ordner app/assets/stylesheets und bootstrap hinzugefügt: `@import "bootstrap";`
-- durch `*= require_tree .`
-- in application.css(12) werden alle css Dateien in diesem Ordner eingebunden
+- durch `*= require_tree .` in application.css(12) werden alle css Dateien in diesem Ordner eingebunden
 - dann durch CSS wie z.B. `class: table` bootstrap styling hinzugefügt
 - picture uploader gem hinzugefügt durch `gem 'carrierwave'`
 - danach `bundle install` um das gem zu installieren
 durch `rails generate uploader Picture` neuen picture uploader erstellt
 - in app/models/user.rb `mount_uploader :picture, PictureUploader` hinzgefügt
 - neues Feld im Formular erstellt
-```html 
+``` 
 <div class="field">
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
@@ -53,6 +52,7 @@ durch `rails generate uploader Picture` neuen picture uploader erstellt
 - [Rspec installation](http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html)  
 - [Heroku & Git](https://devcenter.heroku.com/articles/git)  
 - [Heroku & Rails](https://devcenter.heroku.com/articles/rails3)  
+- [Twitter Bootstrap](http://twitter.github.io/bootstrap/base-css.html)]
 
 
 
