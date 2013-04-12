@@ -27,7 +27,7 @@
 - `git pull heroku master` und dann `git push heroku master`  
 - als letzes habe ich unsere App mit [Code Climate](https://codeclimate.com/github/schlubbi/IMI-Maps/) verlinkt. Das ist eine Plattform, die den geschriebenen Code auf Qualitaet analysiert und bewertet 
 
-@BGrasnick
+
 - bootstrap gem hinzugefügt zu Gemfile: `gem 'bootstrap-sass', '2.1'`
 - datei custom.css.scss erstellt im Ordner app/assets/stylesheets und bootstrap hinzugefügt: `@import "bootstrap";`
 - durch `*= require_tree .` in application.css(12) werden alle css Dateien in diesem Ordner eingebunden
@@ -37,10 +37,15 @@
 durch `rails generate uploader Picture` neuen picture uploader erstellt
 - in app/models/user.rb `mount_uploader :picture, PictureUploader` hinzgefügt
 - neues Feld im Formular erstellt
+
 `<div class="field">`
+
   `<%= f.label :picture %><br />`
+
   `<%= f.file_field :picture %>`
+
 `</div>`
+
 - Form (app/views/users/\_form.html.erb) geändert zu `<%= form_for(@attendee, :html => {:multipart => true}) do |f| %>`
 - im index und show view der users zur Anzeige des Bildes `<%= image_tag(@attendee.picture_url, :width => 600) if @attendee.picture.present? %>` hinzugefügt
 - routes.rb geändert, damit die Startseite direkt die Liste der companies zeigt: `root to: 'companies#index'`
