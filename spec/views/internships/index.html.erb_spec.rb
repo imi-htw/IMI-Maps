@@ -7,15 +7,15 @@ describe "internships/index" do
         :orientation => "Orientation",
         :programming_language => "Programming Language",
         :salary => 1.5,
-        :working_hours => 1.5,
-        :living_costs => 1.5
+        :working_hours => 2.5,
+        :living_costs => 3.5
       ),
       stub_model(Internship,
         :orientation => "Orientation",
         :programming_language => "Programming Language",
         :salary => 1.5,
-        :working_hours => 1.5,
-        :living_costs => 1.5
+        :working_hours => 2.5,
+        :living_costs => 3.5
       )
     ])
   end
@@ -26,7 +26,7 @@ describe "internships/index" do
     assert_select "tr>td", :text => "Orientation".to_s, :count => 2
     assert_select "tr>td", :text => "Programming Language".to_s, :count => 2
     assert_select "tr>td", :text => 1.5.to_s, :count => 2
-    assert_select "tr>td", :text => 1.5.to_s, :count => 2
-    assert_select "tr>td", :text => 1.5.to_s, :count => 2
+    assert_select "tr>td", :text => 2.5.to_s, :count => 2
+    assert_select "tr>td", :text => 3.5.to_s, :count => 2
   end
 end
