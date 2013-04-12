@@ -37,12 +37,10 @@
 durch `rails generate uploader Picture` neuen picture uploader erstellt
 - in app/models/user.rb `mount_uploader :picture, PictureUploader` hinzgefügt
 - neues Feld im Formular erstellt
-- ``` 
-<div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :picture %>
-  </div>
-```
+`<div class="field">`
+  `<%= f.label :picture %><br />`
+  `<%= f.file_field :picture %>`
+`</div>`
 - Form (app/views/users/\_form.html.erb) geändert zu `<%= form_for(@attendee, :html => {:multipart => true}) do |f| %>`
 - im index und show view der users zur Anzeige des Bildes `<%= image_tag(@attendee.picture_url, :width => 600) if @attendee.picture.present? %>` hinzugefügt
 - routes.rb geändert, damit die Startseite direkt die Liste der companies zeigt: `root to: 'companies#index'`
