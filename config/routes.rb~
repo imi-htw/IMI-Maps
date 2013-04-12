@@ -3,7 +3,7 @@ ImiMaps::Application.routes.draw do
 
   resources :users
 
-  root to: 'companies#index'
+  root to: 'companies'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
