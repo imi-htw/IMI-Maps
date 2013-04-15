@@ -4,6 +4,13 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
 
+		@pins = @companies.to_gmaps4rails do |company, marker|
+			marker.json({ :id => company.id, 
+										:name => company.name, 
+										:department => company.department, 
+										:industry => company.industry})
+		end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @companies }

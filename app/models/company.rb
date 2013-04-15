@@ -7,4 +7,9 @@ class Company < ActiveRecord::Base
 
   # associations
   has_many :internships
+
+	def gmaps4rails_infowindow
+    "<p style='font-weight:bold'>#{self.name}</p><p>Industry: #{self.industry}</p><p>Department: #{self.department}</p><p>Employees: #{self.number_employees}</p><a href='#{self.website}'>#{self.website}</a>"
+  end	
+	
 end

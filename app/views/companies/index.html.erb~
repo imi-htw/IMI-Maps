@@ -1,8 +1,10 @@
 <h1>Listing companies</h1>
 
 <%= gmaps4rails(@pins) %> 
+<%= gmaps4rails(@markers) %>
 <%= yield :scripts %>
 <br/> 
+
 <table class="table">
   <tr>
     <th>Name</th>
