@@ -3,7 +3,6 @@
 <%= gmaps4rails(@pins) %> 
 <%= yield :scripts %>
 <br/> 
-
 <table class="table">
   <tr>
     <th>Name</th>
