@@ -29,26 +29,14 @@ ActiveRecord::Schema.define(:version => 20130418141506) do
     t.string   "main_language"
   end
 
-  create_table "internship_programming_languages", :force => true do |t|
-    t.integer  "internship_id"
-    t.integer  "programming_language_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
   create_table "internships", :force => true do |t|
     t.string   "orientation"
+    t.string   "programming_language"
     t.float    "salary"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "programming_languages", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "users", :force => true do |t|
