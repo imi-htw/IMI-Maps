@@ -1,7 +1,9 @@
 ImiMaps::Application.routes.draw do
+
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 		resources :internships
 
+    resources :contact_people
 
 		resources :companies
 
