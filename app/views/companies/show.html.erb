@@ -7,13 +7,9 @@
 
 <p>
   <b>Address:</b>
-  <%= @company.address %>
+  <%= "#{@company.street}, #{@company.zip} #{@company.city}, #{@company.country}" %>
 </p>
 
-<p>
-  <b>Department:</b>
-  <%= @company.department %>
-</p>
 
 <p>
   <b>Number employees:</b>
@@ -23,6 +19,11 @@
 <p>
   <b>Industry:</b>
   <%= @company.industry %>
+</p>
+<p>
+
+<b>Main Language:</b>
+  <%= @company.main_language %>
 </p>
 
 <p>
