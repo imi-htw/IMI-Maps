@@ -1,11 +1,25 @@
+
+
+
+
 <h1>Listing companies</h1>
 
-<%# gmaps4rails(@pins) %> 
+<!-- START -->
+<!-- Div / Scope. Sebagai contoh dari div, ada beberapa gelas, sebut saja gelas A dan gelas B, gelas A diberi id=kopi dan gelas B diberi id=teh (<div id=kopi></div> & <div id=teh></div>). 
+id/class digunakan untuk memberi nama dari div agar bisa digunakan di CSS/Javascript -->
+
+    <a id="en" href="http://google.com"><img width="50px" height="25px"></a>
+
+<!-- END -->
+    <a id="de" href="http://google.com"><img  width="50px" height="25px"></a>
+
+<% gmaps4rails(@pins) %> 
 <%= yield :scripts %>
 <br/> 
 
 <table class="table">
   <tr>
+
     <th>Name</th>
     <th>Street</th>
     <th>ZIP</th>
