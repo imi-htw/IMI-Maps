@@ -8,8 +8,12 @@
 </head>
 <body>
 <div class="container">
+  <div class="nav pull-right">
+  	Language:
+  	<%= link_to_unless_current "English", locale: "en" %>
+  	<%= link_to_unless_current "Deutsch", locale: "de" %>
+  </div>
 <%= yield %>
-<%= yield :scripts %> 
 </div>
 </body>
 </html>

@@ -1,12 +1,16 @@
 ImiMaps::Application.routes.draw do
-  resources :internships
+	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+		resources :internships
 
 
-  resources :companies
+		resources :companies
 
-  resources :users
+		resources :users
 
-  root to: 'companies#index'
+		root to: 'companies#index'
+	end
+	match '*path', to: redirect("/#{I18n.default_locale}/%{path}") 
+	match '', to: redirect("/#{I18n.default_locale}") 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

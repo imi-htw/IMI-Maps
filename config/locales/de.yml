@@ -1,14 +1,14 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+de:
   buttons:
-    show: "Show"
+    show: "Zeige Profil"
   companies:
     index:
-      title: "Listing companies"
+      title: "Liste von Firmen"
   activerecord:
     attributes:
       company:
         name: "Name"
-        street: "Street"
+        street: "Straße"

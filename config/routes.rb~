@@ -1,9 +1,14 @@
 ImiMaps::Application.routes.draw do
-  resources :companies
+	scope ":locale" do
+		resources :internships
 
-  resources :users
 
-  root to: 'companies'
+		resources :companies
+
+		resources :users
+
+		root to: 'companies#index'
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

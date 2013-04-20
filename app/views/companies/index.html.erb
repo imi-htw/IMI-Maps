@@ -1,13 +1,13 @@
-<h1>Listing companies</h1>
+<h1><%= t ".title" %></h1>
 
-<%# gmaps4rails(@pins) %> 
+<%= gmaps4rails(@pins) %> 
 <%= yield :scripts %>
 <br/> 
 
 <table class="table">
   <tr>
-    <th>Name</th>
-    <th>Street</th>
+    <th><%= Company.human_attribute_name(:name) %></th>
+    <th><%= Company.human_attribute_name(:street) %></th>
     <th>ZIP</th>
     <th>City</th>
     <th>Country</th>
@@ -31,7 +31,7 @@
     <td><%= company.industry %></td>
     <td><%= company.main_language %></td>
     <td><%= company.website %></td>
-    <td><%= link_to 'Show', company, class: "btn btn-success pull-right" %></td>
+    <td><%= link_to (t "buttons.show"), company, class: "btn btn-success pull-right" %></td>
     <td><%= link_to 'Edit', edit_company_path(company), class: "btn btn-success pull-right" %></td>
     <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right"  %></td>
   </tr>
