@@ -6,7 +6,7 @@ class Company < ActiveRecord::Base
   after_validation :geocode
   acts_as_gmappable :process_geocoding => false
 
-  # associations
+  #associations
   has_many :internships
 
 	def address
