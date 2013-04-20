@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website
 
   geocoded_by :address
@@ -9,7 +10,7 @@ class Company < ActiveRecord::Base
   has_many :internships
 
 	def gmaps4rails_infowindow
-    "<p style='font-weight:bold'>#{self.name}</p><p>Industry: #{self.industry}</p><p>Department: #{self.department}</p><p>Employees: #{self.number_employees}</p><a href='#{self.website}'>#{self.website}</a>"
+    "<a href='/companies/#{id}' style='font-weight:bold'>#{self.name}</a><p>Industry: #{self.industry}</p><p>Department: #{self.department}</p><p>Employees: #{self.number_employees}</p><a href='#{self.website}'>#{self.website}</a>"
   end	
 	
 end
