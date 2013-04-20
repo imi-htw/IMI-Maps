@@ -16,12 +16,20 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
   </div>
   <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_field :department %>
+    <%= f.label :zip %><br />
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
   </div>
   <div class="field">
     <%= f.label :number_employees %><br />
@@ -30,6 +38,10 @@
   <div class="field">
     <%= f.label :industry %><br />
     <%= f.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= f.label :main_language %><br />
+    <%= f.text_field :main_language %>
   </div>
   <div class="field">
     <%= f.label :website %><br />

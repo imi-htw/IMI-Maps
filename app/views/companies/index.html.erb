@@ -1,16 +1,19 @@
 <h1>Listing companies</h1>
 
-<%= gmaps4rails(@pins) %> 
+<%# gmaps4rails(@pins) %> 
 <%= yield :scripts %>
 <br/> 
 
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>Address</th>
-    <th>Department</th>
+    <th>Street</th>
+    <th>ZIP</th>
+    <th>City</th>
+    <th>Country</th>
     <th>Number employees</th>
     <th>Industry</th>
+    <th>Main Language</th>
     <th>Website</th>
     <th></th>
     <th></th>
@@ -20,10 +23,13 @@
 <% @companies.each do |company| %>
   <tr>
     <td><%= company.name %></td>
-    <td><%= company.address %></td>
-    <td><%= company.department %></td>
+    <td><%= company.street %></td>
+    <td><%= company.zip %></td>
+    <td><%= company.city %></td>
+    <td><%= company.country %></td>
     <td><%= company.number_employees %></td>
     <td><%= company.industry %></td>
+    <td><%= company.main_language %></td>
     <td><%= company.website %></td>
     <td><%= link_to 'Show', company, class: "btn btn-success pull-right" %></td>
     <td><%= link_to 'Edit', edit_company_path(company), class: "btn btn-success pull-right" %></td>

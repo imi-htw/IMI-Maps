@@ -24,3 +24,5 @@
 # Ignore RVM specific files
 .ruby-version
 .ruby-gemset
+
+*~

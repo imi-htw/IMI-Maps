@@ -24,14 +24,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+group :test do
+  gem 'factory_girl', '~> 4.2.0'
+  gem 'capybara', '~> 2.1.0'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do 
