@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= Company.human_attribute_name(:name) %> :</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b><%= Company.human_attribute_name(:address) %>:</b>
   <%= "#{@company.street}, #{@company.zip} #{@company.city}, #{@company.country}" %>
 </p>
 
 
 <p>
-  <b>Number employees:</b>
+  <b><%= Company.human_attribute_name(:number_employees) %> :</b>
   <%= @company.number_employees %>
 </p>
 
 <p>
-  <b>Industry:</b>
+  <b><%= Company.human_attribute_name(:industry) %> :</b>
   <%= @company.industry %>
 </p>
 <p>
 
-<b>Main Language:</b>
+<b><%= Company.human_attribute_name(:main_language) %> :</b>
   <%= @company.main_language %>
 </p>
 
 <p>
-  <b>Website:</b>
+  <b><%= Company.human_attribute_name(:website) %> :</b>
   <%= @company.website %>
 </p>
 
 
-<%= link_to 'Edit', edit_company_path(@company), class: "btn btn-success" %>
-<%= link_to 'Back', companies_path, class: "btn"  %>
+<%= link_to (t "buttons.edit"), edit_company_path(@company), class: "btn btn-success" %>
+<%= link_to (t "buttons.back"), companies_path, class: "btn"  %>

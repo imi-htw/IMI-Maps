@@ -4,11 +4,28 @@
 de:
   buttons:
     show: "Zeige Profil"
+    edit: "Bearbeiten"
+    destroy: "löschen"
+    back: "Zürück"
+  
   companies:
     index:
-      title: "Liste von Firmen"
+    show:
+    edit:
+          title: "Liste von Firmen"
+          editcompany: "Firma Bearbeiten"
+  
   activerecord:
     attributes:
       company:
         name: "Name"
         street: "Straße"
+        zip: "Postleitzahl"
+        city: "Stadt"
+        country: "Land"
+        number_employees: "Anzahl von Arbeiter"
+        industry: "Industrie"
+        main_language: "Sprache"
+        website: "Webseite"
+        address: "Adresse"
+  

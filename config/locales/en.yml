@@ -4,11 +4,26 @@
 en:
   buttons:
     show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    back: "Back"
+  
   companies:
     index:
+    show:
+    edit:
       title: "Listing companies"
+      editcompany: "Editing Company"
   activerecord:
     attributes:
       company:
         name: "Name"
         street: "Street"
+        zip: "ZIP"
+        city: "City"
+        country: "Country"
+        number_employees: "Number Employees"
+        industry: "Industry"
+        main_language: "Main Language"
+        website: "Website"
+        address: "Address"
