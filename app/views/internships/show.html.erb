@@ -7,7 +7,7 @@
 
 <p>
   <b>Programming language:</b>
-  <%= @internship.programming_language %>
+  <%= @internship.programming_languages.map(&:name) %>
 </p>
 
 <p>
