@@ -11,13 +11,7 @@
  *= require_self
  *= require_tree .
  */
- /*
- get id dengan nama en dari html code-> #en
- menunjuk ke a(anchor) dari html yg berada dalam div en ->#en a
- set gambar dari dari image en.gif dari folder images -> background-image: url('images/en.gi');
- set tidak menggulang gambar jika css dipanggil berkali-kali -> background-repeat: repeat-y;
- set div diposisi kiri -> float:left;
- */
+ 
  #en {
   background-image: url('images/en.gif');
   background-repeat:repeat-y; 

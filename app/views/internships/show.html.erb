@@ -7,7 +7,7 @@
 
 <p>
   <b><%= Internship.human_attribute_name(:programming_language) %> :</b>
-  <%= @internship.programming_language %>
+  <%= @internship.programming_languages.map(&:name) %>
 </p>
 
 <p>
