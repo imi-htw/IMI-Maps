@@ -3,18 +3,38 @@
 
 de:
   buttons:
-    show: "Zeige Profil"
+    show: "Anzeigen"
     edit: "Bearbeiten"
-    destroy: "löschen"
-    back: "Zürück"
-  
+    destroy: "Löschen"
+    back: "Zurück"
+    newcompany: "Neue Firma"
+    newinternship: "Neuer Praktikant"
+    newuser: "Neuer Benutzer"
+
   companies:
     index:
-    show:
+      title: "Liste von Firmen"
+    edit:      
+      editcompany: "Firma Bearbeiten"
+    new:
+      newcompany: "Neue Firma"  
+
+  internships:
+    index:
+      title: "Liste von Praktika"
     edit:
-          title: "Liste von Firmen"
-          editcompany: "Firma Bearbeiten"
-  
+      editinternship: "Praktikum bearbeiten"  
+    new:
+      newinternship: "Neues Praktikum"  
+
+  users:
+    index:
+      title: "Liste von Benutzer"
+    edit:
+       edituser: "Benutzer bearbeiten"  
+    new:
+       newuser: "Neuer Benutzer"   
+
   activerecord:
     attributes:
       company:
@@ -28,4 +48,18 @@ de:
         main_language: "Sprache"
         website: "Webseite"
         address: "Adresse"
-  
+
+      internship:
+        orientation: "Orientierung"
+        programming_language: "Programmiersprachen"
+        salary: "Gehalt"
+        working_hours: "Arbeitsstunden"
+        living_costs: "Lebenshaltungskosten"
+
+      user:
+        last_name: "Nachname"  
+        first_name: "Vorname"
+        major: "Fach"
+        email: "Email"
+        role: "Rolle"
+        picture: "Bild"

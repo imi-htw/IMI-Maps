@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Last name:</b>
+  <b><%= User.human_attribute_name(:last_name) %> :</b>
   <%= @user.last_name %>
 </p>
 
 <p>
-  <b>First name:</b>
+  <b><%= User.human_attribute_name(:first_name) %> :</b>
   <%= @user.first_name %>
 </p>
 
 <p>
-  <b>Major:</b>
+  <b><%= User.human_attribute_name(:major) %> :</b>
   <%= @user.major %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= User.human_attribute_name(:email) %> :</b>
   <%= @user.email %>
 </p>
 
 <p>
-  <b>Role:</b>
+  <b><%= User.human_attribute_name(:role) %> :</b>
   <%= @user.role %>
 </p>
 
 
 <p>
-  <b>Picture:</b>
+  <b><%= User.human_attribute_name(:picture) %> :</b>
   <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to 'Back', users_path, class: "btn" %>
+<%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
+<%= link_to (t "buttons.back"), users_path, class: "btn" %>

@@ -7,13 +7,35 @@ en:
     edit: "Edit"
     destroy: "Destroy"
     back: "Back"
-  
+    newcompany: "New Company"
+    newinternship: "New Internship"
+    newuser: "New User"
+
   companies:
     index:
-    show:
-    edit:
       title: "Listing companies"
+    edit:
       editcompany: "Editing Company"
+    new:
+      newcompany: "New Company"    
+
+  internships:
+    index:
+      title: "Listing internships"
+    edit:
+      editinternship: "Editing Internship" 
+    new:
+      newinternship: "New Internship"   
+
+  users:
+    index:
+      title: "Listing Users"
+    edit:
+      edituser: "Editing User"  
+    new:
+      newuser: "New User"  
+
+
   activerecord:
     attributes:
       company:
@@ -27,3 +49,18 @@ en:
         main_language: "Main Language"
         website: "Website"
         address: "Address"
+
+      internship:
+        orientation: "Orientation"
+        programming_language: "Programming Language"
+        salary: "Salary"
+        working_hours: "Working hours"
+        living_costs: "Living Costs"
+
+      user:
+        last_name: "Last Name"  
+        first_name: "First Name"
+        major: "Major"
+        email: "Email"
+        role: "Role"
+        picture: "Picture"
