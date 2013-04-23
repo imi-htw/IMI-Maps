@@ -1,4 +1,5 @@
 class InternshipsController < ApplicationController
+  before_filter :get_programming_languages, :only => [:new, :edit]
   # GET /internships
   # GET /internships.json
   def index
@@ -78,6 +79,14 @@ class InternshipsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to internships_url }
       format.json { head :no_content }
+    end
+  end
+
+  private 
+
+  def get_programming_languages
+    @programming_languages = ProgrammingLanguage.order(:name).map do |p|
+      [p.name, p.id]
     end
   end
 end
