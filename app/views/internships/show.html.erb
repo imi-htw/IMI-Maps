@@ -25,6 +25,12 @@
   <%= @internship.living_costs %>
 </p>
 
+    <p>
+        <ul class="rating_star">
+            <% (1..5).each do |i| %>
+            <% end %>
+        </ul>
+    </p>
 
 <%= link_to (t "buttons.edit"), edit_internship_path(@internship) %> |
 <%= link_to (t "buttons.back"), internships_path %>
