@@ -21,8 +21,9 @@
     <td><%= internship.living_costs %></td>
 
     <td>
-        <ul class="rating_star">
+        <ul class="rating">
             <% (1..5).each do |i| %>
+            <li class="rating_star" data-stars="<%= i %>" data-internship-id="<%= internship.id%>" id="<%= "#{internship.id}_#{i}" %>" ></li>
             <% end %>
         </ul>
     </td>

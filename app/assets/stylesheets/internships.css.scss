@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.rating {
+  margin: auto 0;
+}
+
 .rating_star {
   background: url('images/star.gif') 0 0;
-  width: 80px;
+  width: 16px;
   height: 16px;
   display: block;
   float: left;
+}
+
+.on {
+  bacground-position: 0 16px;
 }
