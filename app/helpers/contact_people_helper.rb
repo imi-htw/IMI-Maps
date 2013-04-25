@@ -1,0 +1,2 @@
+module ContactPeopleHelper
+end

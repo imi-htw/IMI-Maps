@@ -19,6 +19,21 @@
     <td><%= internship.salary %></td>
     <td><%= internship.working_hours %></td>
     <td><%= internship.living_costs %></td>
+
+
+    <td>
+        <ul class="rating">
+            <% form_id = "internship_#{internship.id}_rating" %>
+            <%= form_for internship.ratings.last || internship.ratings.build, :html => {:id => "internship_#{internship.id}_rating", :class => "star_rating_form"} do |f| %>
+                <%= f.hidden_field :internship_id %>
+                <%= f.hidden_field :stars, :id => "#{form_id}_stars" %>
+                <% end %>
+            <% (1..5).each do |i| %>
+            <li class="rating_star" data-stars="<%= i %>" data-form-id="<%= form_id%>" id="<%= "#{form_id}_#{i}" %>" ></li>
+            <% end %>
+        </ul>
+    </td>
+    
     <td><%= link_to (t "buttons.show"), internship %></td>
     <td><%= link_to (t "buttons.edit"), edit_internship_path(internship) %></td>
     <td><%= link_to (t "buttons.destroy"), internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :programming_language %><br />
-    <%= f.select :programming_language_ids, ProgrammingLanguage.order(:name).map { |n| [n.name, n.id] }, {}, { :multiple => true } %>
+    <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true } %>
   </div>
   <div class="field">
-    <%= f.label :salary %><br />
-    <%= f.text_field :salary %>
+    <%= f.label :salary_id %><br />
+    <%= f.select :salary_id, @salaries %>
   </div>
   <div class="field">
     <%= f.label :working_hours %><br />
