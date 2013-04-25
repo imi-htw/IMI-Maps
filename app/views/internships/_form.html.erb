@@ -47,9 +47,7 @@
   <hr/>
   <div class="field">
     <%= f.label :rating %><br />
-    <% (1..5).each do |i| %>
-      <li class="rating_star" data-rating-id="<%= i %>"></li>
-    <% end %>
+    <div id="edit-rating"><%= RatingRenderer.new(1, self).render_star_fields %></div>
     <%= f.hidden_field :rating %>
   </div>
   <div class="actions">    

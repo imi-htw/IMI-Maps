@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $(".rating_star").click ->
+  $("#edit-rating .rating_star").click ->
     id = $(@).attr('data-rating-id')
     setStars(id)
     setValue(id)
