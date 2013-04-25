@@ -1,4 +1,4 @@
-<%= form_for(@internship) do |f| %>
+<%= nested_form_for(@internship) do |f| %>
   <% if @internship.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
@@ -16,7 +16,7 @@
     <%= f.text_field :orientation %>
   </div>
   <div class="field">
-    <%= f.label t "internships.attributes.programming_languages"  %><br />
+    <%= f.label t "internships.attributes.programming_language"  %><br />
     <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true } %>
   </div>
   <div class="field">
@@ -31,6 +31,20 @@
     <%= f.label t "internships.attributes.living_costs"  %><br />
     <%= f.text_field :living_costs %>
   </div>
+
+   <%= f.fields_for :attachments do |attachment_form|  %>
+    <p>
+    <%= attachment_form.label :description %><br />
+    <%= attachment_form.text_field :description %>
+    </p>
+    <p>
+    <%= attachment_form.label :file %><br />
+    <%= attachment_form.file_field :file %>
+    </p>
+    <%= attachment_form.link_to_remove "Remove this attachment" %>
+  <% end %>
+  <%= f.link_to_add "Add attachment", :attachments %>
+  <hr/>
   <div class="actions">    
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>

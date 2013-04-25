@@ -75,6 +75,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.22)
     multi_json (1.7.2)
+    nested_form (0.3.2)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
     pg (0.15.1)
@@ -155,6 +156,7 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   jquery-rails
+  nested_form
   pg
   rails (= 3.2.13)
   rspec-rails (~> 2.13.0)
