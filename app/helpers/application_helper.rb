@@ -1,6 +1,8 @@
 module ApplicationHelper
-  def rating_field(id)
-    content_tag :li, nil, :class => "rating_star", :data => { :rating_id => "#{id}" }
+
+  def render_stars(rating, template)
+    RatingRenderer.new(rating, template).render_star_fields
   end
+
 end
 

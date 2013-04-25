@@ -20,7 +20,7 @@
     <td><%= internship.salary %></td>
     <td><%= internship.working_hours %></td>
     <td><%= internship.living_costs %></td>
-    <td><%= RatingRenderer.new(internship.rating, self).render_star_fields %>
+    <td><%= render_stars(internship.rating, self) %>
     <td><%= link_to (t "buttons.show"), internship %></td>
     <td><%= link_to (t "buttons.edit"), edit_internship_path(internship) %></td>
     <td><%= link_to (t "buttons.destroy"), internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>

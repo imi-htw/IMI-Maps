@@ -47,7 +47,7 @@
   <hr/>
   <div class="field">
     <%= f.label :rating %><br />
-    <div id="edit-rating"><%= RatingRenderer.new(1, self).render_star_fields %></div>
+    <div id="edit-rating"><%= render_stars(1, self) %></div>
     <%= f.hidden_field :rating %>
   </div>
   <div class="actions">    

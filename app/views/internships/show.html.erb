@@ -27,7 +27,7 @@
 
 <p>
   <b><%= t "internship.attributes.rating" %></b>
-  <%= RatingRenderer.new(@internship.rating, self).render_star_fields %>
+  <%= render_stars(@internship.rating, self) %>
 </p>
 
 <p>
