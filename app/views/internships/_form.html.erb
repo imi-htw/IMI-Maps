@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :orientation %><br />
+    <%= f.label t "internships.attributes.orientation" %><br />
     <%= f.text_field :orientation %>
   </div>
   <div class="field">
-    <%= f.label :programming_language %><br />
+    <%= f.label t "internships.attributes.programming_languages"  %><br />
     <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true } %>
   </div>
   <div class="field">
-    <%= f.label :salary_id %><br />
+    <%= f.label t "internships.attributes.salary"  %><br />
     <%= f.select :salary_id, @salaries %>
   </div>
   <div class="field">
-    <%= f.label :working_hours %><br />
+    <%= f.label t "internships.attributes.working_hours"  %><br />
     <%= f.text_field :working_hours %>
   </div>
   <div class="field">
-    <%= f.label :living_costs %><br />
+    <%= f.label t "internships.attributes.living_costs"  %><br />
     <%= f.text_field :living_costs %>
   </div>
   <div class="actions">    

@@ -61,7 +61,7 @@ de:
     attributes:
       last_name: "Nachname"  
       first_name: "Vorname"
-      major: "Fach"
+      major: "Studiengang"
       email: "Email"
       role: "Rolle"
       picture: "Bild"   
