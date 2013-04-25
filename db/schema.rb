@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130425121654) do
 
   create_table "attachments", :force => true do |t|
@@ -22,6 +23,9 @@ ActiveRecord::Schema.define(:version => 20130425121654) do
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
+=======
+ActiveRecord::Schema.define(:version => 20130425095852) do
+>>>>>>> add rating to internship model
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130425121654) do
     t.float    "living_costs"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "rating"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
