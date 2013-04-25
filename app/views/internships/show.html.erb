@@ -30,5 +30,11 @@
   <%# render_stars(@internship.rating) %>
 </p>
 
+<p>
+  <b>Pictures</b>
+  <% @internship.attachments.each do |i| %>  
+  <%= image_tag(i.file, :height => '100') %>
+  <% end %>
+
 <%= link_to (t "buttons.edit"), edit_internship_path(@internship) %> |
 <%= link_to (t "buttons.back"), internships_path %>

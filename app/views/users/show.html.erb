@@ -27,7 +27,7 @@
 
 
 <p>
-  <b><%= User.human_attribute_name(:picture) %> :</b>
+  <b><%= t "users.attributes.picture" %> :</b>
   <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
 </p>
 

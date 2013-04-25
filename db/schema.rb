@@ -11,21 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130425121654) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
     t.string   "file"
     t.integer  "attachable_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
-=======
-ActiveRecord::Schema.define(:version => 20130425095852) do
->>>>>>> add rating to internship model
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -52,16 +49,6 @@ ActiveRecord::Schema.define(:version => 20130425095852) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "internship_pics", :force => true do |t|
-    t.text     "description"
-    t.string   "file"
-    t.integer  "attachable_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "internship_pics", ["attachable_id"], :name => "index_internship_pics_on_attachable_id"
 
   create_table "internships", :force => true do |t|
     t.string   "orientation"

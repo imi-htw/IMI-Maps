@@ -3,7 +3,7 @@ class CreateAttachments < ActiveRecord::Migration
     create_table :attachments do |t|
       t.text :description
       t.string :file
-      t.references :attachable
+      t.references :attachable, :polymorphic => true 
 
       t.timestamps
     end
