@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
-  before_filter :get_programming_languages, :only => [:new, :edit, :update, :create]
+  before_filter :get_programming_languages, :get_salaries, :only => [:new, :edit, :update, :create]
   # GET /internships
   # GET /internships.json
   def index
@@ -64,6 +64,12 @@ class InternshipsController < ApplicationController
   def get_programming_languages
     @programming_languages = ProgrammingLanguage.order(:name).map do |p|
       [p.name, p.id]
+    end
+  end
+
+  def get_salaries
+    @salaries = Salary.order(:order_id).map do |s|
+      [s.amount, s.id]
     end
   end
 
