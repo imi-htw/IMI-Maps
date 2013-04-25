@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130425065041) do
-=======
-ActiveRecord::Schema.define(:version => 20130418161512) do
->>>>>>> add Contact person scaffold
 
   create_table "companies", :force => true do |t|
     t.string   "name"
