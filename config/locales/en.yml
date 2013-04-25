@@ -12,55 +12,54 @@ en:
     newuser: "New User"
 
   companies:
+    create: "Create Company"
+    update: "Update Company"
     index:
       title: "Listing companies"
     edit:
       editcompany: "Editing Company"
     new:
-      newcompany: "New Company"    
+      newcompany: "New Company"  
+    attributes:
+      name: "Name"
+      street: "Street"
+      zip: "ZIP"
+      city: "City"
+      country: "Country"
+      number_employees: "Number Employees"
+      industry: "Industry"
+      main_language: "Main Language"
+      website: "Website"
+      address: "Address"  
 
   internships:
+    create: "Create Internship"
+    update: "Update Internship"
     index:
       title: "Listing internships"
     edit:
       editinternship: "Editing Internship" 
     new:
       newinternship: "New Internship"   
+    attributes:
+      orientation: "Orientation"
+      programming_language: "Programming Language"
+      salary: "Salary"
+      working_hours: "Working hours"
+      living_costs: "Living Costs"
 
   users:
+    create: "Create User"
+    update: "Update User"
     index:
       title: "Listing Users"
     edit:
       edituser: "Editing User"  
     new:
       newuser: "New User"  
-
-
-  activerecord:
     attributes:
-      company:
-        name: "Name"
-        street: "Street"
-        zip: "ZIP"
-        city: "City"
-        country: "Country"
-        number_employees: "Number Employees"
-        industry: "Industry"
-        main_language: "Main Language"
-        website: "Website"
-        address: "Address"
-
-      internship:
-        orientation: "Orientation"
-        programming_language: "Programming Language"
-        salary: "Salary"
-        working_hours: "Working hours"
-        living_costs: "Living Costs"
-
-      user:
-        last_name: "Last Name"  
-        first_name: "First Name"
-        major: "Major"
-        email: "Email"
-        role: "Role"
-        picture: "Picture"
+      last_name: "Last Name"  
+      first_name: "First Name"
+      major: "Major"
+      email: "Email"
+      role: "Role"

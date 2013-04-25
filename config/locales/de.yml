@@ -10,56 +10,58 @@ de:
     newcompany: "Neue Firma"
     newinternship: "Neues Praktikum"
     newuser: "Neuer Benutzer"
+  helpers:
 
   companies:
+    create: "Erstelle Firma"
+    update: "Aktualisiere Firma"
     index:
       title: "Liste von Firmen"
     edit:      
       editcompany: "Firma Bearbeiten"
     new:
-      newcompany: "Neue Firma"  
+      newcompany: "Neue Firma" 
+    attributes:
+      name: "Name"
+      street: "Straße"
+      zip: "Postleitzahl"
+      city: "Stadt"
+      country: "Land"
+      number_employees: "Anzahl von Angestellten"
+      industry: "Industrie"
+      main_language: "Sprache"
+      website: "Webseite"
+      address: "Adresse" 
 
   internships:
+    create: "Erstelle Praktikum"
+    update: "Aktualisiere Praktikum"
     index:
       title: "Liste von Praktika"
     edit:
       editinternship: "Praktikum bearbeiten"  
     new:
-      newinternship: "Neues Praktikum"  
+      newinternship: "Neues Praktikum"
+    attributes:
+      orientation: "Orientierung"
+      programming_language: "Programmiersprachen"
+      salary: "Gehalt"
+      working_hours: "Arbeitsstunden"
+      living_costs: "Lebenshaltungskosten"
 
   users:
+    create: "Erstelle Benutzer"
+    update: "Aktualisiere Benutzer"
     index:
       title: "Liste von Benutzern"
     edit:
        edituser: "Benutzer bearbeiten"  
     new:
-       newuser: "Neuer Benutzer"   
-
-  activerecord:
+       newuser: "Neuer Benutzer"
     attributes:
-      company:
-        name: "Name"
-        street: "Straße"
-        zip: "Postleitzahl"
-        city: "Stadt"
-        country: "Land"
-        number_employees: "Anzahl von Angestellten"
-        industry: "Industrie"
-        main_language: "Sprache"
-        website: "Webseite"
-        address: "Adresse"
-
-      internship:
-        orientation: "Orientierung"
-        programming_language: "Programmiersprachen"
-        salary: "Gehalt"
-        working_hours: "Arbeitsstunden"
-        living_costs: "Lebenshaltungskosten"
-
-      user:
-        last_name: "Nachname"  
-        first_name: "Vorname"
-        major: "Fach"
-        email: "Email"
-        role: "Rolle"
-        picture: "Bild"
+      last_name: "Nachname"  
+      first_name: "Vorname"
+      major: "Fach"
+      email: "Email"
+      role: "Rolle"
+      picture: "Bild"   

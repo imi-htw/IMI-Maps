@@ -1,33 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= Company.human_attribute_name(:name) %> :</b>
+  <b><%= t "companies.attributes.name"  %> :</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b><%= Company.human_attribute_name(:address) %>:</b>
+  <b><%= t "companies.attributes.address"  %>:</b>
   <%= "#{@company.street}, #{@company.zip} #{@company.city}, #{@company.country}" %>
 </p>
 
 
 <p>
-  <b><%= Company.human_attribute_name(:number_employees) %> :</b>
+  <b><%= t "companies.attributes.number_employees"  %> :</b>
   <%= @company.number_employees %>
 </p>
 
 <p>
-  <b><%= Company.human_attribute_name(:industry) %> :</b>
+  <b><%= t "companies.attributes.industry"  %> :</b>
   <%= @company.industry %>
 </p>
 <p>
 
-<b><%= Company.human_attribute_name(:main_language) %> :</b>
+<b><%= t "companies.attributes.main_language"  %> :</b>
   <%= @company.main_language %>
 </p>
 
 <p>
-  <b><%= Company.human_attribute_name(:website) %> :</b>
+  <b><%= t "companies.attributes.website"  %> :</b>
   <%= @company.website %>
 </p>
 

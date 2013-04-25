@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= Internship.human_attribute_name(:orientation) %> :</b>
+  <b><%= t "internships.attributes.orientation" %> :</b>
   <%= @internship.orientation %>
 </p>
 
 <p>
-  <b><%= Internship.human_attribute_name(:programming_language) %> :</b>
+  <b><%= t "internships.attributes.programming_languages" %> :</b>
   <%= @internship.programming_languages.map(&:name) %>
 </p>
 
 <p>
-  <b><%= Internship.human_attribute_name(:salary) %> :</b>
+  <b><%= t "internships.attributes.salary" %> :</b>
   <%= @internship.salary %>
 </p>
 
 <p>
-  <b><%= Internship.human_attribute_name(:working_hours) %> :</b>
+  <b><%= t "internships.attributes.working_hours" %> :</b>
   <%= @internship.working_hours %>
 </p>
 
 <p>
-  <b><%= Internship.human_attribute_name(:living_costs) %> :</b>
+  <b><%= t "internships.attributes.living_costs" %> :</b>
   <%= @internship.living_costs %>
 </p>
 
