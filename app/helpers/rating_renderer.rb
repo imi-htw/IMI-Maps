@@ -1,7 +1,11 @@
 class RatingRenderer
   attr_reader :rating 
 
-  def initialize(rating = 0, template)
+  def initialize(rating, template)
+    if rating == nil
+      rating = 0
+    end
+
     @rating = rating
     @template = template
   end
