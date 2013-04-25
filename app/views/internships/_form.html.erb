@@ -48,7 +48,7 @@
   <div class="field">
     <%= f.label :rating %><br />
     <% (1..5).each do |i| %>
-      <li class="rating_star" data_rating_id="<%= i %>"></li>
+      <%= rating_field(i) %>
     <% end %>
     <%= f.hidden_field :rating %>
   </div>

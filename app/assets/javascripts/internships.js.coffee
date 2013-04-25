@@ -4,14 +4,14 @@
 
 $ ->
   $(".rating_star").click ->
-    id = $(@).attr('data_rating_id')
+    id = $(@).attr('data-rating-id')
     setStars(id)
     setValue(id)
 
   setStars = (id) ->
     stars = $(".rating_star")
     for star in stars
-      currentId = $(star).attr('data_rating_id')
+      currentId = $(star).attr('data-rating-id')
       if currentId <= id
         $(star).addClass('on')
       else 
