@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <b>Rating</b>
-  <%# render_stars(@internship.rating) %>
+  <b><%= t "internship.attributes.rating" %></b>
+  <%= RatingRenderer.new(@internship.rating, self).render_star_fields %>
 </p>
 
 <%= link_to (t "buttons.edit"), edit_internship_path(@internship) %> |
