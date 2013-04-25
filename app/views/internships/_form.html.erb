@@ -45,6 +45,13 @@
   <% end %>
   <%= f.link_to_add "Add attachment", :attachments %>
   <hr/>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <% (1..5).each do |i| %>
+      <li class="rating_star" data-rating-id="<%= i %>"></li>
+    <% end %>
+    <%= f.hidden_field :rating %>
+  </div>
   <div class="actions">    
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>
