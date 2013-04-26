@@ -17,7 +17,7 @@
   <tr>
     <td><%= internship.orientation %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td><%= internship.salary %></td>
+    <td><%= internship.salary.amount %></td>
     <td><%= internship.working_hours %></td>
     <td><%= internship.living_costs %></td>
     <td><%= render_stars(internship.rating, self) %>
