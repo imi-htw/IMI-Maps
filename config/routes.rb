@@ -9,8 +9,11 @@ ImiMaps::Application.routes.draw do
 
 		resources :users
 
+    resources :search, :only => [:index]
+
 		root to: 'companies#index'
 	end
+
 	match '*path', to: redirect("/#{I18n.default_locale}/%{path}") 
 	match '', to: redirect("/#{I18n.default_locale}/companies") 
   I18n.available_locales.each { |x|

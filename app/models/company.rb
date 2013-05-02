@@ -13,9 +13,5 @@ class Company < ActiveRecord::Base
 	def address
 		"#{self.street}, #{self.zip} #{self.city}, #{self.country}"
 	end
-
-	def gmaps4rails_infowindow
-    "<a href='/companies/#{id}' style='font-weight:bold'>#{self.name}</a><p>Industry: #{self.industry}</p><p>Employees: #{self.number_employees}</p><a href='#{self.website}'>#{self.website}</a>"
-  end	
 	
 end

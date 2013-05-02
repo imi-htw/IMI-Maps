@@ -4,7 +4,7 @@ class InternshipsController < ApplicationController
   # GET /internships
   # GET /internships.json
   def index
-    @internships = Internship.all
+    @internships = Internship.search(params)
     respond_with(@internships)
   end
 

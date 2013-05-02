@@ -21,4 +21,16 @@ class Internship < ActiveRecord::Base
 
   accepts_nested_attributes_for :attachments
 
+  private
+
+  def self.search(params)
+    conditions = []
+    conditions.push(["orientation LIKE '#{params[:orientation]}'"].join(' ')) unless params[:orientation].blank?
+    conditions.push(["salary >= #{params[:salary]}"].join(' ')) unless params[:salary].blank?
+    conditions.push(["working_hours <= #{params[:working_hours]}"].join(' ')) unless params[:working_hours].blank?
+    conditions.push(["living_costs <= #{params[:living_costs]}"].join(' ')) unless params[:living_costs].blank?
+    blub = conditions.join(' AND ')
+    Internship.find(:all, :conditions => blub)    
+  end
+
 end

@@ -1,0 +1,19 @@
+<h1><%= t ".title" %></h1>
+
+<%= form_tag(internships_path, :method => 'get') do %>
+  <p>
+    <p><%= t "internships.attributes.orientation" %><br /> </p>
+    <%= text_field_tag :orientation, params[:orientation] %>
+
+    <p><%= t "internships.attributes.salary" %><br /> </p>
+    <%= text_field_tag :salary, params[:salary] %>
+
+    <p><%= t "internships.attributes.working_hours" %><br /> </p>
+    <%= text_field_tag :working_hours, params[:working_hours] %>
+
+    <p><%= t "internships.attributes.living_costs" %><br /> </p>
+    <%= text_field_tag :living_costs, params[:living_costs] %>
+    <br/>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
