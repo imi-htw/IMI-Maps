@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
   has_one :internship
 
   mount_uploader :picture, PictureUploader
+
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
