@@ -1,5 +1,6 @@
 ImiMaps::Application.routes.draw do
 
+
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 		resources :internships
 
@@ -10,6 +11,8 @@ ImiMaps::Application.routes.draw do
 		resources :users
 
     resources :search, :only => [:index]
+
+    resources :sessions
 
 		root to: 'companies#index'
 	end
