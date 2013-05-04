@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430131305) do
-
-  create_table "answers", :force => true do |t|
-    t.string   "antworter"
-    t.text     "body"
-    t.integer  "post_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "answers", ["post_id"], :name => "index_answers_on_post_id"
+ActiveRecord::Schema.define(:version => 20130504150832) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -33,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20130430131305) do
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
+
+  create_table "answers", :force => true do |t|
+    t.string   "antworter"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "answers", ["post_id"], :name => "index_answers_on_post_id"
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(:version => 20130430131305) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "internship_searches", :force => true do |t|
+    t.string   "country"
+    t.string   "city"
+    t.string   "industry"
+    t.string   "orientation"
+    t.integer  "min_salary"
+    t.integer  "max_salary"
+    t.integer  "rating"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "internships", :force => true do |t|
     t.string   "orientation"
     t.integer  "salary_id"
@@ -104,8 +116,8 @@ ActiveRecord::Schema.define(:version => 20130430131305) do
     t.string   "major"
     t.string   "email"
     t.string   "role"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "picture"
     t.string   "password_digest"
   end
