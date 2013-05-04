@@ -12,6 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= f.label t "users.attributes.email"  %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label t "users.attributes.password" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label t "users.attributes.password_confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
     <%= f.label t "users.attributes.last_name"  %><br />
     <%= f.text_field :last_name %>
   </div>
@@ -22,10 +34,6 @@
   <div class="field">
     <%= f.label t "users.attributes.major"  %><br />
     <%= f.text_field :major %>
-  </div>
-  <div class="field">
-    <%= f.label t "users.attributes.email"  %><br />
-    <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label t "users.attributes.role"  %><br />
