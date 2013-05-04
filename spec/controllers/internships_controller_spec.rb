@@ -24,7 +24,12 @@ describe InternshipsController do
   # Internship. As you add validations to Internship, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "orientation" => "MyString" }
+    { "orientation" => "MyString",
+      "programming_language_ids" => [],
+      "living_costs" => 1600,
+      "salary_id" => 2,
+      "rating" => 4
+    }
   end
 
   # This should return the minimal set of values that should be in the session
