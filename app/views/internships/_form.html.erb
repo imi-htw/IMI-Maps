@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label t "internships.attributes.company" %>
+    <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] }  %>
+  </div>
+  <div class="field">
     <%= f.label t "internships.attributes.orientation" %><br />
     <%= f.text_field :orientation %>
   </div>

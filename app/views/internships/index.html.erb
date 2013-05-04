@@ -2,6 +2,7 @@
 
 <table class="table">
   <tr>
+    <th><%= t "internships.attributes.company" %></th>
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th><%= t "internships.attributes.salary" %></th>
@@ -16,6 +17,7 @@
 
 <% @internships.each do |internship| %>
   <tr>
+    <td><%= internship.company.name %></td>
     <td><%= internship.orientation %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= internship.salary.amount %></td>

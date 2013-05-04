@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b><%= t "internships.attributes.company" %> :</b>
+  <%= @internship.company.name %>
+</p>
+<p>
   <b><%= t "internships.attributes.orientation" %> :</b>
   <%= @internship.orientation %>
 </p>
