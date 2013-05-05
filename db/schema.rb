@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504155515) do
+ActiveRecord::Schema.define(:version => 20130505063545) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130504155515) do
     t.integer  "order_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "min_amount"
+    t.integer  "max_amount"
   end
 
   create_table "users", :force => true do |t|
