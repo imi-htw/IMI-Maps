@@ -9,27 +9,19 @@
 </head>
 <body>
 <div class="container">
-  <header>
-    <div class="nav pull-right">
-    	Language:
-    	<%= link_to_unless_current "English", locale: "en" %>
-    	<%= link_to_unless_current "Deutsch", locale: "de" %>
-    </div>
-    <div class="nav pull-left">
-      <%= link_to_unless_current (t "search.title"), "/search"  %>
-    </div>
-    <div class="nav pull-left">
-      <%= link_to_unless_current (t "users.name"), users_path  %>
-    </div>
-    <div class="nav pull-left">
-      <%= link_to_unless_current (t "companies.name"), companies_path   %>
-    </div>
-    <div class="nav pull-left">
-      <%= link_to_unless_current (t "internships.name"), internships_path  %>
-    </div>
-  </header>
-  <br/>
-  <br/>
+
+  <div class="konto">
+   <img src="../../images/login_icon.png"/><a href="internships">Konto</a>
+  </div>
+  <div class="abmelden">
+   <img src="../../images/logout.jpg"/><a href="internships">Abmelden</a>
+  </div>
+
+  <div class="nav_pull-right">
+  	<%= link_to_unless_current "English", locale: "en" %> |
+  	<%= link_to_unless_current "Deutsch", locale: "de" %>
+  </div>
+  <%= render 'layouts/authentication' %>
 <%= yield %>
 </div>
 </body>

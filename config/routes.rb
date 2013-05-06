@@ -1,5 +1,6 @@
 ImiMaps::Application.routes.draw do
 
+
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 		resources :internships
 
@@ -11,7 +12,12 @@ ImiMaps::Application.routes.draw do
 
     resources :search, :only => [:index]
 
-		root to: 'companies#index'
+    resources :sessions
+
+		root to: 'sessions#new'
+    get 'signup', to: 'users#new', as: 'signup'
+    get 'login', to: 'sessions#new', as: 'login'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
 	end
 
 	match '*path', to: redirect("/#{I18n.default_locale}/%{path}") 

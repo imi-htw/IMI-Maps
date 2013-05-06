@@ -31,10 +31,11 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.13.0'
+  gem 'rspec-rails', '~> 2.13.1'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :production do 
@@ -42,7 +43,7 @@ group :production do
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

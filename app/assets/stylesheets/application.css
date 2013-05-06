@@ -15,13 +15,14 @@
  #en {
   background-image: url('images/en.gif');
   background-repeat:repeat-y; 
-  
  }
 
 
 #de {
   background-image: url('images/de.png');
   background-repeat: repeat-y;
- 
+}
 
+.container{
+  z-index:4;
 }
