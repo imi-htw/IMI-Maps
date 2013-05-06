@@ -9,11 +9,27 @@
 </head>
 <body>
 <div class="container">
-  <div class="nav pull-right">
-  	Language:
-  	<%= link_to_unless_current "English", locale: "en" %>
-  	<%= link_to_unless_current "Deutsch", locale: "de" %>
-  </div>
+  <header>
+    <div class="nav pull-right">
+    	Language:
+    	<%= link_to_unless_current "English", locale: "en" %>
+    	<%= link_to_unless_current "Deutsch", locale: "de" %>
+    </div>
+    <div class="nav pull-left">
+      <%= link_to_unless_current (t "search.title"), "/search"  %>
+    </div>
+    <div class="nav pull-left">
+      <%= link_to_unless_current (t "users.name"), users_path  %>
+    </div>
+    <div class="nav pull-left">
+      <%= link_to_unless_current (t "companies.name"), companies_path   %>
+    </div>
+    <div class="nav pull-left">
+      <%= link_to_unless_current (t "internships.name"), internships_path  %>
+    </div>
+  </header>
+  <br/>
+  <br/>
 <%= yield %>
 </div>
 </body>

@@ -14,6 +14,7 @@ en:
     newuser: "New User"
 
   companies:
+    name: "Companies"
     create: "Create Company"
     update: "Update Company"
     index:
@@ -35,6 +36,7 @@ en:
       address: "Address"  
 
   internships:
+    name: "Internships"
     create: "Create Internship"
     update: "Update Internship"
     index:
@@ -51,6 +53,7 @@ en:
       living_costs: "Living Costs"
 
   users:
+    name: "Users"
     create: "Create User"
     update: "Update User"
     index:

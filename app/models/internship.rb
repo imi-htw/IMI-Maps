@@ -24,13 +24,25 @@ class Internship < ActiveRecord::Base
   private
 
   def self.search(params)
-    conditions = []
-    conditions.push(["orientation LIKE '#{params[:orientation]}'"].join(' ')) unless params[:orientation].blank?
-    conditions.push(["salary >= #{params[:salary]}"].join(' ')) unless params[:salary].blank?
-    conditions.push(["working_hours <= #{params[:working_hours]}"].join(' ')) unless params[:working_hours].blank?
-    conditions.push(["living_costs <= #{params[:living_costs]}"].join(' ')) unless params[:living_costs].blank?
-    blub = conditions.join(' AND ')
-    Internship.find(:all, :conditions => blub)    
+    if params
+      conditions = []
+      conditions.push(["orientation LIKE '#{params[:orientation]}'"]) unless params[:orientation].blank?
+      conditions.push(["salary >= #{params[:salary]}"]) unless params[:salary].blank?
+      conditions.push(["working_hours <= #{params[:working_hours]}"]) unless params[:working_hours].blank?
+      conditions.push(["living_costs <= #{params[:living_costs]}"]) unless params[:living_costs].blank?
+      conditions.push(["rating >= #{params[:rating]}"]) unless params[:rating].blank?  
+      if params[:programming_language_ids].present?    
+        programming_languages_string = []
+        params[:programming_language_ids].each do |x|
+          programming_languages_string.push(ProgrammingLanguage.find(x).name)
+        end
+        conditions.push(["programming_languages IN #{programming_languages_string}"])
+      end
+      blub = conditions.join(' AND ')
+      Internship.find(:all, :conditions => blub)    
+    else
+      Internship.find(:all)
+    end
   end
 
 end
