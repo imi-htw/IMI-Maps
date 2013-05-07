@@ -32,6 +32,14 @@
     <%= f.text_field :living_costs %>
   </div>
 
+  <% f.fields_for :comments do |builder| %>
+  <p>
+    <%= builder.label :content "Comment" %><br />
+    <%= builder.text_area :content, :rows => 3 %>
+
+  </p>
+  <% end %>
+
    <%= f.fields_for :attachments do |attachment_form|  %>
     <p>
     <%= attachment_form.label :description %><br />

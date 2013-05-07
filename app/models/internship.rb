@@ -21,6 +21,8 @@ class Internship < ActiveRecord::Base
 
   accepts_nested_attributes_for :attachments
 
+  has_many :comments, :dependent => :destroy
+
   private
 
   def self.search(params)

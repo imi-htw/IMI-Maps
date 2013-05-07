@@ -20,6 +20,7 @@ class InternshipsController < ApplicationController
   def new
     @internship = Internship.new
     respond_with(@internship)
+    3.times { @internship.comments.build }
   end
 
   # GET /internships/1/edit
