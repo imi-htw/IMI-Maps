@@ -60,18 +60,4 @@ class InternshipsController < ApplicationController
     end
   end
 
-  private
-
-  def get_programming_languages
-    @programming_languages = ProgrammingLanguage.order(:name).map do |p|
-      [p.name, p.id]
-    end
-  end
-
-  def get_salaries
-    @salaries = Salary.order(:order_id).map do |s|
-      [s.amount, s.id]
-    end
-  end
-
 end
