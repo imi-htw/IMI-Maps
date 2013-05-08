@@ -1,0 +1,37 @@
+<h1>Advanced Search</h1>
+
+<%= form_for @internship_search do |f| %>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :orientation %><br />
+    <%= f.text_field :orientation %>
+  </div>
+  <div class="field">
+    <%= f.label :industry %><br />
+    <%= f.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :max_salary %><br />
+    <%= f.number_field :max_salary %>
+  </div>
+  <div class="field">
+    <%= f.label :min_salary %><br />
+    <%= f.number_field :min_salary %>
+  </div>
+  <div class="field">
+    <%= f.label :programming_language_ids %><br />
+    <%= f.select :programming_language_ids, get_programming_languages, {}, { :multiple => true } %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %> 

@@ -1,0 +1,5 @@
+<h1>Search Results</h1>
+
+<% @internship_search.internships.each do |internship| %>
+  <%= link_to "#{internship.orientation}", internship_path(internship) %><br />
+<% end %>
