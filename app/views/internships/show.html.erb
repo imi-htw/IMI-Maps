@@ -16,7 +16,7 @@
 
 <p>
   <b><%= t "internships.attributes.salary" %> :</b>
-  <%= @internship.salary.amount %>
+  <%= @internship.salary.try(:amount) %>
 </p>
 
 <p>
