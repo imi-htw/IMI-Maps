@@ -16,19 +16,8 @@
 
 <div class="container">
 
-  <div class="konto">
-   <img src="../../images/login_icon.png"/><a href="internships">Konto</a>
-  </div>
-  <div class="abmelden">
-   <img src="../../images/logout.jpg"/><a href="internships">Abmelden</a>
-  </div>
 
-  <div class="nav_pull-right">
-  	<%= link_to_unless_current "English", locale: "en" %> |
-  	<%= link_to_unless_current "Deutsch", locale: "de" %>
-  </div>
   <%= render 'layouts/authentication' %>
-<%= yield %>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
