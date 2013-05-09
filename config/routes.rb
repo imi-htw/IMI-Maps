@@ -31,8 +31,8 @@ ImiMaps::Application.routes.draw do
   I18n.available_locales.each { |x|
     match '/#{x}', to: redirect("/#{x.to_s}/companies")
   }
-  match 'de', to: redirect("/de/companies")
-  match 'en', to: redirect("/en/companies")
+  match 'de', to: redirect("/de/sessions#new")
+  match 'en', to: redirect("/en/sessions#new")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
