@@ -43,11 +43,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id if current_user
     @comment.user_id = 1
-    @comment.internship_id = 1
     flash[:notice] = "Comment was successfully created" if @comment.save
 
-
-    redirect_to internships_path
+    redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
 
   end
 
@@ -73,10 +71,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to companies_url }
-      format.json { head :no_content }
-    end
+    redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
+
   end
 
 end
