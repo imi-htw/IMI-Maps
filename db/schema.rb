@@ -24,16 +24,6 @@ ActiveRecord::Schema.define(:version => 20130505063545) do
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
 
-  create_table "answers", :force => true do |t|
-    t.string   "antworter"
-    t.text     "body"
-    t.integer  "post_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "answers", ["post_id"], :name => "index_answers_on_post_id"
-
   create_table "comments", :force => true do |t|
     t.string   "commenter"
     t.text     "body"

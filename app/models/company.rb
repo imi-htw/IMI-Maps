@@ -13,5 +13,16 @@ class Company < ActiveRecord::Base
 	def address
 		"#{self.street}, #{self.zip} #{self.city}, #{self.country}"
 	end
+
+  
+  def find_company(search)
+    companies = Company.all
+    search.split(" ").each do |str| 
+      companies = companies.where('country like ?', str)
+      companies = companies.where('city like ?', str)
+      companies = companies.where('zip like ?', str)
+    end
+    companies.uniq
+  end
 	
 end

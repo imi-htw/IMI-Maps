@@ -5,7 +5,7 @@ class InternshipSearchesController < ApplicationController
 
   def create
     @internship_search = InternshipSearch.create!(params[:internship_search])
-    binding.pry
+    #binding.pry
     redirect_to @internship_search
   end
 

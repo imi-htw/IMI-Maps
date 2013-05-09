@@ -15,6 +15,21 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def find_company
+    puts "blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    @companies = Company.find_company(params[:search])
+
+    @pins = @companies.to_gmaps4rails do |company, marker |
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{company.website}'>#{company.website}</a>")
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pins }
+    end
+
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show

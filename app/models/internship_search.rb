@@ -20,4 +20,5 @@ private
     internships = internships.where('salaries.max_amount <= ?', max_salary) if max_salary
     internships.uniq
   end
+
 end
