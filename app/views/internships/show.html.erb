@@ -33,17 +33,46 @@
   <b><%= t "internship.attributes.rating" %></b>
   <%= render_stars(@internship.rating, self) %>
 </p>
-
+<br/>
 <p>
   <b><%= t "internships.attributes.user" %> :</b>
   <%= @internship.user.name %>
 </p>
 
-<p>
-  <b>Pictures</b>
+<% if @internship.attachments.present? %>
+  <b><%= t "internships.attributes.pictures" %> :</b>
   <% @internship.attachments.each do |i| %>  
-  <%= image_tag(i.file, :height => '100') %>
+    <%= image_tag(i.file, :height => '100') %>
   <% end %>
+  <br/>
+<% end %>
+
+  <b><%= t "internships.attributes.comments" %> :</b>
+  <br/>
+  <br/>
+
+<% @internship.comments.each do |i| %>  
+  <%= i.user.name %> 
+  at
+  <%= i.created_at %>
+  :
+  <br/>
+  <br/>
+  <%= i.body %>
+  <br/>
+  <br/>
+  <br/>
+<% end %>
+
+<%= form_for(@comment) do |f| %>
+<div class="field">
+    <%= f.label t "comments.attributes.body" %><br />
+    <%= f.text_field :body %>
+    <div class="actions">
+    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+  </div>
+  </div>
+<% end %>
 
 <%= link_to (t "buttons.edit"), edit_internship_path(@internship) %> |
 <%= link_to (t "buttons.back"), internships_path %>

@@ -12,6 +12,7 @@ de:
     newcompany: "Neue Firma"
     newinternship: "Neues Praktikum"
     newuser: "Neuer Benutzer"
+    save: "Speichern"
   helpers:
 
   companies:
@@ -47,11 +48,14 @@ de:
     new:
       newinternship: "Neues Praktikum"
     attributes:
+      comments: "Kommentare"
+      pictures: "Bilder"
       orientation: "Orientierung"
       programming_language: "Programmiersprachen"
       salary: "Gehalt"
       working_hours: "Arbeitsstunden"
       living_costs: "Lebenshaltungskosten"
+      company: "Firma"
 
   users:
     name: "Benutzer"
@@ -73,3 +77,7 @@ de:
       password_confirmation: "Passwort bestaetigen"
       role: "Rolle"
       picture: "Bild"   
+
+  comments:
+    attributes: 
+      body: "Kommentar"

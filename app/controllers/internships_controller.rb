@@ -12,6 +12,7 @@ class InternshipsController < ApplicationController
   # GET /internships/1.json
   def show
     @internship = Internship.find(params[:id])
+    @comment = Comment.new
     respond_with(@internship)
   end
 
@@ -20,7 +21,6 @@ class InternshipsController < ApplicationController
   def new
     @internship = Internship.new
     respond_with(@internship)
-    3.times { @internship.comments.build }
   end
 
   # GET /internships/1/edit

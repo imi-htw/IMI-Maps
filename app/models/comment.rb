@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  attr_accessible :body  
+  
   belongs_to :internship
-  attr_accessible :body, :commenter
+  belongs_to :user
 end

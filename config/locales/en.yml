@@ -12,6 +12,7 @@ en:
     newcompany: "New Company"
     newinternship: "New Internship"
     newuser: "New User"
+    save: "Save"
 
   companies:
     name: "Companies"
@@ -46,11 +47,14 @@ en:
     new:
       newinternship: "New Internship"   
     attributes:
+      comments: "Comments"
+      pictures: "Pics"
       orientation: "Orientation"
       programming_language: "Programming Language"
       salary: "Salary"
       working_hours: "Working hours"
       living_costs: "Living Costs"
+      company: "Company"
 
   users:
     name: "Users"
@@ -71,3 +75,7 @@ en:
       password: "Password"
       password_confirmation: "Password confirmation"
       role: "Role"
+
+comments:
+    attributes: 
+      body: "Comment"
