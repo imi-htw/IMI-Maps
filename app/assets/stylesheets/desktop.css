@@ -1,5 +1,4 @@
-@charset "UTF-8";
-@media screen and (min-width: 900px){
+/*@media screen and (min-width: 900px){
 
   body{
     background: url(../../images/bg2.jpg)  ;
@@ -9,6 +8,7 @@
     margin-bottom: 20px;
   }
 
+<<<<<<< HEAD
   .nav_pull-right{
     position: fixed;
     z-index: 3;
@@ -126,6 +126,39 @@
   .menu ul li a{
     float: left;
     text-decoration: none;
+=======
+.menu-top{
+	background:#009966;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+}
+.menu{
+	font-family:Myriad Pro, Verdana, Geneva, sans-serif;
+	font-size:23px;
+	width: 100%;
+	height: 90px;
+	left:	0px;
+	background: #fff; 
+	position:fixed;
+	border-bottom: solid 5px #000;
+	z-index: 2;
+}
+.menu ul{
+    margin: 0; 
+	padding: 0;
+	float:left;
+	margin-left: 50%;
+	margin-top:45px;
+}
+.menu ul li{
+    display: inline;
+}
+.menu ul li a{
+    float: left; 
+	text-decoration: none;
+>>>>>>> css code überarbeitet und verbessert, dropdown menü erstellt, angepasst und kleine weitere fixes
     color: black;
     padding: 10.5px 11px;
     margin-left: 12px;
@@ -133,6 +166,7 @@
 
   .menu ul li a:visited{
     color: #000;
+<<<<<<< HEAD
     text-decoration: none;
   }
 
@@ -140,3 +174,36 @@
       color: #6C6;
   }
 }
+=======
+}
+.menu ul li a:hover, .menu ul li .current{
+    color: #000;
+	background-color: #6C6;
+	border-radius:5px 5px 0px 0px;
+	padding-bottom: 14px;
+}
+
+.nav-pull{
+	z-index:3;
+	right:-371px;
+	margin-right:50%;
+	color:#000;
+	background-color:#DFDFDF;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius:0px 0px 5px 5px;
+	opacity: 0.75;
+}
+
+.nav_pull a{
+	font-weight:bold;
+	color:#000000;
+}
+.nav_pull a:hover{
+	font-weight:bold;
+	color:#6C6;
+}
+
+}*/
+>>>>>>> css code überarbeitet und verbessert, dropdown menü erstellt, angepasst und kleine weitere fixes
