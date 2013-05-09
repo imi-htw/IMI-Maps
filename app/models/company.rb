@@ -1,5 +1,4 @@
 class Company < ActiveRecord::Base
-  include Rails.application.routes.url_helpers
   attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website
 
   geocoded_by :address
