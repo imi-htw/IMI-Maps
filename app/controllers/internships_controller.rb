@@ -13,6 +13,7 @@ class InternshipsController < ApplicationController
   def show
     @internship = Internship.find(params[:id])
     @comment = Comment.new
+    @answer = Answer.new
     respond_with(@internship)
   end
 

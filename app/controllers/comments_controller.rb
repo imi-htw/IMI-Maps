@@ -42,7 +42,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id if current_user
-    @comment.user_id = 1
     flash[:notice] = "Comment was successfully created" if @comment.save
 
     redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
@@ -70,7 +69,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
+    flash[:notice] = "Comment was successfully deleted"
     redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
 
   end

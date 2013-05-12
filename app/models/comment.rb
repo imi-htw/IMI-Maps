@@ -3,4 +3,6 @@ class Comment < ActiveRecord::Base
   
   belongs_to :internship
   belongs_to :user
+
+  has_one :answer, :dependent => :destroy
 end

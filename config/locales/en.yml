@@ -14,6 +14,9 @@ en:
     newuser: "New User"
     save: "Save"
 
+  helpers:
+    at: "at"
+
   companies:
     name: "Companies"
     create: "Create Company"
@@ -76,6 +79,11 @@ en:
       password_confirmation: "Password confirmation"
       role: "Role"
 
-comments:
+  comments:
     attributes: 
       body: "Comment"
+
+  answers:
+    from: "Reply from"
+    attributes: 
+      body: "Reply"

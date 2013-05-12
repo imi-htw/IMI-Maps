@@ -12,8 +12,10 @@ de:
     newcompany: "Neue Firma"
     newinternship: "Neues Praktikum"
     newuser: "Neuer Benutzer"
-    save: "Speichern"
+    save: "Speichern"  
+
   helpers:
+    at: "um"
 
   companies:
     name: "Firmen"
@@ -81,3 +83,8 @@ de:
   comments:
     attributes: 
       body: "Kommentar"
+
+  answers:
+    from: "Antwort von"
+    attributes: 
+      body: "Antwort"
