@@ -24,6 +24,7 @@ body{
 .navbar-inner {
     text-align:center;
     background: url(../images/nav2.png);
+	height: 90px;
 }
 
 .navbar .nav-top > li {

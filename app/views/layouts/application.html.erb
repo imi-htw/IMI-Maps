@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMI Maps</title>
+  <title>IMI Maps | Hochschule für Wirtschaft und Technik</title>
       <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,9 +15,6 @@
 <body>
 
 <div class="container">
-
-
-  <%= render 'layouts/authentication' %>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -27,12 +24,13 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="companies"><img src="../images/logo2.png" height="144" width="108" /></a>
-          <div class="nav-collapse">
+          <div class="nav-collapse" type="button">
            <ul class="nav-top">
               <li><%= link_to "Konto", companies_path %></li>
               <li class="nav_pull-right"><%= link_to_unless_current "English", locale: "en" %> |
              <%= link_to_unless_current "Deutsch", locale: "de" %></li>
               <li><%= link_to "Abmelden", internships_path %></li>
+              <li><%= render 'layouts/authentication' %></li>
             </ul>
            </div>
         <div class="nav-collapse">
@@ -59,7 +57,6 @@
     <div clas="row">
       <div class="span12"><%= yield %></div>
     </div>
-
 </div>
 </body>
 </html>
