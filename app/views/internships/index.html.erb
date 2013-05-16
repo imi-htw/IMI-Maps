@@ -1,5 +1,4 @@
 <h1><%= t ".title" %></h1>
-
 <table class="table">
   <tr>
     <th><%= t "internships.attributes.company" %></th>
@@ -34,5 +33,6 @@
 </table>
 
 <br />
-
+<% if @current_user.internship_authorization %>
 <%= link_to (t "buttons.newinternship"), new_internship_path %>
+<% end %>

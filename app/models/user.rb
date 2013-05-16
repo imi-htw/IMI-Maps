@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :first_name, :last_name, :major, :role, :picture, :password, :password_confirmation
+  attr_accessible :email, :first_name, :last_name, :major, :role, :picture, :password, :password_confirmation, :internship_authorization
   
   # associations
   has_one :internship
