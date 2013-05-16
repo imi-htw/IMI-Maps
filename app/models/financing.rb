@@ -1,0 +1,3 @@
+class Financing < ActiveRecord::Base
+  attr_accessible :title, :body
+end

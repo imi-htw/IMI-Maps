@@ -6,7 +6,11 @@ gem 'carrierwave'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'nested_form'
+
 gem 'activeadmin'
+
+gem "rmagick", "~> 2.13.1"
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
