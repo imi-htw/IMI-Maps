@@ -2,3 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+  background: url(../images/htw_bg.gif);
+ }
+
+.row{
+  margin-top: 20px;
+}
+
+.login{
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 300px;
+  border-radius:5px 5px 5px 5px;
+  text-align: center;
+  margin:0 auto;
+  float:none;
+  padding: 1px 0px 20px 0px;
+}
+
+#login-element{
+  padding-bottom: 10px;
+}
