@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController::Base
+class CommentsController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
@@ -10,7 +10,7 @@ class CommentsController < ApplicationController::Base
     end
   end
 
-   # GET /companies/1
+  # GET /companies/1
   # GET /companies/1.json
   def show
     @comment = Comment.find(params[:id])
