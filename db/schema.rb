@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516123014) do
+
+ActiveRecord::Schema.define(:version => 20130516133027) do
+
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,14 +67,6 @@ ActiveRecord::Schema.define(:version => 20130516123014) do
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
-
-  create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "user_id"
-    t.integer  "internship_id"
-  end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -152,6 +146,14 @@ ActiveRecord::Schema.define(:version => 20130516123014) do
     t.datetime "updated_at", :null => false
     t.integer  "min_amount"
     t.integer  "max_amount"
+  end
+
+  create_table "user_comments", :force => true do |t|
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+    t.integer  "internship_id"
   end
 
   create_table "users", :force => true do |t|
