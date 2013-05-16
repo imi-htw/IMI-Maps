@@ -21,12 +21,12 @@ ActiveAdmin.register User do
     end 
 
     index do
-	  column :id
-	  column :first_name
-	  column :last_name
-	  column :email
-	  column :internship_authorization, :label => "internship authorization"
-	  default_actions
-	end
+  	  column :id
+  	  column :first_name
+  	  column :last_name
+  	  column :email
+  	  column :internship_authorization, :label => "internship authorization"
+  	  default_actions
+  	end
 
 end

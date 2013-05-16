@@ -2,11 +2,6 @@
 <%= yield :scripts %>
 <br/> 
 
-<%= form_tag( { :controller => :company, :action => :find_company }) do %>
-    <%= text_field_tag :search %>    
-  <div class="actions"><%= submit_tag "Search" %></div>
-<% end %>
-
 <table class="table">
   <tr>
     <th><%= t "companies.attributes.name" %></th>

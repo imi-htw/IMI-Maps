@@ -17,7 +17,6 @@ class CompaniesController < ApplicationController
   end
 
   def find_company
-    puts "blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     @companies = Company.find_company(params[:search])
 
     @pins = @companies.to_gmaps4rails do |company, marker |
