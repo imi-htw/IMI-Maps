@@ -28,4 +28,7 @@
 # Ignore Rbenv specific files
 /bin
 
+# Ignore public uploads 
+/public/uploads
+
 *~
