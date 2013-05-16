@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :authorize
 
   def create
     @answer = Answer.new(params[:answer])

@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :authorize
   # GET /companies
   # GET /companies.json
   def index
