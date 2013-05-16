@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   
   private
+
+    def signed_in_user
+      redirect_to root_url unless current_user.present?
+    end
   
   	def set_locale
   	  I18n.locale = params[:locale] if params[:locale].present?

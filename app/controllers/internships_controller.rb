@@ -1,6 +1,7 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
   before_filter :get_programming_languages, :get_salaries, :only => [:new, :edit, :update, :create]
+  before_filter :signed_in_user
   # GET /internships
   # GET /internships.json
   def index
