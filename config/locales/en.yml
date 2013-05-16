@@ -50,7 +50,7 @@ en:
     new:
       newinternship: "New Internship"   
     attributes:
-      comments: "Comments"
+      comments: "UserComments"
       pictures: "Pics"
       orientation: "Orientation"
       programming_language: "Programming Language"
@@ -81,7 +81,7 @@ en:
 
   comments:
     attributes: 
-      body: "Comment"
+      body: "UserComment"
 
   answers:
     from: "Reply from"

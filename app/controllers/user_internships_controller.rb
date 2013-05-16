@@ -13,7 +13,7 @@ class InternshipsController < ApplicationController
   # GET /internships/1.json
   def show
     @internship = Internship.find(params[:id])
-    @comment = Comment.new
+    @comment = UserComment.new
     @answer = Answer.new
     
     respond_with(@internship)

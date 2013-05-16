@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class UserComment < ActiveRecord::Base
   attr_accessible :body, :internship_id
   
   belongs_to :internship

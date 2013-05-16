@@ -1,8 +1,8 @@
-class CommentsController < ApplicationController
+class UserCommentsController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @comments = Comment.all
+    @comments = UserComment.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
-    @comment = Comment.find(params[:id])
+    @comment = UserComment.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   # GET /companies/new
   # GET /companies/new.json
   def new
-    @comment = Comment.new
+    @comment = UserComment.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,15 +34,15 @@ class CommentsController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @comment = Comment.find(params[:id])
+    @comment = UserComment.find(params[:id])
   end
 
   # POST /companies
   # POST /companies.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = UserComment.new(params[:comment])
     @comment.user_id = current_user.id if current_user
-    flash[:notice] = "Comment was successfully created" if @comment.save
+    flash[:notice] = "UserComment was successfully created" if @comment.save
 
     redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
 
@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.json
   def update
-    @comment = Comment.find(params[:id])
+    @comment = UserComment.find(params[:id])
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
@@ -67,9 +67,9 @@ class CommentsController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = UserComment.find(params[:id])
     @comment.destroy
-    flash[:notice] = "Comment was successfully deleted"
+    flash[:notice] = "UserComment was successfully deleted"
     redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
 
   end
