@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  background: url(../images/htw_bg.gif);
+  background: ;
  }
 
 .row{
@@ -15,7 +15,7 @@ body{
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 300px;
-  border-radius:5px 5px 5px 5px;
+  border-radius:10px 10px 10px 10px;
   text-align: center;
   margin:0 auto;
   float:none;
@@ -24,4 +24,16 @@ body{
 
 #login-element{
   padding-bottom: 10px;
+}
+
+#email{
+  border-radius:5px 5px 5px 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+#password{
+  border-radius:5px 5px 5px 5px;
+  padding: 5px;
+  margin-top: 5px;
 }
