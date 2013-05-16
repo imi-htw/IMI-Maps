@@ -21,6 +21,8 @@ ImiMaps::Application.routes.draw do
 
     resources :answers
 
+    resources :faq
+
     resources :internship_searches
 
 		root to: 'sessions#new'

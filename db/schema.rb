@@ -134,6 +134,15 @@ ActiveRecord::Schema.define(:version => 20130516091027) do
     t.integer "internship_id"
   end
 
+  create_table "profils", :force => true do |t|
+    t.string   "nachname"
+    t.string   "vorname"
+    t.string   "email"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "programming_languages", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
