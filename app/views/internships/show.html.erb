@@ -36,13 +36,13 @@
 <br/>
 <p>
   <b><%= t "internships.attributes.user" %> :</b>
-  <%= @internship.user.name %>
+  <%= @internship.try(:user).try(:name) %>
 </p>
 
 <% if @internship.attachments.present? %>
   <b><%= t "internships.attributes.pictures" %> :</b>
-  <% @internship.attachments.each do |i| %>  
-    <%= image_tag(i.file, :height => '100') %>
+  <% @internship.attachments.each do |attachment| %> 
+    <%= image_tag attachment.file_url(:thumb) %>
   <% end %>
   <br/>
 <% end %>
