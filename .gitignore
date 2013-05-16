@@ -25,4 +25,7 @@
 .ruby-version
 .ruby-gemset
 
+# Ignore Rbenv specific files
+/bin
+
 *~
