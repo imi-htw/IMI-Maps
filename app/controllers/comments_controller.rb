@@ -1,5 +1,31 @@
 class CommentsController < ApplicationController
+
   before_filter :signed_in_user
+
+  # GET /companies
+  # GET /companies.json
+  def index
+    @comments = Comment.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @comments }
+    end
+  end
+
+  # GET /companies/1
+  # GET /companies/1.json
+  def show
+    @comment = Comment.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @comment }
+    end
+  end
+
+  # GET /companies/new
+  # GET /companies/new.json
 
   def new
     @comment = Comment.new
