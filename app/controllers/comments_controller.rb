@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class CommentsController < ApplicationController::Base
   # GET /companies
   # GET /companies.json
   def index
