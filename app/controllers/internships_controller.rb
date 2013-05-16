@@ -39,9 +39,12 @@ class InternshipsController < ApplicationController
   # POST /internships
   # POST /internships.json
   def create
-    if User.find(current_user.id).internship_authorization
+    @user = User.find(current_user.id)
+    if @user.internship_authorization
       @internship = Internship.new(params[:internship])
       @internship.user_id = current_user.id if current_user
+      @user.internship_authorization = false
+      @user.save
       flash[:notice] = "Internship was successfully created" if @internship.save
       respond_with(@internship)
     else
