@@ -35,8 +35,8 @@ ImiMaps::Application.routes.draw do
 	end
 
 	match '*path', to: redirect("/#{I18n.default_locale}/%{path}") 
-	match '', to: redirect("/#{I18n.default_locale}/")
-
+	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  
   match 'de', to: redirect("/de/sessions#new")
   match 'en', to: redirect("/en/sessions#new")
     devise_for :admin_users, ActiveAdmin::Devise.config
