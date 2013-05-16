@@ -8,15 +8,17 @@
   
   <%# javascript_include_tag :defaults,"jquery_nested_form" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1,0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div style="text-align: center; margin:0 auto; float:none;"><img src="../images/logo4.png" width="150" height="150" /></div>
-<div class="row">
-      <div class="span12">
-        <div class="login"><%= yield %>
-        </div>
+      <div class="span6">
+        <div id="logo"></div>
+      </div>
+      <div class="row">
+          <div class="span6">
+             <div class="login"><%= yield %></div>
     </div>
+    
 </div>
 </body>
 </html>
