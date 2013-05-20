@@ -35,13 +35,13 @@ ImiMaps::Application.routes.draw do
     
 	end
 
+
 	match '*path', to: redirect { |params, request| "/#{I18n.default_locale}#{request.fullpath}" }
 	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
   
   match 'de', to: redirect("/de/sessions#new")
   match 'en', to: redirect("/en/sessions#new")
  
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

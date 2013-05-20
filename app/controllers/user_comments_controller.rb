@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class UserCommentsController < ApplicationController
 
   before_filter :authorize
 
