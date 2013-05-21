@@ -87,3 +87,6 @@ en:
     from: "Reply from"
     attributes: 
       body: "Reply"
+
+  active_admin:
+    dashboard: "Dashboard"
