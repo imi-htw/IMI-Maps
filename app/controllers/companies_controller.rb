@@ -1,5 +1,13 @@
 class CompaniesController < ApplicationController
   before_filter :authorize
+
+  def hello
+  #### your code goes here #####
+    respond_to do |format|
+      format.js { render :layout=>false }
+    end
+  end
+
   # GET /companies
   # GET /companies.json
   def index

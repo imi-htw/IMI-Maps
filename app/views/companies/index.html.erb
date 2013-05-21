@@ -1,6 +1,15 @@
 <%= gmaps4rails(@pins) %> 
 <%= yield :scripts %>
 <br/> 
+<%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
+
+<p>Search Query<br /> </p>
+
+<%= text_field_tag :query, params[:query] %>
+
+<%= submit_tag "Search", :name => nil %>
+
+<% end %>
 
 <table class="table">
   <tr>
