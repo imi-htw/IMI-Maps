@@ -1,0 +1,33 @@
+<tbody>
+  <tr>
+    <th><%= t "companies.attributes.name" %></th>
+    <th><%= t "companies.attributes.street" %></th>
+    <th><%= t "companies.attributes.zip"%> </th>
+    <th><%= t "companies.attributes.city" %></th>
+    <th><%= t "companies.attributes.country" %></th>
+    <th><%= t "companies.attributes.number_employees" %></th>
+    <th><%= t "companies.attributes.industry" %></th>
+    <th><%= t "companies.attributes.main_language" %></th>
+    <th><%= t "companies.attributes.website" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= company.name %></td>
+    <td><%= company.street %></td>
+    <td><%= company.zip %></td>
+    <td><%= company.city %></td>
+    <td><%= company.country %></td>
+    <td><%= company.number_employees %></td>
+    <td><%= company.industry %></td>
+    <td><%= company.main_language %></td>
+    <td><%= company.website %></td>
+    <td><%= link_to (t "buttons.show"), company, class: "btn btn-success pull-right" %></td>
+    <td><%= link_to (t "buttons.edit"), edit_company_path(company), class: "btn btn-success pull-right" %></td>
+    <td><%= link_to (t "buttons.destroy"), company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right"  %></td>
+  </tr>
+	</tbody>
+<% end %>

@@ -9,8 +9,7 @@ class QuicksearchesController < ApplicationController
     end
 
     respond_to do |format|
-    	format.html
-      format.js { render :layout=>false, :json => @pins }
+      format.js { render :layout=>false, :locals => { :pins  => @pins, :companies => @companies } }
     end
   end
 
