@@ -10,3 +10,29 @@
 header .pull-left {
 	margin:5px;
 }
+
+.btn-success:active, .btn-success.active {
+	background-color: #77B92D;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
+color: white;
+background-color: #77B92D;
+}
+
+.btn-success {
+	color: white;
+	background-color: #77B92D;
+	background-image: -moz-linear-gradient(top, #77b900, #77B92D);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#77b900), to(#77B92D));
+	background-image: -webkit-linear-gradient(top, #77b900, #77B92D);
+	background-image: -o-linear-gradient(top, #77b900, #77B92D);
+	background-image: linear-gradient(to bottom, #77b900, #77B92D);
+	background-repeat: repeat-x;
+}
+
+.btn {
+	padding: 6px 14px;
+	text-shadow: none;
+	border: none;
+}
