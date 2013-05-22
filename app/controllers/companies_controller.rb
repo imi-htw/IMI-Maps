@@ -14,12 +14,7 @@ class CompaniesController < ApplicationController
     @companies = Company.all
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
-      href =  if company.website.starts_with?'http' 
-                company.website  
-              else 
-                "http://"+company.website 
-              end
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='http://#{company.website}' target='_blank'>#{company.website}</a>")
 
     end
 
@@ -59,6 +54,9 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
+    if !params[:company][:website].starts_with?'www'
+      params[:company][:website] = params[:company][:website][params[:company][:website].index('www')..-1]
+    end
     @company = Company.new(params[:company])
 
     respond_to do |format|
@@ -75,6 +73,9 @@ class CompaniesController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.json
   def update
+    if !params[:company][:website].starts_with?'www'
+      params[:company][:website] = params[:company][:website][params[:company][:website].index('www')..-1]
+    end
     @company = Company.find(params[:id])
 
     respond_to do |format|
