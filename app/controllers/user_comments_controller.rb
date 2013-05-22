@@ -19,7 +19,7 @@ class UserCommentsController < ApplicationController
 
 
   def create
-    @comment = UserComment.new(params[:comment])
+    @comment = UserComment.new(params[:user_comment])
     @comment.user_id = current_user.id if current_user
     flash[:notice] = "UserComment was successfully created" if @comment.save
 
@@ -31,7 +31,7 @@ class UserCommentsController < ApplicationController
     @comment = UserComment.find(params[:id])
 
     respond_to do |format|
-      if @comment.update_attributes(params[:comment])
+      if @comment.update_attributes(params[:user_comment])
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else

@@ -5,8 +5,6 @@ ImiMaps::Application.routes.draw do
 
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
-    match '/companies/hello', :controller => 'companies', :action => 'hello'
-
 		resources :internships
 
     resources :contact_people
@@ -19,7 +17,7 @@ ImiMaps::Application.routes.draw do
 
     resources :sessions
 
-    resources :comments
+    resources :user_comments
 
     resources :answers
 

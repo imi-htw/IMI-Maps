@@ -15,7 +15,7 @@ class Internship < ActiveRecord::Base
   belongs_to :salary
 
   has_and_belongs_to_many :programming_languages
-  has_many :comments, :dependent => :destroy
+  has_many :user_comments, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 
   #attachments
