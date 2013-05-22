@@ -41,7 +41,8 @@
 
 <% if @internship.attachments.present? %>
   <b><%= t "internships.attributes.pictures" %> :</b>
-  <% @internship.attachments.each do |attachment| %> 
+  <% @internship.attachments.each do |attachment| %>
+    <p> <%= attachment.description %> </p> 
     <%= image_tag attachment.file_url(:thumb) %>
   <% end %>
   <br/>
