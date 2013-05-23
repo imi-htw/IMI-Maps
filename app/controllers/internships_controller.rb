@@ -1,10 +1,12 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
   before_filter :get_programming_languages, :get_salaries, :only => [:new, :edit, :update, :create]
+  before_filter :authorize
   # GET /internships
   # GET /internships.json
   def index
     @internships = Internship.all
+    @current_user = User.find(current_user.id)
     respond_with(@internships)
   end
 
@@ -12,7 +14,7 @@ class InternshipsController < ApplicationController
   # GET /internships/1.json
   def show
     @internship = Internship.find(params[:id])
-    @comment = Comment.new
+    @comment = UserComment.new
     @answer = Answer.new
     
     respond_with(@internship)
@@ -21,8 +23,13 @@ class InternshipsController < ApplicationController
   # GET /internships/new
   # GET /internships/new.json
   def new
-    @internship = Internship.new
-    respond_with(@internship)
+    if User.find(current_user.id).internship_authorization
+      @internship = Internship.new
+      respond_with(@internship)
+    else
+      flash[:notice] = "You cannot create an internship"
+      redirect_to internships_url
+    end
   end
 
   # GET /internships/1/edit
@@ -33,10 +40,18 @@ class InternshipsController < ApplicationController
   # POST /internships
   # POST /internships.json
   def create
-    @internship = Internship.new(params[:internship])
-    @internship.user_id = current_user.id if current_user
-    flash[:notice] = "Internship was successfully created" if @internship.save
-    respond_with(@internship)
+    @user = User.find(current_user.id)
+    if @user.internship_authorization
+      @internship = Internship.new(params[:internship])
+      @internship.user_id = current_user.id if current_user
+      @user.internship_authorization = false
+      @user.save
+      flash[:notice] = "Internship was successfully created" if @internship.save
+      respond_with(@internship)
+    else
+      flash[:notice] = "You cannot create an internship"
+      redirect_to internships_url
+    end
   end
 
   # PUT /internships/1

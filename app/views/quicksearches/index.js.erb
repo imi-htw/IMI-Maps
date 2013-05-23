@@ -1,0 +1,14 @@
+$('.mapcontainer').html('<%= escape_javascript( gmaps({:last_map => false}) ) %>');
+
+Gmaps.map = new Gmaps4RailsGoogle();
+Gmaps.load_map = function() {
+    Gmaps.map.initialize();
+    Gmaps.map.markers = <%=raw @pins %>;
+    Gmaps.map.markers_conf.do_clustering = true;
+    Gmaps.map.create_markers();
+    Gmaps.map.adjustMapToBounds();
+    Gmaps.map.callback();
+};
+Gmaps.loadMaps();
+
+$('.table').html('<%= escape_javascript( render "table"  ) %>');

@@ -1,10 +1,10 @@
 ImiMaps::Application.routes.draw do
 
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
 
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+
 		resources :internships
 
     resources :contact_people
@@ -17,7 +17,7 @@ ImiMaps::Application.routes.draw do
 
     resources :sessions
 
-    resources :comments
+    resources :user_comments
 
     resources :answers
 
@@ -27,21 +27,28 @@ ImiMaps::Application.routes.draw do
 
     resources :internship_searches
 
+    resources :quicksearches, :only => [:index]
+
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
 
-
+    
 	end
 
-	match '*path', to: redirect("/#{I18n.default_locale}/%{path}") 
-	match '', to: redirect("/#{I18n.default_locale}/") 
-  I18n.available_locales.each { |x|
-    match '/#{x}', to: redirect("/#{x.to_s}/companies")
-  }
+  root to: 'sessions#new'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+	match '*path', to: redirect { |params, request| "/#{I18n.default_locale}#{request.fullpath}" }
+	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+
+  
   match 'de', to: redirect("/de/sessions#new")
   match 'en', to: redirect("/en/sessions#new")
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

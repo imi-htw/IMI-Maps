@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516120941) do
+ActiveRecord::Schema.define(:version => 20130522202422) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(:version => 20130516120941) do
 
   create_table "answers", :force => true do |t|
     t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "comment_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_comment_id"
     t.integer  "user_id"
     t.integer  "internship_id"
   end
@@ -65,14 +65,6 @@ ActiveRecord::Schema.define(:version => 20130516120941) do
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
-
-  create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "user_id"
-    t.integer  "internship_id"
-  end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -127,9 +119,9 @@ ActiveRecord::Schema.define(:version => 20130516120941) do
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "rating"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "rating",        :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
   end
@@ -145,6 +137,11 @@ ActiveRecord::Schema.define(:version => 20130516120941) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "quicksearches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "salaries", :force => true do |t|
     t.string   "amount"
     t.integer  "order_id"
@@ -154,16 +151,25 @@ ActiveRecord::Schema.define(:version => 20130516120941) do
     t.integer  "max_amount"
   end
 
+  create_table "user_comments", :force => true do |t|
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+    t.integer  "internship_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "last_name"
     t.string   "first_name"
     t.string   "major"
     t.string   "email"
     t.string   "role"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "picture"
     t.string   "password_digest"
+    t.boolean  "internship_authorization", :default => true
   end
 
 end

@@ -1,11 +1,20 @@
 class CompaniesController < ApplicationController
+  before_filter :authorize
+
+  def hello
+  #### your code goes here #####
+    respond_to do |format|
+      format.js { render :layout=>false }
+    end
+  end
+
   # GET /companies
   # GET /companies.json
   def index
     @companies = Company.all
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{company.website}'>#{company.website}</a>")
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='http://#{company.website}' target='_blank'>#{company.website}</a>")
 
     end
 
@@ -13,21 +22,6 @@ class CompaniesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @companies }
     end
-  end
-
-  def find_company
-    puts "blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    @companies = Company.find_company(params[:search])
-
-    @pins = @companies.to_gmaps4rails do |company, marker |
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{company.website}'>#{company.website}</a>")
-    end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pins }
-    end
-
   end
 
   # GET /companies/1
@@ -60,6 +54,9 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
+    if !params[:company][:website].starts_with?'www'
+      params[:company][:website] = params[:company][:website][params[:company][:website].index('www')..-1]
+    end
     @company = Company.new(params[:company])
 
     respond_to do |format|
@@ -76,6 +73,9 @@ class CompaniesController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.json
   def update
+    if !params[:company][:website].starts_with?'www'
+      params[:company][:website] = params[:company][:website][params[:company][:website].index('www')..-1]
+    end
     @company = Company.find(params[:id])
 
     respond_to do |format|

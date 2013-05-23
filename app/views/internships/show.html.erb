@@ -41,7 +41,8 @@
 
 <% if @internship.attachments.present? %>
   <b><%= t "internships.attributes.pictures" %> :</b>
-  <% @internship.attachments.each do |attachment| %> 
+  <% @internship.attachments.each do |attachment| %>
+    <p> <%= attachment.description %> </p> 
     <%= image_tag attachment.file_url(:thumb) %>
   <% end %>
   <br/>
@@ -51,7 +52,7 @@
   <br/>
   <br/>
 
-<% @internship.comments.each do |i| %>  
+<% @internship.user_comments.each do |i| %>  
   <%= i.user.name %> 
   <%= t "helpers.at" %>
   <%= i.created_at %>
@@ -92,7 +93,7 @@
       <%= form_for(@answer) do |f| %>
         <div class="field">
           <%= f.hidden_field :internship_id, value: @internship.id %>
-          <%= f.hidden_field :comment_id, value: i.id %>
+          <%= f.hidden_field :user_comment_id, value: i.id %>
           <%= f.label t "answers.attributes.body" %><br />
           <%= f.text_field :body %>
           <div class="actions">

@@ -22,7 +22,7 @@ class ContactPeopleController < ApplicationController
   end
 
   # GET /contact_people/new
-  # GET /contact_people/new.json
+  # GET /contact_people/new.json< 
   def new
     @contact_person = ContactPerson.new
 

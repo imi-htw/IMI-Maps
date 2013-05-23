@@ -1,5 +1,4 @@
 <h1><%= t ".title" %></h1>
-
 <table class="table">
   <tr>
     <th><%= t "internships.attributes.company" %></th>
@@ -25,7 +24,7 @@
     <td><%= internship.working_hours %></td>
     <td><%= internship.living_costs %></td>
     <td><%= render_stars(internship.rating, self) %>
-    <td><%= internship.user.name %></td>
+    <td><%= internship.try(:user).try(:name) %></td>
     <td><%= link_to (t "buttons.show"), internship %></td>
     <td><%= link_to (t "buttons.edit"), edit_internship_path(internship) %></td>
     <td><%= link_to (t "buttons.destroy"), internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,5 +33,6 @@
 </table>
 
 <br />
-
+<% if @current_user.internship_authorization %>
 <%= link_to (t "buttons.newinternship"), new_internship_path %>
+<% end %>
