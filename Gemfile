@@ -8,6 +8,7 @@ gem 'gmaps4rails'
 gem 'nested_form'
 
 gem 'activeadmin'
+gem 'thin'
 
 gem "rmagick", "~> 2.13.1"
 
