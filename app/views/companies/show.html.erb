@@ -31,6 +31,15 @@
   <%= @company.website %>
 </p>
 
+<p>
+  <b><%= t "companies.internships.recommend"  %> :</b>
+ <% recommended, not_recommended = @company.internships.partition { |internship| internship.recommend == true } %>
 
-<%= link_to (t "buttons.edit"), edit_company_path(@company), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), companies_path, class: "btn"  %>
+ <%= "#{t('companies.attributes.recommended')} #{recommended.size}" %>
+ <%= "#{t('companies.attributes.not_recommended')} #{not_recommended.size}" %>
+</p>
+
+
+
+<%= link_to t("buttons.edit"), edit_company_path(@company), class: "btn btn-success" %>
+<%= link_to t("buttons.back"), companies_path, class: "btn"   %>

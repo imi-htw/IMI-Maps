@@ -54,6 +54,16 @@
     <div id="edit-rating"><%= render_stars(@internship.rating, self) %></div>
     <%= f.hidden_field :rating %>
   </div>
+  <br />
+  <br />
+  <div class="field">
+    <%= f.label t "internships.attributes.recommend"  %>
+    <%= f.check_box :recommend %>
+  </div>  
+  <br />
+  <div class="actions">    
+    <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
+  </div>
   <div class="actions">    
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>

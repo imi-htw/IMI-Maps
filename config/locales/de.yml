@@ -38,6 +38,9 @@ de:
       main_language: "Sprache"
       website: "Webseite"
       address: "Adresse" 
+      recommended: "Empfohlen"
+      not_recommended: "nicht Empfohlen"
+
 
   internships:
     name: "Praktika"
@@ -58,6 +61,7 @@ de:
       working_hours: "Arbeitsstunden"
       living_costs: "Lebenshaltungskosten"
       company: "Firma"
+      recommend: "Empfehlung"
 
   users:
     name: "Benutzer"

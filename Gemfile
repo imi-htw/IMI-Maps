@@ -8,9 +8,12 @@ gem 'gmaps4rails'
 gem 'nested_form'
 
 gem 'activeadmin'
+
 gem 'thin'
 
 gem "rmagick", "~> 2.13.1"
+
+
 
 
 # Bundle edge Rails instead:
@@ -51,6 +54,7 @@ end
 
 group :production do 
   gem 'pg'
+
 end
 
 # To use ActiveModel has_secure_password
