@@ -9,7 +9,7 @@ gem 'nested_form'
 
 gem 'activeadmin'
 
-gem "rmagick", "~> 2.13.1"
+# gem "rmagick", "~> 2.13.1"
 
 
 # Bundle edge Rails instead:
