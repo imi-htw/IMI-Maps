@@ -57,37 +57,49 @@
   <br/>
   <br/>
 
+<!-- ################################################# start comments #################################################--> 
+
+<%= form_for(@comment) do |f| %>
+<div class="field">
+    <%= f.hidden_field :internship_id, value: @internship.id %>
+    <%= f.label t "comments.attributes.body" %><br />
+    <%= f.text_field :body %>
+    <div class="actions">
+    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+  </div>
+  </div>
+<% end %>
+
 <% @internship.user_comments.each do |i| %>  
   <div class="comment"> 
-  <%= i.user.name %> 
+  <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
   <%= i.created_at %>
-  :
+  :</div>
   <br/>
   <br/>
-  <%= i.body %>
-  <br/></div>
+  <div id="senetence"><%= i.body %></div>
+  <br/>
   <% if current_user.id == i.user_id %>
-    <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right"  %>
+    <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
   <% end %>
-  <br/>
-  <br/>
   
+  </div>
   <% if i.answer.present? %>
   <div class="answer">
-    <%= t "answers.from" %>
+    <div id="user"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
     <%= i.answer.created_at %>
-    :
+    :</div>
     <br/>
     <br/>
-    <%= i.answer.body %>
+    <div id="senetence"><%= i.answer.body %></div>
 
     
     <% if current_user.id == @internship.user_id %>
       <br/>
-      <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right"  %>
+      <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
     <% end %>
   </div>
 
@@ -116,16 +128,7 @@
 
 <% end %>
 
-<%= form_for(@comment) do |f| %>
-<div class="field">
-    <%= f.hidden_field :internship_id, value: @internship.id %>
-    <%= f.label t "comments.attributes.body" %><br />
-    <%= f.text_field :body %>
-    <div class="actions">
-    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-  </div>
-  </div>
-<% end %>
+
 
 
 

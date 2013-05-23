@@ -21,9 +21,30 @@
 }
 
 .comment{
-  background: #ccc;
+  background: #dddddf;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .answer{
-  background: #666;
+  background: #eeeeef;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.delete{
+  margin-top: -22px;
+  margin-right: -10px;
+}
+
+#user{
+  font-weight: bold;
+  background: #a0a0a0;
+  border-radius: 5px 5px 5px 5px;
+  margin: -10px;
+  padding: 10px;
+  color: white;
+}
+
+#sentence{
 }
