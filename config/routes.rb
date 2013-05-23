@@ -15,6 +15,8 @@ ImiMaps::Application.routes.draw do
 
     resources :search, :only => [:index]
 
+    resources :overview, :only => [:index]
+
     resources :sessions
 
     resources :user_comments

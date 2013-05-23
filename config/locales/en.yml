@@ -58,6 +58,8 @@ en:
       working_hours: "Working hours"
       living_costs: "Living Costs"
       company: "Company"
+      rating: "Rating"
+      title: "Job Title"
 
   users:
     name: "Users"

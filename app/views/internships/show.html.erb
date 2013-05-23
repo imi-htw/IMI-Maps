@@ -6,7 +6,7 @@
 </p>
 <p>
   <b><%= t "internships.attributes.orientation" %> :</b>
-  <%= @internship.orientation %>
+  <%= @internship.orientation.try(:name) %>
 </p>
 
 <p>

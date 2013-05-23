@@ -6,6 +6,7 @@ gem 'carrierwave'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'nested_form'
+gem "country-select"
 
 gem 'activeadmin'
 

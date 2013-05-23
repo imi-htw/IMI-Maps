@@ -39,4 +39,12 @@ class ApplicationController < ActionController::Base
 
     helper_method :get_salaries
   
+    def get_orientations
+      @orientations ||= Orientation.order(:name).map do |s|
+        [s.name, s.id]
+      end
+    end
+
+    helper_method :get_orientations
+
 end

@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= f.label t "internships.attributes.title" %><br />
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label t "internships.attributes.company" %>
     <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] }  %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.orientation" %><br />
-    <%= f.text_field :orientation %>
+    <%= f.select :orientation_id, @orientations %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.programming_language"  %><br />
@@ -50,7 +54,7 @@
   <%= f.link_to_add "Add attachment", :attachments %>
   <hr/>
   <div class="field">
-    <%= f.label :rating %><br />
+    <%= f.label t "internships.attributes.rating" %><br />
     <div id="edit-rating"><%= render_stars(1, self) %></div>
     <%= f.hidden_field :rating %>
   </div>
