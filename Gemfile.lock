@@ -64,6 +64,10 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chosen-rails (0.9.14)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -83,6 +87,7 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -221,6 +226,7 @@ DEPENDENCIES
   bootstrap-sass (= 2.1)
   capybara (~> 2.1.0)
   carrierwave
+  chosen-rails
   coffee-rails (~> 3.2.1)
   country-select
   factory_girl (~> 4.2.0)

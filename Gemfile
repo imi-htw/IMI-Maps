@@ -14,6 +14,8 @@ gem 'thin'
 
 gem "rmagick", "~> 2.13.1"
 
+gem 'chosen-rails'
+
 
 
 
