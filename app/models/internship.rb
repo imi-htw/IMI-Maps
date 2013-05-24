@@ -17,7 +17,7 @@ class Internship < ActiveRecord::Base
   belongs_to :salary
   belongs_to :orientation
 
-  has_and_belongs_to_many :programming_languages
+  has_and_belongs_to_many :programming_languages, :uniq => true
   has_many :user_comments, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 

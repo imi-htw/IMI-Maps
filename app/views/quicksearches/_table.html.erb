@@ -1,38 +1,26 @@
 <tbody>
   <tr>
+    <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
-    <th><%= t "companies.attributes.street" %></th>
-    <th><%= t "companies.attributes.zip"%> </th>
-    <th><%= t "companies.attributes.city" %></th>
+    <th><%= t "companies.attributes.city"%> </th>
     <th><%= t "companies.attributes.country" %></th>
-    <th><%= t "companies.attributes.number_employees" %></th>
     <th><%= t "companies.attributes.industry" %></th>
-    <th><%= t "companies.attributes.main_language" %></th>
-    <th><%= t "companies.attributes.website" %></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%= t "internships.attributes.orientation" %></th>
+    <th><%= t "internships.attributes.programming_language" %></th>
+    <th><%= t "internships.attributes.rating" %></th>
   </tr>
 
-<% @companies.each do |company| %>
+<% @internships.each do |internship| %>
   <tr>
-    <td><%= company.name %></td>
-    <td><%= company.street %></td>
-    <td><%= company.zip %></td>
-    <td><%= company.city %></td>
-    <td><%= company.country %></td>
-    <td><%= company.number_employees %></td>
-    <td><%= company.industry %></td>
-    <td><%= company.main_language %></td>
-    <td><%= link_to company.name, (
-            if company.website.starts_with?'http' 
-                company.website  
-            else 
-                "http://"+company.website 
-            end), target: "_blank" %></td>
-    <td><%= link_to (t "buttons.show"), company, class: "btn btn-inverse pull-right" %></td>
-    <td><%= link_to (t "buttons.edit"), edit_company_path(company), class: "btn btn-inverse pull-right" %></td>
-    <td><%= link_to (t "buttons.destroy"), company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right"  %></td>
+    <td><%= internship.title %></td>
+    <td><%= internship.company.name %></td>
+    <td><%= internship.company.city %></td>
+    <td><%= internship.company.country %></td>
+    <td><%= internship.company.industry %></td>
+    <td><%= internship.orientation.name %></td>
+    <td><%= internship.programming_languages.map { |n| n.name } %></td>
+    <td><%= render_stars(internship.rating, self) %></td>
   </tr>
-  <% end %>
+<% end %>
+
 </tbody>

@@ -2,7 +2,14 @@ class QuicksearchesController < ApplicationController
 
 	def index
 		@quicksearch = Quicksearch.new
-		@companies = @quicksearch.companies(params[:query])
+
+    @companies = []
+
+    @internships = @quicksearch.internships(params)
+
+    @internships.each do |i|
+      @companies << i.company
+    end
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
       href =  if company.website.starts_with?'http' 
@@ -15,7 +22,7 @@ class QuicksearchesController < ApplicationController
     end
 
     respond_to do |format|
-      format.js { render :layout=>false, :locals => { :pins  => @pins, :companies => @companies } }
+      format.js { render :layout=>false, :locals => { :pins  => @pins, :internships => @internships } }
     end
   end
 

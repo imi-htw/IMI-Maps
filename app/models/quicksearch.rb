@@ -5,26 +5,38 @@ class Quicksearch < ActiveRecord::Base
     @companies = find_AJAX(query)
   end
 
-   def find_AJAX(query)
-    if query.empty?      
-      Company.all
-    else 
-      companies_out = []
-      companies_out += Company.where('country like ?',query)
-      companies_out += Company.where('city like ?',query)
-      companies_out += Company.where('street like ?',query)
-      companies_out += Company.where('industry like ?',query)
-      companies_out += Company.where('name like ?',query)
-      companies_out
+  def internships(query)
+    @internships = find_internships(query)
+  end
+
+  private
+
+    def find_internships(query)
+      if query.empty?      
+        Internship.all
+      else 
+        Internship.joins(:orientation).where("orientations.name like ?","Design")
+        internships = Internship.where("internships_programming_languages.programming_language_id IN (?)", query[:programming_language_ids]) if query[:programming_language_ids].present?
+        internships = Internship.where('companies.country like ?', query[:country]) if query[:country].present?
+        internships = Internship.where('orientations.name like ?', query[:orientation]) if query[:orientation].present?    
+        internships 
+      end
     end
 
-   	#internships = Internship.joins(:company).joins(:salary).joins(:programming_languages)
-    #internships_out += internships.where("internships_programming_languages.programming_language_id IN (?)", search)
-    #internships_out += internships.where('companies.country like ?', search)
-    #internships_out += internships.where('companies.city like ?', search)
-    #internships_out += internships.where('orientation like ?', search)
-    #internships_out += internships.where('industry like ?', search)
-    #internships_out
-  end
+
+    def find_AJAX(query)
+      if query.empty?      
+        Company.all
+      else 
+        companies_out = []
+        companies_out += Company.where('country like ?',query)
+        companies_out += Company.where('city like ?',query)
+        companies_out += Company.where('street like ?',query)
+        companies_out += Company.where('industry like ?',query)
+        companies_out += Company.where('name like ?',query)
+        companies_out
+      end
+
+    end
 
 end

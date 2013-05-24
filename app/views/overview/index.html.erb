@@ -11,9 +11,9 @@
     <th></th>
   </tr>
   <tr>
-    <td><%= country_select :qucicksearch, :country %></td>
+    <td><%= country_select nil, :country %></td>
     <td><%= select_tag :orientation, options_for_select(@orientations) %></td>
-    <td><%= select_tag :programming_languages, options_for_select(@programming_languages), :multiple => true %></td>
+    <td><%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true } %></td>
     <td><%= submit_tag "Search", :name => nil, :class => "btn btn-success" %></td>
   </tr>
 </table>

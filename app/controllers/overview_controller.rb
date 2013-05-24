@@ -1,4 +1,5 @@
 class OverviewController < ApplicationController
+  before_filter :authorize
   before_filter :get_programming_languages, :get_orientations
 
 	def index
