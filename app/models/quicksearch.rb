@@ -15,11 +15,11 @@ class Quicksearch < ActiveRecord::Base
       if query.empty?      
         Internship.all
       else 
-        Internship.joins(:orientation).where("orientations.name like ?","Design")
-        internships = Internship.where("internships_programming_languages.programming_language_id IN (?)", query[:programming_language_ids]) if query[:programming_language_ids].present?
-        internships = Internship.where('companies.country like ?', query[:country]) if query[:country].present?
-        internships = Internship.where('orientations.name like ?', query[:orientation]) if query[:orientation].present?    
-        internships 
+        internships = Internship.includes(:programming_languages).includes(:company)
+        internships = internships.where("internships_programming_languages.programming_language_id IN (?)", query[:programming_language_ids]) if query[:programming_language_ids].present?
+        internships = internships.where('companies.country like ?', query[:country]) if query[:country].present?
+        internships = internships.where('orientation_id like ?', query[:orientation]) if query[:orientation].present?
+        internships
       end
     end
 

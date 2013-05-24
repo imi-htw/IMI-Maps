@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523140518) do
+ActiveRecord::Schema.define(:version => 20130524081552) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(:version => 20130523140518) do
     t.integer "programming_language_id"
     t.integer "internship_id"
   end
+
+  add_index "internships_programming_languages", ["programming_language_id", "internship_id"], :name => "unique_index", :unique => true
 
   create_table "orientations", :force => true do |t|
     t.string   "name"
