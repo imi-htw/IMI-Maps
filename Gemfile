@@ -10,7 +10,11 @@ gem "country-select"
 
 gem 'activeadmin'
 
+gem 'thin'
+
 gem "rmagick", "~> 2.13.1"
+
+
 
 
 # Bundle edge Rails instead:
@@ -24,7 +28,8 @@ gem 'jquery-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'font-awesome-sass-rails'
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -50,6 +55,7 @@ end
 
 group :production do 
   gem 'pg'
+
 end
 
 # To use ActiveModel has_secure_password

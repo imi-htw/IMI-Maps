@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'font-awesome';
+
 .rating {
   margin: auto 0;
 }
@@ -16,4 +18,33 @@
 
 .on {
   background-position: 0 16px;
+}
+
+.comment{
+  background: #dddddf;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.answer{
+  background: #eeeeef;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.delete{
+  margin-top: -22px;
+  margin-right: -10px;
+}
+
+#user{
+  font-weight: bold;
+  background: #a0a0a0;
+  border-radius: 5px 5px 5px 5px;
+  margin: -10px;
+  padding: 10px;
+  color: white;
+}
+
+#sentence{
 }

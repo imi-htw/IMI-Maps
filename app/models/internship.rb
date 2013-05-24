@@ -1,5 +1,5 @@
 class Internship < ActiveRecord::Base
-  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title
+  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title, :recommend
 
   # validations
   validates :orientation, :presence => true

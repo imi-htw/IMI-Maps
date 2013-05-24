@@ -27,6 +27,8 @@ ImiMaps::Application.routes.draw do
 
     resources :financing
 
+    resources :download
+
     resources :internship_searches
 
     resources :quicksearches, :only => [:index]

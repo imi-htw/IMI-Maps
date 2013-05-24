@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20130524081552) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
+    t.boolean  "recommend"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|

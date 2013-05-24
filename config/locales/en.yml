@@ -38,6 +38,8 @@ en:
       main_language: "Main Language"
       website: "Website"
       address: "Address"  
+      recommended: "Recommended"
+      not_recommended: "Not Recommended"
 
   internships:
     name: "Internships"
@@ -60,6 +62,7 @@ en:
       company: "Company"
       rating: "Rating"
       title: "Job Title"
+      recommend: "Recommendation"
 
   users:
     name: "Users"
