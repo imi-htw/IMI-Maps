@@ -33,6 +33,8 @@ ImiMaps::Application.routes.draw do
 
     resources :quicksearches, :only => [:index]
 
+    resources :error_page
+
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
