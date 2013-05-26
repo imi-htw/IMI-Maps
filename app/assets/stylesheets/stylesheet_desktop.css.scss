@@ -75,6 +75,9 @@ body{
   background-image: none;
   filter: none;
 }
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;    
+}
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
   color: #77b900;
 }
