@@ -72,6 +72,7 @@
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th><%= t "internships.attributes.rating" %></th>
+    <th></th>
   </tr>
 
 <% @internships.each do |internship| %>
@@ -80,6 +81,7 @@
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= render_stars(internship.rating, self) %></td>
+    <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>
 </table>

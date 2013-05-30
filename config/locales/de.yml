@@ -17,6 +17,8 @@ de:
 
   helpers:
     at: "um"
+    summer: "Sommer"
+    winter: "Winter"
 
   companies:
     name: "Firmen"
@@ -55,6 +57,9 @@ de:
     new:
       newinternship: "Neues Praktikum"
     attributes:
+      description: "Beschreibung"
+      semester: "Absolviert"
+      email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
       orientation: "Orientierung"

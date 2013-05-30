@@ -17,6 +17,8 @@ en:
 
   helpers:
     at: "at"
+    summer: "summer"
+    winter: "winter"
 
   companies:
     name: "Companies"
@@ -54,6 +56,9 @@ en:
     new:
       newinternship: "New Internship"   
     attributes:
+      description: "Description"
+      semester: "Done"
+      email_public: "Make email adress public?"
       comments: "UserComments"
       pictures: "Pics"
       orientation: "Orientation"
