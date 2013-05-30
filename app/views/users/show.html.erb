@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b><%= t "users.attributes.picture" %> :</b>
+  <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
+</p>
+
+<p>
   <b><%= t "users.attributes.last_name" %> :</b>
   <%= @user.last_name %>
 </p>
