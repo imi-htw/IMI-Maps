@@ -15,3 +15,21 @@
 //= require jquery_nested_form
 //= require_tree .
 //= require chosen-jquery
+
+
+// $(document).ready(function() {
+//   $("#hide_button").click(function() {
+//     $(".answer").slideUp("slow");
+//   });
+//   $("#show_button").click(function() {
+//     $(".answer").slideDown("slow");
+//   });
+// });
+
+$(document).ready(function() {
+   $("#hide_all").click(function () {
+     $(".answer").slideToggle("slow");
+     $(".comment").slideToggle("slow");
+     $(".answer_2").slideToggle("slow");
+  });
+});

@@ -8,6 +8,13 @@ body{
   margin-bottom: 50px;
 }
 
+#top-menu{
+  width: 1250px;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+}
+
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
@@ -16,7 +23,7 @@ body{
   margin-top: 5px;
 }
 .navbar .brand {
-  margin-left: 100px;
+  margin-left: 20px;
 }
 .navbar-inner {
   text-align:center;

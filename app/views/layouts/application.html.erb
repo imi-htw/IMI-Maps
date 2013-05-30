@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css"/>
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
 
@@ -26,11 +27,11 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
-    </a>
+    </a>  
+  <div id="top-menu">
     <a class="brand" href="companies"></a>
     <!-- Be sure to leave the brand out there if you want it shown -->
     
-
     <ul class="nav pull-right">
     <li><%= link_to "Konto", companies_path %></li>
     <li><li><%= link_to "Abmelden", logout_path %></li></li>
@@ -59,6 +60,7 @@
               <li><%= link_to "Jobbörse", internships_path %></li>
 
     </ul>
+  </div>
     </div>
     </div>
     <!-- .nav, .navbar-search, .navbar-form, etc -->
