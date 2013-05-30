@@ -12,7 +12,8 @@ de:
     newcompany: "Neue Firma"
     newinternship: "Neues Praktikum"
     newuser: "Neuer Benutzer"
-    save: "Speichern"  
+    save: "Speichern" 
+    done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
 
   helpers:
     at: "um"
@@ -28,6 +29,7 @@ de:
     new:
       newcompany: "Neue Firma" 
     attributes:
+      rating: "Durchschnittswertung"
       name: "Name"
       street: "Straße"
       zip: "Postleitzahl"
