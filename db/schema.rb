@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20130526085941) do
     t.string   "city"
     t.string   "country"
     t.string   "street"
-    t.integer  "zip"
+    t.string   "zip"
     t.string   "main_language"
   end
 
@@ -107,11 +107,6 @@ ActiveRecord::Schema.define(:version => 20130526085941) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "internship_reports", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -136,6 +131,12 @@ ActiveRecord::Schema.define(:version => 20130526085941) do
     t.string   "title"
     t.boolean  "recommend"
     t.integer  "orientation_id"
+<<<<<<< HEAD
+=======
+    t.boolean  "email_public"
+    t.text     "description"
+    t.string   "semester"
+>>>>>>> 49858cda0b3ca603e57ffa1d881d3f67938fd2a2
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|

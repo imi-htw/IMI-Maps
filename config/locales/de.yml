@@ -12,10 +12,14 @@ de:
     newcompany: "Neue Firma"
     newinternship: "Neues Praktikum"
     newuser: "Neuer Benutzer"
-    save: "Speichern"  
+    save: "Speichern" 
+    done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
+    change_details: "Details ändern"
 
   helpers:
     at: "um"
+    summer: "Sommer"
+    winter: "Winter"
 
   companies:
     name: "Firmen"
@@ -28,6 +32,7 @@ de:
     new:
       newcompany: "Neue Firma" 
     attributes:
+      rating: "Durchschnittswertung"
       name: "Name"
       street: "Straße"
       zip: "Postleitzahl"
@@ -53,6 +58,9 @@ de:
     new:
       newinternship: "Neues Praktikum"
     attributes:
+      description: "Beschreibung"
+      semester: "Absolviert"
+      email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
       orientation: "Orientierung"

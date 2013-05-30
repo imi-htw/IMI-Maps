@@ -13,9 +13,13 @@ en:
     newinternship: "New Internship"
     newuser: "New User"
     save: "Save"
+    done_intership_here: "Have you done your internship here, too?"
+    change_details: "Change Details"
 
   helpers:
     at: "at"
+    summer: "summer"
+    winter: "winter"
 
   companies:
     name: "Companies"
@@ -28,6 +32,7 @@ en:
     new:
       newcompany: "New Company"  
     attributes:
+      rating: "Average Rating"
       name: "Name"
       street: "Street"
       zip: "ZIP"
@@ -52,6 +57,9 @@ en:
     new:
       newinternship: "New Internship"   
     attributes:
+      description: "Description"
+      semester: "Done"
+      email_public: "Make email adress public?"
       comments: "UserComments"
       pictures: "Pics"
       orientation: "Orientation"
@@ -83,6 +91,7 @@ en:
       password: "Password"
       password_confirmation: "Password confirmation"
       role: "Role"
+      picture: "Picture"
 
   comments:
     attributes: 

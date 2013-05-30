@@ -20,17 +20,17 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <b><%= t "users.attributes.role" %> :</b>
-  <%= @user.role %>
+<%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
+<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
+
+<h2> Comments </h2>
+<% @user.user_comments.each do |comment| %>
+<p> Commented "
+<%= comment.body %>
+" at
+<%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
 </p>
+<%end%>
 
+<br/>
 
-<p>
-  <b><%= t "users.attributes.picture" %> :</b>
-  <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
-</p>
-
-
-<%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), users_path, class: "btn" %>

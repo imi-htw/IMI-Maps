@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h3> Internship facts: </h3>
+
 <p>
-  <b><%= t "internships.attributes.company" %> :</b>
-  <%= @internship.company.name %>
+  <b><%= t "internships.attributes.title" %> :</b>
+  <%= @internship.title %>
 </p>
+
 <p>
   <b><%= t "internships.attributes.orientation" %> :</b>
   <%= @internship.orientation.try(:name) %>
@@ -43,6 +46,23 @@
   <b><%= t "internships.attributes.recommend" %> :</b>
   <%= @internship.recommend %>
 </p>
+
+<p>
+  <b><%= t "internships.attributes.semester" %> :</b>
+  <%= @internship.semester %>
+</p>
+
+<p>
+  <b><%= t "internships.attributes.description" %> :</b>
+  <%= @internship.description %>
+</p>
+
+<% if @internship.email_public %>
+<p>
+  <b><%= t "users.attributes.email" %> :</b>
+  <%= @internship.user.email %>
+</p>
+<% end %>
 
 <% if @internship.attachments.present? %>
   <b><%= t "internships.attributes.pictures" %> :</b>
@@ -133,10 +153,48 @@
 
 <% end %>
 
+<h3> Company short facts: </h3>
+
+<p>
+  <b><%= t "companies.attributes.name"  %> :</b>
+  <%= @internship.company.name %>
+</p>
 
 
+<p>
+  <b><%= t "companies.attributes.website"  %> :</b>
+  <%= link_to @internship.company.website , target: "_blank" %>
+</p>
 
+<p>
+  <b><%= t "companies.attributes.industry"  %> :</b>
+  <%= @internship.company.industry %>
+</p>
+<p>
 
+<p>
+  <b><%= t "companies.attributes.number_employees"  %> :</b>
+  <%= @internship.company.number_employees %>
+</p>
 
-<%= link_to (t "buttons.edit"), edit_internship_path(@internship) %> |
-<%= link_to (t "buttons.back"), internships_path %>
+<p>
+<b><%= t "companies.attributes.main_language"  %> :</b>
+  <%= @internship.company.main_language %>
+</p>
+
+<p>
+<b><%= t "companies.attributes.rating"  %> :</b>
+  <% sum = 0%>
+  <% amt = 0%>
+  <% @internship.company.internships.each do |i| %>
+    <% sum += i.rating %>
+    <% amt += 1 %>
+  <%end%>
+  <%=sum/amt%>
+</p>
+  <%= gmaps({
+   "map_options" => {"auto_zoom" => false, "zoom" => 5 },
+   "markers"     => {"data" => @pins }
+  })
+%>
+<%= yield :scripts %>

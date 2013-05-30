@@ -12,6 +12,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css"/>
+  <%= favicon_link_tag '/public/favicon.ico' %>
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
@@ -33,7 +34,7 @@
     <!-- Be sure to leave the brand out there if you want it shown -->
     
     <ul class="nav pull-right">
-    <li><%= link_to "Konto", companies_path %></li>
+    <li><%= link_to "Konto", current_user %></li>
     <li><li><%= link_to "Abmelden", logout_path %></li></li>
       <li class="dropdown">
         <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
