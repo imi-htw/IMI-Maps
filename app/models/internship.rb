@@ -9,6 +9,10 @@ class Internship < ActiveRecord::Base
   validates :rating, :presence => true, :numericality => true, :allow_blank => false
   validates :company_id, :presence => true, :allow_blank => false
   validates :title, :presence => true, :allow_blank => false
+  validates :working_hours, :presence => true, :allow_blank => false
+  validates :living_costs, :presence => true, :allow_blank => false
+  validates :semester, :presence => true, :allow_blank => false
+  validates :description, :presence => true, :allow_blank => false
 
 
   # associations
