@@ -22,8 +22,7 @@ gem 'chosen-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '2.2.1'
 
 
 # Gems used only for assets and not required
