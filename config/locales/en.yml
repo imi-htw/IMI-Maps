@@ -13,6 +13,7 @@ en:
     newinternship: "New Internship"
     newuser: "New User"
     save: "Save"
+    done_intership_here: "Have you done your internship here, too?"
 
   helpers:
     at: "at"
@@ -28,6 +29,7 @@ en:
     new:
       newcompany: "New Company"  
     attributes:
+      rating: "Average Rating"
       name: "Name"
       street: "Street"
       zip: "ZIP"
