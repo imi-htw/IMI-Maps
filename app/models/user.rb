@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   
   # associations
   has_one :internship
-  has_many :comments
+  has_many :user_comments
 
   mount_uploader :picture, PictureUploader
 

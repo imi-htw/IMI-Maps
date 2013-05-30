@@ -1,32 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<% if @user.last_name %>
 <p>
   <b><%= t "users.attributes.last_name" %> :</b>
   <%= @user.last_name %>
 </p>
-<%end%>
 
-<% if @user.first_name %>
 <p>
   <b><%= t "users.attributes.first_name" %> :</b>
   <%= @user.first_name %>
 </p>
-<%end%>
 
-<% if @user.major %>
 <p>
   <b><%= t "users.attributes.major" %> :</b>
   <%= @user.major %>
 </p>
-<%end%>
 
-<% if @user.email %>
 <p>
   <b><%= t "users.attributes.email" %> :</b>
   <%= @user.email %>
 </p>
+
+<%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
+<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
+
+<h2> Comments </h2>
+<% @user.user_comments.each do |comment| %>
+<p> Commented "
+<%= comment.body %>
+" at
+<%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
+</p>
 <%end%>
 
-<%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
+<br/>
+
