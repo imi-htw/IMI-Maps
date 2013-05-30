@@ -1,36 +1,32 @@
 <p id="notice"><%= notice %></p>
 
+<% if @user.last_name %>
 <p>
   <b><%= t "users.attributes.last_name" %> :</b>
   <%= @user.last_name %>
 </p>
+<%end%>
 
+<% if @user.first_name %>
 <p>
   <b><%= t "users.attributes.first_name" %> :</b>
   <%= @user.first_name %>
 </p>
+<%end%>
 
+<% if @user.major %>
 <p>
   <b><%= t "users.attributes.major" %> :</b>
   <%= @user.major %>
 </p>
+<%end%>
 
+<% if @user.email %>
 <p>
   <b><%= t "users.attributes.email" %> :</b>
   <%= @user.email %>
 </p>
-
-<p>
-  <b><%= t "users.attributes.role" %> :</b>
-  <%= @user.role %>
-</p>
-
-
-<p>
-  <b><%= t "users.attributes.picture" %> :</b>
-  <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
-</p>
-
+<%end%>
 
 <%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), users_path, class: "btn" %>
+<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>

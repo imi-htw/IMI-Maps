@@ -172,12 +172,12 @@
   <%= @internship.company.number_employees %>
 </p>
 
-
+<p>
 <b><%= t "companies.attributes.main_language"  %> :</b>
   <%= @internship.company.main_language %>
 </p>
-<p>
 
+<p>
 <b><%= t "companies.attributes.rating"  %> :</b>
   <% sum = 0%>
   <% amt = 0%>
@@ -187,7 +187,6 @@
   <%end%>
   <%=sum/amt%>
 </p>
-<p>
   <%= gmaps({
    "map_options" => {"auto_zoom" => false, "zoom" => 5 },
    "markers"     => {"data" => @pins }
