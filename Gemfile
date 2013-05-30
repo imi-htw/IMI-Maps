@@ -23,6 +23,7 @@ gem 'chosen-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 
 # Gems used only for assets and not required
