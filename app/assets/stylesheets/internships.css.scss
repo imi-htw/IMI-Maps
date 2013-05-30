@@ -22,29 +22,96 @@
 
 .comment{
   background: #dddddf;
-  padding: 10px;
-  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 .answer{
-  background: #eeeeef;
-  padding: 10px;
-  border-radius: 5px 5px 5px 5px;
+  background: #dddddf;
+  padding: 5px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.answer_2{
+  background: #dddddf;
+  padding: 5px;
+  border-radius: 0px 0px 5px 5px;
+  margin-bottom: 40px;
 }
 
 .delete{
-  margin-top: -22px;
-  margin-right: -10px;
+  margin-top: -37px;
+  margin-right: 0px;
 }
 
 #user{
   font-weight: bold;
-  background: #a0a0a0;
+  background: #77b900;
   border-radius: 5px 5px 5px 5px;
   margin: -10px;
   padding: 10px;
   color: white;
 }
 
-#sentence{
+#user_2{
+  background: #bbe175;
+  margin: -5px;
+  padding: 5px 10px 5px 10px;
+  color: black;
 }
+
+#user_3{
+  font-weight: bold;
+  background: #bbe175;
+  margin: -5px;
+  padding: 5px 10px 5px 10px;
+  color: black;
+  margin-top: -25px;
+}
+
+#sentence{
+  background-color: #fff;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 80px;
+  margin-top: -20px;
+  margin-bottom: -15px;
+}
+
+#sentence_2{
+  background-color: #fff;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 80px;
+  margin-top: -25px;
+  margin-bottom: -15px;
+}
+
+#sentence_3{
+  background-color: #fff;
+  border-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 80px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.label{
+  margin-top: 10px;
+}
+
+.save_button{
+  float: right;
+  margin-top: -34px;
+}
+
+/*.btn{
+  background-image: url('images/rails2.png') 0 0;
+}*/
+

@@ -143,10 +143,20 @@ ActiveRecord::Schema.define(:version => 20130530134842) do
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
+<<<<<<< HEAD
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
     t.integer  "favorite_id"
+=======
+    t.integer  "orientation_id"
+<<<<<<< HEAD
+=======
+    t.boolean  "email_public"
+    t.text     "description"
+    t.string   "semester"
+>>>>>>> 49858cda0b3ca603e57ffa1d881d3f67938fd2a2
+>>>>>>> d966926ac9cd198596d5eccf5fd3ff054b113d3c
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
