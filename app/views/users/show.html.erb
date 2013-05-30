@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t "users.attributes.picture" %> :</b>
   <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
 </p>
 
@@ -34,6 +33,13 @@
 <%= comment.body %>
 " at
 <%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
+</p>
+<%end%>
+
+<h2> Favorites </h2>
+<% @user.favorites.each do |favorite| %>
+<%= link_to "#{favorite.internship.title} at #{favorite.internship.company.name}", favorite.internship, class: "btn btn-success" %>
+<%= link_to (t "buttons.destroy"), favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </p>
 <%end%>
 

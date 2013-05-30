@@ -24,7 +24,8 @@ class Internship < ActiveRecord::Base
   has_and_belongs_to_many :programming_languages, :uniq => true
   has_many :user_comments, :dependent => :destroy
   has_many :answers, :dependent => :destroy
-
+  has_many :favorites, :dependent => :destroy
+  
   #attachments
   has_many :attachments, :as => :attachable
 

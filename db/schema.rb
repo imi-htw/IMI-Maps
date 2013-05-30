@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530095558) do
+ActiveRecord::Schema.define(:version => 20130530134842) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -102,7 +102,19 @@ ActiveRecord::Schema.define(:version => 20130530095558) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "favorites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "internship_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "financings", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "internship_reports", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -120,20 +132,21 @@ ActiveRecord::Schema.define(:version => 20130530095558) do
   end
 
   create_table "internships", :force => true do |t|
+    t.integer  "orientation_id", :limit => 255
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.integer  "rating",         :default => 1
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.integer  "rating",                        :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
-    t.integer  "orientation_id"
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
+    t.integer  "favorite_id"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
