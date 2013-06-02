@@ -2,6 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  header:
+    account: "Mein Konto"
+    search: "Detailsuche"
+    start: "Übersicht"
+    exchange: "Jobbörse"
+    guide: "Guide"
+    logout: "Abmelden"
+    faq: "FAQs"
+    downloads: "Downloads"
+    financing: "Finanzierung"
   search:
     title: "Suche"
   buttons:
