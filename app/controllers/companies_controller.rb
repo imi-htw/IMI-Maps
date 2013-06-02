@@ -36,7 +36,7 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
 
-    @pins = @companies.to_gmaps4rails do |company, marker |
+    @pins = @company.to_gmaps4rails do |company, marker |
 
       href =  if company.website.starts_with?'http' 
               company.website  
