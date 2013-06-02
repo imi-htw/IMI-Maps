@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -11,7 +12,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530134842) do
+ActiveRecord::Schema.define(:version => 20130530133115) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -114,11 +115,6 @@ ActiveRecord::Schema.define(:version => 20130530134842) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "internship_reports", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -132,31 +128,20 @@ ActiveRecord::Schema.define(:version => 20130530134842) do
   end
 
   create_table "internships", :force => true do |t|
-    t.integer  "orientation_id", :limit => 255
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.integer  "rating",                        :default => 1
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "rating",         :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
-<<<<<<< HEAD
-    t.boolean  "email_public"
-    t.text     "description"
-    t.string   "semester"
-    t.integer  "favorite_id"
-=======
     t.integer  "orientation_id"
-<<<<<<< HEAD
-=======
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
->>>>>>> 49858cda0b3ca603e57ffa1d881d3f67938fd2a2
->>>>>>> d966926ac9cd198596d5eccf5fd3ff054b113d3c
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
