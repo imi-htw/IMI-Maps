@@ -15,10 +15,8 @@ class FavoriteController < ApplicationController
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
 
-    respond_to do |format|
-      format.html { redirect_to current_user }
-      format.json { head :no_content }
-    end
+    redirect_to :action => 'show', :controller => 'internships', :id => params[:internship_id]
+
   end
 
 end

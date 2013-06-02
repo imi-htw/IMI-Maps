@@ -16,6 +16,7 @@ class InternshipsController < ApplicationController
     @internship = Internship.find(params[:id])
     @comment = UserComment.new
     @answer = Answer.new
+    @favorite = Favorite.where(:internship_id => @internship.id, :user_id => current_user.id)[0]
 
     @pins = @internship.company.to_gmaps4rails do |company, marker |
 
