@@ -17,6 +17,8 @@ ImiMaps::Application.routes.draw do
 
     resources :overview, :only => [:index]
 
+    resources :favorite, :only => [:create, :destroy]
+
     resources :sessions
 
     resources :user_comments

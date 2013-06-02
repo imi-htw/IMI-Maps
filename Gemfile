@@ -22,7 +22,7 @@ gem 'chosen-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.2.1'
 
 
 # Gems used only for assets and not required
@@ -31,7 +31,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'font-awesome-sass-rails'
-  
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -44,7 +44,6 @@ end
 
 group :test do
   gem 'factory_girl', '~> 4.2.0'
-  gem 'capybara', '~> 2.1.0'
 end
 
 group :development, :test do
@@ -53,9 +52,11 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
+  gem 'capybara', '~> 2.1.0'
+
 end
 
-group :production do 
+group :production do
   gem 'pg'
 
 end

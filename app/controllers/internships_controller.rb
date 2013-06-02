@@ -37,6 +37,7 @@ class InternshipsController < ApplicationController
   def new
     if User.find(current_user.id).internship_authorization
       @internship = Internship.new
+      @company = Company.new
       respond_with(@internship)
     else
       flash[:notice] = "You cannot create an internship"
@@ -54,7 +55,10 @@ class InternshipsController < ApplicationController
   def create
     @user = User.find(current_user.id)
     if @user.internship_authorization
+      @company = Company.new(params[:company])
+      @company.save
       @internship = Internship.new(params[:internship])
+      @internship.company_id = @company.id
       @internship.user_id = current_user.id if current_user
       @user.internship_authorization = false
       @user.save

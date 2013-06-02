@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   
   # associations
   has_one :internship
-  has_many :comments
+  has_many :user_comments, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
 
   mount_uploader :picture, PictureUploader
 

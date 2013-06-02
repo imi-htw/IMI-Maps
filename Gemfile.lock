@@ -233,7 +233,7 @@ DEPENDENCIES
   font-awesome-sass-rails
   geocoder
   gmaps4rails
-  jquery-rails
+  jquery-rails (= 2.2.1)
   nested_form
   pg
   pry

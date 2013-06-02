@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
+</p>
+
+<p>
   <b><%= t "users.attributes.last_name" %> :</b>
   <%= @user.last_name %>
 </p>
@@ -20,17 +24,24 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <b><%= t "users.attributes.role" %> :</b>
-  <%= @user.role %>
+<%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
+<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
+
+<h2> Comments </h2>
+<% @user.user_comments.each do |comment| %>
+<p> Commented "
+<%= comment.body %>
+" at
+<%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
 </p>
+<%end%>
 
-
-<p>
-  <b><%= t "users.attributes.picture" %> :</b>
-  <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
+<h2> Favorites </h2>
+<% @user.favorites.each do |favorite| %>
+<%= link_to "#{favorite.internship.title} at #{favorite.internship.company.name}", favorite.internship, class: "btn btn-success" %>
+<%= link_to (t "buttons.destroy"), favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </p>
+<%end%>
 
+<br/>
 
-<%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), users_path, class: "btn" %>

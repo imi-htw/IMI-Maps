@@ -1,3 +1,5 @@
+<div class="row">
+<div class="span6">
 <%= nested_form_for(@internship) do |f| %>
   <% if @internship.errors.any? %>
     <div id="error_explanation">
@@ -17,19 +19,19 @@
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.company" %>
-    <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] }  %>
+    <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] },{}, class: 'chzn-select'  %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.orientation" %><br />
-    <%= f.select :orientation_id, @orientations %>
+    <%= f.select :orientation_id, @orientations,{}, class: 'chzn-select' %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.programming_language"  %><br />
-    <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true } %>
+    <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true, class: 'chzn-select'} %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.salary"  %><br />
-    <%= f.select :salary_id, @salaries %>
+    <%= f.select :salary_id, @salaries,{}, class: 'chzn-select' %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.working_hours"  %><br />
@@ -64,6 +66,7 @@
   <% end %>
   <%= f.link_to_add "Add attachment", :attachments %>
   <hr/>
+
   <div class="field">
     <%= f.label t "internships.attributes.rating" %><br />
     <div id="edit-rating"><%= render_stars(1, self) %></div>
@@ -85,3 +88,45 @@
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>
 <% end %>
+</div>
+<div class="span6">
+<%= form_for(@company) do |f| %>
+  <div class="field">
+    <%= f.label t "companies.attributes.name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.street" %><br />
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.zip" %><br />
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.city" %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.country" %><br />
+    <%= f.country_select :country, ["United States"] %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.number_employees" %><br />
+    <%= f.number_field :number_employees %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.industry" %><br />
+    <%= f.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.main_language" %><br />
+    <%= f.text_field :main_language %>
+  </div>
+  <div class="field">
+    <%= f.label t "companies.attributes.website" %><br />
+    <%= f.text_field :website %>
+  </div>
+<%end%>
+</div>
+</div>
