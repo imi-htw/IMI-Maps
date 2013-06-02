@@ -22,6 +22,7 @@ class Company < ActiveRecord::Base
   #associations
   has_many :internships
   has_many :contact_persons
+  has_many :locations
 
 	def address
 		"#{self.street}, #{self.zip} #{self.city}, #{self.country}"
