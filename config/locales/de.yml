@@ -213,3 +213,19 @@ de:
     sessions:
       admin_user:
         signed_in: Erfolgreich als Administrator angemeldet.
+  faq:
+    title: "FAQs"
+    title2: "Internship FAQs"
+    frage1:
+      html: "<p><b>Kann ich mein Praktikum in mehreren Abschnitten absolvieren?</b></p><p>Es ist möglich, dass Praktikum in drei Abschnitte (Dauer: mindestens vier Wochen) zu unterteilen. </br>Für jeden Teilabschnitt muss ein separater Bericht angefertigt werden.</p>"
+    frage2:
+      html: "<p><b>Wann sind die Praktikumsberichte fällig?</b></p><p>Spätestens vier Wochen nach Abschluss des Praktikums. Der Bericht sollte ca. 20 Seiten umfassen und </br>geheftet sein (keine losen Blattsammlungen). Bitte bei dem oder der Praktikumsbeauftragten einreichen.</p>"
+    frage3:
+      html: "<p><b>Wo melde ich mich für die praktikumsbegleitenden Lehrveranstaltungen an?</b></p><p>Im LSF. Beachte, dass die Kurse immer in den vorlesungsfreien Zeiten angeboten werden. </br> Bis auf AEP können sie auch vor dem Praktikum belegt werden.</p>"
+    frage4:
+      html: "<p><b>Wann sollte ich mit der Praktikumssuche zu beginnen?</b></p><p>So schnell wie möglich. Es ist wichtig, genügend Zeit haben um nach geeigneten Praktika zu suchen </br> und sich zu bewerben. Besonders in Ländern, für die man ein Visum benötigt und/oder wenn man </br> Stipedendien oder andere Förderungsmöglichkeiten beantragen will.</br> Ca. ein Semester vorher sollte man anfangen sich zu bewerben.</p>"
+    title3: "IMI Map FAQs"
+    frageI1:
+      html: "<p><b>Kann ich meinen Praktikum-Erfahrungsbericht bearbeiten, nachdem er auf IMI Map veröffentlicht wurde? </b></p><p>Ja, Du kannst den Erfahrungsbericht bearbeiten, nachdem er auf IMI Map veröffentlicht wurde.</br>Befolgen diese Schritte: 'Konto' → 'Erfahrungsbericht' → 'Bearbeiten'.</p>"
+    frageI2:
+      html: "<p><b>Wie kann ich einen zweiten Erfahrungsbericht abgeben?</b></p><p>Wenn du dein Praktikum in mehreren Unternehmen absolviert hast, dann kannst du für jedes Unternehmen einen Erfahrungsbericht erstellen. </br>Hierfür musst du dem Zuständigen eine Mail schreiben (Mail), der das für dich freischaltet. </br>Nach der Freischaltung erscheint der Button 'Erfahrungsbericht erstellen' unter 'Konto'.</p>"

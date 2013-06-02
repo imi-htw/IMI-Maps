@@ -194,4 +194,19 @@ en:
       block: "List"
       grid: "Grid"
       blog: "Blog"
-      
+  faq:
+    title: "FAQs"
+    title2: "Internship FAQs"
+    frage1:
+      html: "<p><b>Can I complete my internship in several sections?</b></p><p>It is possible to divide the internship in three sections (each lasting at least four weeks).</br>A separate report must be made ​​for each section.</p>"
+    frage2:
+      html: "<p><b>When are the internship reports due?</b></p><p>No later than four weeks after the completion of the internship. The report should include about 20 pages</br>and be stapled (no loose-leaf). Please submit it to the internship coordinator.</p>"
+    frage3:
+      html: "<p><b>Where do I register for the internship accompanying courses?</b></p><p>In LSF. Note that the courses are always offered during the semester breaks.</br>Apart from AEP, they can also be attended before the placement.</p>"
+    frage4:
+      html: "<p><b>When should I start looking for internships?</b></p><p>As soon as possible. It is important to have enough time to search for suitable internships and to apply. </br>Especially in countries for which a visa is required and / or if you want to apply for scholarships.</p>"     
+    title3: "IMI Map FAQs"
+    frageI1:
+      html: "<p><b>Can I edit my internship-review after it has been submitted?</b></p><p>Yes, you can edit your internship review after it has been submited. Follow these steps: 'Account' → 'Internship Report' → 'Edit'.</p>"
+    frageI2:
+       html: "<p><b>How do I post a second intership-review?</b></p><p>If you have completed your internship in several companies, you can create one experience report for each company.</br> For this you have to write a mail to the person responsible (mail), which unlocks it for you.</br> After activation, the button 'Create review' under 'Account' will appear.</p>"  
