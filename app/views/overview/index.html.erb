@@ -11,8 +11,8 @@
     <th></th>
   </tr>
   <tr>
-    <td><%= country_select nil, :country, nil, {}, class: 'chzn-select' %></td>
-    <td><%= select_tag :orientation, options_for_select(@orientations),  class: 'chzn-select'  %></td>
+    <td><%= country_select nil, :country, nil, {}, { :multiple => true , class: 'chzn-select'} %></td>
+    <td><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= submit_tag "Search", :name => nil, :class => "btn btn-success" %></td>
   </tr>

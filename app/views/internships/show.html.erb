@@ -195,7 +195,10 @@
   <%end%>
   <%=sum/amt%>
 </p>
-  <%= gmaps({
+
+<%= link_to (t "buttons.show"), @internship.company, class: "btn btn-success" %>
+
+<%= gmaps({
    "map_options" => {"auto_zoom" => false, "zoom" => 5 },
    "markers"     => {"data" => @pins }
   })
