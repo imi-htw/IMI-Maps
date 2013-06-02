@@ -24,6 +24,8 @@ ImiMaps::Application.routes.draw do
 
     resources :answers
 
+    resources :general
+
     resources :faq
 
     resources :financing
