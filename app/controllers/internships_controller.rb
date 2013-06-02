@@ -48,6 +48,7 @@ class InternshipsController < ApplicationController
   # GET /internships/1/edit
   def edit
     @internship = Internship.find(params[:id])
+    @company = @internship.company
   end
 
   # POST /internships
