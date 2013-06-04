@@ -18,7 +18,6 @@
 
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
-
     <div class="navbar navbar-inverse">
     <div class="navbar-inner">
     <div class="container">
@@ -72,10 +71,17 @@
     </div>
     </div>
 
-<div class="container">      
-    <div clas="row">
-      <div class="span12"><%= yield %></div>
+  <div class="wrapper">
+    <div class="container clear-top">      
+      <div clas="row">
+       <div class="span12"><%= yield %></div>
+      </div>
     </div>
 </div>
+  <footer>
+    <div class="container">
+    <p>IMI Map - Hochschule für Wirtschaft & Technik</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -5,8 +5,12 @@
 @media (min-width: 979px) { 
 body{
   font-family: 'Merriweather Sans', sans-serif;
-  margin-bottom: 50px;
   background: url(bg.gif);
+}
+
+html, body{
+    min-height: 100%;
+    height: 100%;
 }
 
 #top-menu{
@@ -94,6 +98,26 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
     border-color: rgb(255, 255, 255);
     box-shadow: none;
     text-shadow: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -63px;
+}
+
+.wrapper > .container {
+  padding-top: 0px;
+}
+
+footer{
+  color: #a8a8a8;
+  background: #333333;
+  padding: 17px 0 18px 0;
+  text-align: center;
+  margin-top: 70px;
+  bottom: 0;
 }
 
 .rating_star{

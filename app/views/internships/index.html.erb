@@ -25,7 +25,7 @@
     <td class="table_inside"><%= internship.salary.amount %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
-    <td class="table_rate table_inside"><%= render_stars(internship.rating, self) %></td>
+    <td class="table_inside table_rate "><%= render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside"><%= internship.recommend %></td>
     <td class="table_inside"><%= link_to (t "buttons.show"), internship %></td>
