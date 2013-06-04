@@ -6,6 +6,7 @@
 body{
   font-family: 'Merriweather Sans', sans-serif;
   margin-bottom: 50px;
+  background: url(bg.gif);
 }
 
 #top-menu{
@@ -94,4 +95,9 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
     box-shadow: none;
     text-shadow: none;
 }
+
+.rating_star{
+    display: inline-block;
+}
+
 }

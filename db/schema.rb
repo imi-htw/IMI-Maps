@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130602171318) do
+=======
+ActiveRecord::Schema.define(:version => 20130530095558) do
+>>>>>>> internship design
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -143,10 +147,17 @@ ActiveRecord::Schema.define(:version => 20130602171318) do
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
+<<<<<<< HEAD
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
     t.integer  "favorite_id"
+=======
+    t.integer  "orientation_id"
+    t.boolean  "email_public"
+    t.text     "description"
+    t.string   "semester"
+>>>>>>> internship design
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|

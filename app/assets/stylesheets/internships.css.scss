@@ -12,7 +12,7 @@
   background: url('images/star.gif') 0 0;
   width: 16px;
   height: 16px;
-  display: block;
+  display: inline-block;
   float: left;
 }
 
@@ -109,6 +109,33 @@
 .save_button{
   float: right;
   margin-top: -34px;
+}
+
+.table td{
+  border-top: none !important;
+}
+
+.table_intern{
+  background: #568501;
+  height: 40px;
+  color: white;
+}
+
+#table_top{
+  position: absolute;
+  background: url(table-top.png);
+  height: 64px;
+  width: 38px;
+  margin-left: -38px;
+  margin-top: 0px;
+}
+
+.table-rate{
+  display: inline;
+}
+
+.table_inside{
+  background: #fff;
 }
 
 /*.btn{
