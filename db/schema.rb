@@ -132,21 +132,23 @@ ActiveRecord::Schema.define(:version => 20130605095240) do
   end
 
   create_table "internships", :force => true do |t|
-    t.integer  "orientation_id", :limit => 255
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.integer  "rating",                        :default => 1
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "rating",         :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
+
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
     t.integer  "favorite_id"
+    t.integer  "orientation_id"
+
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
