@@ -34,15 +34,29 @@
     <!-- Be sure to leave the brand out there if you want it shown -->
     
     <ul class="nav pull-right">
-    <li><%= link_to t("header.account"), current_user %></li>
-    <li><li><%= link_to t("header.logout"), logout_path %></li></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
+        <a class="dropdown-toggle" href=""><span class="badge badge-important"><%= Notification.where(:read => false, :user_id => current_user.id).size
+%></span><i class="icon-white icon-flag icon-large"></i></a>
           <ul class="dropdown-menu">
+            <% current_user.notifications.each do |noti| %>
+            <li>
+              <%= link_to noti.text, noti.link %>
+            </li>
+            <%end%>
+          </ul>
+      </li>  
+      
+    <li><%= link_to t("header.account"), current_user %></li>
+    <li><%= link_to t("header.logout"), logout_path %></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
+        <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
-      </ul>
-    </li>    
+        </ul>
+      </li>    
+
     </ul>
     <!-- Everything you want hidden at 940px or less, place within here -->
     <div class="nav-collapse collapse">

@@ -38,6 +38,8 @@ ImiMaps::Application.routes.draw do
 
     resources :error_page
 
+    resources :no_path
+
     resources :maintenance
 
 		root to: 'sessions#new'
@@ -46,7 +48,7 @@ ImiMaps::Application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
-    match '*path', to: redirect("/#{I18n.locale}/overview")
+    match '*path', to: redirect("/#{I18n.locale}/no_path")
 
     
 	end
