@@ -19,7 +19,7 @@ gem "paperclip", "~> 2.7"
 
 gem 'chosen-rails'
 
-
+gem 'kaminari'
 
 
 # Bundle edge Rails instead:
