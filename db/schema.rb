@@ -114,11 +114,6 @@ ActiveRecord::Schema.define(:version => 20130605095240) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "internship_reports", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -142,13 +137,10 @@ ActiveRecord::Schema.define(:version => 20130605095240) do
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "recommend"
-
+    t.integer  "orientation_id"
     t.boolean  "email_public"
     t.text     "description"
     t.string   "semester"
-    t.integer  "favorite_id"
-    t.integer  "orientation_id"
-
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
