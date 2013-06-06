@@ -25,6 +25,7 @@ class OverviewController < ApplicationController
 
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
+    @semesters = Semester.where(:id =>(Internship.select(:semester_id).collect do |x| x.semester_id end.uniq))
 
     respond_to do |format|
       format.html # index.html.erb

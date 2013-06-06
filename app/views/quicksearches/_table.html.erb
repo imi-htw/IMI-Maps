@@ -5,6 +5,7 @@
     <th><%= t "companies.attributes.city"%> </th>
     <th><%= t "companies.attributes.country" %></th>
     <th><%= t "companies.attributes.industry" %></th>
+    <td><%= t "internships.attributes.semester" %></td>
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th><%= t "internships.attributes.rating" %></th>
@@ -18,6 +19,7 @@
     <td><%= internship.company.city %></td>
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
+    <td><%= internship.semester.semester %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= render_stars(internship.rating, self) %></td>
