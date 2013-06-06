@@ -7,6 +7,8 @@ class CreateInternships < ActiveRecord::Migration
       t.float :working_hours
       t.float :living_costs
 
+      t.string :internship_report
+
       t.timestamps
     end
   end
