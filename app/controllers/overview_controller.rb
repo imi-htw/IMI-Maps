@@ -23,6 +23,9 @@ class OverviewController < ApplicationController
 
     end
 
+    @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @internships }
