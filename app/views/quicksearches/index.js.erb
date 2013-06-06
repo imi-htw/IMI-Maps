@@ -10,7 +10,7 @@ Gmaps.load_map = function() {
     Gmaps.map.callback = function()  {
     	if (Gmaps.map.markers.length == 1) {
          //only one marker, choose the zoom level you expect
-         setTimeout(function() { Gmaps.map.serviceObject.setZoom(5);}, 50);
+         Gmaps.map.serviceObject.setZoom(5);
         }
         else{
          //more than one marker, let's auto_zoom
@@ -18,6 +18,7 @@ Gmaps.load_map = function() {
          Gmaps.map.adjustMapToBounds();
         };
       }
+     Gmaps.map.callback();
 };
 Gmaps.loadMaps();
 
