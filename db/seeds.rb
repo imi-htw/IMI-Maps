@@ -55,22 +55,28 @@ user2 = User.create(last_name: "Schmidt", first_name: "Stefan", password: "test"
 user3 = User.create(last_name: "Bell", first_name: "Lisa", password: "test", email: "lisa@imimaps.com", id:3)
 user4 = User.create(last_name: "Vogel", first_name: "Steffi", password: "test", email: "steffi@imimaps.com", id:4)
 
+
+Semester.where(semester: "SS 13", id:1).first_or_create
+Semester.where(semester: "WS 12/13", id:2).first_or_create
+Semester.where(semester: "SS 12", id:3).first_or_create
+Semester.where(semester: "WS 11/12", id:4).first_or_create
+
 Internship.destroy_all
-i = Internship.new(salary_id: 1, working_hours: 40.0, living_costs: 500.0, rating: 3, company_id: 1, user_id: user1, title: "Awesome Developer #1", recommend: true, orientation_id: 1, email_public: true, description: "test", semester: "Sommer 2013", id:1)
+i = Internship.new(salary_id: 1, working_hours: 40.0, living_costs: 500.0, rating: 3, company_id: 1, user_id: user1.id, title: "Awesome Developer #1", recommend: true, orientation_id: 1, email_public: true, description: "test", semester_id: 1, id:1)
 i.programming_languages = ProgrammingLanguage.where(:id => [1,2,5])
 i.save
-i = Internship.new(salary_id: 3, working_hours: 40.0, living_costs: 500.0, rating: 4, company_id: 4, user_id: user2, title: "Awesome Developer #2", recommend: true, orientation_id: 2, email_public: true, description: "test", semester: "Sommer 2013", id:2)
+i = Internship.new(salary_id: 3, working_hours: 40.0, living_costs: 500.0, rating: 4, company_id: 4, user_id: user2.id, title: "Awesome Developer #2", recommend: true, orientation_id: 2, email_public: true, description: "test", semester_id: 2, id:2)
 i.programming_languages = ProgrammingLanguage.where(:id => [3,2,7])
 i.save
-i = Internship.new(salary_id: 4, working_hours: 40.0, living_costs: 500.0, rating: 5, company_id: 3, user_id: user3, title: "Awesome Developer #3", recommend: true, orientation_id: 3, email_public: true, description: "test", semester: "Sommer 2013", id:3)
+i = Internship.new(salary_id: 4, working_hours: 40.0, living_costs: 500.0, rating: 5, company_id: 3, user_id: user3.id, title: "Awesome Developer #3", recommend: true, orientation_id: 3, email_public: true, description: "test", semester_id: 3, id:3)
 i.programming_languages = ProgrammingLanguage.where(:id => [5,6,4])
 i.save
-i = Internship.new(salary_id: 2, working_hours: 40.0, living_costs: 500.0, rating: 3, company_id: 2, user_id: user4, title: "Awesome Developer #4", recommend: true, orientation_id: 2, email_public: true, description: "test", semester: "Sommer 2013", id:4)
+i = Internship.new(salary_id: 2, working_hours: 40.0, living_costs: 500.0, rating: 3, company_id: 2, user_id: user4.id, title: "Awesome Developer #4", recommend: true, orientation_id: 2, email_public: true, description: "test", semester_id: 4, id:4)
 i.programming_languages = ProgrammingLanguage.where(:id => [2,4,6])
 i.save
-i = Internship.new(salary_id: 5, working_hours: 40.0, living_costs: 500.0, rating: 6, company_id: 6, user_id: user1, title: "Awesome Developer #5", recommend: false, orientation_id: 3, email_public: true, description: "test", semester: "Sommer 2013", id:4)
+i = Internship.new(salary_id: 5, working_hours: 40.0, living_costs: 500.0, rating: 6, company_id: 6, user_id: user1.id, title: "Awesome Developer #5", recommend: false, orientation_id: 3, email_public: true, description: "test", semester_id: 2, id:4)
 i.programming_languages = ProgrammingLanguage.where(:id => [1,4,7])
 i.save
-i = Internship.new(salary_id: 2, working_hours: 40.0, living_costs: 500.0, rating: 6, company_id: 5, user_id: user2, title: "Awesome Developer #6", recommend: false, orientation_id: 4, email_public: true, description: "test", semester: "Sommer 2013", id:4)
+i = Internship.new(salary_id: 2, working_hours: 40.0, living_costs: 500.0, rating: 6, company_id: 5, user_id: user2.id, title: "Awesome Developer #6", recommend: false, orientation_id: 4, email_public: true, description: "test", semester_id: 3, id:4)
 i.programming_languages = ProgrammingLanguage.where(:id => [3,6,7])
 i.save
