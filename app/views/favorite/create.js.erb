@@ -1,0 +1,5 @@
+$('#favorite').html('<%= escape_javascript(button_to "Delete from Favorites", {:controller => :favorite,
+                                      :action => "destroy",
+                                      :user_id => @current_user.id, 
+                                      :internship_id => @internship.id, 
+                                      :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger favorite") %>');
