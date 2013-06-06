@@ -47,4 +47,11 @@ class ApplicationController < ActionController::Base
 
     helper_method :get_orientations
 
+    def get_notification_size
+      Notification.where(:read => false, :user_id => current_user.id).size
+    end
+
+    helper_method :get_notification_size
+
+
 end

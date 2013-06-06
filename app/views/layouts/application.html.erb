@@ -35,15 +35,19 @@
     <ul class="nav pull-right">
       <li class="dropdown">
         <a class="dropdown-toggle" href="">
-          <% if Notification.where(:read => false, :user_id => current_user.id).size > 0 %>
-          <span class="badge badge-important"><%= Notification.where(:read => false, :user_id => current_user.id).size
+          <% if get_notification_size > 0 %>
+          <span class="badge badge-important"><%= get_notification_size
 %></span>
 <%end%>
 <i class="icon-white icon-flag icon-large"></i></a>
           <ul class="dropdown-menu">
-            <% current_user.notifications.each do |noti| %>
+            <% current_user.notifications.order(:read).each do |noti| %>
             <li>
+              <% if noti.read == false %>
+              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
+              <% else %>
               <%= link_to noti.text, noti.link %>
+              <% end %>
             </li>
             <%end%>
           </ul>

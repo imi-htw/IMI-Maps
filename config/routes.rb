@@ -14,6 +14,8 @@ ImiMaps::Application.routes.draw do
 
     resources :overview, :only => [:index]
 
+    resources :notifications, :only => [:update]
+
     resources :favorite, :only => [:create, :destroy]
 
     resources :location, :only => [:create, :destroy]
