@@ -36,11 +36,15 @@
 <b><%= t "companies.attributes.rating"  %> :</b>
   <% sum = 0%>
   <% amt = 0%>
-  <% @internships.each do |i| %>
-    <% sum += i.rating %>
-    <% amt += 1 %>
+  <% if @internships.size > 0 %>
+    <% @internships.each do |i| %>
+      <% sum += i.rating %>
+      <% amt += 1 %>
+    <%end%>
+    <%=sum/amt%>
+  <% else %>
+    <% 0 %>
   <%end%>
-  <%=sum/amt%>
 </p>
 <p>
 
