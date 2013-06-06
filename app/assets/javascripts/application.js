@@ -32,9 +32,9 @@ $(document).ready(function() {
      $(".comment").slideToggle("slow");
      $(".answer_2").slideToggle("slow");
   });
+
+    $(".active_click").click(function(){
+      $(this).addClass("active");
+    });
 });
 
-click_reset = function() {
-  $(".chzn-select").val('').trigger("liszt:updated");
-  $("#search_button").click();
-}

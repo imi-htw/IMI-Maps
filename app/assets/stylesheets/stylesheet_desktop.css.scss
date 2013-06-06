@@ -6,8 +6,27 @@
 body{
   font-family: 'Merriweather Sans', sans-serif;
   margin-bottom: 50px;
-  color:#000000;
-  background-color: #f7f7f7;
+  background: url(bg.gif);
+}
+
+.bold {
+  font-weight:bold !important;
+}
+
+html, body{
+    min-height: 100%;
+    height: 100%;
+}
+
+h1{
+  font-style: italic;
+}
+
+#top-menu{
+  width: 1250px;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
 }
 
 .brand{
@@ -105,7 +124,6 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
   width: 255px;
   top: 175px;
   font-weight: 300;
-
   -moz-box-shadow:      3px 3px 3px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.3);
   box-shadow:           3px 3px 3px 0px rgba(0, 0, 0, 0.3);
@@ -146,5 +164,21 @@ p {
   color: #000000;
 }
 
+.rating_star{
+  display: inline-block;
+}
 
+.chzn-container .chzn-results .highlighted{ 
+  background-color: #77b900;
+  background-image: -webkit-linear-gradient(top, #77b900 20%, #538200 90%) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(20%, #77b900), color-stop(90%, #538200)) !important;
+  background-image: -webkit-linear-gradient(top, #77b900 20%, #538200 90%) !important;
+  background-image: -moz-linear-gradient(top, #77b900 20%, #538200 90%) !important;
+  background-image: -o-linear-gradient(top, #77b900 20%, #538200 90%) !important;
+  background-image: linear-gradient(#77b900 20%, #538200 90%) !important;
+}
+
+.chzn-container-active .chzn-choices{
+  border: 1px solid #77b900 !important;
+}
 }
