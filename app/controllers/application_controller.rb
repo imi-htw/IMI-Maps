@@ -40,18 +40,25 @@ class ApplicationController < ActionController::Base
     helper_method :get_salaries
   
     def get_orientations
-      @orientations ||= Orientation.order(:name).map do |s|
-        [s.name, s.id]
+      @orientations ||= Orientation.order(:name).map do |o|
+        [o.name, o.id]
       end
     end
 
     helper_method :get_orientations
+
+    def get_semesters
+      @semesters ||= Semester.order(:id).map do |s|
+        [s.semester, s.id]
+      end
+    end
+
+    helper_method :get_semesters
 
     def get_notification_size
       Notification.where(:read => false, :user_id => current_user.id).size
     end
 
     helper_method :get_notification_size
-
 
 end
