@@ -13,6 +13,7 @@ gem 'activeadmin'
 gem 'thin'
 
 gem "rmagick", "~> 2.13.1"
+gem "paperclip", "~> 2.7"
 
 gem 'chosen-rails'
 
