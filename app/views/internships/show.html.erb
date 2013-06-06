@@ -82,6 +82,14 @@
                                 <br/>
                               <% end %>
 
+                              <% if @favorite %>
+                                <%= button_to "Delete from Favorites", {:controller => :favorite,
+                                      :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, class: "btn btn-danger" %>
+                                <% else %>
+                                <%= button_to "Add to Favorites", {:controller => :favorite,
+                                      :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, class: "btn btn-success" %>
+                                <% end %>
+
                                 <b><%= t "internships.attributes.comments" %> :</b>
                                 <br/>
                                 <br/>
