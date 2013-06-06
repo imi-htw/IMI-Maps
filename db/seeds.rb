@@ -20,7 +20,47 @@ ProgrammingLanguage.where(name: "Haskell").first_or_create
 ProgrammingLanguage.where(name: "Lisp").first_or_create
 ProgrammingLanguage.where(name: "Erlang").first_or_create
 ProgrammingLanguage.where(name: "Scala").first_or_create
-ProgrammingLanguage.where(name: "Other").first_or_create
+ProgrammingLanguage.where(name: "Objective-C").first_or_create
+ProgrammingLanguage.where(name: "Visual Basic").first_or_create
+ProgrammingLanguage.where(name: "Visual Basic .NET").first_or_create
+ProgrammingLanguage.where(name: "Transact-SQL").first_or_create
+ProgrammingLanguage.where(name: "Pascal").first_or_create
+ProgrammingLanguage.where(name: "Bash").first_or_create
+ProgrammingLanguage.where(name: "Delphi / Object Pascal").first_or_create
+ProgrammingLanguage.where(name: "PL / SQL").first_or_create
+ProgrammingLanguage.where(name: "Assembly").first_or_create
+ProgrammingLanguage.where(name: "Lua").first_or_create
+ProgrammingLanguage.where(name: "MATLAB").first_or_create
+ProgrammingLanguage.where(name: "SAS").first_or_create
+ProgrammingLanguage.where(name: "Ada").first_or_create
+ProgrammingLanguage.where(name: "R").first_or_create
+ProgrammingLanguage.where(name: "ABAP").first_or_create
+ProgrammingLanguage.where(name: "COBOL").first_or_create
+ProgrammingLanguage.where(name: "Fortran").first_or_create
+ProgrammingLanguage.where(name: "Scheme").first_or_create
+ProgrammingLanguage.where(name: "Prolog").first_or_create
+ProgrammingLanguage.where(name: "Common Lisp").first_or_create
+ProgrammingLanguage.where(name: "Scratch").first_or_create
+ProgrammingLanguage.where(name: "D").first_or_create
+ProgrammingLanguage.where(name: "Basic").first_or_create
+ProgrammingLanguage.where(name: "Logo").first_or_create
+ProgrammingLanguage.where(name: "NXT-G").first_or_create
+ProgrammingLanguage.where(name: "F#").first_or_create
+ProgrammingLanguage.where(name: "Smalltalk").first_or_create
+ProgrammingLanguage.where(name: "APL").first_or_create
+ProgrammingLanguage.where(name: "Forth").first_or_create
+ProgrammingLanguage.where(name: "ActionScript").first_or_create
+ProgrammingLanguage.where(name: "ML").first_or_create
+ProgrammingLanguage.where(name: "RPG (OS/400)").first_or_create
+ProgrammingLanguage.where(name: "Awk").first_or_create
+ProgrammingLanguage.where(name: "Tcl").first_or_create
+ProgrammingLanguage.where(name: "PL/I").first_or_create
+ProgrammingLanguage.where(name: "LabVIEW").first_or_create
+ProgrammingLanguage.where(name: "Ladder Logic").first_or_create
+ProgrammingLanguage.where(name: "JScript.NET").first_or_create
+
+
+
 
 Salary.where(amount: "0-299", order_id: 0, min_amount: 0, max_amount: 299, id:1).first_or_create
 Salary.where(amount: "300-599", order_id: 1, min_amount: 300, max_amount: 599, id:2).first_or_create
