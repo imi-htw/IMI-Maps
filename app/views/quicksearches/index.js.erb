@@ -17,6 +17,20 @@ Gmaps.load_map = function() {
          Gmaps.map.map_options.auto_zoom = true;
          Gmaps.map.adjustMapToBounds();
         };
+        
+        for(var i = 0; i < Gmaps.map.markers.length; i++){
+          marker = Gmaps.map.markers[i];
+          google.maps.event.addListener(marker.serviceObject, 'click', 
+            (function(marker){
+              return function(){
+                if (Gmaps.map.serviceObject.getZoom() < 8) {
+                  Gmaps.map.serviceObject.setZoom(8);
+                }
+                Gmaps.map.setCenter(marker.getPosition());
+              }
+            })(marker)
+          )
+        }
       }
      Gmaps.map.callback();
 };
