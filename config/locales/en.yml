@@ -93,6 +93,8 @@ en:
       edituser: "Editing User"  
     new:
       newuser: "New User"  
+    show:
+       favorites_title: "My Favorites"
     sign_up: "Thank you for signing up!"
     attributes:
       last_name: "Last Name"  

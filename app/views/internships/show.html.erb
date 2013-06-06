@@ -67,8 +67,18 @@
 <% if @internship.attachments.present? %>
   <b><%= t "internships.attributes.pictures" %> :</b>
   <% @internship.attachments.each do |attachment| %>
-    <p> <%= attachment.description %> </p> 
-    <%= image_tag attachment.file_url(:thumb) %>
+    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Photo Gallery</h3>
+        </div>
+      <div class="modal-body">
+        <%= image_tag attachment.file_url %>
+      </div>
+        <div class="modal-footer">
+      </div>
+    </div>
   <% end %>
   <br/>
 <% end %>

@@ -2,18 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#body{
+  background-color: #333333;
+}
+
+#login-box{
+  background-color: #000;
+  height: 270px;
+  position: inherit;
+  margin-left: 41%;
+  width: 270px;
+  z-index: 1;
+}
+
 .row{
   margin-top: 20px;
   margin:0 auto;
-  float:none;
 }
 
 .login{
-  text-align:center;
+  position: relative;
+  text-align: center;
+  top: 290px;
 }
 
 #login-element{
   padding-bottom: 10px;
+}
+
+.span5{
+    margin:0 auto;
+    float:none;
+    width: auto;
 }
 
 .span6{
@@ -23,24 +43,35 @@
 }
 
 #email{
-  border-radius:5px 5px 5px 5px;
-  padding: 5px;
-  margin-top: 5px;
+    /*border-radius:5px 5px 5px 5px;*/
+    padding: 5px;
+    margin-top: 5px;
 }
 
 #password{
-  border-radius:5px 5px 5px 5px;
-  padding: 5px;
-  margin-top: 5px;
+    /*border-radius:5px 5px 5px 5px;*/
+    padding: 5px;
+    margin-top: 5px;
 }
 
-#logo {
-  background: url(logo4.png);
-  background-size: 100%;
-  width: 150px;
-  height: 150px;
-  margin:0 auto; 
-  float:none;
-  margin-top: 20px;
+#logo_w {
+    
+    float: none;
+    height: 240px;
+    left: 42%;
+    margin: 70px auto 0;
+    position: absolute;
+    width: 239px;
+    z-index: 1;
+}
 
+#logo_p {
+
+    float: none;
+    height: 239px;
+    left: 42%;
+    margin: 70px auto 0;
+    position: absolute;
+    width: 240px;
+    z-index: 2;
 }

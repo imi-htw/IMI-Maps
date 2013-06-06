@@ -36,7 +36,7 @@
 </p>
 <%end%>
 
-<h2> Favorites </h2>
+<h2> <%= t "users.show.favorites_title"%> </h2>
 <% @user.favorites.each do |favorite| %>
 <%= link_to "#{favorite.internship.title} at #{favorite.internship.company.name}", favorite.internship, class: "btn btn-success" %>
 <%= link_to (t "buttons.destroy"), favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

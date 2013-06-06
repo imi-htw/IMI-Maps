@@ -1,5 +1,5 @@
 class Internship < ActiveRecord::Base
-  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title, :recommend, :email_public, :semester, :description
+  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title, :recommend, :email_public, :semester, :description, :internship_report
 
   # validations
   validates :orientation_id, :presence => true, :allow_blank => false
@@ -28,6 +28,8 @@ class Internship < ActiveRecord::Base
   
   #attachments
   has_many :attachments, :as => :attachable
+  has_one :internship_report, :as => :attachable
 
   accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :internship_report
 end
