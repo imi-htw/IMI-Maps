@@ -136,7 +136,18 @@
   background: #fff;
 }
 
-/*.btn{
-  background-image: url('images/rails2.png') 0 0;
-}*/
+.img_preview{
+  border: 5px solid red;
+}
 
+#myModal{
+  max-width: none !important;
+}
+
+.modal-body{
+  max-height: none !important;
+  text-align: center;
+  img{
+    height: 450px;
+  }
+}
