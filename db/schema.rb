@@ -130,9 +130,10 @@ ActiveRecord::Schema.define(:version => 20130605095240) do
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.integer  "rating",         :default => 1
+    t.string   "internship_report"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.integer  "rating",            :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"

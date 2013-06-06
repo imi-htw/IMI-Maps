@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMI Maps | Hochschule für Wirtschaft und Technik</title>
+  <title>IMI Map | Hochschule für Wirtschaft und Technik</title>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -11,21 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background-color:#333;">
-      
-<div>
-            <img src="assets/plane.gif" id="logo_p">
-        </div>
-        <div>
-            <img src="assets/logos.png" id="logo_w">
-        </div>
+          <div>
+              <img src="assets/plane.gif" id="logo_p">
+          </div>
+        
+          <div>
+              <img src="assets/logos.png" id="logo_w">
+          </div>
 
-<div class="span6">
-             <div class="login"><%= yield %></div>
-      </div>
+          <div class="login"><%= yield %>
+          </div>
 
+    <div id="gradient"></div>
 
-
-
-</div>
 </body>
 </html>
