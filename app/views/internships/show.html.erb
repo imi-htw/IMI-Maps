@@ -1,221 +1,252 @@
+
 <p id="notice"><%= notice %></p>
 
-<h3> Internship facts: </h3>
+<h2> Internship Details</h2>
+<div class="row-fluid" style=" -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1);">
+      <div class="span12">
+            <div class="content-intern">
+     
+               <div class="row-fluid">   
 
-<p>
-  <b><%= t "internships.attributes.title" %> :</b>
-  <%= @internship.title %>
-</p>
+                  <div class="span9">
+                      <div class="container-left">
+                        <div class="container-left-text">
+                              <p>
+                                <b><%= t "internships.attributes.title" %> :</b>
+                                <%= @internship.title %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.orientation" %> :</b>
-  <%= @internship.orientation.try(:name) %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.orientation" %> :</b>
+                                <%= @internship.orientation.try(:name) %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.programming_languages" %> :</b>
-  <%= @internship.programming_languages.map(&:name) %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.programming_languages" %> :</b>
+                                <%= @internship.programming_languages.map(&:name) %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.salary" %> :</b>
-  <%= @internship.salary.try(:amount) %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.salary" %> :</b>
+                                <%= @internship.salary.try(:amount) %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.working_hours" %> :</b>
-  <%= @internship.working_hours %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.working_hours" %> :</b>
+                                <%= @internship.working_hours %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.living_costs" %> :</b>
-  <%= @internship.living_costs %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.living_costs" %> :</b>
+                                <%= @internship.living_costs %>
+                              </p>
 
-<p>
-  <b><%= t "internship.attributes.rating" %></b>
-  <%= render_stars(@internship.rating, self) %>
-</p>
-<br/>
-<p>
-  <b><%= t "internships.attributes.user" %> :</b>
-  <%= @internship.try(:user).try(:name) %>
-</p>
-<br/>
-<p>
-  <b><%= t "internships.attributes.recommend" %> :</b>
-  <%= @internship.recommend %>
-</p>
+                              <p>
+                                <b><%= t "internship.attributes.rating" %></b>
+                                <%= render_stars(@internship.rating, self) %>
+                              </p>
+                              <br/>
+                              <p>
+                                <b><%= t "internships.attributes.user" %> :</b>
+                                <%= @internship.try(:user).try(:name) %>
+                              </p>
+                              <br/>
+                              <p>
+                                <b><%= t "internships.attributes.recommend" %> :</b>
+                                <%= @internship.recommend %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.semester" %> :</b>
-  <%= @internship.semester %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.semester" %> :</b>
+                                <%= @internship.semester %>
+                              </p>
 
-<p>
-  <b><%= t "internships.attributes.description" %> :</b>
-  <%= @internship.description %>
-</p>
+                              <p>
+                                <b><%= t "internships.attributes.description" %> :</b>
+                                <%= @internship.description %>
+                              </p>
 
-<% if @internship.email_public %>
-<p>
-  <b><%= t "users.attributes.email" %> :</b>
-  <%= @internship.user.email %>
-</p>
-<% end %>
+                              <% if @internship.email_public %>
+                              <p>
+                                <b><%= t "users.attributes.email" %> :</b>
+                                <%= @internship.user.email %>
+                              </p>
+                              <% end %>
 
-<% if @internship.attachments.present? %>
-  <b><%= t "internships.attributes.pictures" %> :</b>
-  <% @internship.attachments.each do |attachment| %>
-    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Photo Gallery</h3>
-        </div>
-      <div class="modal-body">
-        <%= image_tag attachment.file_url %>
-      </div>
-        <div class="modal-footer">
-      </div>
+                              <% if @internship.attachments.present? %>
+                                <b><%= t "internships.attributes.pictures" %> :</b>
+                                <% @internship.attachments.each do |attachment| %>
+                                  <p> <%= attachment.description %> </p> 
+                                  <%= image_tag attachment.file_url(:thumb) %>
+                                <% end %>
+                                <br/>
+                              <% end %>
+
+                                <b><%= t "internships.attributes.comments" %> :</b>
+                                <br/>
+                                <br/>
+
+                              <!-- ################################################# start comments #################################################--> 
+
+                              <%= form_for(@comment) do |f| %>
+                              <div class="field">
+                                  <%= f.hidden_field :internship_id, value: @internship.id %>
+                                  <%= f.label t "comments.attributes.body" %><br />
+                                  <%= f.text_field :body %>
+                                  <div class="actions">
+                                  <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+                                </div>
+                                </div>
+                              <% end %>
+
+                              <% @internship.user_comments.each do |i| %>  
+                                <div class="comment"> 
+                                <div id="user"><%= i.user.name %> 
+                                <%= t "helpers.at" %>
+                                <%= i.created_at %>
+                                :</div>
+                                <br/>
+                                <br/>
+                                <div id="senetence"><%= i.body %></div>
+                                <br/>
+                                <% if current_user.id == i.user_id %>
+                                  <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+                                <% end %>
+                                
+                                </div>
+                                <% if i.answer.present? %>
+                                <div class="answer">
+                                  <div id="user"><%= t "answers.from" %>
+                                  <%= i.answer.user.name %> 
+                                  <%= t "helpers.at" %>
+                                  <%= i.answer.created_at %>
+                                  :</div>
+                                  <br/>
+                                  <br/>
+                                  <div id="senetence"><%= i.answer.body %></div>
+
+                                  
+                                  <% if current_user.id == @internship.user_id %>
+                                    <br/>
+                                    <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+                                  <% end %>
+                                </div>
+
+                                    <br/>
+                                    <br/>
+
+                                <% else %>
+
+                                  <% if current_user.id == @internship.user_id %>
+
+                                    <%= form_for(@answer) do |f| %>
+                                      <div class="field">
+                                        <%= f.hidden_field :internship_id, value: @internship.id %>
+                                        <%= f.hidden_field :user_comment_id, value: i.id %>
+                                        <%= f.label t "answers.attributes.body" %><br />
+                                        <%= f.text_field :body %>
+                                        <div class="actions">
+                                        <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+                                      </div>
+                                      </div>
+                                    <% end %>
+
+                                  <% end %>
+
+                                <% end %>
+
+                              <% end %>
+                            </div>
+                            </div>
+                  </div>
+
+
+
+
+
+                    <div class="span3"> 
+                          <div class="container-right"> 
+                              <div class="ribbon">
+                                <div class="ribbon-wrapper">
+    <div class="ribbon-front">
+      <h3 style="margin-left:15px"> Company Overview </h3>
     </div>
-  <% end %>
-  <br/>
-<% end %>
 
-<% if @favorite %>
-<%= button_to "Delete from Favorites", {:controller => :favorite,
-      :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, class: "btn btn-danger" %>
-<% else %>
-<%= button_to "Add to Favorites", {:controller => :favorite,
-      :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, class: "btn btn-success" %>
-<% end %>
+    <div class="ribbon-edge-topright"></div>
 
-  <b><%= t "internships.attributes.comments" %> :</b>
-  <br/>
-  <br/>
+    <div class="ribbon-edge-bottomright"></div>
 
-<!-- ################################################# start comments #################################################--> 
-
-<%= form_for(@comment) do |f| %>
-<div class="field">
-    <%= f.hidden_field :internship_id, value: @internship.id %>
-    <%= f.label t "comments.attributes.body" %>
-    <%= f.text_field :body %>
-    <div class="actions">
-    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> Kommentare</a>
+    <div class="ribbon-back-right"></div>
   </div>
-  </div>
-<% end %>
-
-<% @internship.user_comments.each do |i| %>  
-  <div class="comment"> 
-  <div id="user"><%= i.user.name %> 
-  <%= t "helpers.at" %>
-  <%= i.created_at %>
-  :</div>
-  <br/>
-  <br/>
-  <div id="sentence"><%= i.body %></div>
-  <br/>
-  <% if current_user.id == i.user_id %>
-    <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
-  <% end %>
-
-  </div>
-
-  <% if i.answer.present? %>
-  <div class="answer">
-    <div id="user_2"><%= t "answers.from" %>
-    <%= i.answer.user.name %> 
-    <%= t "helpers.at" %>
-    <%= i.answer.created_at %>
-    :</div>
-    <br/>
-    <br/>
-    <div id="sentence_2"><%= i.answer.body %></div>
-
-    
-    <% if current_user.id == @internship.user_id %>
-      <br/>
-      <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
-    <% end %>
-  </div>
-
-      <br/>
-      <br/>
-
-  <% else %>
-
-    <% if current_user.id == @internship.user_id %>
-      <br />
-      <%= form_for(@answer) do |f| %>
-      <div class="answer_2">
-        <div id="answer_field"><div class="field">
-          <%= f.hidden_field :internship_id, value: @internship.id %>
-          <%= f.hidden_field :user_comment_id, value: i.id %>
-          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
-          <div id="sentence_3"><%= f.text_field :body %></div>
-          <div class="actions save_button">
-          <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-        </div>
-        </div>
-        </div>
-        </div>
-      <% end %>
-
-    <% end %>
-
-  <% end %>
-
-<% end %>
-
-<h3> Company short facts: </h3>
-
-<p>
-  <b><%= t "companies.attributes.name"  %> :</b>
-  <%= @internship.company.name %>
-</p>
+</div>
 
 
-<p>
-  <b><%= t "companies.attributes.website"  %> :</b>
-  <%= link_to @internship.company.website , target: "_blank" %>
-</p>
+                                        
 
-<p>
-  <b><%= t "companies.attributes.industry"  %> :</b>
-  <%= @internship.company.industry %>
-</p>
-<p>
 
-<p>
-  <b><%= t "companies.attributes.number_employees"  %> :</b>
-  <%= @internship.company.number_employees %>
-</p>
+                                        <%= gmaps({
+                                           "map_options" => {"auto_zoom" => false, "zoom" => 5 },
+                                           "markers"     => {"data" => @pins }
+                                          })
+                                        %>
 
-<p>
-<b><%= t "companies.attributes.main_language"  %> :</b>
-  <%= @internship.company.main_language %>
-</p>
+                                        <%= yield :scripts %>
 
-<p>
-<b><%= t "companies.attributes.rating"  %> :</b>
-  <% sum = 0%>
-  <% amt = 0%>
-  <% @internship.company.internships.each do |i| %>
-    <% sum += i.rating %>
-    <% amt += 1 %>
-  <%end%>
-  <%=sum/amt%>
-</p>
+                                        <div class="container-right-text">
+                                        <p>
+                                          <b><%= t "companies.attributes.name"  %> :</b>
+                                          <%= @internship.company.name %>
+                                        </p>
 
-<%= link_to (t "buttons.show"), @internship.company, class: "btn btn-success" %>
 
-<%= gmaps({
-   "map_options" => {"auto_zoom" => false, "zoom" => 5 },
-   "markers"     => {"data" => @pins }
-  })
-%>
-<%= yield :scripts %>
+                                        <p>
+                                          <b><%= t "companies.attributes.website"  %> :</b>
+                                          <%= link_to @internship.company.website , target: "_blank" %>
+                                        </p>
+
+                                        <p>
+                                          <b><%= t "companies.attributes.industry"  %> :</b>
+                                          <%= @internship.company.industry %>
+                                        </p>
+                                        <p>
+
+                                        <p>
+                                          <b><%= t "companies.attributes.number_employees"  %> :</b>
+                                          <%= @internship.company.number_employees %>
+                                        </p>
+
+
+                                        <b><%= t "companies.attributes.main_language"  %> :</b>
+                                          <%= @internship.company.main_language %>
+                                        </p>
+                                        <p>
+
+                                        <b><%= t "companies.attributes.rating"  %> :</b>
+                                          <% sum = 0%>
+                                          <% amt = 0%>
+                                          <% @internship.company.internships.each do |i| %>
+                                            <% sum += i.rating %>
+                                            <% amt += 1 %>
+                                          <%end%>
+                                          <%=sum/amt%>
+                                        </p>
+                                        <p>
+                                      </div>
+                                          
+
+
+
+
+                          </div>
+
+                    </div>
+                     <div class="row-fluid">  
+
+                      <div class="span12">
+                        
+                      </div>
+                  </div>
+      </div>
+</div>
+</div>
+

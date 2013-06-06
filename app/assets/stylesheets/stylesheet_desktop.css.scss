@@ -5,43 +5,32 @@
 @media (min-width: 979px) { 
 body{
   font-family: 'Merriweather Sans', sans-serif;
-  background: url(bg.gif);
-}
-
-
-.bold {
-  font-weight:bold !important;
-}
-
-html, body{
-    min-height: 100%;
-    height: 100%;
-}
-
-#top-menu{
-  width: 1250px;
-  position: absolute;
-  left: 50%;
-  margin-left: -600px;
+  margin-bottom: 50px;
+  color:#000000;
+  background-color: #f7f7f7;
 }
 
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
-  width: 50px;
-  height: 70px;
-  margin-top: 5px;
+  width: 90px;
+  height: 115px;
+  margin-top: 10px;
 }
-
+.navbar {
+  width: 100%;
+}
 .navbar .brand {
-  margin-left: 20px;
+  margin-left: 100px;
 }
-
 .navbar-inner {
   text-align:center;
   background: #333333 !important;
-  height: 100px;
+  height: 120px;
   float: none;
+  font-weight: 100;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 
 .nav-top > li > a {
@@ -60,16 +49,15 @@ html, body{
   font-weight:bold;
   background-color:#77b900;
   color: #fff;
-  border-radius:0px 0px 5px 5px;
   padding-bottom: 5px;
   padding-left: 10px;
-  padding-right: 10px;                                 /* nav right */
+  padding-right: 10px;    
+  font-weight: 100;
+                               /* nav right */
 } 
-
 .navbar .nav.pull-right > li > a:hover{
   color: #000;
 }
-
 .navbar .nav {
   margin-left: 70px;
 }
@@ -102,9 +90,6 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
   color: #77b900;
 }
-
-
-
 .navbar .btn-navbar{
     background-image: linear-gradient(to bottom, rgb(51, 51, 51), rgb(51, 51, 51));
     border-color: rgb(255, 255, 255);
@@ -112,28 +97,54 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
     text-shadow: none;
 }
 
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -63px;
+.container-right {
+  background-color: #333333;
+  position: absolute;
+  color: #ffffff;
+  padding-top: 80px;
+  width: 255px;
+  top: 175px;
+  font-weight: 300;
+
+  -moz-box-shadow:      3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow:           3px 3px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
-.wrapper > .container {
-  padding-top: 0px;
+.container-right-text {
+  padding: 10px;
 }
 
-footer{
-  color: #a8a8a8;
-  background: #333333;
-  padding: 17px 0 18px 0;
-  text-align: center;
-  margin-top: 70px;
-  bottom: 0;
+.container-left p {
+  color: #000000;
 }
 
-.rating_star{
-    display: inline-block;
+.container-left-text {
+  padding: 15px;
 }
+
+.content-intern {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.wrapper-shadow {
+
+}
+
+h1, h2{
+  font-weight: 100;
+}
+
+h3{
+  font-size: 15px;
+  font-weight: 100;
+}
+
+p {
+  font-weight: 100;
+  color: #000000;
+}
+
 
 }

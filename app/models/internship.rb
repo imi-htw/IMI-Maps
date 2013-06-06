@@ -28,9 +28,10 @@ class Internship < ActiveRecord::Base
   
   #attachments
   has_many :attachments, :as => :attachable
-  has_one :internship_report, :as => :attachable
+  
   has_one :semester
 
+  mount_uploader :internship_report, InternshipReportUploader
+
   accepts_nested_attributes_for :attachments
-  accepts_nested_attributes_for :internship_report
 end

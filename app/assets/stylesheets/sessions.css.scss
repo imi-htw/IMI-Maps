@@ -2,56 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#body{
+body{
   background-color: #333333;
+  color:#ffffff;
+  background: url(lines2.png);
+
+} 
+
+#gradient{
+    height: 70%;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,100,0,0.25) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,100,0,0.25))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 }
 
 #login-box{
   background-color: #000;
-  height: 270px;
+  height: 180px;
+  padding-top:40px;
   position: inherit;
-  margin-left: 41%;
-  width: 270px;
-  z-index: 1;
+  width: 100%;
+  margin-top:90px;
+  z-index: 3;
 }
 
 .row{
   margin-top: 20px;
   margin:0 auto;
+  z-index: 3;  
 }
 
 .login{
   position: relative;
   text-align: center;
   top: 290px;
+  z-index: 3; 
 }
 
 #login-element{
   padding-bottom: 10px;
-}
-
-.span5{
-    margin:0 auto;
-    float:none;
-    width: auto;
+  z-index: 3; 
 }
 
 .span6{
     margin:0 auto;
-    float:none;
+    /*float:left;*/
     width: auto;
+    z-index: 3; 
+}
+
+.span12{
+    margin:0 auto;
+    /*float:left;*/
+    width: 100%;
+    z-index: 3; 
 }
 
 #email{
-    /*border-radius:5px 5px 5px 5px;*/
     padding: 5px;
     margin-top: 5px;
+    margin-right: 40px;
+    z-index: 3; 
 }
 
 #password{
-    /*border-radius:5px 5px 5px 5px;*/
     padding: 5px;
     margin-top: 5px;
+    z-index: 3; 
 }
 
 #logo_w {
@@ -62,7 +87,7 @@
     margin: 70px auto 0;
     position: absolute;
     width: 239px;
-    z-index: 1;
+    z-index: 4;
 }
 
 #logo_p {
@@ -73,5 +98,15 @@
     margin: 70px auto 0;
     position: absolute;
     width: 240px;
-    z-index: 2;
+    z-index: 5;
+}
+
+#loginbutton {
+    height: 33px;
+    border-radius: 0;
+    position: inherit;
+}
+
+p{
+  color: #ffffff;
 }
