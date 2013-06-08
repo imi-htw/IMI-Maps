@@ -70,7 +70,7 @@ de:
       newinternship: "Neues Praktikum"
     attributes:
       description: "Beschreibung"
-      semester: "Absolviert"
+      semester: "Semester/Jahr"
       email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
