@@ -82,6 +82,8 @@ en:
       rating: "Rating"
       title: "Job Title"
       recommend: "Recommendation"
+      internship_report: "Internship Report"
+
 
   users:
     name: "Users"
