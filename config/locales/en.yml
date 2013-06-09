@@ -71,7 +71,7 @@ en:
       newinternship: "New Internship"   
     attributes:
       description: "Description"
-      semester: "Done"
+      semester: "Semester/Year"
       email_public: "Make email adress public?"
       comments: "UserComments"
       pictures: "Pics"
