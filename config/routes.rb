@@ -57,6 +57,10 @@ ImiMaps::Application.routes.draw do
     
 	end
 
+  get "viz/countries"
+  get "viz/languages"
+  get "viz/orientation"
+
   root to: 'sessions#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
