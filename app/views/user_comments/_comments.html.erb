@@ -1,0 +1,56 @@
+<% @internship.user_comments.each do |i| %>  
+  <div class="comment"> 
+    <div id="user"><%= i.user.name %> 
+      <%= t "helpers.at" %>
+      <%= i.created_at %>
+      :
+    </div>
+    <br/>
+    <br/>
+    <div id="senetence"><%= i.body %></div>
+    <br/>
+    <% if current_user.id == i.user_id %>
+      <%= button_to (t "buttons.destroy"),  {:controller => :user_comments,
+                                      :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
+    <% end %>
+                             
+  </div>
+  <% if i.answer.present? %>
+    <div class="answer">
+      <div id="user"><%= t "answers.from" %>
+        <%= i.answer.user.name %> 
+        <%= t "helpers.at" %>
+        <%= i.answer.created_at %>
+        :
+      </div>
+      <br/>
+      <br/>
+      <div id="senetence"><%= i.answer.body %></div>
+                                
+      <% if current_user.id == @internship.user_id %>
+        <br/>
+        <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+      <% end %>
+    </div>
+
+    <br/>
+    <br/>
+
+    <% else %>
+
+    <% if current_user.id == @internship.user_id %>
+
+      <%= form_for(@answer) do |f| %>
+        <div class="field">
+          <%= f.hidden_field :internship_id, value: @internship.id %>
+          <%= f.hidden_field :user_comment_id, value: i.id %>
+          <%= f.label t "answers.attributes.body" %><br />
+          <%= f.text_field :body %>
+          <div class="actions">
+            <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

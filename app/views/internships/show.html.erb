@@ -97,17 +97,17 @@
 
                               <!-- ################################################# start comments #################################################--> 
 
-                              <%= form_for(@comment) do |f| %>
+                              <%= form_for(@comment, remote: true ) do |f| %>
                               <div class="field">
                                   <%= f.hidden_field :internship_id, value: @internship.id %>
                                   <%= f.label t "comments.attributes.body" %><br />
                                   <%= f.text_field :body %>
                                   <div class="actions">
-                                  <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+                                  <%= f.submit (t 'buttons.save'), class: "btn btn-success", remote: true %>
                                 </div>
                                 </div>
                               <% end %>
-
+                              <div id="comment_div">
                               <% @internship.user_comments.each do |i| %>  
                                 <div class="comment"> 
                                 <div id="user"><%= i.user.name %> 
@@ -119,7 +119,8 @@
                                 <div id="senetence"><%= i.body %></div>
                                 <br/>
                                 <% if current_user.id == i.user_id %>
-                                  <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+                                  <%= button_to (t "buttons.destroy"),  {:controller => :user_comments,
+                                      :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
                                 <% end %>
                                 
                                 </div>
@@ -165,6 +166,7 @@
                                 <% end %>
 
                               <% end %>
+                            </div>
                             </div>
                             </div>
                   </div>
