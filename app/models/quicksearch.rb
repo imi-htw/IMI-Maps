@@ -1,5 +1,4 @@
-class Quicksearch < ActiveRecord::Base
-  
+class Quicksearch < ActiveRecord::Base  
 
   def internships(query)
     @internships = find_internships(query)
@@ -9,7 +8,7 @@ class Quicksearch < ActiveRecord::Base
 
     def find_internships(query)
       if query.empty?      
-        Internship.all
+        Internship.order("created_at DESC")
       else 
         internships = Internship.joins(:programming_languages).includes(:company)
         languages = query[:programming_language_ids].collect{|s| s.to_i} if query[:programming_language_ids].present?

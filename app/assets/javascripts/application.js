@@ -33,3 +33,8 @@ $(document).ready(function() {
      $(".answer_2").slideToggle("slow");
   });
 });
+
+click_reset = function() {
+  $(".chzn-select").val('').trigger("liszt:updated");
+  $("#search_button").click();
+}

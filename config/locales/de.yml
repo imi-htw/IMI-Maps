@@ -28,6 +28,7 @@ de:
     change_details: "Details ändern"
 
   helpers:
+    reset: "Zurücksetzen"
     at: "um"
     summer: "Sommer"
     winter: "Winter"

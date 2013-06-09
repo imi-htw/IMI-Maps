@@ -1,6 +1,9 @@
 class QuicksearchesController < ApplicationController
 
 	def index
+
+    if !params[:paginating].nil? then @paginating = params[:paginating] else @paginating = false end
+
 		@quicksearch = Quicksearch.new
 
     @companies = []
@@ -21,8 +24,10 @@ class QuicksearchesController < ApplicationController
 
     end
 
+    @internships = @internships.page params[:page]
+
     respond_to do |format|
-      format.js { render :layout=>false, :locals => { :pins  => @pins, :internships => @internships } }
+      format.js { render :layout=>false, :locals => { :pins  => @pins, :internships => @internships, :paginating => @paginating } }
     end
   end
 
