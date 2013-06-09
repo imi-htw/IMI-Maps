@@ -34,7 +34,7 @@
     <ul class="nav pull-right">
       <li><%= link_to t("header.account"), current_user %></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" href="">
+        <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
           <span class="badge badge-important"><%= get_notification_size
 %></span>
@@ -57,7 +57,7 @@
     <li><%= link_to t("header.logout"), logout_path %></li>
 
     <li class="dropdown">
-        <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
+        <a class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
         <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
@@ -69,9 +69,9 @@
     <div class="nav-collapse collapse">
 
     <ul class="nav nav-top ">
-              <li><%= link_to t("header.overview"), overview_index_path %></li>
-              <li><%= link_to t("header.search"), search_index_path %></li>
-              <li class="dropdown">
+              <li class="active_click"><%= link_to t("header.overview"), overview_index_path %></li>
+              <li class="active_click"><%= link_to t("header.search"), search_index_path %></li>
+              <li class="dropdown active_click">
                 <a class="dropdown-toggle" data-toggle="dropdown" href=""><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to t("header.general"), general_index_path %></li>
@@ -80,7 +80,7 @@
                   <li><%= link_to t("header.financing"), financing_index_path %></li>
                 </ul>
               </li>
-              <li><%= link_to t("header.exchange"), internships_path %></li>
+              <li class="active_click"><%= link_to t("header.exchange"), internships_path %></li>
 
     </ul>
   </div>

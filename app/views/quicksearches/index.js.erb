@@ -1,3 +1,5 @@
+if (!<%= raw @paginating %>) {
+
 $('.mapcontainer').html('<%= escape_javascript( gmaps({:last_map => false}) ) %>');
 
 Gmaps.map = new Gmaps4RailsGoogle();
@@ -35,5 +37,7 @@ Gmaps.load_map = function() {
      Gmaps.map.callback();
 };
 Gmaps.loadMaps();
+}
 
 $('.table').html('<%= escape_javascript( render "table"  ) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@internships, :params => {:paginating => true}, :remote => true).to_s) %>');

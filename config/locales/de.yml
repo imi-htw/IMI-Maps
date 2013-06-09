@@ -16,6 +16,7 @@ de:
     done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
 
   helpers:
+    reset: "Zurücksetzen"
     at: "um"
 
   companies:

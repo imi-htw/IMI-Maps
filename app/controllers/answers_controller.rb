@@ -4,9 +4,13 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(params[:answer])
     @answer.user_id = current_user.id if current_user
-    flash[:notice] = "Answer was successfully created" if @answer.save
+    @answer.save
 
-    redirect_to :action => 'show', :controller => 'internships', :id => @answer.internship_id
+    @internship = @answer.user_comment.internship
+
+    respond_to do |format|
+      format.js { render :layout=> false, :locals => { :internship => @internship } }
+    end
 
   end
 
@@ -26,9 +30,14 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer = Answer.find(params[:id])
+    @internship = @answer.user_comment.internship
     @answer.destroy
-    flash[:notice] = "Answer was successfully deleted"
-    redirect_to :action => 'show', :controller => 'internships', :id => @answer.internship_id
+    
+    #flash[:notice] = "Answer was successfully deleted"
+
+    respond_to do |format|
+      format.js { render :layout=> false, :locals => { :internship => @internship } }
+    end
 
   end
 

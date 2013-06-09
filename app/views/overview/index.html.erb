@@ -29,13 +29,15 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th></th>
+    <th></th>
   </tr>
   <tr>
     <td><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
     <td><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
-    <td><%= submit_tag "Search", :name => nil, :class => "btn btn-success" %></td>
+    <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
+    <td><p onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helbuttoners.reset" %></p></td>
   </tr>
 </table>
 
@@ -62,7 +64,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= internship.company.city %></td>
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
-    <td><%= internship.semester.semester %></td>
+    <td><%= internship.semester %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= render_stars(internship.rating, self) %></td>
@@ -71,4 +73,6 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <% end %>
 </table>
 
-<%= paginate @internships %>
+<div id="paginator">
+<%= paginate @internships, :remote => true  %>
+</div>

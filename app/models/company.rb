@@ -2,10 +2,8 @@ class Company < ActiveRecord::Base
   attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website
 
    # validations
-  validates :street, :presence => true, :allow_blank => false
   validates :city, :presence => true, :allow_blank => false
   validates :country, :presence => true, :allow_blank => false
-  validates :zip, :presence => true, :allow_blank => false
   validates :main_language, :presence => true, :allow_blank => false
   validates :industry, :presence => true, :allow_blank => false
   validates :name, :presence => true, :allow_blank => false

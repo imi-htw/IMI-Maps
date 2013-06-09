@@ -27,11 +27,11 @@ class OverviewController < ApplicationController
 
     @semesters = Semester.where(:id =>(Internship.select(:semester_id).collect do |x| x.semester_id end.uniq))
 
-    @internships = Internship.page params[:page]
+    @internships = Internship.order("created_at DESC").page params[:page]
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @internships }
+      format.html
+      format.js
     end
   end
 

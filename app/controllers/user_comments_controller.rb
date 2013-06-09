@@ -21,9 +21,15 @@ class UserCommentsController < ApplicationController
   def create
     @comment = UserComment.new(params[:user_comment])
     @comment.user_id = current_user.id if current_user
-    flash[:notice] = "UserComment was successfully created" if @comment.save
+    @comment.save
+    @answer = Answer.new
+    #flash[:notice] = "UserComment was successfully created" if @comment.save
+    @internship = @comment.internship
 
-    redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
+    respond_to do |format|
+      format.js { render :layout=> false, :locals => { :internship => @internship } }
+    end
+
 
   end
 
@@ -43,10 +49,13 @@ class UserCommentsController < ApplicationController
 
   def destroy
     @comment = UserComment.find(params[:id])
+    @internship = @comment.internship
     @comment.destroy
-    flash[:notice] = "UserComment was successfully deleted"
-    redirect_to :action => 'show', :controller => 'internships', :id => @comment.internship_id
+    #flash[:notice] = "UserComment was successfully deleted"
 
+    respond_to do |format|
+      format.js { render :layout=> false, :locals => { :internship => @internship }}
+    end
   end
 
 end
