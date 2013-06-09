@@ -52,6 +52,7 @@ class UserCommentsController < ApplicationController
     @internship = @comment.internship
     @comment.destroy
     #flash[:notice] = "UserComment was successfully deleted"
+    @answer = Answer.new
 
     respond_to do |format|
       format.js { render :layout=> false, :locals => { :internship => @internship }}

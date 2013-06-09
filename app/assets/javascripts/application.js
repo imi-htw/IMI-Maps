@@ -28,9 +28,6 @@
 // });
 
 $(window).load(function () {
-     $(".answer").slideToggle("fast");
-     $(".comment").slideToggle("fast");
-     $(".answer_2").slideToggle("fast");
 });
 
 $(document).ready(function() {
@@ -45,3 +42,7 @@ $(document).ready(function() {
     });
 });
 
+click_reset = function() {
+  $(".chzn-select").val('').trigger("liszt:updated");
+  $("#search_button").click();
+}

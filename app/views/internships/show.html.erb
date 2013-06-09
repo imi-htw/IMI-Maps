@@ -58,7 +58,7 @@
 
                               <p>
                                 <b><%= t "internships.attributes.semester" %> :</b>
-                                <%= @internship.semester %>
+                                <%= @internship.semester.semester %>
                               </p>
 
                               <p>
@@ -108,21 +108,21 @@
 
                               <!-- ################################################# start comments #################################################--> 
 
- 
-<%= form_for(@comment) do |f| %>
+<%= form_for(@comment, remote: true ) do |f| %>
 <div class="field">
     <%= f.hidden_field :internship_id, value: @internship.id %>
     <%= f.label t "comments.attributes.body" %>
     <%= f.text_field :body %>
     <div class="actions">
     <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> Kommentare</a>
+    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
   </div>
   </div>
 <% end %>
 
+<div id="comment_div">
 <% @internship.user_comments.each do |i| %>  
-  <div class="comment"> 
+  <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
   <%= i.created_at %>
@@ -132,13 +132,13 @@
   <div id="sentence"><%= i.body %></div>
   <br/>
   <% if current_user.id == i.user_id %>
-    <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+    <%= button_to (t "buttons.destroy"),  {:controller => :user_comments, :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
   <% end %>
 
   </div>
   
    <% if i.answer.present? %>
-  <div class="answer">
+  <div class="answer" style="display:none;">
     <div id="user_2"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
@@ -151,7 +151,7 @@
     
     <% if current_user.id == @internship.user_id %>
       <br/>
-      <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+    <%= button_to (t "buttons.destroy"),  {:controller => :answers, :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true %>
     <% end %>
   </div>
 
@@ -159,8 +159,8 @@
 
     <% if current_user.id == @internship.user_id %>
       <br />
-      <%= form_for(@answer) do |f| %>
-      <div class="answer_2">
+      <%= form_for(@answer, remote: true) do |f| %>
+      <div class="answer_2" style="display:none">
         <div id="answer_field"><div class="field">
           <%= f.hidden_field :internship_id, value: @internship.id %>
           <%= f.hidden_field :user_comment_id, value: i.id %>
@@ -179,6 +179,7 @@
                                 <% end %>
 
                               <% end %>
+                            </div>
                             </div>
                             </div>
                             </div>
