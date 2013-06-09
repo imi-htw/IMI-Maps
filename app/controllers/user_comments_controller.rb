@@ -22,6 +22,7 @@ class UserCommentsController < ApplicationController
     @comment = UserComment.new(params[:user_comment])
     @comment.user_id = current_user.id if current_user
     @comment.save
+    @answer = Answer.new
     #flash[:notice] = "UserComment was successfully created" if @comment.save
     @internship = @comment.internship
 
