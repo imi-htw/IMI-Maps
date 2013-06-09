@@ -1,0 +1,2 @@
+module CompaniesCompareHelper
+end

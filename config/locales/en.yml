@@ -2,6 +2,17 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  header:
+    account: "My account"
+    search: "Detailed search"
+    start: "Overview"
+    exchange: "Job Exchange"
+    guide: "Guide"
+    logout: "Logout"
+    faq: "FAQs"
+    downloads: "Downloads"
+    financing: "Financing"
+    general: "Intern Info"
   search:
     title: "Search"
   buttons:
@@ -71,6 +82,8 @@ en:
       rating: "Rating"
       title: "Job Title"
       recommend: "Recommendation"
+      internship_report: "Internship Report"
+
 
   users:
     name: "Users"
@@ -82,6 +95,8 @@ en:
       edituser: "Editing User"  
     new:
       newuser: "New User"  
+    show:
+       favorites_title: "My Favorites"
     sign_up: "Thank you for signing up!"
     attributes:
       last_name: "Last Name"  
@@ -196,4 +211,47 @@ en:
       block: "List"
       grid: "Grid"
       blog: "Blog"
-      
+  faq:
+    title: "FAQs"
+    title2: "Internship FAQs"
+    frage1:
+      html: "<p><b>Can I complete my internship in several sections?</b></p><p>It is possible to divide the internship in three sections (each lasting at least four weeks).</br>A separate report must be made ​​for each section.</p>"
+    frage2:
+      html: "<p><b>When are the internship reports due?</b></p><p>No later than four weeks after the completion of the internship. The report should include about 20 pages</br>and be stapled (no loose-leaf). Please submit it to the internship coordinator.</p>"
+    frage3:
+      html: "<p><b>Where do I register for the internship accompanying courses?</b></p><p>In LSF. Note that the courses are always offered during the semester breaks.</br>Apart from AEP, they can also be attended before the placement.</p>"
+    frage4:
+      html: "<p><b>When should I start looking for internships?</b></p><p>As soon as possible. It is important to have enough time to search for suitable internships and to apply. </br>Especially in countries for which a visa is required and / or if you want to apply for scholarships.</p>"     
+    title3: "IMI Map FAQs"
+    frageI1:
+      html: "<p><b>Can I edit my internship-review after it has been submitted?</b></p><p>Yes, you can edit your internship review after it has been submited. Follow these steps: 'Account' → 'Internship Report' → 'Edit'.</p>"
+    frageI2:
+       html: "<p><b>How do I post a second intership-review?</b></p><p>If you have completed your internship in several companies, you can create one experience report for each company.</br> For this you have to write a mail to the person responsible (mail), which unlocks it for you.</br> After activation, the button 'Create review' under 'Account' will appear.</p>"  
+
+
+
+   
+  download:
+    form: "Forms"
+    text1: "The required forms are listed below for download:"
+    text2: "Registration for internship"
+    text3: "Certificate of internship completion"
+    text4: "Example contract"
+    text5: "ger."
+    text6: "Request a refund of the semester ticket fees"
+
+  general:
+    title: "General Internship Information"
+    text1:
+     html: "<p>A practical training component is integrated in the IMI Bachelor's degree study programm at the HTW,  in the form of a practical training term. You may do your internship in Germany (if you are from outside Germany) or abroad (obligatory for german students)</p><h3>Formal Issues</h3><p>Formal issues regarding conducting internships are regulated in the regulation guidelines for internships (Rahmenpraktikumsordnung), which also contain a model contract for interns. Additional or digressive regulations are specified in the study regulations of the individual study programmes, particularly those regulations pertaining to practical training contents, point in time of the internship, or accreditation of previous practical experience. </p><p>Because each department and study programme has its own individual requirements regarding procedure, deadlines, internship applications and the like, they usually offer additional information on internships at their own websites. Please be sure to check those sites for more information.</p><p>In addition, the internship advisor from your study programme can provide information on any issues regarding your internship. In any case you are to fill in the application form for the internship accompanying the course of study and hand in a certificate as evidence of the successful completion to the examination office.</p><h3>How do I find an internship?</h3><p>The internship advisor from your study programme can help you with your search for a suitable internship. </br>Our Career Services Centre can also assist you with your search and application for an internship. </br>On the German site of the Career Services Centre, you will also find contact details to companies, want ads for interns, and other useful links. </br>The departments or study programmes normally provide information at their websites on finding an internship, and sometimes even post internship offers.</br></p><h3>Value of Interning:</h3> <p>Internships provide an opportunity to gain valuable experience in a career field that interests you. It iss a great way to gain specific skills and knowledge as well as make contacts and build confidence. More and more, employers are using work experiences as screening devices to assess the skills and abilities of prospective employees. Employers like to see that you have had some type of related experience before they consider you for a position. Having additional work experience before applying gives you an edge over other candidates in a competitive job market. </br> Internships also give you the opportunity to test out careers prior to graduation. An internship provides a more accurate picture of what individuals do in certain professions. Upon experiencing a particular job environment and seeing what it entails, you may decide it is not for you. You then have the option to change your career plans and work to find a path that is a better match for your interests and skills.</p>"
+
+  financing:
+    title:  "Financing"
+    title2: "Scholarships"
+    title3: "Auslandsbafög"
+    text1:
+      html: "<h3>Which way of fundings are available?</h3><p> The International Office of HTW Berlin offers advice on funding opportunities internships abroad. Please use this opportunity early and inform yourself about programs and deadlines</p>"
+    text2:
+      html: "Funding for internships in Europe:"
+    text3:  
+      html: "<p>Auslands-BAföG is the great financial support for an entire study, part-study internship or a student exchange in European and non-European countries! If you receive Bafög here, you sure get AUslandsbafög, if you get no Bafög here, you can still get Auslands-BAföG! Due to the higher costs abroad Auslands-Bafög come to question for a lot more of you.</p>"

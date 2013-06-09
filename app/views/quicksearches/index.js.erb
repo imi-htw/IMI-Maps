@@ -7,7 +7,32 @@ Gmaps.load_map = function() {
     Gmaps.map.markers_conf.do_clustering = true;
     Gmaps.map.create_markers();
     Gmaps.map.adjustMapToBounds();
-    Gmaps.map.callback();
+    Gmaps.map.callback = function()  {
+    	if (Gmaps.map.markers.length == 1) {
+         //only one marker, choose the zoom level you expect
+         Gmaps.map.serviceObject.setZoom(5);
+        }
+        else{
+         //more than one marker, let's auto_zoom
+         Gmaps.map.map_options.auto_zoom = true;
+         Gmaps.map.adjustMapToBounds();
+        };
+        
+        for(var i = 0; i < Gmaps.map.markers.length; i++){
+          marker = Gmaps.map.markers[i];
+          google.maps.event.addListener(marker.serviceObject, 'click', 
+            (function(marker){
+              return function(){
+                if (Gmaps.map.serviceObject.getZoom() < 8) {
+                  Gmaps.map.serviceObject.setZoom(8);
+                }
+                Gmaps.map.setCenter(marker.getPosition());
+              }
+            })(marker)
+          )
+        }
+      }
+     Gmaps.map.callback();
 };
 Gmaps.loadMaps();
 

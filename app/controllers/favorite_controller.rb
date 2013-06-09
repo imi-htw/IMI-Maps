@@ -7,17 +7,22 @@ class FavoriteController < ApplicationController
 		@favorite.user_id = params[:user_id]
 		@favorite.save
 
-    redirect_to :action => 'show', :controller => 'internships', :id => @favorite.internship_id
+    @current_user = @favorite.user
+    @internship = @favorite.internship
 
+    respond_to do |format|
+      format.js { render :layout=>false,:locals => { :current_user  => @current_user, :internship => @internship, :favorite => @favorite} }
+    end
 	end
 
 	def destroy
     @favorite = Favorite.find(params[:id])
+    @current_user = @favorite.user
+    @internship = @favorite.internship
     @favorite.destroy
 
     respond_to do |format|
-      format.html { redirect_to current_user }
-      format.json { head :no_content }
+      format.js { render :layout=>false,:locals => { :current_user  => @current_user, :internship => @internship, :favorite => @favorite} }
     end
   end
 

@@ -14,12 +14,9 @@ de:
     newuser: "Neuer Benutzer"
     save: "Speichern" 
     done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
-    change_details: "Details ändern"
 
   helpers:
     at: "um"
-    summer: "Sommer"
-    winter: "Winter"
 
   companies:
     name: "Firmen"
@@ -58,9 +55,6 @@ de:
     new:
       newinternship: "Neues Praktikum"
     attributes:
-      description: "Beschreibung"
-      semester: "Absolviert"
-      email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
       orientation: "Orientierung"
@@ -214,3 +208,5 @@ de:
     sessions:
       admin_user:
         signed_in: Erfolgreich als Administrator angemeldet.
+
+

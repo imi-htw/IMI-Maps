@@ -15,10 +15,8 @@
   <%= favicon_link_tag '/public/favicon.ico' %>
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
-
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
-
     <div class="navbar navbar-inverse">
     <div class="navbar-inner">
     <div class="container">
@@ -30,35 +28,59 @@
     <span class="icon-bar"></span>
     </a>
   <div id="top-menu">
-    <a class="brand" href="overview"></a>
+    <%= link_to "",overview_index_path, class: "brand" %>
     <!-- Be sure to leave the brand out there if you want it shown -->
     
     <ul class="nav pull-right">
-    <li><%= link_to "Konto", current_user %></li>
-    <li><li><%= link_to "Abmelden", logout_path %></li></li>
+      <li><%= link_to t("header.account"), current_user %></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
+        <a class="dropdown-toggle" href="">
+          <% if get_notification_size > 0 %>
+          <span class="badge badge-important"><%= get_notification_size
+%></span>
+<%end%>
+<i class="icon-white icon-flag icon-large"></i></a>
           <ul class="dropdown-menu">
+            <% current_user.notifications.order(:read).each do |noti| %>
+            <li>
+              <% if noti.read == false %>
+              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
+              <% else %>
+              <%= link_to noti.text, noti.link %>
+              <% end %>
+            </li>
+            <%end%>
+          </ul>
+      </li>  
+      
+    <li><%= link_to t("header.account"), current_user %></li>
+    <li><%= link_to t("header.logout"), logout_path %></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" href=""><i class="icon-white icon-cog icon-large"></i></a>
+        <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
-      </ul>
-    </li>    
+        </ul>
+      </li>    
+
     </ul>
     <!-- Everything you want hidden at 940px or less, place within here -->
     <div class="nav-collapse collapse">
 
     <ul class="nav nav-top ">
-              <li><%= link_to "Start", overview_index_path %></li>
-              <li><%= link_to "Praktikumssuche", search_index_path %></li>
+              <li><%= link_to t("header.overview"), overview_index_path %></li>
+              <li><%= link_to t("header.search"), search_index_path %></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="">Guide</a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href=""><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "FAQ", faq_index_path %></li>
-                  <li><%= link_to "Downloads", download_index_path %></li>
-                  <li><%= link_to "Finanzierung", financing_index_path %></li>
+                  <li><%= link_to t("header.general"), general_index_path %></li>
+                  <li><%= link_to t("header.faq"), faq_index_path %></li>
+                  <li><%= link_to t("header.downloads"), download_index_path %></li>
+                  <li><%= link_to t("header.financing"), financing_index_path %></li>
                 </ul>
               </li>
-              <li><%= link_to "Jobbörse", internships_path %></li>
+              <li><%= link_to t("header.exchange"), internships_path %></li>
 
     </ul>
   </div>
@@ -71,10 +93,17 @@
     </div>
     </div>
 
-<div class="container">      
-    <div clas="row">
-      <div class="span12"><%= yield %></div>
+  <div class="wrapper">
+    <div class="container clear-top">      
+      <div clas="row">
+       <div class="span12"><%= yield %></div>
+      </div>
     </div>
 </div>
+  <footer>
+    <div class="container">
+    <p>IMI Map - Hochschule für Wirtschaft & Technik</p>
+    </div>
+  </footer>
 </body>
 </html>

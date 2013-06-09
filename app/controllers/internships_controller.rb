@@ -16,6 +16,7 @@ class InternshipsController < ApplicationController
     @internship = Internship.find(params[:id])
     @comment = UserComment.new
     @answer = Answer.new
+    @favorite = Favorite.where(:internship_id => @internship.id, :user_id => current_user.id)[0]
 
     @pins = @internship.company.to_gmaps4rails do |company, marker |
 
@@ -48,6 +49,7 @@ class InternshipsController < ApplicationController
   # GET /internships/1/edit
   def edit
     @internship = Internship.find(params[:id])
+    @company = @internship.company
   end
 
   # POST /internships

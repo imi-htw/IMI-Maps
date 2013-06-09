@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :internship
   has_many :user_comments, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
+  has_many :notifications, :dependent => :destroy
 
   mount_uploader :picture, PictureUploader
 

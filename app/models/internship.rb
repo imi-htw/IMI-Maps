@@ -1,5 +1,6 @@
 class Internship < ActiveRecord::Base
-  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title, :recommend, :email_public, :semester, :description
+  paginates_per 3
+  attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :attachments_attributes, :rating, :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report
 
   # validations
   validates :orientation_id, :presence => true, :allow_blank => false
@@ -11,7 +12,6 @@ class Internship < ActiveRecord::Base
   validates :title, :presence => true, :allow_blank => false
   validates :working_hours, :presence => true, :allow_blank => false
   validates :living_costs, :presence => true, :allow_blank => false
-  validates :semester, :presence => true, :allow_blank => false
   validates :description, :presence => true, :allow_blank => false
 
 
@@ -20,6 +20,7 @@ class Internship < ActiveRecord::Base
   belongs_to :company
   belongs_to :salary
   belongs_to :orientation
+  belongs_to :semester
 
   has_and_belongs_to_many :programming_languages, :uniq => true
   has_many :user_comments, :dependent => :destroy
@@ -28,6 +29,8 @@ class Internship < ActiveRecord::Base
   
   #attachments
   has_many :attachments, :as => :attachable
+
+  mount_uploader :internship_report, InternshipReportUploader
 
   accepts_nested_attributes_for :attachments
 end

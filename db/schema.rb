@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530133115) do
+ActiveRecord::Schema.define(:version => 20130608120403) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -82,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20130530133115) do
     t.string   "main_language"
   end
 
+  create_table "companies_compares", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "contact_people", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -130,9 +135,9 @@ ActiveRecord::Schema.define(:version => 20130530133115) do
     t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.integer  "rating",         :default => 1
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.integer  "rating",            :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
@@ -140,7 +145,8 @@ ActiveRecord::Schema.define(:version => 20130530133115) do
     t.integer  "orientation_id"
     t.boolean  "email_public"
     t.text     "description"
-    t.string   "semester"
+    t.integer  "semester_id"
+    t.string   "internship_report"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
@@ -149,6 +155,25 @@ ActiveRecord::Schema.define(:version => 20130530133115) do
   end
 
   add_index "internships_programming_languages", ["programming_language_id", "internship_id"], :name => "unique_index", :unique => true
+
+  create_table "locations", :force => true do |t|
+    t.string   "street"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "city"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "company_id"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "text"
+    t.boolean  "read"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "link"
+  end
 
   create_table "orientations", :force => true do |t|
     t.string   "name"
@@ -174,6 +199,12 @@ ActiveRecord::Schema.define(:version => 20130530133115) do
     t.datetime "updated_at", :null => false
     t.integer  "min_amount"
     t.integer  "max_amount"
+  end
+
+  create_table "semesters", :force => true do |t|
+    t.string   "semester"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_comments", :force => true do |t|

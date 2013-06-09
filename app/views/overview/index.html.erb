@@ -1,19 +1,40 @@
 <%= gmaps4rails(@pins) %> 
 <%= yield :scripts %>
+
+<script type="text/javascript">
+Gmaps.map.callback = function(){
+for(var i = 0; i < Gmaps.map.markers.length; i++){
+          marker = Gmaps.map.markers[i];
+          google.maps.event.addListener(marker.serviceObject, 'click', 
+            (function(marker){
+              return function(){
+                if (Gmaps.map.serviceObject.getZoom() < 8) {
+                  Gmaps.map.serviceObject.setZoom(8);
+                }
+                Gmaps.map.setCenter(marker.getPosition());
+              }
+            })(marker)
+          )
+        }
+}
+</script>
+
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
 
 <table>
   <tr>
     <th><%= t "companies.attributes.country" %></th>
+    <th><%= t "internships.attributes.semester" %></th>
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th></th>
   </tr>
   <tr>
-    <td><%= country_select nil, :country, nil, {}, class: 'chzn-select' %></td>
-    <td><%= select_tag :orientation, options_for_select(@orientations),  class: 'chzn-select'  %></td>
-    <td><%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select'}  %></td>
+    <td><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
+    <td><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
+    <td><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
+    <td><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= submit_tag "Search", :name => nil, :class => "btn btn-success" %></td>
   </tr>
 </table>
@@ -27,6 +48,7 @@
     <th><%= t "companies.attributes.city"%> </th>
     <th><%= t "companies.attributes.country" %></th>
     <th><%= t "companies.attributes.industry" %></th>
+    <th><%= t "internships.attributes.semester" %></th>
     <th><%= t "internships.attributes.orientation" %></th>
     <th><%= t "internships.attributes.programming_language" %></th>
     <th><%= t "internships.attributes.rating" %></th>
@@ -40,6 +62,7 @@
     <td><%= internship.company.city %></td>
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
+    <td><%= internship.semester.semester %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= render_stars(internship.rating, self) %></td>
@@ -47,3 +70,5 @@
   </tr>
 <% end %>
 </table>
+
+<%= paginate @internships %>

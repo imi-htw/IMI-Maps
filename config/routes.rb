@@ -1,8 +1,5 @@
 ImiMaps::Application.routes.draw do
 
-
-
-
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
 		resources :internships
@@ -17,13 +14,19 @@ ImiMaps::Application.routes.draw do
 
     resources :overview, :only => [:index]
 
+    resources :notifications, :only => [:update]
+
     resources :favorite, :only => [:create, :destroy]
+
+    resources :location, :only => [:create, :destroy]
 
     resources :sessions
 
     resources :user_comments
 
     resources :answers
+
+    resources :general
 
     resources :faq
 
@@ -37,12 +40,19 @@ ImiMaps::Application.routes.draw do
 
     resources :error_page
 
+    resources :no_path
+
     resources :maintenance
+
+    resources :companies_compare
 
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
+
+
+    match '*path', to: redirect("/#{I18n.locale}/no_path")
 
     
 	end

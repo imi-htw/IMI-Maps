@@ -6,7 +6,6 @@ class CreateInternships < ActiveRecord::Migration
       t.float :salary
       t.float :working_hours
       t.float :living_costs
-
       t.timestamps
     end
   end

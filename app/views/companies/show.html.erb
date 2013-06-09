@@ -36,11 +36,15 @@
 <b><%= t "companies.attributes.rating"  %> :</b>
   <% sum = 0%>
   <% amt = 0%>
-  <% @internships.each do |i| %>
-    <% sum += i.rating %>
-    <% amt += 1 %>
+  <% if @internships.size > 0 %>
+    <% @internships.each do |i| %>
+      <% sum += i.rating %>
+      <% amt += 1 %>
+    <%end%>
+    <%=sum/amt%>
+  <% else %>
+    <% 0 %>
   <%end%>
-  <%=sum/amt%>
 </p>
 <p>
 
@@ -91,3 +95,10 @@
 <%= link_to t("buttons.done_intership_here"), new_internship_path, class: "btn btn-large btn-success" %>
 <% end %>
 
+
+<%= gmaps({
+   "map_options" => {"auto_zoom" => false, "zoom" => 5 },
+   "markers"     => {"data" => @pins }
+  })
+%>
+<%= yield :scripts %>

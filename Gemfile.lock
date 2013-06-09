@@ -68,6 +68,10 @@ GEM
       coffee-rails (>= 3.2)
       railties (>= 3.0)
       sass-rails (>= 3.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -129,6 +133,11 @@ GEM
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
     orm_adapter (0.4.0)
+    paperclip (2.8.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     polyamorous (0.5.0)
@@ -234,7 +243,9 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   jquery-rails (= 2.2.1)
+  kaminari
   nested_form
+  paperclip (~> 2.7)
   pg
   pry
   rails (= 3.2.13)

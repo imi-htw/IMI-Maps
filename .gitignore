@@ -35,3 +35,5 @@
 
 # ignore logger.txt -> it's used in quiet_assets.rb
 logger.txt
+
+cmd.exe

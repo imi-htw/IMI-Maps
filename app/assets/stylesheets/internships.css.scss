@@ -4,6 +4,7 @@
 
 @import 'font-awesome';
 
+
 .rating {
   margin: auto 0;
 }
@@ -22,96 +23,129 @@
 
 .comment{
   background: #dddddf;
-  padding: 5px;
-  border-radius: 0px 0px 0px 0px;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .answer{
-  background: #dddddf;
-  padding: 5px;
-  border-radius: 0px 0px 5px 5px;
-}
-
-.answer_2{
-  background: #dddddf;
-  padding: 5px;
-  border-radius: 0px 0px 5px 5px;
-  margin-bottom: 40px;
+  background: #eeeeef;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .delete{
-  margin-top: -37px;
-  margin-right: 0px;
+  margin-top: -22px;
+  margin-right: -10px;
 }
 
 #user{
   font-weight: bold;
-  background: #77b900;
+  background: #a0a0a0;
   border-radius: 5px 5px 5px 5px;
   margin: -10px;
   padding: 10px;
   color: white;
 }
 
-#user_2{
-  background: #bbe175;
-  margin: -5px;
-  padding: 5px 10px 5px 10px;
-  color: black;
-}
-
-#user_3{
-  font-weight: bold;
-  background: #bbe175;
-  margin: -5px;
-  padding: 5px 10px 5px 10px;
-  color: black;
-  margin-top: -25px;
-}
-
 #sentence{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 80px;
-  margin-top: -20px;
-  margin-bottom: -15px;
 }
 
-#sentence_2{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 80px;
-  margin-top: -25px;
-  margin-bottom: -15px;
+#wrapper {
+    position: relative;
 }
 
-#sentence_3{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 80px;
-  margin-top: 15px;
-  margin-bottom: 5px;
+.ribbon {
+  position: absolute;
+  top: 15px;
 }
 
-.label{
-  margin-top: 10px;
+/* ribbon style */
+
+ .ribbon-wrapper {
+  position: relative;
+}
+  .ribbon-front {
+  background-color: #4f4f4f;  height: 40px;
+  width: 285px;
+  position: relative;
+  left:-5px;
+  z-index: 2;
 }
 
-.save_button{
-  float: right;
-  margin-top: -34px;
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
+{
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+  -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+  -o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
 }
 
-/*.btn{
-  background-image: url('images/rails2.png') 0 0;
-}*/
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+  position: absolute;
+  z-index: 1;
+  border-style:solid;
+  height:0px;
+  width:0px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright {
+}
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+  top: 40px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
+  left: -10px;
+  border-color: transparent #222121 transparent transparent;
+}
+
+  .ribbon-edge-topleft {
+  top: -10px;
+  border-width: 10px 10px 0 0;
+}
+  .ribbon-edge-bottomleft {
+  border-width: 0 10px 0px 0;
+}
+
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomright {
+  left: 270px;
+  border-color: transparent transparent transparent #222121;
+}
+
+  .ribbon-edge-topright {
+  top: -10px;
+  border-width: 10px 0 0 10px;
+}
+  .ribbon-edge-bottomright {
+  border-width: 0 0 0px 10px;
+}
+
+  .ribbon-back-left {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 0px;
+  height: 40px;
+  background-color: #4f4f4f;  z-index: 0;
+}
+
+  .ribbon-back-right {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  width: 0px;
+  height: 40px;
+  background-color: #393838;  z-index: 0;
+}
+
 
