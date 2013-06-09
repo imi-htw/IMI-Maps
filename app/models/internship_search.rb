@@ -1,5 +1,15 @@
 class InternshipSearch < ActiveRecord::Base
   attr_accessible :city, :country, :industry, :max_salary, :min_salary, :orientation, :rating, :programming_language_ids, :search
+
+  validates :city, :presence => true
+  validates :country, :presence => true
+  validates :industry, :presence => true
+  validates :max_salary, :presence => true
+  validates :min_salary, :presence => true
+  validates :orientation, :presence => true
+  validates :rating, :presence => true
+  validates :programming_language_ids, :presence => true
+
   attr_accessor :programming_language_ids
 
   def internships
