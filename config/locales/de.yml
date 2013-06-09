@@ -84,6 +84,7 @@ de:
       rating: "Rating"
       title: "Job Titel"
       recommend: "Empfehlung"
+      internship_report: "Praktikumsbericht"
 
   users:
     name: "Benutzer"

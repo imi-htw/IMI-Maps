@@ -44,6 +44,8 @@ ImiMaps::Application.routes.draw do
 
     resources :maintenance
 
+    resources :companies_compare
+
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'

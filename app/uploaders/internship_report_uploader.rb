@@ -9,8 +9,6 @@ class InternshipReportUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
 
-  include CarrierWave::Compatibility::Paperclip
-
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
