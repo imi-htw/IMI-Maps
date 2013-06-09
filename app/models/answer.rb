@@ -3,4 +3,8 @@ class Answer < ActiveRecord::Base
 
   belongs_to :user_comment
   belongs_to :user
+
+   validates :body, :presence => true
+   validates :internship_id, :presence => true
+   validates :user_comment_id, :presence => true
 end
