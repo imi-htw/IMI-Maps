@@ -3,10 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  background-color: #333333;
   color:#ffffff;
   background: url(lines2.png);
-
 } 
 
 #gradient{
@@ -24,6 +22,7 @@ body{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 }
 
+
 #login-box{
   background-color: #000;
   height: 180px;
@@ -33,6 +32,24 @@ body{
   margin-top:90px;
   z-index: 3;
 }
+
+.span12{
+    margin:0 auto;
+    /*float:left;*/
+    width: 100%;
+    z-index: 3; 
+}
+
+p{
+  color: #fff !important;
+}
+
+#loginbutton {
+    height: 33px;
+    border-radius: 0;
+    position: inherit;
+}
+
 
 .row{
   margin-top: 20px;
@@ -59,12 +76,7 @@ body{
     z-index: 3; 
 }
 
-.span12{
-    margin:0 auto;
-    /*float:left;*/
-    width: 100%;
-    z-index: 3; 
-}
+
 
 #email{
     padding: 5px;
@@ -101,12 +113,6 @@ body{
     z-index: 5;
 }
 
-#loginbutton {
-    height: 33px;
-    border-radius: 0;
-    position: inherit;
-}
 
-p{
-  color: #ffffff;
-}
+
+

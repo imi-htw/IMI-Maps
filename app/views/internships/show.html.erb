@@ -58,7 +58,7 @@
 
                               <p>
                                 <b><%= t "internships.attributes.semester" %> :</b>
-                                <%= @internship.semester.semester %>
+                                <%= @internship.semester %>
                               </p>
 
                               <p>
@@ -73,14 +73,6 @@
                               </p>
                               <% end %>
 
-                              <% if @internship.attachments.present? %>
-                                <b><%= t "internships.attributes.pictures" %> :</b>
-                                <% @internship.attachments.each do |attachment| %>
-                                  <p> <%= attachment.description %> </p> 
-                                  <%= image_tag attachment.file_url(:thumb) %>
-                                <% end %>
-                                <br/>
-                              <% end %>
                               <div id="favorite">
                               <% if @favorite %>
                                 <%= button_to "Delete from Favorites", {:controller => :favorite,
@@ -91,76 +83,96 @@
                                 <% end %>
                                 </div>
 
+ <% if @internship.attachments.present? %>
+  <b><%= t "internships.attributes.pictures" %> :</b></b>
+  <% @internship.attachments.each do |attachment| %>
+    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Photo Gallery</h3>
+        </div>
+      <div class="modal-body">
+        <%= image_tag attachment.file_url %>
+      </div>
+        <div class="modal-footer">
+      </div>
+    </div>
+  <% end %>
+  <br/>
+<% end %>
+
                                 <b><%= t "internships.attributes.comments" %> :</b>
                                 <br/>
                                 <br/>
 
                               <!-- ################################################# start comments #################################################--> 
 
-                              <%= form_for(@comment, remote: true ) do |f| %>
-                              <div class="field">
-                                  <%= f.hidden_field :internship_id, value: @internship.id %>
-                                  <%= f.label t "comments.attributes.body" %><br />
-                                  <%= f.text_field :body %>
-                                  <div class="actions">
-                                  <%= f.submit (t 'buttons.save'), class: "btn btn-success", remote: true %>
-                                </div>
-                                </div>
-                              <% end %>
-                              <div id="comment_div">
-                              <% @internship.user_comments.each do |i| %>  
-                                <div class="comment"> 
-                                <div id="user"><%= i.user.name %> 
-                                <%= t "helpers.at" %>
-                                <%= i.created_at %>
-                                :</div>
-                                <br/>
-                                <br/>
-                                <div id="senetence"><%= i.body %></div>
-                                <br/>
-                                <% if current_user.id == i.user_id %>
-                                  <%= button_to (t "buttons.destroy"),  {:controller => :user_comments,
-                                      :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
-                                <% end %>
-                                
-                                </div>
-                                <% if i.answer.present? %>
-                                <div class="answer">
-                                  <div id="user"><%= t "answers.from" %>
-                                  <%= i.answer.user.name %> 
-                                  <%= t "helpers.at" %>
-                                  <%= i.answer.created_at %>
-                                  :</div>
-                                  <br/>
-                                  <br/>
-                                  <div id="senetence"><%= i.answer.body %></div>
+ 
+<%= form_for(@comment) do |f| %>
+<div class="field">
+    <%= f.hidden_field :internship_id, value: @internship.id %>
+    <%= f.label t "comments.attributes.body" %>
+    <%= f.text_field :body %>
+    <div class="actions">
+    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> Kommentare</a>
+  </div>
+  </div>
+<% end %>
 
-                                  
-                                  <% if current_user.id == @internship.user_id %>
-                                    <br/>
-                                    <%= button_to (t "buttons.destroy"),  {:controller => :answers,
-                                      :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true %>
-                                  <% end %>
-                                </div>
+<% @internship.user_comments.each do |i| %>  
+  <div class="comment"> 
+  <div id="user"><%= i.user.name %> 
+  <%= t "helpers.at" %>
+  <%= i.created_at %>
+  :</div>
+  <br/>
+  <br/>
+  <div id="sentence"><%= i.body %></div>
+  <br/>
+  <% if current_user.id == i.user_id %>
+    <%= link_to (t "buttons.destroy"), i, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+  <% end %>
 
-                                    <br/>
-                                    <br/>
+  </div>
+  
+   <% if i.answer.present? %>
+  <div class="answer">
+    <div id="user_2"><%= t "answers.from" %>
+    <%= i.answer.user.name %> 
+    <%= t "helpers.at" %>
+    <%= i.answer.created_at %>
+    :</div>
+    <br/>
+    <br/>
+    <div id="sentence_2"><%= i.answer.body %></div>
 
-                                <% else %>
+    
+    <% if current_user.id == @internship.user_id %>
+      <br/>
+      <%= link_to (t "buttons.destroy"), i.answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete"  %>
+    <% end %>
+  </div>
 
-                                  <% if current_user.id == @internship.user_id %>
+<% else %>
 
-                                    <%= form_for(@answer, remote: true) do |f| %>
-                                      <div class="field">
-                                        <%= f.hidden_field :internship_id, value: @internship.id %>
-                                        <%= f.hidden_field :user_comment_id, value: i.id %>
-                                        <%= f.label t "answers.attributes.body" %><br />
-                                        <%= f.text_field :body %>
-                                        <div class="actions">
-                                        <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-                                      </div>
-                                      </div>
-                                    <% end %>
+    <% if current_user.id == @internship.user_id %>
+      <br />
+      <%= form_for(@answer) do |f| %>
+      <div class="answer_2">
+        <div id="answer_field"><div class="field">
+          <%= f.hidden_field :internship_id, value: @internship.id %>
+          <%= f.hidden_field :user_comment_id, value: i.id %>
+          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
+          <div id="sentence_3"><%= f.text_field :body %></div>
+          <div class="actions save_button">
+          <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+        </div>
+        </div>
+        </div>
+        </div>
+      <% end %>
 
                                   <% end %>
 
