@@ -16,7 +16,6 @@ class Internship < ActiveRecord::Base
   validates :recommend, :presence => true
   validates :email_public, :presence => true
   validates :semester_id, :presence => true
-  validates :internship_report, :presence => true
 
 
   # associations
