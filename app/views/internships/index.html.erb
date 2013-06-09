@@ -38,11 +38,3 @@
 <% if @current_user.internship_authorization %>
 <%= link_to (t "buttons.newinternship"), new_internship_path %>
 <% end %>
-
-<script>
-$(window).(function() {
-    $(".active_click").load(function(){
-      $(this).addClass("active");
-    });
-});
-</script>

@@ -26,8 +26,14 @@
 //   });
 // });
 
+$(window).load(function () {
+     $(".answer").slideToggle("fast");
+     $(".comment").slideToggle("fast");
+     $(".answer_2").slideToggle("fast");
+});
+
 $(document).ready(function() {
-   $("#hide_all").click(function () {
+     $("#hide_all").click(function () {
      $(".answer").slideToggle("slow");
      $(".comment").slideToggle("slow");
      $(".answer_2").slideToggle("slow");
