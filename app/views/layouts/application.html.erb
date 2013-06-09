@@ -32,6 +32,7 @@
     <!-- Be sure to leave the brand out there if you want it shown -->
     
     <ul class="nav pull-right">
+      <li><%= link_to t("header.account"), current_user %></li>
       <li class="dropdown">
         <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
