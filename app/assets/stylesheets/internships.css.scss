@@ -134,6 +134,26 @@
   display: inline;
 }
 
+.company{
+  width: 100px;
+}
+
+.working_hours{
+  width: 100px;
+}
+
+.living_costs{
+  width: 100px;
+}
+
+.rating{
+  width: 100px;
+}
+
+.recommend{
+  width: 40px;
+}
+
 .table_inside{
   background: #fff;
   font-size: 13px;
@@ -141,10 +161,6 @@
 
 .table_inside ul, ol{
     margin: 0px 0px 0px 0px !important;    
-}
-
-.top_inside{
-  padding-bottom: 12px !important;
 }
 
 .img_preview{
