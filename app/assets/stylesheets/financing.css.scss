@@ -1,3 +1,20 @@
 // Place all the styles related to the financing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table td{
+    border-top: none !important;
+}
+
+.table_fin{
+  background: #568501;
+  color: white;
+}
+#table_topi{
+  position: absolute;
+  background:  #ffffff;
+  height: 64px;
+  width: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+}
