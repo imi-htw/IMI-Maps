@@ -71,7 +71,7 @@ en:
       newinternship: "New Internship"   
     attributes:
       description: "Description"
-      semester: "Done"
+      semester: "Semester/Year"
       email_public: "Make email adress public?"
       comments: "UserComments"
       pictures: "Pics"
@@ -213,6 +213,7 @@ en:
       block: "List"
       grid: "Grid"
       blog: "Blog"
+  
   faq:
     title: "FAQs"
     title2: "Internship FAQs"
@@ -252,8 +253,37 @@ en:
     title2: "Scholarships"
     title3: "Auslandsbafög"
     text1:
-      html: "<h3>Which way of fundings are available?</h3><p> The International Office of HTW Berlin offers advice on funding opportunities internships abroad. Please use this opportunity early and inform yourself about programs and deadlines</p>"
-    text2:
-      html: "Funding for internships in Europe:"
+      html: "<h4>Which ways of fundings are available?</h4> An internship abroad should be well planned. Although some internships are paid, the living costs are often much higher. Additionally you may have to pay things like:  travel costs, insurance, etc. Therefore, please inform yourself - also two to three semesters prior to the planned internship. The sooner you begin to prepare your internship, the more options are open to you. Please note the application deadlines for the various scholarship programs and the long processing time for Auslands-BAföG. For some scholarship programs you have to apply about ten months prior to starting, but at this time you don't need to have a placement promise. The International Office of HTW Berlin offers advice on funding opportunities of internships and also provides detailed information online about this topic."
+    text2: "You can find a more detailed list of funding programs here:"
     text3:  
       html: "<p>Auslands-BAföG is the great financial support for an entire study, part-study internship or a student exchange in European and non-European countries! If you receive Bafög here, you sure get AUslandsbafög, if you get no Bafög here, you can still get Auslands-BAföG! Due to the higher costs abroad Auslands-Bafög come to question for a lot more of you.</p>"
+    text4: "more Information"
+    text5: "Funding programs"
+    text6: "These are some of the most popular funding programs for IMIs:"
+
+    progs:
+     title1: "Program"
+     title2: "Short Facts"
+     title3: "Duration"
+     title4: "Region"
+    prog1:
+      namen: "Auslands-BAföG"
+      fact: "Loans and Grants for spezialized compulsory insternships"
+      duration: "max. 12 month"
+      region: "worldwide"
+    prog2:
+       namen: "ERASMUS Placement"
+       fact: "Allowance for practical training (Fachpraktikum) "
+       duration: "3-12  month"
+       region: "Europa"
+    prog3:
+       namen: "PROMOS Praktika"
+       fact: "Travel allowance for compulsory international internships"
+       duration: "3-6  month"
+       region: "preferably in Asia, Africa, Latin America"
+    prog4:
+       namen: "DAAD: Carlo-Schmid-Programm"
+       fact: "Full scholarships depending on country, travel allowance for interships in international organisations, EU-Organisations or NGO's"
+       duration: "A: 3 - 6 month, or  B: 4 - 10 month"
+       region: "worldwide"
+     

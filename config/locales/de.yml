@@ -1,4 +1,4 @@
-# Sample localization file for English. Add more files in this directory for other locales.
+# Sample localization file for German. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
@@ -56,6 +56,9 @@ de:
     new:
       newinternship: "Neues Praktikum"
     attributes:
+      description: "Beschreibung"
+      semester: "Semester/Jahr"
+      email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
       orientation: "Orientierung"
@@ -209,5 +212,76 @@ de:
     sessions:
       admin_user:
         signed_in: Erfolgreich als Administrator angemeldet.
+
+  faq:
+    title: "FAQs"
+    title2: "Internship FAQs"
+    frage1:
+      html: "<p><b>Kann ich mein Praktikum in mehreren Abschnitten absolvieren?</b></p><p>Es ist möglich, dass Praktikum in drei Abschnitte (Dauer: mindestens vier Wochen) zu unterteilen. </br>Für jeden Teilabschnitt muss ein separater Bericht angefertigt werden.</p>"
+    frage2:
+      html: "<p><b>Wann sind die Praktikumsberichte fällig?</b></p><p>Spätestens vier Wochen nach Abschluss des Praktikums. Der Bericht sollte ca. 20 Seiten umfassen und </br>geheftet sein (keine losen Blattsammlungen). Bitte bei dem oder der Praktikumsbeauftragten einreichen.</p>"
+    frage3:
+      html: "<p><b>Wo melde ich mich für die praktikumsbegleitenden Lehrveranstaltungen an?</b></p><p>Im LSF. Beachte, dass die Kurse immer in den vorlesungsfreien Zeiten angeboten werden. </br> Bis auf AEP können sie auch vor dem Praktikum belegt werden.</p>"
+    frage4:
+      html: "<p><b>Wann sollte ich mit der Praktikumssuche zu beginnen?</b></p><p>So schnell wie möglich. Es ist wichtig, genügend Zeit haben um nach geeigneten Praktika zu suchen </br> und sich zu bewerben. Besonders in Ländern, für die man ein Visum benötigt und/oder wenn man </br> Stipedendien oder andere Förderungsmöglichkeiten beantragen will.</br> Ca. ein Semester vorher sollte man anfangen sich zu bewerben.</p>"
+    title3: "IMI Map FAQs"
+    frageI1:
+      html: "<p><b>Kann ich meinen Praktikum-Erfahrungsbericht bearbeiten, nachdem er auf IMI Map veröffentlicht wurde? </b></p><p>Ja, Du kannst den Erfahrungsbericht bearbeiten, nachdem er auf IMI Map veröffentlicht wurde.</br>Befolgen diese Schritte: 'Konto' → 'Erfahrungsbericht' → 'Bearbeiten'.</p>"
+    frageI2:
+      html: "<p><b>Wie kann ich einen zweiten Erfahrungsbericht abgeben?</b></p><p>Wenn du dein Praktikum in mehreren Unternehmen absolviert hast, dann kannst du für jedes Unternehmen einen Erfahrungsbericht erstellen. </br>Hierfür musst du dem Zuständigen eine Mail schreiben (Mail), der das für dich freischaltet. </br>Nach der Freischaltung erscheint der Button 'Erfahrungsbericht erstellen' unter 'Konto'.</p>"
+
+
+
+  download:
+    form: "Formulare"
+    text1: "Hier könnt Ihr alle wichtigen Dokumente, die ihr im Rahmen des Praktikums benötigt, herunterladen:"
+    text2: "Praktikumsantrag"
+    text3: "Praktikumsnachweis"
+    text4: "Praktikumsvertrag HTW Beispiel"
+    text5: "deu."
+    text6: "Antrag auf Rückerstattung der Semesterticket-Gebühren"
+
+  general:
+    title: "Allgemeine Infos zum Praktikum"
+    text1:
+     html: "<h3>Auslandspraktikum</h3><p>Internationale Praxis wird im Internationalen Studiengang Medieninformatik groß geschrieben. Um den Studierenden eigene Erfahrungen im Verlauf des Studiums zu ermöglichen, ist für das 4. Semester ein Auslandspraktikum vorgesehen. Auf der Grundlage des in den Lehrveranstaltungen erworbenen Wissens sollen anwendungsbezogene Kenntnisse und praktische Erfahrungen vermittelt und die Bearbeitung konkreter Probleme im angestrebten beruflichen Tätigkeitsfeld unter Anleitung ermöglicht werden. Das praktische Studiensemester macht die Studierenden mit ihrem späteren Beruf vertraut und regt zur individuellen Gestaltung der zwei Semester des Spezialisierungsjahres an.</p><h3>Voraussetzungen vor Antritt</h3><p>Alle Kurse des ersten und zweiten Semesters müssen erfolgreich bestanden sein. Die Studierenden suchen sich selbstständig ein Unternehmen, bei dem sie mindestens 16 (bzw. 19, je nach Studienordnung)&nbsp;Wochen ihr Praktikum im Ausland (ein anderes Land als das, indem die Hochschulberechtigung erworben wurde) absolvieren können. Vor Beginn des Praktikums muss ein Praktikumsvertrag mit dem ausgesuchten Unternehmen abgeschlossen und von der HTW Berlin geprüft werden. </p><h3>Beantragung des Praktikums </h3><p>Das Praktikum muss beim Praktikumsbeauftragten beantragt werden, bevor es beginnt. Informationen zur Beantragung und zum Ablauf des Praktikums haben wir für Sie zusammengestellt. </p><h3>Anerkennung des Praktikums</h3><p>Der vollständig ausgefüllte Praktikumsnachweis und Praktikumsbericht müssen dem Praktikumsbeauftragten vorgelegt und der Pflichtkurs für das Praxissemester — Auswertung von Erfahrungen am Arbeitsplatz (AEP) — muss erfolgreich abgeschlossen sein. Dann wird das Praktikum anerkannt. </p><h3>Finanzierung</h3><p>Wer sich seinen Auslandsaufenthalt nicht komplett selbst finanzieren kann oder will, sollte sich beispielsweise im HTW-Web über Finanzierungsmöglichkeiten informieren. Die folgenden Seiten können ebenfalls hilfreich sein:</p><ul><li>Stipendiensuchmaschine des Bundesministeriums für Bildung und Forschung</li><li>Stipendien der Deutschen Gesellschaft für Internationale Zusammenarbeit für FH-Studierende aus Fachbereichen der Wirtschaft und (angewandten) Technik</li><li>Stipendien der Deutschen Gesellschaft für Internationale Zusammenarbeit für Praktika in Asien</li></ul><h3>Weitere Hilfestellungen</h3><p>Viele Studierende wissen zunächst nicht, wie sie an die Praktikumssuche herangehen sollen, wie man sich am besten bewirbt und was sonst noch beachtet und vorbereitet werden muss. Um den Praktikumssuchenden bei diesen Fragen unter die Arme zu greifen, hat der Arbeitskreis Wege ins Ausland  die Broschüre entworfen, die viele nützliche Tipps für die Praktikumsvor- und -nachbereitung gibt.</p>"
+
+  financing:
+    title: "Finanzierungsmöglichkeiten"
+    title3: "Auslandsbafög"
+    text1:
+      html: "<h4>Welche Finanzierungsmöglichkeiten gibt es?</h4></br>Ein Auslandspraktikum will gut geplant sein. Auch wenn manche Praktika vergütet sind, so sind die Lebenshaltungskosten häufig deutlich höher. Dazu kommen Fahrtkosten, Versicherungsbeiträge etc. Bitte lass Dich deshalb rechtzeitig — gerne auch zwei bis drei Semester vor dem geplanten Praktikum — beraten. Je früher Du beginnst, Dein Auslandspraktikum vorzubereiten, desto mehr Möglichkeiten stehen Dir offen. Beachte bitte daher die Bewerbungsfristen der verschiedenen Stipendienprogramme und die lange Bearbeitungszeit beim Auslands-BAföG. Bei manchen Stipendienprogrammen musst Du Dich ca. zehn Monate vor Praktikumsbeginn bewerben, jedoch muss zu diesem Zeitpunkt noch keine Praktikumszusage vorliegen. </br>Das International Office der HTW Berlin bietet Beratungen zu Fördermöglichkeiten von Auslandspraktika und hat auch ausführliche Online-Informationen zu diesem Thema. "
+    text2: "Eine ausführliche Liste von Förderprogrammen findest Du hier:"
+    text3:  
+      html: "<p>Auslands-BAföG ist die tolle finanzielle Förderung von Vater Staat für ein ganzes Studium, Teilstudium Praktikum oder ein Schüleraustausch im europäischen und außereuropäischen Ausland! Bekommt ihr Inlands-BAföG, bekommt ihr sicher(!) Auslands-BAföG, bekommt ihr kein Inlands-BAföG, könnt ihr trotzdem Auslands-BAföG bekommen! Durch die höheren Kosten im Ausland kommt für viel mehr von euch eine staatliche Förderung in Frage.</p>"
+    text4: "mehr Informationen"
+    text5: "Förderprogramme"
+    text6: "Dies sind die bekanntesten Förderprogramme für IMIs:"
+    
+    progs:
+     title1: "Programm"
+     title2: "Inhalt"
+     title3: "Dauer"
+     title4: "Region"
+    prog1:
+       namen: "Auslands-BAföG"
+       fact: "Darlehen und Zuschüsse für fachbezogene Pflichtpraktika. Bekommt ihr Inlands-BAföG, bekommt ihr sicher(!) Auslands-BAföG, bekommt ihr kein Inlands-BAföG, könnt ihr trotzdem Auslands-BAföG bekommen!"
+       duration: "max. 12 Monate"
+       region: "weltweit"
+    prog2:
+       namen: "ERASMUS Placement"
+       fact: "Zuschüsse für Fachpraktika"
+       duration: "3-12  Monate"
+       region: "Europa"
+    prog3:
+       namen: "PROMOS Praktika"
+       fact: "Reisekostenzuschüsse für Auslandspflicht-praktika"
+       duration: "3-6  Monate"
+       region: "bevorzugt Asien, Afrika, Lateinamerika"
+    prog4:
+       namen: "DAAD: Carlo-Schmid-Programm"
+       fact: "länderabhängige Voll-stipendien,  Reisekosten-zuschüsse für Praktika in internat. Organisationen, EU-Organisationen oder NGO's"
+       duration: "A: 3 - 6 Monate, B: 4 - 10 Monate"
+       region: "weltweit"
 
 
