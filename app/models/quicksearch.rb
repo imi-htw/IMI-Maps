@@ -21,7 +21,6 @@ class Quicksearch < ActiveRecord::Base
         end
         internships = internships.where(:id => internships_ary)
       end
-      binding.pry
       orientations = query[:orientation].collect{|s| s.to_i} if query[:orientation].present?
       semesters = query[:semester].collect{|s| s.to_i} if query[:semester].present?
       internships = internships.where(:companies => {:country => query[:country]}) if query[:country].present?
