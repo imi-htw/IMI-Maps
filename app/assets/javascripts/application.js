@@ -44,5 +44,6 @@ $(document).ready(function() {
 
 click_reset = function() {
   $(".chzn-select").val('').trigger("liszt:updated");
+  $(".search-choice").remove();
   $("#search_button").click();
 }
