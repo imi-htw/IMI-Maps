@@ -5,6 +5,7 @@ en:
   header:
     account: "My account"
     search: "Detailed search"
+    overview: "Overview"
     start: "Overview"
     exchange: "Job Exchange"
     guide: "Guide"
@@ -253,7 +254,7 @@ en:
     title2: "Scholarships"
     title3: "Auslandsbafög"
     text1:
-      html: "<h4>Which ways of fundings are available?</h4> An internship abroad should be well planned. Although some internships are paid, the living costs are often much higher. Additionally you may have to pay things like:  travel costs, insurance, etc. Therefore, please inform yourself - also two to three semesters prior to the planned internship. The sooner you begin to prepare your internship, the more options are open to you. Please note the application deadlines for the various scholarship programs and the long processing time for Auslands-BAföG. For some scholarship programs you have to apply about ten months prior to starting, but at this time you don't need to have a placement promise. The International Office of HTW Berlin offers advice on funding opportunities of internships and also provides detailed information online about this topic."
+      html: "<h4>Which ways of fundings are available?</h4> An internship abroad should be well planned. Although some internships are paid, the living costs are often much higher than here. Additionally you may have to pay things like:  travel costs and insurance. Therefore, please inform yourself - also two to three semesters prior to the planned internship. The sooner you begin to prepare your internship, the more options are open to you. Please note the application deadlines for various scholarship programs and the long processing time for Auslands-BAföG. For some scholarship programs you have to apply about ten months prior to starting, but at this time you don't need to have a placement promise. The International Office of HTW Berlin offers advice on funding opportunities of internships and also provides detailed information online about this topic."
     text2: "You can find a more detailed list of funding programs here:"
     text3:  
       html: "<p>Auslands-BAföG is the great financial support for an entire study, part-study internship or a student exchange in European and non-European countries! If you receive Bafög here, you sure get AUslandsbafög, if you get no Bafög here, you can still get Auslands-BAföG! Due to the higher costs abroad Auslands-Bafög come to question for a lot more of you.</p>"
