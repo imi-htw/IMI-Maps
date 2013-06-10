@@ -27,9 +27,9 @@
     <td class="table_inside"><%= render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside"><%= internship.recommend %></td>
-    <td class="table_inside"><%= link_to (t "buttons.show"), internship %></td>
-    <td class="table_inside"><%= link_to (t "buttons.edit"), edit_internship_path(internship) %></td>
-    <td class="table_inside"><%= link_to (t "buttons.destroy"), internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture button_intern" %></td>
+    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
