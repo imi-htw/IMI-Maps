@@ -8,7 +8,11 @@ class QuicksearchesController < ApplicationController
 
     @companies = []
 
-    @internships = @quicksearch.internships(params)
+    if params[:orientation].nil? and params[:semester].nil? and params[:programming_language_ids].nil? and params[:country].nil?
+      @internships = Internship.order("created_at DESC") 
+    else
+      @internships = @quicksearch.internships(params)
+    end
 
     @internships.each do |i|
       @companies << i.company
