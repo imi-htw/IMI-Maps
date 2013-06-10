@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
+  background-color: #333333;
   color:#ffffff;
   background: url(lines2.png);
+
 } 
 
 #gradient{
@@ -40,8 +42,12 @@ body{
     z-index: 3; 
 }
 
-p{
+h3 p{
   color: #fff !important;
+}
+
+#font_session{
+  color: white !important;
 }
 
 #loginbutton {

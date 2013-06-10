@@ -118,7 +118,6 @@
 
 .table_intern{
   background: #568501;
-  height: 40px;
   color: white;
 }
 
@@ -137,6 +136,15 @@
 
 .table_inside{
   background: #fff;
+  font-size: 13px;
+}
+
+.table_inside ul, ol{
+    margin: 0px 0px 0px 0px !important;    
+}
+
+.top_inside{
+  padding-bottom: 12px !important;
 }
 
 .img_preview{
