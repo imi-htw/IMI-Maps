@@ -14,6 +14,7 @@ de:
     newuser: "Neuer Benutzer"
     save: "Speichern" 
     done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
+    compare: "Vergleichen"
 
   helpers:
     reset: "Zurücksetzen"

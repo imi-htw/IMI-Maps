@@ -38,6 +38,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
     <td><p onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helbuttoners.reset" %></p></td>
+    <td><%= link_to (t "buttons.compare"),class: "btn btn-success" %></td>
   </tr>
 </table>
 
@@ -45,6 +46,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <table class="table">
   <tr>
+    <th></th>
     <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
     <th><%= t "companies.attributes.city"%> </th>
@@ -59,6 +61,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <% @internships.each do |internship| %>
   <tr>
+    <td> <%= check_box_tag(:companies) %></td>
     <td><%= internship.title %></td>
     <td><%= internship.company.name %></td>
     <td><%= internship.company.city %></td>
