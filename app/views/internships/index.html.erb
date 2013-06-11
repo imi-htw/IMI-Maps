@@ -21,7 +21,7 @@
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.orientation.name %></td>
     <td class="table_inside"><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td class="table_inside"><%= internship.salary.amount %></td>
+    <td class="table_inside"><%= internship.salary.try(:amount) %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><%= render_stars(internship.rating, self) %></td>
