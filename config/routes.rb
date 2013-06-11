@@ -38,11 +38,7 @@ ImiMaps::Application.routes.draw do
 
     resources :quicksearches, :only => [:index]
 
-    resources :error_page
-
     resources :no_path
-
-    resources :maintenance
 
     resources :companies_compare
 
