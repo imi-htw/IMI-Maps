@@ -115,6 +115,11 @@
 
                               <!-- ################################################# start comments #################################################--> 
 
+
+
+<div id="comment_div">
+    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
+<div id="comment_form" style="display:none;">
 <%= form_for(@comment, remote: true ) do |f| %>
 <div class="field">
     <%= f.hidden_field :internship_id, value: @internship.id %>
@@ -122,12 +127,11 @@
     <%= f.text_field :body %>
     <div class="actions">
     <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
   </div>
   </div>
 <% end %>
+</div>
 
-<div id="comment_div">
 <% @internship.user_comments.each do |i| %>  
   <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
