@@ -43,6 +43,7 @@ var semester_choices = $("#semester_chzn .search-choice");
 var orientation_choices = $("#orientation_chzn .search-choice");
 var language_choices = $("#programming_language_ids_chzn .search-choice");
 
+if(<%= @internships_size %> > 0) {
 $("#country_td").html('<%= escape_javascript( select_tag :country, options_for_select(@countries), { :multiple => true , class: "chzn-select"} )%>');
 
 $("#semester_td").html('<%= escape_javascript( select_tag :semester, options_for_select(@semesters), { :multiple => true , class: "chzn-select"} )%>');
@@ -107,6 +108,7 @@ for (var i=0; i < language_choices.length; i++) {
   }
 }
 $("#programming_language_ids").trigger("liszt:updated");
+}
 }
 
 }
