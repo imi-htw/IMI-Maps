@@ -116,9 +116,9 @@
                               <!-- ################################################# start comments #################################################--> 
 
 
+    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
 
 <div id="comment_div">
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
 <div id="comment_form" style="display:none;">
 <%= form_for(@comment, remote: true ) do |f| %>
 <div class="field">
@@ -132,11 +132,11 @@
 <% end %>
 </div>
 
-<% @internship.user_comments.each do |i| %>  
+<% @user_comments.each do |i| %>  
   <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
-  <%= i.created_at %>
+  <%= i.created_at.to_s(:db)[0..-4] %>
   :</div>
   <br/>
   <br/>
@@ -153,7 +153,7 @@
     <div id="user_2"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
-    <%= i.answer.created_at %>
+    <%= i.answer.created_at.to_s(:db)[0..-4] %>
     :</div>
     <br/>
     <br/>
