@@ -23,6 +23,10 @@
   <b><%= t "users.attributes.email" %> :</b>
   <%= @user.email %>
 </p>
+<p>
+  <b><%= t "users.attributes.publicmail" %> :</b>
+  <%= @user.publicmail %>
+</p>
 
 <%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
 <%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>

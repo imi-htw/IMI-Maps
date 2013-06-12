@@ -106,6 +106,7 @@ en:
       first_name: "First Name"
       major: "Major"
       email: "Email"
+      publicmail: "Make email adress public?"
       password: "Password"
       password_confirmation: "Password confirmation"
       role: "Role"

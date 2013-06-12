@@ -15,6 +15,10 @@
     <%= f.label t "users.attributes.email"  %><br />
     <%= f.text_field :email %>
   </div>
+    <div class="field">
+    <%= f.label t "users.attributes.publicmail"  %>
+    <%= f.check_box :publicmail %>
+  </div>  
   <div class="field">
     <%= f.label t "users.attributes.password" %><br />
     <%= f.password_field :password %>
