@@ -2,15 +2,15 @@
 <table class="table">
   <tr class="table_intern">
     <div id="table_top"></div>
-    <th class="top_inside"><%= t "internships.attributes.company" %></th>
-    <th class="top_inside"><%= t "internships.attributes.orientation" %></th>
-    <th class="top_inside"><%= t "internships.attributes.programming_language" %></th>
-    <th class="top_inside"><%= t "internships.attributes.salary" %></th>
-    <th class="top_inside"><%= t "internships.attributes.working_hours" %></th>
-    <th class="top_inside"><%= t "internships.attributes.living_costs" %></th>
-    <th class="top_inside"><%= t "internships.attributes.rating" %></th>
-    <th class="top_inside"><%= t "internships.attributes.user" %></th>
-    <th class="top_inside"><%= t "internships.attributes.recommend" %></th>
+    <th class="company"><%= t "internships.attributes.company" %></th>
+    <th class="orientation"><%= t "internships.attributes.orientation" %></th>
+    <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
+    <th class="salary"><%= t "internships.attributes.salary" %></th>
+    <th class="working_hours"><%= t "internships.attributes.working_hours" %></th>
+    <th class="living_costs"><%= t "internships.attributes.living_costs" %></th>
+    <th class="rating"><%= t "internships.attributes.rating" %></th>
+    <th class="user"><%= t "internships.attributes.user" %></th>
+    <th class="recommend"><%= t "internships.attributes.recommend" %></th>
     <th class="top_inside"></th>
     <th class="top_inside"></th>
     <th class="top_inside"></th>
@@ -21,15 +21,15 @@
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.orientation.name %></td>
     <td class="table_inside"><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td class="table_inside"><%= internship.salary.amount %></td>
+    <td class="table_inside"><%= internship.salary.try(:amount) %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><%= render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside"><%= internship.recommend %></td>
-    <td class="table_inside"><%= link_to (t "buttons.show"), internship %></td>
-    <td class="table_inside"><%= link_to (t "buttons.edit"), edit_internship_path(internship) %></td>
-    <td class="table_inside"><%= link_to (t "buttons.destroy"), internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture button_intern" %></td>
+    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

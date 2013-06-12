@@ -27,6 +27,7 @@ en:
     save: "Save"
     done_intership_here: "Have you done your internship here, too?"
     change_details: "Change Details"
+    compare: "Compare"
 
   helpers:
     reset: "Reset"

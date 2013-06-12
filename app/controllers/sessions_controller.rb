@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
+    #userSignUp = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation], last_name: params[:last_name], first_name: params[:first_name] )
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to overview_index_url, notice: "Logged in!"
