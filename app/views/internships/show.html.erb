@@ -136,7 +136,7 @@
   <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
-  <%= i.created_at.to_s(:db)[0..-4] %>
+  <%= i.created_at.to_formatted_s(:long_ordinal) %>
   :</div>
   <br/>
   <br/>
@@ -153,7 +153,7 @@
     <div id="user_2"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
-    <%= i.answer.created_at.to_s(:db)[0..-4] %>
+    <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
     :</div>
     <br/>
     <br/>
