@@ -1,5 +1,5 @@
 class Internship < ActiveRecord::Base
-  paginates_per 3
+  paginates_per 5
   attr_accessible :living_costs, :orientation_id, :salary_id, :working_hours, :programming_language_ids, :rating, :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report
 
   # validations

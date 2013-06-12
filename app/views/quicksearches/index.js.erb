@@ -37,7 +37,94 @@ Gmaps.load_map = function() {
      Gmaps.map.callback();
 };
 Gmaps.loadMaps();
+
+var country_choices = $("#country_chzn .search-choice");
+var semester_choices = $("#semester_chzn .search-choice");
+var orientation_choices = $("#orientation_chzn .search-choice");
+var language_choices = $("#programming_language_ids_chzn .search-choice");
+
+$("#country_td").html('<%= escape_javascript( select_tag :country, options_for_select(@countries), { :multiple => true , class: "chzn-select"} )%>');
+
+$("#semester_td").html('<%= escape_javascript( select_tag :semester, options_for_select(@semesters), { :multiple => true , class: "chzn-select"} )%>');
+
+$("#orientation_td").html('<%= escape_javascript( select_tag :orientation, options_for_select(@orientations), { :multiple => true , class: "chzn-select"} )%>');
+
+$("#languages_td").html('<%= escape_javascript( select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: "chzn-select"} )%>');
+
+$(".chzn-select").chosen();
+
+if (country_choices.length > 0) {
+for (var i=0; i < country_choices.length; i++) {
+  var ary = [];
+  if ($("#country").val()!=null)
+  ary = $("#country").val();
+  ary.push(country_choices[i].children[0].innerHTML);
+  $("#country").val(ary);
+}
+$("#country").trigger("liszt:updated");
 }
 
+if (semester_choices.length > 0) {
+for (var i=0; i < semester_choices.length; i++) {
+  for (var j=0; j< $("#semester")[0].children.length; j++) {
+    if ($("#semester")[0].children[j].innerHTML == semester_choices[i].children[0].innerHTML) {
+      var ary = [];
+      if ($("#semester").val()!=null)
+      ary = $("#semester").val();
+      ary.push($("#semester")[0].children[j].value);
+      $("#semester").val(ary);
+    }
+  }
+}
+$("#semester").trigger("liszt:updated");
+}
+
+if (orientation_choices.length > 0) {
+for (var i=0; i < orientation_choices.length; i++) {
+  for (var j=0; j< $("#orientation")[0].children.length; j++) {
+    if ($("#orientation")[0].children[j].innerHTML == orientation_choices[i].children[0].innerHTML) {
+      var ary = [];
+      if ($("#orientation").val()!=null)
+      ary = $("#orientation").val();
+      ary.push($("#orientation")[0].children[j].value);
+      $("#orientation").val(ary);
+    }
+  }
+}
+$("#orientation").trigger("liszt:updated");
+}
+
+if (language_choices.length > 0) {
+for (var i=0; i < language_choices.length; i++) {
+  for (var j=0; j< $("#programming_language_ids")[0].children.length; j++) {
+    if ($("#programming_language_ids")[0].children[j].innerHTML == language_choices[i].children[0].innerHTML) {
+      var ary = [];
+      if ($("#programming_language_ids").val()!=null)
+      ary = $("#programming_language_ids").val();
+      ary.push($("#programming_language_ids")[0].children[j].value);
+      $("#programming_language_ids").val(ary);
+    }
+  }
+}
+$("#programming_language_ids").trigger("liszt:updated");
+}
+
+}
+
+if (!<%= @bool %>) {
+$('#results_string').html("<h5> <%=@internships_size%> results found! </h5> </br>");
+$('#results_string').css("display","block");
+}
+else {
+$('#results_string').css("display","none");  
+}
 $('.table').html('<%= escape_javascript( render "table"  ) %>');
 $('#paginator').html('<%= escape_javascript(paginate(@internships, :params => {:paginating => true}, :remote => true).to_s) %>');
+
+
+
+/*var semester_choices = $("#semester_chzn .chzn-results").children();
+var orientation_choices = $("#orientation_chzn .chzn-results").children();
+var programming_language_ids_choices = $("#programming_language_ids_chzn .chzn-results").children();
+
+*/

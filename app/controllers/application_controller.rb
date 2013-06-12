@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
     helper_method :get_semesters
 
     def get_notification_size
-      Notification.where(:read => false, :user_id => current_user.id).size
+      Notification.where(:read => false, :user_id => current_user.try(:id)).size
     end
 
     helper_method :get_notification_size

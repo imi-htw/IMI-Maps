@@ -32,17 +32,17 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <th></th>
   </tr>
   <tr>
-    <td><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
-    <td><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
-    <td><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
-    <td><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
+    <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
+    <td id="semester_td"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
+    <td id="orientation_td"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
+    <td id="languages_td"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
-    <td><p onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helbuttoners.reset" %></p></td>
+    <td><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
   </tr>
 </table>
 
 <% end %>
-
+<div id="results_string" style="display:none"> </div>
 <table class="table">
   <tr>
     <th><%= t "internships.attributes.title" %></th>
