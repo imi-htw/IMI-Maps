@@ -111,6 +111,8 @@ en:
       password_confirmation: "Password confirmation"
       role: "Role"
       picture: "Picture"
+      mailnotif: "Receive Email-Notification?"  
+
 
   comments:
     attributes: 
