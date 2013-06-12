@@ -2,25 +2,25 @@
 
 <%= form_tag(internships_path, :method => 'get') do %>
   <p>
-    <p><%= t "internships.attributes.orientation" %><br /> </p>
+    <p class="search_form"><%= t "internships.attributes.orientation" %><br /> </p>
     <%= text_field_tag :glowing_border, params[:orientation] %>
 
-    <p><%= ((t "internships.attributes.salary")+" >=") %><br /> </p>
+    <p class="search_form"><%= ((t "internships.attributes.salary")+" >=") %><br /> </p>
     <%= text_field_tag :glowing_border, params[:salary] %>
 
-    <p><%= ((t "internships.attributes.working_hours")+" <=") %><br /> </p>
+    <p class="search_form"><%= ((t "internships.attributes.working_hours")+" <=") %><br /> </p>
     <%= text_field_tag :glowing_border, params[:working_hours] %>
 
-    <p><%= ((t "internships.attributes.living_costs")+" <=") %><br /> </p>
+    <p class="search_form"><%= ((t "internships.attributes.living_costs")+" <=") %><br /> </p>
     <%= text_field_tag :glowing_border, params[:living_costs] %>
 
-    <p><%= ((t "internships.attributes.rating")+" >=") %><br /> </p>
+    <p class="search_form"><%= ((t "internships.attributes.rating")+" >=") %><br /> </p>
     <%= text_field_tag :glowing_border, params[:rating] %>
 
-    <p><%= t "companies.attributes.country" %><br /> </p>
+    <p class="search_form"><%= t "companies.attributes.country" %><br /> </p>
     <%= text_field_tag :glowing_border, params[:country] %>
 
-    <p><%= t "internships.attributes.programming_language" %><br /> </p>
+    <p class="search_form"><%= t "internships.attributes.programming_language" %><br /> </p>
     <%= select_tag :glowing_border, options_for_select(@programming_languages), { :multiple => true } %>
     <br/>
     <%= submit_tag "Search", :name => nil %>

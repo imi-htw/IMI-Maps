@@ -214,6 +214,41 @@
   }
 }
 
+.new_internship{
+  position: absolute;
+  top: 177px;
+  margin-left: 1027px;
+  background: #568501;
+  padding: 10px;
+  color: #fff;
+}
+
+#triangle_right { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-left: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1007px;
+}
+
+#triangle_left { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-right: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1150px;
+}
+
+.new_internship:hover{
+  color: #000;
+}
+
 #wrapper {
     position: relative;
 }
