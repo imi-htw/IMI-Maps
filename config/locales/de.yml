@@ -65,11 +65,26 @@ de:
       long: ! '%d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
+  header:
+    account: "Konto"
+    search: "Detail-Suche"
+    overview: "Start"
+    start: "Start"
+    exchange: "Jobbörse"
+    guide: "Guide"
+    logout: "Abmelden"
+    faq: "FAQs"
+    downloads: "Downloads"
+    financing: "Finanzierung"
+    general: "Allgemeine Infos"
+    favorite: "Favoriten"
+    tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
   choose: 
     country: "Wähle ein Land"
     orientation: "Wähle eine Orientierung"
     semester: "Wähle ein Semester"
     language: "Wähle eine Programmiersprache"
+
   search:
     title: "Suche"
   buttons:
