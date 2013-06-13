@@ -1,4 +1,4 @@
-var fav = $('#favorite').html('<%= escape_javascript( button_to "Add to Favorites", {:controller => :favorite,
+var fav = $('#favorite').html('<%= escape_javascript( button_to t("favorite.add"), {:controller => :favorite,
                                       :action => "create",  
                                       :user_id => @current_user.id,
                                       :internship_id => @internship.id }, :method => :create, :remote=>true, class: "btn btn-success favorite" ) %>');

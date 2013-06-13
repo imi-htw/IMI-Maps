@@ -75,10 +75,10 @@
 
                               <div id="favorite">
                               <% if @favorite %>
-                                <%= button_to "Delete from Favorites", {:controller => :favorite,
+                                <%= button_to t("favorite.delete"), {:controller => :favorite,
                                       :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
                                 <% else %>
-                                <%= button_to "Add to Favorites", {:controller => :favorite,
+                                <%= button_to t("favorite.add"), {:controller => :favorite,
                                       :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
                                 <% end %>
                                 </div>
@@ -136,7 +136,7 @@
   <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
-  <%= i.created_at.to_formatted_s(:long_ordinal) %>
+  <%= I18n.localize(i.created_at, :format => :long) %>
   :</div>
   <br/>
   <br/>
