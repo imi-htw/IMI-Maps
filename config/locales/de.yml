@@ -2,7 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
-<<<<<<< HEAD
+
   header:
     account: "Konto"
     search: "Detail-Suche"
@@ -17,13 +17,13 @@ de:
     general: "Allgemeine Infos"
     favorite: "Favoriten"
     tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
-=======
+
   choose: 
     country: "Wähle ein Land"
     orientation: "Wähle eine Orientierung"
     semester: "Wähle ein Semester"
     language: "Wähle eine Programmiersprache"
->>>>>>> 14cc08d7975c61e7a6aa45d611a57c9d3ed4071b
+
   search:
     title: "Suche"
   buttons:
