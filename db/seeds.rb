@@ -68,7 +68,7 @@ Orientation.where(name: "Design", id:6).first_or_create
 Orientation.where(name: "Product Management", id:7).first_or_create
 
 User.destroy_all
-User.create(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
+User.create!(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
 user1 = User.first
 
 Semester.where(semester: "SS 13", id:1).first_or_create
@@ -87,6 +87,7 @@ n=1
 	r = rand(countries.size)
 	company = Company.create(name: "Company#{n}", number_employees: 100, industry: "Web", website: "www.google.com",city: hash[countries[r]], country: countries[r], main_language: "Englisch")
 	i = Internship.new(salary: rand(1500)+1, working_hours: rand(20)+21, living_costs: rand(400)+301, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+
 	s = rand(5)+1
 	ary = []
 	s.times do
