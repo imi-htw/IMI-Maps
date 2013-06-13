@@ -119,7 +119,31 @@
 .table_intern{
   background: #568501;
   color: white;
+/*
+  position: relative;
+  width: 100%;
+  padding: 6px 20px 6px 70px;
+  margin: 30px 10px 10px -70px;
+  text-shadow: 0px 1px 2px #bbb;
+  -webkit-box-shadow: 0px 2px 4px #888;
+  -moz-box-shadow: 0px 2px 4px #888;
+  box-shadow: 0px 2px 4px #888;*/
 }
+
+/*.table_intern:after
+{
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 10px;
+  border-style: solid;
+  border-color: #666 #666 transparent transparent;
+  margin-top: -470px;
+  margin-left: 145px;
+}*/
 
 #table_top{
   position: absolute;
@@ -134,6 +158,37 @@
   display: inline;
 }
 
+.company{
+  width: 100px;
+  height: 23px;
+}
+
+.programming_language{
+  width: 170px;
+}
+
+.working_hours{
+  width: 100px;
+}
+
+.living_costs{
+  width: 100px;
+}
+
+.rating{
+  width: 80px;
+}
+
+.recommend{
+  width: 40px;
+}
+
+/*.button_intern{
+  font-size: 0px;
+  width: 30px;
+  display: none;
+}*/
+
 .table_inside{
   background: #fff;
   font-size: 13px;
@@ -141,10 +196,6 @@
 
 .table_inside ul, ol{
     margin: 0px 0px 0px 0px !important;    
-}
-
-.top_inside{
-  padding-bottom: 12px !important;
 }
 
 .img_preview{
@@ -161,6 +212,41 @@
   img{
     height: 450px;
   }
+}
+
+.new_internship{
+  position: absolute;
+  top: 177px;
+  margin-left: 1027px;
+  background: #568501;
+  padding: 10px;
+  color: #fff;
+}
+
+#triangle_right { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-left: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1007px;
+}
+
+#triangle_left { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-right: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1150px;
+}
+
+.new_internship:hover{
+  color: #000;
 }
 
 #wrapper {

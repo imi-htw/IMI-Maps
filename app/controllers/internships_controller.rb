@@ -17,6 +17,7 @@ class InternshipsController < ApplicationController
     @comment = UserComment.new
     @answer = Answer.new
     @favorite = Favorite.where(:internship_id => @internship.id, :user_id => current_user.id)[0]
+    @user_comments = @internship.user_comments.order("created_at DESC")
 
     @pins = @internship.company.to_gmaps4rails do |company, marker |
 

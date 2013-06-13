@@ -102,12 +102,24 @@
   <br/>
 <% end %>
 
+ <% if @internship.internship_report.present? %>
+  <b><%= t "internships.attributes.internship_report" %> :</b>
+  <br/>
+      <%= File.basename(@internship.internship_report.path) %>
+  <br/>
+<% end %>
+
                                 <b><%= t "internships.attributes.comments" %> :</b>
                                 <br/>
                                 <br/>
 
                               <!-- ################################################# start comments #################################################--> 
 
+
+    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
+
+<div id="comment_div">
+<div id="comment_form" style="display:none;">
 <%= form_for(@comment, remote: true ) do |f| %>
 <div class="field">
     <%= f.hidden_field :internship_id, value: @internship.id %>
@@ -115,17 +127,16 @@
     <%= f.text_field :body %>
     <div class="actions">
     <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
   </div>
   </div>
 <% end %>
+</div>
 
-<div id="comment_div">
-<% @internship.user_comments.each do |i| %>  
+<% @user_comments.each do |i| %>  
   <div class="comment" style="display:none;"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
-  <%= i.created_at %>
+  <%= i.created_at.to_formatted_s(:long_ordinal) %>
   :</div>
   <br/>
   <br/>
@@ -142,7 +153,7 @@
     <div id="user_2"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
-    <%= i.answer.created_at %>
+    <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
     :</div>
     <br/>
     <br/>

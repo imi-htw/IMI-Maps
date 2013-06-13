@@ -25,6 +25,8 @@ class UserCommentsController < ApplicationController
     @answer = Answer.new
     #flash[:notice] = "UserComment was successfully created" if @comment.save
     @internship = @comment.internship
+    @user_comments = @internship.user_comments.order("created_at DESC")
+    @new_comment = UserComment.new
 
     respond_to do |format|
       format.js { render :layout=> false, :locals => { :internship => @internship } }
@@ -52,6 +54,8 @@ class UserCommentsController < ApplicationController
     @internship = @comment.internship
     @comment.destroy
     #flash[:notice] = "UserComment was successfully deleted"
+    @user_comments = @internship.user_comments.order("created_at DESC")
+    @new_comment = UserComment.new
     @answer = Answer.new
 
     respond_to do |format|

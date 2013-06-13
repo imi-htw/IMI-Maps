@@ -28,6 +28,7 @@ de:
     newuser: "Neuer Benutzer"
     save: "Speichern" 
     done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
+    compare: "Vergleichen"
 
   helpers:
     reset: "Zurücksetzen"
@@ -101,10 +102,12 @@ de:
       first_name: "Vorname"
       major: "Studiengang"
       email: "Email"
+      publicmail: "Emailadresse öffentlich anzeigen?"
       password: "Passwort"
       password_confirmation: "Passwort bestaetigen"
       role: "Rolle"
-      picture: "Bild"   
+      picture: "Bild" 
+      mailnotif: "Email-Mitteilungen erhalten?"  
 
   comments:
     attributes: 

@@ -158,7 +158,11 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 
 h1, h2{
   font-weight: 100;
-  color: black;
+  margin: 1em 0px 0.5em;
+  text-transform: uppercase;
+  color: #77b900 !important;
+  line-height: 40px;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 h3{
@@ -245,7 +249,7 @@ footer .container p{
   padding-top:40px;
   position: inherit;
   width: 100%;
-  margin-top:90px;
+  margin-top:20px;
   z-index: 3;
 }
 
