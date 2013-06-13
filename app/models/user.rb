@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => true
   validates :password_confirmation, :presence => true
   validates :internship_authorization, :presence => true
-  validates :publicmail, :presence => true
-  validates :mailnotif, :presence => true
 
   
   # associations
