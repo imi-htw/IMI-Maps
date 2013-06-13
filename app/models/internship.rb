@@ -13,8 +13,6 @@ class Internship < ActiveRecord::Base
   validates :living_costs, :presence => true, :allow_blank => false
   validates :description, :presence => true, :allow_blank => false
   validates :user_id, :presence => true
-  validates :recommend, :presence => true
-  validates :email_public, :presence => true
   validates :semester_id, :presence => true
 
 

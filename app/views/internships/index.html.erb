@@ -36,5 +36,5 @@
 
 <br />
 <% if @current_user.internship_authorization %>
-<%= link_to (t "buttons.newinternship"), new_internship_path %>
+<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship" %><div id="triangle_left"></div>
 <% end %>

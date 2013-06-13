@@ -105,7 +105,7 @@
  <% if @internship.internship_report.present? %>
   <b><%= t "internships.attributes.internship_report" %> :</b>
   <br/>
-  <%= internship_report_tag internships.internship_report_url.to_s %>
+      <%= File.basename(@internship.internship_report.path) %>
   <br/>
 <% end %>
 
