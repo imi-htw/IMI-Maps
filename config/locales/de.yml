@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  choose: 
+    country: "Wähle ein Land"
+    orientation: "Wähle eine Orientierung"
+    semester: "Wähle ein Semester"
+    language: "Wähle eine Programmiersprache"
   search:
     title: "Suche"
   buttons:
