@@ -40,7 +40,7 @@ a{
   width: 100%;
 }
 .navbar .brand {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 .navbar-inner {
   text-align:center;
@@ -90,6 +90,10 @@ a{
 
 .navbar .nav > li > a:hover {
   color:#77b900;
+}
+
+.dropdown-menu{
+  margin: 0 0 0;
 }
 
 .dropdown .dropdown-toggle {

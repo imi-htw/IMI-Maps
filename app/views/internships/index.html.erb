@@ -28,13 +28,13 @@
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside"><%= internship.recommend %></td>
     <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture button_intern" %></td>
-    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit" %></td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit button_intern" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove button_intern", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 <% if @current_user.internship_authorization %>
-<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship" %><div id="triangle_left"></div>
+<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship2" %><div id="triangle_left"></div>
 <% end %>

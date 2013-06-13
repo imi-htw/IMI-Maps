@@ -119,31 +119,7 @@
 .table_intern{
   background: #568501;
   color: white;
-/*
-  position: relative;
-  width: 100%;
-  padding: 6px 20px 6px 70px;
-  margin: 30px 10px 10px -70px;
-  text-shadow: 0px 1px 2px #bbb;
-  -webkit-box-shadow: 0px 2px 4px #888;
-  -moz-box-shadow: 0px 2px 4px #888;
-  box-shadow: 0px 2px 4px #888;*/
 }
-
-/*.table_intern:after
-{
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #666 #666 transparent transparent;
-  margin-top: -470px;
-  margin-left: 145px;
-}*/
 
 #table_top{
   position: absolute;
@@ -183,12 +159,6 @@
   width: 40px;
 }
 
-/*.button_intern{
-  font-size: 0px;
-  width: 30px;
-  display: none;
-}*/
-
 .table_inside{
   background: #fff;
   font-size: 13px;
@@ -196,6 +166,11 @@
 
 .table_inside ul, ol{
     margin: 0px 0px 0px 0px !important;    
+}
+
+.icon-white:hover{
+  color: #000 !important;
+  text-decoration: none;
 }
 
 .img_preview{
@@ -214,7 +189,7 @@
   }
 }
 
-.new_internship{
+.new_internship2{
   position: absolute;
   top: 177px;
   margin-left: 1027px;
@@ -245,8 +220,9 @@
   margin-left: 1150px;
 }
 
-.new_internship:hover{
+.new_internship2:hover{
   color: #000;
+  text-decoration: none !important;
 }
 
 #wrapper {
