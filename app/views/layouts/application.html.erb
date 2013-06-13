@@ -72,9 +72,9 @@
     <div class="nav-collapse collapse">
 
     <ul class="nav nav-top ">
-              <li class="active_click"><%= link_to t("header.overview"), overview_index_path %></li>
-              <li class="active_click"><%= link_to t("header.search"), search_index_path %></li>
-              <li class="dropdown active_click">
+              <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
+              <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), search_index_path %></li>
+              <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href=""><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to t("header.general"), general_index_path %></li>
@@ -83,7 +83,7 @@
                   <li><%= link_to t("header.financing"), financing_index_path %></li>
                 </ul>
               </li>
-              <li class="active_click"><%= link_to t("header.exchange"), internships_path %></li>
+              <li class="<%= 'active_nav' if current_page?(internships_path) %>"><%= link_to t("header.exchange"), internships_path %></li>
 
     </ul>
   </div>

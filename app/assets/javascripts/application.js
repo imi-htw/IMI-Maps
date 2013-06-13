@@ -38,9 +38,9 @@ $(document).ready(function() {
      $("#comment_form").slideToggle("slow");
   });
 
-    $(".active_click").click(function(){
-      $(this).addClass("active");
-    });
+    // $(".active_click").click(function(){
+    //   $(this).addClass("active");
+    // });
 });
 
 click_reset = function() {

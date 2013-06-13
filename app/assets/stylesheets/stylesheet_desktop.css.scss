@@ -164,7 +164,7 @@ h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
   text-transform: uppercase;
-  color: #77b900 !important;
+  color: #000 !important;
   line-height: 40px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -273,4 +273,17 @@ p{
     border-radius: 0;
     position: inherit;
 }
+
+.active_nav{
+  a{
+    color: #77b900 !important;
+    background: #333333 !important;
+
+    span{
+        color: #77b900 !important;
+        background: #333333 !important;
+      }
+  }
+}
+
 }
