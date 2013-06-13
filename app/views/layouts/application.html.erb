@@ -30,9 +30,13 @@
   <div id="top-menu">
     <%= link_to "",overview_index_path, class: "brand" %>
     <!-- Be sure to leave the brand out there if you want it shown -->
-    
-    <ul class="nav pull-right">
-      <li><%= link_to t("header.favorite"), favorite_index_path %></li>
+
+  <ul class="nav pull-right">
+              <li><%= link_to(favorite_index_path) do %>
+                  <i class="icon-heart icon-large"></i>
+                <% end %>
+              </li>
+
       <li class="dropdown">
         <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
@@ -99,7 +103,7 @@
   <div class="wrapper">
     <div class="container clear-top">      
       <div clas="row">
-       <div class="span12"><%= yield %></div>
+       <div class="span12-2"><%= yield %></div>
       </div>
     </div>
 </div>

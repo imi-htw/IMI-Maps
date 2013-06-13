@@ -21,31 +21,25 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
-
+<div class="map-shadow"><%= image_tag("content-bottom.shadow.png") %></div>
 <table>
-  <tr>
-    <th><%= t "companies.attributes.country" %></th>
-    <th><%= t "internships.attributes.semester" %></th>
-    <th><%= t "internships.attributes.orientation" %></th>
-    <th><%= t "internships.attributes.programming_language" %></th>
-    <th></th>
-    <th></th>
-  </tr>
+<tr>
+  <p>Select your search criteria:</p>
+</tr>
   <tr>
     <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
     <td id="semester_td"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
     <td id="orientation_td"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
     <td id="languages_td"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
     <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
-    <td><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
-    <td><%= link_to (t "buttons.compare"),class: "btn btn-success" %></td>
+   <td><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
   </tr>
 </table>
 
 <% end %>
 <div id="results_string" style="display:none"> </div>
-<table class="table">
-  <tr>
+<table class="table" style="margin-top:60px;">
+    <tr class="search-table">
     <th></th>
     <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
@@ -60,7 +54,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
   </tr>
 
 <% @internships.each do |internship| %>
-  <tr>
+  <tr class="<%= cycle("even_row", "odd_row") %>">
     <td> <%= check_box_tag(:companies) %></td>
     <td><%= internship.title %></td>
     <td><%= internship.company.name %></td>
@@ -75,7 +69,8 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
   </tr>
 <% end %>
 </table>
-
-<div id="paginator">
+<div style="float:right">
+<div class="pagination imi">
 <%= paginate @internships, :remote => true  %>
+</div>
 </div>
