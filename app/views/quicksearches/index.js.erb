@@ -116,12 +116,13 @@ $("#programming_language_ids").trigger("liszt:updated");
 if (!<%= @bool %>) {
 $('#results_string').html("<h5> <%=@internships_size%> results found! </h5> </br>");
 $('#results_string').css("display","block");
+$('#results_string').css("height","10px");
 }
 else {
 $('#results_string').css("display","none");  
 }
 $('.table').html('<%= escape_javascript( render "table"  ) %>');
-$('#paginator').html('<%= escape_javascript(paginate(@internships, :params => {:paginating => true}, :remote => true).to_s) %>');
+$('.pagination.imi').html('<%= escape_javascript(paginate(@internships, :params => {:paginating => true}, :remote => true).to_s) %>');
 $('#country_chart').html('');
 $('#language_chart').html('');
 $('#orientation_chart').html('');

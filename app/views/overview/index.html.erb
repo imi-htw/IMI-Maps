@@ -27,10 +27,10 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
   <p><%=t"search.criteria"%></p>
 </tr>
   <tr>
-    <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
-    <td id="semester_td"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select'}  %></td>
-    <td id="orientation_td"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select'}  %></td>
-    <td id="languages_td"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select'}  %></td>
+    <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country")} %></td>
+    <td id="semester_td"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester")}  %></td>
+    <td id="orientation_td"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
+    <td id="languages_td"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
     <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
    <td><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
   </tr>
@@ -44,7 +44,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 </div>
 
 <div id="results_string" style="display:none"> </div>
-<table class="table" style="margin-top:60px;">
+<table class="table" style="margin-top:30px;">
     <tr class="search-table">
     <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
