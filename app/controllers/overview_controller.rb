@@ -3,13 +3,10 @@ class OverviewController < ApplicationController
   before_filter :get_programming_languages, :get_orientations
 
 	def index
-    @companies = []
 
     @internships = Internship.all
 
-    @internships.each do |i|
-      @companies << i.company
-    end
+    @companies = @internships.collect do |i| i.company end
 
     @pins = @companies.to_gmaps4rails do |company, marker |
 

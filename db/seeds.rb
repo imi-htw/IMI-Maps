@@ -59,18 +59,6 @@ ProgrammingLanguage.where(name: "LabVIEW").first_or_create
 ProgrammingLanguage.where(name: "Ladder Logic").first_or_create
 ProgrammingLanguage.where(name: "JScript.NET").first_or_create
 
-Salary.where(amount: "0-299", order_id: 0, min_amount: 0, max_amount: 299, id:1).first_or_create
-Salary.where(amount: "300-599", order_id: 1, min_amount: 300, max_amount: 599, id:2).first_or_create
-Salary.where(amount: "600-899", order_id: 2, min_amount: 600, max_amount: 899, id:3).first_or_create
-Salary.where(amount: "900-1199", order_id: 3, min_amount: 900, max_amount: 1199, id:4).first_or_create
-Salary.where(amount: "1200-1499", order_id: 4, min_amount: 1200, max_amount: 1499, id:5).first_or_create
-Salary.where(amount: "1500-1799", order_id: 5, min_amount: 1500, max_amount: 1799, id:6).first_or_create
-Salary.where(amount: "1800-2099", order_id: 6, min_amount: 1800, max_amount: 2099, id:7).first_or_create
-Salary.where(amount: "2100-2399", order_id: 7, min_amount: 2100, max_amount: 2399, id:8).first_or_create
-Salary.where(amount: "2400-2699", order_id: 8, min_amount: 2400, max_amount: 2699, id:9).first_or_create
-Salary.where(amount: "2700-2999", order_id: 9, min_amount: 2700, max_amount: 2999, id:10).first_or_create
-Salary.where(amount: ">= 3000", order_id: 10, min_amount: 3000, max_amount: nil, id:11).first_or_create
-
 Orientation.where(name: "Game", id:1).first_or_create
 Orientation.where(name: "Web", id:2).first_or_create
 Orientation.where(name: "Mobile", id:3).first_or_create
@@ -98,7 +86,7 @@ n=1
 500.times do 
 	r = rand(countries.size)
 	company = Company.create(name: "Company#{n}", number_employees: 100, industry: "Web", website: "www.google.com",city: hash[countries[r]], country: countries[r], main_language: "Englisch")
-	i = Internship.new(salary_id: rand(11)+1, working_hours: rand(20)+20, living_costs: rand(400)+300, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i = Internship.new(salary: rand(1500)+1, working_hours: rand(20)+21, living_costs: rand(400)+301, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
 	s = rand(5)+1
 	ary = []
 	s.times do

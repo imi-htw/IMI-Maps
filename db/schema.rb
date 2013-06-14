@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612164015) do
+ActiveRecord::Schema.define(:version => 20130614151327) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -132,7 +132,6 @@ ActiveRecord::Schema.define(:version => 20130612164015) do
   end
 
   create_table "internships", :force => true do |t|
-    t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
     t.datetime "created_at",                       :null => false
@@ -147,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20130612164015) do
     t.text     "description"
     t.integer  "semester_id"
     t.string   "internship_report"
+    t.integer  "salary"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
@@ -190,15 +190,6 @@ ActiveRecord::Schema.define(:version => 20130612164015) do
   create_table "quicksearches", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "salaries", :force => true do |t|
-    t.string   "amount"
-    t.integer  "order_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "min_amount"
-    t.integer  "max_amount"
   end
 
   create_table "semesters", :force => true do |t|

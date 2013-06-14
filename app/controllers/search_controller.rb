@@ -2,14 +2,10 @@ class SearchController < ApplicationController
   before_filter :authorize
 
   def index
-  	
-  	@companies = []
 
     @internships = Internship.all
 
-    @internships.each do |i|
-      @companies << i.company
-    end
+    @companies = @internships.collect do |x| x.company end
 
     @countries = @companies.collect do |x| x.country end.uniq
 
@@ -24,6 +20,8 @@ class SearchController < ApplicationController
     @working_hours_max = @internships.collect do |x| x.working_hours end.max
 
     @living_costs_max = @internships.collect do |x| x.living_costs end.max
+
+    @salary_max = @internships.collect do |x| x.salary end.max
 
 
   end

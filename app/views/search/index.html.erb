@@ -57,7 +57,7 @@
 <script> 
         $( "#salary_slider" ).slider({
             min: 0,
-            max: 10,
+            max: <%= @salary_max %>,
             value: 0,
             slide: function( event, ui ) {
                 $( "#salary" ).val( ui.value );
