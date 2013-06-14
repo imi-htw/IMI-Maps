@@ -3,7 +3,12 @@ class UserMailer < ActionMailer::Base
 
   def registration_confirmation(user)
   	@user = user
-  	mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "Registered")
+  	mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "(IMI-Maps) Registered")
+  end
+
+  def create_internship_confirmation(user)
+  	@user = user
+  	mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "(IMI-Maps) New Internship is created")
   end
 
 end

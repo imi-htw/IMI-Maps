@@ -77,6 +77,7 @@ class InternshipsController < ApplicationController
       @internship.user_id = current_user.id if current_user
       @user.internship_authorization = false
       @user.save
+      UserMailer.create_internship_confirmation(@user).deliver
       flash[:notice] = "Internship was successfully created" if @internship.save
       respond_with(@internship)
     else
