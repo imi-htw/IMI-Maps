@@ -24,7 +24,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div class="map-shadow"><%= image_tag("content-bottom.shadow.png") %></div>
 <table>
 <tr>
-  <p>Select your search criteria:</p>
+  <p><%=t"search.criteria"%></p>
 </tr>
   <tr>
     <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select'} %></td>
@@ -46,7 +46,6 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div id="results_string" style="display:none"> </div>
 <table class="table" style="margin-top:60px;">
     <tr class="search-table">
-    <th></th>
     <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
     <th><%= t "companies.attributes.city"%> </th>
@@ -61,7 +60,6 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <% @internships.each do |internship| %>
   <tr class="<%= cycle("even_row", "odd_row") %>">
-    <td> <%= check_box_tag(:companies) %></td>
     <td><%= internship.title %></td>
     <td><%= internship.company.name %></td>
     <td><%= internship.company.city %></td>
@@ -79,7 +77,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div class="pagination imi">
 <%= paginate @internships, :remote => true  %>
 </div>
-
+</div>
 <script>
 
 

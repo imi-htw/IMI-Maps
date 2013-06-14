@@ -32,6 +32,7 @@ en:
     favorite: "Favorite"
     tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
   search:
+    criteria: "Select your search criteria:"
     title: "Search"
   buttons:
     show: "Show"

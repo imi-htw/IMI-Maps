@@ -86,6 +86,7 @@ de:
     language: "Wähle eine Programmiersprache"
 
   search:
+    criteria: "Wähle deine Suchkriterien:"
     title: "Suche"
   buttons:
     show: "Anzeigen"
