@@ -9,6 +9,14 @@ body{
 
 } 
 
+.login_center{
+  margin: 0px auto;
+  width: auto;
+  z-index: 3;
+  float: none;
+  display: inline-block;
+}
+
 #gradient{
     height: 70%;
     position: fixed;
@@ -117,6 +125,91 @@ h3 p{
     z-index: 5;
 }
 
+@media (max-width: 480px) {
+  
+body{
+  background: url(bg.gif);
+  width: 100%;
+  text-align: center;
+  color: #000 !important;
+}
+
+h3 p{
+  color: #000 !important;
+}
+
+#logo_p{
+  display: none !important;
+}
+
+#logo_w{
+  display: none !important;
+}
+
+#gradient{
+  display: none !important;
+}
+
+.map_container{
+  display: none !important;
+}
+
+#login-box{
+  background: none;
+  height: 180px;
+  padding-top:10px;
+  position: absolute;
+  width: 100%;
+  margin: auto 0 !important;
+  margin-left: -90px;
+  margin-right: 0px; 
+  margin-top:20px;
+  z-index: 3;
+
+}
+
+.login{
+  position: relative;
+  text-align: center;
+  top: 0px !important;
+  z-index: 3; 
+}
+
+.row{
+  top: 0px !important;
+}
+
+.span6{
+  float: none;
+}
+
+#email{
+  width: 100%;
+
+}
+
+#password{
+  width: 100%;
+}
+
+#font_session{
+  margin: 0 auto;
+  width: 200px;
+  color: #000 !important;
+}
+
+#login-element{
+  margin: 0 auto;
+  float: none;
+}
+
+.sign_up{
+  margin: 20px auto;
+  float: none;
+  width: 70px;
+  font-style: italic;
+}
+}
 
 
 

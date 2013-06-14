@@ -2,21 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media (max-width: 480px) {
+@media (min-width: 480px) and (max-width: 979px) { 
+
 body{
   font-family: 'Merriweather Sans', sans-serif;
-  color: #000000;
 }
 
-.navbar .nav.pull-right > li{
-  margin-left: 10px;
-} 
-
-.navbar .nav.pull-right > li > a {
-  float:none;
-  margin-left: -32px;                                /* nav right */
-} 
-
-
+ 
 
 }
