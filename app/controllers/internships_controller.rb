@@ -5,8 +5,20 @@ class InternshipsController < ApplicationController
   # GET /internships
   # GET /internships.json
   def index
-    @internships = Internship.all
+    @internships = Internship.includes(:company)
     @current_user = User.find(current_user.id)
+
+    orientations = params[:orientation].collect{|s| s.to_i} if params[:orientation].present?
+    semesters = params[:semester].collect{|s| s.to_i} if params[:semester].present?
+
+    @internships = @internships.where(:companies => {:country => params[:country]}) if params[:country].present?
+    @internships = @internships.where(:orientation_id => orientations) if orientations.present?
+    @internships = @internships.where(:semester_id => semesters) if semesters.present?
+
+    @internships = @internships.where('working_hours <= ?',params[:working_hours])
+    @internships = @internships.where('living_costs <= ?',params[:living_costs])
+    @internships = @internships.where('rating >= ?',params[:rating])
+
     respond_with(@internships)
   end
 

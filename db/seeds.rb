@@ -98,7 +98,7 @@ n=1
 500.times do 
 	r = rand(countries.size)
 	company = Company.create(name: "Company#{n}", number_employees: 100, industry: "Web", website: "www.google.com",city: hash[countries[r]], country: countries[r], main_language: "Englisch")
-	i = Internship.new(salary_id: rand(11)+1, working_hours: 40.0, living_costs: 500.0, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i = Internship.new(salary_id: rand(11)+1, working_hours: rand(20)+20, living_costs: rand(400)+300, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
 	s = rand(5)+1
 	ary = []
 	s.times do
