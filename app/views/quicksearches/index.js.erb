@@ -122,8 +122,258 @@ $('#results_string').css("display","none");
 }
 $('.table').html('<%= escape_javascript( render "table"  ) %>');
 $('#paginator').html('<%= escape_javascript(paginate(@internships, :params => {:paginating => true}, :remote => true).to_s) %>');
+$('#country_chart').html('');
+$('#language_chart').html('');
+$('#orientation_chart').html('');
 
+var color = d3.scale.category20();
+var color2 = d3.scale.category20();
+var color3 = d3.scale.category20();
 
+function sum (data) {
+    var sum = 0;
+    for (i=0; i<data.length; i++) {
+      sum+=data[i].count;
+    }
+    return sum;
+  }
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 350 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
+
+var formatPercent = d3.format(".0%");
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(formatPercent);
+
+var svg_country = d3.select("#country_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var data_country = <%=raw @data_country.to_json%>;
+
+function compare(a,b) {
+  if (a.count < b.count)
+     return 1;
+  if (a.count > b.count)
+    return -1;
+  return 0;
+}
+
+data_country.sort(compare);
+
+  x.domain(data_country.map(function(d) { return d.name; }));
+  y.domain([0, d3.max(data_country, function(d) { return d.count/sum(data_country); })]);
+
+  svg_country.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .text("");
+
+  svg_country.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("");
+
+  var bar_country = svg_country.selectAll(".bar")
+      .data(data_country)
+    .enter()
+      .append("g");
+
+  bar_country.append("rect")
+      .attr("class", "bar")
+      .on("click",function(d) {
+        var ary = [];
+        if ($("#country").val()!=null)
+        ary = $("#country").val();
+        ary.push(d.name);
+        $("#country").val(ary);
+        $("#country").trigger("liszt:updated");
+      })
+      .attr("x", function(d) { return x(d.name); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.count/sum(data_country)); })
+      .attr("height", function(d) { return height - y(d.count/sum(data_country)); })
+      .style("fill", function(d) { return color(d.name); });
+      
+  bar_country.append("text")
+      .on("click",function(d) {        
+        var ary = [];
+        if ($("#country").val()!=null)
+        ary = $("#country").val();
+        ary.push(d.name);
+        $("#country").val(ary);
+        $("#country").trigger("liszt:updated");
+      })
+      .attr("x", -height+5)
+      .attr("y", function(d) { return x(d.name)+15; })
+      .attr("transform", "rotate(-90)")
+      .text(function(d){return d.name});
+
+var svg_language = d3.select("#language_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var data_language = <%=raw @data_language.to_json%>;
+
+data_language.sort(compare);
+
+  x.domain(data_language.map(function(d) { return d.name; }));
+  y.domain([0, d3.max(data_language, function(d) { return d.count/100; })]);
+
+  svg_language.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .text("");
+
+  svg_language.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("");
+
+  var bar_language = svg_language.selectAll(".bar")
+      .data(data_language)
+    .enter()
+      .append("g");
+
+  bar_language.append("rect")
+      .attr("class", "bar")
+      .on("click",function(d) {
+        for (var j=0; j< $("#programming_language_ids")[0].children.length; j++) {
+          if ($("#programming_language_ids")[0].children[j].innerHTML == d.name) {
+            var ary = [];
+            if ($("#programming_language_ids").val()!=null)
+            ary = $("#programming_language_ids").val();
+            ary.push($("#programming_language_ids")[0].children[j].value);
+            $("#programming_language_ids").val(ary);
+          }
+        }        
+        $("#programming_language_ids").trigger("liszt:updated");
+      })
+      .attr("x", function(d) { return x(d.name); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.count/100); })
+      .attr("height", function(d) { return height - y(d.count/100); })
+      .style("fill", function(d) { return color2(d.name); });
+      
+  bar_language.append("text")
+      .on("click",function(d) {
+        for (var j=0; j< $("#programming_language_ids")[0].children.length; j++) {
+          if ($("#programming_language_ids")[0].children[j].innerHTML == d.name) {
+            var ary = [];
+            if ($("#programming_language_ids").val()!=null)
+            ary = $("#programming_language_ids").val();
+            ary.push($("#programming_language_ids")[0].children[j].value);
+            $("#programming_language_ids").val(ary);
+          }
+        }        
+        $("#programming_language_ids").trigger("liszt:updated");
+      })
+      .attr("x", -height+5)
+      .attr("y", function(d) { return x(d.name)+15; })
+      .attr("transform", "rotate(-90)")
+      .text(function(d){return d.name});
+
+  var svg_orientation = d3.select("#orientation_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var data_orientation = <%=raw @data_orientation.to_json%>;
+
+data_orientation.sort(compare);
+
+  x.domain(data_orientation.map(function(d) { return d.name; }));
+  y.domain([0, d3.max(data_orientation, function(d) { return d.count/sum(data_orientation); })]);
+
+  svg_orientation.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .text("");
+
+  svg_orientation.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("");
+
+  var bar_orientation = svg_orientation.selectAll(".bar")
+      .data(data_orientation)
+    .enter()
+      .append("g");
+
+  bar_orientation.append("rect")
+      .attr("class", "bar")
+      .on("click",function(d) {
+        for (var j=0; j< $("#orientation")[0].children.length; j++) {
+          if ($("#orientation")[0].children[j].innerHTML == d.name) {
+            var ary = [];
+            if ($("#orientation").val()!=null)
+            ary = $("#orientation").val();
+            ary.push($("#orientation")[0].children[j].value);
+            $("#orientation").val(ary);
+          }
+        }        
+        $("#orientation").trigger("liszt:updated");
+      })
+      .attr("x", function(d) { return x(d.name); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.count/sum(data_orientation)); })
+      .attr("height", function(d) { return height - y(d.count/sum(data_orientation)); })
+      .style("fill", function(d) { return color3(d.name); });
+      
+  bar_orientation.append("text")
+      .on("click",function(d) {
+        for (var j=0; j< $("#orientation")[0].children.length; j++) {
+          if ($("#orientation")[0].children[j].innerHTML == d.name) {
+            var ary = [];
+            if ($("#orientation").val()!=null)
+            ary = $("#orientation").val();
+            ary.push($("#orientation")[0].children[j].value);
+            $("#orientation").val(ary);
+          }
+        }        
+        $("#orientation").trigger("liszt:updated");
+      })
+      .attr("x", -height+5)
+      .attr("y", function(d) { return x(d.name)+15; })
+      .attr("transform", "rotate(-90)")
+      .text(function(d){return d.name});
 
 /*var semester_choices = $("#semester_chzn .chzn-results").children();
 var orientation_choices = $("#orientation_chzn .chzn-results").children();
