@@ -22,6 +22,7 @@ gem 'chosen-rails'
 gem 'kaminari'
 
 gem "d3-rails"
+gem "net-ldap"
 
 
 # Bundle edge Rails instead:

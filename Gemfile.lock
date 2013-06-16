@@ -135,6 +135,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.3)
     nested_form (0.3.2)
+    net-ldap (0.3.1)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
     orm_adapter (0.4.0)
@@ -252,6 +253,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   nested_form
+  net-ldap
   paperclip (~> 2.7)
   pg
   pry
