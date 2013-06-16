@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
-  before_filter :get_programming_languages, :get_orientations, :get_salaries, :only => [:new, :edit, :update, :create]
+  before_filter :get_programming_languages, :get_orientations, :only => [:new, :edit, :update, :create]
   before_filter :authorize
   # GET /internships
   # GET /internships.json

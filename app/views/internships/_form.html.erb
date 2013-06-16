@@ -31,7 +31,7 @@
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.salary"  %><br />
-    <%= f.select :salary_id, @salaries,{}, class: 'chzn-select' %>
+    <%= f.number_field :salary %>
   </div>
   <div class="field">
     <%= f.label t "internships.attributes.working_hours"  %><br />
