@@ -11,7 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614151327) do
+
+ActiveRecord::Schema.define(:version => 20130615115019) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,8 +72,8 @@ ActiveRecord::Schema.define(:version => 20130614151327) do
     t.integer  "number_employees"
     t.string   "industry"
     t.string   "website"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "city"
@@ -80,6 +81,10 @@ ActiveRecord::Schema.define(:version => 20130614151327) do
     t.string   "street"
     t.string   "zip"
     t.string   "main_language"
+    t.string   "phone"
+    t.string   "fax"
+    t.boolean  "blacklisted",      :default => false
+    t.integer  "import_id"
   end
 
   create_table "companies_compares", :force => true do |t|
@@ -196,6 +201,17 @@ ActiveRecord::Schema.define(:version => 20130614151327) do
     t.string   "semester"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "enrolment_number"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.date     "birthday"
+    t.string   "birthplace"
+    t.string   "email"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "user_comments", :force => true do |t|
