@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130615115019) do
+ActiveRecord::Schema.define(:version => 20130616170332) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -124,6 +123,16 @@ ActiveRecord::Schema.define(:version => 20130615115019) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "internship_ratings", :force => true do |t|
+    t.integer  "tasks",            :limit => 1
+    t.integer  "training_success", :limit => 1
+    t.integer  "atmosphere",       :limit => 1
+    t.integer  "supervision",      :limit => 1
+    t.integer  "appreciation",     :limit => 1
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -139,9 +148,9 @@ ActiveRecord::Schema.define(:version => 20130615115019) do
   create_table "internships", :force => true do |t|
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.integer  "rating",            :default => 1
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "internship_rating_id", :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
@@ -152,6 +161,10 @@ ActiveRecord::Schema.define(:version => 20130615115019) do
     t.integer  "semester_id"
     t.string   "internship_report"
     t.integer  "salary"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "tasks"
+    t.string   "operational_area"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
