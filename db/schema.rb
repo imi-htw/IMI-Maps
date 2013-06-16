@@ -131,6 +131,10 @@ ActiveRecord::Schema.define(:version => 20130616170332) do
     t.integer  "appreciation",     :limit => 1
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+
+  create_table "internship_reports", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "internship_searches", :force => true do |t|
