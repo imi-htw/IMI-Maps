@@ -35,11 +35,12 @@ $(document).ready(function() {
      $(".answer").slideToggle("slow");
      $(".comment").slideToggle("slow");
      $(".answer_2").slideToggle("slow");
+     $("#comment_form").slideToggle("slow");
   });
 
-    $(".active_click").click(function(){
-      $(this).addClass("active");
-    });
+    // $(".active_click").click(function(){
+    //   $(this).addClass("active");
+    // });
 });
 
 click_reset = function() {

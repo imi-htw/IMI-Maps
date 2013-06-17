@@ -2,6 +2,25 @@ class SessionsController < ApplicationController
   layout 'sessions'
 
   def new
+    @companies = []
+
+    @internships = Internship.all
+
+    @internships.each do |i|
+      @companies << i.company
+    end
+
+    @pins = @companies.to_gmaps4rails do |company, marker |
+
+      href =  if company.website.starts_with?'http' 
+              company.website  
+            else 
+              "http://"+company.website 
+             end
+             
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
+
+    end
   end
 
   def create

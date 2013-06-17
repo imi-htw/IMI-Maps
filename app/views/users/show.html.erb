@@ -23,11 +23,19 @@
   <b><%= t "users.attributes.email" %> :</b>
   <%= @user.email %>
 </p>
+<p>
+  <b><%= t "users.attributes.publicmail" %> :</b>
+  <%= @user.publicmail %>
+</p>
+<p>
+  <b><%= t "users.attributes.mailnotif" %> :</b>
+  <%= @user.mailnotif %>
+</p>
 
 <%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
 <%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
 
-<h2> Comments </h2>
+<h3> Comments </h3>
 <% @user.user_comments.each do |comment| %>
 <p> Commented "
 <%= comment.body %>

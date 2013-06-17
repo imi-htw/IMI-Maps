@@ -3,13 +3,10 @@ class OverviewController < ApplicationController
   before_filter :get_programming_languages, :get_orientations
 
 	def index
-    @companies = []
 
     @internships = Internship.all
 
-    @internships.each do |i|
-      @companies << i.company
-    end
+    @companies = @internships.collect do |i| i.company end
 
     @pins = @companies.to_gmaps4rails do |company, marker |
 
@@ -26,6 +23,37 @@ class OverviewController < ApplicationController
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
     @semesters = Semester.where(:id =>(Internship.select(:semester_id).collect do |x| x.semester_id end.uniq))
+
+    @orientations = Orientation.all
+
+    countries = @companies.collect do |x| x.country end
+
+    countries_uniq = countries.uniq
+    ary = Array.new
+    countries_uniq.each do |x|
+      ary << {:name=>x, :count=>countries.count(x)}
+    end
+    @data_country = ary
+
+    ary = Array.new
+    @programming_languages.each do |x|
+      s = x.internships.size
+      if s > 0
+        ary << {:name=>x.name, :count=>s.to_f/@internships.size*100}
+      end
+    end
+    @data_language = ary
+
+    ary = Array.new
+    @orientations.each do |x|
+      s = x.internships.size
+      if s > 0
+        ary << {:name=>x.name, :count=>s}
+      end
+    end
+    @data_orientation = ary
+
+    @orientations = @orientations.map do |o| [o.name, o.id] end
 
     @internships = Internship.order("created_at DESC").page params[:page]
 

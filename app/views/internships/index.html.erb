@@ -21,20 +21,20 @@
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.orientation.name %></td>
     <td class="table_inside"><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td class="table_inside"><%= internship.salary.try(:amount) %></td>
+    <td class="table_inside"><%= internship.salary %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
-    <td class="table_inside"><%= render_stars(internship.rating, self) %></td>
+    <td class="table_inside"><%# render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside"><%= internship.recommend %></td>
     <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture button_intern" %></td>
-    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit" %></td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit button_intern" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove button_intern", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 <% if @current_user.internship_authorization %>
-<%= link_to (t "buttons.newinternship"), new_internship_path %>
+<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship2" %><div id="triangle_left"></div>
 <% end %>

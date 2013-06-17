@@ -1,29 +1,112 @@
 <h1><%= t "search.title" %></h1>
-
 <%= form_tag(internships_path, :method => 'get') do %>
-  <p>
-    <p><%= t "internships.attributes.orientation" %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:orientation] %>
+<%= select_tag :country, options_for_select((@countries).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country")} %>
+<br/>
+<br/>
+<%= select_tag :semester, options_for_select(@semesters),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester")}  %>
+<br/>
+<br/>
+<%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %>
+<br/>
+<br/>
+<%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %>
+<div class="row">
+    <div class="span4">
+        <span>Salary (min)</span>
+        <span id="salary_span"></span>
+        <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="salary_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="span4">
+        <span>Working hours (max)</span>
+        <span id="working_hours_span"></span>
+        <input name="working_hours[]" type="text" id="working_hours" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="working_hours_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="span4">
+        <span>Living Costs (max)</span>
+        <span id="living_costs_span"></span>
+        <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="living_costs_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="span4">
+        <span>Rating (min</span>
+        <span id="rating_span"></span>
+        <input name="rating[]" type="text" id="rating" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="rating_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
 
-    <p><%= ((t "internships.attributes.salary")+" >=") %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:salary] %>
-
-    <p><%= ((t "internships.attributes.working_hours")+" <=") %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:working_hours] %>
-
-    <p><%= ((t "internships.attributes.living_costs")+" <=") %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:living_costs] %>
-
-    <p><%= ((t "internships.attributes.rating")+" >=") %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:rating] %>
-
-    <p><%= t "companies.attributes.country" %><br /> </p>
-    <%= text_field_tag :glowing_border, params[:country] %>
-
-    <p><%= t "internships.attributes.programming_language" %><br /> </p>
-    <%= select_tag :glowing_border, options_for_select(@programming_languages), { :multiple => true } %>
-    <br/>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
 <% end %>
+<script> 
+        $( "#salary_slider" ).slider({
+            min: 0,
+            max: <%= @salary_max %>,
+            value: 0,
+            slide: function( event, ui ) {
+                $( "#salary" ).val( ui.value );
+                $( "#salary_span" )[0].innerHTML = ( ui.value+" €" );
+            }
 
+        });
+        
+        $( "#salary" ).val( $( "#salary_slider" ).slider( "value" ) );
+        $( "#salary_span")[0].innerHTML = ( $( "#salary_slider" ).slider( "value" ) + " €")
+        
+        $( "#working_hours_slider" ).slider({
+            min: 1,
+            max: <%= @working_hours_max %>,
+            value: <%= @working_hours_max %>,
+            slide: function( event, ui ) {
+                $( "#working_hours" ).val( ui.value );
+                $( "#working_hours_span" )[0].innerHTML = ( ui.value+" h" );
+            }
+        });
+
+        $( "#working_hours" ).val( $( "#working_hours_slider" ).slider( "value" ) );
+        $( "#working_hours_span")[0].innerHTML = ( $( "#working_hours_slider" ).slider( "value" ) + " h")
+
+         $( "#living_costs_slider" ).slider({
+            min: 1,
+            max: <%= @living_costs_max %>,
+            value: <%= @living_costs_max %>,
+            slide: function( event, ui ) {
+                $( "#living_costs" ).val( ui.value );
+                $( "#living_costs_span" )[0].innerHTML = ( ui.value+" €" );
+            }
+        });
+
+        $( "#living_costs" ).val( $( "#living_costs_slider" ).slider( "value" ) );
+        $( "#living_costs_span")[0].innerHTML = ( $( "#living_costs_slider" ).slider( "value" ) + " €")
+
+
+         $( "#rating_slider" ).slider({
+            min: 1,
+            max: 5,
+            value: 1,
+            slide: function( event, ui ) {
+                $( "#rating" ).val( ui.value );
+                $( "#rating_span" )[0].innerHTML = ( ui.value );
+            }
+        });
+
+        $( "#rating" ).val( $( "#rating_slider" ).slider( "value" ) );
+        $( "#rating_span")[0].innerHTML = ( $( "#rating_slider" ).slider( "value" ) )
+
+   </script> 

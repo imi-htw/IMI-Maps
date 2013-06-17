@@ -1,12 +1,25 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
-  before_filter :get_programming_languages, :get_orientations, :get_salaries, :only => [:new, :edit, :update, :create]
+  before_filter :get_programming_languages, :get_orientations, :only => [:new, :edit, :update, :create]
   before_filter :authorize
   # GET /internships
   # GET /internships.json
   def index
-    @internships = Internship.all
+    @internships = Internship.includes(:company)
     @current_user = User.find(current_user.id)
+
+    orientations = params[:orientation].collect{|s| s.to_i} if params[:orientation].present?
+    semesters = params[:semester].collect{|s| s.to_i} if params[:semester].present?
+
+    @internships = @internships.where(:companies => {:country => params[:country]}) if params[:country].present?
+    @internships = @internships.where(:orientation_id => orientations) if orientations.present?
+    @internships = @internships.where(:semester_id => semesters) if semesters.present?
+
+    @internships = @internships.where('working_hours <= ?',params[:working_hours])
+    @internships = @internships.where('living_costs <= ?',params[:living_costs])
+    @internships = @internships.where('rating >= ?',params[:rating])
+    @internships = @internships.where('salary >= ?',params[:salary])
+
     respond_with(@internships)
   end
 
@@ -17,6 +30,7 @@ class InternshipsController < ApplicationController
     @comment = UserComment.new
     @answer = Answer.new
     @favorite = Favorite.where(:internship_id => @internship.id, :user_id => current_user.id)[0]
+    @user_comments = @internship.user_comments.order("created_at DESC")
 
     @pins = @internship.company.to_gmaps4rails do |company, marker |
 
@@ -64,6 +78,9 @@ class InternshipsController < ApplicationController
       @internship.user_id = current_user.id if current_user
       @user.internship_authorization = false
       @user.save
+      if (@user.mailnotif == true)
+        UserMailer.create_internship_confirmation(@user).deliver
+      end
       flash[:notice] = "Internship was successfully created" if @internship.save
       respond_with(@internship)
     else

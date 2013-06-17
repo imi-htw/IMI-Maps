@@ -31,13 +31,13 @@ class ApplicationController < ActionController::Base
     
     helper_method :get_programming_languages
 
-    def get_salaries
-      @salaries ||= Salary.order(:order_id).map do |s|
-        [s.amount, s.id]
-      end
-    end
-
-    helper_method :get_salaries
+ #   def get_salaries
+ #     @salaries ||= Salary.order(:order_id).map do |s|
+ #       [s.amount, s.id]
+ #     end
+ #   end
+ #
+ #   helper_method :get_salaries
   
     def get_orientations
       @orientations ||= Orientation.order(:name).map do |o|
@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
     helper_method :get_semesters
 
     def get_notification_size
-      Notification.where(:read => false, :user_id => current_user.id).size
+      Notification.where(:read => false, :user_id => current_user.try(:id)).size
     end
 
     helper_method :get_notification_size

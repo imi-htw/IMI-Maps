@@ -1,9 +1,20 @@
-
-<% @internship.user_comments.each do |i| %>  
-  <div class="comment" style="display:none;"> 
+<div id="comment_form">
+<%= form_for(@new_comment, remote: true ) do |f| %>
+<div class="field">
+    <%= f.hidden_field :internship_id, value: @internship.id %>
+    <%= f.label t "comments.attributes.body" %>
+    <%= f.text_field :body %>
+    <div class="actions">
+    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+  </div>
+  </div>
+<% end %>
+</div>
+<% @user_comments.each do |i| %>  
+  <div class="comment"> 
   <div id="user"><%= i.user.name %> 
   <%= t "helpers.at" %>
-  <%= i.created_at %>
+  <%= i.created_at.to_formatted_s(:long_ordinal) %>
   :</div>
   <br/>
   <br/>
@@ -16,11 +27,11 @@
   </div>
   
    <% if i.answer.present? %>
-  <div class="answer" style="display:none;">
+  <div class="answer">
     <div id="user_2"><%= t "answers.from" %>
     <%= i.answer.user.name %> 
     <%= t "helpers.at" %>
-    <%= i.answer.created_at %>
+    <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
     :</div>
     <br/>
     <br/>
@@ -38,7 +49,7 @@
     <% if current_user.id == @internship.user_id %>
       <br />
       <%= form_for(@answer, remote: true) do |f| %>
-      <div class="answer_2" style="display:none">
+      <div class="answer_2">
         <div id="answer_field"><div class="field">
           <%= f.hidden_field :internship_id, value: @internship.id %>
           <%= f.hidden_field :user_comment_id, value: i.id %>

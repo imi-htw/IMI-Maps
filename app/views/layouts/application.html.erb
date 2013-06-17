@@ -10,6 +10,7 @@
   <%= javascript_include_tag "application" %>
   <%# javascript_include_tag :defaults,"jquery_nested_form" %>
   <%= csrf_meta_tags %>
+  <link rel="apple-touch-icon" href="/public/images/logout.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css"/>
   <%= favicon_link_tag '/public/favicon.ico' %>
@@ -30,9 +31,13 @@
   <div id="top-menu">
     <%= link_to "",overview_index_path, class: "brand" %>
     <!-- Be sure to leave the brand out there if you want it shown -->
-    
-    <ul class="nav pull-right">
-      <li><%= link_to t("header.favorite"), favorite_index_path %></li>
+
+  <ul class="nav pull-right">
+              <li><%= link_to(favorite_index_path) do %>
+                  <i class="icon-heart icon-large"></i>
+                <% end %>
+              </li>
+
       <li class="dropdown">
         <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
@@ -40,18 +45,21 @@
 %></span>
 <%end%>
 <i class="icon-white icon-flag icon-large"></i></a>
-          <ul class="dropdown-menu">
-            <% current_user.notifications.order(:read).each do |noti| %>
-            <li>
-              <% if noti.read == false %>
-              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
-              <% else %>
-              <%= link_to noti.text, noti.link %>
-              <% end %>
-            </li>
-            <%end%>
-          </ul>
+  <% if current_user == true %>
+      <ul class="dropdown-menu">
+        <% current_user.notifications.order(:read).each do |noti| %>
+        <li>
+          <% if noti.read == false %>
+          <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
+          <% else %>
+          <%= link_to noti.text, noti.link %>
+          <% end %>
+        </li>
+        <%end%> 
+      </ul>
+    <% end %>
       </li>  
+
       
     <li><%= link_to t("header.account"), current_user %></li>
     <li><%= link_to t("header.logout"), logout_path %></li>
@@ -69,10 +77,10 @@
     <div class="nav-collapse collapse">
 
     <ul class="nav nav-top ">
-              <li class="active_click"><%= link_to t("header.overview"), overview_index_path %></li>
-              <li class="active_click"><%= link_to t("header.search"), search_index_path %></li>
-              <li class="dropdown active_click">
-                <a class="dropdown-toggle" data-toggle="dropdown" href=""><%= t("header.guide") %></a>
+              <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
+              <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), search_index_path %></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to t("header.general"), general_index_path %></li>
                   <li><%= link_to t("header.faq"), faq_index_path %></li>
@@ -80,7 +88,7 @@
                   <li><%= link_to t("header.financing"), financing_index_path %></li>
                 </ul>
               </li>
-              <li class="active_click"><%= link_to t("header.exchange"), internships_path %></li>
+              <li class="<%= 'active_nav' if current_page?(internships_path) %>"><%= link_to t("header.exchange"), internships_path %></li>
 
     </ul>
   </div>
@@ -96,7 +104,7 @@
   <div class="wrapper">
     <div class="container clear-top">      
       <div clas="row">
-       <div class="span12"><%= yield %></div>
+       <div class="span12-2"><%= yield %></div>
       </div>
     </div>
 </div>

@@ -18,6 +18,18 @@ var pie = d3.layout.pie()
 
 var data = <%=raw @data.to_json%>;
 
+function compare(a,b) {
+  if (a.count < b.count)
+     return 1;
+  if (a.count > b.count)
+    return -1;
+  return 0;
+}
+
+data.sort(compare);
+
+console.log(data);
+
 var svg = d3.select(".span12").append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -39,21 +51,23 @@ var svg = d3.select(".span12").append("svg")
       .style("text-anchor", "middle")
       .text(function(d) { return d.data.name/*+" ( "+d.data.count+" / "+d.data.count*100/sum()+"% )";*/ });
 
-  function sum () {
-  	var sum = 0;
-  	for (i=0; i<data.length; i++) {
-  		sum+=data[i].count;
-  	}
-  	return sum;
-  }
-
 </script>
 
 <script>
 
+function sum () {
+    var sum = 0;
+    for (i=0; i<data.length; i++) {
+      sum+=data[i].count;
+    }
+    return sum;
+  }
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 400 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
+
+var formatPercent = d3.format(".0%");
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -67,7 +81,8 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left");
+    .orient("left")
+    .tickFormat(formatPercent);
 
 var svg = d3.select(".span12").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -77,13 +92,24 @@ var svg = d3.select(".span12").append("svg")
 
 var data = <%=raw @data.to_json%>;
 
+function compare(a,b) {
+  if (a.count < b.count)
+     return 1;
+  if (a.count > b.count)
+    return -1;
+  return 0;
+}
+
+data.sort(compare);
+
   x.domain(data.map(function(d) { return d.name; }));
-  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+  y.domain([0, d3.max(data, function(d) { return d.count/sum(); })]);
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .text("");
 
   svg.append("g")
       .attr("class", "y axis")
@@ -93,16 +119,27 @@ var data = <%=raw @data.to_json%>;
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Count");
+      .text("");
 
-  svg.selectAll(".bar")
+  var bar = svg.selectAll(".bar")
       .data(data)
-    .enter().append("rect")
+    .enter()
+      .append("g");
+
+  bar.append("rect")
       .attr("class", "bar")
+      .on("click",function(d) {console.log(d.name)})
       .attr("x", function(d) { return x(d.name); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.count); })
-      .attr("height", function(d) { return height - y(d.count); })
+      .attr("y", function(d) { return y(d.count/sum()); })
+      .attr("height", function(d) { return height - y(d.count/sum()); })
       .style("fill", function(d) { return color(d.name); });
+      
+  bar.append("text")
+      .on("click",function(d) {console.log(d.name)})
+      .attr("x", -height+5)
+      .attr("y", function(d) { return x(d.name)+15; })
+      .attr("transform", "rotate(-90)")
+      .text(function(d){return d.name});
 
 </script>
