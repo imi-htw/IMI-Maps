@@ -51,6 +51,7 @@ end
 
 group :test do
   gem 'factory_girl', '~> 4.2.0'
+  gem "shoulda-matchers"
 end
 
 group :development, :test do
