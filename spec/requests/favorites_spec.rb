@@ -11,3 +11,4 @@ describe Favorite do
      it { should validate_presence_of(:internship_id) }
    end
 end
+	

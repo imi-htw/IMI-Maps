@@ -8,6 +8,10 @@ describe Internship do
      it {should belong_to(:orientation)}
      it {should belong_to(:semester)}
      it {should belong_to(:internship_rating)}
+     it { should have_many(:user_comments).dependent(:destroy) }
+     it { should have_many(:answers).dependent(:destroy) }
+     it { should have_many(:favorites).dependent(:destroy) }
+     it { should have_and_belong_to_many(:programming_languages).unique(true) }
    end
 
  # context 'validation' do
