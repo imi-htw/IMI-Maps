@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612164015) do
+ActiveRecord::Schema.define(:version => 20130608120403) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -226,8 +226,6 @@ ActiveRecord::Schema.define(:version => 20130612164015) do
     t.string   "picture"
     t.string   "password_digest"
     t.boolean  "internship_authorization", :default => true
-    t.boolean  "publicmail"
-    t.boolean  "mailnotif"
   end
 
 end
