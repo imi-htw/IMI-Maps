@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserMailer.registration_confirmation(@user).deliver
       session[:user_id] = @user.id
-      redirect_to root_url, notice: t('sign_up')
+      redirect_to overview_index_path, notice: t('sign_up')
     else
       render 'new'
     end

@@ -103,6 +103,6 @@ var data = <%=raw @data.to_json%>;
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.count); })
       .attr("height", function(d) { return height - y(d.count); })
-      .style("fill", function(d) { return color(d.name); });
+      .style("fill", function(d) { return color2(d.name); });
 
 </script>

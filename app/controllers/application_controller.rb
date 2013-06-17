@@ -31,13 +31,13 @@ class ApplicationController < ActionController::Base
     
     helper_method :get_programming_languages
 
-    def get_salaries
-      @salaries ||= Salary.order(:order_id).map do |s|
-        [s.amount, s.id]
-      end
-    end
-
-    helper_method :get_salaries
+ #   def get_salaries
+ #     @salaries ||= Salary.order(:order_id).map do |s|
+ #       [s.amount, s.id]
+ #     end
+ #   end
+ #
+ #   helper_method :get_salaries
   
     def get_orientations
       @orientations ||= Orientation.order(:name).map do |o|

@@ -17,24 +17,26 @@ header .pull-left {
 
 .btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
 color: white;
-background-color: #538200;
+background-color: #90b800;
 }
 
 .btn-success {
 	color: white;
-	background-color: #538200;
-	background-image: -moz-linear-gradient(top, #77b900, #538200);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#77b900), to(#538200));
-	background-image: -webkit-linear-gradient(top, #77b900, #538200);
-	background-image: -o-linear-gradient(top, #77b900, #538200);
-	background-image: linear-gradient(to bottom, #77b900, #538200);
+	background-color: #90b800;
+	background-image: -moz-linear-gradient(top, #90b800, #90b800);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#90b800), to(#90b800));
+	background-image: -webkit-linear-gradient(top, #90b800, #90b800);
+	background-image: -o-linear-gradient(top, #90b800, #90b800);
+	background-image: linear-gradient(to bottom, #90b800, #90b800);
 	background-repeat: repeat-x;
 }
 
 .btn {
-	padding: 6px 14px;
+	padding: 4px 8px;
 	text-shadow: none;
 	border: none;
+	border-radius: 0px;
+	font-weight: 100
 }
 
 .table {
@@ -43,4 +45,58 @@ background-color: #538200;
 
 .table th {
 	  font-weight: normal;
+}
+
+.pagination.imi {
+    height: 40px;
+    margin: 20px 0;
+}
+.pagination.imi ul {
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.pagination.imi li {
+    display: inline;
+}
+.pagination.imi a, .pagination.imi span {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-width: 0px 0px 0px 0;
+    float: left;
+    line-height: 19px;
+    padding: 0 5px;
+    text-decoration: none;
+    background-color: #3c3c3c;
+    color: #ffffff;
+}
+.pagination.imi a:hover, .pagination.imi .active a, .pagination.imi .active span {
+    background-color: #90b800;
+}
+.pagination.imi .active a, .pagination.imi .active span {
+    color: #999999;
+    cursor: default;
+}
+.pagination.imi .disabled span, .pagination.imi .disabled a, .pagination.imi .disabled a:hover {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+.pagination.imi li:first-child a, .pagination.imi li:first-child span {
+    border-left-width: 1px;
+    border-radius: 3px 0 0 3px;
+}
+.pagination.imi li:last-child a, .pagination.imi li:last-child span {
+    border-radius: 0 3px 3px 0;
+}
+.pagination.imi-centered {
+    text-align: center;
+}
+.pagination.imi-right {
+    text-align: right;
 }

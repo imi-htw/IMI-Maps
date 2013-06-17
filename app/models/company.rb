@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
-  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website
+  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax
 
-   # validations
+  # validations
   validates :city, :presence => true, :allow_blank => false
   validates :country, :presence => true, :allow_blank => false
   validates :zip, :presence => true, :allow_blank => false
@@ -28,7 +28,6 @@ class Company < ActiveRecord::Base
 		"#{self.street}, #{self.zip} #{self.city}, #{self.country}"
 	end
 
-  
   def find_company(search)
     companies = Company.all
     search.split(" ").each do |str| 

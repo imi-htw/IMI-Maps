@@ -2,7 +2,69 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
-
+  favorite:
+    delete: "Von Favoriten entfernen"
+    add: "Zu Favoriten hinzufügen"
+  date:
+    abbr_day_names:
+    - So
+    - Mo
+    - Di
+    - Mi
+    - Do
+    - Fr
+    - Sa
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mär
+    - Apr
+    - Mai
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Okt
+    - Nov
+    - Dez
+    day_names:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%e. %B %Y'
+      short: ! '%e. %b'
+    month_names:
+    - 
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    am: vormittags
+    formats:
+      default: ! '%A, %d. %B %Y, %H:%M Uhr'
+      long: ! '%d. %B %Y, %H:%M Uhr'
+      short: ! '%d. %B, %H:%M Uhr'
+    pm: nachmittags
   header:
     account: "Konto"
     search: "Detail-Suche"
@@ -17,7 +79,6 @@ de:
     general: "Allgemeine Infos"
     favorite: "Favoriten"
     tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
-
   choose: 
     country: "Wähle ein Land"
     orientation: "Wähle eine Orientierung"
@@ -25,6 +86,7 @@ de:
     language: "Wähle eine Programmiersprache"
 
   search:
+    criteria: "Wähle deine Suchkriterien:"
     title: "Suche"
   buttons:
     show: "Anzeigen"
@@ -40,7 +102,7 @@ de:
 
   helpers:
     reset: "Zurücksetzen"
-    at: "um"
+    at: "am"
 
   companies:
     name: "Firmen"

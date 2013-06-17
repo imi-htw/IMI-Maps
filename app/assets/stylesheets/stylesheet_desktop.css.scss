@@ -9,8 +9,16 @@ body{
   color: #000;
 }
 
+[class*="span"] {
+  margin-left:20px !important;
+}
+
 .bold {
   font-weight:bold !important;
+}
+
+.gap {
+  display:none;
 }
 
 html, body{
@@ -23,33 +31,31 @@ a{
 }
 
 #top-menu{
-  width: 1250px;
-  position: absolute;
-  left: 50%;
-  margin-left: -600px;
+  width: 88%;
+  position: inherit;
 }
 
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
-  width: 90px;
-  height: 115px;
+  width: 100px;
+  height: 122px;
   margin-top: 10px;
 }
 .navbar {
   width: 100%;
 }
 .navbar .brand {
-  margin-left: 50px;
+  margin-left: 190px;
+  margin-top: 7px;
+  margin-bottom: 8px;
 }
 .navbar-inner {
   text-align:center;
   background: #333333 !important;
-  height: 120px;
+  height: 125px;
   float: none;
   font-weight: 100;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
 }
 
 .nav-top > li > a {
@@ -58,19 +64,25 @@ a{
   font-size: 18px;
 }
 
+.navbar .nav.nav-top {
+  position: inherit;
+  margin: 40px 0 0 150px;
+  color: #6b6b6b;
+}
+
 .navbar .nav.pull-right > li > a {
   float:left;
   display:inline; 
   vertical-align: top;
-  margin-left: 3px;
-  margin-top: -1px;
-  font-size:14px;
+  margin-left: 2px;
+  margin-top: -3px;
+  font-size:12px;
   font-weight:bold;
   background-color:#77b900;
   color: #fff;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;    
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;    
   font-weight: 100;
                                /* nav right */
 } 
@@ -82,7 +94,8 @@ a{
 }
 
 .navbar .nav > li > a {
-  color:#fff;
+  color:#c3c8be;
+  font-size: 18px;
   text-shadow:none;
   z-index: 1;
   margin-top: 30px;
@@ -164,7 +177,7 @@ h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
   text-transform: uppercase;
-  color: #77b900 !important;
+  color: #000 !important;
   line-height: 40px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -264,6 +277,12 @@ footer .container p{
     z-index: 3; 
 }
 
+.span12-2{
+    margin:0 auto;
+    width: 1140px;
+    z-index: 3; 
+}
+
 p{
   color: #000 !important;
 }
@@ -273,4 +292,44 @@ p{
     border-radius: 0;
     position: inherit;
 }
+
+.active_nav{
+  a{
+    color: #77b900 !important;
+    background: #333333 !important;
+
+    span{
+        color: #77b900 !important;
+        background: #333333 !important;
+      }
+  }
+}
+
+.table-head {
+  margin-top: 50px;
+}
+
+.search-table{
+  background-color:#333333; 
+  color:#ffffff;
+}
+
+.even_row {
+    background-color: #cbc9c9;
+}
+
+.odd_row {
+
+}
+
+.map-shadow{
+ height: 45px;
+    margin-bottom: 160px;
+    margin-left: -42px;
+    margin-top: -174px;
+    opacity: 0.9;
+    position: inherit;
+    width: 1226px;
+}
+
 }

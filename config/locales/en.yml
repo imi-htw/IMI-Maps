@@ -2,6 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  favorite:
+    delete: "Delete from favorites"
+    add: "Add to favorites"
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
   choose: 
     country: "Choose a country"
     orientation: "Choose an orientation"
@@ -22,6 +32,7 @@ en:
     favorite: "Favorite"
     tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
   search:
+    criteria: "Select your search criteria:"
     title: "Search"
   buttons:
     show: "Show"
