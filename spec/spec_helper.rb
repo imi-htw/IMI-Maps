@@ -6,6 +6,7 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'shoulda-matchers'
 include Capybara::DSL
 
 # Requires supporting ruby files with custom matchers and macros, etc,

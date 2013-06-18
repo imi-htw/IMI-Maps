@@ -17,7 +17,7 @@ class InternshipsController < ApplicationController
 
     @internships = @internships.where('working_hours <= ?',params[:working_hours])
     @internships = @internships.where('living_costs <= ?',params[:living_costs])
-    @internships = @internships.where('rating >= ?',params[:rating])
+    #@internships = @internships.where('rating >= ?',params[:rating])
     @internships = @internships.where('salary >= ?',params[:salary])
 
     respond_with(@internships)
