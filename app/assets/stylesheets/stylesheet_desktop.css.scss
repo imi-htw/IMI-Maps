@@ -319,13 +319,27 @@ p{
 }
 
 .map-shadow{
- height: 45px;
+    height: 45px;
     margin-bottom: 160px;
-    margin-left: -42px;
-    margin-top: -174px;
+    margin-left: -43px;
+    margin-top: -178px;
     opacity: 0.9;
     position: inherit;
-    width: 1226px;
+    width: 1258px;
 }
 
 }
+
+@media (min-width: 980px) and (max-width: 1199px) { 
+.map-shadow{
+    height: 45px;
+    margin-bottom: 160px;
+    margin-left: -35px;
+    margin-top: -146px;
+    opacity: 0.9;
+    position: inherit;
+    width: 1012px;
+}
+
+}
+
