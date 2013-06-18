@@ -8,6 +8,20 @@ body{
   font-family: 'Merriweather Sans', sans-serif;
 }
 
- 
+.map-shadow{
+  display: none;
+}
+
+footer{
+  display: none;
+}
+
+.pagination.imi a, .pagination.imi span {
+  float: none !important;
+}
+
+.span12-2{
+  float: none !important;
+}
 
 }
