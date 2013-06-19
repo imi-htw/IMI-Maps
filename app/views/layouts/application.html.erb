@@ -16,6 +16,7 @@
   <%= favicon_link_tag '/public/favicon.ico' %>
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Josefin+Sans:100,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
     <div class="navbar navbar-inverse">
@@ -79,6 +80,7 @@
     <ul class="nav nav-top ">
               <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
               <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), search_index_path %></li>
+              <li> <div style="width: 270px; height:50px;"></div></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">

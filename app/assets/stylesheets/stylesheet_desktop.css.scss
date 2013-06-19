@@ -37,13 +37,16 @@ a{
   width: 100px;
   height: 122px;
   margin-top: 10px;
+  position: absolute;
+  left: 525px;
 }
 .navbar {
   width: 100%;
 }
+
 .navbar .brand {
   margin-left: 190px;
-  margin-top: 7px;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 .navbar-inner {
@@ -57,12 +60,13 @@ a{
 .nav-top > li > a {
   color:#000;
   text-shadow:none;
-  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .navbar .nav.nav-top {
   position: inherit;
-  margin: 40px 0 0 150px;
+  margin: 0px 0 0 300px;
   color: #6b6b6b;
 }
 
@@ -91,7 +95,7 @@ a{
 
 .navbar .nav > li > a {
   color:#c3c8be;
-  font-size: 18px;
+  font-size: 19px;
   text-shadow:none;
   z-index: 1;
   margin-top: 30px;
@@ -103,6 +107,8 @@ a{
 
 .dropdown-menu{
   margin: 0 0 0;
+    font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .dropdown .dropdown-toggle {
@@ -291,12 +297,12 @@ p{
 
 .active_nav{
   a{
-    color: #77b900 !important;
-    background: #333333 !important;
+    text-decoration: none;
+    border-bottom: 1px solid #77b900;
 
     span{
-        color: #77b900 !important;
-        background: #333333 !important;
+      text-decoration: none;
+      border-bottom: 1px solid #77b900;
       }
   }
 }
