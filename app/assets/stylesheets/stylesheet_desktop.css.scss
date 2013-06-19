@@ -9,10 +9,6 @@ body{
   color: #000;
 }
 
-[class*="span"] {
-  margin-left:20px !important;
-}
-
 .bold {
   font-weight:bold !important;
 }
@@ -324,13 +320,9 @@ p{
 
 .map-shadow{
     height: 45px;
-    margin-bottom: 160px;
-    margin-left: -42px;
-    margin-top: -174px;
-    opacity: 0.9;
     position: relative;
     width: 1226px;
     z-index: -1;
-}
 
 }
+

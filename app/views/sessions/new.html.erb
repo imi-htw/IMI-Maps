@@ -1,5 +1,5 @@
 <div class="container">
-<%= gmaps4rails(@pins) %> 
+<div class="display_none"><%= gmaps4rails(@pins) %> </div>
 <%= yield :scripts %>
 </div>
 
@@ -48,7 +48,7 @@
 		   	</div>
 		</div> -->
 
-		<div class="sign_up">Or <%= link_to "Sign Up", signup_path %></div>
+		<div class="sign_up"><font color="#fff">Or </font><%= link_to "Sign Up", signup_path %></div>
 
 		</div>
 

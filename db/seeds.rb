@@ -76,6 +76,10 @@ Semester.where(semester: "WS 12/13", id:2).first_or_create
 Semester.where(semester: "SS 12", id:3).first_or_create
 Semester.where(semester: "WS 11/12", id:4).first_or_create
 
+InternshipRating.destroy_all
+InternshipRating.create(:appreciation => 4, :atmosphere => 4, :supervision => 4, :tasks => 4, :training_success => 4)
+iR = InternshipRating.first
+
 hash = {"Vietnam" => "Hanoi","Egypt" => "Kairo","Mexico" => "Tijuana","Ireland" => "Dublin","Switzerland" => "Bern","China" => "Peking","United States" => "Washington", "Japan" => "Tokyo", "Australia" => "Sydney", "United Kingdom" => "London", "Brazil" => "Sao Paolo", "Germany" => "Berlin", "South Africa" => "Cape Town", "Canada" => "Toronto"}
 countries = hash.keys
 
@@ -86,7 +90,7 @@ n=1
 500.times do 
 	r = rand(countries.size)
 	company = Company.create(name: "Company#{n}", number_employees: 100, industry: "Web", website: "www.google.com",city: hash[countries[r]], country: countries[r], main_language: "Englisch")
-	i = Internship.new(salary: rand(1500)+1, working_hours: rand(20)+21, living_costs: rand(400)+301, rating: rand(5)+1, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i = Internship.new(salary: rand(1500)+1, working_hours: rand(20)+21, living_costs: rand(400)+301, internship_rating_id: iR.id, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
 
 	s = rand(5)+1
 	ary = []

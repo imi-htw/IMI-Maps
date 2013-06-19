@@ -44,6 +44,8 @@ ImiMaps::Application.routes.draw do
 
     resources :favorite, :only => [:index]
 
+    resources :favorite_compare
+
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'

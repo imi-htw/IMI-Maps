@@ -21,7 +21,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
-<div class="map-shadow"><%= image_tag("content-bottom.shadow.png") %></div>
+<div class="map-shadow display_none"><%= image_tag("content-bottom.shadow.png") %></div>
 <table>
 <tr>
   <p><%=t"search.criteria"%></p>
