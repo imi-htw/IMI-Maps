@@ -15,28 +15,21 @@
 </div>
 <br/>
 <div class="row-fluid">
-<div class="span3">
+<div class="span4">
         <span>Salary (min)</span>
         <span id="salary_span"></span>
         <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
         <div id="salary_slider">
         </div>
     </div>
-<div class="span3">
-        <span>Working hours (max)</span>
-        <span id="working_hours_span"></span>
-        <input name="working_hours[]" type="text" id="working_hours" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
-        <div id="working_hours_slider">
-        </div>
-    </div>
-<div class="span3">
+<div class="span4">
         <span>Living Costs (max)</span>
         <span id="living_costs_span"></span>
         <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
         <div id="living_costs_slider">
         </div>
     </div>
-<div class="span3">
+<div class="span4">
         <span>Rating (min)</span>
         <span id="rating_span"></span>
         <input name="rating[]" type="text" id="rating" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
@@ -63,19 +56,6 @@
         
         $( "#salary" ).val( $( "#salary_slider" ).slider( "value" ) );
         $( "#salary_span")[0].innerHTML = ( $( "#salary_slider" ).slider( "value" ) + " €")
-        
-        $( "#working_hours_slider" ).slider({
-            min: 1,
-            max: <%= @working_hours_max %>,
-            value: <%= raw @working_hours %>,
-            slide: function( event, ui ) {
-                $( "#working_hours" ).val( ui.value );
-                $( "#working_hours_span" )[0].innerHTML = ( ui.value+" h" );
-            }
-        });
-
-        $( "#working_hours" ).val( $( "#working_hours_slider" ).slider( "value" ) );
-        $( "#working_hours_span")[0].innerHTML = ( $( "#working_hours_slider" ).slider( "value" ) + " h")
 
          $( "#living_costs_slider" ).slider({
             min: 1,

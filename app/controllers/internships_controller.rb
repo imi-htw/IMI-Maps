@@ -34,12 +34,11 @@ class InternshipsController < ApplicationController
     @orientation_choices = params[:orientation] if params[:orientation].present?
     @language_choices = params[:programming_language_ids] if params[:programming_language_ids].present?
 
-    @internships = @internships.where('working_hours <= ?',params[:working_hours])
+    #@internships = @internships.where('working_hours <= ?',params[:working_hours])
     @internships = @internships.where('living_costs <= ?',params[:living_costs])
     #@internships = @internships.where('rating >= ?',params[:rating])
     @internships = @internships.where('salary >= ?',params[:salary])
 
-    @working_hours = params[:working_hours]
     @salary = params[:salary]
     @living_costs = params[:living_costs]
 
@@ -56,8 +55,6 @@ class InternshipsController < ApplicationController
     @semesters = Semester.where(:id =>(@internshipsAll.collect do |x| x.semester_id end.uniq)).map do |s| [s.semester, s.id] end
 
     @orientations = (Orientation.where(:id => @internshipsAll.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
-
-    @working_hours_max = @internshipsAll.collect do |x| x.working_hours end.max
 
     @living_costs_max = @internshipsAll.collect do |x| x.living_costs end.max
 

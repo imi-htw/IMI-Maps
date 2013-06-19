@@ -17,8 +17,6 @@ class SearchController < ApplicationController
 
     @orientations = (Orientation.where(:id => @internships.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
 
-    @working_hours_max = @internships.collect do |x| x.working_hours end.max
-
     @living_costs_max = @internships.collect do |x| x.living_costs end.max
 
     @salary_max = @internships.collect do |x| x.salary end.max
