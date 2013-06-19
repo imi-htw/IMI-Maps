@@ -71,7 +71,7 @@ User.destroy_all
 User.create!(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
 user1 = User.first
 User.create!(last_name: "Bla", first_name: "Blubb", password: "test", email: "test@imimaps.com")
-user2 = User.first
+user2 = User.last
 User.create!(last_name: "Lisa", first_name: "Pisa", password: "test", email: "test@imimaps.com")
 user3 = User.first
 
