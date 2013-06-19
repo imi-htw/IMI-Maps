@@ -12,13 +12,35 @@ class SessionsController < ApplicationController
 
     @pins = @companies.to_gmaps4rails do |company, marker |
 
+      n=0
+      s=""
+      p=""
+      @internships = Internship.where("company_id = ?",company.id)
+      @internships.each do |internship|
+      
+       if n==0
+        s+=(internship.user.first_name[0..0].capitalize+".")
+      else
+        s+=(" & " + internship.user.first_name[0..0].capitalize+".")
+       end
+       n+=1 
+       end
+
+      if n==1
+        p="hat"
+      else
+        p="haben"
+      end
+
+
       href =  if company.website.starts_with?'http' 
               company.website  
             else 
               "http://"+company.website 
              end
              
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
+    
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry} </p><p><a href='#{href}' target='_blank'>#{company.website}</a></p><p>#{s} #{p} hier ein Praktikum gemacht.</p>")
 
     end
   end
