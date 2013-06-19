@@ -48,4 +48,11 @@
 
   </tr>
 
+  <% @favorites.each do |favorite| %>
+    <tr>
+      <td><%= favorite.internship %></td>
+    </tr>
+
+  <%end%>
+
 </table>
