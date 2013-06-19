@@ -311,4 +311,8 @@ en:
        duration: "A: 3 - 6 month, or  B: 4 - 10 month"
        region: "worldwide"
 
-     
+  favorite_compare:
+    title: "Compare Favorites"
+    column1: "First Internship"
+    column2: "Second Internship"
+    column3: "Third Internship"

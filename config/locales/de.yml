@@ -373,5 +373,10 @@ de:
        duration: "A: 3 - 6 Monate, B: 4 - 10 Monate"
        region: "weltweit"
 
+  favorite_compare:
+    title: "Favoriten Vergleichen"
+    column1: "Erstes Praktikum"
+    column2: "Zweites Praktikum"
+    column3: "Drittes Praktikum"
 
 
