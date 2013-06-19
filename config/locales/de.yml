@@ -156,6 +156,8 @@ de:
       title: "Job Titel"
       recommend: "Empfehlung"
 
+   
+
   users:
     name: "Benutzer"
     create: "Erstelle Benutzer"
@@ -370,5 +372,11 @@ de:
        fact: "länderabhängige Voll-stipendien,  Reisekosten-zuschüsse für Praktika in internat. Organisationen, EU-Organisationen oder NGO's"
        duration: "A: 3 - 6 Monate, B: 4 - 10 Monate"
        region: "weltweit"
+
+  favorite_compare:
+    title: "Favoriten Vergleichen"
+    column1: "Erstes Praktikum"
+    column2: "Zweites Praktikum"
+    column3: "Drittes Praktikum"
 
 

@@ -11,48 +11,62 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label t "users.attributes.email"  %><br />
-    <%= f.text_field :email %>
-  </div>
-    <div class="field">
-    <%= f.label t "users.attributes.publicmail"  %>
-    <%= f.check_box :publicmail %>
-  </div>  
-  <div class="field">
-    <%= f.label t "users.attributes.password" %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label t "users.attributes.password_confirmation" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
+<div class="form-block">
+<div style="float: left;">
   <div class="field">
     <%= f.label t "users.attributes.first_name"  %><br />
     <%= f.text_field :first_name %>
   </div>
+
   <div class="field">
     <%= f.label t "users.attributes.last_name"  %><br />
     <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label t "users.attributes.email" %><br />
+    <%= f.text_field :email, class: "textlabel" %>
+  </div>
+
+    <div class="field">
+    <%= f.label t "users.attributes.publicmail"  %>
+    <%= f.check_box :publicmail %>
+  </div>  
+
+  <div class="field">
+    <%= f.label t "users.attributes.password" %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label t "users.attributes.password_confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+</div>
+<div style="float: right">
+
+  <div class="field" >
+    <%= image_tag("placeholder_profilpk.jpg") %>
+    <%= f.label t "users.attributes.picture"  %><br />
+    <%= f.file_field :picture %>
   </div>
   <div class="field">
     <%= f.label t "users.attributes.major"  %><br />
     <%= f.text_field :major %>
   </div>
+
   <div class="field">
     <%= f.label t "users.attributes.role"  %><br />
     <%= f.text_field :role %>
   </div>
-  </div>
+
     <div class="field">
     <%= f.label t "users.attributes.mailnotif"  %>
     <%= f.check_box :mailnotif %>
   </div> 
-  <div class="field">
-    <%= f.label t "users.attributes.picture"  %><br />
-    <%= f.file_field :picture %>
-  </div>
-  <div class="actions">
+  <div class="actions" style="float: right">
     <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "btn btn-success" %>
   </div>
+</div>
+</div>
 <% end %>

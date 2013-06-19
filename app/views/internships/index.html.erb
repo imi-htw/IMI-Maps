@@ -1,4 +1,173 @@
-<h1><%= t ".title" %></h1>
+<%= form_tag(internships_path, :method => 'get') do %>
+<div class="row-fluid">
+<div class="span3">
+<%= select_tag :country, options_for_select((@countries).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country"), style: "width:100%"} %>
+</div>
+<div class="span3">
+<%= select_tag :semester, options_for_select(@semesters),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester"), style: "width:100%"}  %>
+</div>
+<div class="span3">
+<%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation"), style: "width:100%"}  %>
+</div>
+<div class="span3">
+<%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language"), style: "width:100%"}  %>
+</div>
+</div>
+<br/>
+<div class="row-fluid">
+<div class="span3">
+        <span>Salary (min)</span>
+        <span id="salary_span"></span>
+        <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="salary_slider">
+        </div>
+    </div>
+<div class="span3">
+        <span>Working hours (max)</span>
+        <span id="working_hours_span"></span>
+        <input name="working_hours[]" type="text" id="working_hours" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="working_hours_slider">
+        </div>
+    </div>
+<div class="span3">
+        <span>Living Costs (max)</span>
+        <span id="living_costs_span"></span>
+        <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="living_costs_slider">
+        </div>
+    </div>
+<div class="span3">
+        <span>Rating (min)</span>
+        <span id="rating_span"></span>
+        <input name="rating[]" type="text" id="rating" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="rating_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
+
+<% end %>
+
+<script> 
+        $( "#salary_slider" ).slider({
+            min: 0,
+            max: <%= @salary_max %>,
+            value: <%= raw @salary %>,
+            slide: function( event, ui ) {
+                $( "#salary" ).val( ui.value );
+                $( "#salary_span" )[0].innerHTML = ( ui.value+" €" );
+            }
+
+        });
+        
+        $( "#salary" ).val( $( "#salary_slider" ).slider( "value" ) );
+        $( "#salary_span")[0].innerHTML = ( $( "#salary_slider" ).slider( "value" ) + " €")
+        
+        $( "#working_hours_slider" ).slider({
+            min: 1,
+            max: <%= @working_hours_max %>,
+            value: <%= raw @working_hours %>,
+            slide: function( event, ui ) {
+                $( "#working_hours" ).val( ui.value );
+                $( "#working_hours_span" )[0].innerHTML = ( ui.value+" h" );
+            }
+        });
+
+        $( "#working_hours" ).val( $( "#working_hours_slider" ).slider( "value" ) );
+        $( "#working_hours_span")[0].innerHTML = ( $( "#working_hours_slider" ).slider( "value" ) + " h")
+
+         $( "#living_costs_slider" ).slider({
+            min: 1,
+            max: <%= @living_costs_max %>,
+            value: <%= raw @living_costs %>,
+            slide: function( event, ui ) {
+                $( "#living_costs" ).val( ui.value );
+                $( "#living_costs_span" )[0].innerHTML = ( ui.value+" €" );
+            }
+        });
+
+        $( "#living_costs" ).val( $( "#living_costs_slider" ).slider( "value" ) );
+        $( "#living_costs_span")[0].innerHTML = ( $( "#living_costs_slider" ).slider( "value" ) + " €")
+
+
+         $( "#rating_slider" ).slider({
+            min: 1,
+            max: 5,
+            value: 1,
+            slide: function( event, ui ) {
+                $( "#rating" ).val( ui.value );
+                $( "#rating_span" )[0].innerHTML = ( ui.value );
+            }
+        });
+
+        $( "#rating" ).val( $( "#rating_slider" ).slider( "value" ) );
+        $( "#rating_span")[0].innerHTML = ( $( "#rating_slider" ).slider( "value" ) )
+
+        <% if @country_choices %>
+
+        var country_choices = <%= raw @country_choices %>
+
+        for (var i=0; i < country_choices.length; i++) {
+          var ary = [];
+          if ($("#country").val()!=null)
+          ary = $("#country").val();
+          ary.push(country_choices[i]);
+          $("#country").val(ary);
+        }
+        $("#country").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @semester_choices %>
+
+        var semester_choices = <%= raw @semester_choices %>
+
+        for (var i=0; i < semester_choices.length; i++) {
+          var ary = [];
+          if ($("#semester").val()!=null)
+          ary = $("#semester").val();
+          ary.push(semester_choices[i]);
+          $("#semester").val(ary);
+        }
+        $("#semester").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @orientation_choices %>
+
+        var orientation_choices = <%= raw @orientation_choices %>
+
+        for (var i=0; i < orientation_choices.length; i++) {
+          var ary = [];
+          if ($("#orientation").val()!=null)
+          ary = $("#orientation").val();
+          ary.push(orientation_choices[i]);
+          $("#orientation").val(ary);
+        }
+        $("#orientation").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @language_choices %>
+
+        var language_choices = <%= raw @language_choices %>
+
+        for (var i=0; i < language_choices.length; i++) {
+          var ary = [];
+          if ($("#programming_language_ids").val()!=null)
+          ary = $("#programming_language_ids").val();
+          ary.push(language_choices[i]);
+          $("#programming_language_ids").val(ary);
+        }
+        $("#programming_language_ids").trigger("liszt:updated");
+
+        <% end %>
+
+   </script> 
+
+<h5> <%=@internships_size%> results found! </h5>
+
 <table class="table">
   <tr class="table_intern">
     <div id="table_top"></div>
@@ -33,8 +202,8 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-<% if @current_user.internship_authorization %>
-<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship2" %><div id="triangle_left"></div>
-<% end %>
+<div style="float:right">
+<div class="pagination imi">
+<%= paginate @internships %>
+</div>
+</div>

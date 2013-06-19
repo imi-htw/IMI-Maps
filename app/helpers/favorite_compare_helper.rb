@@ -1,0 +1,2 @@
+module FavoriteCompareHelper
+end

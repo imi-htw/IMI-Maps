@@ -4,7 +4,8 @@
   max-width: none;
 }
 #map label { 
-  width: auto; display:inline; 
+  width: 0 auto; 
+  display:inline; 
 } 
 
 header .pull-left {
@@ -68,7 +69,6 @@ background-color: #90b800;
     -moz-border-top-colors: none;
     border-image: none;
     border-width: 0px 0px 0px 0;
-    float: left;
     line-height: 19px;
     padding: 0 5px;
     text-decoration: none;
