@@ -1,4 +1,3 @@
-
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608120403) do
+ActiveRecord::Schema.define(:version => 20130616170332) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -72,8 +71,8 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.integer  "number_employees"
     t.string   "industry"
     t.string   "website"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "city"
@@ -81,6 +80,10 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.string   "street"
     t.string   "zip"
     t.string   "main_language"
+    t.string   "phone"
+    t.string   "fax"
+    t.boolean  "blacklisted",      :default => false
+    t.integer  "import_id"
   end
 
   create_table "companies_compares", :force => true do |t|
@@ -120,6 +123,16 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "internship_ratings", :force => true do |t|
+    t.integer  "tasks",            :limit => 1
+    t.integer  "training_success", :limit => 1
+    t.integer  "atmosphere",       :limit => 1
+    t.integer  "supervision",      :limit => 1
+    t.integer  "appreciation",     :limit => 1
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -133,12 +146,11 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
   end
 
   create_table "internships", :force => true do |t|
-    t.integer  "salary_id"
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.integer  "rating",            :default => 1
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "internship_rating_id", :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
@@ -148,6 +160,11 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.text     "description"
     t.integer  "semester_id"
     t.string   "internship_report"
+    t.integer  "salary"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "tasks"
+    t.string   "operational_area"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
@@ -193,19 +210,21 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "salaries", :force => true do |t|
-    t.string   "amount"
-    t.integer  "order_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "min_amount"
-    t.integer  "max_amount"
-  end
-
   create_table "semesters", :force => true do |t|
     t.string   "semester"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "enrolment_number"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.date     "birthday"
+    t.string   "birthplace"
+    t.string   "email"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "user_comments", :force => true do |t|
@@ -227,7 +246,8 @@ ActiveRecord::Schema.define(:version => 20130608120403) do
     t.string   "picture"
     t.string   "password_digest"
     t.boolean  "internship_authorization", :default => true
+    t.boolean  "publicmail"
+    t.boolean  "mailnotif"
   end
 
 end
-=======

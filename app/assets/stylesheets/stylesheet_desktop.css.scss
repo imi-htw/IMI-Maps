@@ -323,13 +323,14 @@ p{
 }
 
 .map-shadow{
- height: 45px;
+    height: 45px;
     margin-bottom: 160px;
     margin-left: -42px;
     margin-top: -174px;
     opacity: 0.9;
-    position: inherit;
+    position: relative;
     width: 1226px;
+    z-index: -1;
 }
 
 }
