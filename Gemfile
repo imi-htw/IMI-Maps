@@ -61,7 +61,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry'
   gem 'capybara', '~> 2.1.0'
-
+  gem 'rack-mini-profiler'
 end
 
 group :production do
