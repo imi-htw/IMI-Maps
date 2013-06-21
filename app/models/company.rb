@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax
+  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax, :import_id
 
   # validations
   validates :city, :presence => true, :allow_blank => false

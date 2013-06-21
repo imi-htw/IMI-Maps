@@ -136,7 +136,7 @@ class DatabaseParser
   def create_internship db_entry
     semester = Semester.where(semester: db_entry['semester']).first_or_create
     company = Company.where(import_id: db_entry["company_id"]).first
-    internship = Internship.where()
+    internship = Internship.where(company_id: company.id, student_id: db_entry["student_id"]).first_or_create
     
     InternshipAdministration.where(internship_id: internship.id, supervisor_name: db_entry["supervisorName"], supervisor_email: db_entry["supervisorEmail"],
       registration: db_entry["registration"], contract: db_entry["contract"], report: db_entry["report"], certificate: db_entry["certificate"],

@@ -2,7 +2,7 @@ class Internship < ActiveRecord::Base
   paginates_per 5
 
   attr_accessible :living_costs, :orientation_id, :salary, :working_hours, :programming_language_ids, :internship_rating_id,
-    :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report
+    :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report, :student_id
 
 
   validates :programming_language_ids, :presence => true, :allow_blank => false
@@ -13,7 +13,7 @@ class Internship < ActiveRecord::Base
   validates :working_hours, :presence => true, :allow_blank => false
   validates :living_costs, :presence => true, :allow_blank => false
   validates :description, :presence => true, :allow_blank => false
-  validates :user_id, :presence => true
+  #validates :user_id, :presence => true
   validates :semester_id, :presence => true
 
 
@@ -22,6 +22,7 @@ class Internship < ActiveRecord::Base
   belongs_to :orientation
   belongs_to :semester
   belongs_to :internship_rating
+  belongs_to :student
 
   has_and_belongs_to_many :programming_languages, :uniq => true
   has_many :user_comments, :dependent => :destroy
