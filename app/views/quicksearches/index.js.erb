@@ -109,7 +109,6 @@ $("#programming_language_ids").trigger("liszt:updated");
 }
 }
 
-}
 
 if (!<%= @bool %>) {
 $('#results_string').html("<h5> <%=@internships_size%> results found! </h5> </br>");
@@ -418,8 +417,8 @@ data_orientation.sort(compare);
       .attr("transform", "rotate(-90)")
       .text(function(d){return d.name});
 
-/*var semester_choices = $("#semester_chzn .chzn-results").children();
-var orientation_choices = $("#orientation_chzn .chzn-results").children();
-var programming_language_ids_choices = $("#programming_language_ids_chzn .chzn-results").children();
-
-*/
+<% if @internships_size > 5 %>
+$(".pager").show();
+<% else %>
+$(".pager").hide();
+<% end %>

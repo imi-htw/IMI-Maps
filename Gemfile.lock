@@ -123,8 +123,6 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-tablesorter (1.4.1)
-      railties (~> 3.1)
     jquery-ui-rails (4.0.3)
       jquery-rails
       railties (>= 3.1.0)
@@ -277,7 +275,6 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   jquery-rails (= 2.2.1)
-  jquery-tablesorter
   jquery-ui-rails
   kaminari
   nested_form
