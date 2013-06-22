@@ -2,8 +2,6 @@ class QuicksearchesController < ApplicationController
 
 	def index
 
-    if !params[:paginating].nil? then @paginating = params[:paginating] else @paginating = false end
-
 		@quicksearch = Quicksearch.new
 
     @companies = []
@@ -18,9 +16,10 @@ class QuicksearchesController < ApplicationController
       @internships = @quicksearch.internships(params)
     end
 
+    @companies = @internships.collect do |x| x.company end
+    @orientations_ary = @internships.collect do |x| x.orientation.name end
+
     @internships.each do |i|
-      @companies << i.company
-      @orientations_ary << i.orientation
       i.programming_languages.each do |p|
         @language_ary << p
       end
@@ -38,9 +37,9 @@ class QuicksearchesController < ApplicationController
 
     ids = @internships.collect do |x| x.id end
 
-    @semesters = Semester.where(:id =>(Internship.where(:id => ids).select(:semester_id).collect do |x| x.semester_id end.uniq)).map do |s|[s.semester,s.id] end
+    @semesters = @internships.collect do |x| x.semester end.map do |s|[s.semester,s.id] end
 
-    @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).where(:id => ids).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq).map do |p|[p.name, p.id] end
+    @programming_languages = language_ary.uniq.map do |p|[p.name, p.id] end
 
     @internships_size = @internships.size
 
@@ -48,7 +47,7 @@ class QuicksearchesController < ApplicationController
 
     @countries = (@companies.collect do |x| x.country end)
 
-    @orientations = (Orientation.where(:id => @internships.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
+    @orientations = orientations_ary.uniq
 
     countries_uniq = @countries.uniq
     ary = Array.new
@@ -60,20 +59,18 @@ class QuicksearchesController < ApplicationController
     language_uniq = @language_ary.uniq
     ary = Array.new
     language_uniq.each do |x|
-      ary << {:name=>x.name, :count=>(@language_ary.count(x).to_f/@internships_size*100).to_i}
+      ary << {:name=>x, :count=>(@language_ary.count(x).to_f/@internships_size*100).to_i}
     end
     @data_language = ary
 
     orientation_uniq = @orientations_ary.uniq
     ary = Array.new
     orientation_uniq.each do |x|
-      ary << {:name=>x.name, :count=>@orientations_ary.count(x)}
+      ary << {:name=>x, :count=>@orientations_ary.count(x)}
     end
     @data_orientation = ary
 
     @countries = @countries.uniq
-
-    @internships = @internships.page params[:page]
 
     respond_to do |format|
       format.js { render :layout=>false, :locals => { :pins  => @pins, :internships => @internships, :paginating => @paginating } }

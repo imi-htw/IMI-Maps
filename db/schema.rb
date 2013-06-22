@@ -86,11 +86,6 @@ ActiveRecord::Schema.define(:version => 20130621112110) do
     t.integer  "import_id"
   end
 
-  create_table "companies_compares", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "contact_people", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"

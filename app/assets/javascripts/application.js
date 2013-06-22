@@ -16,6 +16,7 @@
 //= require_tree .
 //= require chosen-jquery
 //= require d3
+//= require stupidtable.min
 
 
 // $(document).ready(function() {

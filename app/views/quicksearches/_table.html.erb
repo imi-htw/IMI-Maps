@@ -1,4 +1,4 @@
-<tbody>
+<thead>
   <tr class="search-table">
     <th><%= t "internships.attributes.title" %></th>
     <th><%= t "companies.attributes.name" %></th>
@@ -11,7 +11,8 @@
     <th><%= t "internships.attributes.rating" %></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @internships.each do |internship| %>
   <tr class="<%= cycle("even_row", "odd_row") %>">
     <td><%= internship.title %></td>
@@ -22,7 +23,7 @@
     <td><%= internship.semester.semester %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td><%= render_stars(internship.rating, self) %></td>
+    <td><%=  %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>

@@ -42,13 +42,12 @@
       <li class="dropdown">
         <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
-          <span class="badge badge-important"><%= get_notification_size
-%></span>
+          <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
 <i class="icon-white icon-flag icon-large"></i></a>
   <% if current_user == true %>
       <ul class="dropdown-menu">
-        <% current_user.notifications.order(:read).each do |noti| %>
+        <% @notifications.order(:read).each do |noti| %>
         <li>
           <% if noti.read == false %>
           <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>

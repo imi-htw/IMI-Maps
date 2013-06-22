@@ -4,7 +4,7 @@ class OverviewController < ApplicationController
 
 	def index
 
-    @internships = Internship.all
+    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
 
     @companies = @internships.collect do |i| i.company end
 
@@ -22,16 +22,16 @@ class OverviewController < ApplicationController
 
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
-    @semesters = Semester.where(:id =>(Internship.select(:semester_id).collect do |x| x.semester_id end.uniq))
+    @semesters = @internships.collect do |x| x.semester end.uniq
 
-    @orientations = Orientation.all
+    @orientations = @internships.collect do |x| x.orientation end.uniq
 
-    countries = @companies.collect do |x| x.country end
+    @countries = @companies.collect do |x| x.country end
 
-    countries_uniq = countries.uniq
+    countries_uniq = @countries.uniq
     ary = Array.new
     countries_uniq.each do |x|
-      ary << {:name=>x, :count=>countries.count(x)}
+      ary << {:name=>x, :count=>@countries.count(x)}
     end
     @data_country = ary
 
@@ -54,8 +54,6 @@ class OverviewController < ApplicationController
     @data_orientation = ary
 
     @orientations = @orientations.map do |o| [o.name, o.id] end
-
-    @internships = Internship.order("created_at DESC").page params[:page]
 
     respond_to do |format|
       format.html
