@@ -2,18 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media (min-width: 480px) and (max-width: 979px) { 
+@media (min-width: 481px) and (max-width: 979px) { 
 
 body{
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-.map-shadow{
-  display: none;
+.navbar{
+  margin-left: -20px;
+  margin-right: 20px;
 }
 
-.display_none{
-  display: none;
+.navbar-inner {
+  border-radius: 0px 0px 0px 0px !important;
+}
+
+.map-shadow{
+    height: 210px;
+    margin-top: 0px;
+    opacity: 0.9;
+    position: inherit;
+    width: 780px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 780px 210px;
+    margin-top: -189px;
+    margin-left: -27px;
+}
+
+.display_nonet{
+  display: none !important;
 }
 
 footer{
@@ -27,6 +44,11 @@ footer{
 .span12-2{
   float: none !important;
 }
+
+.chzn-container{
+  width: 150px !important;
+}
+
 }
 
 @media only screen and (max-width: 800px) {

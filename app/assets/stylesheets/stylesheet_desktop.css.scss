@@ -36,18 +36,22 @@ a{
 }
 .navbar {
   width: 100%;
+    border-radius: 0px 0px 0px 0px !important;
+
 }
 
 .navbar .brand {
   margin-left: 50%;
   margin-top: 8px;
 }
+
 .navbar-inner {
   text-align:center;
   background: #333333 !important;
   height: 125px;
   float: none;
   font-weight: 100;
+  border-radius: 0px 0px 0px 0px !important;
 }
 
 .nav-top > li > a {
@@ -67,7 +71,7 @@ a{
 .navbar .nav.pull-right {
   float: none;
   margin-left: 50%;
-  padding-left: 390px;
+  padding-left: 400px;
   width: 190px;
 }
 
@@ -200,6 +204,7 @@ p {
   height: auto !important;
   height: 100%;
   margin: 0 auto -63px;
+  overflow: hidden;
 }
 
 .wrapper > .container {
@@ -326,14 +331,14 @@ p{
 }
 
 .map-shadow{
-    height: 70px;
+    height: 210px;
     margin-top: 0px;
     opacity: 0.9;
     position: inherit;
-    width: 1259px;
+    width: 1258px;
     background: url(content-shadow.png) no-repeat;
-    background-size: 1259px 70px;
-    margin-top: -76px;
+    background-size: 1258px 210px;
+    margin-top: -189px;
     margin-left: -43px;
 }
 }
@@ -345,20 +350,27 @@ p{
 }
 
 .navbar .nav.pull-right {
-  left: -100px;
+  float: none;
+  margin-left: 50%;
+  padding-left: 290px;
+  width: 190px;
 }
 
 .map-shadow{
-    height: 70px;
+    height: 210px;
     margin-top: 0px;
     opacity: 0.9;
     position: inherit;
     width: 1012px;
     background: url(content-shadow.png) no-repeat;
-    background-size: 1012px 70px;
-    margin-top: -76px;
+    background-size: 1012px 210px;
+    margin-top: -189px;
     margin-left: -35px;
     z-index: -1;
+}
+
+.row{
+  margin-left: -40px;
 }
 
 }
