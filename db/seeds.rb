@@ -70,6 +70,10 @@ Orientation.where(name: "Product Management", id:7).first_or_create
 User.destroy_all
 User.create!(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
 user1 = User.first
+User.create!(last_name: "Bla", first_name: "Blubb", password: "test", email: "test@imimaps.com")
+user2 = User.last
+User.create!(last_name: "Lisa", first_name: "Pisa", password: "test", email: "test@imimaps.com")
+user3 = User.first
 
 Semester.where(semester: "SS 13", id:1).first_or_create
 Semester.where(semester: "WS 12/13", id:2).first_or_create
@@ -101,3 +105,11 @@ n=1
 	i.save
 	n+=1
 end
+
+company = Company.create(name: "Raeuber Hotzenplotz", number_employees: 100, industry: "Web", website: "www.google.com",city: "Hamburg", country: "Germany", main_language: "Englisch")
+	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i.save
+	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user2.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i.save
+	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user3.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
+	i.save

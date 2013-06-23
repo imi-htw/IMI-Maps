@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619151407) do
+ActiveRecord::Schema.define(:version => 20130621112110) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(:version => 20130619151407) do
     t.date     "end_date"
     t.text     "tasks"
     t.string   "operational_area"
+    t.integer  "student_id"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|

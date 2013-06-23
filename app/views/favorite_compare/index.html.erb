@@ -1,6 +1,6 @@
-<h2> compare </h2>
+<h2> <%= t "favorite_compare.title"%> </h2>
 
-
+<!--
 
 <table class="table">
   <tr>
@@ -35,4 +35,24 @@
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>
+</table>
+
+-->
+
+<table class="table">
+  <tr>
+
+    <th><%= t "favorite_compare.column1" %></th>
+    <th><%= t "favorite_compare.column2" %></th>
+    <th><%= t "favorite_compare.column3" %></th>
+
+  </tr>
+
+  <% @favorites.each do |favorite| %>
+    <tr>
+      <td><%= favorite.internship %></td>
+    </tr>
+
+  <%end%>
+
 </table>

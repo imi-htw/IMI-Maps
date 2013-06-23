@@ -310,4 +310,9 @@ en:
        fact: "Full scholarships depending on country, travel allowance for interships in international organisations, EU-Organisations or NGO's"
        duration: "A: 3 - 6 month, or  B: 4 - 10 month"
        region: "worldwide"
-     
+
+  favorite_compare:
+    title: "Compare Favorites"
+    column1: "First Internship"
+    column2: "Second Internship"
+    column3: "Third Internship"

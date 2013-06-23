@@ -16,7 +16,6 @@
   <%= favicon_link_tag '/public/favicon.ico' %>
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Josefin+Sans:100,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
     <div class="navbar navbar-inverse">
@@ -42,13 +41,13 @@
       <li class="dropdown">
         <a class="dropdown-toggle" href="#">
           <% if get_notification_size > 0 %>
-          <span class="badge badge-important"><%= get_notification_size
-%></span>
+
+          <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
 <i class="icon-white icon-flag icon-large"></i></a>
   <% if current_user == true %>
       <ul class="dropdown-menu">
-        <% current_user.notifications.order(:read).each do |noti| %>
+        <% @notifications.order(:read).each do |noti| %>
         <li>
           <% if noti.read == false %>
           <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
@@ -62,8 +61,14 @@
       </li>  
 
       
-    <li><%= link_to t("header.account"), current_user %></li>
-    <li><%= link_to t("header.logout"), logout_path %></li>
+    <li><%= link_to current_user  do %>
+                  <i class="icon-user icon-large"></i>
+                <% end %>
+    </li>
+    <li><%= link_to logout_path  do %>
+                  <i class="icon-signout icon-large"></i>
+                <% end %>
+    </li>
 
     <li class="dropdown">
         <a class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
@@ -80,7 +85,6 @@
     <ul class="nav nav-top ">
               <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
               <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), search_index_path %></li>
-              <li> <div style="width: 270px; height:50px;"></div></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
@@ -106,7 +110,7 @@
   <div class="wrapper">
     <div class="container clear-top">      
       <div clas="row">
-       <%= yield %>
+       <%= yield %></div>
       </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
-<div class="map-shadow display_none"><%= image_tag("content-bottom.shadow.png") %></div>
+<div class="map-shadow display_none"></div>
 <table>
 <tr>
   <p><%=t"search.criteria"%></p>
@@ -44,20 +44,22 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 </div>
 
 <div id="results_string" style="display:none"> </div>
-<table class="table" style="margin-top:30px;">
+<table id="paginated" class="table" style="margin-top:30px;">
+  <thead>
     <tr class="search-table">
-    <th><%= t "internships.attributes.title" %></th>
-    <th><%= t "companies.attributes.name" %></th>
-    <th><%= t "companies.attributes.city"%> </th>
-    <th><%= t "companies.attributes.country" %></th>
-    <th><%= t "companies.attributes.industry" %></th>
-    <th><%= t "internships.attributes.semester" %></th>
-    <th><%= t "internships.attributes.orientation" %></th>
-    <th><%= t "internships.attributes.programming_language" %></th>
-    <th><%= t "internships.attributes.rating" %></th>
-    <th></th>
-  </tr>
-
+      <th><%= t "internships.attributes.title" %></th>
+      <th><%= t "companies.attributes.name" %></th>
+      <th><%= t "companies.attributes.city"%> </th>
+      <th><%= t "companies.attributes.country" %></th>
+      <th><%= t "companies.attributes.industry" %></th>
+      <th><%= t "internships.attributes.semester" %></th>
+      <th><%= t "internships.attributes.orientation" %></th>
+      <th><%= t "internships.attributes.programming_language" %></th>
+      <th><%= t "internships.attributes.rating" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @internships.each do |internship| %>
   <tr class="<%= cycle("even_row", "odd_row") %>">
     <td><%= internship.title %></td>
@@ -72,14 +74,68 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
-<div style="float:right">
-<div class="pagination imi">
-<%= paginate @internships, :remote => true  %>
-</div>
-</div>
+
+<div class='pager'>
+        <a href='' alt='First' class='firstPage'>First</a>
+        <a href='' alt='Previous' class='prevPage'>Prev</a>
+        
+        <span class='currentPage'></span> of <span class='totalPages'></span>
+        <a href='' alt='Next' class='nextPage'>Next</a>
+        <a href='' alt='Last' class='lastPage'>Last</a>
+    </div>
+
+
 <script>
 
+$('table#paginated').each(function() {
+    var currentPage = 1;
+    var numPerPage = 5;
+    var $table = $(this);
+    var numRows = $table.find('tbody tr').length;
+    var numPages = Math.ceil(numRows / numPerPage);
+    $table.bind('repaginate', function() {
+        $(".currentPage").html(currentPage);
+        $(".totalPages").html(numPages);
+        $table.find('tbody tr').hide().slice((currentPage-1) * numPerPage, (currentPage) * numPerPage).show();
+        if (currentPage == 1) {
+          $(".firstPage").hide();
+        }
+        else 
+          $(".firstPage").show();
+        if (currentPage == numPages) {
+          $(".lastPage").hide();
+        }
+        else 
+          $(".lastPage").show();
+    });
+    $table.trigger('repaginate');
+    
+
+    $(".firstPage").click(function() {
+      currentPage = 1;
+      $table.trigger('repaginate');
+    }); 
+
+    $(".lastPage").click(function() {
+      currentPage = numPages;
+      $table.trigger('repaginate');
+    }); 
+
+    $(".prevPage").click(function() {
+      if (currentPage-1>0)
+        currentPage -= 1;
+      $table.trigger('repaginate');
+    });
+
+    $(".nextPage").click(function() {
+      if (currentPage<numPages)
+        currentPage += 1;
+      $table.trigger('repaginate');
+    });
+
+});
 
 var color = d3.scale.category20();
 var color2 = d3.scale.category20();

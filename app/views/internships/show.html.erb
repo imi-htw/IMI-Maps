@@ -28,7 +28,7 @@
 
                               <p>
                                 <b><%= t "internships.attributes.salary" %> :</b>
-                                <%= @internship.salary.try(:amount) %>
+                                <%= @internship.salary %>
                               </p>
 
                               <p>
@@ -43,7 +43,6 @@
 
                               <p>
                                 <b><%= t "internship.attributes.rating" %></b>
-                                <%= render_stars(@internship.rating, self) %>
                               </p>
                               <br/>
                               <p>
@@ -258,15 +257,7 @@
                                           <%= @internship.company.main_language %>
                                         </p>
                                         <p>
-
                                         <b><%= t "companies.attributes.rating"  %> :</b>
-                                          <% sum = 0%>
-                                          <% amt = 0%>
-                                          <% @internship.company.internships.each do |i| %>
-                                            <% sum += i.rating %>
-                                            <% amt += 1 %>
-                                          <%end%>
-                                          <%=sum/amt%>
                                         </p>
                                         <p>
                                       </div>

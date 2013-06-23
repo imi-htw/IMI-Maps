@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'font-awesome';
-@media (min-width: 979px) { 
+@media (min-width: 980px) { 
 body{
   font-family: 'Merriweather Sans', sans-serif;
   background: url(bg.gif);
@@ -26,28 +26,21 @@ a{
   color: green;
 }
 
-#top-menu{
-  width: 88%;
-  position: inherit;
-}
-
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
   width: 100px;
   height: 122px;
-  margin-top: 10px;
   position: absolute;
-  left: 525px;
+  left: -580px;
 }
 .navbar {
   width: 100%;
 }
 
 .navbar .brand {
-  margin-left: 190px;
+  margin-left: 50%;
   margin-top: 8px;
-  margin-bottom: 8px;
 }
 .navbar-inner {
   text-align:center;
@@ -65,9 +58,17 @@ a{
 }
 
 .navbar .nav.nav-top {
-  position: inherit;
-  margin: 0px 0 0 300px;
   color: #6b6b6b;
+  margin-left: 50%;
+  left: -300px;
+  width: 800px;
+}
+
+.navbar .nav.pull-right {
+  float: none;
+  margin-left: 50%;
+  padding-left: 390px;
+  width: 190px;
 }
 
 .navbar .nav.pull-right > li > a {
@@ -325,13 +326,39 @@ p{
 }
 
 .map-shadow{
-    height: 45px;
-    margin-bottom: 160px;
-    margin-left: -43px;
-    margin-top: -178px;
+    height: 70px;
+    margin-top: 0px;
     opacity: 0.9;
     position: inherit;
-    width: 1258px;
+    width: 1259px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 1259px 70px;
+    margin-top: -76px;
+    margin-left: -43px;
+}
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+.brand{
+  left: -480px;
+}
+
+.navbar .nav.pull-right {
+  left: -100px;
+}
+
+.map-shadow{
+    height: 70px;
+    margin-top: 0px;
+    opacity: 0.9;
+    position: inherit;
+    width: 1012px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 1012px 70px;
+    margin-top: -76px;
+    margin-left: -35px;
     z-index: -1;
 }
+
 }
