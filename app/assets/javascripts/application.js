@@ -16,6 +16,7 @@
 //= require_tree .
 //= require chosen-jquery
 //= require d3
+//= require stupidtable.min
 
 
 // $(document).ready(function() {
@@ -48,3 +49,9 @@ click_reset = function() {
   $(".search-choice").remove();
   $("#search_button").click();
 }
+
+// $(window).bind("load resize", function(){
+//     var h = $(window).height( ),
+//     offsetTop = 0;
+//     $('#map').css('height', (h - offsetTop));
+// });

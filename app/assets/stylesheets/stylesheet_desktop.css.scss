@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'font-awesome';
-@media (min-width: 979px) { 
+@media (min-width: 980px) { 
 body{
   font-family: 'Merriweather Sans', sans-serif;
   background: url(bg.gif);
@@ -26,44 +26,53 @@ a{
   color: green;
 }
 
-#top-menu{
-  width: 88%;
-  position: inherit;
-}
-
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
   width: 100px;
   height: 122px;
-  margin-top: 10px;
+  position: absolute;
+  left: -580px;
 }
 .navbar {
   width: 100%;
+    border-radius: 0px 0px 0px 0px !important;
+
 }
+
 .navbar .brand {
-  margin-left: 190px;
-  margin-top: 7px;
-  margin-bottom: 8px;
+  margin-left: 50%;
+  margin-top: 8px;
 }
+
 .navbar-inner {
   text-align:center;
   background: #333333 !important;
   height: 125px;
   float: none;
   font-weight: 100;
+  border-radius: 0px 0px 0px 0px !important;
 }
 
 .nav-top > li > a {
   color:#000;
   text-shadow:none;
-  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .navbar .nav.nav-top {
-  position: inherit;
-  margin: 40px 0 0 150px;
   color: #6b6b6b;
+  margin-left: 50%;
+  left: -300px;
+  width: 800px;
+}
+
+.navbar .nav.pull-right {
+  float: none;
+  margin-left: 50%;
+  padding-left: 400px;
+  width: 190px;
 }
 
 .navbar .nav.pull-right > li > a {
@@ -91,7 +100,7 @@ a{
 
 .navbar .nav > li > a {
   color:#c3c8be;
-  font-size: 18px;
+  font-size: 19px;
   text-shadow:none;
   z-index: 1;
   margin-top: 30px;
@@ -103,6 +112,8 @@ a{
 
 .dropdown-menu{
   margin: 0 0 0;
+    font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 .dropdown .dropdown-toggle {
@@ -193,6 +204,7 @@ p {
   height: auto !important;
   height: 100%;
   margin: 0 auto -63px;
+  overflow: hidden;
 }
 
 .wrapper > .container {
@@ -291,12 +303,12 @@ p{
 
 .active_nav{
   a{
-    color: #77b900 !important;
-    background: #333333 !important;
+    text-decoration: none;
+    border-bottom: 1px solid #77b900;
 
     span{
-        color: #77b900 !important;
-        background: #333333 !important;
+      text-decoration: none;
+      border-bottom: 1px solid #77b900;
       }
   }
 }
@@ -319,13 +331,46 @@ p{
 }
 
 .map-shadow{
- height: 45px;
-    margin-bottom: 160px;
-    margin-left: -42px;
-    margin-top: -174px;
+    height: 210px;
+    margin-top: 0px;
     opacity: 0.9;
     position: inherit;
-    width: 1226px;
+    width: 1258px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 1258px 210px;
+    margin-top: -189px;
+    margin-left: -43px;
+}
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+.brand{
+  left: -480px;
+}
+
+.navbar .nav.pull-right {
+  float: none;
+  margin-left: 50%;
+  padding-left: 290px;
+  width: 190px;
+}
+
+.map-shadow{
+    height: 210px;
+    margin-top: 0px;
+    opacity: 0.9;
+    position: inherit;
+    width: 1012px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 1012px 210px;
+    margin-top: -189px;
+    margin-left: -35px;
+    z-index: -1;
+}
+
+.row{
+  margin-left: -40px;
 }
 
 }

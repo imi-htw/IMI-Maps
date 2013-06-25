@@ -1,7 +1,7 @@
 // Place all the styles related to the financing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import 'font-awesome';
 .table td{
     border-top: none !important;
 }
@@ -17,4 +17,11 @@
   width: 0px;
   margin-left: 0px;
   margin-top: 0px;
+}
+
+h1 {
+  text-transform: none;
+  color: #77b900 !important;
+  line-height: 40px;
+  text-shadow: none;
 }

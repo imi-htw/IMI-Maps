@@ -1,11 +1,9 @@
 class Company < ActiveRecord::Base
-  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax
+  attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax, :import_id
 
   # validations
   validates :city, :presence => true, :allow_blank => false
   validates :country, :presence => true, :allow_blank => false
-  validates :zip, :presence => true, :allow_blank => false
-  validates :street, :presence => true, :allow_blank => false
   validates :main_language, :presence => true, :allow_blank => false
   validates :industry, :presence => true, :allow_blank => false
   validates :name, :presence => true, :allow_blank => false
@@ -24,9 +22,9 @@ class Company < ActiveRecord::Base
   has_many :contact_persons
   has_many :locations
 
-	def address
-		"#{self.street}, #{self.zip} #{self.city}, #{self.country}"
-	end
+  def address
+    "#{self.street}, #{self.zip} #{self.city}, #{self.country}"
+  end
 
   def find_company(search)
     companies = Company.all
@@ -37,5 +35,5 @@ class Company < ActiveRecord::Base
     end
     companies.uniq
   end
-	
+  
 end

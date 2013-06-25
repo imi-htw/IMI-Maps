@@ -1,13 +1,165 @@
-<h1><%= t ".title" %></h1>
-<table class="table">
+<%= form_tag(internships_path, :method => 'get') do %>
+<div class="row-fluid">
+<div class="span3">
+<%= select_tag :country, options_for_select((@countries).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country"), style: "width:100%"} %>
+</div>
+<div class="span3">
+<%= select_tag :semester, options_for_select(@semesters),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester"), style: "width:100%"}  %>
+</div>
+<div class="span3">
+<%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation"), style: "width:100%"}  %>
+</div>
+<div class="span3">
+<%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language"), style: "width:100%"}  %>
+</div>
+</div>
+<br/>
+<div class="row-fluid">
+<div class="span4">
+        <span>Salary (min)</span>
+        <span id="salary_span"></span>
+        <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="salary_slider">
+        </div>
+    </div>
+<div class="span4">
+        <span>Living Costs (max)</span>
+        <span id="living_costs_span"></span>
+        <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="living_costs_slider">
+        </div>
+    </div>
+<div class="span4">
+        <span>Rating (min)</span>
+        <span id="rating_span"></span>
+        <input name="rating[]" type="text" id="rating" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
+        <div id="rating_slider">
+        </div>
+    </div>
+</div>
+<br/>
+<%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
+
+<% end %>
+
+<script> 
+        $( "#salary_slider" ).slider({
+            min: 0,
+            max: <%= @salary_max %>,
+            value: <%= raw @salary %>,
+            slide: function( event, ui ) {
+                $( "#salary" ).val( ui.value );
+                $( "#salary_span" )[0].innerHTML = ( ui.value+" €" );
+            }
+
+        });
+        
+        $( "#salary" ).val( $( "#salary_slider" ).slider( "value" ) );
+        $( "#salary_span")[0].innerHTML = ( $( "#salary_slider" ).slider( "value" ) + " €")
+
+         $( "#living_costs_slider" ).slider({
+            min: 1,
+            max: <%= @living_costs_max %>,
+            value: <%= raw @living_costs %>,
+            slide: function( event, ui ) {
+                $( "#living_costs" ).val( ui.value );
+                $( "#living_costs_span" )[0].innerHTML = ( ui.value+" €" );
+            }
+        });
+
+        $( "#living_costs" ).val( $( "#living_costs_slider" ).slider( "value" ) );
+        $( "#living_costs_span")[0].innerHTML = ( $( "#living_costs_slider" ).slider( "value" ) + " €")
+
+
+         $( "#rating_slider" ).slider({
+            min: 1,
+            max: 5,
+            value: 1,
+            slide: function( event, ui ) {
+                $( "#rating" ).val( ui.value );
+                $( "#rating_span" )[0].innerHTML = ( ui.value );
+            }
+        });
+
+        $( "#rating" ).val( $( "#rating_slider" ).slider( "value" ) );
+        $( "#rating_span")[0].innerHTML = ( $( "#rating_slider" ).slider( "value" ) )
+
+        <% if @country_choices %>
+
+        var country_choices = <%= raw @country_choices %>
+
+        for (var i=0; i < country_choices.length; i++) {
+          var ary = [];
+          if ($("#country").val()!=null)
+          ary = $("#country").val();
+          ary.push(country_choices[i]);
+          $("#country").val(ary);
+        }
+        $("#country").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @semester_choices %>
+
+        var semester_choices = <%= raw @semester_choices %>
+
+        for (var i=0; i < semester_choices.length; i++) {
+          var ary = [];
+          if ($("#semester").val()!=null)
+          ary = $("#semester").val();
+          ary.push(semester_choices[i]);
+          $("#semester").val(ary);
+        }
+        $("#semester").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @orientation_choices %>
+
+        var orientation_choices = <%= raw @orientation_choices %>
+
+        for (var i=0; i < orientation_choices.length; i++) {
+          var ary = [];
+          if ($("#orientation").val()!=null)
+          ary = $("#orientation").val();
+          ary.push(orientation_choices[i]);
+          $("#orientation").val(ary);
+        }
+        $("#orientation").trigger("liszt:updated");
+
+        <% end %>
+
+        <% if @language_choices %>
+
+        var language_choices = <%= raw @language_choices %>
+
+        for (var i=0; i < language_choices.length; i++) {
+          var ary = [];
+          if ($("#programming_language_ids").val()!=null)
+          ary = $("#programming_language_ids").val();
+          ary.push(language_choices[i]);
+          $("#programming_language_ids").val(ary);
+        }
+        $("#programming_language_ids").trigger("liszt:updated");
+
+        <% end %>
+
+        
+
+   </script> 
+
+<h5> <%=@internships_size%> results found! </h5>
+
+<table id="paginated" class="table tablesorter">
+  <thead>
   <tr class="table_intern">
     <div id="table_top"></div>
     <th class="company"><%= t "internships.attributes.company" %></th>
-    <th class="orientation"><%= t "internships.attributes.orientation" %></th>
+    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %></th>
     <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
-    <th class="salary"><%= t "internships.attributes.salary" %></th>
-    <th class="working_hours"><%= t "internships.attributes.working_hours" %></th>
-    <th class="living_costs"><%= t "internships.attributes.living_costs" %></th>
+    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %></th>
+    <th data-sort="float" class="working_hours"><%= t "internships.attributes.working_hours" %></th>
+    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %></th>
     <th class="rating"><%= t "internships.attributes.rating" %></th>
     <th class="user"><%= t "internships.attributes.user" %></th>
     <th class="recommend"><%= t "internships.attributes.recommend" %></th>
@@ -15,7 +167,9 @@
     <th class="top_inside"></th>
     <th class="top_inside"></th>
   </tr>
+  </thead>
 
+  <tbody>
 <% @internships.each do |internship| %>
   <tr>
     <td class="table_inside"><%= internship.company.name %></td>
@@ -32,9 +186,69 @@
     <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove button_intern", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
-<br />
-<% if @current_user.internship_authorization %>
-<div id="triangle_right"></div><%= link_to (t  "buttons.newinternship"), new_internship_path, class: "new_internship2" %><div id="triangle_left"></div>
+<% if @internships_size > 5 %>
+<!---  <div class='pager'>
+    <a href='' alt='First' class='firstPage'>First</a>
+    <a href='' alt='Previous' class='prevPage'>Prev</a>
+        
+    <span class='currentPage'></span> of <span class='totalPages'></span>
+    <a href='' alt='Next' class='nextPage'>Next</a>
+    <a href='' alt='Last' class='lastPage'>Last</a>
+  </div>---->
 <% end %>
+
+<script>
+$("#paginated").stupidtable();
+/*<% if @internships_size > 5 %>
+        $('table#paginated').each(function() {
+          var currentPage = 1;
+          var numPerPage = 5;
+          var $table = $(this);
+          var numRows = $table.find('tbody tr').length;
+          var numPages = Math.ceil(numRows / numPerPage);
+          $table.bind('repaginate', function() {
+              $(".currentPage").html(currentPage);
+              $(".totalPages").html(numPages);
+              $table.find('tbody tr').css("display","none").slice((currentPage-1) * numPerPage, (currentPage) * numPerPage).css("display","table-row");
+              if (currentPage == 1) {
+                $(".firstPage").hide();
+              }
+              else 
+                $(".firstPage").show();
+              if (currentPage == numPages) {
+                $(".lastPage").hide();
+              }
+              else 
+                $(".lastPage").show();
+          });
+          $table.trigger('repaginate');
+          
+
+          $(".firstPage").click(function() {
+            currentPage = 1;
+            $table.trigger('repaginate');
+          }); 
+
+          $(".lastPage").click(function() {
+            currentPage = numPages;
+            $table.trigger('repaginate');
+          }); 
+
+          $(".prevPage").click(function() {
+            if (currentPage-1>0)
+              currentPage -= 1;
+            $table.trigger('repaginate');
+          });
+
+          $(".nextPage").click(function() {
+            if (currentPage<numPages)
+              currentPage += 1;
+            $table.trigger('repaginate');
+          });
+
+      });
+      <% end %>*/
+</script>

@@ -55,13 +55,13 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.13.1'
+  gem 'rspec-rails', '~> 2.13.0'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
   gem 'capybara', '~> 2.1.0'
-
+  gem 'rack-mini-profiler'
 end
 
 group :production do
@@ -77,10 +77,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'

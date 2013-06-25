@@ -11,14 +11,58 @@ class InternshipsController < ApplicationController
     orientations = params[:orientation].collect{|s| s.to_i} if params[:orientation].present?
     semesters = params[:semester].collect{|s| s.to_i} if params[:semester].present?
 
+    if params[:programming_language_ids].present?
+        internships_ary = []
+        languages = params[:programming_language_ids].collect{|s| s.to_i} if params[:programming_language_ids].present?
+        programming_languages = ProgrammingLanguage.find(languages)
+        programming_languages.each do |x|
+          if internships_ary.empty?
+            internships_ary = x.internships.collect do |s| s.id end
+          else
+            internships_ary = internships_ary & x.internships.collect do |s| s.id end
+          end
+        end
+        @internships = @internships.where(:id => internships_ary)
+      end
+
     @internships = @internships.where(:companies => {:country => params[:country]}) if params[:country].present?
     @internships = @internships.where(:orientation_id => orientations) if orientations.present?
     @internships = @internships.where(:semester_id => semesters) if semesters.present?
 
-    @internships = @internships.where('working_hours <= ?',params[:working_hours])
+    @country_choices = params[:country] if params[:country].present?
+    @semester_choices = params[:semester] if params[:semester].present?
+    @orientation_choices = params[:orientation] if params[:orientation].present?
+    @language_choices = params[:programming_language_ids] if params[:programming_language_ids].present?
+
+    #@internships = @internships.where('working_hours <= ?',params[:working_hours])
     @internships = @internships.where('living_costs <= ?',params[:living_costs])
     #@internships = @internships.where('rating >= ?',params[:rating])
     @internships = @internships.where('salary >= ?',params[:salary])
+
+    @salary = params[:salary]
+    @living_costs = params[:living_costs]
+
+    @internshipsAll = Internship.all
+
+    @companies = @internshipsAll.collect do |x| x.company end
+
+    @countries = @companies.collect do |x| x.country end.uniq
+
+    @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq).map do |p|
+        [p.name, p.id]
+      end
+
+    @semesters = Semester.where(:id =>(@internshipsAll.collect do |x| x.semester_id end.uniq)).map do |s| [s.semester, s.id] end
+
+    @orientations = (Orientation.where(:id => @internshipsAll.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
+
+    @living_costs_max = @internshipsAll.collect do |x| x.living_costs end.max
+
+    @salary_max = @internshipsAll.collect do |x| x.salary end.max
+
+    @internships_size = @internships.size
+
+    @internships = @internships.page params[:page]
 
     respond_with(@internships)
   end
