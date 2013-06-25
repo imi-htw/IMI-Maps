@@ -217,6 +217,7 @@ footer{
   text-align: center;
   margin-top: 70px;
   bottom: 0;
+  margin-bottom: -20px;
 }
 
 
@@ -371,6 +372,10 @@ p{
 
 .row{
   margin-left: -40px;
+}
+
+.chzn-container{
+  width: 205px !important;
 }
 
 }
