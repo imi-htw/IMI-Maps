@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'factory_girl'
 
-Capybara.current_driver = :selenium_chrome
+
 FactoryGirl.define do
   factory :user do
     first_name "bla"
@@ -20,7 +20,7 @@ end
 
 
 describe "Testing LogIn1" do
-      it "login only with valid password", :js => true do
+      it "login only with valid password" do
       	user4 =  FactoryGirl.build(:user)                                   
       	visit root_path
       	fill_in "email",  :with => user4.email
@@ -38,7 +38,7 @@ describe "Testing LogIn1" do
        expect {user7 = User.create!(last_name: "Bell", first_name: "Lisa", password: "tes", email: "test@imimaps.com")}.to raise_error 
       end
    end 
-Capybara.use_default_driver
+
 =begin
 describe "Testing Login2" do
       it "should allow user to login", :js => true do       

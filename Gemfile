@@ -64,6 +64,7 @@ group :development, :test do
   gem 'capybara', '~> 2.1.0'
   gem 'rack-mini-profiler'
   gem 'launchy'
+
 end
 
 group :production do
