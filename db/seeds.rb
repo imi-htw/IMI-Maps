@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# encoding: UTF-8
 ProgrammingLanguage.where(name: "Java").first_or_create
 ProgrammingLanguage.where(name: "C++").first_or_create
 ProgrammingLanguage.where(name: "C").first_or_create
@@ -67,6 +61,8 @@ Orientation.where(name: "Marketing", id:5).first_or_create
 Orientation.where(name: "Design", id:6).first_or_create
 Orientation.where(name: "Product Management", id:7).first_or_create
 
+
+
 User.destroy_all
 User.create!(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
 user1 = User.first
@@ -74,6 +70,32 @@ User.create!(last_name: "Bla", first_name: "Blubb", password: "test", email: "te
 user2 = User.last
 User.create!(last_name: "Lisa", first_name: "Pisa", password: "test", email: "test@imimaps.com")
 user3 = User.first
+
+PaymentState.where(name: "uncharted", name_de: "unbekannt").first_or_create
+PaymentState.where(name: "cash benefit", name_de: "bezahlt").first_or_create
+PaymentState.where(name: "noncash benefit", name_de: "geldlos vergütet").first_or_create
+PaymentState.where(name: "no payment", name_de: "keine Bezahlung").first_or_create
+
+RegistrationState.where(name: "not in examination office", name_de: "nicht beim Prüfungsamt").first_or_create
+RegistrationState.where(name: "in examination office", name_de: "beim Prüfungsamt").first_or_create
+
+ContractState.where(name: "missing", name_de: "nicht vorhanden").first_or_create
+ContractState.where(name: "copy in the office", name_de: "Kopie vorhanden").first_or_create
+ContractState.where(name: "original in examination office", name_de: "Original beim Prüfungsamt").first_or_create
+
+ReportState.where(name: "missing", name_de: "nicht vorhanden").first_or_create
+ReportState.where(name: "in the office", name_de: "vorhanden").first_or_create
+ReportState.where(name: "read", name_de: "gelesen").first_or_create
+
+CertificateState.where(name: "missing", name_de: "nicht vorhanden").first_or_create
+CertificateState.where(name: "in the office", name_de: "vorhanden").first_or_create
+CertificateState.where(name: "signed by professor in charge", name_de: "von zuständigem Professor unterschrieben").first_or_create
+CertificateState.where(name: "signed by internship officer", name_de: "vom Praktikumsbeauftragten unterschrieben").first_or_create
+CertificateState.where(name: "in examination office", name_de: "beim Prüfungsamt").first_or_create
+
+InternshipState.where(name: "passed", name_de: "bestanden").first_or_create
+InternshipState.where(name: "internship was abandoned because of the following reasons", name_de: "abgelehnt aus folgenden Gründen").first_or_create
+InternshipState.where(name: "the student still has to pass the following courses", name_de: "Student hat die folgenden Kurse zu absolvieren").first_or_create
 
 Semester.where(semester: "SS 13", id:1).first_or_create
 Semester.where(semester: "WS 12/13", id:2).first_or_create
