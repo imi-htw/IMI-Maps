@@ -24,6 +24,8 @@ gem 'kaminari'
 gem "d3-rails"
 gem "net-ldap"
 
+gem 'griddler'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
