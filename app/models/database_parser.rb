@@ -96,27 +96,15 @@ class DatabaseParser
   end
 
   def run
-    companies = 0
-    internships = 0
-    students = 0
-    other = 0
-    states= []
     parse_file.each do |entry|
       if entry.keys.include?("matrikelNo")
-        students += 1
         #create_student entry
       elsif entry.keys.include?("country")
-        companies += 1
         #create_company entry
       elsif entry.keys.include?("semester")
-        internships += 1
-        #create_internship entry
-        states << entry["certificate"]
-      else 
-        other += 1
+        create_internship entry
       end
     end
-    puts "I: #{internships} S: #{students} C: #{companies} O: #{other}"
   end
 
   def create_student db_entry
@@ -130,18 +118,24 @@ class DatabaseParser
 
   def create_company db_entry
     Company.where(name: db_entry["name"], street: db_entry["street"], city: db_entry['city'],
-        country: COUNTRIES[db_entry['country']], zip: db_entry['zip'], phone: db_entry['phone'], import_id: db_entry["id"]).first_or_create
+        country: COUNTRIES[db_entry['country']], zip: db_entry['zip'], phone: db_entry['phone'], blacklisted: db_entry["blackListed"], import_id: db_entry["id"]).first_or_create!
   end
 
   def create_internship db_entry
-    semester = Semester.where(semester: db_entry['semester']).first_or_create
+    semester = Semester.where(semester: db_entry['semester']).first_or_create! if db_entry["semester"]
     company = Company.where(import_id: db_entry["company_id"]).first
-    internship = Internship.where(company_id: company.id, student_id: db_entry["student_id"]).first_or_create
+    student = Student.where(enrolment_number: db_entry["student_id"]).first
+
+    internship = Internship.where(company_id: company.id, student_id: student.id, semester_id: (semester.id if semester)).first_or_create! if student
     
-    InternshipAdministration.where(internship_id: internship.id, supervisor_name: db_entry["supervisorName"], supervisor_email: db_entry["supervisorEmail"],
-      registration: db_entry["registration"], contract: db_entry["contract"], report: db_entry["report"], certificate: db_entry["certificate"],
-      state: db_entry["state"], state_comment: db_entry["stateComment"], report_reading_prof: db_entry["reportReadingProf"], certificate_to_prof: db_entry["certificateToProf"],
-      certificate_signed_by_prof: db_entry["certificateSignedByProf"], certificate_signed_by_internship_officer: db_entry["certificateSignedByInternshipOfficer"])
+    InternshipRecord.where(internship_id: internship.id, supervisor_name: db_entry["supervisorName"], supervisor_email: db_entry["supervisorEmail"],
+      registration_state_id: prepare_state(db_entry["registration"]), contract_state_id: prepare_state(db_entry["contract"]), report_state_id: prepare_state(db_entry["report"]), certificate_state_id: prepare_state(db_entry["certificate"]),
+      internship_state_id: prepare_state(db_entry["state"]), comment: db_entry["stateComment"], report_reading_prof: db_entry["reportReadingProf"], certificate_to_prof: db_entry["certificateToProf"],
+      certificate_signed_by_prof: db_entry["certificateSignedByProf"], certificate_signed_by_internship_officer: db_entry["certificateSignedByInternshipOfficer"]).first_or_create! if internship
+  end
+
+  def prepare_state(state)
+    state = state + 1 if state
   end
 
 
