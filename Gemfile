@@ -52,6 +52,7 @@ end
 group :test do
   gem 'factory_girl', '~> 4.2.0'
   gem "shoulda-matchers"
+  gem "selenium-webdriver"
 end
 
 group :development, :test do
@@ -62,6 +63,7 @@ group :development, :test do
   gem 'pry'
   gem 'capybara', '~> 2.1.0'
   gem 'rack-mini-profiler'
+  gem 'launchy'
 end
 
 group :production do
