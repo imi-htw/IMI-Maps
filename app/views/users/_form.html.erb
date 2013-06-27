@@ -13,54 +13,54 @@
 
 <div class="form-block">
 <div style="float: left;">
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px; margin-top:20px;">
     <%= f.label t "users.attributes.first_name"  %><br />
     <%= f.text_field :first_name %>
   </div>
 
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.last_name"  %><br />
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.email" %><br />
     <%= f.text_field :email, class: "textlabel" %>
   </div>
 
-    <div class="field">
+    <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.publicmail"  %>
     <%= f.check_box :publicmail %>
   </div>  
 
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.password" %><br />
     <%= f.password_field :password %>
   </div>
 
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.password_confirmation" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
 </div>
-<div style="float: right">
+<div style="float: right" style="line-height:1px;">
 
-  <div class="field" >
+  <div class="field" style="line-height:1px; margin-bottom:15px; margin-top:20px;" >
     <%= image_tag("placeholder_profilpk.jpg") %>
     <%= f.label t "users.attributes.picture"  %><br />
     <%= f.file_field :picture %>
   </div>
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.major"  %><br />
     <%= f.text_field :major %>
   </div>
 
-  <div class="field">
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.role"  %><br />
     <%= f.text_field :role %>
   </div>
 
-    <div class="field">
+    <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.mailnotif"  %>
     <%= f.check_box :mailnotif %>
   </div> 

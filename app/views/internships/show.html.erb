@@ -11,66 +11,57 @@
                   <div class="span9">
                       <div class="container-left">
                         <div class="container-left-text">
-                              <p>
-                                <b><%= t "internships.attributes.title" %> :</b>
-                                <%= @internship.title %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.orientation" %> :</b>
-                                <%= @internship.orientation.try(:name) %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.programming_languages" %> :</b>
-                                <%= @internship.programming_languages.map(&:name) %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.salary" %> :</b>
-                                <%= @internship.salary %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.working_hours" %> :</b>
-                                <%= @internship.working_hours %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.living_costs" %> :</b>
-                                <%= @internship.living_costs %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internship.attributes.rating" %></b>
-                              </p>
-                              <br/>
-                              <p>
-                                <b><%= t "internships.attributes.user" %> :</b>
-                                <%= @internship.try(:user).try(:name) %>
-                              </p>
-                              <br/>
-                              <p>
-                                <b><%= t "internships.attributes.recommend" %> :</b>
-                                <%= @internship.recommend %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.semester" %> :</b>
-                                <%= @internship.semester.semester %>
-                              </p>
-
-                              <p>
-                                <b><%= t "internships.attributes.description" %> :</b>
-                                <%= @internship.description %>
-                              </p>
-
-                              <% if @internship.email_public %>
-                              <p>
-                                <b><%= t "users.attributes.email" %> :</b>
-                                <%= @internship.user.email %>
-                              </p>
-                              <% end %>
+<table class="table-intern">
+<tr>
+<td class="t-left"> <b><%= t "internships.attributes.title" %></b></td>
+<td><%= @internship.title %></td>
+</tr>
+<tr>
+<td class="t-left"> <b><%= t "internships.attributes.orientation" %></b></td>
+<td><%= @internship.orientation.try(:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.programming_languages" %></b></td>
+<td><%= @internship.programming_languages.map(&:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.salary" %></b></td>
+<td><%= @internship.salary %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.working_hours" %></b></td>
+<td><%= @internship.working_hours %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.living_costs" %></b></td>
+<td><%= @internship.living_costs %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internship.attributes.rating" %></b></td>
+<td></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.user" %></b></td>
+<td><%= @internship.try(:user).try(:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "users.attributes.email" %></b></td>
+<td>
+  <% if @internship.email_public %><%= @internship.user.email %><% end %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.semester" %></b></td>
+<td><%= @internship.semester.semester %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.recommend" %></b></td>
+<td><%= @internship.recommend %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.description" %></b></td>
+<td><%= @internship.description %></td>
+</tr>
+</table>
 
                               <div id="favorite">
                               <% if @favorite %>
