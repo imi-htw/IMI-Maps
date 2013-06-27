@@ -31,7 +31,10 @@ en:
     general: "Intern Info"
     favorite: "Favorite"
     tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
+ 
   search:
+    explanation:
+      html: "The diagrams give you an overview of the most common criteria for internships. </br> Simply click the bars to add the criteria to your search"
     criteria: "Select your search criteria:"
     title: "Search"
   buttons:

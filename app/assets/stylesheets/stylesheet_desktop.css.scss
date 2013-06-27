@@ -342,6 +342,14 @@ p{
     margin-top: -189px;
     margin-left: -43px;
 }
+
+.hand-pointer{
+    background: url(handh.png);
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 43px;
+    float: right;
+}
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -377,5 +385,6 @@ p{
 .chzn-container{
   width: 205px !important;
 }
+
 
 }

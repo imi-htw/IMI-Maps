@@ -84,8 +84,9 @@ de:
     orientation: "Wähle eine Orientierung"
     semester: "Wähle ein Semester"
     language: "Wähle eine Programmiersprache"
-
   search:
+    explanation:
+      html: "Die Diagramme zeigen dir die häufigsten Kriterien von unseren Praktika. </br>Klick auf eine der Säulen um sie für deine Suche auszuwählen"
     criteria: "Wähle deine Suchkriterien:"
     title: "Suche"
   buttons:
