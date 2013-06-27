@@ -22,17 +22,17 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
 <div class="map-shadow"></div>
-<table>
+<table class="table_block">
 <tr>
   <p><%=t"search.criteria"%></p>
 </tr>
-  <tr>
-    <td id="country_td"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country")} %></td>
-    <td id="semester_td"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester")}  %></td>
-    <td id="orientation_td"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
-    <td id="languages_td"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
-    <td><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
-   <td><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
+  <tr class="table_block">
+    <td id="country_td" class="table_block"><%= select_tag :country, options_for_select((@companies.collect do |x| x.country end).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country")} %></td>
+    <td id="semester_td" class="table_block"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.semester,s.id] end),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester")}  %></td>
+    <td id="orientation_td" class="table_block"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
+    <td id="languages_td" class="table_block"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
+    <td class="table_block"><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
+   <td class="table_block"><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
   </tr>
 </table>
 
