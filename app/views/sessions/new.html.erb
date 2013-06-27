@@ -1,16 +1,15 @@
-<div class="container">
-<div class="display_none"><%= gmaps4rails(@pins) %> </div>
-<%= yield :scripts %>
-</div>
+
 
 <div class="row">
+	              <img src="assets/plane.gif" id="logo_p">
+
+              <img src="assets/logos.png" id="logo_w">
 	<div class="span12">
 	<%= form_tag sessions_path do %>
 		<div id="login-box" class="field">
 	    	<div id="login-element">
-	    		<h3><p>Please Sign In</p></h3>
 	    	</div>
-			<div class="row">
+			<div class="row" style="margin-top:50px;">
 			    	<div class="span6 login_center">
 			     		<p id="font_session">E-mail: 
 			     	<!--</div> 
@@ -23,9 +22,12 @@
 			     	<!--</div>
 				     		<div class="span4">-->
 				     		<%= password_field_tag :password %>
-				   	 		<%= submit_tag "Log In", class: "btn btn-success" %> </p>
+				   	 		<%= image_submit_tag("signin.png", :class => 'signin-icon') %> </p>
 					</div>
 		   	</div>
+
+
+image_submit_tag
 
 	<!--	<h3><p>Or Sign Up</p></h3>
 
@@ -47,8 +49,12 @@
 
 		   	</div>
 		</div> -->
+		<div class="sign_up"><font color="#fff">No Account? </font>
 
-		<div class="sign_up"><font color="#fff">Or </font><%= link_to "Sign Up", new_user_verification_path %></div>
+		<%= link_to new_user_verification_path do %>Sign up here 
+  <i class="icon-edit" style="color:#87bb3e"></i> 
+<% end %>
+</div>
 
 		</div>
 

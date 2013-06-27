@@ -23,7 +23,7 @@ html, body{
 }
 
 a{
-  color: green;
+  color: #8bb900;
 }
 
 .brand{
@@ -270,13 +270,14 @@ footer .container p{
 
 
 #login-box{
-  background-color: #000;
+  background-color: #000000;
   height: 180px;
   padding-top:40px;
   position: inherit;
   width: 100%;
-  margin-top:20px;
+  margin-top:6%;
   z-index: 3;
+  opacity: 0.85;
 }
 
 .span12{

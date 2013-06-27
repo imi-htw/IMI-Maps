@@ -96,6 +96,11 @@ h3 p{
     z-index: 3; 
 }
 
+.signin-icon{
+    height: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
 
 
 #email{
@@ -114,21 +119,23 @@ h3 p{
 #logo_w {
     
     float: none;
-    height: 240px;
-    left: 42%;
+    height: 160px;
+    left: 45%;
     position: absolute;
-    width: 239px;
+    width: 160px;
     z-index: 4;
+    margin-top:17px;
 }
 
 #logo_p {
 
     float: none;
-    height: 239px;
-    left: 42%;
+    height: 160px;
+    left: 45%;
     position: absolute;
-    width: 240px;
+    width: 160px;
     z-index: 5;
+    margin-top:17px;
 }
 
 @media (max-width: 480px) {
@@ -214,6 +221,7 @@ h3 p{
   margin: 20px auto;
   float: none;
   width: 70px;
+  height: 50px;
   font-style: italic;
 }
 }
@@ -245,7 +253,7 @@ h3 p{
 
 #login-box{
   background: none;
-  height: 180px;
+  height: 160px;
   padding-top:10px;
   position: absolute;
   width: 100%;
