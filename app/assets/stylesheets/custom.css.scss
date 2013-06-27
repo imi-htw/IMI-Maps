@@ -101,3 +101,44 @@ background-color: #90b800;
 .pagination.imi-right {
     text-align: right;
 }
+
+.pager {
+    list-style: none outside none;
+    margin: 20px 0;
+    text-align: center;
+}
+.pager:before, .pager:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.pager:after {
+    clear: both;
+}
+.pager li {
+    display: inline;
+}
+.pager a {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #DDDDDD;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 0px;
+}
+.pager a:hover {
+    background-color: #80ba00;
+    color: #333333;
+    text-decoration: none;
+}
+.pager .next a {
+    float: right;
+}
+.pager .previous a {
+    float: left;
+}
+.pager .disabled a, .pager .disabled a:hover {
+    background-color: #FFFFFF;
+    color: #999999;
+    cursor: default;
+}
