@@ -118,7 +118,7 @@ background-color: #90b800;
 .pager li {
     display: inline;
 }
-.pager a {
+.pager button {
     background-color: #333333;
     color: #ffffff;
     border: 1px solid #DDDDDD;
@@ -126,18 +126,18 @@ background-color: #90b800;
     padding: 2px 10px;
     border-radius: 0px;
 }
-.pager a:hover {
+.pager button:hover {
     background-color: #80ba00;
     color: #333333;
     text-decoration: none;
 }
-.pager .next a {
+.pager .next button {
     float: right;
 }
-.pager .previous a {
+.pager .previous button {
     float: left;
 }
-.pager .disabled a, .pager .disabled a:hover {
+.pager .disabled button, .pager .disabled button:hover {
     background-color: #FFFFFF;
     color: #999999;
     cursor: default;
