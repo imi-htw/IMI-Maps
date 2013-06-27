@@ -40,6 +40,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    addressable (2.3.4)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
@@ -70,6 +71,8 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     chosen-rails (0.9.14)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -105,6 +108,8 @@ GEM
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     fastercsv (1.5.5)
+    ffi (1.9.0)
+    ffi (1.9.0-x86-mingw32)
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
@@ -112,9 +117,13 @@ GEM
       actionpack (>= 3.0)
     geocoder (1.1.8)
     gmaps4rails (1.5.6)
+    griddler (0.5.0)
+      htmlentities
+      rails (>= 3.2.0)
     has_scope (0.5.1)
     highline (1.6.19)
     hike (1.2.2)
+    htmlentities (4.3.1)
     i18n (0.6.1)
     inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
@@ -131,6 +140,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.8.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -141,7 +152,7 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.3)
+    multi_json (1.7.7)
     nested_form (0.3.2)
     net-ldap (0.3.1)
     net-scp (1.1.1)
@@ -198,7 +209,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     raindrops (0.11.0)
-    rake (10.0.4)
+    rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
     responders (0.9.3)
@@ -215,11 +226,17 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    rubyzip (0.9.9)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.33.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
     shoulda-matchers (2.2.0)
       activesupport (>= 3.0.0)
     slop (3.4.5)
@@ -243,12 +260,13 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unicorn (4.6.2)
+    unicorn (4.6.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
     warden (1.2.1)
       rack (>= 1.0)
+    websocket (1.0.7)
     win32console (1.3.2-x86-mingw32)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -274,9 +292,11 @@ DEPENDENCIES
   font-awesome-sass-rails
   geocoder
   gmaps4rails
+  griddler
   jquery-rails (= 2.2.1)
   jquery-ui-rails
   kaminari
+  launchy
   nested_form
   net-ldap
   paperclip (~> 2.7)
@@ -287,6 +307,7 @@ DEPENDENCIES
   rmagick (~> 2.13.1)
   rspec-rails (~> 2.13.0)
   sass-rails (~> 3.2.3)
+  selenium-webdriver
   shoulda-matchers
   sqlite3
   thin

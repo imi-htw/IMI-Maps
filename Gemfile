@@ -24,6 +24,8 @@ gem 'kaminari'
 gem "d3-rails"
 gem "net-ldap"
 
+gem 'griddler'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -52,6 +54,7 @@ end
 group :test do
   gem 'factory_girl', '~> 4.2.0'
   gem "shoulda-matchers"
+  gem "selenium-webdriver"
 end
 
 group :development, :test do
@@ -62,6 +65,8 @@ group :development, :test do
   gem 'pry'
   gem 'capybara', '~> 2.1.0'
   gem 'rack-mini-profiler'
+  gem 'launchy'
+
 end
 
 group :production do

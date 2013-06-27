@@ -2,21 +2,18 @@ class SessionsController < ApplicationController
   layout 'sessions'
 
   def new
-    @companies = []
+    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
 
-    @internships = Internship.all
-
-    @internships.each do |i|
-      @companies << i.company
-    end
+    @companies = @internships.collect do |i| i.company end
 
     @pins = @companies.to_gmaps4rails do |company, marker |
 
       n=0
       s=""
       p=""
-      @internships = Internship.where("company_id = ?",company.id)
-      @internships.each do |internship|
+
+      @internships_comp = @internships.select {|x| x.company_id == company.id}
+      @internships_comp.each do |internship|
       
        if n==0
         s+=(internship.user.first_name[0..0].capitalize+".")

@@ -2,22 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media (min-width: 480px) and (max-width: 979px) { 
+@media (min-width: 481px) and (max-width: 979px) { 
 
 body{
   font-family: 'Merriweather Sans', sans-serif;
 }
 
+/*.navbar{
+  margin-left: -20px;
+  margin-right: 20px;
+}*/
+
+.navbar-inner {
+  border-radius: 0px 0px 0px 0px !important;
+}
+
 .map-shadow{
-  display: none;
+    height: 210px;
+    margin-top: 0px;
+    opacity: 0.9;
+    position: inherit;
+    width: 780px;
+    background: url(content-shadow.png) no-repeat;
+    background-size: 780px 210px;
+    margin-top: -189px;
+    margin-left: -27px;
 }
 
 .display_none{
-  display: none;
+  display: none !important;
 }
 
 footer{
-  display: none;
+  background: #333333;
+  padding: 17px 0 18px 0;
+  text-align: center;
+  margin-top: 70px;
+  bottom: 0;
+  margin-bottom: -20px;
+}
+
+
+footer .container p{
+  color: #a3a3a3 !important;
 }
 
 .pagination.imi a, .pagination.imi span {
@@ -27,53 +54,18 @@ footer{
 .span12-2{
   float: none !important;
 }
+
+.chzn-container{
+  width: 150px !important;
 }
 
-@media only screen and (max-width: 800px) {
-/* Force table to not be like tables anymore */
-#no-more-tables table,
-#no-more-tables thead,
-#no-more-tables tbody,
-#no-more-tables th,
-#no-more-tables td,
-#no-more-tables tr {
-display: block;
+.table-container
+{
+  width: 100%;
+  overflow-y: auto;
+  _overflow: auto;
+  margin: 0 0 1em;
 }
- 
-/* Hide table headers (but not display: none;, for accessibility) */
-#no-more-tables thead tr {
-position: absolute;
-top: -9999px;
-left: -9999px;
+
 }
- 
-#no-more-tables tr { border: 1px solid #ccc; }
- 
-#no-more-tables td {
-/* Behave like a "row" */
-border: none;
-border-bottom: 1px solid #eee;
-position: relative;
-padding-left: 50%;
-white-space: normal;
-text-align:left;
-}
- 
-#no-more-tables td:before {
-/* Now like a table header */
-position: absolute;
-/* Top/left values mimic padding */
-top: 6px;
-left: 6px;
-width: 45%;
-padding-right: 10px;
-white-space: nowrap;
-text-align:left;
-font-weight: bold;
-}
- 
-/*
-Label the data
-*/
-#no-more-tables td:before { content: attr(data-title); }
-}
+

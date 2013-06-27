@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   #validates :major, :presence => true
   #validates :role, :presence => true
   #validates :picture, :presence => true
-  validates :password, :presence => true
+    validates :password, :presence => true,
+                       :length => { :minimum => 5}
   #validates :password_confirmation, :presence => true
   validates :internship_authorization, :presence => true
 

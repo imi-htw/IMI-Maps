@@ -21,7 +21,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <br/> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
-<div class="map-shadow display_none"></div>
+<div class="map-shadow"></div>
 <table>
 <tr>
   <p><%=t"search.criteria"%></p>
@@ -38,12 +38,13 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <% end %>
 <div class="row">
-<div class="span4" id="country_chart"></div>
-<div class="span4" id="orientation_chart"></div>
-<div class="span4" id="language_chart"></div>
+<div class="span4 display_nonet display_none" id="country_chart"></div>
+<div class="span4 display_nonet display_none" id="orientation_chart"></div>
+<div class="span4 display_nonet display_none" id="language_chart"></div>
 </div>
 
 <div id="results_string" style="display:none"> </div>
+<div class="table-container">
 <table id="paginated" class="table" style="margin-top:30px;">
   <thead>
     <tr class="search-table">
@@ -76,7 +77,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <% end %>
 </tbody>
 </table>
-
+</div>
 <div class='pager'>
         <a href='' alt='First' class='firstPage'>First</a>
         <a href='' alt='Previous' class='prevPage'>Prev</a>
