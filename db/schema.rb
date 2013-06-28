@@ -66,6 +66,13 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
 
+  create_table "certificate_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.integer  "number_employees"
@@ -92,6 +99,13 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
     t.string   "email"
     t.string   "phone"
     t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contract_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -139,6 +153,25 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
     t.datetime "updated_at",                    :null => false
   end
 
+  create_table "internship_records", :force => true do |t|
+    t.string   "supervisor_name"
+    t.string   "supervisor_email"
+    t.string   "comment"
+    t.string   "report_reading_prof"
+    t.date     "certificate_to_prof"
+    t.date     "certificate_signed_by_prof"
+    t.date     "certificate_signed_by_internship_officer"
+    t.integer  "internship_state_id"
+    t.integer  "internship_id"
+    t.integer  "payment_state_id"
+    t.integer  "registration_state_id"
+    t.integer  "contract_state_id"
+    t.integer  "report_state_id"
+    t.integer  "certificate_state_id"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
+
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -149,6 +182,13 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
     t.integer  "rating"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "internship_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "internships", :force => true do |t|
@@ -206,6 +246,13 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "payment_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.text     "body"
     t.string   "email"
@@ -220,6 +267,20 @@ ActiveRecord::Schema.define(:version => 20130626224425) do
   end
 
   create_table "quicksearches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "registration_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "report_states", :force => true do |t|
+    t.string   "name"
+    t.string   "name_de"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
