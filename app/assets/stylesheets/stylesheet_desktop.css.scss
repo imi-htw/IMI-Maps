@@ -218,10 +218,10 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
-  text-transform: uppercase;
+  font-variant: small-caps;
   color: #000 !important;
   line-height: 40px;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 h3{
@@ -248,7 +248,7 @@ p {
 
 footer{
   background: #292929;
-  padding: 17px 0 18px 0;
+  padding: 10px 0 0 0;
   text-align: center;
   margin-top: 100px;
   bottom: 0;
@@ -257,7 +257,7 @@ footer{
 
 
 footer .container p{
-  color: #a3a3a3 !important;
+  color: #707070 !important;
 }
 
 .span9{
@@ -356,7 +356,7 @@ p{
 
 .search-table{
   background-color:#333333; 
-  color:#ffffff;
+  color:#e3e5e1;
 }
 
 .even_row {
