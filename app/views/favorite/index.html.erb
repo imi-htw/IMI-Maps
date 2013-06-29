@@ -1,16 +1,18 @@
 <h2> <%= t "users.show.favorites_title"%> </h2>
+
+<%= form_tag('/favorite_compare', remote: true, method: 'get') do %>
+
 <% @favorites.each do |favorite| %>
+
+<%= check_box_tag "favorite_ids[]", favorite.internship.id %>
+
 <%= link_to "#{favorite.internship.title} at #{favorite.internship.company.name}", favorite.internship, class: "btn btn-success" %>
-
-
-  <div class="field">
-    <%= favorite.comparebox %>
-  </div>
-
 
 <%= link_to (t "buttons.destroy"), favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </p>
 
-<%end%>
+<% end %>
 
-<%= link_to (t "buttons.compare"), favorite_compare_index_path %>
+<%= submit_tag (t "buttons.compare") %>
+
+<% end %>
