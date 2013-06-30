@@ -1,10 +1,10 @@
 # encoding: UTF-8
 
-require 'yaml'
+require 'csv'
 
 class DatabaseParser
 
-  attr_reader :file_name
+  attr_reader :student_file, :internships_file, :companies_file
 
    COUNTRIES = {  
     nil => "not specified",
@@ -87,56 +87,69 @@ class DatabaseParser
     "Tschechische Republik" => "Czech Republic" 
   }
 
-  def initialize(file_name)
-    @file_name = file_name
+  def initialize(options = {})
+    @student_file = options[:student_file]
+    @internships_file = options[:internships_file]
+    @companies_file = options[:companies_file]
   end
 
-  def parse_file
-    YAML::load(File.open(file_name))
-  end
-
-  def run
-    parse_file.each do |entry|
-      if entry.keys.include?("matrikelNo")
-        #create_student entry
-      elsif entry.keys.include?("country")
-        #create_company entry
-      elsif entry.keys.include?("semester")
-        create_internship entry
-      end
+  def import_students
+    parse_file(student_file).each do |row|
+      create_student row
     end
   end
 
-  def create_student db_entry
-    Student.where(enrolment_number: db_entry["matrikelNo"],
-     first_name: db_entry["forename"],
-     last_name: db_entry["name"],
-     email: db_entry["email"],
-     birthday: db_entry["birthday"], 
-     birthplace: db_entry["birthplace"]).first_or_create!
+  def import_internships
+    parse_file(internships_file).each do |row|
+      create_internship row
+    end
   end
 
-  def create_company db_entry
-    Company.where(name: db_entry["name"], street: db_entry["street"], city: db_entry['city'],
-        country: COUNTRIES[db_entry['country']], zip: db_entry['zip'], phone: db_entry['phone'], blacklisted: db_entry["blackListed"], import_id: db_entry["id"]).first_or_create!
+  def import_companies
+    parse_file(companies_file).each do |row|
+      create_company row
+    end
   end
 
-  def create_internship db_entry
-    semester = Semester.where(semester: db_entry['semester']).first_or_create! if db_entry["semester"]
-    company = Company.where(import_id: db_entry["company_id"]).first
-    student = Student.where(enrolment_number: db_entry["student_id"]).first
+private
 
-    internship = Internship.where(company_id: company.id, student_id: student.id, semester_id: (semester.id if semester)).first_or_create! if student
-    
-    InternshipRecord.where(internship_id: internship.id, supervisor_name: db_entry["supervisorName"], supervisor_email: db_entry["supervisorEmail"],
-      registration_state_id: prepare_state(db_entry["registration"]), contract_state_id: prepare_state(db_entry["contract"]), report_state_id: prepare_state(db_entry["report"]), certificate_state_id: prepare_state(db_entry["certificate"]),
-      internship_state_id: prepare_state(db_entry["state"]), comment: db_entry["stateComment"], report_reading_prof: db_entry["reportReadingProf"], certificate_to_prof: db_entry["certificateToProf"],
-      certificate_signed_by_prof: db_entry["certificateSignedByProf"], certificate_signed_by_internship_officer: db_entry["certificateSignedByInternshipOfficer"]).first_or_create! if internship
-  end
+    def parse_file(file_name)
+      CSV.read(File.open(file_name))
+    end
 
-  def prepare_state(state)
-    state = state + 1 if state
-  end
+    def create_student row
+      Student.where(
+       import_id: row[0],
+       enrolment_number: row[1],
+       first_name: row[3],
+       last_name: row[2],
+       email: row[6],
+       birthday: row[4], 
+       birthplace: row[5]).first_or_create!
+    end
+
+    def create_company row
+      Company.where(name: row[1], street: row[2], city: row[4],
+          country: COUNTRIES[row[5]], zip: row[3], phone: row[6], blacklisted: row[8], import_id: row[0]).first_or_create!
+    end
+
+    def create_internship row
+      semester = Semester.where(semester: row[1]).first_or_create! 
+      company = Company.where(import_id: row[19]).first
+      student = Student.where(import_id: row[20]).first
+      
+      internship = Internship.where(company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: row[4], end_date: row[5], operational_area: row[6],
+      tasks: row[7], orientation_id: row[21]).first_or_create!
+      
+      InternshipRecord.where(internship_id: internship.id, supervisor_name: row[2], supervisor_email: row[3],
+        registration_state_id: prepare_state(row[9]), contract_state_id: prepare_state(row[10]), report_state_id: prepare_state(row[11]), certificate_state_id: prepare_state(row[12]),
+        payment_state_id: row[8], internship_state_id: prepare_state(row[13]), comment: row[14], report_reading_prof: row[15], certificate_to_prof: row[16],
+        certificate_signed_by_prof: row[17], certificate_signed_by_internship_officer: row[18]).first_or_create!
+    end
+
+    def prepare_state(state)
+      state = state.to_i + 1 if state
+    end
 
 
 end
