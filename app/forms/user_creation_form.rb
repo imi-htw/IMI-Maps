@@ -3,11 +3,12 @@ class UserCreationForm
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_reader :enrolment_number, :existing_student
+  attr_reader :given_enrolment_number, :existing_student, :student
 
   def initialize(enrolment_number)
-   @enrolment_number = enrolment_number
-   @existing_student = Student.where(:enrolment_number => enrolment_number).first
+    @given_enrolment_number = enrolment_number
+    @existing_student = Student.where(:enrolment_number => enrolment_number).first
+    @student = new_or_existing
   end
 
   def persisted?
@@ -26,8 +27,12 @@ class UserCreationForm
     @user ||= User.new
   end
 
-  def student
-    @student ||= existing_student ? existing_student : Student.new(enrolment_number: enrolment_number)
+  def new_or_existing
+    if existing_student
+      existing_student
+    else
+      Student.new(enrolment_number: given_enrolment_number)
+    end
   end
 
   def submit(params)
