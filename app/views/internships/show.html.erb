@@ -3,12 +3,20 @@
 
 <h2 style="margin-bottom:40px;"> Internship Details</h2>
 
+    <div class="content-intern2">
+
+     <div class="row-fluid">   
+
+      <div class="span9">
+        <div class="container-left">
+          <div class="container-left-text">
+
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.title" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
         <%= @internship.title %>
       </div>
     </div>
@@ -16,9 +24,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.orientation" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
         <%= @internship.orientation.try(:name) %>
       </div>
     </div>
@@ -27,9 +35,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.programming_languages" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
        <%= @internship.programming_languages.map(&:name) %>
       </div>
     </div>
@@ -38,9 +46,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.salary" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
        <%= @internship.salary %>
       </div>
     </div>
@@ -49,9 +57,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.working_hours" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
        <%= @internship.working_hours %>
       </div>
     </div>
@@ -60,9 +68,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.living_costs" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
        <%= @internship.living_costs %>
       </div>
     </div>
@@ -71,9 +79,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internship.attributes.rating" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
 
       </div>
     </div>
@@ -82,9 +90,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.user" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
         <%= @internship.try(:user).try(:name) %>
       </div>
     </div>
@@ -93,9 +101,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "users.attributes.email" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
          <% if @internship.email_public %><%= @internship.user.email %><% end %>
       </div>
     </div>
@@ -104,9 +112,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.semester" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
          <%= @internship.semester.semester %>
       </div>
     </div>
@@ -115,9 +123,9 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.recommend" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
          <%= @internship.recommend %>
       </div>
     </div>
@@ -126,23 +134,12 @@
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" style="background-color:#ffffff; margin-bottom:20px; margin-left:0px">   
-    <div class="span2" id="intern-title">
+    <div class="span3" id="intern-title">
       <%= t "internships.attributes.description" %></div>
-      <div class="span9" id="intern-box">
+      <div class="span8" id="intern-box">
          <%= @internship.description %>
       </div>
     </div>
-
-
-
-    <div class="content-intern">
-
-     <div class="row-fluid">   
-
-      <div class="span9">
-        <div class="container-left">
-          <div class="container-left-text">
-
 
 
               <div id="favorite">
@@ -271,6 +268,7 @@
           </div>
 
 
+</div>
 
 
 
