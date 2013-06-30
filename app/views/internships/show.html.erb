@@ -293,14 +293,10 @@
 
 
 
+            <%= gmaps(:map_options => { :container_class => "map-intern", :id => "map3", :class => "baz", :draggable => true, :auto_zoom => false, :zoom => 6, :mapTypeControl => false,} , :markers => { "data" => @pins},) %>
+            <%= yield :scripts %>
 
-              <%= gmaps({
-               "map_options" => {"auto_zoom" => false, "zoom" => 5 },
-               "markers"     => {"data" => @pins }
-               })
-               %>
 
-               <%= yield :scripts %>
 
                <div class="container-right-text">
                 <p>

@@ -42,3 +42,16 @@
   height: 1200px;
   z-index: 3;
 }
+
+.map-intern {
+  position: relative;
+  width: 255px;
+  z-index: 3;
+  margin-top: -5px;
+}
+
+#map3 {
+  width:  255px;
+  height: 160px;
+  z-index: 3;
+}

@@ -33,6 +33,27 @@ a{
   color: #8bb900;
 }
 
+h1, h2{
+  font-weight: 100;
+  margin: 1em 0px 0.5em;
+  font-variant: small-caps;
+  color: #000 !important;
+  line-height: 40px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  text-rendering: auto;
+}
+
+h3{
+  font-size: 15px;
+  font-weight: 100;
+  text-rendering: auto;
+}
+
+p {
+  font-weight: 100;
+  color: #000000;
+}
+
 .brand{
   background: url(logo4.png) no-repeat;
   background-size: 100%;
@@ -63,7 +84,7 @@ border-color: #7fba00 transparent transparent transparent;
 .navbar {
   width: 100%;
   border-radius: 0px 0px 0px 0px !important;
-
+  height:129px;
 }
 
 .navbar .brand {
@@ -190,7 +211,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
   width: 255px;
   top: 175px;
   font-weight: 300;
-  margin-left: 871px;
+  margin-left: 883px;
   margin-top: 70px;
   -moz-box-shadow:      3px 3px 3px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.3);
@@ -220,25 +241,6 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 
 .wrapper-shadow {
 
-}
-
-h1, h2{
-  font-weight: 100;
-  margin: 1em 0px 0.5em;
-  font-variant: small-caps;
-  color: #000 !important;
-  line-height: 40px;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-}
-
-h3{
-  font-size: 15px;
-  font-weight: 100;
-}
-
-p {
-  font-weight: 100;
-  color: #000000;
 }
 
 .wrapper {
@@ -407,7 +409,7 @@ p{
 }
   .ribbon-front {
   background-color: #4f4f4f;  height: 40px;
-  width: 285px;
+  width: 269px;
   position: relative;
   left:-5px;
   z-index: 2;
@@ -459,7 +461,7 @@ p{
 
   .ribbon-edge-topright,
   .ribbon-edge-bottomright {
-  left: 270px;
+  left: 254px;
   border-color: transparent transparent transparent #222121;
 }
 
