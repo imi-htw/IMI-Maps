@@ -136,7 +136,7 @@ n=1
        birthplace: hash[countries[rand(countries.size)]]).first_or_create!
 
   r_employees = rand(500)
-  r_phone = rand(100000..999999)
+  r_phone = rand(8999999)+1000000
 
 	Company.where(name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
        country: countries[r], phone: r_phone, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
@@ -153,9 +153,10 @@ n=1
   r_living = rand(400)+301
 
   r_o = rand(Orientation.count)+1
+  r_a = rand(65)+16
 
   internship = Internship.new(title: "Awesome Developer#{n}", salary: r_salary, internship_rating_id: iR.id, working_hours: r_work, living_costs: r_living, company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: Time.at(rand*Time.now.to_f).to_date, end_date: Time.at(rand*Time.now.to_f).to_date, operational_area: Orientation.offset(r_o).first,
-      tasks: "a"*rand(15..80), orientation_id: r_o)
+      tasks: "a"*r_a, orientation_id: r_o)
   s = rand(5)+1
  	ary = []
 	s.times do
@@ -164,9 +165,9 @@ n=1
 	internship.programming_languages = ProgrammingLanguage.where(:id => ary.uniq)
 	internship.save
 
-  r_b = rand(10..25)
-  r_e = rand(15..25)
-  r_p = rand(0..50)
+  r_b = rand(15)+11
+  r_e = rand(10)+16
+  r_p = rand(50)
 
   r_c_s = rand(ContractState.count)+1
   r_r_s = rand(RegistrationState.count)+1
