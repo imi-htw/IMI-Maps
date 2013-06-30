@@ -35,7 +35,7 @@ describe "Testing LogIn1" do
       end
 
       it "user is invalid when password less than 5 characters" do
-       expect {user7 = User.create!(last_name: "Bell", first_name: "Lisa", password: "tes", email: "test@imimaps.com")}.to raise_error 
+       expect {user7 = User.create!(password: "tes", email: "test@imimaps.com")}.to raise_error 
       end
    end 
 

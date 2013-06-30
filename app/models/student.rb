@@ -5,4 +5,5 @@ class Student < ActiveRecord::Base
   #validates_uniquness_of :enrolment_number
 
   has_many :internships
+  has_one :user
 end

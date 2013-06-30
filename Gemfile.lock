@@ -117,13 +117,9 @@ GEM
       actionpack (>= 3.0)
     geocoder (1.1.8)
     gmaps4rails (1.5.6)
-    griddler (0.5.0)
-      htmlentities
-      rails (>= 3.2.0)
     has_scope (0.5.1)
     highline (1.6.19)
     hike (1.2.2)
-    htmlentities (4.3.1)
     i18n (0.6.1)
     inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
@@ -292,7 +288,6 @@ DEPENDENCIES
   font-awesome-sass-rails
   geocoder
   gmaps4rails
-  griddler
   jquery-rails (= 2.2.1)
   jquery-ui-rails
   kaminari

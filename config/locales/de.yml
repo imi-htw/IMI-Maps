@@ -171,16 +171,19 @@ de:
        newuser: "Neuer Benutzer"
     sign_up: "Danke fuer deine Anmeldung"
     attributes:
-      last_name: "Nachname"  
-      first_name: "Vorname"
-      major: "Studiengang"
+      name: "Name"  
       email: "Email"
       publicmail: "Emailadresse öffentlich anzeigen?"
       password: "Passwort"
       password_confirmation: "Passwort bestaetigen"
-      role: "Rolle"
-      picture: "Bild" 
       mailnotif: "Email-Mitteilungen erhalten?"  
+
+  students:
+    attributes:
+      first_name: "Vorname"
+      last_name: "Nachname"
+      email: "Email"
+      enrolment_number: "Matrikelnummer"
 
   comments:
     attributes: 
@@ -195,7 +198,7 @@ de:
   active_admin:
     dashboard: Übersicht
     dashboard_welcome:
-      welcome: "Willkommen in Active Admin. Dies ist die Standard-Übersichtsseite."
+      welcome: "Willkommen bei der Administration der IMI-Map."
       call_to_action: "Siehe 'app/admin/dashboard.rb', um Übersichts-Bereiche hinzuzufügen."
     view: "Anzeigen"
     edit: "Bearbeiten"

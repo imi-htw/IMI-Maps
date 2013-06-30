@@ -2,13 +2,13 @@ class Company < ActiveRecord::Base
   attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax, :import_id
 
   # validations
-  validates :city, :presence => true, :allow_blank => false
-  validates :country, :presence => true, :allow_blank => false
-  validates :main_language, :presence => true, :allow_blank => false
-  validates :industry, :presence => true, :allow_blank => false
+  #validates :city, :presence => true, :allow_blank => false
+  #validates :country, :presence => true, :allow_blank => false
+  #validates :main_language, :presence => true, :allow_blank => false
+  #validates :industry, :presence => true, :allow_blank => false
   validates :name, :presence => true, :allow_blank => false
-  validates :number_employees, :presence => true, :allow_blank => false
-  validates :website, :presence => true, :allow_blank => false
+  #validates :number_employees, :presence => true, :allow_blank => false
+  #validates :website, :presence => true, :allow_blank => false
 
 
 
@@ -19,7 +19,6 @@ class Company < ActiveRecord::Base
 
   #associations
   has_many :internships
-  has_many :contact_persons
   has_many :locations
 
   def address

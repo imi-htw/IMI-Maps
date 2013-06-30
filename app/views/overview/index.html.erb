@@ -77,7 +77,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
     <td><%= internship.semester.semester %></td>
-    <td><%= internship.orientation.name %></td>
+    <td><%= internship.try(:orientation).try(:name) %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%# render_stars(internship.rating, self) %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>

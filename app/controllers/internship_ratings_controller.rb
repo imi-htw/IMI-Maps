@@ -1,0 +1,2 @@
+class InternshipRatingsController < ApplicationController
+end
