@@ -139,7 +139,7 @@ n=1
   r_phone = rand(8999999)+1000000
 
 	Company.where(name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
-       country: countries[r], phone: r_phone, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
+       country: countries[r], phone: r_phone.to_s, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
 
 	semester = Semester.find(rand(Semester.count)+1) 
   reading_prof = ReadingProf.find(rand(ReadingProf.count)+1)
