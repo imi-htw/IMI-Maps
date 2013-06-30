@@ -10,6 +10,10 @@ body{
   padding-left: 0px !important;
 }
 
+a{
+  color: #8bb900;
+}
+
 .navbar-inner {
   border-radius: 0px 0px 0px 0px !important;
 }
@@ -31,17 +35,7 @@ body{
 }
 
 footer{
-  background: #333333;
-  padding: 17px 0 18px 0;
-  text-align: center;
-  margin-top: 70px;
-  bottom: 0;
-  margin-bottom: -20px;
-}
-
-
-footer .container p{
-  color: #a3a3a3 !important;
+display: none;
 }
 
 .pagination.imi a, .pagination.imi span {

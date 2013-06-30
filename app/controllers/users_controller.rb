@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_permission, only: [:new, :create]
-  before_filter :check_existing_student, only: [:new, :create]
+  before_filter :check_existing_user, only: [:new, :create]
 
   def new
     @user = User.new
@@ -45,8 +45,11 @@ private
       redirect_to root_url unless session[:enrolment_number].present?
     end
 
-    def check_existing_student
-      redirect_to root_url if Student.find_by_enrolment_number(session[:enrolment_number]) and session[:enrolment_number]
+    def check_existing_user
+      if session[:enrolment_number]
+        student = Student.where(enrolment_number: session[:enrolment_number]).first
+        redirect_to root_url if student && User.find_by_student_id(student.id)
+      end
     end
 
 end

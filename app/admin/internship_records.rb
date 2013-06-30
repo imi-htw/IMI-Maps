@@ -12,6 +12,8 @@ ActiveAdmin.register InternshipRecord do
 	  filter :contract_state
 	  filter :report_state
 	  filter :certificate_state
+	  filter :reading_prof
+
 
 	index do
 

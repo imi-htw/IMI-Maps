@@ -128,14 +128,18 @@ n=1
 	r = rand(countries.size)
 	Student.where(
        import_id: n,
-       enrolment_number: 1337,
+       enrolment_number: (500000+n).to_s,
        first_name: "Klaus",
        last_name: "Peter",
        email: "klaus@peter.com",
        birthday: Time.at(rand*Time.now.to_f).to_date, 
        birthplace: hash[countries[rand(countries.size)]]).first_or_create!
-	Company.where(name: "Company#{n}", number_employees: rand(500), city: hash[countries[r]],
-       country: countries[r], phone: rand(10000000..99999999), blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
+
+  r_employees = rand(500)
+  r_phone = rand(8999999)+1000000
+
+	Company.where(name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
+       country: countries[r], phone: r_phone.to_s, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
 
 	semester = Semester.find(rand(Semester.count)+1) 
   reading_prof = ReadingProf.find(rand(ReadingProf.count)+1)
@@ -144,9 +148,15 @@ n=1
 
   reading_prof_id = reading_prof.id if reading_prof
 
-  internship = Internship.new(title: "Awesome Developer#{n}", salary: rand(1500)+1, internship_rating_id: iR.id, working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: Time.at(rand*Time.now.to_f).to_date, end_date: Time.at(rand*Time.now.to_f).to_date, operational_area: Orientation.offset(rand(Orientation.count)).first,
-      tasks: "a"*rand(15..80), orientation_id: rand(Orientation.count)+1)
+  r_salary = rand(1500)+1
+  r_work = rand(20)+21
+  r_living = rand(400)+301
 
+  r_o = rand(Orientation.count)+1
+  r_a = rand(65)+16
+
+  internship = Internship.new(title: "Awesome Developer#{n}", salary: r_salary, internship_rating_id: iR.id, working_hours: r_work, living_costs: r_living, company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: Time.at(rand*Time.now.to_f).to_date, end_date: Time.at(rand*Time.now.to_f).to_date, operational_area: Orientation.offset(r_o).first,
+      tasks: "a"*r_a, orientation_id: r_o)
   s = rand(5)+1
  	ary = []
 	s.times do
@@ -155,13 +165,23 @@ n=1
 	internship.programming_languages = ProgrammingLanguage.where(:id => ary.uniq)
 	internship.save
 
-  InternshipRecord.where(internship_id: internship.id, supervisor_name: "b"*rand(10..25), supervisor_email: "e"*rand(15..25),
-    registration_state_id: rand(RegistrationState.count)+1, contract_state_id: rand(ContractState.count)+1, report_state_id: rand(ReportState.count)+1, certificate_state_id: rand(CertificateState.count)+1,
-    payment_state_id: rand(PaymentState.count)+1, internship_state_id: rand(InternshipState.count)+1, comment: "p"*rand(0..50), reading_prof_id: reading_prof_id, certificate_to_prof: Time.at(rand*Time.now.to_f).to_date,
+  r_b = rand(15)+11
+  r_e = rand(10)+16
+  r_p = rand(50)
+
+  r_c_s = rand(ContractState.count)+1
+  r_r_s = rand(RegistrationState.count)+1
+  r_re_s = rand(ReportState.count)+1
+  r_ce_s = rand(CertificateState.count)+1
+  r_p_s = rand(PaymentState.count)+1
+  r_i_s = rand(InternshipState.count)+1
+
+  InternshipRecord.where(internship_id: internship.id, supervisor_name: "b"*r_b, supervisor_email: "e"*r_e,
+    registration_state_id: r_r_s, contract_state_id: r_c_s, report_state_id: r_re_s, certificate_state_id: r_ce_s,
+    payment_state_id: r_p_s, internship_state_id: r_i_s, comment: "p"*r_p, reading_prof_id: reading_prof_id, certificate_to_prof: Time.at(rand*Time.now.to_f).to_date,
     certificate_signed_by_prof: Time.at(rand*Time.now.to_f).to_date, certificate_signed_by_internship_officer: Time.at(rand*Time.now.to_f).to_date).first_or_create!
 
 
 	n+=1
 
 end
-

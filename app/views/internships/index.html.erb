@@ -152,10 +152,10 @@ blub
 
 <h5> <%=@internships_size%> results found! </h5>
 
+<div class="table-container">
 <table id="paginated" class="table tablesorter">
   <thead>
-  <tr class="table_intern">
-    <div id="table_top"></div>
+  <tr class="table_intern table_fin">
     <th class="company"><%= t "internships.attributes.company" %></th>
     <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %></th>
     <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
@@ -190,6 +190,7 @@ blub
 <% end %>
   </tbody>
 </table>
+</div>
 
 <% if @internships_size > 5 %>
 <!---  <div class='pager'>

@@ -8,8 +8,7 @@
 	<div class="span12">
 		<%= form_tag sessions_path do %>
 		<div id="login-box" class="field">
-			<div id="login-element">
-			</div>
+			<div id="login-element"></div>
 			<div class="row" style="margin-top:60px;">
 				<div class="span6 login_center">
 					<p id="font_session">E-mail: 
@@ -19,13 +18,14 @@
 					
 					<div class="span6 login_center">
 						<p id="font_session">Password:
+		   	</div>
 
 							<%= password_field_tag :password %>
 							<%= image_submit_tag("signin.png", :class => 'signin-icon') %> </p>
-						</div>
+						
 					</div>
 
-					<div class="sign_up"><font color="#fff">No Account? </font>
+					<div class="sign_up"><div id="change_color">No Account?</div>
 
 						<%= link_to new_user_verification_path do %>Sign up here 
 						<i class="icon-edit" style="color:#87bb3e"></i> 

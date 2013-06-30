@@ -112,8 +112,8 @@ border-color: #7fba00 transparent transparent transparent;
   color: #6b6b6b;
   margin-left: 50%;
   margin-top: 12px;
-  left: -76px;
-  width: 800px;
+  left: -150px;
+  width: 600px;
 }
 
 .navbar .nav.pull-right {
@@ -396,7 +396,6 @@ p{
     float: right;
 }
 
-
 .ribbon {
   position: absolute;
   top: 15px;
@@ -490,6 +489,15 @@ p{
   height: 40px;
   background-color: #393838;  z-index: 0;
 }
+.arrow{
+    position: absolute;
+    background: url(arrow.png) no-repeat;
+    background-size: 220px 150px;
+    height: 150px;
+    width: 220px; 
+    margin-top: -220px;
+    margin-left: 300px;  
+}
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -526,5 +534,14 @@ p{
   width: 205px !important;
 }
 
+.arrow{
+    position: absolute;
+    background: url(arrow.png) no-repeat;
+    background-size: 220px 150px;
+    height: 150px;
+    width: 220px; 
+    margin-top: -220px;
+    margin-left: 208px;  
+}
 
 }
