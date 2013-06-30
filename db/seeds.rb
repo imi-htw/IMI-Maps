@@ -128,7 +128,7 @@ n=1
 	r = rand(countries.size)
 	Student.where(
        import_id: n,
-       enrolment_number: 1337,
+       enrolment_number: "1337",
        first_name: "Klaus",
        last_name: "Peter",
        email: "klaus@peter.com",
@@ -164,4 +164,3 @@ n=1
 	n+=1
 
 end
-
