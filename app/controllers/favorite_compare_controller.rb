@@ -1,8 +1,11 @@
 class FavoriteCompareController < ApplicationController
 
   def index
-    
-    @internships = Internship.find(params[:favorite_ids])
+    if params[:favorite_ids]
+    	@internships = Internship.find(params[:favorite_ids]) 
+    else
+    	@internships = []
+    end
 
     respond_to do |format|
       format.js { render :layout=>false }

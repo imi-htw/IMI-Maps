@@ -1,0 +1,9 @@
+if (<%= @internships.size < 2 %>) {
+  $("#modal-body").html("<h3>Please select at least 2 Favorites to compare!</h3>");
+}
+
+else {
+  $("#modal-body").html('<%= escape_javascript( render "table"  ) %>');
+}
+
+$("#compareModal").modal('show');
