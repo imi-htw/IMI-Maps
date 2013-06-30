@@ -129,6 +129,12 @@ en:
       password_confirmation: "Password confirmation"
       mailnotif: "Receive Email-Notification?"  
 
+  students:
+    attributes:
+      first_name: "given name"
+      last_name: "last name"
+      email: "email"
+      enrolment_number: "enrolment number"
 
   comments:
     attributes: 
