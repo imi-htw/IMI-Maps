@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   #validates :role, :presence => true
   #validates :picture, :presence => true
     validates :password, :presence => true,
-                       :length => { :minimum => 5}
+                       :length => { :minimum => 2}
   #validates :password_confirmation, :presence => true
   validates :internship_authorization, :presence => true
 
