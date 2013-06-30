@@ -171,15 +171,11 @@ de:
        newuser: "Neuer Benutzer"
     sign_up: "Danke fuer deine Anmeldung"
     attributes:
-      last_name: "Nachname"  
-      first_name: "Vorname"
-      major: "Studiengang"
+      name: "Name"  
       email: "Email"
       publicmail: "Emailadresse öffentlich anzeigen?"
       password: "Passwort"
       password_confirmation: "Passwort bestaetigen"
-      role: "Rolle"
-      picture: "Bild" 
       mailnotif: "Email-Mitteilungen erhalten?"  
 
   comments:

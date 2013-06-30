@@ -69,12 +69,8 @@ Orientation.where(name: "Administration & Support", id: 11).first_or_create
 
 
 User.destroy_all
-User.create!(last_name: "test", first_name: "test", password: "test", email: "test@imimaps.com")
-user1 = User.first
-User.create!(last_name: "Bla", first_name: "Blubb", password: "test", email: "test@imimaps.com")
-user2 = User.last
-User.create!(last_name: "Lisa", first_name: "Pisa", password: "test", email: "test@imimaps.com")
-user3 = User.first
+User.create!(password: "test", email: "test@imimaps.com")
+
 
 PaymentState.where(name: "uncharted", name_de: "unbekannt").first_or_create
 PaymentState.where(name: "cash benefit", name_de: "bezahlt").first_or_create
