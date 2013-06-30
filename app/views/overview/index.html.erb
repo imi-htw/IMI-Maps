@@ -33,7 +33,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td id="orientation_td" class="table_block"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
     <td id="languages_td" class="table_block"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
     <td class="table_block"><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
-   <td class="table_block"><button onclick="click_reset();" class="btn btn-success" id="reset_chosen"><%=t "helpers.reset" %></button></td>
+   <td class="table_block reset"><%= submit_tag t("helpers.reset"), :name => nil, :class => "btn btn-success", :id => "reset_chosen", :onclick => "click_reset();" %>
   </tr>
 </table>
 
@@ -46,8 +46,9 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div class="span4 display_nonet display_none" id="language_chart"></div>
 </div>
 <div class="row">
-<div class="span1 offset2"><div class="hand-pointer"></div></div>
-<div class="span8"><p class="explanation"><%=t"search.explanation.html"%></p></div>
+<!-- <div class="span1 offset2"><div class="hand-pointer"></div></div>
+<div class="span8"><p class="explanation"><%=t"search.explanation.html"%></p></div> -->
+<div class="arrow"></div>
 </div> 
 
 <div id="results_string" style="display:none"> </div>

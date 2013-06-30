@@ -68,19 +68,19 @@
                   <i class="icon-user icon-large"></i>
                 <% end %>
     </li>
-        <li class="dropdown">
-        <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
-        <ul class="dropdown-menu">
+
+    <li class="dropdown">
+      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
+      <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
-        </ul>
-      </li>    
+       </ul>
+    </li>    
+
     <li><%= link_to logout_path  do %>
                   <i class="icon-signout icon-large"></i>
                 <% end %>
     </li>
-
-
 
     </ul>
     <!-- Everything you want hidden at 940px or less, place within here -->

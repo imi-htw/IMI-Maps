@@ -138,6 +138,10 @@ h3 p{
     margin-left: -85px;
 }
 
+#change_color{
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   
 body{
@@ -220,9 +224,13 @@ h3 p{
 .sign_up{
   margin: 20px auto;
   float: none;
-  width: 70px;
+  width: 200px;
   height: 50px;
   font-style: italic;
+}
+
+#change_color{
+  color: #000;
 }
 }
 
@@ -307,8 +315,12 @@ h3 p{
 .sign_up{
   margin: 20px auto;
   float: none;
-  width: 70px;
+  width: 200px;
   font-style: italic;
+}
+
+#change_color{
+  color: #000;
 }
 }
 

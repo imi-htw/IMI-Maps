@@ -10,6 +10,10 @@ body{
   padding-left: 0px !important;
 }
 
+a{
+  color: #8bb900;
+}
+
 .navbar-inner {
   border-radius: 0px 0px 0px 0px !important;
 }
@@ -51,6 +55,16 @@ body{
   overflow-y: auto;
   _overflow: auto;
   margin: 0 0 1em;
+}
+
+footer{
+ display: none;
+}
+
+.reset {
+margin-right: -166px;
+margin-top: -30px;
+float: right;
 }
 
 }

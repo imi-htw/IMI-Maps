@@ -10,6 +10,92 @@
       <%= t "internships.attributes.title" %></div>
       <div class="span9" id="intern-box">
         <%= @internship.title %>
+
+<h2> Internship Details</h2>
+<div class="row-fluid" style=" -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1);">
+      <div class="span12">
+            <div class="content-intern">
+     
+               <div class="row-fluid">   
+
+                  <div class="span9">
+                      <div class="container-left">
+                        <div class="container-left-text">
+<div class="table-container">
+<table class="table-intern">
+<tr>
+<td class="t-left"> <b><%= t "internships.attributes.title" %></b></td>
+<td><%= @internship.title %></td>
+</tr>
+<tr>
+<td class="t-left"> <b><%= t "internships.attributes.orientation" %></b></td>
+<td><%= @internship.orientation.try(:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.programming_languages" %></b></td>
+<td><%= @internship.programming_languages.map(&:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.salary" %></b></td>
+<td><%= @internship.salary %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.working_hours" %></b></td>
+<td><%= @internship.working_hours %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.living_costs" %></b></td>
+<td><%= @internship.living_costs %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internship.attributes.rating" %></b></td>
+<td></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.user" %></b></td>
+<td><%= @internship.try(:user).try(:name) %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "users.attributes.email" %></b></td>
+<td>
+  <% if @internship.email_public %><%= @internship.user.email %><% end %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.semester" %></b></td>
+<td><%= @internship.semester.semester %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.recommend" %></b></td>
+<td><%= @internship.recommend %></td>
+</tr>
+<tr>
+<td class="t-left"><b><%= t "internships.attributes.description" %></b></td>
+<td><%= @internship.description %></td>
+</tr>
+</table>
+</div>
+
+                              <div id="favorite">
+                              <% if @favorite %>
+                                <%= button_to t("favorite.delete"), {:controller => :favorite,
+                                      :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
+                                <% else %>
+                                <%= button_to t("favorite.add"), {:controller => :favorite,
+                                      :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
+                                <% end %>
+                                </div>
+
+ <% if @internship.attachments.present? %>
+  <b><%= t "internships.attributes.pictures" %> :</b></b>
+  <% @internship.attachments.each do |attachment| %>
+    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Photo Gallery</h3>
+        </div>
+      <div class="modal-body">
+        <%= image_tag attachment.file_url %>
       </div>
     </div>
 

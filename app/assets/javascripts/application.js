@@ -29,6 +29,9 @@
 // });
 
 $(window).load(function () {
+    setTimeout(function() {
+        $(".arrow").hide('blind', {}, 2000)
+    }, 20000);
 });
 
 $(document).ready(function() {
