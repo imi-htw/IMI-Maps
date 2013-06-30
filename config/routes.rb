@@ -4,8 +4,6 @@ ImiMaps::Application.routes.draw do
 
 		resources :internships
 
-    resources :contact_people
-
 		resources :companies
 
 		resources :users
