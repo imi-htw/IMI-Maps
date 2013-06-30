@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :first_name, :last_name, :major, :role, :picture, :password, :password_confirmation, :internship_authorization, :publicmail, :mailnotif
+  attr_accessible :email, :first_name, :last_name, :major, :role, :picture, :password, :password_confirmation, :internship_authorization, :publicmail, :mailnotif, :student_id
   
   validates :email, :presence => true
   validates :first_name, :presence => true
@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   
   # associations
   has_one :internship
+  belongs_to :student
   has_many :user_comments, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   has_many :notifications, :dependent => :destroy
