@@ -16,6 +16,7 @@ ActiveAdmin.register InternshipRecord do
 
 
 	index do
+
     column :certificate_signed_by_internship_officer
     column :certificate_signed_by_prof 
     column :certificate_to_prof

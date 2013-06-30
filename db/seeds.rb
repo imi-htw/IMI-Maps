@@ -146,7 +146,6 @@ n=1
 
   internship = Internship.new(title: "Awesome Developer#{n}", salary: rand(1500)+1, internship_rating_id: iR.id, working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: Time.at(rand*Time.now.to_f).to_date, end_date: Time.at(rand*Time.now.to_f).to_date, operational_area: Orientation.offset(rand(Orientation.count)).first,
       tasks: "a"*rand(15..80), orientation_id: rand(Orientation.count)+1)
-
   s = rand(5)+1
  	ary = []
 	s.times do
