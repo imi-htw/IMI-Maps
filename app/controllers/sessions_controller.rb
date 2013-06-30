@@ -19,11 +19,11 @@ class SessionsController < ApplicationController
 
       @internships_comp = @internships.select {|x| x.company_id == company.id}
       @internships_comp.each do |internship|
-      
+
        if n==0
-        s+=(internship.user.first_name[0..0].capitalize+".")
+        s+=(internship.student.first_name[0..0].capitalize+".")
       else
-        s+=(" & " + internship.user.first_name[0..0].capitalize+".")
+        s+=(" & " + internship.student.first_name[0..0].capitalize+".")
        end
        n+=1 
        end
@@ -35,14 +35,13 @@ class SessionsController < ApplicationController
       end
 
 
-      href =  if company.website.starts_with?'http' 
-              company.website  
-            else 
-              "http://"+company.website 
+      href =  if company.try(:website).try(:starts_with?,'http') && company
+              company.website
+              elsif company and company.website
+              "http://"+company.website
              end
-             
-    
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry} </p><p><a href='#{href}' target='_blank'>#{company.website}</a></p><p>#{s} #{p} hier ein Praktikum gemacht.</p>")
+
+      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry} </p><p><a href='#{href}' target='_blank'>#{company.website}</a></p><p>#{s} #{p} hier ein Praktikum gemacht.</p>") if company && company.website
 
     end
   end
