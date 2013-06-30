@@ -148,7 +148,7 @@ en:
   active_admin:
     dashboard: Dashboard
     dashboard_welcome:
-      welcome: "Welcome to Active Admin. This is the default dashboard page."
+      welcome: "Welcome to the admin area of IMI-Map!"
       call_to_action: "To add dashboard sections, checkout 'app/admin/dashboard.rb'"
     view: "View"
     edit: "Edit"
