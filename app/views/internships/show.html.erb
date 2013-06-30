@@ -1,272 +1,354 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2> Internship Details</h2>
-<div class="row-fluid" style=" -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1);">
-      <div class="span12">
-            <div class="content-intern">
-     
-               <div class="row-fluid">   
+<h2 style="margin-bottom:40px;"> Internship Details</h2>
 
-                  <div class="span9">
-                      <div class="container-left">
-                        <div class="container-left-text">
-<table class="table-intern">
-<tr>
-<td class="t-left"> <b><%= t "internships.attributes.title" %></b></td>
-<td><%= @internship.title %></td>
-</tr>
-<tr>
-<td class="t-left"> <b><%= t "internships.attributes.orientation" %></b></td>
-<td><%= @internship.orientation.try(:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.programming_languages" %></b></td>
-<td><%= @internship.programming_languages.map(&:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.salary" %></b></td>
-<td><%= @internship.salary %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.working_hours" %></b></td>
-<td><%= @internship.working_hours %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.living_costs" %></b></td>
-<td><%= @internship.living_costs %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internship.attributes.rating" %></b></td>
-<td></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.user" %></b></td>
-<td><%= @internship.try(:user).try(:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "users.attributes.email" %></b></td>
-<td>
-  <% if @internship.email_public %><%= @internship.user.email %><% end %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.semester" %></b></td>
-<td><%= @internship.semester.semester %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.recommend" %></b></td>
-<td><%= @internship.recommend %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.description" %></b></td>
-<td><%= @internship.description %></td>
-</tr>
-</table>
-
-                              <div id="favorite">
-                              <% if @favorite %>
-                                <%= button_to t("favorite.delete"), {:controller => :favorite,
-                                      :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
-                                <% else %>
-                                <%= button_to t("favorite.add"), {:controller => :favorite,
-                                      :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
-                                <% end %>
-                                </div>
-
- <% if @internship.attachments.present? %>
-  <b><%= t "internships.attributes.pictures" %> :</b></b>
-  <% @internship.attachments.each do |attachment| %>
-    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Photo Gallery</h3>
-        </div>
-      <div class="modal-body">
-        <%= image_tag attachment.file_url %>
-      </div>
-        <div class="modal-footer">
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.title" %></div>
+      <div class="span9" id="intern-box">
+        <%= @internship.title %>
       </div>
     </div>
-  <% end %>
-  <br/>
-<% end %>
 
- <% if @internship.internship_report.present? %>
-  <b><%= t "internships.attributes.internship_report" %> :</b>
-  <br/>
-      <%= File.basename(@internship.internship_report.path) %>
-      <br/>
-      <%= link_to "View Report", @internship.internship_report.path %>
-  <br/>
-<% end %>
-
-                                <b><%= t "internships.attributes.comments" %> :</b>
-                                <br/>
-                                <br/>
-
-                              <!-- ################################################# start comments #################################################--> 
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.orientation" %></div>
+      <div class="span9" id="intern-box">
+        <%= @internship.orientation.try(:name) %>
+      </div>
+    </div>
 
 
-    <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.programming_languages" %></div>
+      <div class="span9" id="intern-box">
+       <%= @internship.programming_languages.map(&:name) %>
+      </div>
+    </div>
 
-<div id="comment_div">
-<div id="comment_form" style="display:none;">
-<%= form_for(@comment, remote: true ) do |f| %>
-<div class="field">
-    <%= f.hidden_field :internship_id, value: @internship.id %>
-    <%= f.label t "comments.attributes.body" %>
-    <%= f.text_field :body %>
-    <div class="actions">
-    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-  </div>
-  </div>
-<% end %>
-</div>
 
-<% @user_comments.each do |i| %>  
-  <div class="comment" style="display:none;"> 
-  <div id="user"><%= i.user.name %> 
-  <%= t "helpers.at" %>
-  <%= I18n.localize(i.created_at, :format => :long) %>
-  :</div>
-  <br/>
-  <br/>
-  <div id="sentence"><%= i.body %></div>
-  <br/>
-  <% if current_user.id == i.user_id %>
-    <%= button_to (t "buttons.destroy"),  {:controller => :user_comments, :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
-  <% end %>
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.salary" %></div>
+      <div class="span9" id="intern-box">
+       <%= @internship.salary %>
+      </div>
+    </div>
 
-  </div>
-  
-   <% if i.answer.present? %>
-  <div class="answer" style="display:none;">
-    <div id="user_2"><%= t "answers.from" %>
-    <%= i.answer.user.name %> 
-    <%= t "helpers.at" %>
-    <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
-    :</div>
-    <br/>
-    <br/>
-    <div id="sentence_2"><%= i.answer.body %></div>
 
-    
-    <% if current_user.id == @internship.user_id %>
-      <br/>
-    <%= button_to (t "buttons.destroy"),  {:controller => :answers, :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true %>
-    <% end %>
-  </div>
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.working_hours" %></div>
+      <div class="span9" id="intern-box">
+       <%= @internship.working_hours %>
+      </div>
+    </div>
 
-<% else %>
 
-    <% if current_user.id == @internship.user_id %>
-      <br />
-      <%= form_for(@answer, remote: true) do |f| %>
-      <div class="answer_2" style="display:none">
-        <div id="answer_field"><div class="field">
-          <%= f.hidden_field :internship_id, value: @internship.id %>
-          <%= f.hidden_field :user_comment_id, value: i.id %>
-          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
-          <div id="sentence_3"><%= f.text_field :body %></div>
-          <div class="actions save_button">
-          <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-        </div>
-        </div>
-        </div>
-        </div>
-      <% end %>
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.living_costs" %></div>
+      <div class="span9" id="intern-box">
+       <%= @internship.living_costs %>
+      </div>
+    </div>
 
-                                  <% end %>
 
-                                <% end %>
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internship.attributes.rating" %></div>
+      <div class="span9" id="intern-box">
 
-                              <% end %>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+      </div>
+    </div>
+
+
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.user" %></div>
+      <div class="span9" id="intern-box">
+        <%= @internship.try(:user).try(:name) %>
+      </div>
+    </div>
+
+
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "users.attributes.email" %></div>
+      <div class="span9" id="intern-box">
+         <% if @internship.email_public %><%= @internship.user.email %><% end %>
+      </div>
+    </div>
+
+
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.semester" %></div>
+      <div class="span9" id="intern-box">
+         <%= @internship.semester.semester %>
+      </div>
+    </div>
+
+
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.recommend" %></div>
+      <div class="span9" id="intern-box">
+         <%= @internship.recommend %>
+      </div>
+    </div>
+
+
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" style="background-color:#ffffff; margin-bottom:20px; margin-left:0px">   
+    <div class="span2" id="intern-title">
+      <%= t "internships.attributes.description" %></div>
+      <div class="span9" id="intern-box">
+         <%= @internship.description %>
+      </div>
+    </div>
+
+
+
+    <div class="content-intern">
+
+     <div class="row-fluid">   
+
+      <div class="span9">
+        <div class="container-left">
+          <div class="container-left-text">
+
+
+
+              <div id="favorite">
+                <% if @favorite %>
+                <%= button_to t("favorite.delete"), {:controller => :favorite,
+                  :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
+                  <% else %>
+                  <%= button_to t("favorite.add"), {:controller => :favorite,
+                    :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
+                    <% end %>
                   </div>
 
+                  <% if @internship.attachments.present? %>
+                  <b><%= t "internships.attributes.pictures" %> :</b></b>
+                  <% @internship.attachments.each do |attachment| %>
+                  <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
+                  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                   <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Photo Gallery</h3>
+                  </div>
+                  <div class="modal-body">
+                    <%= image_tag attachment.file_url %>
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+                <% end %>
+                <br/>
+                <% end %>
+
+                <% if @internship.internship_report.present? %>
+                <b><%= t "internships.attributes.internship_report" %> :</b>
+                <br/>
+                <%= File.basename(@internship.internship_report.path) %>
+                <br/>
+                <%= link_to "View Report", @internship.internship_report.path %>
+                <br/>
+                <% end %>
+
+                <b><%= t "internships.attributes.comments" %> :</b>
+                <br/>
+                <br/>
+
+                <!-- ################################################# start comments #################################################--> 
 
 
+                <a class="btn btn-success" id="hide_all"><i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%='e' unless@internship.user_comments.size==1%></a>
 
+                <div id="comment_div">
+                  <div id="comment_form" style="display:none;">
+                    <%= form_for(@comment, remote: true ) do |f| %>
+                    <div class="field">
+                      <%= f.hidden_field :internship_id, value: @internship.id %>
+                      <%= f.label t "comments.attributes.body" %>
+                      <%= f.text_field :body %>
+                      <div class="actions">
+                        <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+                      </div>
+                    </div>
+                    <% end %>
+                  </div>
 
-                    <div class="span3"> 
-                          <div class="container-right"> 
-                              <div class="ribbon">
-                                <div class="ribbon-wrapper">
-    <div class="ribbon-front">
-      <h3 style="margin-left:15px"> Company Overview </h3>
-    </div>
-
-    <div class="ribbon-edge-topright"></div>
-
-    <div class="ribbon-edge-bottomright"></div>
-
-    <div class="ribbon-back-right"></div>
-  </div>
-</div>
-
-
-                                        
-
-
-                                        <%= gmaps({
-                                           "map_options" => {"auto_zoom" => false, "zoom" => 5 },
-                                           "markers"     => {"data" => @pins }
-                                          })
-                                        %>
-
-                                        <%= yield :scripts %>
-
-                                        <div class="container-right-text">
-                                        <p>
-                                          <b><%= t "companies.attributes.name"  %> :</b>
-                                          <%= @internship.company.name %>
-                                        </p>
-
-
-                                        <p>
-                                          <b><%= t "companies.attributes.website"  %> :</b>
-                                          <%= link_to @internship.company.website , target: "_blank" %>
-                                        </p>
-
-                                        <p>
-                                          <b><%= t "companies.attributes.industry"  %> :</b>
-                                          <%= @internship.company.industry %>
-                                        </p>
-                                        <p>
-
-                                        <p>
-                                          <b><%= t "companies.attributes.number_employees"  %> :</b>
-                                          <%= @internship.company.number_employees %>
-                                        </p>
-
-
-                                        <b><%= t "companies.attributes.main_language"  %> :</b>
-                                          <%= @internship.company.main_language %>
-                                        </p>
-                                        <p>
-                                        <b><%= t "companies.attributes.rating"  %> :</b>
-                                        </p>
-                                        <p>
-                                      </div>
-                                          
-
-
-
-
-                          </div>
+                  <% @user_comments.each do |i| %>  
+                  <div class="comment" style="display:none;"> 
+                    <div id="user"><%= i.user.name %> 
+                      <%= t "helpers.at" %>
+                      <%= I18n.localize(i.created_at, :format => :long) %>
+                      :</div>
+                      <br/>
+                      <br/>
+                      <div id="sentence"><%= i.body %></div>
+                      <br/>
+                      <% if current_user.id == i.user_id %>
+                      <%= button_to (t "buttons.destroy"),  {:controller => :user_comments, :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
+                      <% end %>
 
                     </div>
-                     <div class="row-fluid">  
 
-                      <div class="span12">
-                        
+                    <% if i.answer.present? %>
+                    <div class="answer" style="display:none;">
+                      <div id="user_2"><%= t "answers.from" %>
+                        <%= i.answer.user.name %> 
+                        <%= t "helpers.at" %>
+                        <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
+                        :</div>
+                        <br/>
+                        <br/>
+                        <div id="sentence_2"><%= i.answer.body %></div>
+
+
+                        <% if current_user.id == @internship.user_id %>
+                        <br/>
+                        <%= button_to (t "buttons.destroy"),  {:controller => :answers, :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true %>
+                        <% end %>
                       </div>
+
+                      <% else %>
+
+                      <% if current_user.id == @internship.user_id %>
+                      <br />
+                      <%= form_for(@answer, remote: true) do |f| %>
+                      <div class="answer_2" style="display:none">
+                        <div id="answer_field"><div class="field">
+                          <%= f.hidden_field :internship_id, value: @internship.id %>
+                          <%= f.hidden_field :user_comment_id, value: i.id %>
+                          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
+                          <div id="sentence_3"><%= f.text_field :body %></div>
+                          <div class="actions save_button">
+                            <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+
+                    <% end %>
+
+                    <% end %>
+
+                    <% end %>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="span3"> 
+            <div class="container-right"> 
+              <div class="ribbon">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-front">
+                    <h3 style="margin-left:15px"> Company Overview </h3>
+                  </div>
+
+                  <div class="ribbon-edge-topright"></div>
+
+                  <div class="ribbon-edge-bottomright"></div>
+
+                  <div class="ribbon-back-right"></div>
+                </div>
+              </div>
+
+
+
+
+
+              <%= gmaps({
+               "map_options" => {"auto_zoom" => false, "zoom" => 5 },
+               "markers"     => {"data" => @pins }
+               })
+               %>
+
+               <%= yield :scripts %>
+
+               <div class="container-right-text">
+                <p>
+                  <b><%= t "companies.attributes.name"  %> :</b>
+                  <%= @internship.company.name %>
+                </p>
+
+
+                <p>
+                  <b><%= t "companies.attributes.website"  %> :</b>
+                  <%= link_to @internship.company.website , target: "_blank" %>
+                </p>
+
+                <p>
+                  <b><%= t "companies.attributes.industry"  %> :</b>
+                  <%= @internship.company.industry %>
+                </p>
+                <p>
+
+                  <p>
+                    <b><%= t "companies.attributes.number_employees"  %> :</b>
+                    <%= @internship.company.number_employees %>
+                  </p>
+
+
+                  <b><%= t "companies.attributes.main_language"  %> :</b>
+                  <%= @internship.company.main_language %>
+                </p>
+                <p>
+                  <b><%= t "companies.attributes.rating"  %> :</b>
+                </p>
+                <p>
+                </div>
+
+
+
+
+
+              </div>
+
+            </div>
+            <div class="row-fluid">  
+
+              <div class="span12">
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-</div>
-</div>
 

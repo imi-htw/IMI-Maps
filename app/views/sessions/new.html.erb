@@ -1,63 +1,39 @@
 
 
 <div class="row">
-	              <img src="assets/plane.gif" id="logo_p">
-
-              <img src="assets/logos.png" id="logo_w">
 	<div class="span12">
-	<%= form_tag sessions_path do %>
-		<div id="login-box" class="field">
-	    	<div id="login-element">
-	    	</div>
-			<div class="row" style="margin-top:50px;">
-			    	<div class="span6 login_center">
-			     		<p id="font_session">E-mail: 
-			     	<!--</div> 
-			     			<div class="span4">-->
-			     			<%= text_field_tag :email, params[:email] %></p>
-			     	</div>
-			     	
-			     	<div class="span6 login_center">
-			     		<p id="font_session">Password:
-			     	<!--</div>
-				     		<div class="span4">-->
-				     		<%= password_field_tag :password %>
-				   	 		<%= image_submit_tag("signin.png", :class => 'signin-icon') %> </p>
-					</div>
-		   	</div>
-
-
-image_submit_tag
-
-	<!--	<h3><p>Or Sign Up</p></h3>
-
-		<div style="margin-left:30%;">
-			<div class="row">
-			    	<div class="span6">
-			     		<p id="font_session">E-mail: 
-			     		<%= text_field_tag :email, params[:email] %></p>
-			     		<p id="font_session">Password: 
-			     		<%= text_field_tag :password, params[:password] %></p>
-			     		<p id="font_session">Password(Confirmation): 
-			     		<%= text_field_tag :password_confirmation, params[:password_confirmation] %></p>
-			     		<p id="font_session">Last name: 
-			     		<%= text_field_tag :last_name, params[:last_name] %></p>
-			     		<p id="font_session">First name: 
-			     		<%= text_field_tag :first_name, params[:first_name] %></p>
-			     		<%= submit_tag "Sign Up", class: "btn btn-success" %> </p>
-			     	</div>
-
-		   	</div>
-		</div> -->
-		<div class="sign_up"><font color="#fff">No Account? </font>
-
-		<%= link_to new_user_verification_path do %>Sign up here 
-  <i class="icon-edit" style="color:#87bb3e"></i> 
-<% end %>
-</div>
-
-		</div>
-
+		<img src="assets/plane.gif" id="logo_p">
+		<img src="assets/logos.png" id="logo_w">
 	</div>
-</div>
-<% end %>
+	<div class="span12">
+		<%= form_tag sessions_path do %>
+		<div id="login-box" class="field">
+			<div id="login-element">
+			</div>
+			<div class="row" style="margin-top:60px;">
+				<div class="span6 login_center">
+					<p id="font_session">E-mail: 
+
+						<%= text_field_tag :email, params[:email] %></p>
+					</div>
+					
+					<div class="span6 login_center">
+						<p id="font_session">Password:
+
+							<%= password_field_tag :password %>
+							<%= image_submit_tag("signin.png", :class => 'signin-icon') %> </p>
+						</div>
+					</div>
+
+					<div class="sign_up"><font color="#fff">No Account? </font>
+
+						<%= link_to new_user_verification_path do %>Sign up here 
+						<i class="icon-edit" style="color:#87bb3e"></i> 
+						<% end %>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<% end %>

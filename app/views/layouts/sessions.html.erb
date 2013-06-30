@@ -14,7 +14,7 @@
           <div class="display_none">
             <%= gmaps(:map_options => { :container_class => "map-frontc", :id => "map2", :class => "baz", :draggable => true, :auto_zoom => false, :zoom => 3, :auto_adjust => false, :center_latitude => "10", :center_longitude => "10" } , :markers => { "data" => @pins},) %>
             <%= yield :scripts %>
-          </div>
+
 
 
           <div class="login"><%= yield %>
@@ -22,6 +22,6 @@
           </div>
 
     <div id="gradient"></div>
-
+          </div>
 </body>
 </html>
