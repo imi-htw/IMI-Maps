@@ -105,35 +105,63 @@ Semester.where(semester: "WS 11/12", id:4).first_or_create
 
 InternshipRating.destroy_all
 InternshipRating.create(:appreciation => 4, :atmosphere => 4, :supervision => 4, :tasks => 4, :training_success => 4)
-#iR = InternshipRating.first
-#
-#hash = {"Vietnam" => "Hanoi","Egypt" => "Kairo","Mexico" => "Tijuana","Ireland" => "Dublin","Switzerland" => "Bern","China" => "Peking","United States" => "Washington", "Japan" => "Tokyo", "Australia" => "Sydney", "United Kingdom" => "London", "Brazil" => "Sao Paolo", "Germany" => "Berlin", "South Africa" => "Cape Town", "Canada" => "Toronto"}
-#countries = hash.keys
-#
-#
-#Company.destroy_all
-#Internship.destroy_all
-#n=1
-#500.times do 
-#	r = rand(countries.size)
-#	company = Company.create(name: "Company#{n}", number_employees: 100, industry: "Web", website: "www.google.com",city: hash[countries[r]], country: countries[r], main_language: "Englisch")
-#	i = Internship.new(salary: rand(1500)+1, working_hours: rand(20)+21, living_costs: rand(400)+301, internship_rating_id: iR.id, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
-#
-#	s = rand(5)+1
-#	ary = []
-#	s.times do
-#		ary << rand(10)+1
-#	end
-#	i.programming_languages = ProgrammingLanguage.where(:id => ary.uniq)
-#	i.save
-#	n+=1
-#end
-#
-#company = Company.create(name: "Raeuber Hotzenplotz", number_employees: 100, industry: "Web", website: "www.google.com",city: "Hamburg", country: "Germany", main_language: "Englisch")
-#	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user1.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
-#	i.save
-#	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user2.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
-#	i.save
-#	i = Internship.new(working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, user_id: user3.id, title: "Awesome Developer #{n}", recommend: true, orientation_id: rand(7)+1, email_public: true, description: "test", semester_id: rand(4)+1)
-#	i.save
-#
+
+
+ReadingProf.where(name: "Busch").first_or_create
+ReadingProf.where(name: "Barthel").first_or_create
+ReadingProf.where(name: "Strippgen").first_or_create
+ReadingProf.where(name: "Jung").first_or_create
+ReadingProf.where(name: "Kleinen").first_or_create
+ReadingProf.where(name: "Weber-Wulff").first_or_create
+
+hash = {"Vietnam" => "Hanoi","Egypt" => "Kairo","Mexico" => "Tijuana","Ireland" => "Dublin","Switzerland" => "Bern","China" => "Peking","United States" => "Washington", "Japan" => "Tokyo", "Australia" => "Sydney", "United Kingdom" => "London", "Brazil" => "Sao Paolo", "Germany" => "Berlin", "South Africa" => "Cape Town", "Canada" => "Toronto"}
+countries = hash.keys
+
+profs = ReadingProf.all.size
+sems = Semester.all.size
+iR = InternshipRating.first
+
+Internship.destroy_all
+
+n=1
+10.times do 
+	r = rand(countries.size)
+	Student.where(
+       import_id: n,
+       enrolment_number: 1337,
+       first_name: "Klaus",
+       last_name: "Peter",
+       email: "klaus@peter.com",
+       birthday: Time.at(rand*Time.now.to_f).to_date, 
+       birthplace: hash[countries[rand(countries.size)]]).first_or_create!
+	Company.where(name: "Company#{n}", number_employees: rand(500), city: hash[countries[r]],
+       country: countries[r], phone: rand(10000000..99999999), blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
+
+	semester = Semester.find(rand(Semester.count)+1) 
+  reading_prof = ReadingProf.find(rand(ReadingProf.count)+1)
+  company = Company.last
+  student = Student.last
+
+  reading_prof_id = reading_prof.id if reading_prof
+
+  internship = Internship.new(title: "Awesome Developer#{n}", salary: rand(1500)+1, internship_rating_id: iR.id, working_hours: rand(20)+21, living_costs: rand(400)+301, company_id: company.id, student_id: student.id, semester_id: semester.id, start_date: Time.at(rand*Time.now.to_f).to_date, end_date: Time.at(rand*Time.now.to_f).to_date, operational_area: Orientation.offset(rand(Orientation.count)).first,
+      tasks: "a"*rand(15..80), orientation_id: rand(Orientation.count)+1)
+
+  s = rand(5)+1
+ 	ary = []
+	s.times do
+		ary << rand(10)+1
+	end
+	internship.programming_languages = ProgrammingLanguage.where(:id => ary.uniq)
+	internship.save
+
+  InternshipRecord.where(internship_id: internship.id, supervisor_name: "b"*rand(10..25), supervisor_email: "e"*rand(15..25),
+    registration_state_id: rand(RegistrationState.count)+1, contract_state_id: rand(ContractState.count)+1, report_state_id: rand(ReportState.count)+1, certificate_state_id: rand(CertificateState.count)+1,
+    payment_state_id: rand(PaymentState.count)+1, internship_state_id: rand(InternshipState.count)+1, comment: "p"*rand(0..50), reading_prof_id: reading_prof_id, certificate_to_prof: Time.at(rand*Time.now.to_f).to_date,
+    certificate_signed_by_prof: Time.at(rand*Time.now.to_f).to_date, certificate_signed_by_internship_officer: Time.at(rand*Time.now.to_f).to_date).first_or_create!
+
+
+	n+=1
+
+end
+

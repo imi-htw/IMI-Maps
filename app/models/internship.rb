@@ -1,7 +1,8 @@
 class Internship < ActiveRecord::Base
 
   attr_accessible :living_costs, :orientation_id, :salary, :working_hours, :programming_language_ids, :internship_rating_id,
-    :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report, :student_id
+    :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report, :student_id, :start_date, :end_date, :operational_area, :tasks
+
 
 
   #validates :programming_language_ids, :presence => true, :allow_blank => false
