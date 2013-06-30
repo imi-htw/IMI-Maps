@@ -24,7 +24,7 @@ gem 'kaminari'
 gem "d3-rails"
 gem "net-ldap"
 
-gem 'griddler'
+#gem 'griddler'
 
 
 # Bundle edge Rails instead:
