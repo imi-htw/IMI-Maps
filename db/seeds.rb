@@ -136,7 +136,7 @@ n=1
        birthplace: hash[countries[rand(countries.size)]]).first_or_create!
 
   r_employees = rand(500)
-  r_phone = rand(10000000..99999999)
+  r_phone = rand(100000..999999)
 
 	Company.where(name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
        country: countries[r], phone: r_phone, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
