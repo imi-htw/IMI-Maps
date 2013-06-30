@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630113210) do
+ActiveRecord::Schema.define(:version => 20130630121738) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(:version => 20130630113210) do
     t.string   "supervisor_name"
     t.string   "supervisor_email"
     t.string   "comment"
-    t.string   "report_reading_prof"
+    t.integer  "reading_prof_id",                          :limit => 255
     t.date     "certificate_to_prof"
     t.date     "certificate_signed_by_prof"
     t.date     "certificate_signed_by_internship_officer"
@@ -158,8 +158,8 @@ ActiveRecord::Schema.define(:version => 20130630113210) do
     t.integer  "contract_state_id"
     t.integer  "report_state_id"
     t.integer  "certificate_state_id"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
   create_table "internship_searches", :force => true do |t|
@@ -257,6 +257,12 @@ ActiveRecord::Schema.define(:version => 20130630113210) do
   end
 
   create_table "quicksearches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reading_profs", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
