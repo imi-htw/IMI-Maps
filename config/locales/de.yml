@@ -178,6 +178,13 @@ de:
       password_confirmation: "Passwort bestaetigen"
       mailnotif: "Email-Mitteilungen erhalten?"  
 
+  students:
+    attributes:
+      first_name: "Vorname"
+      last_name: "Nachname"
+      email: "Email"
+      enrolment_number: "Matrikelnummer"
+
   comments:
     attributes: 
       body: "Kommentar"
