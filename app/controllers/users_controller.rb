@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
   #before_filter :authorize
-  
+
   def new
     @user = User.new
+    @user = UserCreationForm.new(session[:enrolment_number])
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      UserMailer.registration_confirmation(@user).deliver
+    @user = UserCreationForm.new(session[:enrolment_number])
+    if @user.submit(params[:user])
+      #UserMailer.registration_confirmation(@user).deliver
       session[:user_id] = @user.id
       redirect_to overview_index_path, notice: t('sign_up')
     else
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @user = User.find(params[:id])
   end
 
@@ -37,5 +38,6 @@ class UsersController < ApplicationController
       end
     end
   end
+
 
 end
