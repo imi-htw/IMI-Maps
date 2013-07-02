@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :internship_authorization, :publicmail, :mailnotif, :student_id
   
   validates :email, :presence => true
-  validates :password, :presence => true
+  validates :password, :presence => true, length: { minimum: 5 }
   validates :internship_authorization, :presence => true
 
   

@@ -4,8 +4,6 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user do
-    first_name "bla"
-    last_name  "blubb"
     password "test"
     email  "foo@imimaps.com"
    end
@@ -14,7 +12,8 @@ FactoryGirl.define do
 describe "Homepage" do
   it "should ask for sign in" do
     visit root_path
-    page.should have_content("Please Sign In")
+    page.should have_content("E-mail")
+    page.should have_content("E-mail")
   end
 end
 
@@ -25,7 +24,8 @@ describe "Testing LogIn1" do
       	visit root_path
       	fill_in "email",  :with => user4.email
         fill_in "password",  :with => user4.password
-        click_button "Log In"	
+        page.find('.signin-icon').click
+        #click_button "Log In"	
         expect { user4.save! }.to raise_error
         user4.errors[:password].should include("is too short (minimum is 5 characters)")
         user4.valid?.should be_false
