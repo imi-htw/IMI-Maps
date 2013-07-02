@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'font-awesome';
-@media (min-width: 980px) { 
+@media (min-width: 980px){
+
 body{
   font-family: 'Merriweather Sans', sans-serif;
   background: url(bg.gif);
@@ -162,8 +163,7 @@ border-color: #7fba00 transparent transparent transparent;
 }
 
 
-.top-bar
-{
+.top-bar{
   background: url(topbar-over.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -421,8 +421,7 @@ p{
 
   .ribbon-front,
   .ribbon-back-left,
-  .ribbon-back-right
-{
+  .ribbon-back-right{
   -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -494,6 +493,7 @@ p{
   height: 40px;
   background-color: #393838;  z-index: 0;
 }
+
 .arrow{
     position: absolute;
     background: url(arrow.png) no-repeat;

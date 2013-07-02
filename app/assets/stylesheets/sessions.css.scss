@@ -120,26 +120,26 @@ h3 p{
     
     float: none;
     height: 160px;
+    left: 45%;
     position: absolute;
     width: 160px;
     z-index: 4;
-    margin-top: 0px;
-    margin-left: -85px;
+    margin-top:17px;
 }
 
 #logo_p {
 
     float: none;
     height: 160px;
+    left: 45%;
     position: absolute;
     width: 160px;
     z-index: 5;
-    margin-top: 0px;
-    margin-left: -85px;
+    margin-top:17px;
 }
 
 #change_color{
-  color: #fff;
+  color: #fff !important;
 }
 
 @media (max-width: 480px) {
