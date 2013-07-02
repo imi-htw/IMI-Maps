@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702204011) do
+ActiveRecord::Schema.define(:version => 20130702204938) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -309,13 +309,13 @@ ActiveRecord::Schema.define(:version => 20130702204011) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at",                                                :null => false
-    t.datetime "updated_at",                                                :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "password_digest"
-    t.boolean  "internship_authorization",                :default => true
+    t.boolean  "internship_authorization", :default => true
     t.boolean  "publicmail"
     t.boolean  "mailnotif"
-    t.integer  "student_id",               :limit => 255
+    t.integer  "student_id"
   end
 
 end
