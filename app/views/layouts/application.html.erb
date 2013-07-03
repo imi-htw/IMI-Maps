@@ -47,7 +47,7 @@
 
           <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
-<i class="icon-white icon-flag icon-large"></i></a>
+<i class="icon-flag icon-large"></i></a>
   <% if current_user == true %>
       <ul class="dropdown-menu">
         <% @notifications.order(:read).each do |noti| %>
@@ -70,7 +70,7 @@
     </li>
 
     <li class="dropdown">
-      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
+      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-cog icon-large"></i></a>
       <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>

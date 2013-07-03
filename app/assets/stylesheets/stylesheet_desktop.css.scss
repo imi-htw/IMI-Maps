@@ -40,17 +40,15 @@ a{
 h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
-  font-variant: small-caps;
   color: #000 !important;
   line-height: 40px;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-  text-rendering: auto;
 }
 
 h3{
   font-size: 15px;
   font-weight: 100;
   text-rendering: auto;
+  color: #000 !important;
 }
 
 p {
@@ -255,7 +253,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 }
 
 .wrapper > .container {
-  padding-top: 0px;
+  padding-top: 20px;
 }
 
 footer{

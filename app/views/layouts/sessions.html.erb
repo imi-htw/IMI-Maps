@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-          <div class="display_none">
+          <div>
             <%= gmaps(:map_options => { :container_class => "map-frontc", :id => "map2", :class => "baz", :draggable => true, :auto_zoom => false, :zoom => 3, :auto_adjust => false, :center_latitude => "10", :center_longitude => "10" } , :markers => { "data" => @pins},) %>
             <%= yield :scripts %>
 
