@@ -69,7 +69,7 @@ Orientation.where(name: "Administration & Support", id: 11).first_or_create
 
 
 User.destroy_all
-User.create!(password: "test", email: "test@imimaps.com")
+User.create!(password: "testmap", email: "test@imimaps.com")
 
 
 PaymentState.where(name: "uncharted", name_de: "unbekannt").first_or_create
