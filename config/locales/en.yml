@@ -28,9 +28,9 @@ en:
     faq: "FAQs"
     downloads: "Downloads"
     financing: "Financing"
-    general: "Intern Info"
+    general: "General Info"
     favorite: "Favorite"
-    tabtitle: "IMI Map | Hochschule für Wirtschaft und Technik"
+    tabtitle: "IMI Map | University of Applied Sciences"
  
   search:
     explanation:
@@ -274,7 +274,20 @@ en:
   general:
     title: "General Internship Information"
     text1:
-     html: "<p>A practical training component is integrated in the IMI Bachelor's degree study programm at the HTW,  in the form of a practical training term. You may do your internship in Germany (if you are from outside Germany) or abroad (obligatory for german students)</p><h3><strong>Formal Issues</strong></h3><p>Formal issues regarding conducting internships are regulated in the regulation guidelines for internships (Rahmenpraktikumsordnung), which also contain a model contract for interns. Additional or digressive regulations are specified in the study regulations of the individual study programmes, particularly those regulations pertaining to practical training contents, point in time of the internship, or accreditation of previous practical experience. </p><p>Because each department and study programme has its own individual requirements regarding procedure, deadlines, internship applications and the like, they usually offer additional information on internships at their own websites. Please be sure to check those sites for more information.</p><p>In addition, the internship advisor from your study programme can provide information on any issues regarding your internship. In any case you are to fill in the application form for the internship accompanying the course of study and hand in a certificate as evidence of the successful completion to the examination office.</p><h3><strong>How do I find an internship?</strong></h3><p>The internship advisor from your study programme can help you with your search for a suitable internship. </br>Our Career Services Centre can also assist you with your search and application for an internship. </br>On the German site of the Career Services Centre, you will also find contact details to companies, want ads for interns, and other useful links. </br>The departments or study programmes normally provide information at their websites on finding an internship, and sometimes even post internship offers.</br></p><h3><strong>Value of Interning:</strong></h3> <p>Internships provide an opportunity to gain valuable experience in a career field that interests you. It iss a great way to gain specific skills and knowledge as well as make contacts and build confidence. More and more, employers are using work experiences as screening devices to assess the skills and abilities of prospective employees. Employers like to see that you have had some type of related experience before they consider you for a position. Having additional work experience before applying gives you an edge over other candidates in a competitive job market. </br> Internships also give you the opportunity to test out careers prior to graduation. An internship provides a more accurate picture of what individuals do in certain professions. Upon experiencing a particular job environment and seeing what it entails, you may decide it is not for you. You then have the option to change your career plans and work to find a path that is a better match for your interests and skills.</p>"
+     html: "A practical training component is integrated in the IMI Bachelor's degree study programm at the HTW,  in the form of a practical training term. You may do your internship in Germany (if you are from outside Germany) or abroad (obligatory for german students)<h3><strong>Formal Issues</strong></h3>All courses of the first and second semester must be completed successfully. The students themselves have to look for an internship placement abroad. The duration of the internship has to be at least 16 weeks (Study Regulations of 2008) or 19 weeks (Study Regulations of 2012). Prior to the beginning of the internship the internship contract with the selected company has to be shown to and excepted  by the HTW Berlin. <h3> <b> Internship Application </b> </h3> You have to to conclude a contract with the Company first. You may use the HTW Template."
+    text2:
+     html: "Fill in this internship application"
+    text3:
+     html: "</br>Hand in all the application documents to the internship coordinator (during office hours). The application documents comprise:"
+    text4: "fully completed and signed internship application form in the original"
+    text5: "printed LSF-certificate, prooving that you passed all the courses of the 1st and 2nd semester"
+    text6: "the contract with the company in the original"
+    text7:  
+     html: "These documents remain at the HTW. If you need copies for BaföG, semester ticket refund or scholarships, you have to prepare those yourself and get them signed by the internship coordinator. If you want to keep an original copy of the placement agreement, please ask the compan yourself, to provide enough originals (usually three: one for the company, one for you and one for the HTW Berlin).</br></br>All these documents should be handed in before the end of lectures of the semester prior to the semester in which you plan to conduct your internship. As long as the idocuments are not complete or not handed in in original you can not be admitted to the internship.</br></br> In order to receive a refund for the semester ticket fee, you have to fill in the request (only available in german) and send it to the semester ticket office before the start of the internship semester. "
+    text8: 
+     html: ""
+    text9:
+     html: "<h3><b>Approval of the internship</b></h3>The fully completed certificate of internship completion (signed and stamped by the company) and the internship report must be handed  in to the internship coordinator and the compulsory course AEP — Auswertung von Erfahrungen am Arbeitsplatz — must be completed successfully. Only then the internship can be approved. "
 
   financing:
     title:  "Financing"
