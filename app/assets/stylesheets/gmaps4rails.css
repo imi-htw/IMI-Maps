@@ -45,13 +45,14 @@
 
 .map-intern {
   position: relative;
-  width: 255px;
+  width: 310px;
   z-index: 3;
-  margin-top: -5px;
+  margin-top: -15px;
 }
 
 #map3 {
-  width:  255px;
+  width:  310px;
   height: 160px;
   z-index: 3;
+  margin-left: 5px;
 }

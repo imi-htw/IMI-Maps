@@ -208,14 +208,14 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
   position: absolute;
   color: #ffffff;
   padding-top: 80px;
-  width: 255px;
+  width: 320px;
   top: 175px;
   font-weight: 300;
-  margin-left: 883px;
+  margin-left: 725px;
   margin-top: 85px;
-  -moz-box-shadow:      3px 3px 3px 0px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.3);
-  box-shadow:           3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow:      14px 17px 0 -7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow:   14px 17px 0 -7px rgba(0, 0, 0, 0.3);
+  box-shadow:           14px 17px 0 -7px rgba(0, 0, 0, 0.3);
 }
 
 .container-right-text {
@@ -407,11 +407,13 @@ p{
   position: relative;
 }
   .ribbon-front {
-  background-color: #4f4f4f;  height: 40px;
-  width: 269px;
-  position: relative;
-  left:-5px;
-  z-index: 2;
+    background-color: #4F4F4F;
+    height: 40px;
+    left: -5px;
+    position: relative;
+    top: -12px;
+    width: 332px;
+    z-index: 2;
 }
 
   .ribbon-front,
@@ -460,12 +462,12 @@ p{
 
   .ribbon-edge-topright,
   .ribbon-edge-bottomright {
-  left: 254px;
+  left: 317px;
   border-color: transparent transparent transparent #222121;
 }
 
   .ribbon-edge-topright {
-  top: -10px;
+  top: -22px;
   border-width: 10px 0 0 10px;
 }
   .ribbon-edge-bottomright {

@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2 style="margin-bottom:40px;"> Internship Details</h2>
+<h2 style="margin-bottom:40px; margin-left: 50px;"> Internship Details</h2>
 
     <div class="content-intern2">
 
@@ -12,102 +12,14 @@
           <div class="container-left-text">
 
 <div class="row-fluid" id="row-intern">
-  <div class="span12">
+  <div class="span10">
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.title" %></div>
       <div class="span8" id="intern-box">
         <%= @internship.title %>
-
-<h2> Internship Details</h2>
-<div class="row-fluid" style=" -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow:   3px 3px 3px 0px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.1);">
-      <div class="span12">
-            <div class="content-intern">
-     
-               <div class="row-fluid">   
-
-                  <div class="span9">
-                      <div class="container-left">
-                        <div class="container-left-text">
-<div class="table-container">
-<table class="table-intern">
-<tr>
-<td class="t-left"> <b><%= t "internships.attributes.title" %></b></td>
-<td><%= @internship.title %></td>
-</tr>
-<tr>
-<td class="t-left"> <b><%= t "internships.attributes.orientation" %></b></td>
-<td><%= @internship.orientation.try(:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.programming_languages" %></b></td>
-<td><%= @internship.programming_languages.map(&:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.salary" %></b></td>
-<td><%= @internship.salary %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.working_hours" %></b></td>
-<td><%= @internship.working_hours %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.living_costs" %></b></td>
-<td><%= @internship.living_costs %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internship.attributes.rating" %></b></td>
-<td></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.user" %></b></td>
-<td><%= @internship.try(:user).try(:name) %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "users.attributes.email" %></b></td>
-<td>
-  <% if @internship.email_public %><%= @internship.user.email %><% end %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.semester" %></b></td>
-<td><%= @internship.semester.semester %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.recommend" %></b></td>
-<td><%= @internship.recommend %></td>
-</tr>
-<tr>
-<td class="t-left"><b><%= t "internships.attributes.description" %></b></td>
-<td><%= @internship.description %></td>
-</tr>
-</table>
-</div>
-
-                              <div id="favorite">
-                              <% if @favorite %>
-                                <%= button_to t("favorite.delete"), {:controller => :favorite,
-                                      :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
-                                <% else %>
-                                <%= button_to t("favorite.add"), {:controller => :favorite,
-                                      :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
-                                <% end %>
-                                </div>
-
- <% if @internship.attachments.present? %>
-  <b><%= t "internships.attributes.pictures" %> :</b></b>
-  <% @internship.attachments.each do |attachment| %>
-    <a href="#myModal" role="button" class="btn" data-toggle="modal"><%= image_tag attachment.file_url(:thumb) %></a>
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Photo Gallery</h3>
-        </div>
-      <div class="modal-body">
-        <%= image_tag attachment.file_url %>
       </div>
     </div>
-    <% end %>
-    <% end %>
 
 <div class="row-fluid" id="row-intern">
   <div class="span12">
@@ -221,7 +133,7 @@
 
 <div class="row-fluid" id="row-intern">
   <div class="span12">
-   <div class="row" style="background-color:#ffffff; margin-bottom:20px; margin-left:0px">   
+   <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.description" %></div>
       <div class="span8" id="intern-box">
@@ -365,7 +277,7 @@
               <div class="ribbon">
                 <div class="ribbon-wrapper">
                   <div class="ribbon-front">
-                    <h3 style="margin-left:15px"> Company Overview </h3>
+                    <h3 style="margin-left:15px; font-variant: small-caps; font-size: 19px;"> Company Short Facts </h3>
                   </div>
 
                   <div class="ribbon-edge-topright"></div>
@@ -382,42 +294,64 @@
             <%= gmaps(:map_options => { :container_class => "map-intern", :id => "map3", :class => "baz", :draggable => true, :auto_zoom => false, :zoom => 6, :mapTypeControl => false,} , :markers => { "data" => @pins},) %>
             <%= yield :scripts %>
 
+            <div class="greenline"></div>
+
+            <div class="container-right-text">
+
+             <div id="company-title">
+              <%= t "companies.attributes.name"  %>
+            </div>
+            <div id="company-title-text">
+              <%= @internship.company.name %>
+            </div>
 
 
-               <div class="container-right-text">
-                <p>
-                  <b><%= t "companies.attributes.name"  %> :</b>
-                  <%= @internship.company.name %>
-                </p>
 
 
-                <p>
-                  <b><%= t "companies.attributes.website"  %> :</b>
-                  <%= link_to @internship.company.website , target: "_blank" %>
-                </p>
-
-                <p>
-                  <b><%= t "companies.attributes.industry"  %> :</b>
-                  <%= @internship.company.industry %>
-                </p>
-                <p>
-
-                  <p>
-                    <b><%= t "companies.attributes.number_employees"  %> :</b>
-                    <%= @internship.company.number_employees %>
-                  </p>
+             <div id="company-title">
+              <%= t "companies.attributes.website"  %>
+            </div>
+            <div id="company-title-text">
+              <%= link_to @internship.company.website , target: "_blank" %>
+            </div>
 
 
-                  <b><%= t "companies.attributes.main_language"  %> :</b>
-                  <%= @internship.company.main_language %>
-                </p>
-                <p>
-                  <b><%= t "companies.attributes.rating"  %> :</b>
-                </p>
-                <p>
-                </div>
+
+             <div id="company-title">
+              <%= t "companies.attributes.industry"  %>
+            </div>
+            <div id="company-title-text">
+              <%= @internship.company.industry %>
+            </div>
 
 
+
+             <div id="company-title">
+              <%= t "companies.attributes.number_employees"  %>
+            </div>
+            <div id="company-title-text">
+              <%= @internship.company.number_employees %>
+            </div>
+
+
+
+             <div id="company-title">
+              <%= t "companies.attributes.main_language"  %>
+            </div>
+            <div id="company-title-text">
+              <%= @internship.company.main_language %>
+            </div>
+
+
+             <div id="company-title">
+              <%= t "companies.attributes.rating"  %>
+            </div>
+            <div id="company-title-text">
+
+            
+            </div>
+
+</div>
 
 
 

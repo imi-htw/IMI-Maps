@@ -14,11 +14,25 @@
     padding-bottom: 20px;
 }
 
+#company-title {
+    font-size: 19px;
+    font-variant: small-caps;
+    font-weight: 100;
+}
+
+#company-title-text {
+    color: #C4C8BD;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 2px 0 15px 10px;
+}
+
 #intern-box {
   padding-top: 5px;
 }
 
 .content-intern2 {
+  margin-left: 20px;
 }
 
 #row-intern {
@@ -26,10 +40,17 @@ margin-top:0px;
 }
 
 #row2-intern {
-    background-color: #FFFFFF;
-    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 4px 3px 1px -1px rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
     margin-left: 0;
+}
+
+.greenline {
+    height: 7px;
+    width: 310px;
+    margin: 0px 0 10px 5px;
+    background-color: #80b900;
 }
 
 .rating {
