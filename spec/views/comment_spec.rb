@@ -1,18 +1,27 @@
 require 'spec_helper'
 
 
-=begin
+
 
  describe "Favorites" do
-    it "displays usercomments", :js => true do
-      visit overview_index_path("de")      
-      current_path.should == "/de/overview"
-      #click_link favorite_index_path
-      #page.should have_content("destroy")
+    it "displays usercomments" do
+        @user6 = User.create!( password: "testCo", email: "test@imimaps.com")
+        @user6.save
+        visit root_path
+        fill_in "email",  :with => @user6.email
+        fill_in "password",  :with => @user6.password
+        page.find('.signin-icon').click
+        @user6.valid?.should be_true
+        @current_user=@user6
+        @current_user.nil?.should be_false
+        response.should render_template(:overview)
+        visit favorite_index_path("de")      
+        page.should have_content("Favorites Title")
      
     end
 end
 
+=begin
 describe "search" do
     it "displays usercomments", :js => true do
       visit root_path
@@ -32,10 +41,3 @@ describe "search" do
     end
 end
 =end
-#@comment= UserComment.create!(:body => "paint fence" )
-#current_path.should == "/" 
-       	#current_path.should  redirect_to("overview#index")
-        #fill_in "country", :with => "Germany"
-        #fill_in "programming_language_ids", :with => "Java"
-        #click_button "search_button"
-        #page.should have_content('Company499')
