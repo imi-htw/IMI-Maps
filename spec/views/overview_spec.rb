@@ -33,5 +33,4 @@ describe "Overview Page" do
         page.should have_content("Guide")
         page.should have_content("Name")
     end
-
 end
