@@ -34,17 +34,20 @@
 
 				</div>
 
-			<p><%= link_to "forgotten password?", new_password_reset_path %></p>
-				<div class="field">
-  				<%= check_box_tag :remember_me, 1, params[:remember_me] %>
-  				<%= label_tag :remember_me %>
-				</div>
-
   	<% flash.each do |key, value| %>
         <div class="<%= flash_class(key) %>">
           <%= value %>
         </div>
  		<% end %>
+
+			<p><%= link_to "Forgot password?", new_password_reset_path %></p>
+			<!--	<div class="field">
+  				<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+  				<%= label_tag :remember_me %>
+				</div>
+			-->
+
+
 
 			</div>
 		</div>
