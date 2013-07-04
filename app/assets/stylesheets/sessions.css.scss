@@ -17,7 +17,6 @@ form{
   margin: 0px auto;
   width: auto;
   z-index: 3;
-  float: none;
   display: inline-block;
 }
 
@@ -40,10 +39,10 @@ form{
 #login-box{
   background-color: #000;
   height: 180px;
-  padding-top:40px;
+  padding-top:0px;
   position: inherit;
   width: 100%;
-  margin-top:20px;
+  margin-top:0px;
   z-index: 3;
 }
 
@@ -78,10 +77,10 @@ h3 p{
 }
 
 .login{
-  position: relative;
+  position: absolute;
   text-align: center;
-  top: 290px;
-  z-index: 3; 
+  top: 0px;
+  z-index: 13; 
 }
 
 #login-element{
@@ -98,8 +97,10 @@ h3 p{
 
 .signin-icon{
     height: 20px;
-    margin-left: 5px;
-    margin-bottom: 5px;
+    margin: 10px 20px 5px 10px;
+    float: right;
+    position: static;
+    z-index: 7;
 }
 
 
@@ -119,27 +120,89 @@ h3 p{
 #logo_w {
     
     float: none;
-    height: 160px;
+    height: 130px;
     position: absolute;
-    width: 160px;
-    z-index: 4;
-    margin-top: 0px;
-    margin-left: -85px;
+    width: 130px;
+    z-index: 5;
+    margin-top: 5px;
+    left: 100px;
 }
 
 #logo_p {
 
     float: none;
-    height: 160px;
+    height: 130px;
     position: absolute;
-    width: 160px;
-    z-index: 5;
-    margin-top: 0px;
-    margin-left: -85px;
+    width: 130px;
+    z-index: 6;
+    margin-top: 5px;
+    left: 100px;
 }
+
+.tri-line {
+  width:100%; 
+  height: 20px; 
+  background: url(triangle1.png); 
+  background-repeat: repeat-x;
+  position: absolute; 
+  top: 79px;
+  z-index: 4;
+}
+
+.tri-line2 {
+  width:100%; 
+  height: 20px; 
+  background: url(triangle.png); 
+  background-repeat: repeat-x;
+  position: absolute; 
+  bottom: 15px;
+  z-index: 4;
+}
+
+.lost-pswd {
+    color: #838383;
+    float: right;
+    height: 20px;
+    position: relative;
+    top: -25px;
+    z-index: 7;
+    margin-right: 55px;
+}
+
+#box-pswd {
+z-index:3;
+}
+
+#box-pswd a {
+color:#999999;
+opacity: 0.85;
+text-decoration: none;
+display:block;
+padding:5px;
+}
+
+#box-pswd a:hover {
+color:#999999;
+float: right;
+background:#333333;
+width:220px;
+}
+
+#box-pswd a span {display:none;}
+
+#box-pswd a:hover span {
+color:#80b900;
+background:#292929;
+font:normal 16px courier, sans-serif;
+display:block;
+padding:10px;
+float: right;
+}
+
 
 #change_color{
   color: #fff;
+  margin-top: 0px;
 }
 
 @media (max-width: 480px) {
