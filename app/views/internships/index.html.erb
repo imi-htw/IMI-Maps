@@ -42,8 +42,6 @@
 
 <% end %>
 
-blub
-
 <script> 
         $( "#salary_slider" ).slider({
             min: 0,
@@ -191,21 +189,21 @@ blub
   </tbody>
 </table>
 </div>
-
-<% if @internships_size > 5 %>
-<!---  <div class='pager'>
+<!---  
+<% #if @internships_size > 5 %>
+<div class='pager'>
     <a href='' alt='First' class='firstPage'>First</a>
     <a href='' alt='Previous' class='prevPage'>Prev</a>
         
     <span class='currentPage'></span> of <span class='totalPages'></span>
     <a href='' alt='Next' class='nextPage'>Next</a>
     <a href='' alt='Last' class='lastPage'>Last</a>
-  </div>---->
-<% end %>
-
+  </div>
+<% #end %>
+---->
 <script>
 $("#paginated").stupidtable();
-/*<% if @internships_size > 5 %>
+/*
         $('table#paginated').each(function() {
           var currentPage = 1;
           var numPerPage = 5;
@@ -252,6 +250,5 @@ $("#paginated").stupidtable();
             $table.trigger('repaginate');
           });
 
-      });
-      <% end %>*/
+      });*/
 </script>

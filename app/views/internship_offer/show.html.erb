@@ -1,0 +1,7 @@
+<h3> <%= @offer.title %></h3>
+<% if @offer.body.present? %>
+<p> <%= @offer.body %> </p>
+<% end %>
+<% if @offer.pdf.present? %>
+<%= link_to "Download PDF", "#{@offer.pdf}" %>
+<% end %>

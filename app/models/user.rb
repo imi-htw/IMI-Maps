@@ -15,9 +15,4 @@ class User < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy
   has_many :notifications, :dependent => :destroy
 
-
-
-  def name
-    "#{student.first_name} #{student.last_name}"
-  end
 end

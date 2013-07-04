@@ -13,4 +13,13 @@ class InternshipRecord < ActiveRecord::Base
   def enrolment_number
   	internship.student.enrolment_number
   end
+
+  def company
+    internship.company
+  end
+
+  def student
+    internship.student
+  end
+
 end

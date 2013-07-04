@@ -1,20 +1,13 @@
 ActiveAdmin.register Company do
     filter :internships_student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel", :input_html => { :class => 'chosen' }
     filter :name
-    filter :number_employees
-    filter :industry
-    filter :website
     filter :city
     filter :country
-    filter :street
-    filter :zip
-    filter :main_language
-    filter :phone
-    filter :fax
-    filter :blacklisted
 
 	index do
-    column :enrolment_number
+    column :student do |n|
+      link_to n.enrolment_number, "/admin/students/#{n.id}"
+    end
     column :name
     column :number_employees
     column :industry

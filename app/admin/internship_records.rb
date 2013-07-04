@@ -12,7 +12,10 @@ ActiveAdmin.register InternshipRecord do
 
 	index do
 
-		column :enrolment_number
+		column :student do |n|
+			link_to n.enrolment_number, "/admin/students/#{n.id}"
+		end
+		column :company
     column :certificate_signed_by_internship_officer
     column :certificate_signed_by_prof 
     column :certificate_to_prof
@@ -25,5 +28,28 @@ ActiveAdmin.register InternshipRecord do
     default_actions
 
   end
+
+  show do |student|
+      attributes_table do
+        row :enrolment_number
+        row :certificate_signed_by_internship_officer
+    		row :certificate_signed_by_prof 
+    		row :certificate_to_prof
+    		row :internship_state
+	  		row :payment_state
+	  		row :registration_state
+	  		row :contract_state
+	  		row :report_state
+	  		row :certificate_state
+	  		row :reading_prof
+	  		row :internship do |n|
+	  			link_to n.internship.id, "/admin/internships/#{n.internship.id}" 
+	  		end
+	  		row :company
+	  		row :student 
+
+      end
+      active_admin_comments
+    end
 
 end

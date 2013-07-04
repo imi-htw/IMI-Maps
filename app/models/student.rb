@@ -6,4 +6,8 @@ class Student < ActiveRecord::Base
 
   has_many :internships
   has_one :user
+
+  def internship_record
+  	internships.map do |x| x.internship_record end.join(", ")
+  end
 end
