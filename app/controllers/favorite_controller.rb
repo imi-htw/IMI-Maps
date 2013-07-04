@@ -1,4 +1,5 @@
 class FavoriteController < ApplicationController
+  before_filter :authorize
 
 	def create 
 
