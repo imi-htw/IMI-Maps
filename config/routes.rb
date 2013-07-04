@@ -1,5 +1,7 @@
 ImiMaps::Application.routes.draw do
 
+  get "password_resets/new"
+
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
 		resources :internships
@@ -45,6 +47,8 @@ ImiMaps::Application.routes.draw do
     resources :favorite, :only => [:index]
 
     resources :favorite_compare
+
+    resources :password_resets
 
 		root to: 'sessions#new'
     get 'signup', to: 'users#new', as: 'signup'
