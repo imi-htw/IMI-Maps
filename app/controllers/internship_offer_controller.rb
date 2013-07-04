@@ -1,4 +1,5 @@
 class InternshipOfferController < ApplicationController
+  before_filter :authorize
 
 	def index
 		@offers = InternshipOffer.all
