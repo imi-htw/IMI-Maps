@@ -192,9 +192,9 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
   create_table "internships", :force => true do |t|
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.integer  "internship_rating_id", :default => 1
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
+    t.integer  "internship_rating_id",                     :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
@@ -215,6 +215,19 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.integer  "atmosphere_rating"
     t.integer  "supervision_rating"
     t.integer  "appreciation_rating"
+    t.integer  "internship_state_id"
+    t.integer  "reading_prof_id"
+    t.integer  "payment_state_id"
+    t.integer  "registration_state_id"
+    t.integer  "contract_state_id"
+    t.integer  "report_state_id"
+    t.integer  "certificate_state_id"
+    t.date     "certificate_signed_by_internship_officer"
+    t.date     "certificate_signed_by_prof"
+    t.date     "certificate_to_prof"
+    t.string   "comment"
+    t.string   "supervisor_email"
+    t.string   "supervisor_name"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
