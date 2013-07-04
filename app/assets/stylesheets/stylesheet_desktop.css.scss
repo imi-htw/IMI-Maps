@@ -144,6 +144,11 @@ border-color: #7fba00 transparent transparent transparent;
 .navbar .nav.pull-right > li > a:hover{
   color: #000;
 }
+
+.navbar .nav.pull-right > li > a:focus{
+  color: #000;
+}
+
 .navbar .nav {
   margin-left: 70px;
 }
@@ -492,7 +497,7 @@ p{
   background-color: #393838;  z-index: 0;
 }
 
-.arrow{
+.arrow2{
     position: absolute;
     background: url(arrow.png) no-repeat;
     background-size: 220px 150px;
@@ -501,6 +506,35 @@ p{
     margin-top: -220px;
     margin-left: 300px;  
 }
+
+.msgbox {
+    position: absolute;
+    background: url(arrow.png) no-repeat;
+    background-size: 220px 150px;
+    height: 150px;
+    width: 220px; 
+    margin-top: -220px;
+    margin-left: 300px;
+}
+
+#close {
+  float: left;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000 !important;
+  margin-left: 190px;
+  margin-top: 20px;
+  cursor: pointer;
+  -moz-transform:rotate(7deg); /* Firefox 3.6 Firefox 4 */
+  -webkit-transform:rotate(7deg); /* Safari */
+  -o-transform:rotate(7deg); /* Opera */
+  -ms-transform:rotate(7deg); /* IE9 */
+  transform:rotate(7deg); /* W3C */
+  background-color: #fff;
+  padding: 5px;
+}
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {

@@ -18,20 +18,17 @@
 //= require d3
 //= require stupidtable.min
 
-
-// $(document).ready(function() {
-//   $("#hide_button").click(function() {
-//     $(".answer").slideUp("slow");
-//   });
-//   $("#show_button").click(function() {
-//     $(".answer").slideDown("slow");
-//   });
-// });
-
 $(window).load(function () {
-    setTimeout(function() {
-        $(".arrow").hide('blind', {}, 2000)
-    }, 20000);
+      $("#close").click(function(){
+        $(".msgbox").fadeOut("400")
+      $.cookie('fadeOut', true);
+});
+
+    if($.cookie('fadeOut') == 'true'){
+        $('.msgbox').hide();
+    } else {
+        $('.msgbox').click();
+    }
 });
 
 $(document).ready(function() {
@@ -42,9 +39,6 @@ $(document).ready(function() {
      $("#comment_form").slideToggle("slow");
   });
 
-    // $(".active_click").click(function(){
-    //   $(this).addClass("active");
-    // });
 });
 
 click_reset = function() {
@@ -52,9 +46,3 @@ click_reset = function() {
   $(".search-choice").remove();
   $("#search_button").click();
 }
-
-// $(window).bind("load resize", function(){
-//     var h = $(window).height( ),
-//     offsetTop = 0;
-//     $('#map').css('height', (h - offsetTop));
-// });

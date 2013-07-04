@@ -18,7 +18,7 @@ class UserMailer < ActionMailer::Base
 
   def forgot_pwd(user)
     @user = user
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Maps) Forgot Password")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Maps) Password Reset")
   end
 
 end

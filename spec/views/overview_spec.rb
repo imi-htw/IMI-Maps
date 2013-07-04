@@ -16,7 +16,7 @@ describe "Overview Page" do
         current_path.should == "/en/overview"
         click_link "Deutsch"   
         current_path.should == "/de/overview"
-   end
+     end
    
     it "should have content" do       
         @user6 = User.create!( password: "testIT", email: "test@imimaps.com")
@@ -32,6 +32,5 @@ describe "Overview Page" do
         page.should have_content("English")
         page.should have_content("Guide")
         page.should have_content("Name")
-   end
-
+    end
 end
