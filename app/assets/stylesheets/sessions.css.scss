@@ -117,8 +117,7 @@ h3 p{
     z-index: 3; 
 }
 
-#logo_w {
-    
+#logo_w { 
     float: none;
     height: 130px;
     position: absolute;
@@ -129,7 +128,6 @@ h3 p{
 }
 
 #logo_p {
-
     float: none;
     height: 130px;
     position: absolute;
@@ -168,37 +166,10 @@ h3 p{
     z-index: 7;
     margin-right: 55px;
 }
-
-#box-pswd {
-z-index:3;
+.lost-pswd a:hover{
+    color:#bddb78;
+    text-decoration: none;
 }
-
-#box-pswd a {
-color:#999999;
-opacity: 0.85;
-text-decoration: none;
-display:block;
-padding:5px;
-}
-
-#box-pswd a:hover {
-color:#999999;
-float: right;
-background:#333333;
-width:220px;
-}
-
-#box-pswd a span {display:none;}
-
-#box-pswd a:hover span {
-color:#80b900;
-background:#292929;
-font:normal 16px courier, sans-serif;
-display:block;
-padding:10px;
-float: right;
-}
-
 
 #change_color{
   color: #fff;
