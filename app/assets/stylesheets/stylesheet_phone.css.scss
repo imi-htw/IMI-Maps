@@ -69,11 +69,11 @@ footer{
  display: none;
 }
 
-.reset{
+/*.reset{
 margin-right: -166px;
 margin-top: -30px;
 float: right;
-}
+}*/
 
 .search-table{
   background-color:#333333; 
@@ -82,6 +82,11 @@ float: right;
 
 .even_row {
     background-color: #cbc9c9;
+}
+
+.map_container {
+  margin-top: 10px;
+  width: auto !important;
 }
 
 }
