@@ -34,6 +34,14 @@
 
 				</div>
 
+  	<% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <%= value %>
+        </div>
+ 		<% end %>
+
 			</div>
 		</div>
+
+
 		<% end %>
