@@ -12,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="field">
     <%= f.label t "internships.attributes.title" %><br />
     <%= f.text_field :title %>
@@ -70,69 +70,25 @@
     <div class="field">
     <%= f.label t "internships.attributes.internship_report"  %>
     <%= f.file_field :internship_report %>
-    </div>  
+    </div
   <br />
 
   <div class="field">
     <%= f.label t "internships.attributes.rating" %><br />
     <div id="edit-rating"><%# render_stars(1, self) %></div>
     <%# f.hidden_field :rating %>
-  </div>  
+  </div>
   <br />
   <br />
   <div class="field">
     <%= f.label t "internships.attributes.recommend"  %>
     <%= f.check_box :recommend %>
-  </div>  
+  </div>
   <br />
-  <div class="field">
-    <%= f.label t "internships.attributes.email_public"  %>
-    <%= f.check_box :email_public %>
-  </div>  
   <br />
-  <div class="actions">    
+  <div class="actions">
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>
 <% end %>
-</div>
-<div class="span6">
-<%= form_for(@company) do |f| %>
-  <div class="field">
-    <%= f.label t "companies.attributes.name" %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.street" %><br />
-    <%= f.text_field :street %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.zip" %><br />
-    <%= f.number_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.city" %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.country" %><br />
-    <%= f.country_select :country, ["United States"],{}, class: 'chzn-select' %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.number_employees" %><br />
-    <%= f.number_field :number_employees %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.industry" %><br />
-    <%= f.text_field :industry %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.main_language" %><br />
-    <%= f.text_field :main_language %>
-  </div>
-  <div class="field">
-    <%= f.label t "companies.attributes.website" %><br />
-    <%= f.text_field :website %>
-  </div>
-<%end%>
 </div>
 </div>

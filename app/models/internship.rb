@@ -28,7 +28,7 @@ class Internship < ActiveRecord::Base
   has_many :user_comments, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
-  
+
   has_many :attachments, :as => :attachable
 
   mount_uploader :internship_report, InternshipReportUploader
