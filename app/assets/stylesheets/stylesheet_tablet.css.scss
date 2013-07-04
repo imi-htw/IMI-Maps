@@ -11,11 +11,22 @@ body{
 }
 
 a{
-  color: #8bb900;
 }
 
 .navbar-inner {
   border-radius: 0px 0px 0px 0px !important;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a{
+  color: #c0b9b9 !important;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a:hover{
+  color: #8bb900 !important;
+}
+
+.display_nonet{
+  display: none;
 }
 
 .map-shadow{
@@ -28,10 +39,6 @@ a{
     background-size: 780px 210px;
     margin-top: -189px;
     margin-left: -27px;
-}
-
-.display_none{
-  display: none !important;
 }
 
 footer{
@@ -56,6 +63,15 @@ display: none;
   overflow-y: auto;
   _overflow: auto;
   margin: 0 0 1em;
+}
+
+.search-table{
+  background-color:#333333; 
+  color:#e3e5e1;
+}
+
+.even_row {
+    background-color: #cbc9c9;
 }
 
 }

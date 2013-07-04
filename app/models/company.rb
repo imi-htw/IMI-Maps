@@ -34,5 +34,9 @@ class Company < ActiveRecord::Base
     end
     companies.uniq
   end
+
+  def enrolment_number
+    internships.map do |x| x.student.enrolment_number end.join(", ")
+  end
   
 end

@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'font-awesome';
-@media (min-width: 980px) { 
+@media (min-width: 980px){
+
 body{
   font-family: 'Merriweather Sans', sans-serif;
   background: url(bg.gif);
@@ -33,20 +34,21 @@ a{
   color: #8bb900;
 }
 
+#p1 { padding-left: 100px; padding-right: 100px; }
+
+
 h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
-  font-variant: small-caps;
   color: #000 !important;
   line-height: 40px;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-  text-rendering: auto;
 }
 
 h3{
   font-size: 15px;
   font-weight: 100;
   text-rendering: auto;
+  color: #000 !important;
 }
 
 p {
@@ -142,6 +144,11 @@ border-color: #7fba00 transparent transparent transparent;
 .navbar .nav.pull-right > li > a:hover{
   color: #000;
 }
+
+.navbar .nav.pull-right > li > a:focus{
+  color: #000;
+}
+
 .navbar .nav {
   margin-left: 70px;
 }
@@ -159,8 +166,7 @@ border-color: #7fba00 transparent transparent transparent;
 }
 
 
-.top-bar
-{
+.top-bar{
   background: url(topbar-over.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -252,7 +258,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 }
 
 .wrapper > .container {
-  padding-top: 0px;
+  padding-top: 20px;
 }
 
 footer{
@@ -418,8 +424,7 @@ p{
 
   .ribbon-front,
   .ribbon-back-left,
-  .ribbon-back-right
-{
+  .ribbon-back-right{
   -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -491,7 +496,8 @@ p{
   height: 40px;
   background-color: #393838;  z-index: 0;
 }
-.arrow{
+
+.arrow2{
     position: absolute;
     background: url(arrow.png) no-repeat;
     background-size: 220px 150px;
@@ -500,6 +506,35 @@ p{
     margin-top: -220px;
     margin-left: 300px;  
 }
+
+.msgbox {
+    position: absolute;
+    background: url(arrow.png) no-repeat;
+    background-size: 220px 150px;
+    height: 150px;
+    width: 220px; 
+    margin-top: -220px;
+    margin-left: 300px;
+}
+
+#close {
+  float: left;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000 !important;
+  margin-left: 190px;
+  margin-top: 20px;
+  cursor: pointer;
+  -moz-transform:rotate(7deg); /* Firefox 3.6 Firefox 4 */
+  -webkit-transform:rotate(7deg); /* Safari */
+  -o-transform:rotate(7deg); /* Opera */
+  -ms-transform:rotate(7deg); /* IE9 */
+  transform:rotate(7deg); /* W3C */
+  background-color: #fff;
+  padding: 5px;
+}
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {

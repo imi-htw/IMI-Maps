@@ -17,6 +17,7 @@
   <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  <script src="jquery.cookie.js"></script>
 </head>
 <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
 
@@ -47,7 +48,7 @@
 
           <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
-<i class="icon-white icon-flag icon-large"></i></a>
+<i class="icon-flag icon-large"></i></a>
   <% if current_user == true %>
       <ul class="dropdown-menu">
         <% @notifications.order(:read).each do |noti| %>
@@ -70,7 +71,7 @@
     </li>
 
     <li class="dropdown">
-      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-white icon-cog icon-large"></i></a>
+      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-cog icon-large"></i></a>
       <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
@@ -88,7 +89,7 @@
 
     <ul class="nav nav-top ">
               <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
-              <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), search_index_path %></li>
+              <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), internships_path %></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
@@ -98,7 +99,7 @@
                   <li><%= link_to t("header.financing"), financing_index_path %></li>
                 </ul>
               </li>
-              <li class="<%= 'active_nav' if current_page?(internships_path) %>"><%= link_to t("header.exchange"), internships_path %></li>
+              <li class="<%= 'active_nav' if current_page?(internship_offer_index_path) %>"><%= link_to t("header.exchange"), internship_offer_index_path %></li>
 
     </ul>
   </div>
@@ -113,7 +114,7 @@
 
   <div class="wrapper">
     <div class="container clear-top">      
-      <div clas="row">
+      <div class="row">
        <%= yield %></div>
       </div>
     </div>

@@ -9,4 +9,17 @@ class InternshipRecord < ActiveRecord::Base
   belongs_to :report_state
   belongs_to :certificate_state
   belongs_to :reading_prof
+
+  def enrolment_number
+  	internship.student.enrolment_number
+  end
+
+  def company
+    internship.company
+  end
+
+  def student
+    internship.student
+  end
+
 end

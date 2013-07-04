@@ -2,7 +2,7 @@
 <%= yield :scripts %>
 
 <script type="text/javascript">
-Gmaps.map.callback = function(){
+/*Gmaps.map.callback = function(){
 for(var i = 0; i < Gmaps.map.markers.length; i++){
           marker = Gmaps.map.markers[i];
           google.maps.event.addListener(marker.serviceObject, 'click', 
@@ -16,14 +16,14 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
             })(marker)
           )
         }
-}
+}*/
 </script>
 
-<br/> 
+<br/>
+<div class="map-shadow"></div> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
-<div class="map-shadow"></div>
 
-<table class="table_block" style="margin-bottom: 10px;">
+<table class="table_block" style="margin-bottom: 10px; width:100%">
 <tr>
   <p><%=t"search.criteria"%></p>
 </tr>
@@ -33,10 +33,9 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td id="orientation_td" class="table_block"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
     <td id="languages_td" class="table_block"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
     <td class="table_block"><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %></td>
-   <td class="table_block reset"><%= submit_tag t("helpers.reset"), :name => nil, :class => "btn btn-success", :id => "reset_chosen", :onclick => "click_reset();" %>
+   <td class="table_block reset"><%= submit_tag t("helpers.reset"), :name => nil, :class => "btn btn-success", :id => "reset_chosen", :onclick => "click_reset();" %></td>
   </tr>
 </table>
-
 <% end %>
 
  
@@ -48,7 +47,9 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div class="row">
 <!-- <div class="span1 offset2"><div class="hand-pointer"></div></div>
 <div class="span8"><p class="explanation"><%=t"search.explanation.html"%></p></div> -->
-<div class="arrow"></div>
+<div id="message-1" class="msgbox">
+  <a id="close" title="Close This">X</a>
+  <div class="arrow"></div></div>
 </div> 
 
 <div id="results_string" style="display:none"> </div>
@@ -198,7 +199,9 @@ function compare(a,b) {
 
 data_country.sort(compare);
 
-  x.domain(data_country.map(function(d) { return d.name; }));
+var data_country_5 = data_country.slice(0,8);
+
+  x.domain(data_country_5.map(function(d) { return d.name; }));
   y.domain([0, d3.max(data_country, function(d) { return d.count/sum(data_country); })]);
 
   svg_country.append("g")
@@ -218,7 +221,7 @@ data_country.sort(compare);
       .text("");
 
   var bar_country = svg_country.selectAll(".bar")
-      .data(data_country)
+      .data(data_country_5)
     .enter()
       .append("g");
 
@@ -262,7 +265,9 @@ var data_language = <%=raw @data_language.to_json%>;
 
 data_language.sort(compare);
 
-  x.domain(data_language.map(function(d) { return d.name; }));
+var data_language_5 = data_language.slice(0,8);
+
+  x.domain(data_language_5.map(function(d) { return d.name; }));
   y.domain([0, d3.max(data_language, function(d) { return d.count/100; })]);
 
   svg_language.append("g")
@@ -282,7 +287,7 @@ data_language.sort(compare);
       .text("");
 
   var bar_language = svg_language.selectAll(".bar")
-      .data(data_language)
+      .data(data_language_5)
     .enter()
       .append("g");
 
@@ -334,7 +339,9 @@ var data_orientation = <%=raw @data_orientation.to_json%>;
 
 data_orientation.sort(compare);
 
-  x.domain(data_orientation.map(function(d) { return d.name; }));
+var data_orientation_5 = data_orientation.slice(0,8);
+
+  x.domain(data_orientation_5.map(function(d) { return d.name; }));
   y.domain([0, d3.max(data_orientation, function(d) { return d.count/sum(data_orientation); })]);
 
   svg_orientation.append("g")
@@ -354,7 +361,7 @@ data_orientation.sort(compare);
       .text("");
 
   var bar_orientation = svg_orientation.selectAll(".bar")
-      .data(data_orientation)
+      .data(data_orientation_5)
     .enter()
       .append("g");
 

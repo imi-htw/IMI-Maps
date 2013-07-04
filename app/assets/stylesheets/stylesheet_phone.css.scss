@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media (max-width: 480px) {
+  
 body{
   font-family: 'Merriweather Sans', sans-serif;
   color: #000000;
@@ -11,7 +12,6 @@ body{
 }
 
 a{
-  color: #8bb900;
 }
 
 .navbar-inner {
@@ -19,8 +19,9 @@ a{
 }
 
 .nav.pull-right {
-    float: none;
-    margin-left: -20px;
+  float: left !important;
+  margin-left: -40px !important;
+  margin-right: -10px;
 }
 
 .navbar .nav.pull-right > li{
@@ -33,8 +34,12 @@ a{
   margin-right: -8px;                               /* nav right */
 } 
 
-.display_none{
-  display: none !important;
+.navbar-inverse .brand, .navbar-inverse .nav > li > a{
+  color: #c0b9b9 !important;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a:hover{
+  color: #8bb900 !important;
 }
 
 .chzn-container{
@@ -49,22 +54,39 @@ a{
   left: -94px;
 }
 
-.table-container
-{
+.table-container{
   width: 100%;
   overflow-y: auto;
   _overflow: auto;
   margin: 0 0 1em;
 }
 
+.display_none{
+  display: none !important;
+}
+
 footer{
  display: none;
 }
 
-.reset {
+/*.reset{
 margin-right: -166px;
 margin-top: -30px;
 float: right;
+}*/
+
+.search-table{
+  background-color:#333333; 
+  color:#e3e5e1;
+}
+
+.even_row {
+    background-color: #cbc9c9;
+}
+
+.map_container {
+  margin-top: 10px;
+  width: auto !important;
 }
 
 }
