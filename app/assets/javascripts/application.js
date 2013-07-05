@@ -28,7 +28,30 @@ $(window).load(function () {
         $('.msgbox').hide();
     } else {
         $('.msgbox').click();
-    }
+    }   
+
+    $(".edit-rating .rating_star").click(function() {
+      var val = $(this).attr('data-rating-id');
+      var id = $(this).parent().parent().attr("id");
+      setStars(val, id);
+      setValue(val, id);
+    });
+
+  var setStars = function(val, id) {
+    stars = $("#"+id+" .rating_star");
+    $(stars).each(function(){
+      var currentId = $(this).attr('data-rating-id');
+      if (currentId <= val)
+        $(this).addClass('on')
+      else 
+        $(this).removeClass('on')
+    })
+  }
+
+  var setValue = function(val, id) {
+    $("#internship_"+id).val(val)
+  }
+
 });
 
 $(document).ready(function() {
@@ -46,3 +69,5 @@ click_reset = function() {
   $(".search-choice").remove();
   $("#search_button").click();
 }
+
+ 

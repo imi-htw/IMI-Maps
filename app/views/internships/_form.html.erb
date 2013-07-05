@@ -75,8 +75,36 @@
 
   <div class="field">
     <%= f.label t "internships.attributes.rating" %><br />
-    <div id="edit-rating"><%# render_stars(1, self) %></div>
-    <%# f.hidden_field :rating %>
+    <div class="edit-rating" id="tasks_rating"><%= render_stars(@internship.tasks_rating, self) %></div>
+    <%= f.hidden_field :tasks_rating %>
+  </div>
+  <br />
+  <br />
+  <div class="field">
+    <%= f.label t "internships.attributes.rating" %><br />
+    <div class="edit-rating" id="training_rating"><%= render_stars(@internship.training_rating, self) %></div>
+    <%= f.hidden_field :training_rating %>
+  </div>
+  <br />
+  <br />
+  <div class="field">
+    <%= f.label t "internships.attributes.rating" %><br />
+    <div class="edit-rating" id="atmosphere_rating"><%= render_stars(@internship.atmosphere_rating, self) %></div>
+    <%= f.hidden_field :atmosphere_rating %>
+  </div>
+  <br />
+  <br />
+  <div class="field">
+    <%= f.label t "internships.attributes.rating" %><br />
+    <div class="edit-rating" id="supervision_rating"><%= render_stars(@internship.supervision_rating, self) %></div>
+    <%= f.hidden_field :supervision_rating %>
+  </div>
+  <br />
+  <br />
+  <div class="field">
+    <%= f.label t "internships.attributes.rating" %><br />
+    <div class="edit-rating" id="appreciation_rating"><%= render_stars(@internship.appreciation_rating, self) %></div>
+    <%= f.hidden_field :appreciation_rating %>
   </div>
   <br />
   <br />

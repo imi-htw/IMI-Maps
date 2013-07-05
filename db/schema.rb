@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704133212) do
+ActiveRecord::Schema.define(:version => 20130705203818) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -210,6 +210,11 @@ ActiveRecord::Schema.define(:version => 20130704133212) do
     t.text     "tasks"
     t.string   "operational_area"
     t.integer  "student_id"
+    t.integer  "tasks_rating"
+    t.integer  "training_rating"
+    t.integer  "atmosphere_rating"
+    t.integer  "supervision_rating"
+    t.integer  "appreciation_rating"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
@@ -324,6 +329,9 @@ ActiveRecord::Schema.define(:version => 20130704133212) do
     t.boolean  "publicmail"
     t.boolean  "mailnotif"
     t.integer  "student_id"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end
