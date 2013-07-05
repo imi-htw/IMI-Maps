@@ -10,6 +10,7 @@ require 'factory_girl'
   end
 
 describe "Testing LogIn1" do
+     include Capybara::DSL
       it "login data not valid because password too short. Render Session" do	
       	user4 =  FactoryGirl.build(:user)
         visit root_path

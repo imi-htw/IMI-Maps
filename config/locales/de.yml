@@ -89,6 +89,9 @@ de:
       html: "Die Diagramme zeigen dir die häufigsten Kriterien von unseren Praktika. </br>Klick auf eine der Säulen um sie für deine Suche auszuwählen"
     criteria: "Wähle deine Suchkriterien:"
     title: "Suche"
+    salary: "Monatliches Gehalt (min)"
+    livingCost: "Lebenshaltungskosten (max)"
+    rating: "Bewertung (min)"
   buttons:
     show: "Anzeigen"
     edit: "Bearbeiten"
@@ -157,8 +160,6 @@ de:
       title: "Job Titel"
       recommend: "Empfehlung"
 
-   
-
   users:
     name: "Benutzer"
     create: "Erstelle Benutzer"
@@ -169,6 +170,8 @@ de:
        edituser: "Benutzer bearbeiten"  
     new:
        newuser: "Neuer Benutzer"
+    show:
+       favorites_title: "Meine Favoriten"     
     sign_up: "Danke fuer deine Anmeldung"
     attributes:
       name: "Name"  
