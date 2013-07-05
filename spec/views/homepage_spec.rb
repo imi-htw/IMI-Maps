@@ -10,6 +10,7 @@ require 'factory_girl'
   end
 
 describe "Testing LogIn1" do
+     include Capybara::DSL
       it "login data not valid because password too short. Render Session" do	
       	user4 =  FactoryGirl.build(:user)
         visit root_path
@@ -56,5 +57,14 @@ describe "Testing LogIn1" do
         current_path.should == "/"
         visit overview_index_path("de")      
         current_path.should == "/"   
+   end
+
+       it "should not allow access if not logged in" do       
+        visit general_index_path("de")      
+        current_path.should == "/"
+        visit financing_index_path("de")      
+        current_path.should == "/"
+        visit download_index_path("de")      
+        current_path.should == "/"
    end
 end

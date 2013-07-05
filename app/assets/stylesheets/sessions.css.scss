@@ -17,7 +17,6 @@ form{
   margin: 0px auto;
   width: auto;
   z-index: 3;
-  float: none;
   display: inline-block;
 }
 
@@ -40,10 +39,10 @@ form{
 #login-box{
   background-color: #000;
   height: 180px;
-  padding-top:40px;
+  padding-top:0px;
   position: inherit;
   width: 100%;
-  margin-top:20px;
+  margin-top:0px;
   z-index: 3;
 }
 
@@ -78,10 +77,10 @@ h3 p{
 }
 
 .login{
-  position: relative;
+  position: absolute;
   text-align: center;
-  top: 290px;
-  z-index: 3; 
+  top: 0px;
+  z-index: 13; 
 }
 
 #login-element{
@@ -98,8 +97,10 @@ h3 p{
 
 .signin-icon{
     height: 20px;
-    margin-left: 5px;
-    margin-bottom: 5px;
+    margin: 10px 20px 5px 10px;
+    float: right;
+    position: static;
+    z-index: 7;
 }
 
 
@@ -116,30 +117,63 @@ h3 p{
     z-index: 3; 
 }
 
-#logo_w {
-    
+#logo_w { 
     float: none;
-    height: 160px;
-    left: 45%;
+    height: 130px;
     position: absolute;
-    width: 160px;
-    z-index: 4;
-    margin-top:17px;
+    width: 130px;
+    z-index: 5;
+    margin-top: 5px;
+    left: 100px;
 }
 
 #logo_p {
-
     float: none;
-    height: 160px;
-    left: 45%;
+    height: 130px;
     position: absolute;
-    width: 160px;
-    z-index: 5;
-    margin-top:17px;
+    width: 130px;
+    z-index: 6;
+    margin-top: 5px;
+    left: 100px;
+}
+
+.tri-line {
+  width:100%; 
+  height: 20px; 
+  background: url(triangle1.png); 
+  background-repeat: repeat-x;
+  position: absolute; 
+  top: 79px;
+  z-index: 4;
+}
+
+.tri-line2 {
+  width:100%; 
+  height: 20px; 
+  background: url(triangle.png); 
+  background-repeat: repeat-x;
+  position: absolute; 
+  bottom: 15px;
+  z-index: 4;
+}
+
+.lost-pswd {
+    color: #838383;
+    float: right;
+    height: 20px;
+    position: relative;
+    top: -25px;
+    z-index: 7;
+    margin-right: 55px;
+}
+.lost-pswd a:hover{
+    color:#bddb78;
+    text-decoration: none;
 }
 
 #change_color{
-  color: #fff !important;
+  color: #fff;
+  margin-top: 0px;
 }
 
 @media (max-width: 480px) {
@@ -164,6 +198,10 @@ h3 p{
 }
 
 #gradient{
+  display: none !important;
+}
+
+.map_container{
   display: none !important;
 }
 

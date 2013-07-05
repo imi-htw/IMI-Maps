@@ -1,39 +1,5 @@
 
 
-<div class="row">
-	<div class="span12">
-		<img src="assets/plane.gif" id="logo_p">
-		<img src="assets/logos.png" id="logo_w">
-	</div>
-	<div class="span12">
-		<%= form_tag sessions_path do %>
-		<div id="login-box" class="field">
-			<div id="login-element"></div>
-			<div class="row" style="margin-top:60px;">
-				<div class="span6 login_center">
-					<p id="font_session">E-mail: 
-
-						<%= text_field_tag :email, params[:email] %></p>
-					</div>
-					
-					<div class="span6 login_center">
-						<p id="font_session">Password:
-		   	</div>
-
-							<%= password_field_tag :password %>
-							<%= image_submit_tag("signin.png", :class => 'signin-icon') %> </p>
-						
-					</div>
-
-					<div class="sign_up"><div id="change_color">No Account?</div>
-
-						<%= link_to new_user_verification_path do %>Sign up here 
-						<i class="icon-edit" style="color:#87bb3e"></i> 
-						<% end %>
-					</div>
-
-				</div>
-
   	<% flash.each do |key, value| %>
         <div class="<%= flash_class(key) %>">
           <%= value %>
@@ -46,11 +12,3 @@
   				<%= label_tag :remember_me %>
 				</div>
 			-->
-
-
-
-			</div>
-		</div>
-
-
-		<% end %>

@@ -42,6 +42,9 @@ h1, h2{
   margin: 1em 0px 0.5em;
   color: #000 !important;
   line-height: 40px;
+  text-rendering: auto;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  font-variant: small-caps;
 }
 
 h3{
@@ -207,6 +210,13 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
     border-color: rgb(255, 255, 255);
     box-shadow: none;
     text-shadow: none;
+}
+
+h3.comp-head {
+  color: #ffffff !important;
+  margin-left:15px; 
+  font-variant: small-caps; 
+  font-size: 19px; 
 }
 
 .container-right {
