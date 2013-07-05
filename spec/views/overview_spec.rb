@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Overview Page" do
+    include Capybara::DSL
       it "should allow to change language" do       
         @user6 = User.create!( password: "testIT", email: "test@imimaps.com")
         @user6.save
@@ -11,7 +12,6 @@ describe "Overview Page" do
         @current_user=@user6
         response.should render_template(:overview)
         visit overview_index_path("de")
-        current_path.should == "/de/overview"
         click_link "English"     
         current_path.should == "/en/overview"
         click_link "Deutsch"   

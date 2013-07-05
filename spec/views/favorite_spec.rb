@@ -3,8 +3,9 @@ require 'spec_helper'
 
 
 
- describe "Favorites" do
-    it "displays usercomments" do
+ describe "Favorites Page" do
+  include Capybara::DSL
+    it "should display Favorites" do
         @user6 = User.create!( password: "testCo", email: "test@imimaps.com")
         @user6.save
         visit root_path
@@ -16,7 +17,7 @@ require 'spec_helper'
         @current_user.nil?.should be_false
         response.should render_template(:overview)
         visit favorite_index_path("de")      
-        page.should have_content("Favorites Title")
+        page.should have_content("Meine Favoriten")
      
     end
 end
