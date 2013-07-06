@@ -52,6 +52,21 @@ $(window).load(function () {
     $("#internship_"+id).val(val)
   }
 
+  $(".recommend-edit").click(function() {
+    if ($(".recommend-edit").hasClass( "icon-thumbs-up" )) {
+      $(".recommend-edit").removeClass( "icon-thumbs-up" );
+      $(".recommend-edit").removeClass( "green-thumb" );
+      $(".recommend-edit").addClass( "icon-thumbs-down" );
+      $(".recommend-edit").addClass( "red-thumb" );
+    }
+    if ($(".recommend-edit").hasClass( "icon-thumbs-down" )) {
+      $(".recommend-edit").removeClass( "icon-thumbs-down" );
+      $(".recommend-edit").removeClass( "red-thumb" );
+      $(".recommend-edit").addClass( "icon-thumbs-up" );
+      $(".recommend-edit").addClass( "green-thumb" );
+    }
+  });
+
 });
 
 $(document).ready(function() {
