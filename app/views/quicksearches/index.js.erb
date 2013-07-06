@@ -48,7 +48,7 @@ $("#semester_td").html('<%= escape_javascript( select_tag :semester, options_for
 
 $("#orientation_td").html('<%= escape_javascript( select_tag :orientation, options_for_select(@orientations), { :multiple => true , class: "chzn-select", "data-placeholder"=>t("choose.orientation")} )%>');
 
-$("#languages_td").html('<%= escape_javascript( select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: "chzn-select", "data-placeholder"=>t("choose.language")} )%>');
+$("#languages_td").html('<%= escape_javascript( select_tag :programming_language_ids, options_for_select(@programming_languages.map do |p|[p.name, p.id] end), { :multiple => true , class: "chzn-select", "data-placeholder"=>t("choose.language")} )%>');
 
 $(".chzn-select").chosen();
 
