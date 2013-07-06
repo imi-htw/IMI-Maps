@@ -77,12 +77,13 @@ class InternshipsController < ApplicationController
     @user_comments = @internship.user_comments.order("created_at DESC")
 
     @pins = @internship.company.to_gmaps4rails do |company, marker |
-
-      href =  if company.website.starts_with?'http' 
+      if company.website
+        href =  if company.website.starts_with?'http' 
               company.website  
             else 
               "http://"+company.website 
              end
+      end
              
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
