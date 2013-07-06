@@ -92,6 +92,7 @@ de:
     salary: "Monatliches Gehalt (min)"
     livingCost: "Lebenshaltungskosten (max)"
     rating: "Bewertung (min)"
+    resultnr: "Ergebnisse gefunden!"
   buttons:
     show: "Anzeigen"
     edit: "Bearbeiten"
