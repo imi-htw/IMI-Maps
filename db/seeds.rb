@@ -114,7 +114,7 @@ ReadingProf.where(name: "Jung").first_or_create
 ReadingProf.where(name: "Kleinen").first_or_create
 ReadingProf.where(name: "Weber-Wulff").first_or_create
 
-=begin
+
 hash = {"Vietnam" => "Hanoi","Egypt" => "Kairo","Mexico" => "Tijuana","Ireland" => "Dublin","Switzerland" => "Bern","China" => "Peking","United States" => "Washington", "Japan" => "Tokyo", "Australia" => "Sydney", "United Kingdom" => "London", "Brazil" => "Sao Paolo", "Germany" => "Berlin", "South Africa" => "Cape Town", "Canada" => "Toronto"}
 countries = hash.keys
 
@@ -186,4 +186,3 @@ n=1
 	n+=1
 
 end
-=end
