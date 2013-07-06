@@ -173,7 +173,13 @@
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><%# render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
-    <td class="table_inside"><%= internship.recommend %></td>
+    <td class="table_inside">
+      <% if internship.recommend %>
+          <i class="icon-thumbs-up icon-2x green-thumb"></i>
+        <% else %>
+          <i class="icon-thumbs-down icon-2x red-thumb"></i>
+        <% end %>
+    </td>
     <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture icon-2x button_intern" %></td>
   </tr>
 <% end %>
