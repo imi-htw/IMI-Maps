@@ -11,13 +11,10 @@ describe "Detailed Search Page should have content" do
         page.find('.signin-icon').click
         visit "/de/internships"
         page.should have_content("Lebenshaltungskosten")
-        page.should have_content("Bewertung")
         page.should have_content("Gehalt")
         click_link "English" 
         page.should have_content("Cost of living")
         page.should have_content("salary")
-        page.should have_content("Rating")
-        page.should have_content(I18n.t('search.rating'))
         page.should have_content(I18n.t('search.resultnr'))
         #select('SS 13', :from => 'semester')
         #select('Brazil', :from => 'Choose a country')
