@@ -168,6 +168,8 @@ id:
       title: "Pekerjaan"
       recommend: "Rekomendasi"
       internship_report: "Laporan magang"
+      rating: "Pangkat"
+      user: "Pengguna"
 
 
   users:
