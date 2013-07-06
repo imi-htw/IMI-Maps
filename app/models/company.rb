@@ -38,5 +38,17 @@ class Company < ActiveRecord::Base
   def enrolment_number
     internships.map do |x| x.student.enrolment_number end.join(", ")
   end
+
+  def average_rating
+    r=0
+    size=0
+    internships.each do |x|
+      if x.total_rating
+        r+=x.total_rating
+        size+=1
+      end
+    end
+    r.to_f/size
+  end
   
 end

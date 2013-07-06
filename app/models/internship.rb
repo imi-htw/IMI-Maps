@@ -16,7 +16,6 @@ class Internship < ActiveRecord::Base
   #validates :user_id, :presence => true
   validates :semester_id, :presence => true
 
-
   belongs_to :user
   belongs_to :company
   belongs_to :orientation
@@ -34,4 +33,11 @@ class Internship < ActiveRecord::Base
   mount_uploader :internship_report, InternshipReportUploader
 
   accepts_nested_attributes_for :attachments
+
+  def total_rating
+    if tasks_rating and training_rating and atmosphere_rating and supervision_rating and appreciation_rating
+      (tasks_rating+training_rating+atmosphere_rating+supervision_rating+appreciation_rating).to_f/5
+    end
+  end
+
 end

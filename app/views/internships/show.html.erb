@@ -7,18 +7,19 @@
 
      <div class="row-fluid">   
 
-      <div class="span9">
+      <div class="span8">
         <div class="container-left">
           <div class="container-left-text">
 
 <div class="row-fluid" id="row-intern">
-  <div class="span10">
+  <div class="span12">
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.title" %></div>
       <div class="span8" id="intern-box">
         <%= @internship.title %>
       </div>
+    </div>
     </div>
 
 <div class="row-fluid" id="row-intern">
@@ -29,6 +30,8 @@
       <div class="span8" id="intern-box">
         <%= @internship.orientation.try(:name) %>
       </div>
+    </div>
+    </div>
     </div>
 
 
@@ -41,6 +44,8 @@
        <%= @internship.programming_languages.map(&:name) %>
       </div>
     </div>
+    </div>
+    </div>
 
 
 <div class="row-fluid" id="row-intern">
@@ -51,6 +56,8 @@
       <div class="span8" id="intern-box">
        <%= @internship.salary %>
       </div>
+    </div>
+    </div>
     </div>
 
 
@@ -63,6 +70,8 @@
        <%= @internship.working_hours %>
       </div>
     </div>
+    </div>
+    </div>
 
 
 <div class="row-fluid" id="row-intern">
@@ -74,18 +83,69 @@
        <%= @internship.living_costs %>
       </div>
     </div>
+    </div>
+    </div>
 
 
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
-      <%= t "internship.attributes.rating" %></div>
+      <%= t "internships.attributes.tasks_rating" %></div>
       <div class="span8" id="intern-box">
-
+        <%= render_stars @internship.tasks_rating, self %>
       </div>
     </div>
+    </div>
+    </div>
 
+<div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span3" id="intern-title">
+      <%= t "internships.attributes.training_rating" %></div>
+      <div class="span8" id="intern-box">
+        <%= render_stars @internship.training_rating, self %>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span3" id="intern-title">
+      <%= t "internships.attributes.atmosphere_rating" %></div>
+      <div class="span8" id="intern-box">
+        <%= render_stars @internship.atmosphere_rating, self %>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span3" id="intern-title">
+      <%= t "internships.attributes.supervision_rating" %></div>
+      <div class="span8" id="intern-box">
+        <%= render_stars @internship.supervision_rating, self %>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row-fluid" id="row-intern">
+  <div class="span12">
+   <div class="row" id="row2-intern">   
+    <div class="span3" id="intern-title">
+      <%= t "internships.attributes.appreciation_rating" %></div>
+      <div class="span8" id="intern-box">
+        <%= render_stars @internship.appreciation_rating,self %>
+      </div>
+    </div>
+    </div>
+    </div>
 
 <div class="row-fluid" id="row-intern">
   <div class="span12">
@@ -95,6 +155,8 @@
       <div class="span8" id="intern-box">
         <%= @internship.try(:user).try(:name) %>
       </div>
+    </div>
+    </div>
     </div>
 
 
@@ -107,6 +169,8 @@
          <% if @internship.email_public %><%= @internship.user.email %><% end %>
       </div>
     </div>
+    </div>
+    </div>
 
 
 <div class="row-fluid" id="row-intern">
@@ -118,6 +182,8 @@
          <%= @internship.semester.semester %>
       </div>
     </div>
+    </div>
+    </div>
 
 
 <div class="row-fluid" id="row-intern">
@@ -126,8 +192,14 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.recommend" %></div>
       <div class="span8" id="intern-box">
-         <%= @internship.recommend %>
+        <% if @internship.recommend %>
+          <i class="icon-thumbs-up icon-2x green-thumb"></i>
+        <% else %>
+          <i class="icon-thumbs-down icon-2x red-thumb"></i>
+        <% end %>
       </div>
+    </div>
+    </div>
     </div>
 
 
@@ -139,6 +211,8 @@
       <div class="span8" id="intern-box">
          <%= @internship.description %>
       </div>
+    </div>
+    </div>
     </div>
 
 
@@ -268,11 +342,9 @@
           </div>
 
 
-</div>
 
 
-
-          <div class="span3"> 
+          <div class="span4"> 
             <div class="container-right"> 
               <div class="ribbon">
                 <div class="ribbon-wrapper">
@@ -347,8 +419,7 @@
               <%= t "companies.attributes.rating"  %>
             </div>
             <div id="company-title-text">
-
-            
+              <%= @internship.company.average_rating %>          
             </div>
 
 </div>
@@ -358,12 +429,7 @@
               </div>
 
             </div>
-            <div class="row-fluid">  
-
-              <div class="span12">
-
-              </div>
-            </div>
+            
           </div>
         </div>
 </div>

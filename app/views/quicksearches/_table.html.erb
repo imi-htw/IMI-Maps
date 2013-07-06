@@ -23,7 +23,7 @@
     <td><%= internship.semester.semester %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td><%=  %></td>
+    <td><%= internship.total_rating %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>

@@ -122,7 +122,7 @@ $('.table').html('<%= escape_javascript( render "table"  ) %>');
 
 $('table#paginated').each(function() {
     var currentPage = 1;
-    var numPerPage = 5;
+    var numPerPage = 8;
     var $table = $(this);
     var numRows = $table.find('tbody tr').length;
     var numPages = Math.ceil(numRows / numPerPage);
