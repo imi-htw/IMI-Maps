@@ -17,8 +17,7 @@ require 'spec_helper'
         @current_user.nil?.should be_false
         response.should render_template(:overview)
         visit favorite_index_path("de")      
-        page.should have_content("Meine Favoriten")
-     
+        page.should have_content("Meine Favoriten")  
     end
 end
 
