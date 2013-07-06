@@ -1,0 +1,393 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+id:
+  favorite:
+    delete: "Hapus dari favorit"
+    add: "Tambah ke favorit"
+  date:
+    abbr_day_names:
+    - Min
+    - Sen
+    - Sel
+    - Rab
+    - Kam
+    - Jum
+    - Sab
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - Mei
+    - Jun
+    - Jul
+    - Agu
+    - Sep
+    - Okt
+    - Nov
+    - Des
+    day_names:
+    - Minggu
+    - Senin
+    - Selasa
+    - Rabu
+    - Kamis
+    - Jum'at
+    - Sabtu
+    formats:
+      default: ! '%d %B %Y'
+      long: ! '%A, %d %B %Y'
+      short: ! '%d.%m.%Y'
+    month_names:
+    - 
+    - Januari
+    - Februari
+    - Maret
+    - April
+    - Mei
+    - Juni
+    - Juli
+    - Agustus
+    - September
+    - Oktober
+    - November
+    - Desember
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    am: pagi
+    formats:
+      default: ! '%A, %d. %B %Y, Pukul %H:%M'
+      long: ! '%d. %B %Y, Pukul %H:%M'
+      short: ! '%d. %B, Pukul %H:%M'
+    pm: sore
+
+  choose: 
+    country: "Pilih negara"
+    orientation: "Pilih orientasi"
+    semester: "Pilih semester"
+    language: "Pilih bahasa pemograman"
+  header:
+    account: "Akun"
+    search: "Pilih"
+    overview: "Ringkasan"
+    start: "Ringkasan"
+    exchange: "Pekerjaan"
+    guide: "Petunjuk"
+    logout: "Keluar"
+    faq: "Tanya jawab"
+    downloads: "Unduh"
+    financing: "Keuangan"
+    general: "Informasi umum"
+    favorite: "Favorit"
+    tabtitle: "IMI Map | Perguruan Tinggi Teknik dan Ekonomi"
+ 
+  search:
+    explanation:
+      html: "Diagram memberikan gambaran kriteria yang paling umum untuk magang. </br> Cukup klik bar untuk menambahkan kriteria pencarian Anda."
+    criteria: "Pilih kriteria pencarian:"
+    title: "Pilih"
+    salary: "Gaji bulanan (minimal)"
+    livingCost: "Biaya hidup (maksimal)"
+    rating: "Pangkat (minimal)"
+  buttons:
+    show: "Lihat"
+    edit: "Ubah"
+    destroy: "Hapus"
+    back: "Kembali"
+    newcompany: "Perusahaan baru"
+    newinternship: "Magang baru"
+    newuser: "Pengguna baru"
+    save: "Simpan"
+    done_intership_here: "Apakah Anda magang di sini juga?"
+    change_details: "Ubah perincian"
+    compare: "Bandingkan"
+
+  helpers:
+    reset: "Ubah seperti semula"
+    at: "di"
+    summer: "Musim panas"
+    winter: "Musim Dingin"
+
+  companies:
+    name: "Perusahaan"
+    create: "Buat perusahaan"
+    update: "Baharui perusahaan"
+    index:
+      title: "Daftar perusahaan"
+    edit:
+      editcompany: "Ubah perusahaan"
+    new:
+      newcompany: "Perusahaan baru"  
+    attributes:
+      rating: "Pangkat rata-rata"
+      name: "Nama"
+      street: "Jalan"
+      zip: "Kode Pos"
+      city: "Kota"
+      country: "Negara"
+      number_employees: "Jumlah karyawan"
+      industry: "Industri"
+      main_language: "Bahasa utama"
+      website: "Situs"
+      address: "Alamat"  
+      recommended: "Direkomendasi"
+      not_recommended: "Tidak direkomendasi"
+
+  internships:
+    name: "Magang"
+    create: "Buat magang"
+    update: "Baharui magang"
+    index:
+      title: "Daftar magang"
+    edit:
+      editinternship: "Ubah magang" 
+    new:
+      newinternship: "Magang baru"   
+    attributes:
+      description: "Deskripsi"
+      semester: "Semester/Tahun"
+      email_public: "Membuat alamat email publik?"
+      comments: "Komentar pengguna"
+      pictures: "Gambar"
+      orientation: "Orientasi"
+      programming_language: "Bahasa pemograman"
+      salary: "Gaji"
+      working_hours: "Jam kerja"
+      living_costs: "Biaya hidup"
+      company: "Perusahaan"
+      rating: "Pangkat"
+      title: "Pekerjaan"
+      recommend: "Rekomendasi"
+      internship_report: "Laporan magang"
+
+
+  users:
+    name: "Pengguna"
+    create: "Buat pengguna"
+    update: "Baharui pengguna"
+    index:
+      title: "Daftar pengguna"
+    edit:
+      edituser: "Ubah pengguna"  
+    new:
+      newuser: "Pengguna baru"  
+    show:
+       favorites_title: "Favorit saya"       
+    sign_up: "Terimakasih sudah mendaftar!"
+    attributes:
+      email: "Email"
+      publicmail: "Membuat alamat email publik?"
+      password: "Kata kunci"
+      password_confirmation: "Konfirmasi kata kunci"
+      mailnotif: "Apakah Anda mau menerima email notifikasi?"  
+
+  students:
+    attributes:
+      first_name: "nama depan"
+      last_name: "nama belakang"
+      email: "email"
+      enrolment_number: "nomer mahasiswa"
+
+  comments:
+    attributes: 
+      body: "Komentar pengguna"
+
+  answers:
+    from: "Jawaban dari"
+    attributes: 
+      body: "Jawaban"
+
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: "Welcome to the admin area of IMI-Map!"
+      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboard.rb'"
+    view: "View"
+    edit: "Edit"
+    delete: "Delete"
+    delete_confirmation: "Are you sure you want to delete this?"
+    new_model: "New %{model}"
+    create_model: "New %{model}"
+    edit_model: "Edit %{model}"
+    update_model: "Edit %{model}"
+    delete_model: "Delete %{model}"
+    details: "%{model} Details"
+    cancel: "Cancel"
+    empty: "Empty"
+    previous: "Previous"
+    next: "Next"
+    download: "Download:"
+    has_many_new: "Add New %{model}"
+    has_many_delete: "Delete"
+    has_many_remove: "Remove"
+    filter: "Filter"
+    clear_filters: "Clear Filters"
+    search_field: "Search %{field}"
+    equal_to: "Equal To"
+    greater_than: "Greater Than"
+    less_than: "Less Than"
+    main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
+    powered_by: "Powered by %{active_admin} %{version}"
+    sidebars:
+      filters: "Filters"
+    pagination:
+      empty: "No %{model} found"
+      one: "Displaying <b>1</b> %{model}"
+      one_page: "Displaying <b>all %{n}</b> %{model}"
+      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      entry:
+        one: "entry"
+        other: "entries"
+    any: "Any"
+    blank_slate:
+      content: "There are no %{resource_name} yet."
+      link: "Create one"
+    batch_actions:
+      button_label: "Batch Actions"
+      delete_confirmation: "Are you sure you want to delete these %{plural_model}? You won't be able to undo this."
+      succesfully_destroyed:
+        one: "Successfully destroyed 1 %{model}"
+        other: "Successfully destroyed %{count} %{plural_model}"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Create one"
+      action_label: "%{title} Selected"
+      labels:
+        destroy: "Delete"
+    comments:
+      resource_type: "Resource Type"
+      author_type: "Author Type"
+      body: "Body"
+      author: "Author"
+      title: "Comment"
+      add: "Add Comment"
+      resource: "Resource"
+      no_comments_yet: "No comments yet."
+      title_content: "Comments (%{count})"
+      errors:
+        empty_text: "Comment wasn't saved, text was empty."
+    devise:
+      login:
+        title: "Login"
+        remember_me: "Remember me"
+        submit: "Login"
+      reset_password:
+        title: "Forgot your password?"
+        submit: "Reset My Password"
+      change_password:
+        title: "Change your password"
+        submit: "Change my password"
+      unlock:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
+      links:
+        sign_in: "Sign in"
+        forgot_your_password: "Forgot your password?"
+        sign_in_with_omniauth_provider: "Sign in with %{provider}"
+    access_denied:
+      message: "You are not authorized to perform this action."
+    index_list:
+      table: "Table"
+      block: "List"
+      grid: "Grid"
+      blog: "Blog"
+  
+  
+
+  faq:
+    title: "FAQs"
+    title2: "Internship FAQs"
+    frage1:
+      html: "<p><b>Can I complete my internship in several sections?</b></p><p>It is possible to divide the internship in three sections (each lasting at least four weeks).</br>A separate report must be made ​​for each section.</p>"
+    frage2:
+      html: "<p><b>When are the internship reports due?</b></p><p>No later than four weeks after the completion of the internship. The report should include about 20 pages</br>and be stapled (no loose-leaf). Please submit it to the internship coordinator.</p>"
+    frage3:
+      html: "<p><b>Where do I register for the internship accompanying courses?</b></p><p>In LSF. Note that the courses are always offered during the semester breaks.</br>Apart from AEP, they can also be attended before the placement.</p>"
+    frage4:
+      html: "<p><b>When should I start looking for internships?</b></p><p>As soon as possible. It is important to have enough time to search for suitable internships and to apply. </br>Especially in countries for which a visa is required and / or if you want to apply for scholarships.</p>"     
+    title3: "IMI Map FAQs"
+    frageI1:
+      html: "<p><b>Can I edit my internship-review after it has been submitted?</b></p><p>Yes, you can edit your internship review after it has been submited. Follow these steps: 'Account' → 'Internship Report' → 'Edit'.</p>"
+    frageI2:
+       html: "<p><b>How do I post a second intership-review?</b></p><p>If you have completed your internship in several companies, you can create one experience report for each company.</br> For this you have to write a mail to the person responsible (mail), which unlocks it for you.</br> After activation, the button 'Create review' under 'Account' will appear.</p>"  
+
+
+
+   
+  download:
+    form: "Forms"
+    text1: "The required forms are listed below for download:"
+    text2: "Registration for internship"
+    text3: "Certificate of internship completion"
+    text4: "Example contract"
+    text5: "ger."
+    text6: "Request a refund of the semester ticket fees"
+
+  general:
+    title: "General Internship Information"
+    text1:
+     html: "A practical training component is integrated in the IMI Bachelor's degree study programm at the HTW,  in the form of a practical training term. You may do your internship in Germany (if you are from outside Germany) or abroad (obligatory for german students)<h3><strong>Formal Issues</strong></h3>All courses of the first and second semester must be completed successfully. The students themselves have to look for an internship placement abroad. The duration of the internship has to be at least 16 weeks (Study Regulations of 2008) or 19 weeks (Study Regulations of 2012). Prior to the beginning of the internship the internship contract with the selected company has to be shown to and excepted  by the HTW Berlin. <h3> <b> Internship Application </b> </h3> You have to to conclude a contract with the Company first. You may use the HTW Template."
+    text2:
+     html: "Fill in this internship application"
+    text3:
+     html: "</br>Hand in all the application documents to the internship coordinator (during office hours). The application documents comprise:"
+    text4: "fully completed and signed internship application form in the original"
+    text5: "printed LSF-certificate, prooving that you passed all the courses of the 1st and 2nd semester"
+    text6: "the contract with the company in the original"
+    text7:  
+     html: "These documents remain at the HTW. If you need copies for BaföG, semester ticket refund or scholarships, you have to prepare those yourself and get them signed by the internship coordinator. If you want to keep an original copy of the placement agreement, please ask the compan yourself, to provide enough originals (usually three: one for the company, one for you and one for the HTW Berlin).</br></br>All these documents should be handed in before the end of lectures of the semester prior to the semester in which you plan to conduct your internship. As long as the idocuments are not complete or not handed in in original you can not be admitted to the internship.</br></br> In order to receive a refund for the semester ticket fee, you have to fill in the request (only available in german) and send it to the semester ticket office before the start of the internship semester. "
+    text8: 
+     html: ""
+    text9:
+     html: "<h3><b>Approval of the internship</b></h3>The fully completed certificate of internship completion (signed and stamped by the company) and the internship report must be handed  in to the internship coordinator and the compulsory course AEP — Auswertung von Erfahrungen am Arbeitsplatz — must be completed successfully. Only then the internship can be approved. "
+
+  financing:
+    title:  "Financing"
+    title2: "Scholarships"
+    title3: "Auslandsbafög"
+    text1:
+      html: "<h3><strong>Which ways of fundings are available?</strong></h3>An internship abroad should be well planned. Although some internships are paid, the living costs are often much higher than here. Additionally you may have to pay things like:  travel costs and insurance. Therefore, please inform yourself - also two to three semesters prior to the planned internship. The sooner you begin to prepare your internship, the more options are open to you. Please note the application deadlines for various scholarship programs and the long processing time for Auslands-BAföG. For some scholarship programs you have to apply about ten months prior to starting, but at this time you don't need to have a placement promise. The International Office of HTW Berlin offers advice on funding opportunities of internships and also provides detailed information online about this topic."
+    text2: "You can find a more detailed list of funding programs here:"
+    text3:  
+      html: "<p>Auslands-BAföG is the great financial support for an entire study, part-study internship or a student exchange in European and non-European countries! If you receive Bafög here, you sure get AUslandsbafög, if you get no Bafög here, you can still get Auslands-BAföG! Due to the higher costs abroad Auslands-Bafög come to question for a lot more of you.</p>"
+    text4: "more Information"
+    text5:
+      html: "<h3><strong>Funding programs</strong></h3>"
+    text6: "These are some of the most popular funding programs for IMIs:"
+
+    progs:
+     title1: "Program"
+     title2: "Short Facts"
+     title3: "Duration"
+     title4: "Region"
+    prog1:
+      namen: "Auslands-BAföG"
+      fact: "Loans and Grants for spezialized compulsory insternships"
+      duration: "max. 12 month"
+      region: "worldwide"
+    prog2:
+       namen: "ERASMUS Placement"
+       fact: "Allowance for practical training (Fachpraktikum) "
+       duration: "3-12  month"
+       region: "Europa"
+    prog3:
+       namen: "PROMOS Praktika"
+       fact: "Travel allowance for compulsory international internships"
+       duration: "3-6  month"
+       region: "preferably in Asia, Africa, Latin America"
+    prog4:
+       namen: "DAAD: Carlo-Schmid-Programm"
+       fact: "Full scholarships depending on country, travel allowance for interships in international organisations, EU-Organisations or NGO's"
+       duration: "A: 3 - 6 month, or  B: 4 - 10 month"
+       region: "worldwide"
+
+  favorite_compare:
+    title: "Compare Favorites"
+    column1: "First Internship"
+    column2: "Second Internship"
+    column3: "Third Internship"

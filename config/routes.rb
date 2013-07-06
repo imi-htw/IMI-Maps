@@ -78,6 +78,7 @@ ImiMaps::Application.routes.draw do
   
   match 'de', to: redirect("/de/sessions#new")
   match 'en', to: redirect("/en/sessions#new")
+  match 'id', to: redirect("/id/sessions#new")
  
   # The priority is based upon order of creation:
   # first created -> highest priority.
