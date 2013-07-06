@@ -41,7 +41,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.programming_languages" %></div>
       <div class="span8" id="intern-box">
-       <%= @internship.programming_languages.map(&:name) %>
+       <%= @internship.programming_languages.map(&:name).join(", ") %>
       </div>
     </div>
     </div>
