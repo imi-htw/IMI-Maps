@@ -220,18 +220,18 @@ h3.comp-head {
 }
 
 .container-right {
-  background-color: #333333;
-  position: absolute;
-  color: #ffffff;
-  padding-top: 80px;
-  width: 320px;
-  top: 175px;
-  font-weight: 300;
-  margin-left: 725px;
-  margin-top: 100px;
-  -moz-box-shadow:      14px 17px 0 -7px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow:   14px 17px 0 -7px rgba(0, 0, 0, 0.3);
-  box-shadow:           14px 17px 0 -7px rgba(0, 0, 0, 0.3);
+    background-color: #333333;
+    color: #FFFFFF;
+    font-weight: 300;
+    margin-left: 25px;
+    margin-top: 100px;
+    padding-top: 20px;
+    position: absolute;
+    top: 175px;
+    width: 320px;
+    -moz-box-shadow:      14px 17px 0 -7px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow:   14px 17px 0 -7px rgba(0, 0, 0, 0.3);
+    box-shadow:           14px 17px 0 -7px rgba(0, 0, 0, 0.3);
 }
 
 .container-right-text {
