@@ -41,7 +41,7 @@ en:
     livingCost: "Cost of living (max)"
     rating: "Rating (min)"
     resultnr: "results found!"
-    button: "search"
+    button: "Search"
   buttons:
     show: "Show"
     edit: "Edit"
