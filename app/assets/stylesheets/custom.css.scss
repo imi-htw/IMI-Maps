@@ -43,6 +43,11 @@ background-color: #90b800;
 	border-radius: 0px;
 }
 
+.btn-intern{
+    position: absolute;
+    margin-left: 40px;
+}
+
 .table {
 	  font-weight: 100;
 }
@@ -201,4 +206,8 @@ p.explanation {
 }
 .alert-block p + p {
     margin-top: 5px;
+}
+
+.red-thumb{
+    color: #ff00ff;
 }

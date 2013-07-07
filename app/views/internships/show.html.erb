@@ -1,6 +1,6 @@
 
 <p id="notice"><%= notice %></p>
-<a href ="javascript:history.back()" class="btn btn-success"><%= t("buttons.back") %></a>
+<a href ="javascript:history.back()" class="btn-intern"> << <%= t("buttons.back") %></a>
 <h2 style="margin-bottom:40px; margin-left: 50px;"> Internship Details</h2>
 
     <div class="content-intern2">
@@ -195,7 +195,7 @@
         <% if @internship.recommend %>
           <i class="icon-thumbs-up icon-2x green-thumb"></i>
         <% else %>
-          <i class="icon-thumbs-down icon-2x red-thumb"></i>
+          <i class="icon-thumbs-down icon-2x grey-thumb"></i>
         <% end %>
       </div>
     </div>
