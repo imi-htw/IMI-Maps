@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
       
     else
       #flash.now.alert = "Email or password is invalid"
-      flash[:alert] = "Email or password is invalid"
+      flash[:alert] = t("msg.invalid")
       
       redirect_to :back
     end
@@ -71,7 +71,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     #cookies.delete(:auth_token)
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url, :notice =>  t("msg.logout")
   end
   
 end
