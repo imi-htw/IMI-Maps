@@ -180,11 +180,7 @@ p.explanation {
     right: -21px;
     top: -2px;
 }
-.alert-success {
-    background-color: #333333;
-    color: #ffffff;
-    text-align: right;
-}
+
 .alert-danger, .alert-error {
     background-color: #c91212;
     color: #ffffff;
@@ -195,16 +191,7 @@ p.explanation {
     color: #ffffff;
     text-align: right;
 }
-.alert-block {
-    padding-bottom: 14px;
-    padding-top: 14px;
-}
-.alert-block > p, .alert-block > ul {
-    margin-bottom: 0;
-}
-.alert-block p + p {
-    margin-top: 0px;
-}
+
 
 .red-thumb{
     color: #ff00ff;
@@ -289,4 +276,7 @@ p.explanation {
 #search_button{
     float:right;
     margin-left: 5px;
+}
+img {
+  max-width: none;
 }

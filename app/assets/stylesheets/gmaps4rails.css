@@ -10,6 +10,9 @@
   z-index: 100;
 }
 
+#map label { width: auto; display:inline; }
+#map img { max-width: none; }
+
 .gmaps4rails_map {
   width:  100%;
   height: 500px;

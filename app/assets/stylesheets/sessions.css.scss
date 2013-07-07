@@ -188,11 +188,19 @@ h3 p{
     text-align: center;
 }
 
+.alert-danger, .alert-error {
+    background-color: #C91212 !important;
+    color: #FFFFFF !important;
+    padding-bottom: 0 !important;
+    padding-top: 12px !important;
+    text-align: right;
+}
+
 .alert {
     padding: 8px 35px 8px 35px;
     text-shadow: none;
     background-color: rgb(252, 248, 227);
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
     color: rgb(192, 152, 83);
 }
 
