@@ -17,19 +17,23 @@ class QuicksearchesController < ApplicationController
 
     if !params[:orientation].present? and !params[:semester].present? and !params[:programming_language_ids].present? and !params[:country].present?
       @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
+      @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
+      @orientations_ary = @internships.collect do |x| x.orientation end  
+      @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
+
     else
       @internships = @quicksearch.internships(params)
-    end
-
-    @companies = @internships.collect do |x| x.company end
-
-    @orientations_ary = @internships.collect do |x| x.orientation end
-
-    @internships.each do |i|
-      i.programming_languages.each do |p|
-        @language_ary << p
+      @internships.each do |i|
+        i.programming_languages.each do |p|
+          @language_ary << p
+        end
       end
+      @programming_languages = @language_ary.uniq
+      @orientations_ary = @internships.collect do |x| x.orientation end  
+      @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
     end
+
+    @companies = @internships.collect do |x| x.company end    
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
       if company.website
@@ -45,15 +49,11 @@ class QuicksearchesController < ApplicationController
 
     @semesters = @internships.collect do |x| x.semester end.map do |s|[s.semester,s.id] end
 
-    @programming_languages = @language_ary.uniq.map do |p|[p.name, p.id] end
-
     @internships_size = @internships.size
 
     @bool = Internship.all.size == @internships_size
 
     @countries = (@companies.collect do |x| x.country end)
-  
-    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
 
     ary = Array.new
     @countries.uniq.each do |x|
@@ -62,8 +62,11 @@ class QuicksearchesController < ApplicationController
     @data_country = ary
 
     ary = Array.new
-    @language_ary.uniq.each do |x|
-      ary << {:name=>x.name, :count=>(@language_ary.count(x).to_f/@internships_size*100).to_i}
+    @programming_languages.each do |x|
+      s = x.try(:internships).try(:size)
+      if s > 0
+        ary << {:name=>x.name, :count=>s.to_f/@internships.size*100}
+      end
     end
     @data_language = ary
 
