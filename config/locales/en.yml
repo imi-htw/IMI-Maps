@@ -342,3 +342,7 @@ en:
     column1: "First Internship"
     column2: "Second Internship"
     column3: "Third Internship"
+    
+  msg:
+    logout: "You have successfully logged out"
+    invalid: "Password or email is invalid"

@@ -161,14 +161,14 @@ p.explanation {
 }
 
 .alert {
-    background-color: #292929;
-    border: 1px solid #80b900;
-    border-radius: 4px 4px 4px 4px;
+    background-color: #c91212;
     color: #C09853;
     margin-bottom: 0px;
-    padding: 8px 35px 8px 14px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    text-align: right;
+    padding: 10px 0px 2px 14px;
+    text-align: center;
+    border-radius: 0px;
+    text-shadow: 0 0px 0 rgba(255, 255, 255, 0.0);
+    border: 0px;
 }
 .alert h4 {
     margin: 0;
@@ -180,20 +180,17 @@ p.explanation {
     top: -2px;
 }
 .alert-success {
-    background-color: #292929;
-    border-color: #80b900;
+    background-color: #333333;
     color: #ffffff;
     text-align: right;
 }
 .alert-danger, .alert-error {
-    background-color: #333333;
-    border-color: #000000;
+    background-color: #c91212;
     color: #ffffff;
     text-align: right;
 }
 .alert-info {
-    background-color: #292929;
-    border-color: #292929;
+    background-color: #80b900;
     color: #ffffff;
     text-align: right;
 }
@@ -205,7 +202,7 @@ p.explanation {
     margin-bottom: 0;
 }
 .alert-block p + p {
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .red-thumb{
