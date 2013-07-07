@@ -110,11 +110,11 @@
   <br />
   <div class="field">
     <%= f.label t "internships.attributes.recommend"  %>
-    <div class="edit-recommend">
+    <div class="edit-recommend1">
       <% if @internship.recommend %>
-          <i class="icon-thumbs-up icon-2x green-thumb recommend-edit"></i>
+          <i id="recommend up" class="icon-thumbs-up green-thumb recommend-edit icon-2x"></i>
         <% else %>
-          <i class="icon-thumbs-down icon-2x red-thumb recommend-edit"></i>
+          <i id="recommend down" class="icon-thumbs-down red-thumb recommend-edit icon-2x"></i>
         <% end %>
     </div>
     <%= f.hidden_field :recommend, value: @internship.recommend ? 1 : 2 %>

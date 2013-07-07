@@ -340,6 +340,19 @@ footer .container p{
   opacity: 0.78;
 }
 
+.login_top{
+  float:right; 
+  margin-top:11px;
+}
+
+.login_top2{
+  width:100%; height: 80px; background-color:#292929; position: inherit; top: 0px; z-index: 3;
+}
+
+.login_top3{
+  width:100%; height: 22px; background-color:#292929; position: fixed; bottom: 0px; z-index: 23;
+}
+
 .span12{
     margin:0 auto;
     /*float:left;*/

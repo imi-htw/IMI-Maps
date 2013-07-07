@@ -176,6 +176,164 @@ h3 p{
   margin-top: 0px;
 }
 
+.alert-info {
+    background: rgba(185, 213, 100, .85) !important;
+    border-color: rgba(185, 213, 100, .85) !important;
+    color: #000 !important;
+    position: absolute;
+    width: 200px;
+    margin-left: -125px;
+    left: 50%;
+    top: 0px;
+    text-align: center;
+}
+
+.alert {
+    padding: 8px 35px 8px 35px;
+    text-shadow: none;
+    background-color: rgb(252, 248, 227);
+    border-radius: 4px 4px 4px 4px;
+    color: rgb(192, 152, 83);
+}
+
+@media (min-width: 480px) and (max-width: 979px) { 
+  
+body{
+  background: url(bg.gif);
+  width: 100%;
+  text-align: center;
+  color: #000 !important;
+}
+
+h3 p{
+  color: #000 !important;
+}
+
+a{
+ color: rgb(139, 185, 0) !important; 
+}
+
+#logo_p{
+  display: none !important;
+}
+
+#logo_w{
+  display: none !important;
+}
+
+#gradient{
+  display: none !important;
+}
+
+#login-box{
+  background: none;
+  height: 160px;
+  padding-top:10px;
+  position: absolute;
+  width: 100%;
+  margin: auto 0 !important;
+  margin-left: -90px;
+  margin-right: 0px; 
+  margin-top:20px;
+  z-index: 3;
+
+}
+
+.login{
+  position: relative;
+  text-align: center;
+  top: 0px !important;
+  z-index: 3; 
+}
+
+.login_center{
+  display: inline-block !important;
+}
+
+.row{
+  top: 0px !important;
+  margin-top: 100px;
+}
+
+.span6{
+  float: none;
+  display: block !important;
+}
+
+#email{
+}
+
+#password{
+}
+
+#font_session{
+  margin: 0 auto;
+  width: 220px;
+  color: #000 !important;
+}
+
+#login-element{
+  margin: 0 auto;
+  float: none;
+}
+
+.sign_up{
+  margin: 20px auto;
+  float: none;
+  width: 200px;
+  font-style: italic;
+}
+
+.lost-pswd {
+    color: #838383 !important;
+    float: none;
+    height: 20px;
+    position: relative;
+    top: 10px;
+    z-index: 7;
+    margin-right: 0px;
+}
+.lost-pswd a:hover{
+    color:#bddb78;
+    text-decoration: none;
+}
+
+#change_color {
+    color: #000;
+    margin-top: 0px;
+}
+
+.signin-icon {
+    z-index: 7;
+    height: 20px;
+    float: right;
+    position: static;
+    margin: 0px 0px -5px 10px;
+}
+
+#logo_res{
+  position: absolute;
+  background: url(logo.png);
+  width: 150px;
+  height: 100px;
+  background-size: 150px 100px;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -100px;
+}
+
+.alert-info {
+    background: rgba(185, 213, 100, .85);
+    border-color: rgba(185, 213, 100, .85);
+    color: #000 !important;
+    position: absolute;
+    width: 200px;
+    margin-left: -125px;
+    left: 50%;
+    top: 0px;
+}
+}
+
 @media (max-width: 480px) {
   
 body{
@@ -228,6 +386,7 @@ h3 p{
 
 .row{
   top: 0px !important;
+  margin-top: 100px;
 }
 
 .span6{
@@ -246,7 +405,7 @@ h3 p{
 
 #font_session{
   margin: 0 auto;
-  width: 200px;
+  width: 220px;
   color: #000 !important;
 }
 
@@ -266,96 +425,54 @@ h3 p{
 #change_color{
   color: #000;
 }
+
+
+a{
+ color: rgb(139, 185, 0) !important; 
 }
 
-@media (min-width: 480px) and (max-width: 979px) { 
-  
-body{
-  background: url(bg.gif);
-  width: 100%;
-  text-align: center;
-  color: #000 !important;
+.lost-pswd {
+    color: #838383 !important;
+    float: none;
+    height: 20px;
+    position: relative;
+    top: 10px;
+    z-index: 7;
+    margin-right: 0px;
+}
+.lost-pswd a:hover{
+    color:#bddb78;
+    text-decoration: none;
 }
 
-h3 p{
-  color: #000 !important;
+.signin-icon {
+    z-index: 7;
+    height: 20px;
+    float: right;
+    position: static;
+    margin: 0px 0px -5px 10px;
 }
 
-#logo_p{
-  display: none !important;
-}
 
-#logo_w{
-  display: none !important;
-}
-
-#gradient{
-  display: none !important;
-}
-
-#login-box{
-  background: none;
-  height: 160px;
-  padding-top:10px;
+#logo_res{
   position: absolute;
-  width: 100%;
-  margin: auto 0 !important;
-  margin-left: -90px;
-  margin-right: 0px; 
-  margin-top:20px;
-  z-index: 3;
-
+  background: url(logo.png);
+  width: 150px;
+  height: 100px;
+  background-size: 150px 100px;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -100px;
 }
 
-.login{
-  position: relative;
-  text-align: center;
-  top: 0px !important;
-  z-index: 3; 
-}
-
-.login_center{
-  display: block !important;
-}
-
-.row{
-  top: 0px !important;
-}
-
-.span6{
-  float: none;
-}
-
-#email{
-  width: 100%;
-
-}
-
-#password{
-  width: 100%;
-}
-
-#font_session{
-  margin: 0 auto;
-  width: 200px;
-  color: #000 !important;
-}
-
-#login-element{
-  margin: 0 auto;
-  float: none;
-}
-
-.sign_up{
-  margin: 20px auto;
-  float: none;
-  width: 200px;
-  font-style: italic;
-}
-
-#change_color{
-  color: #000;
+.alert-info {
+    background: rgba(185, 213, 100, .85);
+    border-color: rgba(185, 213, 100, .85);
+    color: #000 !important;
+    position: absolute;
+    width: 200px;
+    margin-left: -125px;
+    left: 50%;
+    top: 0px;
 }
 }
-
-
