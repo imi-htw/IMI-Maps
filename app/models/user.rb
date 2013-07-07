@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
   has_many :notifications, :dependent => :destroy
 
   def name
-    "#{student.first_name} #{student.last_name}"
+    #{}"#{student.first_name} #{student.last_name}"
+    "blub"
   end
 
   before_create { generate_token(:auth_token) }
