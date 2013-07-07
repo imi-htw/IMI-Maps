@@ -17,21 +17,19 @@ class QuicksearchesController < ApplicationController
 
     if !params[:orientation].present? and !params[:semester].present? and !params[:programming_language_ids].present? and !params[:country].present?
       @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
-      @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
-      @orientations_ary = @internships.collect do |x| x.orientation end  
-      @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
-
     else
-      @internships = @quicksearch.internships(params)
-      @internships.each do |i|
+      @internships = @quicksearch.internships(params)      
+    end
+
+    @internships.each do |i|
         i.programming_languages.each do |p|
           @language_ary << p
         end
       end
-      @programming_languages = @language_ary.uniq
-      @orientations_ary = @internships.collect do |x| x.orientation end  
-      @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
-    end
+    @programming_languages = @language_ary.uniq
+
+    @orientations_ary = @internships.collect do |x| x.orientation end  
+    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
 
     @companies = @internships.collect do |x| x.company end    
 
