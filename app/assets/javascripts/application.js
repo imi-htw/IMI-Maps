@@ -28,7 +28,45 @@ $(window).load(function () {
         $('.msgbox').hide();
     } else {
         $('.msgbox').click();
+    }   
+
+    $(".edit-rating .rating_star").click(function() {
+      var val = $(this).attr('data-rating-id');
+      var id = $(this).parent().parent().attr("id");
+      setStars(val, id);
+      setValue(val, id);
+    });
+
+  var setStars = function(val, id) {
+    stars = $("#"+id+" .rating_star");
+    $(stars).each(function(){
+      var currentId = $(this).attr('data-rating-id');
+      if (currentId <= val)
+        $(this).addClass('on')
+      else 
+        $(this).removeClass('on')
+    })
+  }
+
+  var setValue = function(val, id) {
+    $("#internship_"+id).val(val)
+  }
+
+  $(".recommend-edit").click(function() {
+    if ($("#recommend").hasClass( "icon-thumbs-up" )) {
+      $(".recommend-edit").removeClass( "icon-thumbs-up" );
+      $(".recommend-edit").removeClass( "green-thumb" );
+      $(".recommend-edit").addClass( "icon-thumbs-down" );
+      $(".recommend-edit").addClass( "red-thumb" );
     }
+    if ($("#recommend").hasClass( "icon-thumbs-down" )) {
+      $(".recommend-edit").removeClass( "icon-thumbs-down" );
+      $(".recommend-edit").removeClass( "red-thumb" );
+      $(".recommend-edit").addClass( "icon-thumbs-up" );
+      $(".recommend-edit").addClass( "green-thumb" );
+    }
+  });
+
 });
 
 $(document).ready(function() {
@@ -46,3 +84,5 @@ click_reset = function() {
   $(".search-choice").remove();
   $("#search_button").click();
 }
+
+ 

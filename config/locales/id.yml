@@ -1,252 +1,307 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+id:
   favorite:
-    delete: "Delete from favorites"
-    add: "Add to favorites"
-  time:
-    am: am
+    delete: "Hapus dari favorit"
+    add: "Tambah ke favorit"
+  date:
+    abbr_day_names:
+    - Min
+    - Sen
+    - Sel
+    - Rab
+    - Kam
+    - Jum
+    - Sab
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - Mei
+    - Jun
+    - Jul
+    - Agu
+    - Sep
+    - Okt
+    - Nov
+    - Des
+    day_names:
+    - Minggu
+    - Senin
+    - Selasa
+    - Rabu
+    - Kamis
+    - Jum'at
+    - Sabtu
     formats:
-      default: ! '%a, %d %b %Y %H:%M:%S %z'
-      long: ! '%B %d, %Y %H:%M'
-      short: ! '%d %b %H:%M'
-    pm: pm
+      default: ! '%d %B %Y'
+      long: ! '%A, %d %B %Y'
+      short: ! '%d.%m.%Y'
+    month_names:
+    - 
+    - Januari
+    - Februari
+    - Maret
+    - April
+    - Mei
+    - Juni
+    - Juli
+    - Agustus
+    - September
+    - Oktober
+    - November
+    - Desember
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    am: pagi
+    formats:
+      default: ! '%A, %d. %B %Y, Pukul %H:%M'
+      long: ! '%d. %B %Y, Pukul %H:%M'
+      short: ! '%d. %B, Pukul %H:%M'
+    pm: sore
+
   choose: 
-    country: "Choose a country"
-    orientation: "Choose an orientation"
-    semester: "Choose a semester"
-    language: "Choose a programming language"
+    country: "Pilih negara"
+    orientation: "Pilih orientasi"
+    semester: "Pilih semester"
+    language: "Pilih bahasa pemograman"
   header:
-    account: "My account"
-    search: "Detailed search"
-    overview: "Overview"
-    start: "Overview"
-    exchange: "Job Exchange"
-    guide: "Guide"
-    logout: "Logout"
-    faq: "FAQs"
-    downloads: "Downloads"
-    financing: "Financing"
-    general: "General Info"
-    favorite: "Favorite"
-    tabtitle: "IMI Map | University of Applied Sciences"
+    account: "Akun"
+    search: "Pilih"
+    overview: "Ringkasan"
+    start: "Ringkasan"
+    exchange: "Pekerjaan"
+    guide: "Petunjuk"
+    logout: "Keluar"
+    faq: "Tanya jawab"
+    downloads: "Unduh"
+    financing: "Keuangan"
+    general: "Informasi umum"
+    favorite: "Favorit"
+    tabtitle: "IMI Map | Perguruan Tinggi Teknik dan Ekonomi"
  
   search:
     explanation:
-      html: "The diagrams give you an overview of the most common criteria for internships. </br> Simply click the bars to add the criteria to your search"
-    criteria: "Select your search criteria:"
-    title: "Search"
-    salary: "Monthly salary (min)"
-    livingCost: "Cost of living (max)"
-    rating: "Rating (min)"
-    resultnr: "results found!"
+      html: "Diagram memberikan gambaran kriteria yang paling umum untuk magang. </br> Cukup klik bar untuk menambahkan kriteria pencarian Anda."
+    criteria: "Pilih kriteria pencarian:"
+    title: "Pilih"
+    salary: "Gaji bulanan (minimal)"
+    livingCost: "Biaya hidup (maksimal)"
+    rating: "Pangkat (minimal)"
   buttons:
-    show: "Show"
-    edit: "Edit"
-    destroy: "Destroy"
-    back: "Back"
-    newcompany: "New Company"
-    newinternship: "New Internship"
-    newuser: "New User"
-    save: "Save"
-    done_intership_here: "Have you done your internship here, too?"
-    change_details: "Change Details"
-    compare: "Compare"
+    show: "Lihat"
+    edit: "Ubah"
+    destroy: "Hapus"
+    back: "Kembali"
+    newcompany: "Perusahaan baru"
+    newinternship: "Magang baru"
+    newuser: "Pengguna baru"
+    save: "Simpan"
+    done_intership_here: "Apakah Anda magang di sini juga?"
+    change_details: "Ubah perincian"
+    compare: "Bandingkan"
 
   helpers:
-    reset: "Reset"
-    at: "at"
-    summer: "summer"
-    winter: "winter"
+    reset: "Ubah seperti semula"
+    at: "di"
+    summer: "Musim panas"
+    winter: "Musim Dingin"
 
   companies:
-    name: "Companies"
-    create: "Create Company"
-    update: "Update Company"
+    name: "Perusahaan"
+    create: "Buat perusahaan"
+    update: "Baharui perusahaan"
     index:
-      title: "Listing companies"
+      title: "Daftar perusahaan"
     edit:
-      editcompany: "Editing Company"
+      editcompany: "Ubah perusahaan"
     new:
-      newcompany: "New Company"  
+      newcompany: "Perusahaan baru"  
     attributes:
-      rating: "Average Rating"
-      name: "Name"
-      street: "Street"
-      zip: "ZIP"
-      city: "City"
-      country: "Country"
-      number_employees: "Number Employees"
-      industry: "Industry"
-      main_language: "Main Language"
-      website: "Website"
-      address: "Address"  
-      recommended: "Recommended"
-      not_recommended: "Not Recommended"
+      rating: "Pangkat rata-rata"
+      name: "Nama"
+      street: "Jalan"
+      zip: "Kode Pos"
+      city: "Kota"
+      country: "Negara"
+      number_employees: "Jumlah karyawan"
+      industry: "Industri"
+      main_language: "Bahasa utama"
+      website: "Situs"
+      address: "Alamat"  
+      recommended: "Direkomendasi"
+      not_recommended: "Tidak direkomendasi"
 
   internships:
-    name: "Internships"
-    create: "Create Internship"
-    update: "Update Internship"
+    name: "Magang"
+    create: "Buat magang"
+    update: "Baharui magang"
     index:
-      title: "Listing internships"
+      title: "Daftar magang"
     edit:
-      editinternship: "Editing Internship" 
+      editinternship: "Ubah magang" 
     new:
-      newinternship: "New Internship"   
+      newinternship: "Magang baru"   
     attributes:
-      description: "Description"
-      semester: "Semester/Year"
-      email_public: "Make email adress public?"
-      comments: "UserComments"
-      pictures: "Pics"
-      orientation: "Orientation"
-      programming_language: "Programming Language"
-      salary: "Salary"
-      working_hours: "Working hours"
-      living_costs: "Living Costs"
-      company: "Company"
-      tasks_rating: "Tasks"
-      training_rating: "Training success"
-      atmosphere_rating: "Atmosphere"
-      supervision_rating: "Supervision"
-      appreciation_rating: "Appreciation"
-      title: "Job Title"
-      recommend: "Recommendation"
-      internship_report: "Internship Report"
+      description: "Deskripsi"
+      semester: "Semester/Tahun"
+      email_public: "Membuat alamat email publik?"
+      comments: "Komentar pengguna"
+      pictures: "Gambar"
+      orientation: "Orientasi"
+      programming_language: "Bahasa pemograman"
+      salary: "Gaji"
+      working_hours: "Jam kerja"
+      living_costs: "Biaya hidup"
+      company: "Perusahaan"
+      tasks_rating: "Tugas"
+      training_rating: "Keberhasilan latihan"
+      atmosphere_rating: "Suasana"
+      supervision_rating: "Supervisi"
+      appreciation_rating: "Apresiasi"
+      title: "Pekerjaan"
+      recommend: "Rekomendasi"
+      internship_report: "Laporan magang"
+      rating: "Pangkat"
+      user: "Pengguna"
 
 
   users:
-    name: "Users"
-    create: "Create User"
-    update: "Update User"
+    name: "Pengguna"
+    create: "Buat pengguna"
+    update: "Baharui pengguna"
     index:
-      title: "Listing Users"
+      title: "Daftar pengguna"
     edit:
-      edituser: "Editing User"  
+      edituser: "Ubah pengguna"  
     new:
-      newuser: "New User"  
+      newuser: "Pengguna baru"  
     show:
-       favorites_title: "My Favorites"       
-    sign_up: "Thank you for signing up!"
+       favorites_title: "Favorit saya"       
+    sign_up: "Terimakasih sudah mendaftar!"
     attributes:
       email: "Email"
-      publicmail: "Make email adress public?"
-      password: "Password"
-      password_confirmation: "Password confirmation"
-      mailnotif: "Receive Email-Notification?"  
+      publicmail: "Membuat alamat email publik?"
+      password: "Kata kunci"
+      password_confirmation: "Konfirmasi kata kunci"
+      mailnotif: "Apakah Anda mau menerima email notifikasi?"  
 
   students:
     attributes:
-      first_name: "given name"
-      last_name: "last name"
+      first_name: "nama depan"
+      last_name: "nama belakang"
       email: "email"
-      enrolment_number: "enrolment number"
+      enrolment_number: "nomer mahasiswa"
 
   comments:
     attributes: 
-      body: "UserComment"
+      body: "Komentar pengguna"
 
   answers:
-    from: "Reply from"
+    from: "Jawaban dari"
     attributes: 
-      body: "Reply"
+      body: "Jawaban"
 
   active_admin:
-    dashboard: Dashboard
+    dashboard: Papan-Instrumen
     dashboard_welcome:
-      welcome: "Welcome to the admin area of IMI-Map!"
-      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboard.rb'"
-    view: "View"
-    edit: "Edit"
-    delete: "Delete"
-    delete_confirmation: "Are you sure you want to delete this?"
-    new_model: "New %{model}"
-    create_model: "New %{model}"
-    edit_model: "Edit %{model}"
-    update_model: "Edit %{model}"
-    delete_model: "Delete %{model}"
-    details: "%{model} Details"
-    cancel: "Cancel"
-    empty: "Empty"
-    previous: "Previous"
-    next: "Next"
-    download: "Download:"
-    has_many_new: "Add New %{model}"
-    has_many_delete: "Delete"
-    has_many_remove: "Remove"
-    filter: "Filter"
-    clear_filters: "Clear Filters"
-    search_field: "Search %{field}"
-    equal_to: "Equal To"
-    greater_than: "Greater Than"
-    less_than: "Less Than"
-    main_content: "Please implement %{model}#main_content to display content."
-    logout: "Logout"
-    powered_by: "Powered by %{active_admin} %{version}"
+      welcome: "Selamat datang di bagian administrasi IMI-Map!"
+      call_to_action: "Untuk menambahkan bagian papan-instrumen, lihat 'app/admin/dashboard.rb'"
+    view: "Lihat"
+    edit: "Ubah"
+    delete: "Hapus"
+    delete_confirmation: "Apakah Anda yakin menghapus ini?"
+    new_model: "%{model} baru"
+    create_model: "Buat %{model}"
+    edit_model: "Ubah %{model}"
+    update_model: "Ubah %{model}"
+    delete_model: "Hapus %{model}"
+    details: "%{model} rincian"
+    cancel: "Batal"
+    empty: "Kosong"
+    previous: "Sebelumnya"
+    next: "Lanjut"
+    download: "Unduh:"
+    has_many_new: "Buat %{model} baru"
+    has_many_delete: "Hapus"
+    has_many_remove: "Hapus"
+    filter: "Saring"
+    clear_filters: "Hapus saringan"
+    search_field: "Cari %{field}"
+    equal_to: "Sama dengan"
+    greater_than: "Lebih banyak dari"
+    less_than: "Lebih sedikit dari"
+    main_content: "Laksanakan %{model}#main_content ke isi pameran."
+    logout: "Keluar"
+    powered_by: "Didukung oleh %{active_admin} %{version}"
     sidebars:
-      filters: "Filters"
+      filters: "Saringan"
     pagination:
-      empty: "No %{model} found"
-      one: "Displaying <b>1</b> %{model}"
-      one_page: "Displaying <b>all %{n}</b> %{model}"
-      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      empty: "%{model} tidak ditemukan"
+      one: "Tampilkan <b>1</b> %{model}"
+      one_page: "Tampilkan <b>semua %{n}</b> %{model}"
+      multiple: "Tampilkan %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> di total"
       entry:
-        one: "entry"
-        other: "entries"
-    any: "Any"
+        one: "masukan"
+        other: "masukan"
+    any: "Beberapa"
     blank_slate:
-      content: "There are no %{resource_name} yet."
-      link: "Create one"
+      content: "Sekarang belum terdapat %{resource_name}."
+      link: "Buat satu"
     batch_actions:
-      button_label: "Batch Actions"
-      delete_confirmation: "Are you sure you want to delete these %{plural_model}? You won't be able to undo this."
+      button_label: "Setumpuk aksi"
+      delete_confirmation: "Apakah Anda yakin menghapus %{plural_model}? Anda tidak dapat mengembalikannya."
       succesfully_destroyed:
-        one: "Successfully destroyed 1 %{model}"
-        other: "Successfully destroyed %{count} %{plural_model}"
-      selection_toggle_explanation: "(Toggle Selection)"
-      link: "Create one"
-      action_label: "%{title} Selected"
+        one: "Sukses menghapus 1 %{model}"
+        other: "Sukses menghapus %{count} %{plural_model}"
+      selection_toggle_explanation: "(Pilihan)"
+      link: "Buat satu"
+      action_label: "%{title} terpilih"
       labels:
-        destroy: "Delete"
+        destroy: "Hapus"
     comments:
-      resource_type: "Resource Type"
-      author_type: "Author Type"
-      body: "Body"
-      author: "Author"
-      title: "Comment"
-      add: "Add Comment"
-      resource: "Resource"
-      no_comments_yet: "No comments yet."
-      title_content: "Comments (%{count})"
+      resource_type: "Macam sumber"
+      author_type: "Macam pengarang"
+      body: "Isi"
+      author: "Pengarang"
+      title: "Komentar"
+      add: "Tambahkan komentar"
+      resource: "Sumber"
+      no_comments_yet: "Tidak ada komentar."
+      title_content: "Komentar (%{count})"
       errors:
-        empty_text: "Comment wasn't saved, text was empty."
+        empty_text: "Tidak bisa menyimpan komentar. Teks masih kosong."
     devise:
       login:
-        title: "Login"
-        remember_me: "Remember me"
-        submit: "Login"
+        title: "Masuk"
+        remember_me: "Ingatkan saya"
+        submit: "Masuk"
       reset_password:
-        title: "Forgot your password?"
-        submit: "Reset My Password"
+        title: "Lupa kata kunci?"
+        submit: "Kembalikan kata kunci"
       change_password:
-        title: "Change your password"
-        submit: "Change my password"
+        title: "Ubah kata kunci"
+        submit: "Ubah kata kunci"
       unlock:
-        title: "Resend unlock instructions"
-        submit: "Resend unlock instructions"
+        title: "Kirim instruksi untuk membuka"
+        submit: "Kirim instruksi untuk membuka"
       links:
-        sign_in: "Sign in"
-        forgot_your_password: "Forgot your password?"
-        sign_in_with_omniauth_provider: "Sign in with %{provider}"
+        sign_in: "Daftar"
+        forgot_your_password: "Lupa kata kunci?"
+        sign_in_with_omniauth_provider: "Daftar dengan %{provider}"
     access_denied:
-      message: "You are not authorized to perform this action."
+      message: "Anda tidak diijinkan untuk melakukan hal ini."
     index_list:
-      table: "Table"
-      block: "List"
-      grid: "Grid"
-      blog: "Blog"
+      table: "Skema"
+      block: "Daftar"
+      grid: "Kotak"
+      blog: "Blok"
   
   
 

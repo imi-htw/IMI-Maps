@@ -80,7 +80,8 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= internship.company.industry %></td>
     <td><%= internship.semester.semester %></td>
     <td><%= internship.try(:orientation).try(:name) %></td>
-    <td><%= internship.programming_languages.map { |n| n.name } %></td>
+    <td><%= internship.total_rating %></td>
+    <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
     <td><%# render_stars(internship.rating, self) %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
@@ -102,7 +103,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 $('table#paginated').each(function() {
     var currentPage = 1;
-    var numPerPage = 5;
+    var numPerPage = 8;
     var $table = $(this);
     var numRows = $table.find('tbody tr').length;
     var numPages = Math.ceil(numRows / numPerPage);

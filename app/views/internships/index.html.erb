@@ -1,39 +1,34 @@
 <%= form_tag(internships_path, :method => 'get') do %>
 <div class="row-fluid">
-<div class="span3">
+<div class="span4">
 <%= select_tag :country, options_for_select((@countries).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country"), style: "width:100%"} %>
 </div>
-<div class="span3">
+<div class="span4">
 <%= select_tag :semester, options_for_select(@semesters),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester"), style: "width:100%"}  %>
 </div>
-<div class="span3">
-<%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation"), style: "width:100%"}  %>
-</div>
-<div class="span3">
-<%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language"), style: "width:100%"}  %>
-</div>
-</div>
-<br/>
-<div class="row-fluid">
-<div class="span4">
+<div class="span4" style="margin-top:-6px">
         <span><%= t "search.salary" %></span>
         <span id="salary_span"></span>
         <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
         <div id="salary_slider">
         </div>
     </div>
+    </div>
+
+<br/>
+<div class="row-fluid">   
 <div class="span4">
+<%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation"), style: "width:100%"}  %>
+</div>
+<div class="span4">
+<%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language"), style: "width:100%"}  %>
+</div>
+
+<div class="span4" style="margin-top:-6px">
         <span><%= t "search.livingCost"%></span>
         <span id="living_costs_span"></span>
         <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
         <div id="living_costs_slider">
-        </div>
-    </div>
-<div class="span4">
-        <span><%= t "search.rating" %></span>
-        <span id="rating_span"></span>
-        <input name="rating[]" type="text" id="rating" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
-        <div id="rating_slider">
         </div>
     </div>
 </div>
@@ -148,7 +143,7 @@
 
    </script> 
 
-<h5> <%=@internships_size%> results found! </h5>
+<h5> <%=@internships_size%> <%= t "search.resultnr"%> </h5>
 
 <div class="table-container">
 <table id="paginated" class="table tablesorter">
@@ -164,8 +159,6 @@
     <th class="user"><%= t "internships.attributes.user" %></th>
     <th class="recommend"><%= t "internships.attributes.recommend" %></th>
     <th class="top_inside"></th>
-    <th class="top_inside"></th>
-    <th class="top_inside"></th>
   </tr>
   </thead>
 
@@ -174,16 +167,20 @@
   <tr>
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.orientation.name %></td>
-    <td class="table_inside"><%= internship.programming_languages.map { |n| n.name } %></td>
+    <td class="table_inside"><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
     <td class="table_inside"><%= internship.salary %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><%# render_stars(internship.rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
-    <td class="table_inside"><%= internship.recommend %></td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture button_intern" %></td>
-    <td class="table_inside"><%= link_to "", edit_internship_path(internship), class: "icon-white icon-edit button_intern" %></td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-remove button_intern", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="table_inside">
+      <% if internship.recommend %>
+          <i class="icon-thumbs-up icon-2x green-thumb"></i>
+        <% else %>
+          <i class="icon-thumbs-down icon-2x red-thumb"></i>
+        <% end %>
+    </td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture icon-2x button_intern" %></td>
   </tr>
 <% end %>
   </tbody>

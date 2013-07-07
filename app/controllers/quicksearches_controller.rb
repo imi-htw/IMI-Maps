@@ -10,7 +10,12 @@ class QuicksearchesController < ApplicationController
 
     @language_ary = []
 
-    if params[:orientation].nil? and params[:semester].nil? and params[:programming_language_ids].nil? and params[:country].nil?
+    params[:country].delete_if(&:empty?) if params[:country].present?
+    params[:semester].delete_if(&:empty?) if params[:semester].present?
+    params[:programming_language_ids].delete_if(&:empty?) if params[:programming_language_ids].present?
+    params[:orientation].delete_if(&:empty?) if params[:orientation].present?
+
+    if !params[:orientation].present? and !params[:semester].present? and !params[:programming_language_ids].present? and !params[:country].present?
       @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
     else
       @internships = @quicksearch.internships(params)

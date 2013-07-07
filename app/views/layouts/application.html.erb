@@ -75,6 +75,7 @@
       <ul class="dropdown-menu">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
+          <li><%= link_to_unless_current "Indonesia", locale: "id" %></li>
        </ul>
     </li>    
 
@@ -113,9 +114,8 @@
     </div>
 
   <div class="wrapper">
-    <div class="container clear-top">      
-      <div class="row">
-       <%= yield %></div>
+    <div class="container clear-top">
+       <%= yield %>
       </div>
     </div>
 </div>

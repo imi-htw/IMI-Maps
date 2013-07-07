@@ -26,4 +26,10 @@
   background-repeat: repeat-y;
 }
 
+.green-thumb {
+	color: #8bb900 !important;
+}
 
+.red-thumb {
+	color: #b90000 !important;
+}

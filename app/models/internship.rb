@@ -1,6 +1,6 @@
 class Internship < ActiveRecord::Base
 
-  attr_accessible :living_costs, :orientation_id, :salary, :working_hours, :programming_language_ids, :internship_rating_id,
+  attr_accessible :tasks_rating, :training_rating, :atmosphere_rating, :supervision_rating, :appreciation_rating, :living_costs, :orientation_id, :salary, :working_hours, :programming_language_ids, :internship_rating_id,
     :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report, :student_id, :start_date, :end_date, :operational_area, :tasks
 
 
@@ -15,7 +15,6 @@ class Internship < ActiveRecord::Base
   #validates :description, :presence => true, :allow_blank => false
   #validates :user_id, :presence => true
   validates :semester_id, :presence => true
-
 
   belongs_to :user
   belongs_to :company
@@ -34,4 +33,11 @@ class Internship < ActiveRecord::Base
   mount_uploader :internship_report, InternshipReportUploader
 
   accepts_nested_attributes_for :attachments
+
+  def total_rating
+    if tasks_rating and training_rating and atmosphere_rating and supervision_rating and appreciation_rating
+      (tasks_rating+training_rating+atmosphere_rating+supervision_rating+appreciation_rating).to_f/5
+    end
+  end
+
 end

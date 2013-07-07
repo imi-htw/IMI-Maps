@@ -92,6 +92,7 @@ de:
     salary: "Monatliches Gehalt (min)"
     livingCost: "Lebenshaltungskosten (max)"
     rating: "Bewertung (min)"
+    resultnr: "Ergebnisse gefunden!"
   buttons:
     show: "Anzeigen"
     edit: "Bearbeiten"
@@ -156,7 +157,11 @@ de:
       working_hours: "Arbeitsstunden"
       living_costs: "Lebenshaltungskosten"
       company: "Firma"
-      rating: "Rating"
+      tasks_rating: "Aufgaben"
+      training_rating: "Lernerfolg"
+      atmosphere_rating: "Atmosphäre"
+      supervision_rating: "Betreuung"
+      appreciation_rating: "Wertschätzung"
       title: "Job Titel"
       recommend: "Empfehlung"
 
