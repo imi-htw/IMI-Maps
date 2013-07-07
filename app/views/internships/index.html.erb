@@ -1,4 +1,5 @@
-<%= form_tag(internships_path, :method => 'get') do %>
+<h2 style="margin-bottom:35px;"><%= t "search.title" %></h2>
+<%= form_tag(internships_path, :method => 'get', class: 'form2') do %>
 <div class="row-fluid">
 <div class="span4">
 <%= select_tag :country, options_for_select((@countries).uniq), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.country"), style: "width:100%"} %>
@@ -14,7 +15,6 @@
         </div>
     </div>
     </div>
-
 <br/>
 <div class="row-fluid">   
 <div class="span4">
@@ -33,7 +33,7 @@
     </div>
 </div>
 <br/>
-<%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
+<%= submit_tag t("search.button"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
 
 <% end %>
 
@@ -139,7 +139,6 @@
 
         <% end %>
 
-        
 
    </script> 
 
@@ -164,7 +163,7 @@
 
   <tbody>
 <% @internships.each do |internship| %>
-  <tr>
+  <tr class="<%= cycle("even_row2", "odd_row2") %>">
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.orientation.name %></td>
     <td class="table_inside"><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
@@ -175,16 +174,17 @@
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside">
       <% if internship.recommend %>
-          <i class="icon-thumbs-up icon-2x green-thumb"></i>
+          <i class="icon-white icon-thumbs-up icon-2x" style="color:#80b900"></i>
         <% else %>
-          <i class="icon-thumbs-down icon-2x red-thumb"></i>
+          <i class="icon-white icon-thumbs-down icon-2x" style="color:#333333"></i>
         <% end %>
     </td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-picture icon-2x button_intern" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-eye-open icon-2x button_intern" %></td>
   </tr>
 <% end %>
   </tbody>
 </table>
+<!--<div style="width: 100%; height:10px; background-color:#4f4f4f; position: inherit; margin-top:-20px;"></div>-->
 </div>
 <!---  
 <% #if @internships_size > 5 %>

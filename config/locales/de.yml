@@ -88,11 +88,12 @@ de:
     explanation:
       html: "Die Diagramme zeigen dir die häufigsten Kriterien von unseren Praktika. </br>Klick auf eine der Säulen um sie für deine Suche auszuwählen"
     criteria: "Wähle deine Suchkriterien:"
-    title: "Suche"
+    title: "Detailsuche"
     salary: "Monatliches Gehalt (min)"
     livingCost: "Lebenshaltungskosten (max)"
     rating: "Bewertung (min)"
     resultnr: "Ergebnisse gefunden!"
+    button: "suchen"
   buttons:
     show: "Anzeigen"
     edit: "Bearbeiten"

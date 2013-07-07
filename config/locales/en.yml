@@ -36,11 +36,12 @@ en:
     explanation:
       html: "The diagrams give you an overview of the most common criteria for internships. </br> Simply click the bars to add the criteria to your search"
     criteria: "Select your search criteria:"
-    title: "Search"
+    title: "Detailed Search"
     salary: "Monthly salary (min)"
     livingCost: "Cost of living (max)"
     rating: "Rating (min)"
     resultnr: "results found!"
+    button: "search"
   buttons:
     show: "Show"
     edit: "Edit"

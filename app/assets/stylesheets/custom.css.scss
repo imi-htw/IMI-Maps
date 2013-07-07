@@ -27,7 +27,7 @@ background-color: #90b800;
 
 .btn-success {
 	color: white;
-	background-color: #90b800;
+	background-color: #80b900 !important;
 	background-image: -moz-linear-gradient(top, #90b800, #90b800);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#90b800), to(#90b800));
 	background-image: -webkit-linear-gradient(top, #90b800, #90b800);
@@ -37,6 +37,7 @@ background-color: #90b800;
 }
 
 .btn {
+    background-color: #80b900 !important;
 	padding: 6px 8px;
 	text-shadow: none;
 	border: none;
@@ -207,4 +208,84 @@ p.explanation {
 
 .red-thumb{
     color: #ff00ff;
+}
+.table_inside {
+    font-size: 13px;
+    background: transparent !important;
+}
+
+.ui-slider {
+    position: relative;
+    text-align: left;
+}
+.ui-slider .ui-slider-handle {
+    cursor: default;
+    height: 1.2em;
+    position: absolute;
+    width: 1.2em;
+    z-index: 2;
+}
+.ui-slider .ui-slider-range {
+    background-position: 0 0;
+    border: 0 none;
+    display: block;
+    font-size: 0.7em;
+    position: absolute;
+    z-index: 1;
+}
+.ui-slider.ui-state-disabled .ui-slider-handle, .ui-slider.ui-state-disabled .ui-slider-range {
+    filter: inherit;
+}
+.ui-slider-horizontal {
+    background: none repeat scroll 0 0 #80b900 !important;
+    height: 0.5em !important;
+    border-radius: 0px !important;
+    border: 0px !important;
+}
+.ui-slider-horizontal .ui-slider-handle {
+    background: none repeat scroll 0 0 #333333 !important;
+    margin-left: -0.6em;
+    top: -0.3em;
+    width: 0.4em !important;
+    border: 0px !important;
+    border-radius: 0px !important;
+}
+.ui-slider-horizontal .ui-slider-range {
+    height: 100%;
+    top: 0;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+}
+.ui-slider-vertical {
+    height: 100px;
+    width: 0.8em;
+}
+.ui-slider-vertical .ui-slider-handle {
+    left: -0.3em;
+    margin-bottom: -0.6em;
+    margin-left: 0;
+}
+.ui-slider-vertical .ui-slider-range {
+    left: 0;
+    width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+    bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+    top: 0;
+}
+
+.table-container{
+    margin-top: 10px;
+}
+.form2 {
+    margin-bottom: 30px !important;
+}
+#search_button{
+    float:right;
 }
