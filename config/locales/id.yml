@@ -306,94 +306,94 @@ id:
   
 
   faq:
-    title: "FAQs"
-    title2: "Internship FAQs"
+    title: "Pertanyaan yang sering diajukan"
+    title2: "Pertanyaan yang sering diajukan untuk Magang"
     frage1:
-      html: "<p><b>Can I complete my internship in several sections?</b></p><p>It is possible to divide the internship in three sections (each lasting at least four weeks).</br>A separate report must be made ​​for each section.</p>"
+      html: "<p><b>Dapatkah saya menyelesaikan magang saya di beberapa bagian?</b></p><p>Hal ini dimungkinkan untuk membagi magang dalam tiga bagian (masing-masing berlangsung setidaknya empat minggu).</br>Sebuah laporan terpisah harus dibuat untuk setiap bagian.</p>"
     frage2:
-      html: "<p><b>When are the internship reports due?</b></p><p>No later than four weeks after the completion of the internship. The report should include about 20 pages</br>and be stapled (no loose-leaf). Please submit it to the internship coordinator.</p>"
+      html: "<p><b>Kapankah laporan magang dikumpulkan</b></p><p>Selambat-lambatnya empat minggu setelah selesainya magang. Laporan tersebut harus mencakup sekitar 20 halaman</br>dan dijilid (tidak lepas). Silahkan kirimkan ke koordinator magang.</p>"
     frage3:
-      html: "<p><b>Where do I register for the internship accompanying courses?</b></p><p>In LSF. Note that the courses are always offered during the semester breaks.</br>Apart from AEP, they can also be attended before the placement.</p>"
+      html: "<p><b>Di mana saya mendaftar untuk magang menyertai program?</b></p><p>Dalam LSF. Perhatikan bahwa program selalu ditawarkan selama liburan semester.</br>Selain AEP, mereka juga dapat hadir sebelum penempatan.</p>"
     frage4:
-      html: "<p><b>When should I start looking for internships?</b></p><p>As soon as possible. It is important to have enough time to search for suitable internships and to apply. </br>Especially in countries for which a visa is required and / or if you want to apply for scholarships.</p>"     
-    title3: "IMI Map FAQs"
+      html: "<p><b>Kapan saya harus mulai mencari magang?</b></p><p>Sesegera mungkin. Hal ini penting untuk memiliki cukup waktu untuk mencari magang yang cocok dan untuk menerapkan. </br>Terutama di negara-negara yang visa diperlukan dan / atau jika Anda ingin mengajukan permohonan beasiswa.</p>"     
+    title3: "Pertanyaan di dalam IMI-Maps"
     frageI1:
-      html: "<p><b>Can I edit my internship-review after it has been submitted?</b></p><p>Yes, you can edit your internship review after it has been submited. Follow these steps: 'Account' → 'Internship Report' → 'Edit'.</p>"
+      html: "<p><b>Apakah saya dapat mengubah resensi magang setelah disetujui?</b></p><p>Ya, Anda dapat mengubah Resensi magang setelah disetujui. Ikuti langkah berikut: 'Akun' → 'Laporan Magang '→' Ubah '.</p>"
     frageI2:
-       html: "<p><b>How do I post a second intership-review?</b></p><p>If you have completed your internship in several companies, you can create one experience report for each company.</br> For this you have to write a mail to the person responsible (mail), which unlocks it for you.</br> After activation, the button 'Create review' under 'Account' will appear.</p>"  
+       html: "<p><b>Bagaimana cara mengirim resensi magang yang kedua</b></p><p>Jika Anda telah menyelesaikan magang di beberapa perusahaan, Anda dapat membuat satu laporan pengalaman bagi masing-masing perusahaan.</br> Untuk ini, Anda harus menulis surat ke orang yang bertanggung jawab (mail), yang membuka untuk Anda.</br> Setelah mengaktifkan, tombol 'Buat resensi' di bawah 'Akun' akan muncul</p>"  
 
 
 
    
   download:
-    form: "Forms"
-    text1: "The required forms are listed below for download:"
-    text2: "Registration for internship"
-    text3: "Certificate of internship completion"
-    text4: "Example contract"
+    form: "Formulir"
+    text1: "Formulir yang diperlukan tercantum di bawah ini untuk di-download:"
+    text2: "Pendaftaran untuk magang"
+    text3: "Sertifikat penyelesaian magang"
+    text4: "contoh kontrak"
     text5: "ger."
-    text6: "Request a refund of the semester ticket fees"
+    text6: "Meminta pengembalian biaya tiket semester"
 
   general:
-    title: "General Internship Information"
+    title: "Informasi Magang Umum"
     text1:
-     html: "A practical training component is integrated in the IMI Bachelor's degree study programm at the HTW,  in the form of a practical training term. You may do your internship in Germany (if you are from outside Germany) or abroad (obligatory for german students)<h3><strong>Formal Issues</strong></h3>All courses of the first and second semester must be completed successfully. The students themselves have to look for an internship placement abroad. The duration of the internship has to be at least 16 weeks (Study Regulations of 2008) or 19 weeks (Study Regulations of 2012). Prior to the beginning of the internship the internship contract with the selected company has to be shown to and excepted  by the HTW Berlin. <h3> <b> Internship Application </b> </h3> You have to to conclude a contract with the Company first. You may use the HTW Template."
+     html: "Sebuah komponen pelatihan praktis terintegrasi dalam program studi gelar IMI Sarjana di HTW, dalam bentuk istilah pelatihan praktis. Anda dapat melakukan magang di Jerman (jika Anda berasal dari luar Jerman) atau di luar negeri (wajib bagi siswa jerman)<h3><strong>Masalah Formal</strong></h3>Semua program dari semester pertama dan kedua harus selesai dengan sukses. Para siswa sendiri harus mencari penempatan magang di luar negeri. Durasi magang harus setidaknya 16 minggu (Peraturan Studi 2008) atau 19 minggu (Peraturan Studi 2012). Sebelum awal magang kontrak magang dengan perusahaan yang dipilih harus ditunjukkan dan dikecualikan oleh HTW Berlin.<h3> <b> Aplikasi magang </b> </h3> Anda harus untuk menyimpulkan kontrak dengan Perusahaan pertama. Anda dapat menggunakan Template HTW."
     text2:
-     html: "Fill in this internship application"
+     html: "Isi aplikasi magang ini"
     text3:
-     html: "</br>Hand in all the application documents to the internship coordinator (during office hours). The application documents comprise:"
-    text4: "fully completed and signed internship application form in the original"
-    text5: "printed LSF-certificate, prooving that you passed all the courses of the 1st and 2nd semester"
-    text6: "the contract with the company in the original"
+     html: "</br>Berikan di semua dokumen aplikasi untuk koordinator magang (selama jam kantor). Dokumen aplikasi terdiri dari:"
+    text4: "sepenuhnya selesai dan ditandatangani formulir aplikasi magang dalam bahasa aslinya"
+    text5: "dicetak LSF-sertifikat, membuktikan bahwa Anda telah lulus semua mata kuliah dari 1 dan semester 2"
+    text6: "kontrak dengan perusahaan di dalam bentukasli"
     text7:  
-     html: "These documents remain at the HTW. If you need copies for BaföG, semester ticket refund or scholarships, you have to prepare those yourself and get them signed by the internship coordinator. If you want to keep an original copy of the placement agreement, please ask the compan yourself, to provide enough originals (usually three: one for the company, one for you and one for the HTW Berlin).</br></br>All these documents should be handed in before the end of lectures of the semester prior to the semester in which you plan to conduct your internship. As long as the idocuments are not complete or not handed in in original you can not be admitted to the internship.</br></br> In order to receive a refund for the semester ticket fee, you have to fill in the request (only available in german) and send it to the semester ticket office before the start of the internship semester. "
+     html: "Dokumen-dokumen ini tetap di HTW tersebut. Jika Anda membutuhkan salinan untuk BaföG, semester pengembalian tiket atau beasiswa, Anda harus mempersiapkan diri mereka dan membuat mereka ditandatangani oleh koordinator magang. Jika Anda ingin menyimpan salinan asli dari perjanjian penempatan, silahkan meminta kebijakan perusahaan sendiri, untuk menyediakan cukup asli (biasanya tiga: satu untuk perusahaan, satu untuk Anda, satu untuk HTW Berlin).</br></br>Semua dokumen tersebut harus diserahkan sebelum akhir kuliah semester sebelum semester di mana Anda berencana untuk melakukan magang. Selama dokumen tidak lengkap atau tidak diserahkan dalam asli Anda tidak dapat diterima untuk magang.</br></br> Dalam rangka untuk menerima pengembalian dana untuk biaya tiket semester, Anda harus mengisi permintaan (hanya tersedia dalam bahasa Jerman) dan mengirimkannya ke kantor tiket semester sebelum dimulainya semester magang. "
     text8: 
      html: ""
     text9:
-     html: "<h3><b>Approval of the internship</b></h3>The fully completed certificate of internship completion (signed and stamped by the company) and the internship report must be handed  in to the internship coordinator and the compulsory course AEP — Auswertung von Erfahrungen am Arbeitsplatz — must be completed successfully. Only then the internship can be approved. "
+     html: "<h3><b>Persetujuan magang</b></h3>Sepenuhnya selesai sertifikat magang selesai (ditandatangani dan dicap oleh perusahaan) dan laporan magang harus diserahkan kepada koordinator magang dan program wajib AEP - Auswertung von Erfahrungen am Arbeitsplatz - harus diselesaikan dengan sukses. Hanya kemudian magang dapat disetujui."
 
   financing:
-    title:  "Financing"
-    title2: "Scholarships"
-    title3: "Auslandsbafög"
+    title:  "Pembiayaan"
+    title2: "Beasiswa"
+    title3: "Bafög untuk luar negeri"
     text1:
-      html: "<h3><strong>Which ways of fundings are available?</strong></h3>An internship abroad should be well planned. Although some internships are paid, the living costs are often much higher than here. Additionally you may have to pay things like:  travel costs and insurance. Therefore, please inform yourself - also two to three semesters prior to the planned internship. The sooner you begin to prepare your internship, the more options are open to you. Please note the application deadlines for various scholarship programs and the long processing time for Auslands-BAföG. For some scholarship programs you have to apply about ten months prior to starting, but at this time you don't need to have a placement promise. The International Office of HTW Berlin offers advice on funding opportunities of internships and also provides detailed information online about this topic."
-    text2: "You can find a more detailed list of funding programs here:"
+      html: "<h3><strong>bagaiman cara pendanaan yang tersedia ?</strong></h3>Magang di luar negeri harus direncanakan dengan baik. Meskipun beberapa magang dibayar, biaya hidup seringkali jauh lebih tinggi daripada di sini. Selain itu Anda mungkin harus membayar hal-hal seperti: biaya perjalanan dan asuransi. Oleh karena itu, mohon informasikan diri sendiri - juga 2-3 semester sebelum magang yang direncanakan. Semakin cepat Anda mulai mempersiapkan magang, lebih banyak pilihan yang terbuka untuk Anda. Harap perhatikan batas waktu pendaftaran untuk berbagai program beasiswa dan waktu proses yang lama untuk Auslands-BAföG. Untuk beberapa program beasiswa Anda harus menerapkan sekitar sepuluh bulan sebelum memulai, tetapi saat ini Anda tidak perlu memiliki janji penempatan. Internasional Kantor HTW Berlin menawarkan saran tentang peluang pendanaan dari magang dan juga memberikan informasi rinci online tentang topik ini."
+    text2: "Anda dapat menemukan daftar yang lebih rinci tentang program pendanaan di sini:"
     text3:  
-      html: "<p>Auslands-BAföG is the great financial support for an entire study, part-study internship or a student exchange in European and non-European countries! If you receive Bafög here, you sure get AUslandsbafög, if you get no Bafög here, you can still get Auslands-BAföG! Due to the higher costs abroad Auslands-Bafög come to question for a lot more of you.</p>"
-    text4: "more Information"
+      html: "<p>Auslands-BAföG adalah dukungan keuangan yang besar untuk studi keseluruhan, bagian-studi magang atau pertukaran pelajar di negara-negara Eropa dan non-Eropa! Jika Anda menerima Bafög sini, Anda yakin mendapatkan AUslandsbafög, jika Anda tidak mendapatkan Bafög sini, Anda masih bisa mendapatkan Auslands-BAföG! Karena biaya yang lebih tinggi di luar negeri Auslands-Bafög datang untuk mempertanyakan untuk lebih banyak dari Anda.</p>"
+    text4: "Informasi lebih lanjut"
     text5:
-      html: "<h3><strong>Funding programs</strong></h3>"
-    text6: "These are some of the most popular funding programs for IMIs:"
+      html: "<h3><strong>Program Pendanaan</strong></h3>"
+    text6: "Ini adalah beberapa program pendanaan yang paling populer untuk IMIS:"
 
     progs:
      title1: "Program"
-     title2: "Short Facts"
-     title3: "Duration"
-     title4: "Region"
+     title2: "Fakta singkat"
+     title3: "Durasi"
+     title4: "Daerah"
     prog1:
-      namen: "Auslands-BAföG"
-      fact: "Loans and Grants for spezialized compulsory insternships"
-      duration: "max. 12 month"
-      region: "worldwide"
+      namen: "BAföG luar negeri"
+      fact: "Pinjaman dan Hibah untuk magang wajib khusus"
+      duration: "max. 12 bulan"
+      region: "sedunia"
     prog2:
-       namen: "ERASMUS Placement"
-       fact: "Allowance for practical training (Fachpraktikum) "
-       duration: "3-12  month"
-       region: "Europa"
+       namen: "penempatan ERASMUS"
+       fact: "Penyisihan pelatihan praktis (magang)"
+       duration: "3-12  bulan"
+       region: "Eropa"
     prog3:
-       namen: "PROMOS Praktika"
-       fact: "Travel allowance for compulsory international internships"
-       duration: "3-6  month"
-       region: "preferably in Asia, Africa, Latin America"
+       namen: "PROMOS magang"
+       fact: "Perjalanan penyisihan wajib magang internasional"
+       duration: "3-6 bulan"
+       region: "terutama di Asia, Afrika, Amerika Latin"
     prog4:
        namen: "DAAD: Carlo-Schmid-Programm"
-       fact: "Full scholarships depending on country, travel allowance for interships in international organisations, EU-Organisations or NGO's"
-       duration: "A: 3 - 6 month, or  B: 4 - 10 month"
-       region: "worldwide"
+       fact: "Beasiswa penuh tergantung pada negara, tunjangan perjalanan untuk magang di organisasi internasional, Uni Eropa-Organisasi dan LSM"
+       duration: "A: 3 - 6 bulan, or  B: 4 - 10 bulan"
+       region: "sedunia "
 
   favorite_compare:
-    title: "Compare Favorites"
-    column1: "First Internship"
-    column2: "Second Internship"
-    column3: "Third Internship"
+    title: "Bandingkan Favorit"
+    column1: "Magang pertama"
+    column2: "Magang kedua"
+    column3: "Magang ketiga"
