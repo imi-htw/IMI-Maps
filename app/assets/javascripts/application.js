@@ -63,6 +63,13 @@ $(document).ready(function() {
      $(".answer_2").slideToggle("slow");
      $("#comment_form").slideToggle("slow");
   });
+     $(".info_signup").hide();
+     $(".icon-info-sign").mouseover(function(){
+       $("#popup").fadeIn("slow");
+     });
+     $(".icon-info-sign").mouseleave(function(){
+       $("#popup").fadeOut("slow");
+     });
 
   $(".recommend-edit").click(function() {
     if ($("#recommend").hasClass( "green-thumb" )) {
