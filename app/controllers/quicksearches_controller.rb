@@ -62,11 +62,8 @@ class QuicksearchesController < ApplicationController
     @data_country = ary
 
     ary = Array.new
-    @programming_languages.each do |x|
-      s = x.try(:internships).try(:size)
-      if s > 0
-        ary << {:name=>x.name, :count=>s.to_f/@internships.size*100}
-      end
+    @language_ary.uniq.each do |x|
+      ary << {:name=>x.name, :count=>(@language_ary.count(x).to_f/@internships_size*100).to_i}
     end
     @data_language = ary
 
