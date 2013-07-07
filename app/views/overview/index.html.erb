@@ -55,7 +55,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <div id="results_string" style="display:none"> </div>
 <div class="table-container">
 
-<table id="paginated" class="table">
+<table id="paginated" class="table table-head">
   <thead>
     <tr class="search-table" style="margin-bottom:20px;">
       <th><%= t "internships.attributes.title" %></th>
@@ -67,6 +67,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
       <th><%= t "internships.attributes.orientation" %></th>
       <th><%= t "internships.attributes.programming_language" %></th>
       <th><%= t "internships.attributes.rating" %></th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -80,8 +81,8 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= internship.company.industry %></td>
     <td><%= internship.semester.semester %></td>
     <td><%= internship.try(:orientation).try(:name) %></td>
-    <td><%= internship.total_rating %></td>
     <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
+    <td><%= internship.total_rating %></td>
     <td><%# render_stars(internship.rating, self) %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
