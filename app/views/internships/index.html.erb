@@ -33,7 +33,9 @@
     </div>
 </div>
 <br/>
+
 <%= submit_tag t("search.button"), :name => nil, :class => "btn btn-success", :id => "search_button" %>
+<%= link_to t("helpers.reset"), internships_path, :class => "btn btn-success" %>
 
 <% end %>
 
@@ -64,20 +66,6 @@
 
         $( "#living_costs" ).val( $( "#living_costs_slider" ).slider( "value" ) );
         $( "#living_costs_span")[0].innerHTML = ( $( "#living_costs_slider" ).slider( "value" ) + " €")
-
-
-         $( "#rating_slider" ).slider({
-            min: 1,
-            max: 5,
-            value: 1,
-            slide: function( event, ui ) {
-                $( "#rating" ).val( ui.value );
-                $( "#rating_span" )[0].innerHTML = ( ui.value );
-            }
-        });
-
-        $( "#rating" ).val( $( "#rating_slider" ).slider( "value" ) );
-        $( "#rating_span")[0].innerHTML = ( $( "#rating_slider" ).slider( "value" ) )
 
         <% if @country_choices %>
 

@@ -19,6 +19,8 @@
 //= require stupidtable.min
 
 $(window).load(function () {
+      $(".alert-info").animate({opacity: 1.0}, 5000).fadeOut('slow');
+
       $("#close").click(function(){
         $(".msgbox").fadeOut("400")
       $.cookie('fadeOut', true);
@@ -52,21 +54,6 @@ $(window).load(function () {
     $("#internship_"+id).val(val)
   }
 
-  $(".recommend-edit").click(function() {
-    if ($("#recommend").hasClass( "icon-thumbs-up" )) {
-      $(".recommend-edit").removeClass( "icon-thumbs-up" );
-      $(".recommend-edit").removeClass( "green-thumb" );
-      $(".recommend-edit").addClass( "icon-thumbs-down" );
-      $(".recommend-edit").addClass( "red-thumb" );
-    }
-    if ($("#recommend").hasClass( "icon-thumbs-down" )) {
-      $(".recommend-edit").removeClass( "icon-thumbs-down" );
-      $(".recommend-edit").removeClass( "red-thumb" );
-      $(".recommend-edit").addClass( "icon-thumbs-up" );
-      $(".recommend-edit").addClass( "green-thumb" );
-    }
-  });
-
 });
 
 $(document).ready(function() {
@@ -77,6 +64,25 @@ $(document).ready(function() {
      $("#comment_form").slideToggle("slow");
   });
 
+  $(".recommend-edit").click(function() {
+    if ($("#recommend").hasClass( "green-thumb" )) {
+      $(this).removeClass( "icon-thumbs-up" );
+      $(this).removeClass( "green-thumb" );
+      $(this).addClass( "icon-thumbs-down" );
+      $(this).addClass( "red-thumb" );
+      $(this).addClass( "waaaaaaaas" );
+
+    }
+  });
+  $(".recommend-edit").click(function() {
+    if ($(".recommend-edit").hasClass( "icon-thumbs-down" )) {
+      $(this).removeClass( "icon-thumbs-down" );
+      $(this).removeClass( "red-thumb" );
+      $(this).addClass( "icon-thumbs-up" );
+      $(this).addClass( "green-thumb" );
+    }
+  });
+
 });
 
 click_reset = function() {
@@ -84,5 +90,7 @@ click_reset = function() {
   $(".search-choice").remove();
   $("#search_button").click();
 }
+
+
 
  

@@ -22,7 +22,7 @@ class InternshipsController < ApplicationController
     @salary_max = @internships.collect do |x| x.salary end.max    
     @salary_max ||= 0
 
-    @salary = @salary_max
+    @salary = 0
     @salary = params[:salary] if params[:salary].present?
     @living_costs = @living_costs_max
     @living_costs = params[:living_costs] if params[:living_costs].present?
@@ -54,9 +54,9 @@ class InternshipsController < ApplicationController
     @language_choices = params[:programming_language_ids] if params[:programming_language_ids].present?
 
     #@internships = @internships.where('working_hours <= ?',params[:working_hours])
-    #@internships = @internships.where('living_costs <= ?',params[:living_costs]) if params[:living_costs].present?
+    @internships = @internships.where('living_costs <= ?',@living_costs.first) if params[:living_costs].present?
     #@internships = @internships.where('rating >= ?',params[:rating])
-    #@internships = @internships.where('salary >= ?',params[:salary]) if params[:salary].present?
+    @internships = @internships.where('salary >= ?',@salary.first) if params[:salary].present?
 
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq).map do |p|
       [p.name, p.id]

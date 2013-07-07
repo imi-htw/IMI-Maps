@@ -25,7 +25,9 @@ class OverviewController < ApplicationController
 
     @semesters = @internships.collect do |x| x.semester end.uniq
 
-    @orientations = Orientation.all
+    @orientations_ary = @internships.collect do |x| x.orientation end  
+      
+    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
 
     @countries = @companies.collect do |x| x.country end
 
@@ -46,15 +48,10 @@ class OverviewController < ApplicationController
     @data_language = ary
 
     ary = Array.new
-    @orientations.each do |x|
-      s = x.internships.size
-      if s > 0
-        ary << {:name=>x.name, :count=>s}
-      end
+    @orientations_ary.uniq.each do |x|
+      ary << {:name=>x.name, :count=>@orientations_ary.count(x)}
     end
     @data_orientation = ary
-
-    @orientations = @orientations.map do |o| [o.name, o.id] end
 
     respond_to do |format|
       format.html

@@ -18,18 +18,20 @@ class QuicksearchesController < ApplicationController
     if !params[:orientation].present? and !params[:semester].present? and !params[:programming_language_ids].present? and !params[:country].present?
       @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
     else
-      @internships = @quicksearch.internships(params)
+      @internships = @quicksearch.internships(params)      
     end
-
-    @companies = @internships.collect do |x| x.company end
-
-    @orientations_ary = @internships.collect do |x| x.orientation end
 
     @internships.each do |i|
-      i.programming_languages.each do |p|
-        @language_ary << p
+        i.programming_languages.each do |p|
+          @language_ary << p
+        end
       end
-    end
+    @programming_languages = @language_ary.uniq
+
+    @orientations_ary = @internships.collect do |x| x.orientation end  
+    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
+
+    @companies = @internships.collect do |x| x.company end    
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
       if company.website
@@ -45,15 +47,11 @@ class QuicksearchesController < ApplicationController
 
     @semesters = @internships.collect do |x| x.semester end.map do |s|[s.semester,s.id] end
 
-    @programming_languages = @language_ary.uniq.map do |p|[p.name, p.id] end
-
     @internships_size = @internships.size
 
     @bool = Internship.all.size == @internships_size
 
     @countries = (@companies.collect do |x| x.country end)
-  
-    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
 
     ary = Array.new
     @countries.uniq.each do |x|
