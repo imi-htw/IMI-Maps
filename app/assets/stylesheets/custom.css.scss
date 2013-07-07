@@ -154,3 +154,51 @@ p.explanation {
     margin-bottom: 55px;
     margin-top: 5px;
 }
+
+.alert {
+    background-color: #292929;
+    border: 1px solid #80b900;
+    border-radius: 4px 4px 4px 4px;
+    color: #C09853;
+    margin-bottom: 0px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-align: right;
+}
+.alert h4 {
+    margin: 0;
+}
+.alert .close {
+    line-height: 20px;
+    position: relative;
+    right: -21px;
+    top: -2px;
+}
+.alert-success {
+    background-color: #292929;
+    border-color: #80b900;
+    color: #ffffff;
+    text-align: right;
+}
+.alert-danger, .alert-error {
+    background-color: #333333;
+    border-color: #000000;
+    color: #ffffff;
+    text-align: right;
+}
+.alert-info {
+    background-color: #292929;
+    border-color: #292929;
+    color: #ffffff;
+    text-align: right;
+}
+.alert-block {
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+.alert-block > p, .alert-block > ul {
+    margin-bottom: 0;
+}
+.alert-block p + p {
+    margin-top: 5px;
+}
