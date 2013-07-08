@@ -21,7 +21,7 @@
     <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.publicmail"  %>
     <%= f.check_box :publicmail %>
-  </div>  
+  </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.password" %><br />
@@ -37,7 +37,7 @@
     <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.mailnotif"  %>
     <%= f.check_box :mailnotif %>
-  </div> 
+  </div>
   <div class="actions" style="float: right">
     <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "btn btn-success" %>
   </div>
