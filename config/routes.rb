@@ -50,23 +50,27 @@ ImiMaps::Application.routes.draw do
 
     resources :password_resets
 
+    resources :errors, :only => [:not_found]
+
 		root to: 'sessions#new'
+
+    match "*path", to: "errors#not_found"
+
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
     
 	end
 
-  get "viz/countries"
-  get "viz/languages"
-  get "viz/orientation"
-
   root to: 'sessions#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-	match '*path', to: redirect { |params, request| "/#{I18n.default_locale}#{request.fullpath}" }
+	# handles /bad-locale|anything/valid-path
+  match '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  # handles /anything|valid-path-but-no-locale
+  match '/*path', to: redirect("/#{I18n.default_locale}/%{path}")
 	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 
   
