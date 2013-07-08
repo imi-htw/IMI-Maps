@@ -17,6 +17,7 @@
 //= require chosen-jquery
 //= require d3
 //= require stupidtable.min
+//= require bootstrap
 
 $(window).load(function () {
       $(".alert-info").animate({opacity: 1.0}, 5000).fadeOut('slow');

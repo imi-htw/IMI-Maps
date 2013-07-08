@@ -1,7 +1,7 @@
-<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post) do %> 
+<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post, :remote=>true) do %> 
   <%= label_tag "Username (e.g. s05xxxxx)" %>
   <%= text_field_tag :user_name %>
   <%= label_tag "Password" %>
   <%= password_field_tag :password %>
-  <%= submit_tag "Verify", :id => "verify" %>
+  <%= submit_tag "Verify", :id => "verify", :class => "btn btn-success" %>
 <% end %> 

@@ -10,11 +10,15 @@ body{
   color: #000;
 }
 
-#compareModal {
-  position:relative;
-  margin-left: 0px;
-  left:0;
-  z-index:9000;
+.modal {
+  z-index:9000 !important;
+  position:relative !important;
+  margin-left: 0px !important;
+  left:0 !important;
+}
+
+.modal form {
+  margin:10px !important;
 }
 
 .bold {
