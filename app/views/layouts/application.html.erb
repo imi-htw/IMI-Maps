@@ -48,25 +48,27 @@
           <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
 <i class="icon-flag icon-large"></i></a>
-  <% if current_user == true %>
       <ul class="dropdown-menu">
-        <% @notifications.order(:read).each do |noti| %>
+        <% if current_user && current_user.notifications.any? %>
+        <% current_user.notifications.each do |noti| %>
+          <li>
+            <% if noti.read == false %>
+              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
+            <% else %>
+              <%= link_to noti.text, noti.link %>
+            <% end %>
+          </li>
+        <%end%>
+      <% else %>
         <li>
-          <% if noti.read == false %>
-          <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
-          <% else %>
-          <%= link_to noti.text, noti.link %>
-          <% end %>
+          Sorry, no notifications available
         </li>
-        <%end%> 
+      <% end %>
       </ul>
-    <% end %>
-      </li>  
-
-      
-    <li><%= link_to current_user  do %>
-                  <i class="icon-user icon-large"></i>
-                <% end %>
+    <li>
+      <%= link_to current_user  do %>
+        <i class="icon-user icon-large"></i>
+      <% end %>
     </li>
 
     <li class="dropdown">
