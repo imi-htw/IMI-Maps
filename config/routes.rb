@@ -2,13 +2,13 @@ ImiMaps::Application.routes.draw do
 
   get "password_resets/new"
 
-	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
-		resources :internships
+    resources :internships, :only => [:edit, :show, :index, :destroy, :update]
 
-		resources :companies
+    resources :companies
 
-		resources :users
+    resources :users
 
     resources :user_verifications
 
