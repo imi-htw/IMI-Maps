@@ -1,10 +1,10 @@
-<%= form_for(@user, :html => {:multipart => true}) do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for(@user_creation_form, url: users_path, method: :post) do |f| %>
+  <% if @user_creation_form.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user_creation_form.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+      <% @user_creation_form.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -16,22 +16,22 @@
   <h2> Student Data </h2>
   <div class="field" style="line-height:1px; margin-bottom:15px; margin-top:20px;">
     <%= f.label t "students.attributes.first_name"  %><br />
-    <%= f.text_field :first_name, :readonly => @user.editable? %>
+    <%= f.text_field :first_name, :readonly => @user_creation_form.editable? %>
   </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "students.attributes.last_name"  %><br />
-    <%= f.text_field :last_name, :readonly => @user.editable? %>
+    <%= f.text_field :last_name, :readonly => @user_creation_form.editable? %>
   </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "students.attributes.enrolment_number" %>
-    <%= f.text_field :enrolment_number, :readonly => @user.editable? %>
+    <%= f.text_field :enrolment_number, :readonly => @user_creation_form.editable? %>
   </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "students.attributes.email" %>
-    <%= f.text_field :student_email, :readonly => @user.editable? %>
+    <%= f.text_field :student_email, :readonly => @user_creation_form.editable? %>
   </div>
 </div>
 
@@ -45,7 +45,7 @@
     <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.publicmail"  %>
     <%= f.check_box :publicmail %>
-  </div>  
+  </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "users.attributes.password" %><br />

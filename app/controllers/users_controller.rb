@@ -3,21 +3,20 @@ class UsersController < ApplicationController
   before_filter :check_existing_user, only: [:new, :create]
 
   def new
-    @user = User.new
-    @user = UserCreationForm.new(session[:enrolment_number])
+    @user_creation_form = UserCreationForm.new(session[:enrolment_number])
     respond_to do |format|
       format.html
     end
   end
 
   def create
-    @user = UserCreationForm.new(session[:enrolment_number])
-    if @user.submit(params[:user])
+    @user_creation_form = UserCreationForm.new(session[:enrolment_number])
+    if @user_creation_form.submit(params[:user_creation_form])
       #UserMailer.registration_confirmation(@user).deliver
-      session[:user_id] = @user.id
+      session[:user_id] = @user_creation_form.id
       redirect_to overview_index_path, notice: t('sign_up')
     else
-      render 'new'
+      render :new
     end
   end
 
