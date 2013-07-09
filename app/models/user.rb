@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     #"#{student.first_name} #{student.last_name}"
   end
 
+  def enrolment_number
+    student.enrolment_number if student
+  end
+
   before_create { generate_token(:auth_token) }
 
   def send_password_reset

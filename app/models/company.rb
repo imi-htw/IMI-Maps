@@ -10,9 +10,6 @@ class Company < ActiveRecord::Base
   #validates :number_employees, :presence => true, :allow_blank => false
   #validates :website, :presence => true, :allow_blank => false
 
-
-
-
   geocoded_by :address
   after_validation :geocode
   acts_as_gmappable :process_geocoding => false

@@ -45,7 +45,7 @@ class QuicksearchesController < ApplicationController
 
     end
 
-    @semesters = @internships.collect do |x| x.semester end.map do |s|[s.semester,s.id] end
+    @semesters = @internships.collect do |x| x.semester end.map do |s|[s.name,s.id] end
 
     @internships_size = @internships.size
 

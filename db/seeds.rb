@@ -98,10 +98,10 @@ InternshipState.where(name: "passed", name_de: "bestanden").first_or_create
 InternshipState.where(name: "internship was abandoned because of the following reasons", name_de: "abgelehnt aus folgenden Gründen").first_or_create
 InternshipState.where(name: "the student still has to pass the following courses", name_de: "Student hat die folgenden Kurse zu absolvieren").first_or_create
 
-Semester.where(semester: "SS 13", id:1).first_or_create
-Semester.where(semester: "WS 12/13", id:2).first_or_create
-Semester.where(semester: "SS 12", id:3).first_or_create
-Semester.where(semester: "WS 11/12", id:4).first_or_create
+Semester.where(name: "SS 13", id:1).first_or_create
+Semester.where(name: "WS 12/13", id:2).first_or_create
+Semester.where(name: "SS 12", id:3).first_or_create
+Semester.where(name: "WS 11/12", id:4).first_or_create
 
 InternshipRating.destroy_all
 InternshipRating.create(:appreciation => 4, :atmosphere => 4, :supervision => 4, :tasks => 4, :training_success => 4)

@@ -134,7 +134,7 @@ private
     end
 
     def create_internship row
-      semester = Semester.where(semester: row[1]).first_or_create!
+      semester = Semester.where(name: row[1]).first_or_create!
       reading_prof = ReadingProf.where(name: row[15]).first unless row[15].nil?
       company = Company.where(import_id: row[19]).first
       student = Student.where(import_id: row[20]).first

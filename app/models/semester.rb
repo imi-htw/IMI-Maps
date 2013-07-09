@@ -1,7 +1,7 @@
 class Semester < ActiveRecord::Base
-  attr_accessible :semester
+  attr_accessible :name
 
-  validates :semester, :presence => true
+  validates :name, :presence => true
 
-  has_many :internship
+  has_many :internships
 end

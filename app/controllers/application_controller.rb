@@ -45,7 +45,7 @@ private
 
     def get_semesters
       @semesters ||= Semester.order(:id).map do |s|
-        [s.semester, s.id]
+        [s.name, s.id]
       end
     end
 
