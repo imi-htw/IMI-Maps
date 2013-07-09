@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
     @user = UserCreationForm.new(session[:enrolment_number])
     respond_to do |format|
-      format.js { render :layout=>false }
+      format.html
     end
   end
 
