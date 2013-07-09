@@ -1,5 +1,1 @@
-$('#favorite').html('<%= escape_javascript(button_to t("favorite.delete"), {:controller => :favorite,
-                                      :action => "destroy",
-                                      :user_id => @current_user.id, 
-                                      :internship_id => @internship.id, 
-                                      :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger favorite") %>');
+$('#favorite').html('<%= escape_javascript( render :partial => "link_create" ) %>');
