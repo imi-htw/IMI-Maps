@@ -15,8 +15,7 @@ class InternshipNotificationHandler
 
 private
     def send_notification
-      binding.pry
-      user.notifications.create(text: "Your internship is ready!", link: "")
+      user.notifications.create(text: "Your internship is ready!", link: Rails.application.routes.url_helpers.edit_internship_path(internship, locale: I18n.locale))
     end
 
     def send_email
