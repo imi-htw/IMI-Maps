@@ -1,4 +1,7 @@
 <%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post) do %> 
+  <%- flash.each do |name, message| %>
+    <p><i><%= "#{name}: #{message}" %></i></p>
+  <% end %>
   <%= label_tag "Username (e.g. s05xxxxx)" %>
   <%= text_field_tag :user_name %>
   <%= label_tag "Password" %>

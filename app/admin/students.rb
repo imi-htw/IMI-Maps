@@ -3,7 +3,6 @@ ActiveAdmin.register Student do
 
   index do
     column :enrolment_number
-    column :internship_record
     column :last_name
     column :first_name
     column :birthday

@@ -48,7 +48,8 @@ private
     def check_existing_user
       if session[:enrolment_number]
         student = Student.where(enrolment_number: session[:enrolment_number]).first
-        redirect_to root_url if student && User.find_by_student_id(student.id)
+        # TODO: add notice
+        redirect_to root_url if student && User.find_by_student_id(student.id), notice: "Users exists. Please sign in with your email and password"
       end
     end
 

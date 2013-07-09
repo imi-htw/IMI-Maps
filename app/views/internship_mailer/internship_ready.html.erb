@@ -1,0 +1,5 @@
+<h1>Hello <%= "#{@student.first_name}" %>,</h1>
+<p>
+  Please follow the link to share your internship experiences
+  <%= link_to "Edit Internship", edit_internship_url(@internship, locale: I18n.locale) %>
+</p>

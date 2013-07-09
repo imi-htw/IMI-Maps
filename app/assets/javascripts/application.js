@@ -73,23 +73,23 @@ $(document).ready(function() {
      });
 
   $(".recommend-edit").click(function() {
-    if ($("#recommend").hasClass( "green-thumb" )) {
-      $(this).removeClass( "icon-thumbs-up" );
-      $(this).removeClass( "green-thumb" );
-      $(this).addClass( "icon-thumbs-down" );
-      $(this).addClass( "red-thumb" );
-      $(this).addClass( "waaaaaaaas" );
+      $(this).toggleClass( "icon-thumbs-up" );
+      $(this).toggleClass( "green-thumb" );
+      $(this).toggleClass( "icon-thumbs-down" );
+      $(this).toggleClass( "red-thumb" );
+      toggle_value("#internship_recommend");
+  });
+  
+  toggle_value = function(id) {
+    var elem =  $(id);
+    var value = elem.val();
+    if (value === "0") {
+      elem.val("1");
+    } else if (value === "1") {
+      elem.val("0");
+    }
+  }
 
-    }
-  });
-  $(".recommend-edit").click(function() {
-    if ($(".recommend-edit").hasClass( "icon-thumbs-down" )) {
-      $(this).removeClass( "icon-thumbs-down" );
-      $(this).removeClass( "red-thumb" );
-      $(this).addClass( "icon-thumbs-up" );
-      $(this).addClass( "green-thumb" );
-    }
-  });
 
 });
 

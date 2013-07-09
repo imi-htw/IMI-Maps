@@ -2,13 +2,12 @@ class User < ActiveRecord::Base
   has_secure_password
 
   attr_accessible :email, :password, :password_confirmation, :internship_authorization, :publicmail, :mailnotif, :student_id
-  
+
   validates :email, :presence => true
   validates :password, :presence => true, length: { minimum: 5 }
   validates :internship_authorization, :presence => true
 
-  
-  # associations
+
   has_one :internship
   belongs_to :student
   has_many :user_comments, :dependent => :destroy
@@ -16,8 +15,7 @@ class User < ActiveRecord::Base
   has_many :notifications, :dependent => :destroy
 
   def name
-    #{}"#{student.first_name} #{student.last_name}"
-    "blub"
+    #"#{student.first_name} #{student.last_name}"
   end
 
   before_create { generate_token(:auth_token) }
