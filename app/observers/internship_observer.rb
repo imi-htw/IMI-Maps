@@ -2,7 +2,7 @@ class InternshipObserver < ActiveRecord::Observer
 
   def after_create(model)
     student = Student.find(model.student_id)
-    unless student.has_user? && student.nil?
+    unless observer && student.has_user?
       UserMailer.invite_student(student).deliver
     end
   end
