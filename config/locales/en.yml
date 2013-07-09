@@ -355,3 +355,11 @@ en:
   attachment:
    remove: "Remove picture"
    add: "Add picture"
+  mail:
+   greeting: "Dear "
+   registered: 
+    html: "<br>Welcome! </br> You have succesfully registered on IMI Map: imi-map.f4.htw-berlin.de."
+   registeredSubject: "Succesfully Registerd on IMI-Map"
+   registerRequest:
+    html: "You completed your internship at the HTW succesfully. </br> We kindly remind you to register and complete your internship experience report on IMI Map: imi-map.f4.htw-berlin.de </br> "
+   registerRequestSubject: "Come and join IMI-Map. IMI internship experience report"
