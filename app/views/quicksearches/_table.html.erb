@@ -22,7 +22,7 @@
     <td><%= internship.company.industry %></td>
     <td><%= internship.semester.semester %></td>
     <td><%= internship.orientation.name %></td>
-    <td><%= internship.programming_languages.map { |n| n.name } %></td>
+    <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
     <td><%= internship.internship_rating.total_rating %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>

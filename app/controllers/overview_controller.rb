@@ -3,7 +3,7 @@ class OverviewController < ApplicationController
   before_filter :get_programming_languages, :get_orientations
 
   def index
-    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
+    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end.reverse
 
     @companies = @internships.collect do |i| i.company end
 
