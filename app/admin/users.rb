@@ -1,4 +1,16 @@
 ActiveAdmin.register User do
+  filter :student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel", :input_html => { :class => 'chosen' }
+
+  index do
+    column :student do |n|
+      link_to n.enrolment_number, "/admin/students/#{n.id}"
+    end
+    column :internship_authorization
+    column :publicmail
+    column :mailnotif
+    column :email
+    default_actions
+  end
 
   form do |f|
     f.inputs "User" do
@@ -13,4 +25,18 @@ ActiveAdmin.register User do
     f.buttons
 
   end
+
+  show do |user|
+    attributes_table do
+      row :student do |n|
+        link_to n.enrolment_number, "/admin/students/#{n.id}"
+      end
+      row :internship_authorization
+      row :publicmail
+      row :mailnotif
+      row :email    
+    end
+    active_admin_comments
+  end
+
 end
