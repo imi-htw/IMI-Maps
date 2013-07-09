@@ -405,12 +405,12 @@ de:
     column1: "Erstes Praktikum"
     column2: "Zweites Praktikum"
     column3: "Drittes Praktikum"
-    
+
   msg:
     logout: "Du hast dich erfolgreich abgemeldet"
     invalid: "Email oder Passwort falsch"
   unit:
-    month: "pro Monat "
+    month: "pro Monat"
     week: "pro Woche"
   attachment:
    remove: "Bild entfernen"

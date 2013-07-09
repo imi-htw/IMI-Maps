@@ -60,12 +60,5 @@ class UserCreationForm
   def editable?
     existing_student.present?
   end
-
-
-
-
-
-
-
-
+  
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705203818) do
+ActiveRecord::Schema.define(:version => 20130709082545) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.string   "supervisor_name"
     t.string   "supervisor_email"
     t.string   "comment"
+    t.integer  "reading_prof_id",                          :limit => 255
     t.date     "certificate_to_prof"
     t.date     "certificate_signed_by_prof"
     t.date     "certificate_signed_by_internship_officer"
@@ -165,9 +166,8 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.integer  "contract_state_id"
     t.integer  "report_state_id"
     t.integer  "certificate_state_id"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.integer  "reading_prof_id"
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
   create_table "internship_searches", :force => true do |t|
@@ -210,11 +210,6 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.text     "tasks"
     t.string   "operational_area"
     t.integer  "student_id"
-    t.integer  "tasks_rating"
-    t.integer  "training_rating"
-    t.integer  "atmosphere_rating"
-    t.integer  "supervision_rating"
-    t.integer  "appreciation_rating"
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|

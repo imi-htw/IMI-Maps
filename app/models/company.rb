@@ -43,11 +43,12 @@ class Company < ActiveRecord::Base
     r=0
     size=0
     internships.each do |x|
-      if x.total_rating
-        r+=x.total_rating
+      if x.internship_rating.total_rating
+        r+=x.internship_rating.total_rating
         size+=1
       end
     end
+    size||=1
     r.to_f/size
   end
   

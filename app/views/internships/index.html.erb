@@ -158,7 +158,7 @@
     <td class="table_inside"><%= internship.salary %></td>
     <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
-    <td class="table_inside"><%# render_stars(internship.rating, self) %></td>
+    <td class="table_inside"><% render_stars(internship.internship_rating.total_rating, self) %></td>
     <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside">
       <% if internship.recommend %>

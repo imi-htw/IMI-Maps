@@ -52,7 +52,7 @@ $(window).load(function () {
   }
 
   var setValue = function(val, id) {
-    $("#internship_"+id).val(val)
+    $("#internship_internship_rating_attributes_"+id).val(val);
   }
 
 });

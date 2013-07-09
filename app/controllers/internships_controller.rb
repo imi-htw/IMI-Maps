@@ -98,6 +98,7 @@ class InternshipsController < ApplicationController
     if User.find(current_user.id).internship_authorization
       @internship = Internship.new
       @company = Company.new
+      @rating = InternshipRating.new
       respond_with(@internship)
     else
       flash[:notice] = "You cannot create an internship"
@@ -109,6 +110,7 @@ class InternshipsController < ApplicationController
   def edit
     @internship = Internship.find(params[:id])
     @company = @internship.company
+    @rating = @internship.internship_rating
   end
 
   # POST /internships
@@ -138,7 +140,6 @@ class InternshipsController < ApplicationController
   # PUT /internships/1.json
   def update
     @internship = Internship.find(params[:id])
-
     if @internship.update_attributes(params[:internship])
       flash[:notice] = 'Internship was successfully updated.'
     end
