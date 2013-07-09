@@ -1,17 +1,13 @@
 class InternshipObserver < ActiveRecord::Observer
 
   def after_create(model)
-    binding.pry
     student = Student.find(model.student_id)
-    if student.has_user?
-      InternshipMailer.edit_notifiaction(student).deliver
-    else
-      InternshipMailer.edit_notifiaction(student).deliver
+    unless student.has_user? && student.nil?
+      UserMailer.invite_student(student).deliver
     end
   end
 
   def after_update(model)
-    binding.pry
     if model.report_state_id_changed? and model.editable?
       InternshipNotificationHandler.new(internship: model).notify
     end
