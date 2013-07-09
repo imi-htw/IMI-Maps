@@ -210,8 +210,6 @@ ActiveRecord::Schema.define(:version => 20130709082545) do
     t.text     "tasks"
     t.string   "operational_area"
     t.integer  "student_id"
-<<<<<<< HEAD
-=======
     t.integer  "internship_state_id"
     t.integer  "reading_prof_id"
     t.integer  "payment_state_id"
@@ -230,7 +228,6 @@ ActiveRecord::Schema.define(:version => 20130709082545) do
     t.integer  "atmosphere_rating"
     t.integer  "supervision_rating"
     t.integer  "appreciation_rating"
->>>>>>> merge_internship
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
