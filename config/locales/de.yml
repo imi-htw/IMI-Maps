@@ -67,7 +67,7 @@ de:
     pm: nachmittags
   header:
     account: "Konto"
-    search: "Detailsuche"
+    search: "Erweiterte Suche"
     overview: "Start"
     start: "Start"
     exchange: "Jobbörse"
@@ -90,7 +90,7 @@ de:
     criteria: "Wähle deine Suchkriterien:"
     title: "Detailsuche"
     salary: "Monatliches Gehalt (min)"
-    livingCost: "Lebenshaltungskosten (max)"
+    livingCost: "Lebenshaltungskosten/Monat (max)"
     rating: "Bewertung (min)"
     resultnr: "Ergebnisse gefunden!"
     button: "Suchen"
@@ -409,5 +409,11 @@ de:
   msg:
     logout: "Du hast dich erfolgreich abgemeldet"
     invalid: "Email oder Passwort falsch"
+  unit:
+    month: "pro Monat "
+    week: "pro Woche"
+  attachment:
+   remove: "Bild entfernen"
+   add: "Bild hinzufügen"
 
 
