@@ -79,7 +79,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td><%= internship.semester.semester %></td>
     <td><%= internship.try(:orientation).try(:name) %></td>
     <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-    <td><%= internship.total_rating %></td>
+    <td><%= internship.internship_rating.total_rating %></td>
     <td><%# render_stars(internship.rating, self) %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>

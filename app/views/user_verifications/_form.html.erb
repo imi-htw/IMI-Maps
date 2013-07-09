@@ -1,4 +1,4 @@
-<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post, :remote=>true) do %> 
+<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post) do %> 
   <%= label_tag "Username (e.g. s05xxxxx)" %>
   <%= text_field_tag :user_name %>
   <%= label_tag "Password" %>

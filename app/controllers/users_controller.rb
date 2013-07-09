@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user = UserCreationForm.new(session[:enrolment_number])
-    respond_to do |format|
-      format.js { render :layout=>false }
-    end
   end
 
   def create

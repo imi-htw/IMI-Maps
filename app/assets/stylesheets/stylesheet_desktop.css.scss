@@ -10,11 +10,19 @@ body{
   color: #000;
 }
 
-.modal {
-  z-index:9000 !important;
+#compareModal {  
   position:relative !important;
   margin-left: 0px !important;
   left:0 !important;
+}
+
+#signupModal {
+  width:330px;
+  margin-left:-165px;
+}
+
+.modal {
+  z-index:9000 !important;
 }
 
 .modal form {
