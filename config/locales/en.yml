@@ -2,6 +2,20 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Missing information: %{errors}"
+  activemodel:
+    errors:
+      messages:
+        blank: "can't be empty"
+      models:
+        user_creation_form:
+          attributes:
+            password: "password"
+            password_confirmation: "password confirmation"
+            email: "email"
   favorite:
     delete: "Delete from favorites"
     add: "Add to favorites"

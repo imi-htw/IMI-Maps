@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  activerecord:
+    errors:
+      messages:
+        blank: "darf nicht freigelassen werden"
+        record_invalid: "Fehlerhafte Angaben: %{errors}"
   favorite:
     delete: "Von Favoriten entfernen"
     add: "Zu Favoriten hinzufügen"
@@ -286,6 +291,16 @@ de:
         sign_in: "Anmeldung"
         forgot_your_password: "Passwort vergessen?"
         sign_in_with_omniauth_provider: "Anmeldung mit %{provider}"
+  activemodel:
+    errors:
+      messages:
+        blank: "darf nicht freigelassen werden"
+      models:
+        user_creation_form:
+          attributes:
+            password: "Password"
+            password_confirmation: "Passwordbestaetigung"
+            email: "Email"
   activerecord:
     attributes:
       admin_user:
