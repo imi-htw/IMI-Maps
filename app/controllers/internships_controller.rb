@@ -106,6 +106,7 @@ class InternshipsController < ApplicationController
   def update
     @internship = Internship.find(params[:id])
     if @internship.update_attributes(params[:internship])
+      @internship.update_attributes(completed: true)
       flash[:notice] = 'Internship was successfully updated.'
     end
     respond_with(@internship)
