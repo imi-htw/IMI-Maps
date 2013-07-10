@@ -1,0 +1,160 @@
+diff --git a/app/assets/stylesheets/custom.css.scss b/app/assets/stylesheets/custom.css.scss
+index 958dc41..b2b4d6f 100644
+--- a/app/assets/stylesheets/custom.css.scss
++++ b/app/assets/stylesheets/custom.css.scss
+@@ -201,6 +201,10 @@ p.explanation {
+     background: transparent !important;
+ }
+ 
++.table thead:first-child tr:first-child td {
++    border-top: 0px none !important;
++}
++
+ .ui-slider {
+     position: relative;
+     text-align: left;
+diff --git a/app/assets/stylesheets/stylesheet_desktop.css.scss b/app/assets/stylesheets/stylesheet_desktop.css.scss
+index 58c446c..c852fb6 100644
+--- a/app/assets/stylesheets/stylesheet_desktop.css.scss
++++ b/app/assets/stylesheets/stylesheet_desktop.css.scss
+@@ -273,17 +273,45 @@ h3.comp-head {
+   color: #000000;
+ }
+ 
+-footer{
++/*footer{
+   background: #292929;
+   padding: 10px 0 0 0;
+-  text-align: center;
+   margin-top: 100px;
+-  bottom: 0;
++  bottom: 0px;
+   margin-bottom: -20px;
++  height: 70px;
++  color: #fff;
++}
++*/
++.im-footer{
++  position: relative;
++  width: 100%;
++  bottom: 0px;
++  padding: 40px 0px;
++  background: #292929;
++  color: #fff;
++  display: block;
++  margin-bottom: -20px;
++}
++
++.im-inner{
++  width: 100%;
++  overflow: hidden;
++}
++
++.im-items {
++  float: right;
++  width: 355px;
++  text-align: left;
+ }
+ 
+-footer .container p{
+-  color: #707070 !important;
++.htw_logo{
++  height: 60px;
++  width: 104px;
++  background: url(htw_logo.png);
++  background-size: 104px 60px;
++  float: right;
++
+ }
+ 
+ .rating_star{
+@@ -377,6 +405,10 @@ p{
+       background-color: #ffffff;
+ }
+ 
++.table_compare{
++  width: 100% !important;
++}
++
+ .map-shadow{
+     height: 210px;
+     margin-top: 0px;
+diff --git a/app/assets/stylesheets/stylesheet_tablet.css.scss b/app/assets/stylesheets/stylesheet_tablet.css.scss
+index 72c5a44..ca6791a 100644
+--- a/app/assets/stylesheets/stylesheet_tablet.css.scss
++++ b/app/assets/stylesheets/stylesheet_tablet.css.scss
+@@ -47,7 +47,16 @@ a{
+ }
+ 
+ footer{
+-  display: none;
++  background: #292929;
++  padding: 10px 0 0 0;
++  text-align: center;
++  margin-top: 100px;
++  bottom: 0;
++  margin-bottom: -20px;
++}
++
++footer .container p{
++  color: #707070 !important;
+ }
+ 
+ .pagination.imi a, .pagination.imi span {
+diff --git a/app/views/favorite_compare/_table.html.erb b/app/views/favorite_compare/_table.html.erb
+index 5e80a09..f99e362 100644
+--- a/app/views/favorite_compare/_table.html.erb
++++ b/app/views/favorite_compare/_table.html.erb
+@@ -1,4 +1,4 @@
+-<table>
++<table class="table_compare">
+ <thead>
+   <tr class="table">
+     <th></th>
+@@ -10,12 +10,11 @@
+     <th><%= t "internships.attributes.orientation" %></th>
+     <th><%= t "internships.attributes.programming_language" %></th>
+     <th><%= t "internships.attributes.rating" %></th>
+-    <th></th>
+   </tr>
+ </thead>
+ <tbody>
+ <% @internships.each do |internship| %>
+-  <tr>
++  <tr class="<%= cycle("even_row", "odd_row") %>">
+ 		<td><%= link_to internship.title,internship %></td>
+         <td><%= internship.company.name %></td>
+         <td><%= internship.company.city %>, <%= internship.company.country %></td>
+diff --git a/app/views/internships/index.html.erb b/app/views/internships/index.html.erb
+index 29303a4..2db3db3 100644
+--- a/app/views/internships/index.html.erb
++++ b/app/views/internships/index.html.erb
+@@ -132,7 +132,7 @@
+ 
+ <h5> <%=@internships_size%> <%= t "search.resultnr"%> </h5>
+ 
+-<div>
++<div class="table-container">
+ <table id="paginated" class="table tablesorter">
+   <thead>
+   <tr class="table_intern table_fin">
+diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index 8d873aa..bf63c9f 100644
+--- a/app/views/layouts/application.html.erb
++++ b/app/views/layouts/application.html.erb
+@@ -122,9 +122,12 @@
+       </div>
+     </div>
+ </div>
+-  <footer>
+-    <div class="container">
+-    <p>IMI Map - Hochschule für Technik & Wirtschaft</p>
++  <footer class="im-footer">
++    <div class="im-inner">
++      <div class="im-items">
++        <div class="htw_logo"></div>
++        <div>Dies ist ein Projekt im Rahmen der Hochschule für Technik & Wirtschaft.</div>
++      </div>
+     </div>
+   </footer>
+ </body>
