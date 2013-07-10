@@ -53,12 +53,12 @@ a{
 }
 
 h1, h2{
-  font-weight: bold;
+  font-weight: 100;
   margin: 1em 0px 0.5em;
+  font-variant: small-caps;
   color: #000 !important;
   line-height: 40px;
-  text-rendering: auto;
-  font-variant: small-caps;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 h3{
@@ -366,11 +366,11 @@ p{
   color:#e3e5e1;
 }
 
-.even_row2 {
+.even_row {
     background-color: #dfdfdf;
 }
 
-.odd_row2 {
+.odd_row {
       background-color: #ffffff;
 }
 

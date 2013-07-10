@@ -146,7 +146,7 @@ de:
   internships:
     name: "Praktika"
     create: "Erstelle Praktikum"
-    update: "Aktualisiere Praktikum"
+    update: "Praktikum aktualisieren"
     index:
       title: "Liste von Praktika"
     edit:
@@ -155,7 +155,7 @@ de:
       newinternship: "Neues Praktikum"
     attributes:
       description: "Beschreibung"
-      semester: "Semester/Jahr"
+      semester: "Semester / Jahr"
       email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
@@ -164,6 +164,7 @@ de:
       salary: "Gehalt"
       working_hours: "Arbeitsstunden"
       living_costs: "Lebenshaltungskosten"
+      living_costs2: "Lebenshaltungskosten pro Monat"
       company: "Firma"
       tasks_rating: "Aufgaben"
       training_rating: "Lernerfolg"
@@ -172,6 +173,7 @@ de:
       appreciation_rating: "Wertschätzung"
       title: "Job Titel"
       recommend: "Empfehlung"
+      internship_report: "Praktikumsbericht"
 
   users:
     name: "Benutzer"
@@ -195,7 +197,7 @@ de:
       publicmail: "Emailadresse öffentlich anzeigen?"
       password: "Passwort"
       password_confirmation: "Passwort bestaetigen"
-      mailnotif: "Email-Mitteilungen erhalten?"  
+      mailnotif: "Emailmitteilungen erhalten?"  
 
   students:
     attributes:
