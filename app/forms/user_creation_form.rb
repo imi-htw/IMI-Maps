@@ -42,10 +42,10 @@ class UserCreationForm
     student.attributes = params.slice(:first_name, :last_name, :enrolment_number, :birthplace, :birthday)
     student.email = params.slice(:student_email)
     user.attributes = params.slice(:email, :password, :password_confirmation, :publicmail, :mailnotif)
-    user.student_id = student.id
     if valid?
-      user.save!
       student.save! unless student_exists?
+      user.student_id = student.id
+      user.save!
       true
     else
       false
