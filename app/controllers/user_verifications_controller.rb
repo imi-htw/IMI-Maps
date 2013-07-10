@@ -13,7 +13,7 @@ class UserVerificationsController < ApplicationController
       redirect_to new_user_path
     else
       flash[:notice] =  "Benutzername oder Passwort nicht korrekt!"
-      render :new
+      redirect_to root_url
     end
   end
 end

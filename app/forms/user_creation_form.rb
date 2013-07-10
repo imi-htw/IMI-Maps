@@ -15,9 +15,11 @@ class UserCreationForm
     false
   end
 
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "User")
-  end
+  validates :email, :presence => true
+  validates :password, :presence => true, length: { minimum: 5 }
+  validates :password_confirmation, :presence => true
+
+
 
   delegate :email, :password, :password_confirmation, :publicmail, :mailnotif,  to: :user
 
@@ -60,5 +62,5 @@ class UserCreationForm
   def editable?
     existing_student.present?
   end
-  
+
 end
