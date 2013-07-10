@@ -1,5 +1,8 @@
 ActiveAdmin.register Student do
-  filter :enrolment_number, :as => :select, :label => "Matrikel"
+  filter :enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel"
+  filter :last_name
+  filter :first_name
+  filter :email
 
   index do
     column :enrolment_number do |n|

@@ -24,7 +24,7 @@
 </p>
 
 <%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
-<%= link_to (t "buttons.back"), overview_index_path, class: "btn" %>
+<%= link_to (t "buttons.back"), overview_index_path, class: "btn btn-inverse" %>
 
 <h3> Comments </h3>
 <% @user.user_comments.each do |comment| %>

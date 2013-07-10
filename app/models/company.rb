@@ -1,9 +1,11 @@
 class Company < ActiveRecord::Base
   attr_accessible :street, :city, :country, :zip, :main_language, :industry, :name, :number_employees, :website, :phone, :blacklisted, :fax, :import_id
 
-  # validations
-  #validates :city, :presence => true, :allow_blank => false
-  #validates :country, :presence => true, :allow_blank => false
+  # validations  
+  validates :street, :presence => true, :allow_blank => false
+  validates :zip, :presence => true, :allow_blank => false
+  validates :city, :presence => true, :allow_blank => false
+  validates :country, :presence => true, :allow_blank => false
   #validates :main_language, :presence => true, :allow_blank => false
   #validates :industry, :presence => true, :allow_blank => false
   validates :name, :presence => true, :allow_blank => false
@@ -16,7 +18,6 @@ class Company < ActiveRecord::Base
 
   #associations
   has_many :internships
-  has_many :locations
 
   def address
     "#{self.street}, #{self.zip} #{self.city}, #{self.country}"

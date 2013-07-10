@@ -65,13 +65,6 @@ Orientation.where(name: "Video", id: 9).first_or_create
 Orientation.where(name: "Concept", id: 10).first_or_create
 Orientation.where(name: "Administration/Support", id: 11).first_or_create
 
-
-
-
-User.destroy_all
-User.create!(password: "testmap", email: "test@imimaps.com")
-
-
 PaymentState.where(name: "uncharted", name_de: "unbekannt").first_or_create
 PaymentState.where(name: "cash benefit", name_de: "bezahlt").first_or_create
 PaymentState.where(name: "noncash benefit", name_de: "geldlos vergütet").first_or_create
@@ -105,7 +98,7 @@ Semester.where(name: "WS 11/12", id:4).first_or_create
 
 InternshipRating.destroy_all
 InternshipRating.create(:appreciation => 4, :atmosphere => 4, :supervision => 4, :tasks => 4, :training_success => 4)
-AdminUser.create(:email => "admin@imi-map.f4.htw-berlin.de", :password => 'bastiSchokolade')
+AdminUser.create(:email => "admin@imi-map.f4.htw-berlin.de", :password => 'bastiSchokolade', :password_confirmation => 'bastiSchokolade')
 
 ReadingProf.where(name: "Busch").first_or_create
 ReadingProf.where(name: "Barthel").first_or_create
@@ -139,7 +132,7 @@ n=1
   r_employees = rand(500)
   r_phone = rand(8999999)+1000000
 
-	Company.where(name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
+	Company.where(street: "a", zip: "1", name: "Company#{n}", number_employees: r_employees, city: hash[countries[r]],
        country: countries[r], phone: r_phone.to_s, blacklisted: false, import_id: n, website: "www.google.com").first_or_create!
 
 	semester = Semester.find(rand(Semester.count)+1) 
@@ -183,3 +176,6 @@ n=1
 	n+=1
 
 end
+
+User.destroy_all
+User.create!(password: "testmap", email: "test@imimaps.com", student_id: 1)
