@@ -19,6 +19,7 @@ class UserCreationForm
   validates :password, :presence => true, length: { minimum: 5 }
   validates :password_confirmation, :presence => true
 
+  validates :first_name, :last_name, :enrolment_number, :birthday, :birthplace, presence: true, :if => Proc.new { |student| Student.where(enrolment_number: student.enrolment_number).first == nil }
 
 
   delegate :email, :password, :password_confirmation, :publicmail, :mailnotif,  to: :user
@@ -44,7 +45,7 @@ class UserCreationForm
     user.student_id = student.id
     if valid?
       user.save!
-      student.save! unless existing_student.present?
+      student.save! unless student_exists?
       true
     else
       false
@@ -59,7 +60,7 @@ class UserCreationForm
     user.id
   end
 
-  def editable?
+  def student_exists?
     existing_student.present?
   end
 

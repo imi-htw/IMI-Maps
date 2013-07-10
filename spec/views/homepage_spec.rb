@@ -24,11 +24,11 @@ describe "Testing LogIn1" do
       end
 
       it "user is invalid when password less than 5 characters" do
-       expect {user7 = User.create!(password: "tes", email: "test@imimaps.com")}.to raise_error 
+       expect {user7 = User.create!(password: "tes", email: "test@imimaps.com", student_id: 1)}.to raise_error 
       end
    
       it "should allow user to login with valid data and redirect to overview" do       
-        @user6 = User.create!( password: "testIT", email: "test@imimaps.com")
+        @user6 = User.create!( password: "testIT", email: "test@imimaps.com", student_id: 1)
         @user6.save
         visit root_path
         fill_in "email",  :with => @user6.email

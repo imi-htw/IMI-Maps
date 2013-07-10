@@ -1,12 +1,13 @@
 ActiveAdmin.register Internship do
-	filter :student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel", :input_html => { :class => 'chosen' }
+	filter :student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel"
+  filter :reading_prof
+  filter :semester
 
 	index do
 
     column :student do |n|
       link_to n.enrolment_number, "/admin/students/#{n.id}"
     end
-    column :title
     column :company
     column :semester
     column :certificate_to_prof

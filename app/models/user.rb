@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => true
   validates :password, :presence => true, length: { minimum: 5 }
-
-
+  validates :student_id, :presence => true
 
   has_one :internship
   belongs_to :student
@@ -15,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :notifications, :dependent => :destroy
 
   def name
-    #"#{student.first_name} #{student.last_name}"
+    "#{student.first_name} #{student.last_name}"
   end
 
   def enrolment_number

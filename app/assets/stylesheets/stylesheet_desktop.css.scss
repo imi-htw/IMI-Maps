@@ -1,6 +1,7 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import 'font-awesome';
 @media (min-width: 980px){
 
@@ -38,16 +39,18 @@ body{
 }
 
 html, body{
-    min-height: 100%;
-    height: 100%;
+  min-height: 100%;
+  height: 100%;
 }
 
 a{
   color: #8bb900;
 }
 
-#p1 { padding-left: 100px; padding-right: 100px; }
-
+#p1 { 
+  padding-left: 100px; 
+  padding-right: 100px; 
+}
 
 h1, h2{
   font-weight: bold;
@@ -89,11 +92,11 @@ p {
 }
 
 .head-triangler {
-width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 67px 0px 0 231px;
-border-color: #7fba00 transparent transparent transparent;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 67px 0px 0 231px;
+  border-color: #7fba00 transparent transparent transparent;
   position: absolute;
 }
 
@@ -179,7 +182,6 @@ border-color: #7fba00 transparent transparent transparent;
   color:#77b900;
 }
 
-
 .top-bar{
   background: url(topbar-over.png);
   background-repeat: no-repeat;
@@ -192,10 +194,9 @@ border-color: #7fba00 transparent transparent transparent;
   z-index: 0;
 }
 
-
 .dropdown-menu{
   margin: 0 0 0;
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   text-transform: uppercase;
 }
 
@@ -210,12 +211,15 @@ border-color: #7fba00 transparent transparent transparent;
   background-image: none;
   filter: none;
 }
+
 ul.nav li.dropdown:hover ul.dropdown-menu{
     display: block;    
 }
+
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
   color: #77b900;
 }
+
 .navbar .btn-navbar{
     background-image: linear-gradient(to bottom, rgb(51, 51, 51), rgb(51, 51, 51));
     border-color: rgb(255, 255, 255);
@@ -266,22 +270,6 @@ h3.comp-head {
   color: #000000;
 }
 
-.wrapper-shadow {
-
-}
-
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -63px;
-  overflow: hidden;
-}
-
-.wrapper > .container {
-  padding-top: 20px;
-}
-
 footer{
   background: #292929;
   padding: 10px 0 0 0;
@@ -291,13 +279,8 @@ footer{
   margin-bottom: -20px;
 }
 
-
 footer .container p{
   color: #707070 !important;
-}
-
-.span9{
-  margin-bottom: -40px !important;
 }
 
 .rating_star{
@@ -324,22 +307,6 @@ footer .container p{
     box-shadow: 0 0 5px #77b900;
 }
 
-#gradient{
-    height: 70%;
-    position: fixed;
-    width: 100%;
-    z-index: 0;
-
-  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,100,0,0.25) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,100,0,0.25))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-}
-
-
 #login-box{
   background-color: #000000;
   height: 180px;
@@ -357,34 +324,25 @@ footer .container p{
 }
 
 .login_top2{
-  width:100%; height: 80px; background-color:#292929; position: inherit; top: 0px; z-index: 3;
+  width:100%; 
+  height: 80px; 
+  background-color:#292929; 
+  position: inherit; 
+  top: 0px; 
+  z-index: 3;
 }
 
 .login_top3{
-  width:100%; height: 22px; background-color:#292929; position: fixed; bottom: 0px; z-index: 23;
-}
-
-.span12{
-    margin:0 auto;
-    /*float:left;*/
-    width: 100%;
-    z-index: 3; 
-}
-
-.span12-2{
-    margin:0 auto;
-    width: 1140px;
-    z-index: 3; 
+  width:100%; 
+  height: 22px; 
+  background-color:#292929; 
+  position: fixed; 
+  bottom: 0px; 
+  z-index: 23;
 }
 
 p{
   color: #000 !important;
-}
-
-#loginbutton {
-    height: 33px;
-    border-radius: 0;
-    position: inherit;
 }
 
 .active_nav{
@@ -406,14 +364,6 @@ p{
 .search-table{
   background-color:#333333; 
   color:#e3e5e1;
-}
-
-.even_row {
-    background-color: #dfdfdf;
-}
-
-.odd_row {
-  background-color: #ffffff;
 }
 
 .even_row2 {
@@ -444,15 +394,11 @@ p{
     float: right;
 }
 
-.ribbon {
-}
-
-/* ribbon style */
-
- .ribbon-wrapper {
+.ribbon-wrapper {
   position: relative;
 }
-  .ribbon-front {
+
+.ribbon-front {
     background-color: #4F4F4F;
     height: 40px;
     left: -5px;
@@ -462,19 +408,19 @@ p{
     z-index: 2;
 }
 
-  .ribbon-front,
-  .ribbon-back-left,
-  .ribbon-back-right{
+.ribbon-front,
+.ribbon-back-left,
+.ribbon-back-right{
   -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
 }
 
-  .ribbon-edge-topleft,
-  .ribbon-edge-topright,
-  .ribbon-edge-bottomleft,
-  .ribbon-edge-bottomright {
+.ribbon-edge-topleft,
+.ribbon-edge-topright,
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
   position: absolute;
   z-index: 1;
   border-style:solid;
@@ -482,44 +428,42 @@ p{
   width:0px;
 }
 
-  .ribbon-edge-topleft,
-  .ribbon-edge-topright {
-}
-
-  .ribbon-edge-bottomleft,
-  .ribbon-edge-bottomright {
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
   top: 40px;
 }
 
-  .ribbon-edge-topleft,
-  .ribbon-edge-bottomleft {
+.ribbon-edge-topleft,
+.ribbon-edge-bottomleft {
   left: -10px;
   border-color: transparent #222121 transparent transparent;
 }
 
-  .ribbon-edge-topleft {
+.ribbon-edge-topleft {
   top: -10px;
   border-width: 10px 10px 0 0;
 }
-  .ribbon-edge-bottomleft {
+
+.ribbon-edge-bottomleft {
   border-width: 0 10px 0px 0;
 }
 
-  .ribbon-edge-topright,
-  .ribbon-edge-bottomright {
+.ribbon-edge-topright,
+.ribbon-edge-bottomright {
   left: 317px;
   border-color: transparent transparent transparent #222121;
 }
 
-  .ribbon-edge-topright {
+.ribbon-edge-topright {
   top: -22px;
   border-width: 10px 0 0 10px;
 }
-  .ribbon-edge-bottomright {
+
+.ribbon-edge-bottomright {
   border-width: 0 0 0px 10px;
 }
 
-  .ribbon-back-left {
+.ribbon-back-left {
   position: absolute;
   top: -10px;
   left: 0px;
@@ -528,7 +472,7 @@ p{
   background-color: #4f4f4f;  z-index: 0;
 }
 
-  .ribbon-back-right {
+.ribbon-back-right {
   position: absolute;
   top: -10px;
   right: 0px;
@@ -537,24 +481,14 @@ p{
   background-color: #393838;  z-index: 0;
 }
 
-.arrow2{
-    position: absolute;
-    background: url(arrow.png) no-repeat;
-    background-size: 220px 150px;
-    height: 150px;
-    width: 220px; 
-    margin-top: -220px;
-    margin-left: 300px;  
-}
-
 .msgbox {
-    position: absolute;
-    background: url(arrow.png) no-repeat;
-    background-size: 220px 150px;
-    height: 150px;
-    width: 220px; 
-    margin-top: -220px;
-    margin-left: 280px;
+  position: absolute;
+  background: url(arrow.png) no-repeat;
+  background-size: 220px 150px;
+  height: 150px;
+  width: 220px; 
+  margin-top: -220px;
+  margin-left: 280px;
 }
 
 #close {
@@ -603,22 +537,8 @@ p{
     z-index: -1;
 }
 
-.row{
-  margin-left: -40px;
-}
-
 .chzn-container{
   width: 205px !important;
-}
-
-.arrow{
-    position: absolute;
-    background: url(arrow.png) no-repeat;
-    background-size: 220px 150px;
-    height: 150px;
-    width: 220px; 
-    margin-top: -220px;
-    margin-left: 208px;  
 }
 
 }
