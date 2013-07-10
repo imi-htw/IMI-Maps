@@ -23,15 +23,14 @@ class FavoriteController < ApplicationController
     @favorite.destroy
 
     respond_to do |format|
+      format.html { redirect_to(favorite_index_path) }
       format.js { render :layout=>false,:locals => { :current_user  => @current_user, :internship => @internship, :favorite => @favorite} }
     end
   end
 
   def index
 
-    @favorites = current_user.favorites
-
-        
+    @favorites = current_user.favorites        
 
   end
 

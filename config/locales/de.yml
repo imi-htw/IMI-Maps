@@ -12,6 +12,10 @@ de:
   favorite:
     delete: "Von Favoriten entfernen"
     add: "Zu Favoriten hinzufügen"
+    notfound:
+      title: "404 - keine Favoriten gefunden"
+      message: "Anscheinend hast du noch keine Praktika als Favoriten gespeichert. <br/> Du kannst %{href} benutzen um Praktika zu finden."
+      link: "die Suche"
   date:
     abbr_day_names:
     - So

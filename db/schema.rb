@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709123847) do
+ActiveRecord::Schema.define(:version => 20130710142258) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -179,7 +179,11 @@ ActiveRecord::Schema.define(:version => 20130709123847) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
+<<<<<<< HEAD
     t.boolean  "recommend"
+=======
+    t.boolean  "recommend",                                :default => true
+>>>>>>> 6c7617bdeb21391dbb0a95c223fada6be1d3b752
     t.integer  "orientation_id"
     t.boolean  "email_public"
     t.text     "description"

@@ -1,4 +1,4 @@
-<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post) do %>
+<%= form_tag({:controller => "user_verifications", :action => "create"}, :method => :post) do %> 
   <%- flash.each do |name, message| %>
     <p><i><%= "#{name}: #{message}" %></i></p>
   <% end %>

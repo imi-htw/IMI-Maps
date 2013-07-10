@@ -6,7 +6,7 @@ ActiveAdmin.register Company do
 
 	index do
     column :student do |n|
-      link_to n.enrolment_number, "/admin/students/#{n.id}"
+      link_to n.enrolment_number, "/admin/students/#{n.student_id}"
     end
     column :internships do |n|
       a = n.internships.map(&:id)
