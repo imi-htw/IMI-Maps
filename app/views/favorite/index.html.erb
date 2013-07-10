@@ -1,19 +1,28 @@
 <h2> <%= t "users.show.favorites_title" %> </h2>
 
+<% if !@favorites.empty? %>
+
 <%= form_tag(favorite_compare_index_path, remote: true, method: 'get') do %>
+<div class="table-container">
+<table class="table">
+	<tbody>
+	  
+	<% @favorites.each do |favorite| %>
+	  <tr class="<%= cycle("even_row2", "odd_row2") %>">
+		<td><%= check_box_tag "favorite_ids[]", favorite.internship.id %></td>
+	    <td><%= favorite.internship.title %></td>
+	    <td><%= favorite.internship.company.address %></td>
+	    <td><%= favorite.internship.orientation.name %></td>
+	    <td><%= favorite.internship.programming_languages.map { |n| n.name }.join(", ") %></td>
+	    <td><%= link_to "", favorite.internship, class: "icon-white icon-eye-open icon-2x button_intern" %></td>
+	    <td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "red-thumb icon-remove icon-2x button_intern" %></td>
+	  </tr>
+	<% end %>
 
-<% @favorites.each do |favorite| %>
-
-<%= check_box_tag "favorite_ids[]", favorite.internship.id %>
-
-<%= link_to "#{favorite.internship.title} at #{favorite.internship.company.name}", favorite.internship, class: "btn btn-success" %>
-
-<%= link_to (t "buttons.destroy"), favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-</p>
-
-<% end %>
-
-<%= submit_tag (t "buttons.compare") %>
+	</tbody>
+</table>
+</div>
+<%= submit_tag (t "buttons.compare"), class: "btn btn-success" %>
 
 <% end %>
 
@@ -28,3 +37,13 @@
   <div class="modal-footer">
   </div>
 </div>
+
+<% else %>
+
+	<div>
+		<h3> 404 - no favorites found </h3>
+		<p> Apparently you have not saved any internships as favorites yet. <br/> 
+			Check out <%= link_to "the search",internships_path %> to find internships. </p>
+	</div>
+
+<% end %>
