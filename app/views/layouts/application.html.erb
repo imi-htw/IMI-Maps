@@ -93,13 +93,13 @@
     <ul class="nav nav-top ">
               <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
               <li class="<%= 'active_nav' if current_page?(internships_path) %>"><%= link_to t("header.search"), internships_path %></li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
+              <li class="dropdown <%= 'active_nav' if current_page?(general_index_path) || current_page?(download_index_path) || current_page?(faq_index_path) || current_page?(faq_index_path) %>">
+                <a class="dropdown-toggle" data-toggle="dropdown" href=""><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to t("header.general"), general_index_path %></li>
-                  <li><%= link_to t("header.faq"), faq_index_path %></li>
-                  <li><%= link_to t("header.downloads"), download_index_path %></li>
-                  <li><%= link_to t("header.financing"), financing_index_path %></li>
+                  <li><%= link_to t("header.general"), general_index_path, :class=>"menu_nb" %></li>
+                  <li><%= link_to t("header.faq"), faq_index_path, :class=>"menu_nb" %></li>
+                  <li><%= link_to t("header.downloads"), download_index_path, :class=>"menu_nb" %></li>
+                  <li><%= link_to t("header.financing"), financing_index_path, :class=>"menu_nb" %></li>
                 </ul>
               </li>
               <li class="<%= 'active_nav' if current_page?(internship_offer_index_path) %>"><%= link_to t("header.exchange"), internship_offer_index_path %></li>
