@@ -162,6 +162,7 @@ private
         reading_prof_id: reading_prof_id,
         certificate_to_prof: row[16],
         certificate_signed_by_prof: row[17],
+        completed: false,
         certificate_signed_by_internship_officer: row[18]).first_or_create!
 
     end
