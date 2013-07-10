@@ -17,6 +17,10 @@ class LdapAuthentication
   end
 
   def authorized?
-    ldap.bind(method: :simple, username: "uid=#{username}, ou=Users, o=f4, dc=htw-berlin, dc=de", password: password)
+    begin
+      ldap.bind(method: :simple, username: "uid=#{username}, ou=Users, o=f4, dc=htw-berlin, dc=de", password: password)
+    rescue
+      false
+    end
   end
 end

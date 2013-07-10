@@ -2,13 +2,13 @@ ImiMaps::Application.routes.draw do
 
   get "password_resets/new"
 
-	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
-		resources :internships
+    resources :internships, :only => [:edit, :show, :index, :destroy, :update]
 
-		resources :companies
+    resources :companies
 
-		resources :users
+    resources :users
 
     resources :user_verifications
 
@@ -50,23 +50,25 @@ ImiMaps::Application.routes.draw do
 
     resources :password_resets
 
+    resources :errors, :only => [:not_found]
+
 		root to: 'sessions#new'
+
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
+
+    match "*path", to: "errors#not_found"
     
 	end
-
-  get "viz/countries"
-  get "viz/languages"
-  get "viz/orientation"
 
   root to: 'sessions#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-	match '*path', to: redirect { |params, request| "/#{I18n.default_locale}#{request.fullpath}" }
+  match '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")  
+  match '*path', to: redirect {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }
 	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 
   

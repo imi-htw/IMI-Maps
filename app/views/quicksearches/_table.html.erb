@@ -20,10 +20,10 @@
     <td><%= internship.company.city %></td>
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
-    <td><%= internship.semester.semester %></td>
+    <td><%= internship.semester.name %></td>
     <td><%= internship.orientation.name %></td>
-    <td><%= internship.programming_languages.map { |n| n.name } %></td>
-    <td><%= internship.total_rating %></td>
+    <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
+    <td><%= internship.internship_rating.total_rating %></td>
     <td><%= link_to (t "buttons.show"), internship, class: "btn btn-success" %></td>
   </tr>
 <% end %>

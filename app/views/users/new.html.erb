@@ -1,5 +1,4 @@
-<h1><%= t ".newuser" %></h1>
-
-<%= render 'creation_form' %>
-
-<%= link_to (t "buttons.back"), users_path, class: "btn" %>
+<div class="sign_up_field">
+<h2> Please enter your credentials:</h2>
+<%= render :partial => 'creation_form' %>
+</div>

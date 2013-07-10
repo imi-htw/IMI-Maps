@@ -13,7 +13,7 @@ class SearchController < ApplicationController
         [p.name, p.id]
       end
 
-    @semesters = Semester.where(:id =>(@internships.collect do |x| x.semester_id end.uniq)).map do |s| [s.semester, s.id] end
+    @semesters = Semester.where(:id =>(@internships.collect do |x| x.semester_id end.uniq)).map do |s| [s.name, s.id] end
 
     @orientations = (Orientation.where(:id => @internships.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
 

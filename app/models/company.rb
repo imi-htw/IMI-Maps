@@ -10,9 +10,6 @@ class Company < ActiveRecord::Base
   #validates :number_employees, :presence => true, :allow_blank => false
   #validates :website, :presence => true, :allow_blank => false
 
-
-
-
   geocoded_by :address
   after_validation :geocode
   acts_as_gmappable :process_geocoding => false
@@ -43,11 +40,12 @@ class Company < ActiveRecord::Base
     r=0
     size=0
     internships.each do |x|
-      if x.total_rating
-        r+=x.total_rating
+      if x.internship_rating.total_rating
+        r+=x.internship_rating.total_rating
         size+=1
       end
     end
+    size||=1
     r.to_f/size
   end
   

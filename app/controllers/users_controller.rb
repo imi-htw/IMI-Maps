@@ -3,18 +3,20 @@ class UsersController < ApplicationController
   before_filter :check_existing_user, only: [:new, :create]
 
   def new
-    @user = User.new
-    @user = UserCreationForm.new(session[:enrolment_number])
+    @user_creation_form = UserCreationForm.new(session[:enrolment_number])
+    respond_to do |format|
+      format.html
+    end
   end
 
   def create
-    @user = UserCreationForm.new(session[:enrolment_number])
-    if @user.submit(params[:user])
+    @user_creation_form = UserCreationForm.new(session[:enrolment_number])
+    if @user_creation_form.submit(params[:user_creation_form])
       #UserMailer.registration_confirmation(@user).deliver
-      session[:user_id] = @user.id
+      session[:user_id] = @user_creation_form.id
       redirect_to overview_index_path, notice: t('sign_up')
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -48,7 +50,8 @@ private
     def check_existing_user
       if session[:enrolment_number]
         student = Student.where(enrolment_number: session[:enrolment_number]).first
-        redirect_to root_url if student && User.find_by_student_id(student.id)
+        # TODO: add notice
+        redirect_to root_url,notice: "Users exists. Please sign in with your email and password"  if student && User.find_by_student_id(student.id)
       end
     end
 

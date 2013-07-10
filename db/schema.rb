@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705203818) do
+ActiveRecord::Schema.define(:version => 20130709123847) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -151,25 +151,6 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.datetime "updated_at",                    :null => false
   end
 
-  create_table "internship_records", :force => true do |t|
-    t.string   "supervisor_name"
-    t.string   "supervisor_email"
-    t.string   "comment"
-    t.date     "certificate_to_prof"
-    t.date     "certificate_signed_by_prof"
-    t.date     "certificate_signed_by_internship_officer"
-    t.integer  "internship_state_id"
-    t.integer  "internship_id"
-    t.integer  "payment_state_id"
-    t.integer  "registration_state_id"
-    t.integer  "contract_state_id"
-    t.integer  "report_state_id"
-    t.integer  "certificate_state_id"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.integer  "reading_prof_id"
-  end
-
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -192,9 +173,9 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
   create_table "internships", :force => true do |t|
     t.float    "working_hours"
     t.float    "living_costs"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.integer  "internship_rating_id", :default => 1
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
+    t.integer  "internship_rating_id",                     :default => 1
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
@@ -210,11 +191,20 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
     t.text     "tasks"
     t.string   "operational_area"
     t.integer  "student_id"
-    t.integer  "tasks_rating"
-    t.integer  "training_rating"
-    t.integer  "atmosphere_rating"
-    t.integer  "supervision_rating"
-    t.integer  "appreciation_rating"
+    t.integer  "internship_state_id"
+    t.integer  "reading_prof_id"
+    t.integer  "payment_state_id"
+    t.integer  "registration_state_id"
+    t.integer  "contract_state_id"
+    t.integer  "report_state_id"
+    t.integer  "certificate_state_id"
+    t.date     "certificate_signed_by_internship_officer"
+    t.date     "certificate_signed_by_prof"
+    t.date     "certificate_to_prof"
+    t.string   "comment"
+    t.string   "supervisor_email"
+    t.string   "supervisor_name"
+    t.boolean  "completed",                                :default => false
   end
 
   create_table "internships_programming_languages", :id => false, :force => true do |t|
@@ -295,7 +285,7 @@ ActiveRecord::Schema.define(:version => 20130705203818) do
   end
 
   create_table "semesters", :force => true do |t|
-    t.string   "semester"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -48,25 +48,27 @@
           <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
 <i class="icon-flag icon-large"></i></a>
-  <% if current_user == true %>
       <ul class="dropdown-menu">
-        <% @notifications.order(:read).each do |noti| %>
+        <% if current_user && current_user.notifications.any? %>
+        <% current_user.notifications.each do |noti| %>
+          <li>
+            <% if noti.read == false %>
+              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
+            <% else %>
+              <%= link_to noti.text, noti.link %>
+            <% end %>
+          </li>
+        <%end%>
+      <% else %>
         <li>
-          <% if noti.read == false %>
-          <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
-          <% else %>
-          <%= link_to noti.text, noti.link %>
-          <% end %>
+          Sorry, no notifications available
         </li>
-        <%end%> 
+      <% end %>
       </ul>
-    <% end %>
-      </li>  
-
-      
-    <li><%= link_to current_user  do %>
-                  <i class="icon-user icon-large"></i>
-                <% end %>
+    <li>
+      <%= link_to current_user  do %>
+        <i class="icon-user icon-large"></i>
+      <% end %>
     </li>
 
     <li class="dropdown">
@@ -89,7 +91,7 @@
 
     <ul class="nav nav-top ">
               <li class="<%= 'active_nav' if current_page?(overview_index_path) %>"><%= link_to t("header.overview"), overview_index_path %></li>
-              <li class="<%= 'active_nav' if current_page?(search_index_path) %>"><%= link_to t("header.search"), internships_path %></li>
+              <li class="<%= 'active_nav' if current_page?(internships_path) %>"><%= link_to t("header.search"), internships_path %></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" class="<%= 'active_nav' if current_page?(general_index_path) %>"><%= t("header.guide") %></a>
                 <ul class="dropdown-menu">

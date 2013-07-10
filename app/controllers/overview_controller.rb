@@ -2,9 +2,8 @@ class OverviewController < ApplicationController
   before_filter :authorize
   before_filter :get_programming_languages, :get_orientations
 
-	def index
-
-    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
+  def index
+    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end.reverse
 
     @companies = @internships.collect do |i| i.company end
 
@@ -16,7 +15,6 @@ class OverviewController < ApplicationController
                 "http://"+company.website 
               end
             end
-             
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
     end
@@ -25,9 +23,9 @@ class OverviewController < ApplicationController
 
     @semesters = @internships.collect do |x| x.semester end.uniq
 
-    @orientations_ary = @internships.collect do |x| x.orientation end  
-      
-    @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
+    @orientations_ary = @internships.collect { |x| x.orientation }
+
+    @orientations = @orientations_ary.compact.uniq.map { |o| [o.name, o.id] }
 
     @countries = @companies.collect do |x| x.country end
 
@@ -48,7 +46,7 @@ class OverviewController < ApplicationController
     @data_language = ary
 
     ary = Array.new
-    @orientations_ary.uniq.each do |x|
+    @orientations_ary.compact.uniq.each do |x|
       ary << {:name=>x.name, :count=>@orientations_ary.count(x)}
     end
     @data_orientation = ary

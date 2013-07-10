@@ -1,6 +1,9 @@
 class UserVerificationsController < ApplicationController
 
   def new
+    respond_to do |format|
+      format.js { render :layout=>false }
+    end
   end
 
   def create
@@ -9,7 +12,8 @@ class UserVerificationsController < ApplicationController
       session[:enrolment_number] = params[:user_name].split("s0")[1]
       redirect_to new_user_path
     else
-      render :new
+      flash[:notice] =  "Benutzername oder Passwort nicht korrekt!"
+      redirect_to root_url
     end
   end
 end

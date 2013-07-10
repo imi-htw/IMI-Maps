@@ -2,6 +2,20 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Missing information: %{errors}"
+  activemodel:
+    errors:
+      messages:
+        blank: "can't be empty"
+      models:
+        user_creation_form:
+          attributes:
+            password: "password"
+            password_confirmation: "password confirmation"
+            email: "email"
   favorite:
     delete: "Delete from favorites"
     add: "Add to favorites"
@@ -19,9 +33,9 @@ en:
     language: "Choose a programming language"
   header:
     account: "My account"
-    search: "Detailed search"
-    overview: "Overview"
-    start: "Overview"
+    search: "Advanced search"
+    overview: "Home"
+    start: "Home"
     exchange: "Job Exchange"
     guide: "Guide"
     logout: "Logout"
@@ -38,7 +52,7 @@ en:
     criteria: "Select your search criteria:"
     title: "Detailed Search"
     salary: "Monthly salary (min)"
-    livingCost: "Cost of living (max)"
+    livingCost: "Cost of living/month (max)"
     rating: "Rating (min)"
     resultnr: "results found!"
     button: "Search"
@@ -105,9 +119,11 @@ en:
       orientation: "Orientation"
       programming_language: "Programming Language"
       salary: "Salary"
+      salary2: "Salary/month"
       working_hours: "Working hours"
-      living_costs: "Living Costs"
+      living_costs: "Cost of living"
       company: "Company"
+      living_costs2: "Cost of living/month"
       tasks_rating: "Tasks"
       training_rating: "Training success"
       atmosphere_rating: "Atmosphere"
@@ -347,3 +363,17 @@ en:
   msg:
     logout: "You have successfully logged out"
     invalid: "Password or email is invalid"
+  unit:
+   month: "per month"
+   week: "per week"
+  attachment:
+   remove: "Remove picture"
+   add: "Add picture"
+  mail:
+   greeting: "Dear "
+   registered: 
+    html: "<br>Welcome! </br> You have succesfully registered on IMI Map: imi-map.f4.htw-berlin.de."
+   registeredSubject: "Succesfully Registerd on IMI-Map"
+   registerRequest:
+    html: "You completed your internship at the HTW succesfully. </br> We kindly remind you to register and complete your internship experience report on IMI Map: imi-map.f4.htw-berlin.de </br> "
+   registerRequestSubject: "Come and join IMI-Map. IMI internship experience report"

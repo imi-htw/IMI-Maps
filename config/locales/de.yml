@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  activerecord:
+    errors:
+      messages:
+        blank: "darf nicht freigelassen werden"
+        record_invalid: "Fehlerhafte Angaben: %{errors}"
   favorite:
     delete: "Von Favoriten entfernen"
     add: "Zu Favoriten hinzufügen"
@@ -67,7 +72,7 @@ de:
     pm: nachmittags
   header:
     account: "Konto"
-    search: "Detailsuche"
+    search: "Erweiterte Suche"
     overview: "Start"
     start: "Start"
     exchange: "Jobbörse"
@@ -90,7 +95,7 @@ de:
     criteria: "Wähle deine Suchkriterien:"
     title: "Detailsuche"
     salary: "Monatliches Gehalt (min)"
-    livingCost: "Lebenshaltungskosten (max)"
+    livingCost: "Lebenshaltungskosten/Monat (max)"
     rating: "Bewertung (min)"
     resultnr: "Ergebnisse gefunden!"
     button: "Suchen"
@@ -286,6 +291,16 @@ de:
         sign_in: "Anmeldung"
         forgot_your_password: "Passwort vergessen?"
         sign_in_with_omniauth_provider: "Anmeldung mit %{provider}"
+  activemodel:
+    errors:
+      messages:
+        blank: "darf nicht freigelassen werden"
+      models:
+        user_creation_form:
+          attributes:
+            password: "Password"
+            password_confirmation: "Passwordbestaetigung"
+            email: "Email"
   activerecord:
     attributes:
       admin_user:
@@ -405,9 +420,24 @@ de:
     column1: "Erstes Praktikum"
     column2: "Zweites Praktikum"
     column3: "Drittes Praktikum"
-    
+
   msg:
     logout: "Du hast dich erfolgreich abgemeldet"
     invalid: "Email oder Passwort falsch"
+  unit:
+    month: "pro Monat"
+    week: "pro Woche"
+  attachment:
+   remove: "Bild entfernen"
+   add: "Bild hinzufügen"
+  mail:
+   greeting: "Guten Tag "
+   registered: 
+    html: "<br>Willkommen! </br> Du hast dich erfolgreich auf IMI Map registriert: imi-map.f4.htw-berlin.de."
+   registeredSubject: "Registrierung auf IMI Map erfolgreich"
+   registerRequest:
+    html: "Du hast dein Praktikum des IMI Studiengangs an der HTW erfolgreich abgeschlossen. </br> Wir möchten Dich bitten dich auf IMI Map zu registrieren und deinen Praktikum-Erfahrungsbericht abzugeben: imi-map.f4.htw-berlin.de </br>Vielen Dank. "
+   registerRequestSubject: "Bitte registriere dich auf IMI Map"
+
 
 

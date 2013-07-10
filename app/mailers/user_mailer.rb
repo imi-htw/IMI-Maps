@@ -21,4 +21,9 @@ class UserMailer < ActionMailer::Base
     mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Maps) Password Reset")
   end
 
+  def invite_student(student)
+    @student = student
+    mail(to: student.email, subject: "Come and join IMI-Map")
+  end
+
 end

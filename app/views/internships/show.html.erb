@@ -54,7 +54,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.salary" %></div>
       <div class="span8" id="intern-box">
-       <%= @internship.salary %>
+       <%= @internship.salary %> €/<%= t("unit.month")%>
       </div>
     </div>
     </div>
@@ -67,7 +67,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.working_hours" %></div>
       <div class="span8" id="intern-box">
-       <%= @internship.working_hours %>
+       <%= @internship.working_hours %>/<%= t("unit.week")%>
       </div>
     </div>
     </div>
@@ -80,7 +80,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.living_costs" %></div>
       <div class="span8" id="intern-box">
-       <%= @internship.living_costs %>
+       <%= @internship.living_costs %> €/<%= t("unit.month")%>
       </div>
     </div>
     </div>
@@ -93,7 +93,8 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.tasks_rating" %></div>
       <div class="span8" style="padding-top:7px">
-        <%= render_stars @internship.tasks_rating, self %>
+         <%= render_stars @internship.internship_rating.tasks, self %>
+      <div class="span8">
       </div>
     </div>
     </div>
@@ -105,7 +106,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.training_rating" %></div>
       <div class="span8" style="padding-top:7px">
-        <%= render_stars @internship.training_rating, self %>
+        <%= render_stars @internship.internship_rating.training_success, self %>
       </div>
     </div>
     </div>
@@ -117,7 +118,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.atmosphere_rating" %></div>
       <div class="span8" style="padding-top:7px">
-        <%= render_stars @internship.atmosphere_rating, self %>
+        <%= render_stars @internship.internship_rating.atmosphere, self %>
       </div>
     </div>
     </div>
@@ -129,7 +130,8 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.supervision_rating" %></div>
       <div class="span8" style="padding-top:7px">
-        <%= render_stars @internship.supervision_rating, self %>
+        <%= render_stars @internship.internship_rating.supervision, self %>
+      <div class="span8">
       </div>
     </div>
     </div>
@@ -141,7 +143,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.appreciation_rating" %></div>
       <div class="span8" style="padding-top:7px">
-        <%= render_stars @internship.appreciation_rating,self %>
+        <%= render_stars @internship.internship_rating.appreciation,self %>
       </div>
     </div>
     </div>
@@ -179,7 +181,7 @@
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.semester" %></div>
       <div class="span8" id="intern-box">
-         <%= @internship.semester.semester %>
+         <%= @internship.semester.name %>
       </div>
     </div>
     </div>
@@ -218,13 +220,17 @@
 
               <div id="favorite">
                 <% if @favorite %>
-                <%= button_to t("favorite.delete"), {:controller => :favorite,
-                  :action => 'destroy', :internship_id => @internship.id, :user_id => current_user.id, :id => @favorite.id }, :method => :delete, :remote=>true, class: "btn btn-danger" %>
+                <%= link_to({:controller=>:favorite,:action=>:destroy, :id => @favorite.id}, {:method=>:delete, remote: true, class: "btn btn-danger"}) do %>
+                  <i class="icon-heart-empty icon-large icon-white"> </i><%= t("favorite.delete") %>
+                <% end %>
+              
                   <% else %>
-                  <%= button_to t("favorite.add"), {:controller => :favorite,
-                    :action => 'create', :internship_id => @internship.id, :user_id => current_user.id }, :method => :create, :remote=>true, class: "btn btn-success" %>
+                  <%= link_to({:controller=>:favorite,:action=>:create, :internship_id => @internship.id, :user_id => current_user.id}, {:method=>:post, remote: true, class: "btn btn-success"}) do %>
+                  <i class="icon-heart icon-large icon-white"> </i><%= t("favorite.add") %>
+                <% end %>
                     <% end %>
                   </div>
+                  <br/>
 
                   <% if @internship.attachments.present? %>
                   <b><%= t "internships.attributes.pictures" %> :</b></b>

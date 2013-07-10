@@ -17,6 +17,7 @@
 //= require chosen-jquery
 //= require d3
 //= require stupidtable.min
+//= require bootstrap
 
 $(window).load(function () {
       $(".alert-info").animate({opacity: 1.0}, 5000).fadeOut('slow');
@@ -51,7 +52,7 @@ $(window).load(function () {
   }
 
   var setValue = function(val, id) {
-    $("#internship_"+id).val(val)
+    $("#internship_internship_rating_attributes_"+id).val(val);
   }
 
 });
@@ -63,25 +64,32 @@ $(document).ready(function() {
      $(".answer_2").slideToggle("slow");
      $("#comment_form").slideToggle("slow");
   });
+     $(".info_signup").hide();
+     $(".icon-info-sign").mouseover(function(){
+       $("#popup").fadeIn("slow");
+     });
+     $(".icon-info-sign").mouseleave(function(){
+       $("#popup").fadeOut("slow");
+     });
 
   $(".recommend-edit").click(function() {
-    if ($("#recommend").hasClass( "green-thumb" )) {
-      $(this).removeClass( "icon-thumbs-up" );
-      $(this).removeClass( "green-thumb" );
-      $(this).addClass( "icon-thumbs-down" );
-      $(this).addClass( "red-thumb" );
-      $(this).addClass( "waaaaaaaas" );
+      $(this).toggleClass( "icon-thumbs-up" );
+      $(this).toggleClass( "green-thumb" );
+      $(this).toggleClass( "icon-thumbs-down" );
+      $(this).toggleClass( "red-thumb" );
+      toggle_value("#internship_recommend");
+  });
+  
+  toggle_value = function(id) {
+    var elem =  $(id);
+    var value = elem.val();
+    if (value === "0") {
+      elem.val("1");
+    } else if (value === "1") {
+      elem.val("0");
+    }
+  }
 
-    }
-  });
-  $(".recommend-edit").click(function() {
-    if ($(".recommend-edit").hasClass( "icon-thumbs-down" )) {
-      $(this).removeClass( "icon-thumbs-down" );
-      $(this).removeClass( "red-thumb" );
-      $(this).addClass( "icon-thumbs-up" );
-      $(this).addClass( "green-thumb" );
-    }
-  });
 
 });
 

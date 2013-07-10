@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag 'favicon.ico' %>
+  <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
   <%# javascript_include_tag :defaults,"jquery_nested_form" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +65,7 @@
 
             <div id="change_color">
               <center>No Account?
-                <%= link_to new_user_verification_path do %>Sign up here 
+                <%= link_to new_user_verification_path, :remote => true do %>Sign up here 
                 <i class="icon-edit" style="color:#87bb3e"></i> 
                 <% end %></center>
               </div>
@@ -73,5 +74,20 @@
 
           </div>
         </div>
+        <div class="container">
+          <div id="signupModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="compareModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="signupModalLabel">Please log in with your laboratory account</h3>
+            </div>
+            <div id="modal-body">
+            </div>
+            <div class="modal-footer">
+              <h4><a href="#"><i class="icon-info-sign"></i></a></h4>
+              <div id="popup" class="info_signup"><b>Was ist ein Laboraccount?</b> </br> Den Laboraccount hast du im 1. Semester vom Rechenzentrum bekommen. Diesen benutzt ihr auch, um euch in der HTW an den Rechnern anzumelden.</div>
+            </div>
+          </div>
+        </div>
+
       </body>
       </html>

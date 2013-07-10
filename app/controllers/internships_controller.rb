@@ -1,7 +1,8 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
-  before_filter :get_programming_languages, :get_orientations, :only => [:new, :edit, :update, :create]
+  before_filter :get_programming_languages, :get_orientations, :only => [:edit, :update]
   before_filter :authorize
+  before_filter :authorize_internship, :only => [:edit, :update, :destroy]
   # GET /internships
   # GET /internships.json
   def index
@@ -12,7 +13,7 @@ class InternshipsController < ApplicationController
 
     @countries = @companies.collect do |x| x.country end.uniq
 
-    @semesters = Semester.where(:id =>(@internships.collect do |x| x.semester_id end.uniq)).map do |s| [s.semester, s.id] end
+    @semesters = Semester.where(:id =>(@internships.collect do |x| x.semester_id end.uniq)).map do |s| [s.name, s.id] end
 
     @orientations = (Orientation.where(:id => @internships.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
 
@@ -84,62 +85,28 @@ class InternshipsController < ApplicationController
               "http://"+company.website 
              end
       end
-             
+
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
     end
-    
+
     respond_with(@internship)
   end
 
-  # GET /internships/new
-  # GET /internships/new.json
-  def new
-    if User.find(current_user.id).internship_authorization
-      @internship = Internship.new
-      @company = Company.new
-      respond_with(@internship)
-    else
-      flash[:notice] = "You cannot create an internship"
-      redirect_to internships_url
-    end
-  end
 
   # GET /internships/1/edit
   def edit
     @internship = Internship.find(params[:id])
     @company = @internship.company
-  end
-
-  # POST /internships
-  # POST /internships.json
-  def create
-    @user = User.find(current_user.id)
-    if @user.internship_authorization
-      @company = Company.new(params[:company])
-      @company.save
-      @internship = Internship.new(params[:internship])
-      @internship.company_id = @company.id
-      @internship.user_id = current_user.id if current_user
-      @user.internship_authorization = false
-      @user.save
-      if (@user.mailnotif == true)
-        UserMailer.create_internship_confirmation(@user).deliver
-      end
-      flash[:notice] = "Internship was successfully created" if @internship.save
-      respond_with(@internship)
-    else
-      flash[:notice] = "You cannot create an internship"
-      redirect_to internships_url
-    end
+    @rating = @internship.internship_rating
   end
 
   # PUT /internships/1
   # PUT /internships/1.json
   def update
     @internship = Internship.find(params[:id])
-
     if @internship.update_attributes(params[:internship])
+      @internship.update_attributes(completed: true)
       flash[:notice] = 'Internship was successfully updated.'
     end
     respond_with(@internship)
@@ -156,5 +123,16 @@ class InternshipsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+    def authorize_internship
+      internship = Internship.where(id: params[:id]).first
+      if current_user.student && internship && internship.student_id != current_user.student.id
+        redirect_to overview_index_path, notice: "You're not allowed to edit this internship"
+      elsif internship.nil?
+        redirect_to overview_index_path, notice: "You're not allowed to edit this internship"
+      end
+    end
 
 end

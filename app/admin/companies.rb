@@ -8,14 +8,19 @@ ActiveAdmin.register Company do
     column :student do |n|
       link_to n.enrolment_number, "/admin/students/#{n.id}"
     end
+    column :internships do |n|
+      a = n.internships.map(&:id)
+      str = ""
+      a.each do |x|
+        str += link_to x, "/admin/internships/#{x}"
+      end
+      str.html_safe
+    end
     column :name
     column :number_employees
     column :industry
     column :website
-    column :city
-    column :country
-    column :street
-    column :zip
+    column :address
     column :main_language
     column :phone
     column :fax
@@ -23,7 +28,7 @@ ActiveAdmin.register Company do
     default_actions
   end
 
-	show do |student|
+	show do |company|
       attributes_table do
       	row :id
       	row :name
@@ -39,7 +44,7 @@ ActiveAdmin.register Company do
       	row :fax
       	row :blacklisted
   			row :internships do |n|
-			    a = student.internships.map(&:id)
+			    a = company.internships.map(&:id)
 			    str = ""
 			    a.each do |x|
 			   		str += link_to x, "/admin/internships/#{x}"
