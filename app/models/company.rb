@@ -12,8 +12,7 @@ class Company < ActiveRecord::Base
  # #validates :website, :presence => true, :allow_blank => false
 
   geocoded_by :address
-  #after_validation :geocode
-  after_create :geocode
+  after_validation :geocode
   acts_as_gmappable :process_geocoding => false
 
   #associations

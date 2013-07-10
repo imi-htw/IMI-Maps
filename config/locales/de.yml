@@ -95,7 +95,7 @@ de:
     explanation:
       html: "Die Diagramme zeigen dir die häufigsten Kriterien von unseren Praktika. </br>Klick auf eine der Säulen um sie für deine Suche auszuwählen"
     criteria: "Wähle deine Suchkriterien:"
-    title: "Detailsuche"
+    title: "Suche"
     salary: "Monatliches Gehalt (min)"
     livingCost: "Lebenshaltungskosten/Monat (max)"
     rating: "Bewertung (min)"
