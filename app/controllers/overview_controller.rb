@@ -3,53 +3,49 @@ class OverviewController < ApplicationController
   before_filter :get_programming_languages, :get_orientations
 
   def index
-    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end.reverse
-
-    @companies = @internships.collect do |i| i.company end
+    @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).where(completed: true).order('created_at DESC')
+    @companies = @internships.map(&:company)
 
     @pins = @companies.to_gmaps4rails do |company, marker |
       if company.website
-        href =  if company.website.starts_with?'http' 
-                company.website  
-              else 
-                "http://"+company.website 
-              end
-            end
+        href =  if company.website.starts_with?'http'
+                  company.website
+                else
+                  "http://"+company.website
+                end
+      end
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
     end
 
-    @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
+    @programming_languages = @internships.map(&:programming_languages)
 
-    @semesters = @internships.collect do |x| x.semester end.uniq
+    @semesters = @internships.map(&:semester)
 
-    @orientations_ary = @internships.collect { |x| x.orientation }
+    @orientations_ary = @internships.map(&:orientation).compact.uniq
 
-    @orientations = @orientations_ary.compact.uniq.map { |o| [o.name, o.id] }
+    @orientations = @orientations_ary.map { |o| [o.name, o.id] }
 
-    @countries = @companies.collect do |x| x.country end
+    @countries = @companies.map(&:country).compact.uniq
 
-    countries_uniq = @countries.uniq
-    ary = Array.new
-    countries_uniq.each do |x|
-      ary << {:name=>x, :count=>@countries.count(x)}
+    @data_country = []
+    @countries.each do |x|
+      @data_country << {:name=>x, :count=>@countries.count(x)}
     end
-    @data_country = ary
 
-    ary = Array.new
+    @data_language = []
     @programming_languages.each do |x|
       s = x.try(:internships).try(:size)
       if s > 0
-        ary << {:name=>x.name, :count=>s.to_f/@internships.size*100}
+        @data_language << {:name=>x.name, :count=>s.to_f/@internships.size*100}
       end
     end
-    @data_language = ary
 
-    ary = Array.new
-    @orientations_ary.compact.uniq.each do |x|
-      ary << {:name=>x.name, :count=>@orientations_ary.count(x)}
+
+    @data_orientation = []
+    @orientations_ary.each do |x|
+      @data_orientation << {:name=>x.name, :count=>@orientations_ary.count(x)}
     end
-    @data_orientation = ary
 
     respond_to do |format|
       format.html
