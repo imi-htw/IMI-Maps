@@ -163,6 +163,7 @@
     </p>
     <%= attachment_form.link_to_remove "Remove this attachment" %>
   <% end %>
+  <%= f.link_to_add "Add attachment", :attachments %>
       <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.internship_report"  %>
     <%= f.file_field :internship_report %>
