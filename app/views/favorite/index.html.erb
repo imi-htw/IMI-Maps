@@ -1,6 +1,6 @@
 <h2> <%= t "users.show.favorites_title" %> </h2>
 
-<%= form_tag('/favorite_compare', remote: true, method: 'get') do %>
+<%= form_tag(favorite_compare_index_path, remote: true, method: 'get') do %>
 
 <% @favorites.each do |favorite| %>
 
