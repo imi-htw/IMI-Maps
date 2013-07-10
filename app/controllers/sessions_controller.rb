@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       redirect_to overview_index_url
     end
 
-    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end
+    @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).where(completed: true).order('created_at DESC')
 
     @companies = @internships.collect do |i| i.company end
 
