@@ -160,6 +160,8 @@ en:
       last_name: "last name"
       email: "email"
       enrolment_number: "enrolment number"
+      birthday: "birthday"
+      birthplace: "birthplace"
 
   comments:
     attributes: 
