@@ -18,7 +18,7 @@ class OverviewController < ApplicationController
 
     end
 
-    @programming_languages = @internships.map(&:programming_languages)
+    @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
     @semesters = @internships.map(&:semester)
 
