@@ -151,6 +151,25 @@ ActiveRecord::Schema.define(:version => 20130710142258) do
     t.datetime "updated_at",                    :null => false
   end
 
+  create_table "internship_records", :force => true do |t|
+    t.string   "supervisor_name"
+    t.string   "supervisor_email"
+    t.string   "comment"
+    t.date     "certificate_to_prof"
+    t.date     "certificate_signed_by_prof"
+    t.date     "certificate_signed_by_internship_officer"
+    t.integer  "internship_state_id"
+    t.integer  "internship_id"
+    t.integer  "payment_state_id"
+    t.integer  "registration_state_id"
+    t.integer  "contract_state_id"
+    t.integer  "report_state_id"
+    t.integer  "certificate_state_id"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "reading_prof_id"
+  end
+
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"
@@ -179,11 +198,7 @@ ActiveRecord::Schema.define(:version => 20130710142258) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.string   "title"
-<<<<<<< HEAD
-    t.boolean  "recommend"
-=======
     t.boolean  "recommend",                                :default => true
->>>>>>> 6c7617bdeb21391dbb0a95c223fada6be1d3b752
     t.integer  "orientation_id"
     t.boolean  "email_public"
     t.text     "description"
