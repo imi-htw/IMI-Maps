@@ -137,13 +137,13 @@
   <thead>
   <tr class="table_intern table_fin">
     <th class="company"><%= t "internships.attributes.company" %></th>
-    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %></th>
+    <th class="company"><%= t "companies.attributes.address" %></th>
     <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
-    <th data-sort="float" class="salary"><%= t "internships.attributes.salary2" %></th>
-    <th data-sort="float" class="working_hours"><%= t "internships.attributes.working_hours" %></th>
-    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %></th>
-    <th class="rating"><%= t "internships.attributes.rating" %></th>
-    <th class="user"><%= t "internships.attributes.user" %></th>
+    <th data-sort="string" class="company"><%= t "internships.attributes.semester" %></th>
+    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %></th>
+    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %> €/<%= t("unit.month")%></th>
+    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %> €/<%= t("unit.month")%></th>
+    <th data-sort="float" class="rating"><%= t "internships.attributes.rating" %></th>
     <th class="recommend"><%= t "internships.attributes.recommend" %></th>
     <th class="top_inside"></th>
   </tr>
@@ -153,13 +153,13 @@
 <% @internships.each do |internship| %>
   <tr class="<%= cycle("even_row2", "odd_row2") %>">
     <td class="table_inside"><%= internship.company.name %></td>
-    <td class="table_inside"><%= internship.orientation.name %></td>
+    <td class="table_inside"><%= internship.company.address %></td>
     <td class="table_inside"><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
+    <td class="table_inside"><%= internship.semester.name %></td>
+    <td class="table_inside"><%= internship.orientation.name %></td>
     <td class="table_inside"><%= internship.salary %></td>
-    <td class="table_inside"><%= internship.working_hours %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><% render_stars(internship.internship_rating.total_rating, self) %></td>
-    <td class="table_inside"><%= internship.try(:user).try(:name) %></td>
     <td class="table_inside">
       <% if internship.recommend %>
           <i class="icon-white icon-thumbs-up icon-2x" style="color:#80b900"></i>

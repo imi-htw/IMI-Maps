@@ -6,7 +6,8 @@ class InternshipsController < ApplicationController
   # GET /internships
   # GET /internships.json
   def index
-    @internships = Internship.includes(:company)
+    @internships = Internship.find(:all, :include => [:company, :semester, :orientation, :programming_languages]).sort_by do |x| x.created_at end.reverse
+    
     @current_user = User.find(current_user.id)
 
     @companies = @internships.collect do |x| x.company end
