@@ -69,8 +69,8 @@ ImiMaps::Application.configure do
   config.action_mailer.default_url_options = { host: "imi-map.f4.htw-berlin.de" }
   config.action_mailer.smtp_settings = {
     host: "smtp.gmail.com",
-    port: 587,
-    domain: "imi-map.f4.htw-berlin.de",
+    port: "587",
+    domain: "gmail.com",
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD'],
     authentication: :plain,
