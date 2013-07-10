@@ -7,21 +7,21 @@ class InternshipsController < ApplicationController
   # GET /internships.json
   def index
     @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).order("created_at DESC")
-    
+
     @current_user = User.find(current_user.id)
 
-    @companies = @internships.collect do |x| x.company end
+    @companies = @internships.collect(&:company)
 
-    @countries = @companies.collect do |x| x.country end.uniq
+    @countries = @companies.collect(&:country)
 
-    @semesters = Semester.where(:id =>(@internships.collect do |x| x.semester_id end.uniq)).map do |s| [s.name, s.id] end
+    @semesters = @internships.map(&:semester).uniq.map{ |s| [s.name, s.id] }
 
-    @orientations = (Orientation.where(:id => @internships.collect do |x| x.orientation_id end)).uniq.map do |o| [o.name, o.id] end
+    @orientations = @internships.collect(&:orientation).compact.uniq.collect { |o| [o.name, o.id] }
 
-    @living_costs_max = @internships.collect do |x| x.living_costs end.max
+    @living_costs_max = @internships.collect(&:living_costs).max
     @living_costs_max ||= 0
 
-    @salary_max = @internships.collect do |x| x.salary end.max    
+    @salary_max = @internships.collect(&:salary).max
     @salary_max ||= 0
 
     @salary = 0
@@ -29,8 +29,8 @@ class InternshipsController < ApplicationController
     @living_costs = @living_costs_max
     @living_costs = params[:living_costs] if params[:living_costs].present?
 
-    orientations = params[:orientation].collect{|s| s.to_i} if params[:orientation].present?
-    semesters = params[:semester].collect{|s| s.to_i} if params[:semester].present?
+    orientations = params[:orientation].collect(&:to_i) if params[:orientation]
+    semesters = params[:semester].collect(&:to_i) if params[:semester]
 
     if params[:programming_language_ids].present?
       internships_ary = []
@@ -38,9 +38,9 @@ class InternshipsController < ApplicationController
       programming_languages = ProgrammingLanguage.find(languages)
       programming_languages.each do |x|
         if internships_ary.empty?
-          internships_ary = x.internships.collect do |s| s.id end
+          internships_ary = x.internships.collect(&:id)
         else
-          internships_ary = internships_ary & x.internships.collect do |s| s.id end
+          internships_ary = internships_ary & x.internships.collect(&:id)
         end
       end
       @internships = @internships.where(:id => internships_ary)
@@ -55,9 +55,7 @@ class InternshipsController < ApplicationController
     @orientation_choices = params[:orientation] if params[:orientation].present?
     @language_choices = params[:programming_language_ids] if params[:programming_language_ids].present?
 
-    #@internships = @internships.where('working_hours <= ?',params[:working_hours])
     @internships = @internships.where('living_costs <= ?',@living_costs.first) if params[:living_costs].present?
-    #@internships = @internships.where('rating >= ?',params[:rating])
     @internships = @internships.where('salary >= ?',@salary.first) if params[:salary].present?
 
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq).map do |p|
