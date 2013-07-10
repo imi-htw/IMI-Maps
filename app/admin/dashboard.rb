@@ -9,13 +9,13 @@ ActiveAdmin.register_page "Dashboard" do
         #small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
-    
+
      columns do
        column do
          panel "Recent Internships" do
            ul do
              Internship.last(10).reverse.map do |internship|
-               li link_to(internship.orientation.try(:name)+" Internship", admin_internship_path(internship)) + " at " + link_to(internship.company.name, admin_company_path(internship.company)) 
+               li link_to("#{internship.student.first_name} #{internship.student.last_name} at #{internship.company.name}", admin_internship_path(internship))
              end
            end
          end
