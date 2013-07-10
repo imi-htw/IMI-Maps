@@ -52,7 +52,7 @@ en:
     explanation:
       html: "The diagrams give you an overview of the most common criteria for internships. </br> Simply click the bars to add the criteria to your search"
     criteria: "Select your search criteria:"
-    title: "Detailed Search"
+    title: "Search"
     salary: "Monthly salary (min)"
     livingCost: "Cost of living/month (max)"
     rating: "Rating (min)"
