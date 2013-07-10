@@ -491,7 +491,7 @@ p{
   height: 150px;
   width: 220px; 
   margin-top: -220px;
-  margin-left: 280px;
+  margin-left: 320px;
 }
 
 #close {
@@ -541,6 +541,29 @@ p{
 
 .chzn-container{
   width: 205px !important;
+}
+
+.table-container
+{
+  width: 100%;
+  overflow-y: auto;
+  _overflow: auto;
+  margin: 0 0 1em;
+}
+
+.search-table{
+  background-color:#333333; 
+  color:#e3e5e1;
+}
+
+.msgbox {
+  position: absolute;
+  background: url(arrow.png) no-repeat;
+  background-size: 220px 150px;
+  height: 150px;
+  width: 220px; 
+  margin-top: -220px;
+  margin-left: 230px;
 }
 
 }
