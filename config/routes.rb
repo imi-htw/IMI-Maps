@@ -67,10 +67,8 @@ ImiMaps::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-	# handles /bad-locale|anything/valid-path
-  match '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
-  # handles /anything|valid-path-but-no-locale
-  match '/*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  match '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")  
+  match '*path', to: redirect {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }
 	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 
   
