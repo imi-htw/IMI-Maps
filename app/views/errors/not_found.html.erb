@@ -2,8 +2,7 @@
 <div class="logo404"></div>
 <h1><b>404-Error</h1></b>
   <div class="dialog">
-    <p>The page you were looking for doesn't exist.<br>
-    You may have mistyped the address or the page may have moved.</p>
-    <%= link_to :back, "Back" %>
+    <p><%= t("error.message").html_safe %></p>
+    <a href ="javascript:history.back()" class="btn btn-success"> <%= t("buttons.back") %></a>
   </div>
 </div>

@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  error:
+    message: "Die Seite die Sie aufrufen wollten existiert nicht.<br/>Vielleicht haben Sie sich verschrieben oder die Seite ist umgezogen."
   activerecord:
     errors:
       messages:
