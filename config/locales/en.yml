@@ -138,6 +138,9 @@ en:
     name: "Users"
     create: "Create User"
     update: "Update User"
+    title1: "This data has been taken from your internship application form and serve only as a validation.Please contact admin@imi-map.f4.htw-berlin.de if the data contains errors."
+    title2: "This data is obligatory when you register for an internship. Please fill this out on your own to save some time for the administration."
+    logintitle: "Please enter your credentials:"
     index:
       title: "Listing Users"
     edit:
@@ -148,20 +151,20 @@ en:
        favorites_title: "My Favorites"       
     sign_up: "Thank you for signing up!"
     attributes:
-      email: "Email"
-      publicmail: "Make email adress public?"
-      password: "Password"
-      password_confirmation: "Password confirmation"
-      mailnotif: "Receive Email-Notification?"  
+      email: "Email *"
+      publicmail: "Make email address public?"
+      password: "Password *"
+      password_confirmation: "Password confirmation *"
+      mailnotif: "Receive Email-Notification? *"  
 
   students:
     attributes:
-      first_name: "given name"
-      last_name: "last name"
-      email: "email"
-      enrolment_number: "enrolment number"
-      birthday: "birthday"
-      birthplace: "birthplace"
+      first_name: "given name *"
+      last_name: "last name *"
+      email: "email *"
+      enrolment_number: "enrolment number *"
+      birthday: "birthday *"
+      birthplace: "birthplace *"
 
   comments:
     attributes: 

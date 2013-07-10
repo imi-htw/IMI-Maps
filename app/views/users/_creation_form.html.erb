@@ -1,88 +1,107 @@
 <%= form_for(@user_creation_form, url: users_path, method: :post) do |f| %>
-  <% if @user_creation_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_creation_form.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% if @user_creation_form.errors.any? %>
+<div id="error_explanation">
+  <h2 style="font-size:20px; color: #ff0000 !important;"><%= pluralize(@user_creation_form.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user_creation_form.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @user_creation_form.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-<div class="form-block">
-<div style="float: left;">
-  <h2> Student Data </h2>
-  <% if @user_creation_form.editable? %>
-    <p>
-      Diese Daten stammen von eurem Praktikumsantrag und dienen nur zur Ueberpruefung. Wendet euch bitte an admin@imi-map.f4.htw-berlin.de, sollten sie Fehler enthalten.
-    </p>
-  <% else %>
-    <p>
-      Diese Daten werden beim Anmelden des Praktikums verlangt. Bitte nehmt der Verwaltung ein wenig Arbeit ab, und fuellt diese selbst aus.
-    </p>
-  <% end %>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px; margin-top:20px;">
-    <%= f.label t "students.attributes.first_name"  %><br />
-    <%= f.text_field :first_name, :readonly => @user_creation_form.editable? %>
+<div id="form-block3">
+
+ <% if @user_creation_form.editable? %>
+ <p style="color:#b2c880 !important">
+  <%= t "users.title1" %>
+  </p>
+<% else %>
+ <p style="color:#b2c880 !important">
+  <%= t "users.title2" %>
+ </p>
+<% end %>
+
+<div class="row">
+
+  <div class="span5">
+           <h2 style="color:#80b900 !important"> Student Data </h2>
+ <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.first_name" %><br />
+        <%= f.text_field :first_name, :readonly => @user_creation_form.editable? %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.last_name"  %><br />
+        <%= f.text_field :last_name, :readonly => @user_creation_form.editable? %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.birthday" %>
+        <%= f.date_field :birthday, :readonly => @user_creation_form.editable? %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.birthplace" %>
+        <%= f.text_field :birthplace, :readonly => @user_creation_form.editable? %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.enrolment_number" %>
+        <%= f.text_field :enrolment_number, :readonly => @user_creation_form.editable? %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "students.attributes.email" %>
+        <%= f.text_field :student_email, :readonly => @user_creation_form.editable? %>
+      </div>
+
+
+
+
+    
   </div>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "students.attributes.last_name"  %><br />
-    <%= f.text_field :last_name, :readonly => @user_creation_form.editable? %>
-  </div>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "students.attributes.birthday" %>
-    <%= f.date_field :birthday, :readonly => @user_creation_form.editable? %>
-  </div>
+  <div class="span3">
+      <h2 style="color:#80b900 !important"> User Data </h2>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "students.attributes.birthplace" %>
-    <%= f.text_field :birthplace, :readonly => @user_creation_form.editable? %>
-  </div>
+      <div class="field" id="field-titles">
+        <%= f.label t "users.attributes.email" %><br />
+        <%= f.text_field :email, class: "textlabel" %>
+      </div>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "students.attributes.enrolment_number" %>
-    <%= f.text_field :enrolment_number, :readonly => @user_creation_form.editable? %>
-  </div>
+      <div class="field" id="field-titles">
+        <%= f.label t "users.attributes.publicmail"  %>
+        <%= f.check_box :publicmail %>
+      </div>
 
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "students.attributes.email" %>
-    <%= f.text_field :student_email, :readonly => @user_creation_form.editable? %>
+      <div class="field" id="field-titles">
+        <%= f.label t "users.attributes.password" %><br />
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="field" id="field-titles">
+        <%= f.label t "users.attributes.password_confirmation" %><br />
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="field" id="field-titles">
+        <%= f.label t "users.attributes.mailnotif"  %>
+        <%= f.check_box :mailnotif %>
+      </div> 
+
   </div>
 </div>
-
-<div style="float: right" style="line-height:1px;">
-  <h2> User Data </h2>
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "users.attributes.email" %><br />
-    <%= f.text_field :email, class: "textlabel" %>
-  </div>
-
-    <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "users.attributes.publicmail"  %>
-    <%= f.check_box :publicmail %>
-  </div>
-
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "users.attributes.password" %><br />
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "users.attributes.password_confirmation" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-    <div class="field" style="line-height:1px; margin-bottom:15px;">
-    <%= f.label t "users.attributes.mailnotif"  %>
-    <%= f.check_box :mailnotif %>
-  </div> 
-  <div class="actions" style="float: right">
+<div class="row">
+  <div class="span1 offset7"> 
+   <div class="actions" style="float: right; margin-right: 46px; margin-top: 20px;">
     <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "btn btn-success" %>
   </div>
+
 </div>
 </div>
+</div>
+
 <% end %>

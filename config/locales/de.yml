@@ -175,6 +175,9 @@ de:
     name: "Benutzer"
     create: "Erstelle Benutzer"
     update: "Aktualisiere Benutzer"
+    title1: "Diese Daten stammen von eurem Praktikumsantrag und dienen nur zur Überpruefung. Wendet euch bitte an admin@imi-map.f4.htw-berlin.de, sollten sie Fehler enthalten."
+    title2: "Diese Daten werden beim Anmelden des Praktikums verlangt. Bitte nehmt der Verwaltung ein wenig Arbeit ab, und füllt diese selbst aus."
+    logintitle: "Bitte fülle deine Anmeldedaten aus:"
     index:
       title: "Liste von Benutzern"
     edit:
@@ -194,12 +197,12 @@ de:
 
   students:
     attributes:
-      first_name: "Vorname"
-      last_name: "Nachname"
-      email: "Email"
-      enrolment_number: "Matrikelnummer"
-      birthday: "Geburtsdatum"
-      birthplace: "Geburtsort"
+      first_name: "Vorname *"
+      last_name: "Nachname *"
+      email: "Email *"
+      enrolment_number: "Matrikelnummer *"
+      birthday: "Geburtsdatum *"
+      birthplace: "Geburtsort *"
 
   comments:
     attributes: 
