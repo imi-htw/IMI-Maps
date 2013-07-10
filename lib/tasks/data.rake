@@ -6,9 +6,9 @@ namespace :data do
     require 'database_parser'
 
     parser = DatabaseParser.new(
-      student_file: "/Users/schlubbi/Desktop/students_view.csv",
-      internships_file: "/Users/schlubbi/Desktop/internships_view.csv",
-      companies_file: "/Users/schlubbi/Desktop/companies_view.csv")
+      student_file: "/home/deployer/data/students_view.csv",
+      internships_file: "/home/deployer/data/internships_view.csv",
+      companies_file: "/home/deployer/data/companies_view.csv")
     parser.import_companies
     parser.import_students
     parser.import_internships

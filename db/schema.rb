@@ -151,6 +151,25 @@ ActiveRecord::Schema.define(:version => 20130709123847) do
     t.datetime "updated_at",                    :null => false
   end
 
+  create_table "internship_records", :force => true do |t|
+    t.string   "supervisor_name"
+    t.string   "supervisor_email"
+    t.string   "comment"
+    t.date     "certificate_to_prof"
+    t.date     "certificate_signed_by_prof"
+    t.date     "certificate_signed_by_internship_officer"
+    t.integer  "internship_state_id"
+    t.integer  "internship_id"
+    t.integer  "payment_state_id"
+    t.integer  "registration_state_id"
+    t.integer  "contract_state_id"
+    t.integer  "report_state_id"
+    t.integer  "certificate_state_id"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "reading_prof_id"
+  end
+
   create_table "internship_searches", :force => true do |t|
     t.string   "country"
     t.string   "city"

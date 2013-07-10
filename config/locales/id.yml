@@ -4,6 +4,20 @@
 id:
   error:
     message: "The page you were looking for doesn't exist.<br>You may have mistyped the address or the page may have moved."
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Informasi yang kurang: %{errors}"
+  activemodel:
+    errors:
+      messages:
+        blank: "tidak bisa kosong"
+      models:
+        user_creation_form:
+          attributes:
+            password: "kata kunci"
+            password_confirmation: "konfirmasi kata kunci"
+            email: "email"
   favorite:
     delete: "Hapus dari favorit"
     add: "Tambah ke favorit"
@@ -196,10 +210,12 @@ id:
 
   students:
     attributes:
-      first_name: "nama depan"
-      last_name: "nama belakang"
-      email: "email"
-      enrolment_number: "nomer mahasiswa"
+      first_name: "Nama depan"
+      last_name: "Nama belakang"
+      email: "Email"
+      enrolment_number: "Nomor mahasiswa"
+      birthday: "Tanggal lahir"
+      birthplace: "Tempat lahir"
 
   comments:
     attributes: 
@@ -399,3 +415,21 @@ id:
     column1: "Magang pertama"
     column2: "Magang kedua"
     column3: "Magang ketiga"
+
+  msg:
+    logout: "Anda sudah berhasil keluar"
+    invalid: "Kata kunci salah"
+  unit:
+   month: "per bulan"
+   week: "per minggu"
+  attachment:
+   remove: "Hapus gambar"
+   add: "Tambah gambar"
+  mail:
+   greeting: "Kepada "
+   registered: 
+    html: "<br>Selamat datang! </br> Anda sudah terdaftar di IMI Map: imi-map.f4.htw-berlin.de."
+   registeredSubject: "Sukses terdaftar di IMI-Map"
+   registerRequest:
+    html: "Anda telah berhasil membuat magang di HTW. </br> Kami ingin mengingatkat untuk mendaftar dan melengkapi berita dan pengalaman magang di  IMI Map: imi-map.f4.htw-berlin.de </br> "
+   registerRequestSubject: "Datang dan ikutlah IMI-Map. Berita dan pengalaman magang dari IMI."
