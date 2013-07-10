@@ -39,7 +39,7 @@ class UserCreationForm
   end
 
   def submit(params)
-    student.attributes = params.slice(:first_name, :last_name, :enrolment_number)
+    student.attributes = params.slice(:first_name, :last_name, :enrolment_number, :birthplace, :birthday)
     student.email = params.slice(:student_email)
     user.attributes = params.slice(:email, :password, :password_confirmation, :publicmail, :mailnotif)
     user.student_id = student.id
