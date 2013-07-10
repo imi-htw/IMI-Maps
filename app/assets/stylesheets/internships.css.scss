@@ -68,7 +68,7 @@ margin-top:0px;
 }
 
 .rating_star {
-  background: url('images/star.gif') 0 0;
+  background: url('images/star.png') 0 0;
   width: 16px;
   height: 16px;
   display: block;
@@ -88,13 +88,13 @@ margin-top:0px;
 .answer{
   background: #dddddf;
   padding: 5px;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 .answer_2{
   background: #dddddf;
   padding: 5px;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 0px 0px;
   margin-bottom: 40px;
 }
 
@@ -301,3 +301,7 @@ margin-top:0px;
   color: #4F4F4F;
 }
 
+#field-titles {
+  line-height:1px; 
+  margin-bottom:15px;
+}

@@ -1,9 +1,10 @@
+<div class="row" id="form-block2">
 <div class="row">
-<div class="span6">
-<%= nested_form_for(@internship) do |f| %>
+
+  <%= nested_form_for(@internship) do |f| %>
   <% if @internship.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
+    <div class="error_explanation">
+      <strong><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</strong>
 
       <ul>
       <% @internship.errors.full_messages.each do |msg| %>
@@ -13,40 +14,111 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+<div class="span4"> 
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.title" %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.company" %>
     <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] },{}, class: 'chzn-select'  %>
   </div>
-  <div class="field">
+</div>
+<div class="span2"> 
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.orientation" %><br />
     <%= f.select :orientation_id, @orientations,{}, class: 'chzn-select' %>
   </div>
-  <div class="field">
-    <%= f.label t "internships.attributes.programming_language"  %><br />
-    <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true, class: 'chzn-select'} %>
-  </div>
-  <div class="field">
+</div>
+</div>
+
+<div class="row">
+<div class="span4"> 
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.salary"  %><br />
     <%= f.number_field :salary %>
   </div>
-  <div class="field">
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.working_hours"  %><br />
     <%= f.text_field :working_hours %>
   </div>
-  <div class="field">
-    <%= f.label t "internships.attributes.living_costs "+t("unit.month")  %><br />
+</div>
+<div class="span2"> 
+    <div class="field" id="field-titles">
+   <%= f.label t "internships.attributes.living_costs "+t("unit.month")  %><br />
     <%= f.text_field :living_costs %> 
   </div>
+</div>
+</div>
 
-  <div class="field">
+
+
+<div class="row">
+<div class="span4"> 
+ <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.programming_language"  %><br />
+    <%= f.select :programming_language_ids, @programming_languages, {}, { :multiple => true, class: 'chzn-select'} %>
+  </div>
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.semester"  %><br />
       <%= f.select :semester_id, get_semesters, {}, class: 'chzn-select' %>
   </div>
+</div>
+</div>
 
+<<<<<<< HEAD
+
+<br>
+<div class="row">
+<div class="span4"> 
+ <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.tasks_rating" %><br />
+    <div class="edit-rating" id="tasks_rating"><%= render_stars(@internship.tasks_rating, self) %></div>
+    <%= f.hidden_field :tasks_rating %>
+  </div>
+</div>
+<div class="span4">
+ <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.training_rating" %><br />
+    <div class="edit-rating" id="training_rating"><%= render_stars(@internship.training_rating, self) %></div>
+    <%= f.hidden_field :training_rating %>
+  </div>
+</div>
+<div class="span2"> 
+   <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.atmosphere_rating" %><br />
+    <div class="edit-rating" id="atmosphere_rating"><%= render_stars(@internship.atmosphere_rating, self) %></div>
+    <%= f.hidden_field :atmosphere_rating %>
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="span4" style="margin-top:15px"> 
+  <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.supervision_rating" %><br />
+    <div class="edit-rating" id="supervision_rating"><%= render_stars(@internship.supervision_rating, self) %></div>
+    <%= f.hidden_field :supervision_rating %>
+  </div>
+</div>
+<div class="span4" style="margin-top:15px">
+  <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.appreciation_rating" %><br />
+    <div class="edit-rating" id="appreciation_rating"><%= render_stars(@internship.appreciation_rating, self) %></div>
+    <%= f.hidden_field :appreciation_rating %>
+  </div>
+</div>
+<div class="span2" style="margin-top:15px"> 
+    <div class="field" id="field-titles">
+=======
   <div class="field">
     <%= f.label t "internships.attributes.description"  %><br />
     <%= f.text_area :description %>
@@ -111,8 +183,9 @@
   <br />
   <br />
   <div class="field">
+>>>>>>> 0741b7812d1198b1da1ed91d0c205b5109cdc5de
     <%= f.label t "internships.attributes.recommend"  %>
-    <div class="edit-recommend1">
+    <div class="edit-recommend1" style="margin-left:10px;">
       <% if @internship.recommend %>
           <i id="recommend up" class="icon-thumbs-up green-thumb recommend-edit icon-2x"></i>
         <% else %>
@@ -121,11 +194,56 @@
     </div>
     <%= f.hidden_field :recommend, value: @internship.recommend ? 1 : 0 %>
   </div>
-  <br />
-  <br />
+</div>
+</div>
+
+
+<br>
+
+<div class="row">
+<div class="span10"> 
+ <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.description"  %><br />
+    <%= f.text_area :description %>
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="span10"> 
+   <%= f.fields_for :attachments do |attachment_form|  %>
+    <p>
+    <%= attachment_form.label :description %><br />
+    <%= attachment_form.text_field :description %>
+    </p>
+    <p>
+    <%= attachment_form.label :file %><br />
+    <%= attachment_form.file_field :file %>
+    </p>
+    <%= attachment_form.link_to_remove "Remove this attachment" %>
+  <% end %>
+      <div class="field" id="field-titles">
+    <%= f.label t "internships.attributes.internship_report"  %>
+    <%= f.file_field :internship_report %>
+    </div
+</div>
+</div>
+
+
+<div class="row">
+<div class="span1 offset9"> 
   <div class="actions">
     <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
   </div>
 <% end %>
+</div>
+</div>
+
+
+</div>
+
+
+
 </div>
 </div>

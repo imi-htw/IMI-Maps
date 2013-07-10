@@ -92,8 +92,9 @@
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.tasks_rating" %></div>
+      <div class="span8" style="padding-top:7px">
+         <%= render_stars @internship.internship_rating.tasks, self %>
       <div class="span8">
-        <%= render_stars @internship.internship_rating.tasks, self %>
       </div>
     </div>
     </div>
@@ -104,7 +105,7 @@
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.training_rating" %></div>
-      <div class="span8">
+      <div class="span8" style="padding-top:7px">
         <%= render_stars @internship.internship_rating.training_success, self %>
       </div>
     </div>
@@ -116,7 +117,7 @@
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.atmosphere_rating" %></div>
-      <div class="span8">
+      <div class="span8" style="padding-top:7px">
         <%= render_stars @internship.internship_rating.atmosphere, self %>
       </div>
     </div>
@@ -128,8 +129,9 @@
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.supervision_rating" %></div>
-      <div class="span8">
+      <div class="span8" style="padding-top:7px">
         <%= render_stars @internship.internship_rating.supervision, self %>
+      <div class="span8">
       </div>
     </div>
     </div>
@@ -140,7 +142,7 @@
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "internships.attributes.appreciation_rating" %></div>
-      <div class="span8">
+      <div class="span8" style="padding-top:7px">
         <%= render_stars @internship.internship_rating.appreciation,self %>
       </div>
     </div>
@@ -347,7 +349,8 @@
 
 
 
-
+</div>
+</div>
           <div class="span4"> 
             <div class="container-right"> 
               <div class="ribbon">

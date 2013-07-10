@@ -1,3 +1,4 @@
+<div class="row" id="form-block2">
 <%= form_for(@company) do |f| %>
   <% if @company.errors.any? %>
     <div id="error_explanation">
@@ -11,43 +12,81 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+<div class="row">
+<div class="span4"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.name" %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.street" %><br />
     <%= f.text_field :street %>
   </div>
-  <div class="field">
+</div>
+<div class="span2"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.zip" %><br />
     <%= f.number_field :zip %>
   </div>
-  <div class="field">
+</div>
+</div>
+
+
+
+<div class="row" style="margin-top:20px">
+<div class="span4"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.city" %><br />
     <%= f.text_field :city %>
   </div>
-  <div class="field">
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.country" %><br />
     <%= f.country_select :country, ["United States"], class: 'chzn-select' %>
   </div>
-  <div class="field">
+</div>
+<div class="span2"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.number_employees" %><br />
     <%= f.number_field :number_employees %>
   </div>
-  <div class="field">
+</div>
+</div>
+
+
+
+<div class="row" style="margin-top:20px">
+<div class="span4"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.industry" %><br />
     <%= f.text_field :industry %>
   </div>
-  <div class="field">
+</div>
+<div class="span4">
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.main_language" %><br />
     <%= f.text_field :main_language %>
   </div>
-  <div class="field">
+</div>
+<div class="span2"> 
+  <div class="field" id="field-titles">
     <%= f.label t "companies.attributes.website" %><br />
     <%= f.text_field :website %>
   </div>
+</div>
+</div>
+
+
+
+<div class="row" style="margin-top:20px">
+<div class="span1 offset9"> 
   <div class="actions">
     <%= f.submit t(params[:action] == 'new' ? 'companies.create' : 'companies.update'), class: "btn btn-success" %>
   </div>
 <% end %>
+</div>
+</div>
