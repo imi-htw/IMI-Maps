@@ -4,9 +4,8 @@
 
 body{
   background-color: #333333;
-  color:#ffffff;
+  color:#fff;
   background: url(lines2.png);
-
 } 
 
 form{
@@ -14,42 +13,10 @@ form{
 }
 
 .login_center{
-  margin: 0px auto;
-  width: auto;
-  z-index: 3;
   display: inline-block;
-}
-
-#gradient{
-    height: 70%;
-    position: fixed;
-    width: 100%;
-    z-index: 0;
-
-  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,100,0,0.25) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,100,0,0.25))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,100,0,0.25) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-}
-
-
-#login-box{
-  background-color: #000;
-  height: 180px;
-  padding-top:0px;
-  position: inherit;
-  width: 100%;
-  margin-top:0px;
-  z-index: 3;
-}
-
-.span12{
-    margin:0 auto;
-    /*float:left;*/
-    z-index: 3; 
+  margin:0 auto;
+  width: auto;
+  z-index: 3; 
 }
 
 h3 p{
@@ -59,49 +26,22 @@ h3 p{
 }
 
 #font_session{
-  color: white !important;
+  color: #fff !important;
 }
 
-#loginbutton {
-    height: 33px;
-    border-radius: 0;
-    position: inherit;
-}
-
-
-.row{
+.login_top{
   margin-top: 20px;
   margin:0 auto;
   z-index: 3;  
 }
 
-.login{
-  position: absolute;
-  text-align: center;
-  top: 0px;
-  z-index: 13; 
-}
-
-#login-element{
-  padding-bottom: 10px;
-  z-index: 3; 
-}
-
-.span666{
-    margin:0 auto;
-    /*float:left;*/
-    width: auto;
-    z-index: 3; 
-}
-
 .signin-icon{
-    height: 20px;
-    margin: 10px 20px 5px 10px;
-    float: right;
-    position: static;
-    z-index: 7;
+  height: 20px;
+  margin: 10px 20px 5px 10px;
+  float: right;
+  position: static;
+  z-index: 7;
 }
-
 
 #email{
     padding: 5px;
@@ -203,16 +143,12 @@ h3 p{
     color: rgb(192, 152, 83);
 }
 
+/* ################################################################ TABLET ################################################################ */
 @media (min-width: 480px) and (max-width: 979px) { 
   
 body{
   background: url(bg.gif);
-  width: 100%;
   text-align: center;
-  color: #000 !important;
-}
-
-h3 p{
   color: #000 !important;
 }
 
@@ -228,54 +164,20 @@ a{
   display: none !important;
 }
 
-#gradient{
-  display: none !important;
-}
-
-#login-box{
-  background: none;
-  height: 160px;
-  padding-top:10px;
-  position: absolute;
-  width: 100%;
-  margin: auto 0 !important;
-  margin-left: -90px;
-  margin-right: 0px; 
-  margin-top:20px;
-  z-index: 3;
-
-}
-
-.login{
-  position: relative;
-  text-align: center;
-  top: 0px !important;
-  z-index: 3; 
-}
-
 .login_center{
-  display: inline-block !important;
-}
-
-.row{
-  top: 0px !important;
-}
-
-.span666{
-  float: none;
   display: block !important;
+  float: none;
 }
 
-#email{
-}
-
-#password{
+.login_top{
+  top: 0px !important;
 }
 
 #font_session{
   margin: 0 auto;
   width: 220px;
   color: #000 !important;
+  display: block;
 }
 
 #login-element{
@@ -299,6 +201,7 @@ a{
     z-index: 7;
     margin-right: 0px;
 }
+
 .lost-pswd a:hover{
     color:#bddb78;
     text-decoration: none;
@@ -310,11 +213,10 @@ a{
 }
 
 .signin-icon {
-    z-index: 7;
-    height: 20px;
-    float: right;
-    position: static;
-    margin: 0px 0px -5px 10px;
+  height: 20px;
+  float: none;
+  position: static;
+  margin: 0px 0px -5px 10px;
 }
 
 #logo_res{
@@ -329,27 +231,23 @@ a{
 }
 
 .alert-info {
-    background: rgba(185, 213, 100, .85);
-    border-color: rgba(185, 213, 100, .85);
-    color: #000 !important;
-    position: absolute;
-    width: 200px;
-    margin-left: -125px;
-    left: 50%;
-    top: 0px;
+  background: rgba(185, 213, 100, .85);
+  border-color: rgba(185, 213, 100, .85);
+  color: #000 !important;
+  position: absolute;
+  width: 200px;
+  margin-left: -125px;
+  left: 50%;
+  top: 0px;
 }
 }
 
+/* ################################################################ MOBILE ################################################################ */
 @media (max-width: 480px) {
   
 body{
   background: url(bg.gif);
-  width: 100%;
   text-align: center;
-  color: #000 !important;
-}
-
-h3 p{
   color: #000 !important;
 }
 
@@ -361,51 +259,17 @@ h3 p{
   display: none !important;
 }
 
-#gradient{
-  display: none !important;
-}
-
 .map_container{
   display: none !important;
 }
 
-#login-box{
-  background: none;
-  height: 180px;
-  padding-top:10px;
-  position: absolute;
-  width: 100%;
-  margin: auto 0 !important;
-  margin-left: -90px;
-  margin-right: 0px; 
-  margin-top:20px;
-  z-index: 3;
-
-}
-
-.login{
-  position: relative;
-  text-align: center;
-  top: 0px !important;
-  z-index: 3; 
-}
-
-.row{
+.login_top{
   top: 0px !important;
 }
 
-.span666{
+.login_center{
   float: none;
   display: block;
-}
-
-#email{
-  width: 100%;
-
-}
-
-#password{
-  width: 100%;
 }
 
 #font_session{
@@ -431,31 +295,30 @@ h3 p{
   color: #000;
 }
 
-
 a{
- color: rgb(139, 185, 0) !important; 
+  color: rgb(139, 185, 0) !important; 
 }
 
 .lost-pswd {
-    color: #838383 !important;
-    float: none;
-    height: 20px;
-    position: relative;
-    top: 10px;
-    z-index: 7;
-    margin-right: 0px;
+  color: #838383 !important;
+  float: none;
+  height: 20px;
+  position: relative;
+  top: 10px;
+  z-index: 7;
+  margin-right: 0px;
 }
+
 .lost-pswd a:hover{
-    color:#bddb78;
-    text-decoration: none;
+  color:#bddb78;
+  text-decoration: none;
 }
 
 .signin-icon {
-    z-index: 7;
-    height: 20px;
-    float: right;
-    position: static;
-    margin: 0px 0px -5px 10px;
+  height: 20px;
+  float: none;
+  position: static;
+  margin: 0px 0px -5px 10px;
 }
 
 
@@ -471,13 +334,13 @@ a{
 }
 
 .alert-info {
-    background: rgba(185, 213, 100, .85);
-    border-color: rgba(185, 213, 100, .85);
-    color: #000 !important;
-    position: absolute;
-    width: 200px;
-    margin-left: -125px;
-    left: 50%;
-    top: 0px;
+  background: rgba(185, 213, 100, .85);
+  border-color: rgba(185, 213, 100, .85);
+  color: #000 !important;
+  position: absolute;
+  width: 200px;
+  margin-left: -125px;
+  left: 50%;
+  top: 0px;
 }
 }
