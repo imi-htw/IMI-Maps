@@ -36,19 +36,19 @@
     <!-- Be sure to leave the brand out there if you want it shown -->
 
   <ul class="nav pull-right">
-              <li><%= link_to(favorite_index_path, :alt => "Favorite") do %>
-                  <i class="icon-heart icon-large"></i>
-                <% end %>
-              </li>
+    <li><%= link_to(favorite_index_path, :alt => "Favorite") do %>
+        <i class="icon-heart icon-large"></i>
+      <% end %>
+    </li>
 
       <li class="dropdown">
-        <a class="dropdown-toggle" href="#">
+        <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
           <% if get_notification_size > 0 %>
 
           <span class="badge badge-important"><%= get_notification_size %></span>
 <%end%>
 <i class="icon-flag icon-large"></i></a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
         <% if current_user && current_user.notifications.any? %>
         <% current_user.notifications.each do |noti| %>
           <li>
@@ -65,6 +65,8 @@
         </li>
       <% end %>
       </ul>
+
+      
     <li>
       <%= link_to current_user  do %>
         <i class="icon-user icon-large"></i>
@@ -72,13 +74,13 @@
     </li>
 
     <li class="dropdown">
-      <a id="language_switch" class="dropdown-toggle" href="#"><i class="icon-cog icon-large"></i></a>
-      <ul class="dropdown-menu">
+      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-large"></i></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "Deutsch", locale: "de" %></li>
           <li><%= link_to_unless_current "Indonesia", locale: "id" %></li>
-       </ul>
-    </li>    
+        </ul>
+    </li>   
 
     <li><%= link_to logout_path  do %>
                   <i class="icon-signout icon-large"></i>

@@ -49,12 +49,13 @@ ImiMaps::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "imi-map.f4.htw-berlin.de" }
   config.action_mailer.smtp_settings = {
     host: "smtp.gmail.com",
     port: 587,
+    domain: "example.com",
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD'],
     authentication: :plain,

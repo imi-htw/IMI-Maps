@@ -44,6 +44,10 @@ class Internship < ActiveRecord::Base
 
   accepts_nested_attributes_for :attachments, :internship_rating
 
+  def rating 
+    internship_rating.total_rating
+  end
+
   def editable?
     if self.report_state.try(:name) != "missing"  && self.student.try(:has_user?) && !self.completed
       true

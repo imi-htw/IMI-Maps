@@ -52,6 +52,10 @@ a{
   padding-right: 100px; 
 }
 
+.wrapper{
+  overflow: hidden;
+}
+
 h1, h2{
   font-weight: 100;
   margin: 1em 0px 0.5em;
@@ -136,10 +140,9 @@ p {
 }
 
 .navbar .nav.pull-right {
-  float: none;
   margin-left: 50%;
   padding-left: 400px;
-  width: 190px;
+  width: 225px;
 }
 
 .navbar .nav.pull-right > li > a {
@@ -150,7 +153,7 @@ p {
   margin-top: -3px;
   font-size:12px;
   font-weight:bold;
-  background-color:#77b900;
+  background-color:#77b900  !important;
   color: #fff;
   padding-bottom: 3px;
   padding-left: 8px;
@@ -518,10 +521,9 @@ p{
 }
 
 .navbar .nav.pull-right {
-  float: none;
   margin-left: 50%;
   padding-left: 290px;
-  width: 190px;
+  width: 225px;
 }
 
 .map-shadow{
