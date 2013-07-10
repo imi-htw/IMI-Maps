@@ -20,7 +20,7 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 </script>
 
 <br/>
-<div class="map-shadow display_none display_nonet" ></div> 
+<div class="map-shadow"></div> 
 <%= form_tag(quicksearches_path, :method => 'get', :remote => true) do %>
 
 <table class="table_block" style="margin-bottom: 20px; width:100%">
@@ -39,14 +39,14 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 <% end %>
 
  
-<div class="row display_nonet display_none" ">
-<div class="span4" id="country_chart"></div>
-<div class="span4" id="orientation_chart"></div>
-<div class="span4" id="language_chart"></div>
+<div class="row">
+<div class="span4 display_nonet display_none" id="country_chart"></div>
+<div class="span4 display_nonet display_none" id="orientation_chart"></div>
+<div class="span4 display_nonet display_none" id="language_chart"></div>
 </div>
 <div class="row">
 <div class="msgbox">
-  <a id="close" title="Close This" class="display_none display_nonet">X</a>
+  <a id="close" title="Close This">X</a>
 </div> 
 
 <div id="results_string" style="display:none"> </div>

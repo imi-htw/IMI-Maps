@@ -154,20 +154,30 @@ en:
        favorites_title: "My Favorites"       
     sign_up: "Thank you for signing up!"
     attributes:
-      email: "Email *"
+      email: "Email"
+      email1: "Email *"
       publicmail: "Make email address public?"
-      password: "Password *"
-      password_confirmation: "Password confirmation *"
-      mailnotif: "Receive Email-Notification? *"  
+      password: "Password"
+      password1: "Password *"
+      password_confirmation: "Password confirmation"
+      password_confirmation1: "Password confirmation *"
+      mailnotif: "Receive Email-Notification?"  
+      mailnotif1: "Receive Email-Notification? *" 
 
   students:
     attributes:
-      first_name: "given name *"
-      last_name: "last name *"
-      email: "email *"
-      enrolment_number: "enrolment number *"
-      birthday: "birthday *"
-      birthplace: "birthplace *"
+      first_name: "given name"
+      first_name1: "given name *"
+      last_name: "last name"
+      last_name1: "last name *"
+      email: "email"
+      email1: "email *"
+      enrolment_number: "enrolment number"
+      enrolment_number1: "enrolment number *"
+      birthday: "birthday"
+      birthday1: "birthday *"
+      birthplace: "birthplace"
+      birthplace1: "birthplace *"
 
   comments:
     attributes: 

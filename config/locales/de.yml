@@ -155,7 +155,7 @@ de:
       newinternship: "Neues Praktikum"
     attributes:
       description: "Beschreibung"
-      semester: "Semester / Jahr"
+      semester: "Semester"
       email_public: "Emailadresse öffentlich anzeigen?"
       comments: "Kommentare"
       pictures: "Bilder"
@@ -193,20 +193,31 @@ de:
     sign_up: "Danke fuer deine Anmeldung"
     attributes:
       name: "Name"  
+      name1: "Name *"  
       email: "Email"
+      email1: "Email *"
       publicmail: "Emailadresse öffentlich anzeigen?"
       password: "Passwort"
-      password_confirmation: "Passwort bestaetigen"
-      mailnotif: "Emailmitteilungen erhalten?"  
+      password1: "Passwort *"
+      password_confirmation: "Passwort bestätigen"
+      password_confirmation1: "Passwort bestätigen *"
+      mailnotif: "Emailmitteilungen erhalten?"
+      mailnotif1: "Emailmitteilungen erhalten? *"  
 
   students:
     attributes:
-      first_name: "Vorname *"
-      last_name: "Nachname *"
-      email: "Email *"
-      enrolment_number: "Matrikelnummer *"
-      birthday: "Geburtsdatum *"
-      birthplace: "Geburtsort *"
+      first_name: "Vorname"
+      first_name1: "Vorname *"
+      last_name: "Nachname"
+      last_name1: "Nachname *"
+      email: "Email"
+      email1: "Email *"
+      enrolment_number: "Matrikelnummer"
+      enrolment_number1: "Matrikelnummer *"
+      birthday: "Geburtsdatum"
+      birthday1: "Geburtsdatum *"
+      birthplace: "Geburtsort"
+      birthplace1: "Geburtsort *"
 
   comments:
     attributes: 
@@ -308,7 +319,7 @@ de:
         user_creation_form:
           attributes:
             password: "Password"
-            password_confirmation: "Passwordbestaetigung"
+            password_confirmation: "Passwordbestätigung"
             email: "Email"
   activerecord:
     attributes:
@@ -370,7 +381,7 @@ de:
   general:
     title: "Allgemeine Infos zum Praktikum"
     text1:
-     html: "<h3><b>Auslandspraktikum</b></h3>Internationale Praxis wird im Internationalen Studiengang Medieninformatik groß geschrieben. Um euch eigene fachliche Erfahrungen im Verlauf des Studiums zu ermöglichen, ist für das 4. Semester ein Auslandspraktikum vorgesehen. Auf der Grundlage des in den Lehrveranstaltungen erworbenen Wissens sollen anwendungsbezogene Kenntnisse und praktische Erfahrungen vermittelt und die Bearbeitung konkreter Probleme im angestrebten beruflichen Tätigkeitsfeld unter Anleitung ermöglicht werden. Das Auslandspraktikum macht euch mit eurem späteren Beruf vertraut und regt zur individuellen Gestaltung der zwei Semester des Spezialisierungsjahres an.<h3><b>Voraussetzungen vor Antritt</b></h3>Alle Kurse des ersten und zweiten Semesters müssen erfolgreich bestanden sein. Die Studierenden suchen sich selbstständig ein Unternehmen, bei dem sie mindestens 16 Wochen (Studienordnung von 2008) bzw. 19 Wochen (Studienordnung von 2012) ihr Praktikum im Ausland (ein anderes Land als das, indem die Hochschulberechtigung erworben wurde) absolvieren können. Vor Beginn des Praktikums muss ein Praktikumsvertrag mit dem ausgesuchten Unternehmen abgeschlossen und von der HTW Berlin geprüft werden. <h3><b>Beantragung des Praktikums</b> </h3>Mit dem Praktikumsbetrieb ist ein Praktikumsvertrag abzuschließen. Als Vorlage kann hier die HTW-Vorlage dienen"
+     html: "<h3><b>Auslandspraktikum</b></h3><p>Internationale Praxis wird im Internationalen Studiengang Medieninformatik groß geschrieben. Um euch eigene fachliche Erfahrungen im Verlauf des Studiums zu ermöglichen, ist für das 4. Semester ein Auslandspraktikum vorgesehen. Auf der Grundlage des in den Lehrveranstaltungen erworbenen Wissens sollen anwendungsbezogene Kenntnisse und praktische Erfahrungen vermittelt und die Bearbeitung konkreter Probleme im angestrebten beruflichen Tätigkeitsfeld unter Anleitung ermöglicht werden. Das Auslandspraktikum macht euch mit eurem späteren Beruf vertraut und regt zur individuellen Gestaltung der zwei Semester des Spezialisierungsjahres an.</p><h3><b>Voraussetzungen vor Antritt</b></h3><p>Alle Kurse des ersten und zweiten Semesters müssen erfolgreich bestanden sein. Die Studierenden suchen sich selbstständig ein Unternehmen, bei dem sie mindestens 16 Wochen (Studienordnung von 2008) bzw. 19 Wochen (Studienordnung von 2012) ihr Praktikum im Ausland (ein anderes Land als das, indem die Hochschulberechtigung erworben wurde) absolvieren können. Vor Beginn des Praktikums muss ein Praktikumsvertrag mit dem ausgesuchten Unternehmen abgeschlossen und von der HTW Berlin geprüft werden.</p> <h3><b>Beantragung des Praktikums</b> </h3><p>Mit dem Praktikumsbetrieb ist ein Praktikumsvertrag abzuschließen. Als Vorlage kann hier die HTW-Vorlage dienen</p>"
     text2:
      html: "Als nächstes ist dieser Praktikumsantrag auszufüllen"
     text3:
@@ -379,17 +390,17 @@ de:
     text5: "den ausgedruckten LSF-Semesterbescheinigungen der bestandenen Kurse des 1. und 2. Semesters"
     text6: "dem Originalvertrag mit dem Praktikumsunternehmen"
     text7:
-     html: " Diese Unterlagen bleiben an der HTW. Falls Du Kopien für BaföG, Semesterticket Rückerstattung oder Stipendien benötigst, fertige diese bitte vorher selber an und lasse dir diese vom Praktikumsbeauftragten unterschreiben. Falls Du selbst ein Original des Praktikumsvertrags behalten willst, bitte das Praktikumsunternehmen, genügend Originale auszustellen (in der Regel drei: je eins für das Unternehmen, für Dich und für die HTW Berlin).</br></br>Die Unterlagen sollten bis zum Vorlesungsende des Semesters, das dem Praktikumssemester voraus geht, beim Praktikumsbeauftragten sein. Der Praktikumsbeauftragte prüft anhand der Unterlagen, ob das Praktikum im Nachhinein entsprechend der Prüfungsordnung auch anerkannt wird (z. B. Dauer und inhaltliche Eignung). Solange die Unterlagen nicht vollständig sind oder nicht im Original vorliegen, kann keine Zulassung zum Praktikum erfolgen.</br></br>Um die Semesterticket-Gebühren zurückerstattet zu bekommen gibt es hier einen Antrag, der vor dem Antritt des Praktikumssemesters beim Semesterticketbüro abgeben werden muss."
+     html: "<p>Diese Unterlagen bleiben an der HTW. Falls Du Kopien für BaföG, Semesterticket Rückerstattung oder Stipendien benötigst, fertige diese bitte vorher selber an und lasse dir diese vom Praktikumsbeauftragten unterschreiben. Falls Du selbst ein Original des Praktikumsvertrags behalten willst, bitte das Praktikumsunternehmen, genügend Originale auszustellen (in der Regel drei: je eins für das Unternehmen, für Dich und für die HTW Berlin).</br></br>Die Unterlagen sollten bis zum Vorlesungsende des Semesters, das dem Praktikumssemester voraus geht, beim Praktikumsbeauftragten sein. Der Praktikumsbeauftragte prüft anhand der Unterlagen, ob das Praktikum im Nachhinein entsprechend der Prüfungsordnung auch anerkannt wird (z. B. Dauer und inhaltliche Eignung). Solange die Unterlagen nicht vollständig sind oder nicht im Original vorliegen, kann keine Zulassung zum Praktikum erfolgen.</br></br>Um die Semesterticket-Gebühren zurückerstattet zu bekommen gibt es hier einen Antrag, der vor dem Antritt des Praktikumssemesters beim Semesterticketbüro abgeben werden muss.<p>"
     text8: 
-     html: "</br>Der/die im Praktikumsantrag angegebene Hochschulbetreuer/in ist ein Vorschlag Deinerseits. Aus organisatorischen Gründen muss im Ausnahmefall eventuell aber auch davon abgewichen werden. Der/die Hochschulbetreuer/in wird nach Abschluss des Praktikums Deinen Praktikumsbericht lesen.</br></br>"
+     html: "</br><p>Der/die im Praktikumsantrag angegebene Hochschulbetreuer/in ist ein Vorschlag Deinerseits. Aus organisatorischen Gründen muss im Ausnahmefall eventuell aber auch davon abgewichen werden. Der/die Hochschulbetreuer/in wird nach Abschluss des Praktikums Deinen Praktikumsbericht lesen.</br></br></p>"
     text9:
-     html: "<h3><b>Anerkennung des Praktikums</b></h3>Der vollständig ausgefüllte Praktikumsnachweis und Praktikumsbericht müssen dem Praktikumsbeauftragten vorgelegt und der Pflichtkurs für das Praxissemester — Auswertung von Erfahrungen am Arbeitsplatz (AEP) — muss erfolgreich abgeschlossen sein. Dann wird das Praktikum anerkannt."
+     html: "<h3><b>Anerkennung des Praktikums</b></h3><p>Der vollständig ausgefüllte Praktikumsnachweis und Praktikumsbericht müssen dem Praktikumsbeauftragten vorgelegt und der Pflichtkurs für das Praxissemester — Auswertung von Erfahrungen am Arbeitsplatz (AEP) — muss erfolgreich abgeschlossen sein. Dann wird das Praktikum anerkannt.</p>"
 
   financing:
     title: "Finanzierungsmöglichkeiten"
     title3: "Auslandsbafög"
     text1:
-      html: "<h4>Welche Finanzierungsmöglichkeiten gibt es?</h4></br>Ein Auslandspraktikum will gut geplant sein. Auch wenn manche Praktika vergütet sind, so sind die Lebenshaltungskosten häufig deutlich höher. Dazu kommen Fahrtkosten, Versicherungsbeiträge etc. Bitte lass Dich deshalb rechtzeitig — gerne auch zwei bis drei Semester vor dem geplanten Praktikum — beraten. Je früher Du beginnst, Dein Auslandspraktikum vorzubereiten, desto mehr Möglichkeiten stehen Dir offen. Beachte bitte daher die Bewerbungsfristen der verschiedenen Stipendienprogramme und die lange Bearbeitungszeit beim Auslands-BAföG. Bei manchen Stipendienprogrammen musst Du Dich ca. zehn Monate vor Praktikumsbeginn bewerben, jedoch muss zu diesem Zeitpunkt noch keine Praktikumszusage vorliegen. </br>Das International Office der HTW Berlin bietet Beratungen zu Fördermöglichkeiten von Auslandspraktika und hat auch ausführliche Online-Informationen zu diesem Thema. "
+      html: "<h4>Welche Finanzierungsmöglichkeiten gibt es?</h4></br><p>Ein Auslandspraktikum will gut geplant sein. Auch wenn manche Praktika vergütet sind, so sind die Lebenshaltungskosten häufig deutlich höher. Dazu kommen Fahrtkosten, Versicherungsbeiträge etc. Bitte lass Dich deshalb rechtzeitig — gerne auch zwei bis drei Semester vor dem geplanten Praktikum — beraten. Je früher Du beginnst, Dein Auslandspraktikum vorzubereiten, desto mehr Möglichkeiten stehen Dir offen. Beachte bitte daher die Bewerbungsfristen der verschiedenen Stipendienprogramme und die lange Bearbeitungszeit beim Auslands-BAföG. Bei manchen Stipendienprogrammen musst Du Dich ca. zehn Monate vor Praktikumsbeginn bewerben, jedoch muss zu diesem Zeitpunkt noch keine Praktikumszusage vorliegen. </br>Das International Office der HTW Berlin bietet Beratungen zu Fördermöglichkeiten von Auslandspraktika und hat auch ausführliche Online-Informationen zu diesem Thema.<p>"
     text2: "Eine ausführliche Liste von Förderprogrammen findest Du hier:"
     text3:  
       html: "<p>Auslands-BAföG ist die tolle finanzielle Förderung von Vater Staat für ein ganzes Studium, Teilstudium Praktikum oder ein Schüleraustausch im europäischen und außereuropäischen Ausland! Bekommt ihr Inlands-BAföG, bekommt ihr sicher(!) Auslands-BAföG, bekommt ihr kein Inlands-BAföG, könnt ihr trotzdem Auslands-BAföG bekommen! Durch die höheren Kosten im Ausland kommt für viel mehr von euch eine staatliche Förderung in Frage.</p>"
