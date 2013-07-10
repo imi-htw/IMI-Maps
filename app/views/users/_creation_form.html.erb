@@ -14,7 +14,7 @@
 
 <div id="form-block3">
 
- <% if @user_creation_form.editable? %>
+ <% if @user_creation_form.student_exists? %>
  <p style="color:#b2c880 !important">
   <%= t "users.title1" %>
   </p>
@@ -30,32 +30,32 @@
            <h2 style="color:#80b900 !important"> Student Data </h2>
  <div class="field" id="field-titles">
         <%= f.label t "students.attributes.first_name" %><br />
-        <%= f.text_field :first_name, :readonly => @user_creation_form.editable? %>
+        <%= f.text_field :first_name, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
         <%= f.label t "students.attributes.last_name"  %><br />
-        <%= f.text_field :last_name, :readonly => @user_creation_form.editable? %>
+        <%= f.text_field :last_name, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
         <%= f.label t "students.attributes.birthday" %>
-        <%= f.date_field :birthday, :readonly => @user_creation_form.editable? %>
+        <%= f.date_field :birthday, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
         <%= f.label t "students.attributes.birthplace" %>
-        <%= f.text_field :birthplace, :readonly => @user_creation_form.editable? %>
+        <%= f.text_field :birthplace, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
         <%= f.label t "students.attributes.enrolment_number" %>
-        <%= f.text_field :enrolment_number, :readonly => @user_creation_form.editable? %>
+        <%= f.text_field :enrolment_number, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
         <%= f.label t "students.attributes.email" %>
-        <%= f.text_field :student_email, :readonly => @user_creation_form.editable? %>
+        <%= f.text_field :student_email, :readonly => @user_creation_form.student_exists? %>
       </div>
   </div>
 
