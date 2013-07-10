@@ -23,7 +23,7 @@ class UserCreationForm
 
   delegate :email, :password, :password_confirmation, :publicmail, :mailnotif,  to: :user
 
-  delegate :first_name, :enrolment_number, :last_name, to: :student
+  delegate :first_name, :enrolment_number, :last_name, :birthday, :birthplace, to: :student
 
   def user
     @user ||= User.new

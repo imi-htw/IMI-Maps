@@ -14,6 +14,16 @@
 <div class="form-block">
 <div style="float: left;">
   <h2> Student Data </h2>
+  <% if @user_creation_form.editable? %>
+    <p>
+      Diese Daten stammen von eurem Praktikumsantrag und dienen nur zur Ueberpruefung. Wendet euch bitte an admin@imi-map.f4.htw-berlin.de, sollten sie Fehler enthalten.
+    </p>
+  <% else %>
+    <p>
+      Diese Daten werden beim Anmelden des Praktikums verlangt. Bitte nehmt der Verwaltung ein wenig Arbeit ab, und fuellt diese selbst aus.
+    </p>
+  <% end %>
+
   <div class="field" style="line-height:1px; margin-bottom:15px; margin-top:20px;">
     <%= f.label t "students.attributes.first_name"  %><br />
     <%= f.text_field :first_name, :readonly => @user_creation_form.editable? %>
@@ -22,6 +32,16 @@
   <div class="field" style="line-height:1px; margin-bottom:15px;">
     <%= f.label t "students.attributes.last_name"  %><br />
     <%= f.text_field :last_name, :readonly => @user_creation_form.editable? %>
+  </div>
+
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
+    <%= f.label t "students.attributes.birthday" %>
+    <%= f.date_field :birthday, :readonly => @user_creation_form.editable? %>
+  </div>
+
+  <div class="field" style="line-height:1px; margin-bottom:15px;">
+    <%= f.label t "students.attributes.birthplace" %>
+    <%= f.text_field :birthplace, :readonly => @user_creation_form.editable? %>
   </div>
 
   <div class="field" style="line-height:1px; margin-bottom:15px;">

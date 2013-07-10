@@ -198,6 +198,8 @@ de:
       last_name: "Nachname"
       email: "Email"
       enrolment_number: "Matrikelnummer"
+      birthday: "Geburtsdatum"
+      birthplace: "Geburtsort"
 
   comments:
     attributes: 
