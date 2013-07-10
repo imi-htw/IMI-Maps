@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Detailed Search Page should have content" do
      include Capybara::DSL
       it "should " do       
-        @user6 = User.create!( password: "testIT", email: "test@imimaps.com")
+        @user6 = User.create!( password: "testIT", email: "test@imimaps.com", student_id: 1)
         @user6.save
         visit root_path
         fill_in "email",  :with => @user6.email
