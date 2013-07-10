@@ -12,7 +12,7 @@ class UserVerificationsController < ApplicationController
       session[:enrolment_number] = params[:user_name].split("s0")[1]
       redirect_to new_user_path
     else
-      flash[:notice] =  "Benutzername oder Passwort nicht korrekt!"
+      flash[:error] =  "Benutzername oder Passwort nicht korrekt!"
       redirect_to root_url
     end
   end
