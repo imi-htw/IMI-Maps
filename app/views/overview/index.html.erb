@@ -32,21 +32,21 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
     <td id="semester_td" class="table_block"><%= select_tag :semester, options_for_select(@semesters.map do |s|[s.name,s.id] end),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester")}  %></td>
     <td id="orientation_td" class="table_block"><%= select_tag :orientation, options_for_select(@orientations),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.orientation")}  %></td>
     <td id="languages_td" class="table_block"><%= select_tag :programming_language_ids, options_for_select((@programming_languages.map do |p|[p.name, p.id] end)), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language")}  %></td>
-    <td class="table_block"><%= submit_tag t("search.title"), :name => nil, :class => "btn btn-success", :id => "search_button_overview" %></td>
-   <td class="table_block reset"><%= submit_tag t("helpers.reset"), :name => nil, :class => "btn btn-success", :id => "reset_chosen", :onclick => "click_reset();" %></td>
+    <td class="table_block"><%= button_tag "", :name => nil, :class => "btn btn-success icon-white icon-search icon-large", :id => "search_button_overview" %></td>
+   <td class="table_block reset"><%= button_tag t("helpers.reset"), :name => nil, :class => "btn btn-success", :id => "reset_chosen", :onclick => "click_reset();" %></td>
   </tr>
 </table>
 <% end %>
 
  
-<div class="row">
-<div class="span4 display_nonet display_none" id="country_chart"></div>
-<div class="span4 display_nonet display_none" id="orientation_chart"></div>
-<div class="span4 display_nonet display_none" id="language_chart"></div>
+<div class="row display_nonet display_none">
+<div class="span4" id="country_chart"></div>
+<div class="span4" id="orientation_chart"></div>
+<div class="span4" id="language_chart"></div>
 </div>
 <div class="row">
 <div class="msgbox">
-  <a id="close" title="Close This">X</a>
+  <a id="close" title="Close This" class="display_none display_nonet">X</a>
 </div> 
 
 <div id="results_string" style="display:none"> </div>
