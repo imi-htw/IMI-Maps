@@ -41,9 +41,8 @@
 <% else %>
 
 	<div>
-		<h3> 404 - no favorites found </h3>
-		<p> Apparently you have not saved any internships as favorites yet. <br/> 
-			Check out <%= link_to "the search",internships_path %> to find internships. </p>
+		<h3> <%= t "favorite.notfound.title" %> </h3>
+		<p> <%= t("favorite.notfound.message", :href => link_to(t("favorite.notfound.link"), internships_path)).html_safe %> </p>
 	</div>
 
 <% end %>

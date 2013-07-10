@@ -6,7 +6,7 @@ ActiveAdmin.register Internship do
 	index do
 
     column :student do |n|
-      link_to n.enrolment_number, "/admin/students/#{n.id}"
+      link_to n.enrolment_number, "/admin/students/#{n.student_id}"
     end
     column :company
     column :semester

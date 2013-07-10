@@ -29,9 +29,7 @@ class FavoriteController < ApplicationController
 
   def index
 
-    @favorites = current_user.favorites
-
-        
+    @favorites = current_user.favorites        
 
   end
 
