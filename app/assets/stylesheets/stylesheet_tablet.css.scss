@@ -46,8 +46,51 @@ a{
     margin-left: -27px;
 }
 
-footer{
-  display: none;
+.im-footer{
+  position: relative;
+  width: 100%;
+  bottom: 0px;
+  padding: 10px 0px;
+  background: #292929;
+  color: #fff;
+  display: block;
+  margin-bottom: -20px;
+}
+
+.im-inner{
+  width: 100%;
+  overflow: hidden;
+}
+
+.im-items {
+  float: right;
+  width: 560px;
+  text-align: left;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.footer-text{
+  font-size: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.htw_logo{
+  height: 60px;
+  width: 104px;
+  background: url(htw_logo.png);
+  background-size: 104px 60px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.imi_logo{
+  height: 60px;
+  width: 66px;
+  background: url(imi_logo.png);
+  background-size: 66px 60px;
+  display: inline-block;
 }
 
 .pagination.imi a, .pagination.imi span {

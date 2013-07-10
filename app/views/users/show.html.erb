@@ -1,41 +1,79 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b><%= t "users.attributes.last_name" %> :</b>
-  <%= @user.student.last_name %>
-</p>
+<div id="form-block4">
 
-<p>
+<div class="row">
+
+<div class="span4">
+  <div class="field" id="field-titles2">
   <b><%= t "users.attributes.first_name" %> :</b>
   <%= @user.student.first_name %>
-</p>
-
-<p>
-  <b><%= t "users.attributes.email" %> :</b>
-  <%= @user.email %>
-</p>
-<p>
+  </div>
+</div>
+<div class="span4">
+  <div class="field" id="field-titles2">
   <b><%= t "users.attributes.publicmail" %> :</b>
   <%= @user.publicmail %>
-</p>
-<p>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<div class="row">
+
+<div class="span4">
+  <div class="field" id="field-titles2">
+<b><%= t "users.attributes.last_name" %> :</b>
+  <%= @user.student.last_name %>
+  </div>
+</div>
+<div class="span4">
+  <div class="field" id="field-titles2">
   <b><%= t "users.attributes.mailnotif" %> :</b>
   <%= @user.mailnotif %>
-</p>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div class="span4">
+  <div class="field" id="field-titles2">
+  <b><%= t "users.attributes.email" %> :</b>
+  <%= @user.email %>
+  </div>
+</div>
+
+</div>
+
+<div class="row">
+<div class="span2 offset6">
 
 <%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
 <%= link_to (t "buttons.back"), overview_index_path, class: "btn btn-inverse" %>
+</div>
+</div>
+
+</div>
+
+
+<div id="form-block4">
 
 <h3> Comments </h3>
+</div>
+
 <% @user.user_comments.each do |comment| %>
 <p> Commented "
 <%= comment.body %>
 " at
 <%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
 </p>
+</div>
 <%end%>
 
-
-
-<br/>
 

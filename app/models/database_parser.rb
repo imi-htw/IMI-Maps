@@ -156,7 +156,7 @@ private
         contract_state_id: prepare_state(row[10]),
         report_state_id: prepare_state(row[11]),
         certificate_state_id: prepare_state(row[12]),
-        payment_state_id: row[8],
+        payment_state_id: prepare_state(row[8]),
         internship_state_id: prepare_state(row[13]),
         comment: row[14],
         reading_prof_id: reading_prof_id,

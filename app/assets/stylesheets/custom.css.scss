@@ -201,6 +201,10 @@ p.explanation {
     background: transparent !important;
 }
 
+.table thead:first-child tr:first-child td {
+    border-top: 0px none !important;
+}
+
 .ui-slider {
     position: relative;
     text-align: left;
@@ -288,4 +292,7 @@ img {
     background-repeat: inherit;
     height: 327px;
     width: 300px;
+}
+.chzn-container{
+    color:#000000;
 }

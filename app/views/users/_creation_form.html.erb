@@ -29,32 +29,32 @@
   <div class="span5">
            <h2 style="color:#80b900 !important"> Student Data </h2>
  <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.first_name" %><br />
+        <%= f.label t "students.attributes.first_name1" %><br />
         <%= f.text_field :first_name, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.last_name"  %><br />
+        <%= f.label t "students.attributes.last_name1"  %><br />
         <%= f.text_field :last_name, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.birthday" %>
+        <%= f.label t "students.attributes.birthday1" %>
         <%= f.date_field :birthday, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.birthplace" %>
+        <%= f.label t "students.attributes.birthplace1" %>
         <%= f.text_field :birthplace, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.enrolment_number" %>
+        <%= f.label t "students.attributes.enrolment_number1" %>
         <%= f.text_field :enrolment_number, :readonly => @user_creation_form.student_exists? %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "students.attributes.email" %>
+        <%= f.label t "students.attributes.email1" %>
         <%= f.text_field :student_email, :readonly => @user_creation_form.student_exists? %>
       </div>
   </div>
@@ -64,7 +64,7 @@
       <h2 style="color:#80b900 !important"> User Data </h2>
 
       <div class="field" id="field-titles">
-        <%= f.label t "users.attributes.email" %><br />
+        <%= f.label t "users.attributes.email1" %><br />
         <%= f.text_field :email, class: "textlabel" %>
       </div>
 
@@ -74,16 +74,16 @@
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "users.attributes.password" %><br />
+        <%= f.label t "users.attributes.password1" %><br />
         <%= f.password_field :password %>
       </div>
 
       <div class="field" id="field-titles">
-        <%= f.label t "users.attributes.password_confirmation" %><br />
+        <%= f.label t "users.attributes.password_confirmation1" %><br />
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="field" id="field-titles">
-        <%= f.label t "users.attributes.mailnotif"  %>
+        <%= f.label t "users.attributes.mailnotif1"  %>
         <%= f.check_box :mailnotif %>
       </div> 
 

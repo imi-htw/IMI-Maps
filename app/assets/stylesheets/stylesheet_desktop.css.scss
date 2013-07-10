@@ -273,17 +273,51 @@ h3.comp-head {
   color: #000000;
 }
 
-footer{
+.im-footer{
+  position: relative;
+  width: 100%;
+  bottom: 0px;
+  padding: 10px 0px;
   background: #292929;
-  padding: 10px 0 0 0;
-  text-align: center;
-  margin-top: 100px;
-  bottom: 0;
+  color: #fff;
+  display: block;
   margin-bottom: -20px;
 }
 
-footer .container p{
-  color: #707070 !important;
+.im-inner{
+  width: 100%;
+  overflow: hidden;
+}
+
+.im-items {
+  float: right;
+  width: 560px;
+  text-align: left;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.footer-text{
+  font-size: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.htw_logo{
+  height: 60px;
+  width: 104px;
+  background: url(htw_logo.png);
+  background-size: 104px 60px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.imi_logo{
+  height: 60px;
+  width: 66px;
+  background: url(imi_logo.png);
+  background-size: 66px 60px;
+  display: inline-block;
 }
 
 .rating_star{
@@ -375,6 +409,10 @@ p{
 
 .odd_row {
       background-color: #ffffff;
+}
+
+.table_compare{
+  width: 100% !important;
 }
 
 .map-shadow{

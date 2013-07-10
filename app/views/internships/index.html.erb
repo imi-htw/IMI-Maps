@@ -132,7 +132,7 @@
 
 <h5> <%=@internships_size%> <%= t "search.resultnr"%> </h5>
 
-<div>
+<div class="table-container">
 <table id="paginated" class="table tablesorter">
   <thead>
   <tr class="table_intern table_fin">
@@ -154,9 +154,9 @@
   <tr class="<%= cycle("even_row", "odd_row") %>">
     <td class="table_inside"><%= internship.company.name %></td>
     <td class="table_inside"><%= internship.company.address %></td>
-    <td class="table_inside"><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-    <td class="table_inside"><%= internship.semester.name %></td>
-    <td class="table_inside"><%= internship.orientation.name %></td>
+    <td class="table_inside"><%= internship.programming_languages.map(&:name).join(", ") %></td>
+    <td class="table_inside"><%= internship.try(:semester).try(:name) %></td>
+    <td class="table_inside"><%= internship.try(:orientation).try(:name) %></td>
     <td class="table_inside"><%= internship.salary %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
     <td class="table_inside"><% render_stars(internship.internship_rating.total_rating, self) %></td>
