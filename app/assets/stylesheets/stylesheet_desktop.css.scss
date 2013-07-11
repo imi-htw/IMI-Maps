@@ -426,23 +426,27 @@ p{
 }
 
 .map-shadow{
-    height: 210px;
-    margin-top: 0px;
-    opacity: 0.9;
-    position: inherit;
-    width: 1258px;
-    background: url(content-shadow.png) no-repeat;
-    background-size: 1258px 210px;
-    margin-top: -189px;
-    margin-left: -43px;
+  height: 210px;
+  margin-top: 0px;
+  opacity: 0.9;
+  position: inherit;
+  width: 1258px;
+  background: url(content-shadow.png) no-repeat;
+  background-size: 1258px 210px;
+  margin-top: -189px;
+  margin-left: -43px;
 }
 
 .hand-pointer{
-    background: url(handh.png);
-    background-repeat: no-repeat;
-    height: 60px;
-    width: 43px;
-    float: right;
+  background: url(handh.png);
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 43px;
+  float: right;
+}
+
+.intern-head{
+  margin-bottom:40px; margin-left: 50px;
 }
 
 .ribbon-wrapper {
@@ -450,13 +454,13 @@ p{
 }
 
 .ribbon-front {
-    background-color: #4F4F4F;
-    height: 40px;
-    left: -5px;
-    position: relative;
-    top: -12px;
-    width: 332px;
-    z-index: 2;
+  background-color: #4F4F4F;
+  height: 40px;
+  left: -5px;
+  position: relative;
+  top: -12px;
+  width: 332px;
+  z-index: 2;
 }
 
 .ribbon-front,

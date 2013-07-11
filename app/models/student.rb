@@ -10,4 +10,8 @@ class Student < ActiveRecord::Base
   def has_user?
     self.user.present?
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
