@@ -159,12 +159,12 @@ en:
     attributes:
       email: "Email"
       email1: "Email *"
-      publicmail: "Make email address public"
+      publicmail: "Make email address public?"
       password: "Password"
       password1: "Password *"
       password_confirmation: "Password confirmation"
       password_confirmation1: "Password confirmation *"
-      mailnotif: "Receive Email-Notification"  
+      mailnotif: "Receive Email-Notification?"  
       mailnotif1: "Receive Email-Notification? *" 
 
   students:
