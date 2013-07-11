@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+load "config/recipes/uploads"
 
 server "141.45.146.189", :web, :app, :db, primary: true
 

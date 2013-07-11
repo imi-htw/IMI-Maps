@@ -24,6 +24,18 @@ ActiveAdmin.register Student do
     default_actions
   end
 
+  form do |f|
+    f.inputs "Students" do
+      f.input :enrolment_number
+      f.input :first_name
+      f.input :last_name
+      f.input :birthplace
+      f.input :birthday, :as => :date, :as => :date, :start_year => Time.now.year - 100, :end_year => Time.now.year
+      f.input :email
+    end
+    f.actions
+  end
+
 
   show do |student|
       attributes_table do
