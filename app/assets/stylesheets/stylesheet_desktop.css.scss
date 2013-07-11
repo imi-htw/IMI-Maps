@@ -572,6 +572,16 @@ p{
   margin-top: -10px;
 }
 
+.user_titel{
+    margin-top: -20px;
+}
+
+.btn-intern {
+    position: absolute;
+    margin-left: 690px;
+    margin-top: 25px;
+}
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -632,6 +642,12 @@ p{
 
 #living_costs_text{
   margin-top: -10px !important;
+}
+
+.btn-intern{
+    position: absolute;
+    margin-left: 540px;
+    margin-top: 25px;
 }
 
 }
