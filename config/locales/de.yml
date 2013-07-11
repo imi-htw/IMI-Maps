@@ -157,6 +157,7 @@ de:
     name: "Praktika"
     create: "Erstelle Praktikum"
     update: "Praktikum aktualisieren"
+    company_fact: "Arbeitsplatz Kurzinfo"
     index:
       title: "Liste von Praktika"
     edit:

@@ -116,6 +116,7 @@ en:
     name: "Internships"
     create: "Create Internship"
     update: "Update Internship"
+    company_fact: "Company Short Facts"
     index:
       title: "Listing internships"
     edit:
