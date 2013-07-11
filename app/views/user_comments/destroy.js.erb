@@ -1,2 +1,3 @@
 $('#comment_div').html('<%= escape_javascript( render "comments"  ) %>');
-$('#hide_all').html('<i class="icon-comments"></i> <%= @internship.user_comments.size %> Kommentar<%="e" unless@internship.user_comments.size==1%>');
+$('#hide_all').html('<i class="icon-comments"></i> <%= @internship.user_comments.size %>  <%= @internship.user_comments.size == 1 ? t("comments.singular") : t("comments.plural") %>');
+$("#user_comment_body").val("")

@@ -1,70 +1,78 @@
 <div id="comment_form">
-<%= form_for(@new_comment, remote: true ) do |f| %>
-<div class="field">
-    <%= f.hidden_field :internship_id, value: @internship.id %>
-    <%= f.label t "comments.attributes.body" %>
-    <%= f.text_field :body %>
-    <div class="actions">
-    <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-  </div>
-  </div>
-<% end %>
-</div>
-<% @user_comments.each do |i| %>  
-  <div class="comment"> 
-  <div id="user"><%= i.user.name %> 
-  <%= t "helpers.at" %>
-  <%= i.created_at.to_formatted_s(:long_ordinal) %>
-  :</div>
-  <br/>
-  <br/>
-  <div id="sentence"><%= i.body %></div>
-  <br/>
-  <% if current_user.id == i.user_id %>
-    <%= button_to (t "buttons.destroy"),  {:controller => :user_comments, :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true  %>
-  <% end %>
+                    <%= form_for(@new_comment, remote: true ) do |f| %>
+                    <div class="field">
+                      <%= f.hidden_field :internship_id, value: @internship.id %>
+                      <%= f.label t "comments.attributes.body" %>
+                      <%= f.text_field :body %>
+                      <div class="actions">
+                        <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+                         <i class="icon-ok icon-white icon-large"></i> <%= t"buttons.save" %>
+                        <% end %>
+                <br/>
+                <br/>
+                      </div>
+                    </div>
+                    <% end %>
+                  </div>
 
-  </div>
-  
-   <% if i.answer.present? %>
-  <div class="answer">
-    <div id="user_2"><%= t "answers.from" %>
-    <%= i.answer.user.name %> 
-    <%= t "helpers.at" %>
-    <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
-    :</div>
-    <br/>
-    <br/>
-    <div id="sentence_2"><%= i.answer.body %></div>
+                  <% @user_comments.each do |i| %>  
+                  <div class="comment"> 
+                    <div id="user"><%= i.user.name %> 
+                      <%= t "helpers.at" %>
+                      <%= I18n.localize(i.created_at, :format => :long) %>
+                      :</div>
+                      <br/>
+                      <br/>
+                      <div id="sentence"><%= i.body %>
+                      <% if current_user.id == i.user_id %>
+                      <%= link_to " "+(t "buttons.destroy"),  {:controller => :user_comments, :action => 'destroy', :id => i.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete icon-white icon-remove icon-large", remote: true  %>
+                      <% end %>
+                      </div>
+                      <br/>
+                    </div>
 
-    
-    <% if current_user.id == @internship.user_id %>
-      <br/>
-    <%= button_to (t "buttons.destroy"),  {:controller => :answers, :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete", remote: true %>
-    <% end %>
-  </div>
+                    <% if i.answer.present? %>
+                    <div class="answer">
+                      <div id="user_2"><%= t "answers.from" %>
+                        <%= i.answer.user.name %> 
+                        <%= t "helpers.at" %>
+                        <%= i.answer.created_at.to_formatted_s(:long_ordinal) %>
+                        :</div>
+                        <br/>
+                        <br/>
+                        <div id="sentence_2"><%= i.answer.body %>
 
-<% else %>
 
-    <% if current_user.id == @internship.user_id %>
-      <br />
-      <%= form_for(@answer, remote: true) do |f| %>
-      <div class="answer_2">
-        <div id="answer_field"><div class="field">
-          <%= f.hidden_field :internship_id, value: @internship.id %>
-          <%= f.hidden_field :user_comment_id, value: i.id %>
-          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
-          <div id="sentence_3"><%= f.text_field :body %></div>
-          <div class="actions save_button">
-          <%= f.submit (t 'buttons.save'), class: "btn btn-success" %>
-        </div>
-        </div>
-        </div>
-        </div>
-      <% end %>
+                        <% if current_user.id == @internship.student.user.id %>
+                        <%= link_to " "+(t "buttons.destroy"),  {:controller => :answers, :action => 'destroy', :id => i.answer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right delete icon-white icon-remove icon-large", remote: true %>
+                        <% end %>
+                        </div>
+                        <br/>
+                      </div>
 
-                                  <% end %>
+                      <% else %>
 
-                                <% end %>
+                      <% if current_user.id == @internship.student.user.id %>
+                      <br />
+                      <%= form_for(@answer, remote: true) do |f| %>
+                      <div class="answer_2">
+                        <div id="answer_field"><div class="field">
+                          <%= f.hidden_field :internship_id, value: @internship.id %>
+                          <%= f.hidden_field :user_comment_id, value: i.id %>
+                          <div id="user_3"><%= f.label t "answers.attributes.body" %></div>
+                          <div id="sentence_3"><%= f.text_field :body %></div>
+                          <div class="actions save_button">
+                            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+                              <i class="icon-ok icon-white icon-large"></i> <%= t"buttons.save" %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
 
-                              <% end %>
+                    <% end %>
+
+                    <% end %>
+
+                    <% end %>

@@ -51,11 +51,7 @@
         <% if current_user && current_user.notifications.any? %>
         <% current_user.notifications.each do |noti| %>
           <li>
-            <% if noti.read == false %>
-              <%= link_to noti.text, {:controller => "notifications", :action => :update, :id => noti.id}, :method => :put, :class => "bold" %>
-            <% else %>
-              <%= link_to noti.text, noti.link %>
-            <% end %>
+              <%= link_to noti.text, {:controller => "notifications", :action => :destroy, :id => noti.id}, :method => :delete, :class => "bold" %>
           </li>
         <%end%>
       <% else %>

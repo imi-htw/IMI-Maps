@@ -230,8 +230,10 @@ de:
       birthplace1: "Geburtsort *"
 
   comments:
+    singular: "Kommentar"
+    plural: "Kommentare"
     attributes: 
-      body: "Kommentar"
+      body: "Dein Kommentar:"
 
   answers:
     from: "Antwort von"

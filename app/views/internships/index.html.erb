@@ -194,7 +194,7 @@ table.bind('aftertablesort', function (event, data) {
     // data.direction - the sorting direction (either asc or desc)
 
     var th = $(this).find("th");
-    th.find("i").removeClass("icon-care-down").removeClass("icon-caret-up").addClass("icon-sort");
+    th.find("i").removeClass().addClass("icon-sort");
     th.eq(data.column).find("i").remove();
     var arrow = data.direction === "asc" ? "<i class='icon-caret-up'></i>" : "<i class='icon-caret-down'></i>";
     th.eq(data.column).append(arrow);

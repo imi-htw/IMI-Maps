@@ -56,6 +56,10 @@ margin-top:0px;
     margin-left: 0;
 }
 
+th[data-sort]{
+      cursor:pointer;
+    }
+
 .greenline {
     height: 7px;
     width: 310px;
@@ -97,13 +101,18 @@ h2 {
   background: #dddddf;
   padding: 5px;
   border-radius: 0px 0px 0px 0px;
+  margin-bottom:20px;
+}
+
+.answer a {
+  margin-top:10px;
 }
 
 .answer_2{
   background: #dddddf;
   padding: 5px;
   border-radius: 0px 0px 0px 0px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .delete{
@@ -142,9 +151,13 @@ h2 {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
-  padding-right: 80px;
+  padding-right: 0;
   margin-top: -20px;
   margin-bottom: -15px;
+}
+
+#sentence a {
+  margin-top:10px;
 }
 
 #sentence_2{
@@ -153,7 +166,7 @@ h2 {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
-  padding-right: 80px;
+  padding-right: 0;
   margin-top: -25px;
   margin-bottom: -15px;
 }
@@ -164,7 +177,7 @@ h2 {
   padding-top: 15px;
   padding-bottom: 5px;
   padding-left: 10px;
-  padding-right: 80px;
+  padding-right: 0;
   margin-top: 15px;
   margin-bottom: 5px;
 }

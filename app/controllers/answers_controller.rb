@@ -7,6 +7,7 @@ class AnswersController < ApplicationController
     @answer.save
 
     @internship = @answer.user_comment.internship
+    @user_comments = @internship.user_comments.order("created_at DESC")
 
     respond_to do |format|
       format.js { render :layout=> false, :locals => { :internship => @internship } }
@@ -31,6 +32,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @internship = @answer.user_comment.internship
+    @user_comments = @internship.user_comments.order("created_at DESC")
     @answer.destroy
     
     #flash[:notice] = "Answer was successfully deleted"

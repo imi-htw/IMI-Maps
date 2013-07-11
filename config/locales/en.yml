@@ -189,8 +189,10 @@ en:
       birthplace1: "birthplace *"
 
   comments:
+    singular: "Comment"
+    plural: "Comments"
     attributes: 
-      body: "UserComment"
+      body: "Your comment:"
 
   answers:
     from: "Reply from"
