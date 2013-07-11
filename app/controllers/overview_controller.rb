@@ -7,15 +7,7 @@ class OverviewController < ApplicationController
     @companies = @internships.map(&:company)
 
     @pins = @companies.to_gmaps4rails do |company, marker |
-      if company.website
-        href =  if company.website.starts_with?'http'
-                  company.website
-                else
-                  "http://"+company.website
-                end
-      end
-      marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
-
+      marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a>")
     end
 
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
