@@ -70,11 +70,11 @@
 <h2> <%= t"internships.my" %> </h2>
 
 <% @internships.each do |internship| %>
-<div class="row_margin_bottom">
-<%= internship.title+" " %><%= t"helpers.at2" %> <%= " "+internship.company.name %>
-<%= link_to " "+(t "buttons.edit"), edit_internship_path(internship), class: "pull-right btn btn-success icon-white icon-edit icon-large" %>
-<%= link_to " "+(t "buttons.show"), internship, class: "pull-right btn btn-success icon-white icon-circle-arrow-right icon-large" %>
-</div> 
+  <div class="row_margin_bottom">
+    <%= "#{internship.title} #{t'helpers.at2'} #{internship.company.name}" %>
+    <%= link_to " "+(t "buttons.edit"), edit_internship_path(internship), class: "pull-right btn btn-success icon-white icon-edit icon-large" %>
+    <%= link_to " "+(t "buttons.show"), internship, class: "pull-right btn btn-success icon-white icon-circle-arrow-right icon-large" %>
+  </div> 
 <% end %>
 </div>
 <% end %>
@@ -90,9 +90,9 @@
 " <%= t"helpers.at2" %>
 <%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
 </p>
-</div>
-<% end %>
 
+<% end %>
+</div>
 <% end %>
 
 

@@ -17,10 +17,12 @@ namespace :data do
   desc "geocode all companies"
   task :geocode_companies => :environment do 
     Company.find_each do |company|
-      result = company.geocode
-      if result.present?
-        puts "RESULT: #{result}"
-        company.update_attributes(latitude: result[0], longitude: result[1])
+      if company.latitude.nil?
+        result = company.geocode
+        if result.present?
+          puts "RESULT: #{result}"
+          company.update_attributes(latitude: result[0], longitude: result[1])
+        end
       end
     end
   end

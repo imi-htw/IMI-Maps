@@ -96,7 +96,9 @@ class InternshipsController < ApplicationController
   # PUT /internships/1.json
   def update
     @internship = Internship.find(params[:id])
-    if @internship.update_attributes(params[:internship])
+    attributes = params[:internship]
+    attributes.delete(:company_id)
+    if @internship.update_attributes(attributes)
       @internship.update_attributes(completed: true)
       flash[:notice] = 'Internship was successfully updated.'
     end

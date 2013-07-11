@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, length: { minimum: 5 }
   validates :student_id, :presence => true
 
-  has_one :internship
   belongs_to :student
   has_many :user_comments, :dependent => :destroy
   has_many :favorites, :dependent => :destroy

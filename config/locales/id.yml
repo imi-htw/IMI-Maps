@@ -168,6 +168,7 @@ id:
     name: "Magang"
     create: "Buat magang"
     update: "Baharui magang"
+    company_fact: "Tentang Perusahaan"
     index:
       title: "Daftar magang"
     edit:

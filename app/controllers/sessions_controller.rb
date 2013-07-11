@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
               "http://"+company.website
              end
 
-      marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry} </p><p><a href='#{href}' target='_blank'>#{company.website}</a></p><p>#{s} #{p} hier ein Praktikum gemacht.</p>") if company && company.website
+      marker.infowindow ("<p>#{company.name}</p>")
 
     end
   end

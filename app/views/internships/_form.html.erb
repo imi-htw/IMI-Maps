@@ -25,7 +25,7 @@
 <div class="span4">
   <div class="field" id="field-titles">
     <%= f.label t "internships.attributes.company" %>
-    <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] },{}, class: 'chzn-select'  %>
+    <%= f.select :company_id, Company.order(:name).map { |c| [c.name, c.id] },{}, class: 'chzn-select', disabled: true  %>
   </div>
 </div>
 <div class="span2"> 
