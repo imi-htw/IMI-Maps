@@ -459,13 +459,12 @@ de:
    add: "Bild hinzufügen"
   mail:
    greeting: "Guten Tag,</br> "
-   registered: 
-    html: "<br>Willkommen! </br> Du hast dich erfolgreich auf IMI Map registriert: imi-map.f4.htw-berlin.de."
-   registeredSubject: "Registrierung auf IMI Map erfolgreich"
    registerRequest:
     html: "Du hast dein Praktikum des IMI Studiengangs an der HTW erfolgreich abgeschlossen. </br> Wir möchten Dich bitten deinen Praktikum-Erfahrungsbericht abzugeben auf: imi-map.f4.htw-berlin.de </br> Falls du dich noch nicht auf IMI Map registriert hast musst du dies zuerst tun. </br>Vielen Dank.</br> "
    registerRequestSubject: "Bitte registriere dich auf IMI Map"
    forgotPsw: 
     html: "</br>Du hast Dein Passwort vergessen? </br> Dann klicke bitte auf diesen Link:</br>" 
+   forgotPswSubject: "Du hast ein neues Passwort angefordert für IMI Map"
    goodbye:
     html: "</br>Liebe Grüße. </br>Dein IMI Map Team"
+  
