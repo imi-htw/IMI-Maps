@@ -22,9 +22,9 @@ id:
     delete: "Hapus dari favorit"
     add: "Tambah ke favorit"
     notfound:
-      title: "404 - favorit tidak ditemukan"
-      message: "Sepertinya Anda belum menyimpan magang sebagai favorit. <br/> Lihat %{href} untuk menemukan magang."
-      link: "pencarian"
+      title:"favorit tidak ditemukan"
+      message:"Sepertinya Anda belum menyimpan magang sebagai favorit. <br/> Lihat %{href} untuk menemukan magang."
+      link:"pencarian"
   date:
     abbr_day_names:
     - Min
@@ -406,10 +406,10 @@ id:
     text6: "Ini adalah beberapa program pendanaan yang paling populer untuk IMIS:"
 
   progs:
-     title1: "Program"
-     title2: "Fakta singkat"
-     title3: "Durasi"
-     title4: "Daerah"
+    title1: "Program"
+    title2: "Fakta singkat"
+    title3: "Durasi"
+    title4: "Daerah"
     prog1:
       namen: "BAföG luar negeri"
       fact: "Pinjaman dan Hibah untuk magang wajib khusus"
