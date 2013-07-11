@@ -7,7 +7,7 @@ class Quicksearch < ActiveRecord::Base
   private
 
     def find_internships(query)
-      internships = Internship.includes(:company)
+      internships = Internship.includes(:company).where(completed: true)
       if query[:programming_language_ids].present?
         internships_ary = []
         languages = query[:programming_language_ids].collect{|s| s.to_i} if query[:programming_language_ids].present?
