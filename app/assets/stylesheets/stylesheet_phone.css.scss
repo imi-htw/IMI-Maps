@@ -72,14 +72,18 @@ a{
 
 .chzn-container{
   display: block;
+  width: 150px !important;
+}
+
+.ui-slider-horizontal {
+    width: 150px;
+    margin-left: 50%;
+    left: -75px;
 }
 
 .table_block{
-  display: block;
-  text-align: center;
   position: relative;
-  margin-left: 50%;
-  left: -94px;
+  display: block;
 }
 
 .table-container{
@@ -113,8 +117,20 @@ float: right;
 }
 
 .map_container {
-  margin-top: 10px;
-  width: auto !important;
+  display: none;
+}
+
+.navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
+  left: auto;
+  right: -88px;
+}
+
+.navbar .nav > li > .dropdown-menu:before {
+  right: 100px !important;
+}
+
+.navbar .nav > li > .dropdown-menu:after {
+  right: 100px !important;
 }
 
 
