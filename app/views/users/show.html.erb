@@ -10,7 +10,11 @@
 <div class="span4">
   <div class="field" id="field-titles2">
   <b><%= t "users.attributes.publicmail" %> :</b>
-  <%= @user.publicmail %>
+  <% if @user.publicmail %>
+    <i class="icon-thumbs-up icon-2x green-thumb"></i>
+  <% else %>
+    <i class="icon-thumbs-down icon-2x red-thumb"></i>
+  <% end %>
   </div>
 </div>
 
@@ -30,7 +34,11 @@
 <div class="span4">
   <div class="field" id="field-titles2">
   <b><%= t "users.attributes.mailnotif" %> :</b>
-  <%= @user.mailnotif %>
+  <% if @user.mailnotif %>
+    <i class="icon-thumbs-up icon-2x green-thumb"></i>
+  <% else %>
+    <i class="icon-thumbs-down icon-2x red-thumb"></i>
+  <% end %>
   </div>
 </div>
 

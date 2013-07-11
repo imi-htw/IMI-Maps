@@ -3,22 +3,22 @@ class UserMailer < ActionMailer::Base
 
   def registration_confirmation(user)
   	@user = user
-  	mail(:to => "#{user.name} #{user.last_name} <#{user.email}>", :subject => "(IMI-Maps) Registered")
+  	mail(:to => "#{user.name} #{user.last_name} <#{user.email}>", :subject => "(IMI-Map) Registered")
   end
 
   def create_internship_confirmation(user)
   	@user = user
-  	mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Maps) New Internship is created")
+  	mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Map) New Internship is created")
   end
 
   def notification_to_email(user)
   	@user = user
-  	mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Maps) New Notification")
+  	mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Map) New Notification")
   end
 
   def forgot_pwd(user)
     @user = user
-    mail :to => user.email, :subject => "(IMI-Maps)Password Reset"
+    mail :to => user.email, :subject => "(IMI-Map)Password Reset"
   end
 
   def invite_student(student)

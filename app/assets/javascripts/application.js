@@ -79,6 +79,22 @@ $(document).ready(function() {
       $(this).toggleClass( "red-thumb" );
       toggle_value("#internship_recommend");
   });
+
+  $(".recommend-publicmail").click(function() {
+      $(this).toggleClass( "icon-thumbs-up" );
+      $(this).toggleClass( "green-thumb" );
+      $(this).toggleClass( "icon-thumbs-down" );
+      $(this).toggleClass( "red-thumb" );
+      toggle_value("#user_publicmail");
+  });
+
+  $(".recommend-mailnotif").click(function() {
+      $(this).toggleClass( "icon-thumbs-up" );
+      $(this).toggleClass( "green-thumb" );
+      $(this).toggleClass( "icon-thumbs-down" );
+      $(this).toggleClass( "red-thumb" );
+      toggle_value("#user_mailnotif");
+  });
   
   toggle_value = function(id) {
     var elem =  $(id);
