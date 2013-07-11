@@ -5,9 +5,6 @@ ActiveAdmin.register Company do
     filter :country
 
 	index do
-    column :student do |n|
-      link_to n.enrolment_number, "/admin/students/#{n.student_id}"
-    end
     column :internships do |n|
       a = n.internships.map(&:id)
       str = ""
