@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
  # validates :country, :presence => true, :allow_blank => false
  # #validates :main_language, :presence => true, :allow_blank => false
  # #validates :industry, :presence => true, :allow_blank => false
- # validates :name, :presence => true, :allow_blank => false
+ validates :name, :presence => true, :allow_blank => false
  # #validates :number_employees, :presence => true, :allow_blank => false
  # #validates :website, :presence => true, :allow_blank => false
 
