@@ -405,11 +405,11 @@ id:
       html: "<h3><strong>Program Pendanaan</strong></h3>"
     text6: "Ini adalah beberapa program pendanaan yang paling populer untuk IMIS:"
 
-  progs:
-    title1: "Program"
-    title2: "Fakta singkat"
-    title3: "Durasi"
-    title4: "Daerah"
+    progs:
+     title1: "Program"
+     title2: "Fakta singkat"
+     title3: "Durasi"
+     title4: "Daerah"
     prog1:
       namen: "BAföG luar negeri"
       fact: "Pinjaman dan Hibah untuk magang wajib khusus"
@@ -417,7 +417,7 @@ id:
       region: "sedunia"
     prog2:
        namen: "penempatan ERASMUS"
-       fact: "Penyisihan pelatihan praktis (magang)"
+       fact: "Penyisihan pelatihan praktis (magang) "
        duration: "3-12  bulan"
        region: "Eropa"
     prog3:
@@ -429,7 +429,7 @@ id:
        namen: "DAAD: Carlo-Schmid-Programm"
        fact: "Beasiswa penuh tergantung pada negara, tunjangan perjalanan untuk magang di organisasi internasional, Uni Eropa-Organisasi dan LSM"
        duration: "A: 3 - 6 bulan, or  B: 4 - 10 bulan"
-       region: "sedunia "
+       region: "sedunia"
 
   favorite_compare:
     title: "Bandingkan Favorit"
