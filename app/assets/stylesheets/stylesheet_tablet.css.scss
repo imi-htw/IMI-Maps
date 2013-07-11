@@ -121,5 +121,46 @@ a{
     background-color: #cbc9c9;
 }
 
+.ui-slider-horizontal {
+  width: 250px;
+}
+
+
+
+}
+
+@media (min-width: 767px) and (max-width: 979px) {
+#salary_text{
+  margin-top: -15px !important;
+}
+
+#living_costs_text{
+  margin-top: -26px !important;
+}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .ui-slider-horizontal {
+    width: 150px;
+    margin-left: 50%;
+    left: -75px;
+}
+
+#salary_slider{
+  margin-top: 10px;
+}
+
+#salary_text{
+  margin-top: 13px;
+}
+
+#living_costs_slider{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#living_costs_text{
+  margin-top: 13px;
+}
 }
 

@@ -564,6 +564,14 @@ p{
   padding: 5px;
 }
 
+#salary_text{
+  margin-top: -10px;
+}
+
+#living_costs_text{
+  margin-top: -10px;
+}
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -616,6 +624,14 @@ p{
   width: 220px; 
   margin-top: -220px;
   margin-left: 230px;
+}
+
+#salary_text{
+  margin-top: -10px !important;
+}
+
+#living_costs_text{
+  margin-top: -10px !important;
 }
 
 }

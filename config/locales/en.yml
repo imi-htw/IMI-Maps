@@ -402,7 +402,7 @@ en:
     html: "</br>You completed your internship at the HTW succesfully. </br> We kindly remind you to register (if you haven't yet)and complete your internship experience report on IMI Map: imi-map.f4.htw-berlin.de </br> "
    registerRequestSubject: "Come and join IMI-Map. IMI internship experience report"
    forgotPsw: 
-    html: "</br>Forgot you password? </br> Please click on the link below ro request a new password:</br>" 
+    html: "</br>Forgot you password? </br> Please click on the link below to request a new password:</br>" 
    forgotPswSubject: "You requested a new password on IMI Map"
    goodbye:
     html: "</br>Kind Regards. </br> IMI Map Team"

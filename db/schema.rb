@@ -155,7 +155,6 @@ ActiveRecord::Schema.define(:version => 20130711142625) do
     t.string   "supervisor_name"
     t.string   "supervisor_email"
     t.string   "comment"
-    t.integer  "reading_prof_id",                          :limit => 255
     t.date     "certificate_to_prof"
     t.date     "certificate_signed_by_prof"
     t.date     "certificate_signed_by_internship_officer"
@@ -166,8 +165,9 @@ ActiveRecord::Schema.define(:version => 20130711142625) do
     t.integer  "contract_state_id"
     t.integer  "report_state_id"
     t.integer  "certificate_state_id"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "reading_prof_id"
   end
 
   create_table "internship_searches", :force => true do |t|
@@ -331,10 +331,9 @@ ActiveRecord::Schema.define(:version => 20130711142625) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "password_digest"
-    t.boolean  "internship_authorization", :default => true
     t.boolean  "publicmail"
     t.boolean  "mailnotif"
     t.integer  "student_id"
