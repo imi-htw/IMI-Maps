@@ -39,9 +39,11 @@ class UserCreationForm
   end
 
   def submit(params)
-    student.attributes = params.slice(:first_name, :last_name, :enrolment_number, :birthplace, :birthday)
+    student.attributes = params.slice(:first_name, :last_name, :birthplace, :birthday)
     student.email = params.slice(:student_email)
+    student.enrolment_number = given_enrolment_number
     user.attributes = params.slice(:email, :password, :password_confirmation, :publicmail, :mailnotif)
+    binding.pry
     if valid?
       student.save! unless student_exists?
       user.student_id = student.id
