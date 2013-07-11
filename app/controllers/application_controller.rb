@@ -52,13 +52,13 @@ private
     helper_method :get_semesters
 
     def get_notifications
-      Notification.where(:user_id => current_user.try(:id))
+      Notification.where(:user_id => current_user.try(:id)).order("created_at DESC")
     end
 
     helper_method :get_notifications
 
     def get_notification_size
-      Notification.where(:read => false, :user_id => current_user.try(:id)).size
+      Notification.where(:user_id => current_user.try(:id)).size
     end
 
     helper_method :get_notification_size

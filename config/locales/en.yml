@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  noti:
+    report: "You can create your internship report now!"
+    comment: "Someone commented on your internship"
+    answer: "Someone answered on your comment"
+    void: "Sorry, no notifications available"
   results:
     found: "result(s) found"
   error:

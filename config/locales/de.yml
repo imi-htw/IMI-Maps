@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  noti:
+    report: "Du kannst nun deinen Praktikumsbericht anlegen"
+    comment: "Jemand hat deinen Praktikumsbericht kommentiert"
+    answer: "Jemand hat deinen Kommentar beantwortet"
+    void: "Du hast derzeit keine Benachrichtigungen"
   results:
     found: "Suchergebnis(se) gefunden"
   error:

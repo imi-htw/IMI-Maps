@@ -49,14 +49,14 @@
 <i class="icon-flag icon-large"></i></a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
         <% if current_user && current_user.notifications.any? %>
-        <% current_user.notifications.each do |noti| %>
+        <% get_notifications.each do |noti| %>
           <li>
-              <%= link_to noti.text, {:controller => "notifications", :action => :destroy, :id => noti.id}, :method => :delete, :class => "bold" %>
+              <%= link_to t(noti.text), {:controller => "notifications", :action => :destroy, :id => noti.id}, :method => :delete, :class => "bold" %>
           </li>
         <%end%>
       <% else %>
         <li>
-          Sorry, no notifications available
+          <%= t("noti.void") %>
         </li>
       <% end %>
       </ul>

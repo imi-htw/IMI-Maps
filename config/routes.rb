@@ -18,7 +18,7 @@ ImiMaps::Application.routes.draw do
 
     resources :internship_offer, :only => [:index, :show]
 
-    resources :notifications, :only => [:destroy]
+    resources :notifications, :only => [:destroy, :show]
 
     resources :favorite, :only => [:create, :destroy]
 
