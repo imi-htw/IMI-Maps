@@ -150,6 +150,7 @@ de:
 
 
   internships:
+    details: "Internship Details"
     name: "Praktika"
     create: "Erstelle Praktikum"
     update: "Praktikum aktualisieren"

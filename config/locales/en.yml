@@ -109,6 +109,7 @@ en:
       not_recommended: "Not Recommended"
 
   internships:
+    details: "Internship Details"
     name: "Internships"
     create: "Create Internship"
     update: "Update Internship"
