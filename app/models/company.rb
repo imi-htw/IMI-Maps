@@ -19,7 +19,7 @@ class Company < ActiveRecord::Base
   has_many :internships
 
   def address
-    "#{self.street}, #{self.zip} #{self.city}, #{self.country}"
+    [street, zip, city, country].compact.join(", ")
   end
 
   def find_company(search)
