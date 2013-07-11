@@ -22,7 +22,7 @@ en:
     delete: "Delete from favorites"
     add: "Add to favorites"
     notfound:
-      title: "404 - no favorites found"
+      title: "unfortunately no favorites were found"
       message: "Apparently you have not saved any internships as favorites yet. <br/> Check out %{href} to find internships."
       link: "the search"
   time:
