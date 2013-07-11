@@ -125,7 +125,16 @@ a{
   width: 250px;
 }
 
-
+#form-block4{
+  background-color: #FFFFFF;
+  color: #000000;
+  font-weight: 100;
+  margin-left: 30px !important;
+  margin-top: 20px !important;
+  padding: 10px 5px 30px 5px !important;
+  margin-right: 30px !important;
+  width: auto !important;
+}
 
 }
 
@@ -137,13 +146,47 @@ a{
 #living_costs_text{
   margin-top: -26px !important;
 }
+
+.user_button{
+  width: 200px !important;
+  display: inline-block;
+}
+
+#field-titles2 {
+  width: 275px !important;
+  text-align: left;
+}
+
+#intern-title{
+  margin-top: 4px;
+  padding-bottom: 0px;
+}
+
+.comp-mob{
+  background: #000;
+  color: #fff !important;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+}
+
+.content-intern2 {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.btn-intern{
+  position: absolute;
+  margin-left: -330px;
+  margin-top: 0px;
+}
+
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-  .ui-slider-horizontal {
-    width: 150px;
-    margin-left: 50%;
-    left: -75px;
+.ui-slider-horizontal {
+  width: 150px;
+  margin-left: 50%;
+  left: -75px;
 }
 
 #salary_slider{
@@ -162,5 +205,49 @@ a{
 #living_costs_text{
   margin-top: 13px;
 }
+
+.table_block{
+  position: relative;
+  display: block;
+}
+
+.start_block{
+  width: auto !important;
+  margin-left: 50%;
+  left: -80px;
+  display: block;
+}
+
+.btn-intern{
+  display: none;
+}
+
+#intern-title{
+  margin-top: 4px;
+  padding-bottom: 0px;
+}
+
+#intern-box{
+  margin-left: 0px;
+}
+
+.span8 > ul{
+  margin-left: 50%;
+  left: -31px;
+  position: relative;
+}
+
+.comp-mob{
+  background: #000;
+  color: #fff !important;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+}
+
+.content-intern2 {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
 }
 

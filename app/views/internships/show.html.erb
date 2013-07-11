@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<a href ="javascript:history.back()" class="btn-intern display_none"> <%= t("buttons.back") %></a>
+<a href ="javascript:history.back()" class="btn btn-success btn-intern display_none"> <%= t("buttons.back") %></a>
 <h2 class="intern-head"> <%= t"internships.details" %></h2>
 
     <div class="content-intern2">
@@ -375,10 +375,10 @@
 
 
 
-            <%= gmaps(:map_options => { :container_class => "map-intern display_none", :id => "map3", :draggable => true, :auto_zoom => false, :zoom => 6, :mapTypeControl => false,} , :markers => { "data" => @pins},) %>
+            <%= gmaps(:map_options => { :container_class => "map-intern display_none display_nonet", :id => "map3", :draggable => true, :auto_zoom => false, :zoom => 6, :mapTypeControl => false,} , :markers => { "data" => @pins},) %>
             <%= yield :scripts %>
 
-            <div class="greenline display_none"></div>
+            <div class="greenline display_none display_nonet"></div>
 
             <div class="container-right-text">
 
@@ -396,7 +396,7 @@
               <%= t "companies.attributes.website"  %>
             </div>
             <div id="company-title-text">
-              <%= link_to @company.website, @company.website , target: "_blank" if @company.website %>
+              <%= link_to @company.website, url_with_protocol(@company.website) , target: "_blank" if @company.website %>
             </div>
 
 
@@ -430,7 +430,7 @@
              <div id="company-title">
               <%= t "companies.attributes.rating"  %>
             </div>
-            <div id="company-title-text" style="height: 5px;">
+            <div style="height: 5px;"  class="span8">
               <%= render_stars(@company.average_rating,self) %>          
             </div>
             <% if @other_internships.any? %>
