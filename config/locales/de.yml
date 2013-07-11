@@ -13,6 +13,19 @@ de:
     message: "Die Seite die Sie aufrufen wollten existiert nicht.<br/>Vielleicht haben Sie sich verschrieben oder die Seite ist umgezogen."
   activerecord:
     errors:
+      models:
+        internship:
+          attributes:
+            title:
+              blank: "kann nicht fehlen"
+            living_costs:
+              blank: "kann nicht fehlen"
+            salary:
+              blank: "kann nicht fehlen"
+            working_hours:
+              blank: "kann nicht fehlen"
+            programming_language_ids:
+              blank: "kann nicht fehlen"
       messages:
         blank: "darf nicht freigelassen werden"
         record_invalid: "Fehlerhafte Angaben: %{errors}"

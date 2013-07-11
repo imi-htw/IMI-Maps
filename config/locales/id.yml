@@ -8,6 +8,19 @@ id:
     message: "Halaman yang Anda cari tidak ditemukan.<br> Mungkin Anda salah mengetikan halaman atau halaman tersebut sudah dihapus."
   activerecord:
     errors:
+      models:
+        internship:
+          attributes:
+            title:
+              blank: "tidak bisa kosong"
+            living_costs:
+              blank: "tidak bisa kosong"
+            salary:
+              blank: "tidak bisa kosong"
+            working_hours:
+              blank: "tidak bisa kosong"
+            programming_language_ids:
+              blank: "tidak bisa kosong"
       messages:
         record_invalid: "Informasi yang kurang: %{errors}"
   activemodel:
