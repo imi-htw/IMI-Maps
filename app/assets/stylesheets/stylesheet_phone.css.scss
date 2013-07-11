@@ -129,14 +129,16 @@ float: right;
 .navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
   left: auto;
   right: -88px;
+  width: 320px;
+  margin-right: -110px;
 }
 
 .navbar .nav > li > .dropdown-menu:before {
-  right: 100px !important;
+  right: 215px !important;
 }
 
 .navbar .nav > li > .dropdown-menu:after {
-  right: 100px !important;
+  right: 215px !important;
 }
 
 #salary_slider{
