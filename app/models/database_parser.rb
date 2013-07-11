@@ -123,7 +123,7 @@ private
        enrolment_number: row[1],
        first_name: row[3],
        last_name: row[2],
-       email: row[6],
+       email: (row[6].to_s if row[6].present?),
        birthday: row[4],
        birthplace: row[5]).first_or_create!
     end
