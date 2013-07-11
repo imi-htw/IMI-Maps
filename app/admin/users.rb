@@ -5,7 +5,6 @@ ActiveAdmin.register User do
     column :student do |n|
       link_to n.enrolment_number, "/admin/students/#{n.student_id}"
     end
-    column :internship_authorization
     column :publicmail
     column :mailnotif
     column :email
