@@ -21,6 +21,10 @@ id:
   favorite:
     delete: "Hapus dari favorit"
     add: "Tambah ke favorit"
+    notfound:
+      title: "404 - favorit tidak ditemukan"
+      message: "Sepertinya Anda belum menyimpan magang sebagai favorit. <br/> Lihat %{href} untuk menemukan magang."
+      link: "pencarian"
   date:
     abbr_day_names:
     - Min
@@ -110,6 +114,8 @@ id:
     salary: "Gaji bulanan (minimal)"
     livingCost: "Biaya hidup (maksimal)"
     rating: "Pangkat (minimal)"
+    resultnr: "hasil ditemukan!"
+    button: "Cari"
   buttons:
     show: "Lihat"
     edit: "Ubah"
@@ -173,9 +179,11 @@ id:
       orientation: "Orientasi"
       programming_language: "Bahasa pemograman"
       salary: "Gaji"
+      salary2: "Gaji/bulan"
       working_hours: "Jam kerja"
       living_costs: "Biaya hidup"
       company: "Perusahaan"
+      living_costs2: "Biaya hidup/bulan"
       tasks_rating: "Tugas"
       training_rating: "Keberhasilan latihan"
       atmosphere_rating: "Suasana"
@@ -192,6 +200,9 @@ id:
     name: "Pengguna"
     create: "Buat pengguna"
     update: "Baharui pengguna"
+    title1: "Data diambil dari formulir lamaran magang Anda dan digunakan hanya untuk validasi. Silakan menghubungi admin@imi-map.f4.htw-berlin.de apabila ada kesalahan."
+    title2: "Data ini diharuskan ketika Anda mendaftar magang. Tolong isi ini untuk mempersingkat waktu administrasi."
+    logintitle: "Silakan masukan kredensial Anda:"
     index:
       title: "Daftar pengguna"
     edit:
@@ -203,19 +214,29 @@ id:
     sign_up: "Terimakasih sudah mendaftar!"
     attributes:
       email: "Email"
+      email1: "Email *"
       publicmail: "Membuat alamat email publik?"
       password: "Kata kunci"
+      password1: "Kata kunci *"
       password_confirmation: "Konfirmasi kata kunci"
+      password_confirmation1: "Konfirmasi kata kunci *"
       mailnotif: "Apakah Anda mau menerima email notifikasi?"  
+      mailnotif1: "Apakah Anda mau menerima email notifikasi? *" 
 
   students:
     attributes:
       first_name: "Nama depan"
+      first_name1: "Nama depan *"
       last_name: "Nama belakang"
+      last_name1: "Nama belakang *"
       email: "Email"
+      email1: "Email *"
       enrolment_number: "Nomor mahasiswa"
+      enrolment_number1: "Nomor mahasiswa *"
       birthday: "Tanggal lahir"
+      birthday1: "Tanggal lahir *"
       birthplace: "Tempat lahir"
+      birthplace1: "Tempat lahir *"
 
   comments:
     attributes: 
@@ -384,7 +405,7 @@ id:
       html: "<h3><strong>Program Pendanaan</strong></h3>"
     text6: "Ini adalah beberapa program pendanaan yang paling populer untuk IMIS:"
 
-    progs:
+  progs:
      title1: "Program"
      title2: "Fakta singkat"
      title3: "Durasi"

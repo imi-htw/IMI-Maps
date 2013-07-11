@@ -140,7 +140,7 @@ private
       student = Student.where(import_id: row[20]).first
 
       reading_prof_id = reading_prof.id if reading_prof
-
+      binding.pry
       internship = Internship.where(
         company_id: company.id,
         student_id: student.id,
@@ -155,9 +155,9 @@ private
         registration_state_id: prepare_state(row[9]),
         contract_state_id: prepare_state(row[10]),
         report_state_id: prepare_state(row[11]),
-        certificate_state_id: (prepare_state(row[12]) if row[12] != 0),
+        certificate_state_id: (prepare_state(row[12]) if row[12].to_i != 0),
         payment_state_id: prepare_state(row[8]),
-        internship_state_id: (prepare_state(row[13]) if row[13] != 0),
+        internship_state_id: (prepare_state(row[13]) if row[13].to_i != 0),
         comment: row[14],
         reading_prof_id: reading_prof_id,
         certificate_to_prof: row[16],
