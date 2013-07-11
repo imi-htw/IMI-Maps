@@ -39,13 +39,13 @@
 <div class="row">
 <div class="span4"> 
   <div class="field" id="field-titles">
-    <%= f.label t "internships.attributes.salary"  %><br />
-    <%= f.number_field :salary %>
+    <%= f.label t("internships.attributes.salary") + " € / " + t("unit.month") %><br />
+    <%= f.text_field :salary %>
   </div>
 </div>
 <div class="span4">
   <div class="field" id="field-titles">
-    <%= f.label t "internships.attributes.working_hours"  %><br />
+    <%= f.label t("internships.attributes.working_hours") + " / " + t("unit.week") %><br />
     <%= f.text_field :working_hours %>
   </div>
 </div>
@@ -62,8 +62,8 @@
 
 <div class="row">
 <div class="span4"> 
-    <div class="field" id="field-titles" style="text-transform: capitalize;">
-   <%= f.label t("internships.attributes.living_costs2") %><br />
+    <div class="field" id="field-titles" >
+   <%= f.label t("internships.attributes.living_costs") + " € / " + t("unit.month") %><br />
     <%= f.text_field :living_costs %> 
   </div>
 </div>
