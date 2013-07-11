@@ -58,7 +58,6 @@ ActiveAdmin.register Internship do
   show do |ad|
       attributes_table do
         row :student do |n|
-          binding.pry
           link_to n.enrolment_number, "/admin/students/#{n.student_id}"
         end
         row :company
