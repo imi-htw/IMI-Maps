@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
  # validates :country, :presence => true, :allow_blank => false
  # #validates :main_language, :presence => true, :allow_blank => false
  # #validates :industry, :presence => true, :allow_blank => false
- # validates :name, :presence => true, :allow_blank => false
+ validates :name, :presence => true, :allow_blank => false
  # #validates :number_employees, :presence => true, :allow_blank => false
  # #validates :website, :presence => true, :allow_blank => false
 
@@ -19,7 +19,7 @@ class Company < ActiveRecord::Base
   has_many :internships
 
   def address
-    "#{self.street}, #{self.zip} #{self.city}, #{self.country}"
+    [street, zip, city, country].compact.join(", ")
   end
 
   def find_company(search)
@@ -39,7 +39,7 @@ class Company < ActiveRecord::Base
   def average_rating
     r=0
     size=0
-    internships.each do |x|
+    internships.select(&:completed).each do |x|
       if x.internship_rating.total_rating
         r+=x.internship_rating.total_rating
         size+=1

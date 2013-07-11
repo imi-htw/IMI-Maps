@@ -22,9 +22,9 @@ id:
     delete: "Hapus dari favorit"
     add: "Tambah ke favorit"
     notfound:
-      title: "404 - favorit tidak ditemukan"
-      message: "Sepertinya Anda belum menyimpan magang sebagai favorit. <br/> Lihat %{href} untuk menemukan magang."
-      link: "pencarian"
+      title:"favorit tidak ditemukan"
+      message:"Sepertinya Anda belum menyimpan magang sebagai favorit. <br/> Lihat %{href} untuk menemukan magang."
+      link:"pencarian"
   date:
     abbr_day_names:
     - Min
@@ -405,7 +405,7 @@ id:
       html: "<h3><strong>Program Pendanaan</strong></h3>"
     text6: "Ini adalah beberapa program pendanaan yang paling populer untuk IMIS:"
 
-  progs:
+    progs:
      title1: "Program"
      title2: "Fakta singkat"
      title3: "Durasi"
@@ -414,10 +414,10 @@ id:
       namen: "BAföG luar negeri"
       fact: "Pinjaman dan Hibah untuk magang wajib khusus"
       duration: "max. 12 bulan"
-      region: "sedunia"
+      region: "Dimana-mana"
     prog2:
-       namen: "penempatan ERASMUS"
-       fact: "Penyisihan pelatihan praktis (magang)"
+       namen: "Penempatan ERASMUS"
+       fact: "Penyisihan pelatihan praktis (magang) "
        duration: "3-12  bulan"
        region: "Eropa"
     prog3:
@@ -428,8 +428,8 @@ id:
     prog4:
        namen: "DAAD: Carlo-Schmid-Programm"
        fact: "Beasiswa penuh tergantung pada negara, tunjangan perjalanan untuk magang di organisasi internasional, Uni Eropa-Organisasi dan LSM"
-       duration: "A: 3 - 6 bulan, or  B: 4 - 10 bulan"
-       region: "sedunia "
+       duration: "A: 3 - 6 bulan, atau  B: 4 - 10 bulan"
+       region: "Dimana-mana"
 
   favorite_compare:
     title: "Bandingkan Favorit"
