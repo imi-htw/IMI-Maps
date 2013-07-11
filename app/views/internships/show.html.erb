@@ -219,7 +219,7 @@
               <div id="favorite">
                 <% if @favorite %>
                 <%= link_to({:controller=>:favorite,:action=>:destroy, :id => @favorite.id}, {:method=>:delete, remote: true, class: "btn btn-danger"}) do %>
-                  <i class="icon-heart-empty icon-large icon-white"> </i><%= t("favorite.delete") %>
+                  <i class="icon-remove icon-large icon-white"> </i><%= t("favorite.delete") %>
                 <% end %>
               
                   <% else %>
@@ -377,7 +377,7 @@
               <%= t "companies.attributes.name"  %>
             </div>
             <div id="company-title-text">
-              <%= @internship.company.name %>
+              <%= @company.name %>
             </div>
 
 
@@ -387,7 +387,7 @@
               <%= t "companies.attributes.website"  %>
             </div>
             <div id="company-title-text">
-              <%= link_to @internship.company.website, @internship.company.website , target: "_blank" if @internship.company.website %>
+              <%= link_to @company.website, @company.website , target: "_blank" if @company.website %>
             </div>
 
 
@@ -396,7 +396,7 @@
               <%= t "companies.attributes.industry"  %>
             </div>
             <div id="company-title-text">
-              <%= @internship.company.industry %>
+              <%= @company.industry %>
             </div>
 
 
@@ -405,7 +405,7 @@
               <%= t "companies.attributes.number_employees"  %>
             </div>
             <div id="company-title-text">
-              <%= @internship.company.number_employees %>
+              <%= @company.number_employees %>
             </div>
 
 
@@ -414,7 +414,7 @@
               <%= t "companies.attributes.main_language"  %>
             </div>
             <div id="company-title-text">
-              <%= @internship.company.main_language %>
+              <%= @company.main_language %>
             </div>
 
 
@@ -422,8 +422,22 @@
               <%= t "companies.attributes.rating"  %>
             </div>
             <div id="company-title-text" style="height: 5px;">
-              <%= render_stars(@internship.company.average_rating,self) %>          
+              <%= render_stars(@company.average_rating,self) %>          
             </div>
+            <% if @other_internships.any? %>
+            <div id="company-title">
+              <%= t("internships.others")  %>
+            </div>
+            <br/>
+            <div id="company-title-text">
+              <% @other_internships.each do |other| %> 
+              <div>
+                <%= link_to " #{other.title}", other, class: "btn btn-success icon-white icon-circle-arrow-right icon-large" %>
+              </div>
+              <br/>
+              <% end %>        
+            </div>
+            <% end %>
 
 </div>
 
