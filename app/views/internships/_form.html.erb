@@ -173,7 +173,7 @@
 <div class="pull-right"> 
   <div class="actions">
     <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-     <i class="icon-ok icon-white"></i> <%= t"internships.update" %>
+     <i class="icon-ok icon-white"></i> <%= @internship.completed ? t("internships.update") : t("internships.create")%>
     <% end %>
   </div>
 <% end %>
