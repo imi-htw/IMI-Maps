@@ -386,7 +386,7 @@
               <%= t "companies.attributes.website"  %>
             </div>
             <div id="company-title-text">
-              <%= link_to @company.website, @company.website , target: "_blank" if @company.website %>
+              <%= link_to @company.website, url_with_protocol(@company.website) , target: "_blank" if @company.website %>
             </div>
 
 

@@ -1,4 +1,10 @@
+module UrlHelper
+  def url_with_protocol(url)
+    /^http/.match(url) ? url : "http://#{url}"
+  end
+end
 module ApplicationHelper
+  include UrlHelper
 
   def render_stars(rating, template)
     RatingRenderer.new(rating, template).render_star_fields
@@ -23,4 +29,3 @@ module ApplicationHelper
   end
 
 end
-
