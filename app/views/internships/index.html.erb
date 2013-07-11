@@ -7,7 +7,7 @@
 <div class="span4">
 <%= select_tag :semester, options_for_select(@semesters),  { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.semester"), style: "width:100%"}  %>
 </div>
-<div class="span4" style="margin-top:-6px">
+<div class="span4" id="salary_text">
         <span><%= t "search.salary" %></span>
         <span id="salary_span"></span>
         <input name="salary[]" type="text" id="salary" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
@@ -24,7 +24,7 @@
 <%= select_tag :programming_language_ids, options_for_select(@programming_languages), { :multiple => true , class: 'chzn-select', 'data-placeholder'=>t("choose.language"), style: "width:100%"}  %>
 </div>
 
-<div class="span4" style="margin-top:-6px">
+<div class="span4" id="living_costs_text">
         <span><%= t "search.livingCost"%></span>
         <span id="living_costs_span"></span>
         <input name="living_costs[]" type="text" id="living_costs" style="border: 0; color: #f6931f; font-weight: bold; display:none" readonly />
