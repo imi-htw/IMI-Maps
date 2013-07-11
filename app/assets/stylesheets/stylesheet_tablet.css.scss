@@ -11,7 +11,7 @@ body{
 }
 
 a{
-  color: #000 !important;
+  color: #8bb900 !important;
 }
 
 .row{
@@ -36,6 +36,13 @@ a{
 
 .map-shadow{
   display: none;
+}
+
+#verify{
+  position: relative;
+  display: block;
+  margin-left: 50%;
+  left: -25px;
 }
 
 .im-footer{
