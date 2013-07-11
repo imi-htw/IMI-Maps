@@ -150,27 +150,27 @@
   <div class="span12">
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
-      <%= t "internships.attributes.user" %></div>
+      <%= t "internships.attributes.student" %></div>
       <div class="span8" id="intern-box">
-        <%= @internship.try(:user).try(:name) %>
+        <%= @internship.try(:student).try(:name) %>
       </div>
     </div>
     </div>
     </div>
 
-
+<% if @internship.student.try(:user).try(:publicmail) %>
 <div class="row-fluid" id="row-intern">
   <div class="span12">
    <div class="row" id="row2-intern">   
     <div class="span3" id="intern-title">
       <%= t "users.attributes.email" %></div>
       <div class="span8" id="intern-box">
-         <% if @internship.email_public %><%= @internship.user.email %><% end %>
+        <%= @internship.student.user.email %>
       </div>
     </div>
     </div>
     </div>
-
+<% end %>
 
 <div class="row-fluid" id="row-intern">
   <div class="span12">

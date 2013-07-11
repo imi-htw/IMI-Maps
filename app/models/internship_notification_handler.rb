@@ -19,6 +19,8 @@ private
     end
 
     def send_email
-      InternshipMailer.internship_ready(internship, student).deliver
+      if user && user.mailnotif
+        InternshipMailer.internship_ready(internship, user).deliver
+      end
     end
 end
