@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  results:
+    found: "Suchergebnis(se) gefunden"
   error:
     message: "Die Seite die Sie aufrufen wollten existiert nicht.<br/>Vielleicht haben Sie sich verschrieben oder die Seite ist umgezogen."
   activerecord:
@@ -133,7 +135,7 @@ de:
       newcompany: "Neue Firma" 
     attributes:
       rating: "Durchschnittswertung"
-      name: "Name"
+      name: "Firmenname"
       street: "Straße"
       zip: "Postleitzahl"
       city: "Stadt"

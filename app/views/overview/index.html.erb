@@ -54,40 +54,39 @@ for(var i = 0; i < Gmaps.map.markers.length; i++){
 
 <table id="paginated" class="table table-head">
   <thead>
-    <tr class="search-table" style="margin-bottom:20px;">
-      <th><%= t "internships.attributes.title" %></th>
-      <th><%= t "companies.attributes.name" %></th>
-      <th><%= t "companies.attributes.city"%> </th>
-      <th><%= t "companies.attributes.country" %></th>
-      <th><%= t "companies.attributes.industry" %></th>
-      <th><%= t "internships.attributes.semester" %></th>
-      <th><%= t "internships.attributes.orientation" %></th>
-      <th><%= t "internships.attributes.programming_language" %></th>
-      <th><%= t "internships.attributes.rating" %></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+  <tr class="search-table">
+    <th><%= t "internships.attributes.title" %></th>
+    <th><%= t "internships.attributes.company" %></th>
+    <th><%= t "companies.attributes.city"%> </th>
+    <th><%= t "companies.attributes.country" %></th>
+    <th><%= t "companies.attributes.industry" %></th>
+    <td><%= t "internships.attributes.semester" %></td>
+    <th><%= t "internships.attributes.orientation" %></th>
+    <th><%= t "internships.attributes.programming_language" %></th>
+    <th><%= t "internships.attributes.rating" %></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
 <% @internships.each do |internship| %>
-  <tr class="<%= cycle("even_row2", "odd_row2") %>">
+  <tr class="<%= cycle("even_row", "odd_row") %>">
     <td><%= internship.title %></td>
     <td><%= internship.company.name %></td>
     <td><%= internship.company.city %></td>
     <td><%= internship.company.country %></td>
     <td><%= internship.company.industry %></td>
     <td><%= internship.semester.name %></td>
-    <td><%= internship.try(:orientation).try(:name) %></td>
+    <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-    <td><%= internship.internship_rating.total_rating %></td>
-    <td><%# render_stars(internship.rating, self) %></td>
-    <td><%= link_to "", internship, class: "icon-white icon-eye-open icon-2x button_intern" %></td>
+    <td><%= render_stars(internship.rating, self) %></td>
+    <td><%= link_to "", internship, class: "icon-white icon-circle-arrow-right icon-2x button_intern" %></td>
   </tr>
 <% end %>
+
 </tbody>
 </table>
 </div>
-<div class='pager'>
+<div class='pager' style="display:none;">
         <button href='' alt='First' class='firstPage'>First</button>
         <button href='' alt='Previous' class='prevPage'>Prev</button>
         

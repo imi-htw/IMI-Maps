@@ -18,7 +18,7 @@
 	    <td><%= favorite.internship.company.address %></td>
 	    <td><%= favorite.internship.orientation.name %></td>
 	    <td><%= favorite.internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-	    <td><%= link_to "", favorite.internship, class: "icon-white icon-eye-open icon-2x button_intern" %></td>
+	    <td><%= link_to "", favorite.internship, class: "icon-white  icon-circle-arrow-right icon-2x button_intern" %></td>
 	    <td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "red-thumb icon-remove icon-2x button_intern" %></td>
 	  </tr>
 	<% end %>

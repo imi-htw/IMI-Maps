@@ -1,7 +1,7 @@
 <thead>
   <tr class="search-table">
     <th><%= t "internships.attributes.title" %></th>
-    <th><%= t "companies.attributes.name" %></th>
+    <th><%= t "internships.attributes.company" %></th>
     <th><%= t "companies.attributes.city"%> </th>
     <th><%= t "companies.attributes.country" %></th>
     <th><%= t "companies.attributes.industry" %></th>
@@ -23,8 +23,8 @@
     <td><%= internship.semester.name %></td>
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-    <td><%= internship.internship_rating.total_rating %></td>
-    <td><%= link_to "", internship, class: "icon-white icon-eye-open icon-2x button_intern" %></td>
+    <td><%= render_stars(internship.rating, self) %></td>
+    <td><%= link_to "", internship, class: "icon-white icon-circle-arrow-right icon-2x button_intern" %></td>
   </tr>
 <% end %>
 

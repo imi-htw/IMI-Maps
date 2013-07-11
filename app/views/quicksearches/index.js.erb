@@ -111,7 +111,7 @@ $("#programming_language_ids").trigger("liszt:updated");
 
 
 if (!<%= @bool %>) {
-$('#results_string').html("<h5> <%=@internships_size%> results found! </h5> </br>");
+$('#results_string').html("<h5> <%=@internships_size%> <%= t('results.found') %> </h5> </br>");
 $('#results_string').css("display","block");
 $('#results_string').css("height","30px");
 }

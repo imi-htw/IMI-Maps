@@ -49,7 +49,7 @@ class QuicksearchesController < ApplicationController
 
     @internships_size = @internships.size
 
-    @bool = Internship.all.size == @internships_size
+    @bool = Internship.where(completed: true).size == @internships_size
 
     @countries = (@companies.collect do |x| x.country end)
 

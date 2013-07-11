@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  results:
+    found: "result(s) found"
   error:
     message: "The page you were looking for doesn't exist.<br/>You may have mistyped the address or the page may have moved."
   activerecord:
@@ -93,7 +95,7 @@ en:
       newcompany: "New Company"  
     attributes:
       rating: "Average Rating"
-      name: "Name"
+      name: "Company name"
       street: "Street"
       zip: "ZIP"
       city: "City"
