@@ -389,7 +389,7 @@
               <%= t "companies.attributes.website"  %>
             </div>
             <div id="company-title-text">
-              <%= link_to @internship.company.website , target: "_blank" %>
+              <%= link_to @internship.company.website, @internship.company.website , target: "_blank" if @internship.company.website %>
             </div>
 
 
