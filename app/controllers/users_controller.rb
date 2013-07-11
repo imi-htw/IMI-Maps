@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @internships = @user.student.internships
+    @comments = @user.user_comments
   end
 
   def edit

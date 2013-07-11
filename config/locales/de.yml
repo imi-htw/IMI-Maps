@@ -122,6 +122,7 @@ de:
   helpers:
     reset: "Reset"
     at: "am"
+    at2: "bei"
 
   companies:
     name: "Firmen"
@@ -150,6 +151,7 @@ de:
 
 
   internships:
+    my: "Meine Praktika"
     others: "Andere Praktika bei dieser Firma"
     details: "Internship Details"
     name: "Praktika"

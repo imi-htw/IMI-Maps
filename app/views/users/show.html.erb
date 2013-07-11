@@ -52,26 +52,43 @@
 <div class="row">
 <div class="span2 offset6">
 
-<%= link_to (t "buttons.change_details"), edit_user_path(@user), class: "btn btn-success" %>
+<%= link_to (t "buttons.edit"), edit_user_path(@user), class: "btn btn-success" %>
 <%= link_to (t "buttons.back"), overview_index_path, class: "btn btn-inverse" %>
 </div>
 </div>
 
 </div>
 
+<% if @internships.any? %>
 
 <div id="form-block4">
 
-<h3> Comments </h3>
+<h2> <%= t"internships.my" %> </h2>
+
+<% @internships.each do |internship| %>
+<%= internship.title+" " %><%= t"helpers.at2" %> <%= " "+internship.company.name %>
+<%= link_to " "+(t "buttons.edit"), edit_internship_path(internship), class: "pull-right btn btn-success icon-white icon-edit icon-large" %>
+<%= link_to " "+(t "buttons.show"), internship, class: "pull-right btn btn-success icon-white icon-circle-arrow-right icon-large" %>
 </div>
 
-<% @user.user_comments.each do |comment| %>
-<p> Commented "
+<% end %>
+
+<% end %>
+
+<% if @comments.any? %>
+
+<div id="form-block4">
+
+<h2> <%= t"internships.attributes.comments" %> </h2>
+<% @comments.each do |comment| %>
+<p> "
 <%= comment.body %>
-" at
+" <%= t"helpers.at2" %>
 <%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
 </p>
 </div>
-<%end%>
+<% end %>
+
+<% end %>
 
 

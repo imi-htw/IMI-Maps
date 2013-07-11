@@ -139,12 +139,12 @@
     <th class="company"><%= t "internships.attributes.company" %></th>
     <th class="company"><%= t "companies.attributes.address" %></th>
     <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
-    <th data-sort="string" class="company"><%= t "internships.attributes.semester" %> </th>
-    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %> </th>
-    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %> €/<%= t("unit.month")%> </th>
-    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %> €/<%= t("unit.month")%> </th>
-    <th data-sort="float" class="rating"><%= t "internships.attributes.rating" %> </th>
-    <th class="recommend"><%= t "internships.attributes.recommend" %></th>
+    <th data-sort="string" class="company"><%= t "internships.attributes.semester" %> <i class='icon-sort'></i></th>
+    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %> <i class='icon-sort'></i></th>
+    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %> €/<%= t("unit.month")%> <i class='icon-sort'></i></th>
+    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %> €/<%= t("unit.month")%> <i class='icon-sort'></i></th>
+    <th data-sort="float" class="rating"><%= t "internships.attributes.rating" %> <i class='icon-sort'></i></th>
+    <th data-sort="boolean" class="recommend"><%= t "internships.attributes.recommend" %> <i class='icon-sort'></i></th>
     <th class="top_inside"></th>
   </tr>
   </thead>
@@ -159,12 +159,12 @@
     <td class="table_inside"><%= internship.try(:orientation).try(:name) %></td>
     <td class="table_inside"><%= internship.salary %></td>
     <td class="table_inside"><%= internship.living_costs %></td>
-    <td class="table_inside"><% render_stars(internship.internship_rating.total_rating, self) %></td>
-    <td class="table_inside">
+    <td class="table_inside" data-sort-value=<%= internship.rating %>><%= render_stars(internship.rating, self) %></td>
+    <td class="table_inside" data-sort-value=<%= internship.recommend %>>
       <% if internship.recommend %>
-          <i class="icon-white icon-thumbs-up icon-2x" style="color:#80b900"></i>
+          <i class="icon-white icon-thumbs-up icon-2x"></i>
         <% else %>
-          <i class="icon-white icon-thumbs-down icon-2x" style="color:#333333"></i>
+          <i class="icon-white icon-thumbs-down icon-2x"></i>
         <% end %>
     </td>
     <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-circle-arrow-right icon-2x button_intern" %></td>
@@ -194,8 +194,9 @@ table.bind('aftertablesort', function (event, data) {
     // data.direction - the sorting direction (either asc or desc)
 
     var th = $(this).find("th");
-    th.find("i").remove();
-    var arrow = data.direction === "asc" ? "<i class='icon-chevron-up'></i>" : "<i class='icon-chevron-down'></i>";
+    th.find("i").removeClass("icon-care-down").removeClass("icon-caret-up").addClass("icon-sort");
+    th.eq(data.column).find("i").remove();
+    var arrow = data.direction === "asc" ? "<i class='icon-caret-up'></i>" : "<i class='icon-caret-down'></i>";
     th.eq(data.column).append(arrow);
 });
 

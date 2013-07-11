@@ -80,6 +80,7 @@ en:
   helpers:
     reset: "Reset"
     at: "at"
+    at2: "at"
     summer: "summer"
     winter: "winter"
 
@@ -109,6 +110,7 @@ en:
       not_recommended: "Not Recommended"
 
   internships:
+    my: "Meine Praktika"
     others: "Other internships done here"
     details: "Internship Details"
     name: "Internships"
@@ -124,7 +126,7 @@ en:
       description: "Description"
       semester: "Semester/Year"
       email_public: "Make email adress public?"
-      comments: "UserComments"
+      comments: "Comments"
       pictures: "Pics"
       orientation: "Orientation"
       programming_language: "Programming Language"
