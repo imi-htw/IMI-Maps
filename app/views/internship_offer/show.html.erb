@@ -1,7 +1,10 @@
+<a href ="javascript:history.back()" class="btn btn-success btn-intern display_none icon-white icon-reply intern_button"></a>
+<div id="form-block4">
 <h3> <%= @offer.title %></h3>
 <% if @offer.body.present? %>
-<p> <%= @offer.body %> </p>
+<p id="internship_off_text" style="text-align: justify;"> <%= @offer.body %> </p>
 <% end %>
 <% if @offer.pdf.present? %>
 <%= link_to "Download PDF", "#{@offer.pdf}" %>
 <% end %>
+</div>

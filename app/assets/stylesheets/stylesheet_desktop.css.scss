@@ -66,15 +66,16 @@ h1, h2{
   font-variant: small-caps;
   color: #000 !important;
   line-height: 40px;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-    text-rendering: auto;
+  text-rendering: auto;
 }
 
 h3{
-  font-size: 15px;
   font-weight: 100;
-  text-rendering: auto;
+  margin: 1em 0px 0.5em;
+  font-variant: small-caps;
   color: #000 !important;
+  line-height: 40px;
+  text-rendering: auto;
 }
 
 p {
@@ -583,6 +584,15 @@ p{
     margin-top: 25px;
 }
 
+#internship_off_text{
+  margin: 0px 40px 10px 0px;
+}
+
+.intern_button{
+  margin-left: 950px;
+  margin-top: 50px;
+}
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -649,6 +659,11 @@ p{
     position: absolute;
     margin-left: 540px;
     margin-top: 25px;
+}
+
+.intern_button{
+  margin-left: 794px;
+  margin-top: 50px;
 }
 
 }
