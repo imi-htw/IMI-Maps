@@ -2,8 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 id:
+  results:
+    found: "hasil ditemukan"
   error:
-    message: "The page you were looking for doesn't exist.<br>You may have mistyped the address or the page may have moved."
+    message: "Halaman yang Anda cari tidak ditemukan.<br> Mungkin Anda salah mengetikan halaman atau halaman tersebut sudah dihapus."
   activerecord:
     errors:
       messages:
@@ -161,6 +163,8 @@ id:
       not_recommended: "Tidak direkomendasi"
 
   internships:
+    others: "Ada magang lain di sini"
+    details: "Perincian magang"
     name: "Magang"
     create: "Buat magang"
     update: "Baharui magang"
@@ -447,10 +451,12 @@ id:
    remove: "Hapus gambar"
    add: "Tambah gambar"
   mail:
-   greeting: "Kepada "
-   registered: 
-    html: "<br>Selamat datang! </br> Anda sudah terdaftar di IMI Map: imi-map.f4.htw-berlin.de."
-   registeredSubject: "Sukses terdaftar di IMI-Map"
+   greeting: "Halo!</br>"
    registerRequest:
-    html: "Anda telah berhasil membuat magang di HTW. </br> Kami ingin mengingatkat untuk mendaftar dan melengkapi berita dan pengalaman magang di  IMI Map: imi-map.f4.htw-berlin.de </br> "
-   registerRequestSubject: "Datang dan ikutlah IMI-Map. Berita dan pengalaman magang dari IMI."
+    html: "</br>Anda telah membuat magang di HTW. </br> Kami ingin mengingatkan Anda untuk mendaftar (apabila belum) dan melengkapi laporang magang Anda di IMI Map: imi-map.f4.htw-berlin.de </br> "
+   registerRequestSubject: "Datang dan ikut dalam IMI-Map. Berita dan pengalaman magang IMI"
+   forgotPsw: 
+    html: "</br>Lupa kata kunci? </br> Silakan klik link berikut untuk meminta kata kunci baru:</br>" 
+   forgotPswSubject: "Anda meminta kata kunci baru di IMI Map"
+   goodbye:
+    html: "</br>Salam. </br> Tim IMI Map"
