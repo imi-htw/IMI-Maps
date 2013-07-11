@@ -243,8 +243,10 @@ id:
       birthplace1: "Tempat lahir *"
 
   comments:
+    singular: "Komentar"
+    plural: "Komentar"
     attributes: 
-      body: "Komentar pengguna"
+      body: "Komentar Anda:"
 
   answers:
     from: "Jawaban dari"
