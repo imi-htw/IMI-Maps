@@ -1,0 +1,14 @@
+<fieldset>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+    <%= f.label :file %><br />
+    <% if !f.object.file.to_s.empty? %>
+      <%= image_tag f.object.file %>
+    <% else %>
+    <%= f.file_field :file %>
+    <% end %>
+    <br/>
+    <%= f.hidden_field :_destroy %>
+  <%= link_to " remove", '#', class: "remove_fields btn btn-danger icon-white icon-remove" %>
+</fieldset>
+<br/>

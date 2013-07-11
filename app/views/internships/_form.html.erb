@@ -1,8 +1,6 @@
 <div class="row" id="form-block2">
-<div class="row">
 
-  <%= nested_form_for(@internship) do |f| %>
-  <% if @internship.errors.any? %>
+<% if @internship.errors.any? %>
     <div class="error_explanation">
       <strong><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</strong>
 
@@ -14,6 +12,9 @@
     </div>
   <% end %>
 
+<%= nested_form_for(@internship) do |f| %>
+
+<div class="row">
 
 <div class="span4"> 
   <div class="field" id="field-titles">
@@ -120,7 +121,7 @@
     <div class="edit-rating" id="appreciation" style="margin-top:-10px; margin-left:-20px;"><%= render_stars(@rating.appreciation, self) %></div>
     <%= rat.hidden_field :appreciation %>
   </div>
-  <% end %>
+</div>
 
 <div class="span2"> 
 <div class="field" id="field-titles">
@@ -136,6 +137,7 @@
   </div>
 </div>
 </div>
+<% end %>
 
 
 
@@ -152,19 +154,14 @@
 
 <div class="row">
 <div class="span10"> 
-   <%= f.fields_for :attachments do |attachment_form|  %>
-    <p>
-    <%= attachment_form.label :description %><br />
-    <%= attachment_form.text_field :description %>
-    </p>
-    <p>
-    <%= attachment_form.label :file %><br />
-    <%= attachment_form.file_field :file %>
-    </p>
-    <%= attachment_form.link_to_remove "Remove this attachment" %>
+  <div id="attachments_div">
+  <%= f.fields_for :attachments, :html => {:multipart => true} do |attachment_form|  %>    
+    <%= render 'attachment_fields', f: attachment_form %>
   <% end %>
-  <%= f.link_to_add "Add attachment", :attachments %>
-      <div class="field" id="field-titles">
+  <%= link_to_add_fields "Add attachment", f, :attachments %>
+  </div>
+<br/>
+<div class="field" id="field-titles">
     <%= f.label t "internships.attributes.internship_report"  %>
     <%= f.file_field :internship_report %>
     </div>
@@ -173,9 +170,11 @@
 
 
 <div class="row">
-<div class="span1 offset9"> 
+<div class="pull-right"> 
   <div class="actions">
-    <%= f.submit t(params[:action] == 'new' ? 'internships.create' : 'internships.update'), class: "btn btn-success" %>
+    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+     <i class="icon-ok icon-white"></i> <%= t"internships.update" %>
+    <% end %>
   </div>
 <% end %>
 </div>
