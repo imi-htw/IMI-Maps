@@ -131,8 +131,6 @@
       <%= t "internships.attributes.supervision_rating" %></div>
       <div class="span8" style="padding-top:7px">
         <%= render_stars @internship.internship_rating.supervision, self %>
-      <div class="span8">
-      </div>
     </div>
     </div>
     </div>
@@ -423,8 +421,8 @@
              <div id="company-title">
               <%= t "companies.attributes.rating"  %>
             </div>
-            <div id="company-title-text">
-              <%= @internship.company.average_rating %>          
+            <div id="company-title-text" style="height: 5px;">
+              <%= render_stars(@internship.company.average_rating,self) %>          
             </div>
 
 </div>

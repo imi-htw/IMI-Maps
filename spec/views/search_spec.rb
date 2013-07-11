@@ -15,7 +15,7 @@ describe "Detailed Search Page should have content" do
         click_link "English" 
         page.should have_content("Cost of living")
         page.should have_content("salary")
-        page.should have_content(I18n.t('search.resultnr'))
+        page.should have_content(I18n.t('results.found'))
         #select('SS 13', :from => 'semester')
         #select('Brazil', :from => 'Choose a country')
         #select('United Kingdom', :from => 'country')
