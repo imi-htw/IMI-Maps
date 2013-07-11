@@ -130,7 +130,7 @@
 
    </script> 
 
-<h5> <%=@internships_size%> <%= t "search.resultnr"%> </h5>
+<h5> <%=@internships_size%> <%= t('results.found') %> </h5>
 
 <div class="">
 <table id="paginated" class="table tablesorter">
@@ -139,11 +139,11 @@
     <th class="company"><%= t "internships.attributes.company" %></th>
     <th class="company"><%= t "companies.attributes.address" %></th>
     <th class="programming_language"><%= t "internships.attributes.programming_language" %></th>
-    <th data-sort="string" class="company"><%= t "internships.attributes.semester" %></th>
-    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %></th>
-    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %> €/<%= t("unit.month")%></th>
-    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %> €/<%= t("unit.month")%></th>
-    <th data-sort="float" class="rating"><%= t "internships.attributes.rating" %></th>
+    <th data-sort="string" class="company"><%= t "internships.attributes.semester" %> </th>
+    <th data-sort="string" class="orientation"><%= t "internships.attributes.orientation" %> </th>
+    <th data-sort="float" class="salary"><%= t "internships.attributes.salary" %> €/<%= t("unit.month")%> </th>
+    <th data-sort="float" class="living_costs"><%= t "internships.attributes.living_costs" %> €/<%= t("unit.month")%> </th>
+    <th data-sort="float" class="rating"><%= t "internships.attributes.rating" %> </th>
     <th class="recommend"><%= t "internships.attributes.recommend" %></th>
     <th class="top_inside"></th>
   </tr>
@@ -187,7 +187,18 @@
 <% #end %>
 ---->
 <script>
-$("#paginated").stupidtable();
+var table = $("#paginated").stupidtable();
+
+table.bind('aftertablesort', function (event, data) {
+    // data.column - the index of the column sorted after a click
+    // data.direction - the sorting direction (either asc or desc)
+
+    var th = $(this).find("th");
+    th.find("i").remove();
+    var arrow = data.direction === "asc" ? "<i class='icon-chevron-up'></i>" : "<i class='icon-chevron-down'></i>";
+    th.eq(data.column).append(arrow);
+});
+
 /*
         $('table#paginated').each(function() {
           var currentPage = 1;

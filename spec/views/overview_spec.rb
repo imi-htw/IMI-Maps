@@ -31,6 +31,5 @@ describe "Overview Page" do
         page.should have_content("Deutsch")
         page.should have_content("English")
         page.should have_content("Guide")
-        page.should have_content("Name")
     end
 end
