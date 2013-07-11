@@ -6,7 +6,6 @@ describe User do
    it { should have_many(:user_comments).dependent(:destroy) }
    it { should have_many(:favorites).dependent(:destroy) }
    it { should have_many(:notifications).dependent(:destroy) }
-   it { should have_one(:internship) }
  end
 
  context 'validation' do
