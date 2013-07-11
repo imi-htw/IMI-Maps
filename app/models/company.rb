@@ -39,7 +39,7 @@ class Company < ActiveRecord::Base
   def average_rating
     r=0
     size=0
-    internships.each do |x|
+    internships.select(&:completed).each do |x|
       if x.internship_rating.total_rating
         r+=x.internship_rating.total_rating
         size+=1

@@ -140,7 +140,6 @@ private
       student = Student.where(import_id: row[20]).first
 
       reading_prof_id = reading_prof.id if reading_prof
-      binding.pry
       internship = Internship.where(
         company_id: company.id,
         student_id: student.id,
