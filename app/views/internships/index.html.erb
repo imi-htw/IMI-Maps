@@ -132,7 +132,7 @@
 
 <h5> <%=@internships_size%> <%= t('results.found') %> </h5>
 
-<div class="table-container">
+<div>
 <table id="paginated" class="table tablesorter">
   <thead>
   <tr class="table_intern table_fin">
@@ -162,12 +162,12 @@
     <td class="table_inside" data-sort-value=<%= internship.rating %>><%= render_stars(internship.rating, self) %></td>
     <td class="table_inside" data-sort-value=<%= internship.recommend %>>
       <% if internship.recommend %>
-          <i class="icon-white icon-thumbs-up icon-2x"></i>
+          <i class="icon-thumbs-up icon-2x"></i>
         <% else %>
-          <i class="icon-white icon-thumbs-down icon-2x"></i>
+          <i class="icon-thumbs-down icon-2x"></i>
         <% end %>
     </td>
-    <td class="table_inside"><%= link_to "", internship, class: "icon-white icon-circle-arrow-right icon-2x button_intern" %></td>
+    <td class="table_inside"><%= link_to "", internship, class: "icon-green-hover icon-circle-arrow-right icon-2x button_intern" %></td>
   </tr>
 <% end %>
   </tbody>

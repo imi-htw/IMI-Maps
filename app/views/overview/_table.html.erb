@@ -23,7 +23,7 @@
     <td><%= internship.orientation.name %></td>
     <td><%= internship.programming_languages.map { |n| n.name } %></td>
     <td><%= render_stars(internship.rating, self) %></td>
-    <td><%= link_to "", internship, class: "icon-white icon-circle-arrow-right icon-2x button_intern" %></td>
+    <td><%= link_to "", internship, class: "icon-green-hover icon-circle-arrow-right icon-2x button_intern" %></td>
   </tr>
 <% end %>
 
