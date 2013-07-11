@@ -128,17 +128,17 @@ float: right;
 
 .navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
   left: auto;
-  right: -88px;
+  right: -125px;
   width: 320px;
   margin-right: -110px;
 }
 
 .navbar .nav > li > .dropdown-menu:before {
-  right: 215px !important;
+  right: 245px !important;
 }
 
 .navbar .nav > li > .dropdown-menu:after {
-  right: 215px !important;
+  right: 245px !important;
 }
 
 #salary_slider{
@@ -197,6 +197,13 @@ float: right;
   padding: 10px 5px 30px 5px !important;
   margin-right: 30px !important;
   width: auto !important;
+}
+
+#form-block3{
+  width: auto !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+  padding: 20px 5px 20px 5px !important;
 }
 
 }
