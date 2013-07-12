@@ -75,7 +75,7 @@ class InternshipsController < ApplicationController
     @answer = Answer.new
     @favorite = Favorite.where(:internship_id => @internship.id, :user_id => current_user.id)[0]
     @company = @internship.company
-    @other_internships = @company.internships.reject do |x| x.id == @internship.id end
+    @other_internships = @company.internships.reject { |x| x.id == @internship.id }.reject{ |i| i.completed == false }
 
     @user_comments = @internship.user_comments.order("created_at DESC")
 
