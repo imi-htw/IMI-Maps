@@ -6,7 +6,7 @@ class Internship < ActiveRecord::Base
 #  validates :company_id, :presence => true
   validates :semester_id, :presence => true
   validates :student_id, :presence => true
-  validates :title, :recommend, :living_costs, :salary, :working_hours, :programming_language_ids, presence: true
+  validates :title, :recommend, :living_costs, :salary, :working_hours, presence: true
 #  validates :registration_state_id, :presence => true
 #  validates :payment_state_id, :presence => true
 #  validates :contract_state_id, :presence => true

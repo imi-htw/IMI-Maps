@@ -101,8 +101,11 @@ class InternshipsController < ApplicationController
     if @internship.update_attributes(attributes)
       @internship.update_attributes(completed: true)
       flash[:notice] = 'Internship was successfully updated.'
+      respond_with(@internship)
+    else
+      @rating = @internship.build_internship_rating
+      render :edit, notice: "Please fill in all fields"
     end
-    respond_with(@internship)
   end
 
   # DELETE /internships/1
