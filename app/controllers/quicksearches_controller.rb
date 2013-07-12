@@ -16,7 +16,7 @@ class QuicksearchesController < ApplicationController
     params[:orientation].delete_if(&:empty?) if params[:orientation].present?
 
     if !params[:orientation].present? and !params[:semester].present? and !params[:programming_language_ids].present? and !params[:country].present?
-      @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).where(completed: true).order('created_at DESC')
+      @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).where(completed: true).order('internships.created_at DESC')
     else
       @internships = @quicksearch.internships(params)
     end
