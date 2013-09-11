@@ -29,8 +29,8 @@ ActiveAdmin.register Internship do
       f.input :company_id, as: :select, collection: Company.order(:name).collect { |c| ["#{c.name}, #{c.city}, #{c.country}", c.id] }
     end
     f.inputs "Internship" do
-      f.input :start_date
-      f.input :end_date
+      f.input :start_date, :as => :date_picker
+      f.input :end_date, :as => :date_picker
       f.input :operational_area
       f.input :tasks
       f.input :supervisor_name
@@ -44,9 +44,9 @@ ActiveAdmin.register Internship do
       f.input :report_state_id, label: "Report", as: :select, collection: ReportState.order(:name).collect { |rs| [rs.name, rs.id] }
       f.input :certificate_state_id, label: "Certificate", as: :select, collection: CertificateState.order(:name).collect { |cs| [cs.name, cs.id] }
       f.input :reading_prof_id, label: "Certficate reading prof", :as => :select, :collection => ReadingProf.order(:name).collect { |p| [p.name, p.id] }
-      f.input :certificate_to_prof
-      f.input :certificate_signed_by_prof
-      f.input :certificate_signed_by_internship_officer
+      f.input :certificate_to_prof, :as => :date_picker
+      f.input :certificate_signed_by_prof, :as => :date_picker
+      f.input :certificate_signed_by_internship_officer, :as => :date_picker
       f.input :internship_state, as: :select, collection: InternshipState.order(:name).collect { |is| [is.name, is.id] }
       f.input :comment
       f.actions
