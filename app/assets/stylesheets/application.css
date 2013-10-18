@@ -12,6 +12,7 @@
  *= require_tree .
  *= require chosen
  *= require jquery.ui.slider
+ *= repeat bootstrap-responsive.min
  
  */
  
