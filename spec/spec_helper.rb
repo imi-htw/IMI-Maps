@@ -102,4 +102,23 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # Include FactoryGirl so we can use 'create' instead of 'FactoryGirl.create'
+  config.include FactoryGirl::Syntax::Methods
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+
+    begin
+      DatabaseCleaner.start
+
+      factories_to_lint = FactoryGirl.factories.reject do |factory|
+        factory.name =~ /^invalid_/
+      end
+      FactoryGirl.lint factories_to_lint
+    ensure
+      DatabaseCleaner.clean
+    end
+  end
 end

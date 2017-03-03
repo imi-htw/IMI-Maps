@@ -26,13 +26,14 @@ class Internship < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy
 
   has_many :attachments, :as => :attachable, :dependent => :destroy
+  has_many :answers
 
   mount_uploader :internship_report, InternshipReportUploader
 
   accepts_nested_attributes_for :attachments, allow_destroy: true
   accepts_nested_attributes_for :internship_rating
 
-  def rating 
+  def rating
     internship_rating.total_rating
   end
 

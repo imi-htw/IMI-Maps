@@ -94,6 +94,7 @@ GEM
     d3-rails (0.0.5)
       railties (>= 3.1)
     daemons (1.1.9)
+    database_cleaner (1.5.3)
     date-input-rails (0.0.3)
       jquery-ui-rails
       rails (~> 3.2.8)
@@ -304,6 +305,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   country-select
   d3-rails
+  database_cleaner
   date-input-rails
   factory_girl_rails
   font-awesome-sass-rails

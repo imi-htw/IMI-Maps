@@ -67,7 +67,9 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'rack-mini-profiler'
+
   gem 'railroady'
+  gem 'database_cleaner'
 end
 
 group :production do
