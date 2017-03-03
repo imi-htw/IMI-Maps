@@ -1,9 +1,9 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Favorite do
 # the eq matcher uses == (object equivalence)
 # the equal matcher uses equals? (object identity)
-  context "creation" do 
+  context "creation" do
     it "takes two parameters and returns a Favorite object" do
      fav = Favorite.new
      fav.user_id = 1
@@ -23,4 +23,4 @@ describe Favorite do
      it { should validate_presence_of(:internship_id) }
    end
 end
-	
+

@@ -59,20 +59,20 @@ ImiMaps::Application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: 'logout'
 
     match "*path", to: "errors#not_found"
-    
+
 	end
 
   root to: 'sessions#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
-  match '*path', to: redirect {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }
+
+  match '*path', to: redirect {|params, request| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }
 	match '', to: redirect("/#{I18n.default_locale}/") , constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 
-  
+
   match 'de', to: redirect("/de/sessions#new")
   match 'en', to: redirect("/en/sessions#new")
   match 'id', to: redirect("/id/sessions#new")
- 
+
 end

@@ -51,19 +51,20 @@ group :assets do
   #gem 'twitter-bootstrap-rails'
 end
 
+gem 'factory_girl_rails'
+
 group :test do
-  gem 'factory_girl', '~> 4.2.0'
   gem "shoulda-matchers"
   gem "selenium-webdriver"
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.13.0'
+  gem 'rspec-rails', '~> 3.5'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
-  gem 'capybara', '~> 2.1.0'
+  gem 'capybara'
   gem 'rack-mini-profiler'
   gem 'launchy'
 
@@ -71,7 +72,6 @@ end
 
 group :production do
   gem 'pg'
-
 end
 
 # To use ActiveModel has_secure_password
