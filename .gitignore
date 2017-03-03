@@ -28,7 +28,7 @@
 # Ignore Rbenv specific files
 /bin
 
-# Ignore public uploads 
+# Ignore public uploads
 /public/uploads
 
 *~
@@ -37,3 +37,7 @@
 logger.txt
 
 cmd.exe
+
+# ignore code coverage reports
+coverage
+

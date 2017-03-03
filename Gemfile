@@ -56,6 +56,7 @@ gem 'factory_girl_rails'
 group :test do
   gem "shoulda-matchers"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
 end
 
 group :development, :test do
@@ -66,7 +67,6 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'rack-mini-profiler'
-  gem 'launchy'
 
 end
 
