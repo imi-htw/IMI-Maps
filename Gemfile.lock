@@ -156,7 +156,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.25.1)
     mini_portile2 (2.1.0)
-    multi_json (1.7.7)
+    multi_json (1.12.1)
     nested_form (0.3.2)
     net-ldap (0.3.1)
     net-scp (1.1.1)
@@ -249,8 +249,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
-    shoulda-matchers (2.2.0)
-      activesupport (>= 3.0.0)
+    shoulda-matchers (1.0.0)
     slop (3.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
