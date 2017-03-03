@@ -198,6 +198,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    railroady (1.5.2)
     rails (3.2.13)
       actionmailer (= 3.2.13)
       actionpack (= 3.2.13)
@@ -317,6 +318,7 @@ DEPENDENCIES
   pg
   pry
   rack-mini-profiler
+  railroady
   rails (= 3.2.13)
   rmagick (~> 2.13.1)
   rspec-rails (~> 3.5)
