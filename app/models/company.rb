@@ -22,16 +22,6 @@ class Company < ActiveRecord::Base
     [street, zip, city, country].compact.join(", ")
   end
 
-  def find_company(search)
-    companies = Company.all
-    search.split(" ").each do |str| 
-      companies = companies.where('country like ?', str)
-      companies = companies.where('city like ?', str)
-      companies = companies.where('zip like ?', str)
-    end
-    companies.uniq
-  end
-
   def enrolment_number
     internships.map do |x| x.student.enrolment_number end.join(", ")
   end
@@ -48,5 +38,5 @@ class Company < ActiveRecord::Base
     size||=1
     r.to_f/size
   end
-  
+
 end
