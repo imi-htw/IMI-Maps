@@ -1,18 +1,46 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Internship do
+RSpec.describe Internship, :type => :model do
+  let(:internship) { build :internship  }
 
-   context 'associations' do
-     #it {should belong_to(:user)}
-     #it {should belong_to(:company)}
-     #it { should have_many(:user_comments).dependent(:destroy) }
-     #it { should have_many(:favorites).dependent(:destroy) }
-     #it { should have_and_belong_to_many(:programming_languages) }
-   end
+  context 'given a valid Internship' do
+    it 'can be saved with all required attributes present' do
+      expect(internship.save).to be_truthy
+    end
+  end
 
- # context 'validation' do
-  #   it { should validate_presence_of(:user_id) }
-   #  it { should validate_presence_of(:semester_id) }
-     #it { should validate_presence_of(:rating) }
-   #end
+  context 'given an invalid Internship' do
+    it 'rejects empty semester_ids' do
+      internship.semester_id = nil
+      expect(internship.save).to be_falsy
+    end
+
+    it 'rejects empty student_ids' do
+      internship.student_id = nil
+      expect(internship.save).to be_falsy
+    end
+  end
+
+  describe "#rating" do
+    it 'returns the correct rating' do
+      expect(internship.rating).to eq(3)
+    end
+  end
+
+  describe "#editable?" do
+    it 'should return true' do
+      expect(internship.editable?).to eq(true)
+    end
+
+    it 'should return false' do
+      internship.completed = true
+      expect(internship.editable?).to eq(false)
+    end
+  end
+
+  describe "#enrolment_number" do
+    it 'should return the correct enrolment_number' do
+      expect(internship.enrolment_number).to eq("enrollment number")
+    end
+  end
 end

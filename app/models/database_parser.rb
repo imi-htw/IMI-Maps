@@ -3,13 +3,14 @@
 require 'csv'
 
 class DatabaseParser
+# :nocov:
 
   attr_reader :student_file, :internships_file, :companies_file
 
-   COUNTRIES = {  
+   COUNTRIES = {
     nil => "not specified",
-    "Neuseeland" => "New Zealand", 
-    "Schweden" => "Sweden", 
+    "Neuseeland" => "New Zealand",
+    "Schweden" => "Sweden",
     "Griechenland" => "Greece",
     "Katar" => "Qatar",
     "Vereinigte Arabische Emirate" => "United Arab Emirates",
@@ -84,7 +85,7 @@ class DatabaseParser
     "Ecuador" => "Ecuador",
     "Dominikanische Republik" => "Dominican Republic",
     "Norwegen" => "Norway",
-    "Tschechische Republik" => "Czech Republic" 
+    "Tschechische Republik" => "Czech Republic"
   }
 
   def initialize(options = {})
@@ -170,5 +171,6 @@ private
       state = state.to_i + 1 if state
     end
 
+# :nocov:
 
 end

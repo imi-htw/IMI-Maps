@@ -1,5 +1,6 @@
-class Quicksearch < ActiveRecord::Base  
+class Quicksearch < ActiveRecord::Base
 
+  # :nocov:
   def internships(query)
     @internships = find_internships(query)
   end
@@ -28,5 +29,6 @@ class Quicksearch < ActiveRecord::Base
       internships = internships.where(:semester_id => semesters) if semesters.present?
       internships.uniq.sort_by do |x| x.created_at end.reverse
     end
-    
-end   
+
+  # :nocov:
+end
