@@ -54,4 +54,12 @@ RSpec.describe User, :type => :model do
       expect(user.send_password_reset).to be_truthy
     end
   end
+
+  describe "UserObserver" do
+    it 'should trigger the observer method' do
+      user.student.internships << create(:internship, student: user.student)
+      user.student.internships << create(:internship, student: user.student)
+      expect(user.save).to be_truthy
+    end
+  end
 end

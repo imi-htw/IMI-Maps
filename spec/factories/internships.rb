@@ -11,7 +11,6 @@ FactoryGirl.define do
     email_public true
     description "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     semester
-    internship_report "internship report"
     salary 8
     start_date DateTime.now.to_date
     end_date DateTime.now.to_date
@@ -32,5 +31,6 @@ FactoryGirl.define do
     supervisor_email "supervisor@bar.com"
     supervisor_name "internship supervisor name"
     completed false
+    internship_report { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'test.pdf')) }
   end
 end

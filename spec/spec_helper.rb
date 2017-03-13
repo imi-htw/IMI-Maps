@@ -5,6 +5,9 @@
 
    # ignore initializers
    add_filter 'config/initializers'
+
+   # ignore unused uploader
+   add_filter 'app/uploaders/picture_uploader.rb'
  end
 
  require 'factory_girl_rails'
