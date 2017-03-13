@@ -1,5 +1,11 @@
  require 'simplecov'
- SimpleCov.start
+ SimpleCov.start do
+   # ignore active admin
+   add_filter 'app/admin'
+
+   # ignore initializers
+   add_filter 'config/initializers'
+ end
 
  require 'factory_girl_rails'
 
