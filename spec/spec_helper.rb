@@ -16,6 +16,7 @@
    def login
      user = FactoryGirl.create :user
      session[:user_id] = user.id
+     session[:enrolment_number] = user.student.enrolment_number
      user
    end
  end
