@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def new
 
-    if current_user 
+    if current_user
       redirect_to overview_index_url
     end
 
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       else
         s+=(" & " + internship.student.first_name[0..0].capitalize+".")
        end
-       n+=1 
+       n+=1
        end
 
       if n==1
@@ -59,11 +59,11 @@ class SessionsController < ApplicationController
       #  cookies[:auth_token] = user.auth_token
       #end
       #redirect_to overview_index_url, :notice => "Logged in!"
-      
+
     else
       #flash.now.alert = "Email or password is invalid"
       flash[:alert] = t("msg.invalid")
-      
+
       redirect_to :back
     end
   end
@@ -73,5 +73,5 @@ class SessionsController < ApplicationController
     #cookies.delete(:auth_token)
     redirect_to root_url, :alert =>  t("msg.logout")
   end
-  
+
 end

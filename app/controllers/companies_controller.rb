@@ -1,12 +1,6 @@
 class CompaniesController < ApplicationController
   before_filter :authorize
 
-  def hello
-  #### your code goes here #####
-    respond_to do |format|
-      format.js { render :layout=>false }
-    end
-  end
 
   # GET /companies
   # GET /companies.json
@@ -15,12 +9,12 @@ class CompaniesController < ApplicationController
 
     @pins = @companies.to_gmaps4rails do |company, marker |
 
-      href =  if company.website.starts_with?'http' 
-              company.website  
-            else 
-              "http://"+company.website 
+      href =  if company.website.starts_with?'http'
+              company.website
+            else
+              "http://"+company.website
              end
-             
+
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
     end
@@ -38,12 +32,12 @@ class CompaniesController < ApplicationController
 
     @pins = @company.to_gmaps4rails do |company, marker |
 
-      href =  if company.website.starts_with?'http' 
-              company.website  
-            else 
-              "http://"+company.website 
+      href =  if company.website.starts_with?'http'
+              company.website
+            else
+              "http://"+company.website
              end
-             
+
       marker.infowindow ("<a href='/companies/#{company.id}' style='font-weight:bold'>#{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")
 
     end

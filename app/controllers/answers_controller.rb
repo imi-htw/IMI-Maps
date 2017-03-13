@@ -34,7 +34,7 @@ class AnswersController < ApplicationController
     @internship = @answer.user_comment.internship
     @user_comments = @internship.user_comments.order("created_at DESC")
     @answer.destroy
-    
+
     #flash[:notice] = "Answer was successfully deleted"
 
     respond_to do |format|

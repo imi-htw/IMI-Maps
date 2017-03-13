@@ -79,11 +79,6 @@
 </table>
 
 
-<% if @current_user.internship_authorization %>
-<%= link_to t("buttons.done_intership_here"), new_internship_path, class: "btn btn-large btn-success" %>
-<% end %>
-
-
 <%= gmaps({
    "map_options" => {"auto_zoom" => false, "zoom" => 5 },
    "markers"     => {"data" => @pins }
