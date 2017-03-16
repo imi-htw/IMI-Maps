@@ -26,8 +26,8 @@ RSpec.describe User, :type => :model do
 
     end
 
-    it 'rejects empty student_ids' do
-      user.student_id = nil
+    it 'rejects empty student relations' do
+      user.student = nil
       expect(user.save).to be_falsy
     end
   end
@@ -57,8 +57,8 @@ RSpec.describe User, :type => :model do
 
   describe "UserObserver" do
     it 'should trigger the observer method' do
-      user.student.internships << create(:internship, student: user.student)
-      user.student.internships << create(:internship, student: user.student)
+      user.student.internships << build(:internship, student: user.student, completed: false)
+      user.student.internships << build(:internship, student: user.student, completed: false)
       expect(user.save).to be_truthy
     end
   end

@@ -6,6 +6,9 @@ FactoryGirl.define do
     birthday DateTime.now.to_date
     birthplace "birthplace"
     email "foo@bar.com"
-    user
+    #user
+    after(:build) do |student|
+      student.user ||= FactoryGirl.build(:user, student: student)
+    end
   end
 end

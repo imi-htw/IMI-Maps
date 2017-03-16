@@ -11,12 +11,18 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ApplicationHelper, :type => :helper do
-  describe "flash_class" do
+  describe "#flash_class" do
     it 'should return the correct css classes' do
       expect(helper.flash_class(:notice)).to eq "alert alert-info"
       expect(helper.flash_class(:success)).to eq "alert alert-success"
       expect(helper.flash_class(:error)).to eq "alert alert-error"
       expect(helper.flash_class(:alert)).to eq "alert alert-info"
+    end
+  end
+
+  describe "#get_notifications" do
+    it 'should return the correct notifications' do
+      expect(helper.get_notifications).to eq []
     end
   end
 end

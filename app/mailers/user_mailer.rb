@@ -1,6 +1,8 @@
 class UserMailer < ActionMailer::Base
   default :from => "imi.praktiinfo@gmail.com"
 
+  # Unused methods are excluded from the coverage report
+  # :nocov:
   def registration_confirmation(user)
   	@user = user
   	mail(:to => "#{user.name} #{user.last_name} <#{user.email}>", :subject => "(IMI-Map) Registered")
@@ -16,11 +18,14 @@ class UserMailer < ActionMailer::Base
   	mail(:to => "#{user.name} <#{user.email}>", :subject => "(IMI-Map) New Notification")
   end
 
+  # :nocov:
+
   def forgot_pwd(user)
     @user = user
     mail :to => user.email, :subject => "(IMI-Map)Password Reset"
   end
 
+  # :nocov:
   def invite_student(student)
     @student = student
     mail(to: student.email, subject: "Come and join IMI-Map")
@@ -30,5 +35,5 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail :to => user.email, :subject => "Password Reset"
   end
-
+  # :nocov:
 end

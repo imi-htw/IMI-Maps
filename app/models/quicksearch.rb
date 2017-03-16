@@ -1,6 +1,5 @@
 class Quicksearch < ActiveRecord::Base
 
-  # :nocov:
   def internships(query)
     @internships = find_internships(query)
   end
@@ -30,5 +29,4 @@ class Quicksearch < ActiveRecord::Base
       internships.uniq.sort_by do |x| x.created_at end.reverse
     end
 
-  # :nocov:
 end

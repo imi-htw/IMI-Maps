@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => true
   validates :password, :presence => true, length: { minimum: 5 }
-  validates :student_id, :presence => true
+  validates :student, :presence => true
 
   belongs_to :student
   has_many :user_comments, :dependent => :destroy

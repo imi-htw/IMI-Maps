@@ -28,17 +28,17 @@ class QuicksearchesController < ApplicationController
       end
     @programming_languages = @language_ary.uniq
 
-    @orientations_ary = @internships.collect do |x| x.orientation end  
+    @orientations_ary = @internships.collect do |x| x.orientation end
     @orientations = @orientations_ary.uniq.map do |o| [o.name, o.id] end
 
-    @companies = @internships.collect do |x| x.company end    
+    @companies = @internships.collect do |x| x.company end
 
 		@pins = @companies.to_gmaps4rails do |company, marker |
       if company.website
-        href =  if company.website.starts_with?'http' 
-                company.website  
-              else 
-                "http://"+company.website 
+        href =  if company.website.starts_with?'http'
+                company.website
+              else
+                "http://"+company.website
               end
             end
       marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a><p>Industry: #{company.industry}</p><p>Employees: #{company.number_employees}</p><a href='#{href}' target='_blank'>#{company.website}</a>")

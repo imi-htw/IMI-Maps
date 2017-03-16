@@ -1,4 +1,6 @@
 class AdminMailer < ActionMailer::Base
+  # This class appears to be unused. Thus: excluding from coverage
+  # :nocov:
 
   default to: Proc.new {Admin.pluck(:email)},
   		  from: "notification@imi-maps.com"
@@ -17,4 +19,5 @@ class AdminMailer < ActionMailer::Base
   	end
   end
 
+  # :nocov:
 end

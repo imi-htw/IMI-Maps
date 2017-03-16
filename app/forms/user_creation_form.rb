@@ -32,7 +32,10 @@ class UserCreationForm
 
   def new_or_existing
     if existing_student
+      # This code will probably never be reached due to before filters in UsersController
+      # :nocov:
       existing_student
+      # :nocov:
     else
       Student.new(enrolment_number: given_enrolment_number)
     end

@@ -9,6 +9,15 @@ RSpec.describe OverviewController, :type => :controller do
     @current_user = login
   end
 
+  describe "current user with invalid user_id" do
+    it 'destroys the session' do
+      session[:user_id] = 42
+      expect {
+        get :index
+      }.to raise_error(NoMethodError)
+    end
+  end
+
   describe "GET #index" do
     it 'renders the index action correctly' do
       get :index
