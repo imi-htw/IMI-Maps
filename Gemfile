@@ -10,9 +10,6 @@ gem "country-select"
 
 gem 'activeadmin'
 
-gem 'thin'
-
-
 gem "rmagick", "~> 2.13.1"
 gem "paperclip", "~> 2.7"
 gem "date-input-rails"
@@ -56,12 +53,10 @@ gem 'factory_girl_rails'
 group :test do
   gem "shoulda-matchers"
   gem "selenium-webdriver"
-  gem "simplecov", require: false
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
@@ -70,6 +65,7 @@ group :development, :test do
 
   gem 'railroady'
   gem 'database_cleaner'
+  gem "simplecov", require: false
 end
 
 group :production do
