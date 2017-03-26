@@ -9,13 +9,13 @@ RSpec.describe UsersController, :type => :controller do
 
   describe "GET #new" do
     it 'renders the new template' do
-      session[:enrolment_number] = 42
+      session[:enrolment_number] = 42.to_s
       get :new
       expect(response).to render_template :new
     end
 
     it 'creates and assigns a new instance of UserCreationForm' do
-      session[:enrolment_number] = 42
+      session[:enrolment_number] = 42.to_s
       get :new
       expect(assigns(:user_creation_form)).to be_an_instance_of(UserCreationForm)
     end
@@ -23,14 +23,14 @@ RSpec.describe UsersController, :type => :controller do
 
   describe "POST #create" do
     it 'creates and assigns new instance of UserCreationForm' do
-      session[:enrolment_number] = 42
+      session[:enrolment_number] = 42.to_s
       post :create, user_creation_form: attributes_for(:user)
       expect(assigns(:user_creation_form)).to be_an_instance_of(UserCreationForm)
     end
 
     context 'given correct parameters' do
       it 'should redirect ot overview#index' do
-        session[:enrolment_number] = 42
+        session[:enrolment_number] = 42.to_s
         post :create, user_creation_form: attributes_for(:user, password: "foofoofoo", password_confirmation: "foofoofoo", first_name: "first name", last_name: "last name", birthday: "12.12.2005", birthplace: "foo")
         expect(response).to redirect_to overview_index_path
       end
