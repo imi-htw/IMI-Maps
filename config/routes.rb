@@ -58,7 +58,6 @@ ImiMaps::Application.routes.draw do
     get 'login', to: 'sessions#new', as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
 
-    match "*path", to: "errors#not_found"
 
 	end
 
@@ -75,4 +74,5 @@ ImiMaps::Application.routes.draw do
   match 'en', to: redirect("/en/sessions#new")
   match 'id', to: redirect("/id/sessions#new")
 
+  match "*path", to: "errors#not_found"
 end
