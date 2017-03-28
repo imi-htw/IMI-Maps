@@ -33,5 +33,15 @@ test: ## test local environment. Usage: make test [production|staging|developmen
 	echo "Environment was not set properly, check README.md or help"; exit 10; fi
 	@docker exec -t imi-maps-$(ENV) rake spec
 
+enter:
+	@if [ ! $(ENV) = production ] && [ ! $(ENV) = staging ] && [ ! $(ENV) = development ]; then \
+	echo "Environment was not set properly, check README.md or help"; exit 10; fi
+	@docker exec -ti imi-maps-$(ENV) bash
+
+database:
+	@if [ ! $(ENV) = production ] && [ ! $(ENV) = staging ] && [ ! $(ENV) = development ]; then \
+	echo "Environment was not set properly, check README.md or help"; exit 10; fi
+	@docker exec -ti imi-maps-$(ENV) bash -c 'cd /usr/src/app && bundle exec rake db:reseed'
+
 %:
 	@:
