@@ -5,7 +5,7 @@ syncs:
   imi-maps-sync:
     src: './'
     dest: '/usr/src/app'
-    sync_host_ip: 192.168.99.100
+    sync_host_ip: 'placeholder'
     sync_host_port: 10871
     sync_excludes: ['Path .docker/staging', 'Path .docker/production', 'Name config.rb', 'Name .gitignore', 'Name .git/', 'Name log', 'Name tmp', 'Name public/uploads', 'Name coverage']
     sync_excludes_type: none

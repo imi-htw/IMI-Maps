@@ -1,8 +1,8 @@
 FROM ruby:2.1-alpine
 
 ENV APP_HOME /usr/src/app
-ENV RAILS_ENV development
-ENV RACK_ENV development
+ENV RAILS_ENV production
+ENV RACK_ENV production
 
 EXPOSE 80
 
@@ -16,11 +16,15 @@ RUN chmod +x /docker-entrypoint.sh
 RUN set -ex \
   && apk add --no-cache libpq imagemagick nodejs bash
 
+ADD . $APP_HOME
+
 # build deps
 RUN set -ex \
   && apk add --no-cache --virtual .builddeps linux-headers libpq build-base postgresql-dev imagemagick-dev \
-  && bundle install --without test \
+  && bundle install --without development test \
+  && bundle exec rake assets:precompile \
   && apk del .builddeps
+
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["bundle", "exec", "unicorn", "--port", "80"]

@@ -30,6 +30,7 @@
 
 # Ignore public uploads
 /public/uploads
+/public/assets
 
 *~
 
@@ -41,3 +42,7 @@ cmd.exe
 # ignore code coverage reports
 coverage
 
+/docker-compose-*
+/docker-sync-*
+/start-development.sh
+/.env-*

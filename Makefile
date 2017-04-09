@@ -24,7 +24,7 @@ build: ## build local environment. Usage: make build [production|staging|develop
 	echo "Environment was not set properly, check README.md or help"; exit 10; fi
 	@cp .docker/$(ENV)/.env-$(ENV).template .docker/$(ENV)/.env-$(ENV); \
 	cp .docker/$(ENV)/docker-compose-$(ENV).yml ./; \
-	cp .docker/$(ENV)/Dockerfile ./; \
+	cp .docker/$(ENV)/Dockerfile ./;
 	docker-compose -f .docker/$(ENV)/docker-compose-$(ENV).yml build; \
 	rm .docker/$(ENV)/.env-$(ENV) docker-compose-$(ENV).yml ./Dockerfile
 
@@ -33,12 +33,12 @@ test: ## test local environment. Usage: make test [production|staging|developmen
 	echo "Environment was not set properly, check README.md or help"; exit 10; fi
 	@docker exec -t imi-maps-$(ENV) rake spec
 
-enter:
+enter: ## enter local environment
 	@if [ ! $(ENV) = production ] && [ ! $(ENV) = staging ] && [ ! $(ENV) = development ]; then \
 	echo "Environment was not set properly, check README.md or help"; exit 10; fi
 	@docker exec -ti imi-maps-$(ENV) bash
 
-database:
+database: ## reseed database
 	@if [ ! $(ENV) = production ] && [ ! $(ENV) = staging ] && [ ! $(ENV) = development ]; then \
 	echo "Environment was not set properly, check README.md or help"; exit 10; fi
 	@docker exec -ti imi-maps-$(ENV) bash -c 'cd /usr/src/app && bundle exec rake db:reseed'

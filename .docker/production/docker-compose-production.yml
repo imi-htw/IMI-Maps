@@ -2,7 +2,7 @@ version: '2'
 services:
   postgresql:
     image: postgres:9.6.2-alpine
-    container_name: postresql-development
+    container_name: postresql-production
     environment:
       POSTGRES_PASSWORD: imi-maps
       POSTGRES_USER: imi-maps
@@ -12,17 +12,12 @@ services:
 
   imi-maps:
     build: .
-    image: htw/imi-maps:development
-    container_name: imi-maps-development
+    image: htw/imi-maps:production
+    container_name: imi-maps-production
     depends_on:
       - postgresql
-    env_file: .env-development
-    volumes:
-      - imi-maps-sync:/usr/src/app:rw
+    env_file: .env-production
     links:
       - postgresql
     ports:
       - 80:80
-volumes:
-  imi-maps-sync:
-    external: true
