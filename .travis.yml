@@ -1,42 +1,19 @@
 sudo: required
-
 services:
-  - docker
-
+- docker
 language: ruby
 rvm:
-  - "2.1.5"
-
-#before_install:
-  #- apt-get update
-
-   #install new versoin of docker-engine
-  #- sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
-
-   #copy production Dockerfile in place
-   #build the image
-  #- docker build -t imimaps/imimaps .
-  #- docker run -d -p 127.0.0.1:80:4567 imimaps/imimaps /bin/sh -c "bundle exec rake test"
+- 2.1.5
 install:
-  - echo "Install task"
-
+- echo "Install task"
 script:
-  - echo "Build start"
-  - ./ci-cd/helpers.rb
-  - echo "Build done"
-  #- bundle exec rake test
-
+- echo "Build start"
+- "./ci-cd/helpers.rb"
+- echo "Build done"
 after_success:
-  - ./ci-cd/docker-build.rb
-  #- if [ "$TRAVIS_BRANCH" == "master" ]; then
-    #echo "This is a commit to master"
-    #docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    #docker push imimaps/imimaps;
-    #fi
-  #- if []
-    # deploy to staging docker-machine
-
-  # if release => push to imimaps production
-  # deploy to production machine
-
-#deploy: lkkkkkkkkkk
+- "./ci-cd/docker-build.rb"
+env:
+  global:
+  - secure: WBiESxRKo4qOkbQ1omCRUqkjJLQy4ECqfTbzkpcHKlqqj8L8RWXlF4QRugpjPYbsY2BBE7yq2h/c+28ntlBDMO02OPNQu40hzygMV2jHSCPgvq/v/QmzHXTVX0wzLwc3M0YAJrh2dBSunWIcBxAOPUXmLolt50h7dPr6mXStL4gej+nmgWfz06ZE+1BBQPNZvWUPtBz57sKupyjubGto94DBk+F3h4ECmOkvaKbDyzdVqS6o3DugjKakq28iItuIVjACOqXSMd2ebfBdWooN+Oi17CI2J44v/HtO6T8DiEmCkl4e00KQncqKb5gu/lkdwcNlG/hFpmW4EvKXASUT/bRgSIjsZZ+XEqMV7GCHV6shzubIB0RN/4s7JvNuhsOtAhi3hOd+IGBB7tP6PlrRBHxwQOHlZFTcRbrkzI1K7OnhbjNTQS6TV1JkeK/fLXY8nqrnigNpsF+cYIaHVlZVLO0LYeU2v/QoiefTglRbAputIwGd7OQd/4T9YgE3FA/DH8YMHs8pWTE6+iH2jF0GMaE26JrfBODxHjWiSJSb3Gh4oEHkdC3v/zC0Xk9DHfOO15aAWeSZx8Bo0jyfG9EW0b7rXmpbT4HAL6BFpcdHYws8LOXDdi+glplQg9yTKwUQ+Ae4W4oQwY/EjZSKh/BssgmUzSZ94Zkew5y/uHOYHM0=  # DOCKER_EMAIL
+  - secure: BMYXhjPNL7YKn8RqAyweqmKuz83DtdtHOFPo9E+26KddIXMN05k04rui2lUQFM3s8sN9E8AVx87EwGmZohj7bqLa6biu/vxDu3t0FAIAbqXfEcozlMzjZrXRYndn15jBovrR6z1q1giFpdK4sYqYacUTtX2UwDrZBSZ+ZbpU55pagDYo5fJFFgDGarGQQ0JKDplyE+T8qzLk20BW7V9yxdT2PQ5K6GtHq0CpeGG+7iKeEWdyFDvxuPi6P0eugGS6hvPBx7pcwGIvUwx+Gjhmbg+Lc1YPlBwtdkrDZGlyGoDvQV+hEIrhxl4M/yU5uXbtjHT+bDl1s8G+vCnOubShK09Un1IexwMwYqdqViJ1rVaxo9bFqepuMbIxjYcwIVfhzTdE0CV4SJTcq8w7RBaPjGd5vJKDQkB8B5BbM+LXhzFQ8uh2V/eiHnw4Ri5rGWGkp36ICO0963irFfAN7UzvQ19eL0E6USvDhruLBj49GtjMJmjC5JMD10nQoxZYKa0qSYRPLIoSNcWqTV/+ArcWohgvSHRUqNAwzt+6cixk0NHEEEdP9Ttq7BomxZRXov/5nVU5kCZ+3T6Kh/Yy1Cwu3AKiOw3Qfxw0m2AkFTKF9JlIZsOQvKiRwMBeXsrbuESAnOnVsOrUTzC9htO/NbHgZHq/vbVUvzh01P2m8wB2ovc= # DOCKER_USER
+  - secure: hzEo1N6S2UU91Ni2Wm0q5CegWPwvW8O3SAi9CoOXhKr/Eag9uRh+yaUBHizum5oNsIs/frndfDENMm66o1fJAS8IUv0nbfuExozVv+4ZlVwq+p31pdClMbi+ILfTjU98Sqxb/c9PNNOrehpRdPEjTjUnKpPXYc4VlIwEJYBrvL/5DRmrygsazMzV5EN4CNO9BIkFR5CeJPdbXMix06YeoHPgaKGfOrZ73L6ewZAewj25sc+1govt0Lm8KHVQptViFBYqK7BlbRs7i2oG80Sy4lHhwWmesmCOTuMQ+nOxq+dDgHZp5ycqjMUwP8awtYFqpvhsU9R70/C7dEC25aRHSz21OHeDkhwULf+TXJbGSMt8keXZGCKEGqk05lvn39TviclkxmxGpjazQrco1BjhN43ZztE9fsiL+H6Ol4+Hl6KDm+f4QoREfH+ri6pl8xUQ/zRiUDrvbzT8XcWMWnwoTgUNcgGyNkXwhCuqD1kJ+UQgL9080Dq4tRojo+MJbVAZMIxuWB5RAs13KvlQNm7oOPAZlisbnGDVqDdKoTrtMdxAB3kHkTHZDLqPAtmKn8d9j/EP1XzAYUL8ifPR7Sa9Q1swg6UCMj3Agba2KdSJr7xHXZPmrtnghOD6XwEou2e6OGdEiXDw0J8MnIB9QzM+mAv3o+CIiiUQxvLx3gh8B+k= # DOCKER_PASSWORD
