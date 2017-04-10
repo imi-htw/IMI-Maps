@@ -44,6 +44,7 @@ module DockerTool
     desc "enter", "enters a bash shell in the development environment"
     def enter
       say "Entering environment: #{environment}", :green
+      exec "docker exec -ti imi-maps-#{environment} bash"
     end
 
     private
