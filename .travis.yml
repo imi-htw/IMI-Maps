@@ -18,6 +18,7 @@ rvm:
 script:
   - echo "Build start"
   - ./ci-cd/helpers.sh
+  - echo "Build done"
   #- bundle exec rake test
 
 #after_success:
