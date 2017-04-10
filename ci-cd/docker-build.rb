@@ -18,7 +18,7 @@ module CICD
         puts "Building image for environment: #{environment} with tag #{tag}"
         in_environment(environment) do
           puts "cd #{@root} && docker build . -t imimaps-#{environment}:#{tag}"
-          `cd #{@root} && docker build . -t imimaps-#{environment}:#{tag}`
+          puts `cd #{@root} && docker build . -t imimaps-#{environment}:#{tag}`
           system_call("docker images | grep imimaps")
         end
       else
