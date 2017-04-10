@@ -1,19 +1,26 @@
 #!/usr/bin/env ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+#
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__))
+
+require 'ci-cd/helpers'
 
 module DockerTool
   require 'thor'
   require 'pty'
 
   class Common < Thor
+
+    include CICD::Helpers::General
+
     @@root = File.dirname(File.expand_path(__FILE__))
 
     desc "build", "builds the development environment"
     def build
       say "Building environment: #{environment}", :green
-      in_environment do
-        system_call "docker-compose -f #{path("docker-compose-#{environment}.yml")} build"
+      in_environment(environment) do
+        system_call "docker-compose -f #{path(@@root, "docker-compose-#{environment}.yml")} build"
       end
     end
 
@@ -21,14 +28,14 @@ module DockerTool
     def start
       say "Starting environment: #{environment}", :green
       if environment == :development
-        in_environment "docker-sync.yml" do
+        in_environment(environment, "docker-sync.yml") do
           # put correct docker-machine ip into docker-sync config
           `sed -i '' 's/sync_host_ip:.*/sync_host_ip: '$(docker-machine ip development)'/g\' docker-sync.yml`
           system_call "docker-sync-stack clean"
           system_call "docker-sync-stack start"
         end
       else
-        in_environment do
+        in_environment(environment) do
           system_call "docker-compose -f docker-compose-#{environment}.yml up"
         end
       end
@@ -45,43 +52,6 @@ module DockerTool
       self.class.name.downcase.split("::").last.to_sym
     end
 
-    def path(*path)
-      File.join(@@root, *path)
-    end
-
-    # copy files to root, execute block, clean up when done
-    def in_environment(*extra_files)
-      environment_files = [
-        ".env-#{environment}",
-        "docker-compose-#{environment}.yml",
-       'docker-entrypoint.sh',
-       'Dockerfile'
-      ].concat(extra_files)
-
-      environment_files.each do |file|
-        say "copying #{file} to #{@@root}", :green
-        `cp #{path('.docker', environment.to_s, file)} #{@@root}`
-      end
-
-      begin
-        yield
-      rescue
-      ensure
-        environment_files.each do |file|
-          say "removing #{file}", :green
-          `rm #{path(file)}`
-        end
-      end
-
-    end
-
-    def system_call(command)
-      PTY.spawn(command) do |stdout, stdin, pid|
-        stdout.each do |line|
-          puts line
-        end
-      end
-    end
   end
 
   class Development < Common; end

@@ -1,27 +1,79 @@
 #!/usr/bin/env ruby
 
+require 'thor'
+
 module CICD
+
+
   module Helpers
-    # determines, if we're running in travis
-    def is_travis
-      if ENV["TRAVIS"].nil?
-        false
-      else
-        true
+
+    module Travis
+      # determines, whether the current build is a tagged release or not
+      def is_release
+        if ENV["TRAVIS_TAG"] && ENV["TRAVIS_BRANCH"] == "master"
+          :staging
+        elsif ENV["TRAVIS_TAG"] && (ENV["TRAVIS_BRANCH"] == ENV["TRAVIS_TAG"])
+          :production
+        else
+          # not on branch master + no tagged release
+          # => no need to build
+          false
+        end
+      end
+
+      def tag
+        if ENV["TRAVIS_TAG"] && ENV["TRAVIS_COMMIT"]
+          ENV["TRAVIS_TAG"]
+        elsif ENV["TRAVIS_TAG"].nil? && ENV["TRAVIS_COMMIT"]
+          ENV["TRAVIS_COMMIT"]
+        else
+          puts "This does not feel like travis. Exiting."
+          exit 1
+        end
       end
     end
 
-    # determines, if the current build is a tagged release or not
-    def is_release
-      if ENV["TRAVIS_TAG"] && ENV["TRAVIS_BRANCH"] == "master"
-        puts "STAGING RELEASE "
-        true
-      elsif ENV["TRAVIS_TAG"] && (ENV["TRAVIS_BRANCH"] == ENV["TRAVIS_TAG"])
-        puts "PRODUCTION / TAGGED RELEASE"
-        true
-      else
-        puts "NOT A STAGING OR PRODUCTION RELEASE"
-        false
+    module General
+      include Thor::Shell
+      extend Thor::Shell
+
+      # copy files for the environment to root, execute block, clean up when done
+      def in_environment(environment, *extra_files)
+        environment_files = [
+          ".env-#{environment}",
+          "docker-compose-#{environment}.yml",
+         'docker-entrypoint.sh',
+         'Dockerfile'
+        ].concat(extra_files)
+
+        environment_files.each do |file|
+          say "copying #{file} to root", :green
+          `cp #{path('.docker', environment.to_s, file)} #{File.dirname(File.expand_path(File.join(__FILE__, '..')))}`
+        end
+
+        begin
+          yield
+        rescue
+        ensure
+          environment_files.each do |file|
+            say "removing #{file}", :green
+            `rm #{path(file)}`
+          end
+        end
+
+      end
+
+      def path(root = File.dirname(File.expand_path(File.join(__FILE__, '..'))), *path)
+        File.join(root, *path)
+      end
+
+
+      def system_call(command)
+        PTY.spawn(command) do |stdout, stdin, pid|
+          stdout.each do |line|
+            puts line
+          end
+        end
       end
     end
   end
