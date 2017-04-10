@@ -19,9 +19,9 @@ module CICD
       end
 
       def tag
-        if ENV["TRAVIS_TAG"] && ENV["TRAVIS_COMMIT"]
+        if !ENV["TRAVIS_TAG"].empty? && !ENV["TRAVIS_COMMIT"].empty?
           ENV["TRAVIS_TAG"]
-        elsif ENV["TRAVIS_TAG"].nil? && ENV["TRAVIS_COMMIT"]
+        elsif ENV["TRAVIS_TAG"].empty? && !ENV["TRAVIS_COMMIT"].empty?
           ENV["TRAVIS_COMMIT"]
         else
           puts "This does not feel like travis. Exiting."
