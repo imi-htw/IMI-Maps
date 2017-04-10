@@ -1,9 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'thor'
-
 module CICD
-
 
   module Helpers
 
@@ -34,8 +31,6 @@ module CICD
     end
 
     module General
-      include Thor::Shell
-      extend Thor::Shell
 
       # copy files for the environment to root, execute block, clean up when done
       def in_environment(environment, *extra_files)
@@ -47,7 +42,7 @@ module CICD
         ].concat(extra_files)
 
         environment_files.each do |file|
-          say "copying #{file} to root", :green
+          puts "copying #{file} to root"
           `cp #{path('.docker', environment.to_s, file)} #{File.dirname(File.expand_path(File.join(__FILE__, '..')))}`
         end
 
@@ -56,7 +51,7 @@ module CICD
         rescue
         ensure
           environment_files.each do |file|
-            say "removing #{file}", :green
+            puts "removing #{file}"
             `rm #{path(file)}`
           end
         end

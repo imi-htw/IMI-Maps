@@ -14,6 +14,8 @@ rvm:
    #build the image
   #- docker build -t imimaps/imimaps .
   #- docker run -d -p 127.0.0.1:80:4567 imimaps/imimaps /bin/sh -c "bundle exec rake test"
+install:
+  - echo "Install task"
 
 script:
   - echo "Build start"
