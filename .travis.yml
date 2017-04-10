@@ -17,11 +17,12 @@ rvm:
 
 script:
   - echo "Build start"
-  - ./ci-cd/helpers.sh
+  - ./ci-cd/helpers.rb
   - echo "Build done"
   #- bundle exec rake test
 
-#after_success:
+after_success:
+  - ./ci-cd/docker-build.rb
   #- if [ "$TRAVIS_BRANCH" == "master" ]; then
     #echo "This is a commit to master"
     #docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
