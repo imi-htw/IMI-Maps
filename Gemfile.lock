@@ -319,6 +319,7 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers
   simplecov
+  thor
   uglifier (>= 1.0.3)
   unicorn
 
