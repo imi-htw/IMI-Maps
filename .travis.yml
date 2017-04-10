@@ -1,11 +1,35 @@
+sudo: required
+
 language: ruby
 rvm:
   - "2.1.5"
-env:
-  - DB=sqlite
-  - DB=postgresql
-before_script:
-  - psql -c 'create database imi_maps_test' -U postgres
+
+#before_install:
+  #- apt-get update
+
+   #install new versoin of docker-engine
+  #- sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+
+   #copy production Dockerfile in place
+   #build the image
+  #- docker build -t imimaps/imimaps .
+  #- docker run -d -p 127.0.0.1:80:4567 imimaps/imimaps /bin/sh -c "bundle exec rake test"
+
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:schema:load
-  - RAILS_ENV=test bundle exec rspec spec
+  - echo "Build start"
+  - ./ci-cd/helpers.sh
+  #- bundle exec rake test
+
+#after_success:
+  #- if [ "$TRAVIS_BRANCH" == "master" ]; then
+    #echo "This is a commit to master"
+    #docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    #docker push imimaps/imimaps;
+    #fi
+  #- if []
+    # deploy to staging docker-machine
+
+  # if release => push to imimaps production
+  # deploy to production machine
+
+#deploy: lkkkkkkkkkk
