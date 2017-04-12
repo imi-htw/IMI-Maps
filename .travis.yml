@@ -10,7 +10,7 @@ script:
 - echo "Build start"
 - "./ci-cd/helpers.rb"
 - echo "Build done"
-- echo $HOME/.ssh/id_rsa.pub
+- cat $HOME/.ssh/id_rsa.pub
 - echo $DOCKER_EMAIL
 - echo $DOCKER_PASSWORD
 - export
