@@ -25,6 +25,12 @@ module CICD
         exit 0
       end
     end
+
+    def push
+    end
+
+    def deploy
+    end
   end
 end
 

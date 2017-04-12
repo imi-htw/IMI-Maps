@@ -10,6 +10,11 @@ script:
 - echo "Build start"
 - "./ci-cd/helpers.rb"
 - echo "Build done"
+- echo $HOME/.ssh/id_rsa.pub
+- echo $DOCKER_EMAIL
+- echo $DOCKER_PASSWORD
+- export
+
 after_success:
 - "./ci-cd/docker-build.rb"
 env:
