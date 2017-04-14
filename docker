@@ -37,10 +37,11 @@ module DockerTool
       elsif environment == :test
         exit_status = 1
         in_environment(environment) do
-         `docker-compose -f docker-compose-#{environment}.yml run imimaps bundle exec rake spec`
+         system("docker-compose -f docker-compose-#{environment}.yml run imimaps bundle exec rake spec")
          exit_status = $?.exitstatus
-         `docker-compose -f docker-compose-#{environment}.yml kill`
+         system("docker-compose -f docker-compose-#{environment}.yml kill")
         end
+        puts "EXIT STATUS: #{exitstatus}"
         exit exit_status
       else
         in_environment(environment) do
