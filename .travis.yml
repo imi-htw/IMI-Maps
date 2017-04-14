@@ -17,7 +17,7 @@ before_install:
   - chmod 0660 id_rsa*
   - "echo PWD:"
   - "pwd"
-  - "ssh -i id_rsa_staging -i StrictHostKeyChecking=no root@infra.dev-sector.net \"ps\""
+  - "ssh -i id_rsa_staging -o StrictHostKeyChecking=no root@infra.dev-sector.net \"ps\""
 after_success:
 - "./ci-cd/docker-build.rb"
 env:
