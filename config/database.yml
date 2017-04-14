@@ -26,6 +26,7 @@ test:
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
   database: <%= ENV['POSTGRES_DB'] %>-test
+  port: 9999
 
 production:
   adapter: postgresql

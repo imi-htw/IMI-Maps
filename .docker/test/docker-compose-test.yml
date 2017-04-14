@@ -9,7 +9,7 @@ services:
       - POSTGRES_USER=imimaps
       - POSTGRES_DB=imimaps
     ports:
-      - 5432:5432
+      - 9999:9999
 
   imimaps:
     build: .
@@ -24,5 +24,3 @@ services:
       - postgresql
     links:
       - postgresql
-    ports:
-      - 80:80
