@@ -34,6 +34,11 @@ module DockerTool
           system_call "docker-sync-stack clean"
           system_call "docker-sync-stack start"
         end
+      elsif environment == :test
+        in_environment(environment) do
+         system_call "docker-compose -f docker-compose-#{environment}.yml run imimaps bundle exec rake spec"
+         system_call "docker-compose -f docker-compose-#{environment}.yml kill"
+        end
       else
         in_environment(environment) do
           system_call "docker-compose -f docker-compose-#{environment}.yml up"
@@ -44,7 +49,7 @@ module DockerTool
     desc "enter", "enters a bash shell in the development environment"
     def enter
       say "Entering environment: #{environment}", :green
-      exec "docker exec -ti imi-maps-#{environment} bash"
+      exec "docker exec -ti imimaps-#{environment} bash"
     end
 
     private
@@ -56,6 +61,7 @@ module DockerTool
   end
 
   class Development < Common; end
+  class Test < Common; end
   class Production < Common; end
   class Staging < Production; end
 
@@ -63,7 +69,7 @@ module DockerTool
     class_option :verbose, type: :boolean, aliases: '-v', default: false
     class_option :dryrun, type: :boolean, aliases: '-d', default: false
 
-    [:development, :staging, :production].each do |environment|
+    [:development, :test, :staging, :production].each do |environment|
       desc "#{environment} SUBCOMMAND", "manage the #{environment} environment"
       subcommand(environment, const_get("#{self.name.to_s.split("::").first}::#{environment.to_s.capitalize}"))
     end

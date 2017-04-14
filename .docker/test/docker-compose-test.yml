@@ -2,7 +2,7 @@ version: '2'
 services:
   postgresql:
     image: postgres:9.6.2-alpine
-    container_name: postresql-development
+    container_name: postresql-test
     environment:
       - APPLICATION=imimaps
       - POSTGRES_PASSWORD=imimaps
@@ -13,8 +13,8 @@ services:
 
   imimaps:
     build: .
-    image: imimaps:development
-    container_name: imimaps-development
+    image: imimaps/test
+    container_name: imimaps-test
     environment:
       - APPLICATION=imimaps
       - POSTGRES_PASSWORD=imimaps
@@ -22,12 +22,7 @@ services:
       - POSTGRES_DB=imimaps
     depends_on:
       - postgresql
-    volumes:
-      - imimaps-sync:/usr/src/app:rw
     links:
       - postgresql
     ports:
       - 80:80
-volumes:
-  imimaps-sync:
-    external: true

@@ -2,7 +2,7 @@ version: "2"
 options:
   compose-file-path: 'docker-compose-development.yml'
 syncs:
-  imi-maps-sync:
+  imimaps-sync:
     src: './'
     dest: '/usr/src/app'
     sync_host_ip: 'placeholder'

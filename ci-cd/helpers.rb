@@ -35,7 +35,6 @@ module CICD
       # copy files for the environment to root, execute block, clean up when done
       def in_environment(environment, *extra_files)
         environment_files = [
-          ".env-#{environment}",
           "docker-compose-#{environment}.yml",
          'docker-entrypoint.sh',
          'Dockerfile'
@@ -73,5 +72,3 @@ module CICD
     end
   end
 end
-
-#CICD::Helpers::is_release

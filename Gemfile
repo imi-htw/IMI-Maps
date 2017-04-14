@@ -50,11 +50,6 @@ end
 
 gem 'factory_girl_rails'
 
-group :test do
-  gem "shoulda-matchers"
-  gem "selenium-webdriver"
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'better_errors'
