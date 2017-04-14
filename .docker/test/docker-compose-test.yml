@@ -8,8 +8,6 @@ services:
       - POSTGRES_PASSWORD=imimaps
       - POSTGRES_USER=imimaps
       - POSTGRES_DB=imimaps
-    ports:
-      - 9999:9999
 
   imimaps:
     build: .

@@ -41,7 +41,7 @@ module DockerTool
          exit_status = $?.exitstatus
          system("docker-compose -f docker-compose-#{environment}.yml kill")
         end
-        puts "EXIT STATUS: #{exitstatus}"
+        puts "EXIT STATUS: #{exit_status}"
         exit exit_status
       else
         in_environment(environment) do
