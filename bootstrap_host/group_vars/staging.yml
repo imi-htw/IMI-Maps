@@ -1,0 +1,3 @@
+ansible_user: "docker-deploy"
+nginx_host_name: imimaps-staging.dev-sector.net
+application_port: 4000

@@ -1,0 +1,12 @@
+---
+- name: Add docker repository key
+  apt_key:
+    id: "{{ apt_key }}"
+    keyserver: "{{ apt_key_server}}"
+    state: present
+
+- name: Add repository and update apt cache
+  apt_repository:
+    repo: "{{ apt_repository }}"
+    update_cache: yes
+    state: present
