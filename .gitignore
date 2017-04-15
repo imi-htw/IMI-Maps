@@ -48,3 +48,4 @@ coverage
 /.env-*
 /Dockerfile
 /docker-entrypoint.sh
+playbook.retry
