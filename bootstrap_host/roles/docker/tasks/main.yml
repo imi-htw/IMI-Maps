@@ -6,3 +6,9 @@
   apt: name={{ item }} state=present
   with_items:
     - "{{ packages }}"
+
+- name: "Add {{ ansible_user }} to docker group"
+  user:
+    name: "{{ ansible_user }}"
+    group: docker
+    append: yes
