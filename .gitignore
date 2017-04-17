@@ -49,3 +49,4 @@ coverage
 /Dockerfile
 /docker-entrypoint.sh
 playbook.retry
+/docker-sync.yml
