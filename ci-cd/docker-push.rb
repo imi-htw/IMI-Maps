@@ -20,18 +20,12 @@ module CICD
     def start
       if environment = is_release
         push_command = "docker login -u #{ENV["DOCKER_USERNAME"]} -p #{ENV["DOCKER_PASSWORD"]} && \
-          docker push imimaps-#{environment}:#{tag} imimaps/#{environment}"
+          docker push imimaps/#{environment}:#{tag}"
           system(push_command)
       else
         puts "Current build environment is neither master branch nor a tagged release. Exiting."
         exit 0
       end
-    end
-
-    def push
-    end
-
-    def deploy
     end
   end
 end

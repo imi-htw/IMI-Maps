@@ -17,7 +17,7 @@ module CICD
       if environment = is_release
         puts "Building image for environment: #{environment} with tag #{tag}"
         in_environment(environment) do
-          system("cd #{@root} && docker build . -t imimaps-#{environment}:#{tag}")
+          system("cd #{@root} && docker build . -t imimaps/#{environment}:#{tag}")
           system("docker images | grep imimaps")
         end
       else
