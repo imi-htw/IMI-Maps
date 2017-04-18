@@ -13,7 +13,7 @@ Zum lokalen entwickeln muss folgende Software installiert werden:
 
 ```
 # Install Dependencies
-$ brew update && brew install docker-machine imamgemagick@6 node openssl rbenv \
+$ brew update && brew install docker-machine imagemagick@6 node openssl rbenv \
   ruby-build unison
 
 # Create a virtual machine running the Docker engine
