@@ -11,7 +11,7 @@ services:
       - 5432:5432
 
   imimaps:
-    image: imimaps/production:${VERSION}
+    image: imimaps/production:${TAG}
     container_name: imimaps-production
     environment:
       - POSTGRES_USER

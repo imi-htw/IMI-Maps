@@ -21,7 +21,8 @@ before_install:
 after_success:
 - "./ci-cd/docker-build.rb"
 - "./ci-cd/docker-push.rb"
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- "./ci-cd/docker-deploy.rb"
+#- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 env:
   global:
     # DOCKER_USERNAME

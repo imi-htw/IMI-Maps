@@ -10,11 +10,6 @@ module CICD
 
     def initialize
       @root = File.dirname(File.expand_path(File.join(__FILE__, '..')))
-
-      @docker_hub_repos = {
-        staging: 'imimaps/staging',
-        production: 'imimaps/production'
-      }
     end
 
     def start

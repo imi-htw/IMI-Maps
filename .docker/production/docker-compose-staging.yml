@@ -11,7 +11,7 @@ services:
       - 5432:5432
 
   imimaps:
-    image: imimaps/staging:${VERSION}
+    image: imimaps/staging:${TAG}
     container_name: imimaps-staging
     depends_on:
       - postgresql
