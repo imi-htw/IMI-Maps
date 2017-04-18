@@ -19,7 +19,7 @@ module CICD
 
     def start
       if environment = is_release
-        push_command = "docker login -u #{ENV["DOCKER_USERNAME"]} -p #{ENV["DOCKER_PASSWORD"]} \
+        push_command = "docker login -u #{ENV["DOCKER_USERNAME"]} -p #{ENV["DOCKER_PASSWORD"]} && \
           docker push imimaps/#{environment}"
           system(push_command)
       else
