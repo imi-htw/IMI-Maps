@@ -51,6 +51,7 @@ end
 gem 'factory_girl_rails'
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.3.7'
   gem 'rspec-rails', '~> 3.5'
   gem 'better_errors'
   gem 'binding_of_caller'

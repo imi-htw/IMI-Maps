@@ -142,11 +142,11 @@ ActiveRecord::Schema.define(:version => 20130711142625) do
   end
 
   create_table "internship_ratings", :force => true do |t|
-    t.integer  "tasks",            :limit => 2
-    t.integer  "training_success", :limit => 2
-    t.integer  "atmosphere",       :limit => 2
-    t.integer  "supervision",      :limit => 2
-    t.integer  "appreciation",     :limit => 2
+    t.integer  "tasks",            :limit => 1
+    t.integer  "training_success", :limit => 1
+    t.integer  "atmosphere",       :limit => 1
+    t.integer  "supervision",      :limit => 1
+    t.integer  "appreciation",     :limit => 1
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
