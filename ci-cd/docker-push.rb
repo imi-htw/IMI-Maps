@@ -5,28 +5,36 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__))
 require 'helpers'
 
 module CICD
-  class DockerBuild
-    include Helpers::General
+  class DockerPush
     include Helpers::Travis
 
     def initialize
       @root = File.dirname(File.expand_path(File.join(__FILE__, '..')))
+
+      @docker_hub_repos = {
+        staging: 'imimaps/staging',
+        production: 'imimaps/production'
+      }
     end
 
     def start
       if environment = is_release
-        puts "Building image for environment: #{environment} with tag #{tag}"
-        in_environment(environment) do
-          system("cd #{@root} && docker build . -t imimaps-#{environment}:#{tag}")
-          system("docker images | grep imimaps")
-        end
+        push_command = "docker login -u #{ENV["DOCKER_USERNAME"]} -p #{ENV["DOCKER_PASSWORD"]} \
+          docker push imimaps/#{environment}"
+          system(push_command)
       else
         puts "Current build environment is neither master branch nor a tagged release. Exiting."
         exit 0
       end
     end
+
+    def push
+    end
+
+    def deploy
+    end
   end
 end
 
-CICD::DockerBuild.new.start
+CICD::DockerPush.new.start
 
