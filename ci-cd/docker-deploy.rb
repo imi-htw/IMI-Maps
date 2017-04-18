@@ -18,7 +18,7 @@ module CICD
         puts "Building image for environment: #{environment} with tag #{tag}"
         in_environment(environment) do
           deploy_command = "scp -i id_rsa_#{environment} -o StrictHostKeyChecking=no docker-compose-#{environment}.yml docker-deploy@imimaps-#{environment}.dev-sector.net:~  && \
-            ssh  -i id_rsa_#{environment} -o StrictHostKeyChecking=no \"TAG=#{tag}; docker-compose up -d docker-compose-#{environment}.yml\""
+            ssh  -i id_rsa_#{environment} -o StrictHostKeyChecking=no docker-deploy@imimaps-#{environment}.dev-sector.net \"TAG=#{tag}; docker-compose up -d docker-compose-#{environment}.yml\""
             system(deploy_command)
         end
       else
