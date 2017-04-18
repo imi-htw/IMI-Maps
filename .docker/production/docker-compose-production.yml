@@ -4,9 +4,9 @@ services:
     image: postgres:9.6.2-alpine
     container_name: postresql-production
     environment:
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
-      - POSTGRES_DB
+      - POSTGRES_USER=imimaps
+      - POSTGRES_PASSWORD=imimaps
+      - POSTGRES_DB=imimaps
     ports:
       - 5432:5432
 
